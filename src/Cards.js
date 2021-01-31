@@ -40,11 +40,11 @@ class Events extends React.Component{
         const cards = allEvents.map(eve => {
             return(
                 <div id = {eve.id} className='card'>
-                    <div className="rounded float-start logo"><img src={eve.logo} ></img></div><hr></hr>
+                    <div className="logo"><img src={eve.logo} alg='logo' ></img></div>
                     <span className='title'>{eve.name}</span>
                     <div>
                         <div><button onClick={()=>{this.setState({view: 'moreInfo', currEventID: eve})}} type="button" className="btn btn-outline-primary">MoreInfo</button></div>
-                        <div><button type="button" className="btn btn-outline-primary">Register</button></div>
+                        <div><button type="button" className="btn btn-outline-primary" onClick={(e)=>{e.preventDefault(); alert("You WIll Be Redirected to Payments Portal")}}>Register</button></div>
                     </div>
                 </div>
             )
