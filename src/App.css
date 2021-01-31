@@ -1,0 +1,20 @@
+.card{
+  display: inline-block;
+  border: 2px solid black;
+  height: 40vh;
+  width: 20vw;
+  position: relative;
+  text-align: center;
+}
+
+.logo{
+  top: 0px;
+  display: block;
+  padding: 2px 2px;
+}
+
+.title{
+  display: block;
+  text-align: center;
+  display: block;
+}
