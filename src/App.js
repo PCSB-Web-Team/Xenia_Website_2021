@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import Events from './Events';
+import Cards from './Cards';
 
 class App extends React.Component {
   
@@ -22,7 +22,7 @@ class App extends React.Component {
       </div>
       
       <div>        
-        <Events eventType={this.state.eventType}></Events>
+        <Cards eventType={this.state.eventType}></Cards>
       </div>
     </div>
   );

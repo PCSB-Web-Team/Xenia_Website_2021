@@ -1,20 +1,20 @@
 .card{
   display: inline-block;
-  border: 2px solid black;
-  height: 40vh;
-  width: 20vw;
+  height: 60vh;
+  width: 12vw;
   position: relative;
   text-align: center;
 }
 
 .logo{
-  top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   display: block;
+  position: center;
   padding: 2px 2px;
 }
 
 .title{
-  display: block;
   text-align: center;
-  display: block;
 }
