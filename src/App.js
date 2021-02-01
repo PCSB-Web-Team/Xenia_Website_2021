@@ -1,6 +1,7 @@
 import React from 'react';
 import reactLogo from './logo.svg';
 import './App.css';
+import './Card.css'
 import MoreInfo from './MoreInfo';
 
 let TE1= {name: 'CodeStrike', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 1};
@@ -61,30 +62,30 @@ class App extends React.Component {
 
     const cards = this.state.allEvents.map(eve => {
         return(
-            <div id = {eve.id} className='card'>
+            <button id = {eve.id} className='card' onClick={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}>
                 <div className="logo"><img src={eve.logo} alg='logo' ></img></div>
                 <div className='title'>{eve.name}</div>
                 <div className="card-buttons">
-                    <div><button onClick={()=>{this.setState({view: 'moreInfo', currEvent: eve})}} className="btn btn-outline-primary">MoreInfo</button></div>
-                    <div><button className="btn btn-outline-primary" onClick={this.handleRegister}>Register</button></div>
+                    <div><button onClick={()=>{this.setState({view: 'moreInfo', currEvent: eve})}} className="readmore">MoreInfo</button></div>
+                   
                 </div>
-            </div>
+            </button>
         )
     });
 
   return (
     
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-lg-6 col-md-12" ><button onClick={this.handleTab.bind(this)} id='tech-tab' className="btn btn-outline-primary">Tech</button></div>
-        <div className="col-lg-6 col-md-12" ><button  onClick={this.handleTab.bind(this)} id='non-tech-tab' className="btn btn-outline-primary">Non-Tech</button></div>
+    <div className="dashboard">
+      <div className="tabs">
+        <div className="tabs-div"><button className={this.state.eventType=='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={this.handleTab.bind(this)} id='tech-tab'>Tech</button></div>
+        <div className="tabs-div"><button className={this.state.eventType!='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={this.handleTab.bind(this)} id='non-tech-tab'>Non-Tech</button></div>
       </div>
       
       <div>
       { this.state.view==='cards' ?         
-        cards
+        <div className="card-container">{cards}</div>
         :
-        <MoreInfo close={this.handleClose.bind(this)} details={this.state.currEvent} />
+        <MoreInfo close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />
       }
       </div>
     </div>

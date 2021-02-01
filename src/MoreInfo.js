@@ -10,6 +10,7 @@ class MoreInfo extends React.Component{
                 <div>Conplete Info: {this.props.details.info}</div>
                 <div>Fees: {this.props.details.fees}</div>
                 <div>Contact Details: {this.props.details.contact}</div>
+                <div><button onClick={this.props.handleRegister}>Register</button></div>
                 <div><button onClick={this.props.close}>close</button></div>
             </div>
         )
