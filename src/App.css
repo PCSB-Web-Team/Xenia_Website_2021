@@ -1,4 +1,6 @@
 .card{
+  background: none;
+  color: yellowgreen;
   display: inline-block;
   height: 60vh;
   width: 12.5%;
@@ -6,18 +8,20 @@
   text-align: center;
 }
 
+body{
+  background-color: black;
+}
+
 .logo{
+  background: none;
   width: 100%;
   display: block;
   position: center;
 }
 
-img {  
-  -webkit-transform:rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
+.moreInfoLogo{
+  width: 50vw;
+  height: 50vh;
 }
 
 .title{
