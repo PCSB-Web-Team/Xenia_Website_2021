@@ -1,0 +1,138 @@
+
+.dashboard{
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  z-index: -1;
+}
+
+.tabs{
+  margin-top: 10px;
+  top: 10px;
+  height: 60px;
+  width: 100%;
+}
+
+.tabs-div{
+  height: 100%;
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  margin: 0;
+}
+
+.tabs-btn{
+
+  transition-duration: 1s;
+
+  width: 40%;
+  height: 100%;
+
+  padding: 0%;
+  margin: 0%;
+
+  font-size: 150%;
+
+  background: none;
+  border: none;
+  border: 3px solid white;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+
+  border-radius: 0%;
+  text-align: center;
+
+}
+.active-tab{
+  font-size: 200%;
+  transition-duration: 1s;
+  background: transparent;
+  background-color: black;
+  border: 3px solid black;
+  color: white;
+  outline: 0px;
+  border-radius: 0px;
+}
+
+.card-container{
+  height: 100%;
+  width: 100%;
+}
+
+.card{
+
+  overflow: hidden;
+
+  min-height: 250px;
+
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: none;
+  outline: none;
+  border: none;
+  border-radius: 0%;
+  text-align: center;
+
+  display: inline-flex;
+  height: 40%;
+  width: 20%;
+  min-width: min-content;
+  margin: 2.5%;
+  position: relative;
+  text-align: center;
+}
+
+.card:hover{
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(0, 0, 0);
+  outline: none;
+  border-radius: 0px;
+}
+.card:hover > .title{
+  bottom: 90%;
+  transition-duration: 1s;
+}
+
+.logo{
+  background: none;
+  width: 100%;
+  height: 80%;
+}
+
+.card:hover > .logo{
+  height: 100%;
+  opacity: 0.2;
+  align-self: center;
+  transition-duration: 1s;
+}
+
+.title{
+  position: absolute;
+  bottom: 10%;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.readmore{
+  position: absolute;
+  bottom: -100%;
+  font-size: 12px;
+  background: none;
+  border: none;
+  outline: none;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 25%;
+}
+
+.readmore:hover{
+  border-radius: 0px;
+  border-bottom: 1px solid white; 
+  border-right: 1px solid white;
+}
+
+.card:hover .readmore{
+  transition-duration: 1s;
+  position: absolute;
+  bottom: 2px;
+}

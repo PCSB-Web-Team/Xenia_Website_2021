@@ -1,0 +1,48 @@
+.mi{
+    width: 100%;
+    top: 2px;
+}
+.mi-logo{
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    left: 0px;
+}
+
+.mi-info{
+    min-width: fit-content;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    display: inline-block;
+    width: 50%;
+}
+
+.mi-title{
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+.mi-register{
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    display: inline-block;
+    left: 2%;
+    text-align: center;
+}
+
+.mi-register > button{
+    text-align: center;
+    width: 75%;
+    margin: auto;
+}
+
+.mi-close{
+    position: absolute;
+    top: 5%;
+    display: inline-block;
+    right: 2%;
+}
