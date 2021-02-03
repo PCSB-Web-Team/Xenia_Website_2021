@@ -17,6 +17,7 @@ const useStyles = makeStyles({
 export default function ImgMediaCard({props , readmore}) {
   const classes = useStyles();
   return (
+    <div>
     <div className="vertical-card" id={props.id}>
     <Card className={classes.root}>
       <CardActionArea>
@@ -38,28 +39,31 @@ export default function ImgMediaCard({props , readmore}) {
         </CardContent>
       </CardActionArea>
       <CardActions>
+        <small>Date: {props.date}</small>
         <Button onClick={readmore} size="small" color="primary">
           Learn More
         </Button>
       </CardActions>
     </Card>
+    </div>
 
-    
-    <div className="card mb-3 horizontal-card">
+    <div className="card mb-3 horizontal-card" id={props.id}>
     <div className="row no-gutters">
     <div className="col-md-4">
-      <img className={props.logo} alt="..."/>
+      <img src={props.logo} alt="..."/>
     </div>
     <div className="col-md-8">
       <div className="card-body">
-        <h5 className="card-title">Card title</h5>
+        <h5 className="card-title">{props.name}</h5>
         <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+        <p className="card-text"><small className="text-muted">Date: {props.date}</small></p>
+        <Button onClick={readmore} size="small" color="primary">
+          Learn More
+        </Button>
       </div>
     </div>
     </div>
     </div>
-
-</div>
+  </div>
   );
 }

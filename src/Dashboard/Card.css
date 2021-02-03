@@ -71,9 +71,19 @@
   display: none;
 }
 
-@media (max-width: 540px) {
+
+@media (max-width: 600px) {
+
+  .card-div {
+    width: 100%;
+  }
+
+  .vertical-card{
+    display: none;
+  }
 
   .horizontal-card{
+    width: 100%;
     display: block;
   }
 }
