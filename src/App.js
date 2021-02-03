@@ -1,5 +1,5 @@
 import React from 'react';
-import Cards from './Dashboard/Cards.js';
+import Cards from './Dashboard/Dashboard.js';
 
 class App extends React.Component {
   render(){
