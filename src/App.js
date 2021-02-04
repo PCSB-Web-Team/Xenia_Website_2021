@@ -4,7 +4,8 @@ import Cards from './Dashboard/Dashboard.js';
 class App extends React.Component {
   render(){
     return(
-      <Cards/>
+      <div> <Cards/></div>
+      
     )
   }
 }

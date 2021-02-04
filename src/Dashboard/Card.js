@@ -8,6 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import Card1 from './Card1';
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -17,53 +19,15 @@ const useStyles = makeStyles({
 export default function ImgMediaCard({props , readmore}) {
   const classes = useStyles();
   return (
-    <div>
-    <div className="vertical-card" id={props.id}>
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image={props.logo}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {props.name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <small>Date: {props.date}</small>
-        <Button onClick={readmore} size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
-    </div>
-
-    <div className="card mb-3 horizontal-card" id={props.id}>
-    <div className="row no-gutters">
-    <div className="col-md-4">
-      <img src={props.logo} alt="..."/>
-    </div>
-    <div className="col-md-8">
+    <div className="card" id={props.id}>
+      <img src={props.logo}/>
       <div className="card-body">
-        <h5 className="card-title">{props.name}</h5>
-        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p className="card-text"><small className="text-muted">Date: {props.date}</small></p>
-        <Button onClick={readmore} size="small" color="primary">
-          Learn More
-        </Button>
+        <h2>{props.name}</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <div className="bg"></div>
+        
+      <CardActionArea><Button onClick={readmore} className="register">Register</Button></CardActionArea>
       </div>
     </div>
-    </div>
-    </div>
-  </div>
   );
 }

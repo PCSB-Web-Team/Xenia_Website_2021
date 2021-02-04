@@ -1,0 +1,59 @@
+
+.dashboard{
+    position: relative;
+    width: 100%;
+    height: max-content;
+    margin: auto;
+  }
+  
+  .tabs{
+    margin-top: 10px;
+    top: 10px;
+    height: 60px;
+    width: 100%;
+  }
+  
+  .tabs-div{
+    height: 100%;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .tabs-btn{
+  
+    transition-duration: 1s;
+  
+    width: 40%;
+    height: 100%;
+  
+    padding: 0%;
+    margin: 0%;
+  
+    font-size: 150%;
+  
+    background: none;
+
+    border: none;
+    border: 3px solid white;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+  
+    border-radius: 0%;
+    text-align: center;
+  
+  }
+  .tabs-btn:focus{
+    outline: none;
+  }
+  .active-tab{
+    font-size: 200%;
+    transition-duration: 1s;
+    background: transparent;
+    background-color: black;
+    border: 3px solid black;
+    color: white;
+    outline: 0px;
+    border-radius: 0px;
+  }

@@ -2,7 +2,9 @@ import React from 'react';
 import reactLogo from './logo.svg';
 import './Card.css'
 import MoreInfo from './MoreInfo';
+import './Dashboard.css';
 import Card from './Card';
+import Button from '@material-ui/core/Button';
 
 let TE1= {name: 'CodeStrike', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e1', date: '00/00/00'};
 let TE2= {name: 'NinjaCoding', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e2', date: '00/00/00'};
