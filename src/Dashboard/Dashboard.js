@@ -4,7 +4,6 @@ import './Card.css'
 import MoreInfo from './MoreInfo';
 import './Dashboard.css';
 import Card from './Card';
-import Button from '@material-ui/core/Button';
 
 let TE1= {name: 'CodeStrike', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e1', date: '00/00/00'};
 let TE2= {name: 'NinjaCoding', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e2', date: '00/00/00'};
@@ -12,8 +11,8 @@ let TE3= {name: 'Design Maestro', logo: reactLogo, Fees: '', Slot: '', Contact: 
 let TE4= {name: 'MineCraft Battles', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e4', date: '00/00/00'};
 let TE5= {name: 'Circuit Creation', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e5', date: '00/00/00'};
 let TE6= {name: 'Project Presentation', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e6', date: '00/00/00'};
-let TE7= {name: 'Data Cup', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e7'};
-let TE8= {name: 'Automation Bots', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e8'};
+let TE7= {name: 'Data Cup', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e7', date: '00/00/00'};
+let TE8= {name: 'Automation Bots', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e8', date: '00/00/00'};
 
 let NTE1= {name: 'NonTech', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'ne1', date: '00/00/00'};
 let NTE2= {name: 'NonTech', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'ne2', date: '00/00/00'};
@@ -74,16 +73,17 @@ class Cards extends React.Component {
     });
 
   return (
-    
     <div className="dashboard">
-      <div className="tabs">
-        <div className="tabs-div"><button className={this.state.eventType==='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={this.handleTab.bind(this)} id='tech-tab'>Tech</button></div>
-        <div className="tabs-div"><button className={this.state.eventType!=='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={this.handleTab.bind(this)} id='non-tech-tab'>Non-Tech</button></div>
-      </div>
-      
       <div>
-      { this.state.view==='cards' ?         
-        <div className="card-container">{cards}</div>
+      { 
+        this.state.view==='cards' ?         
+        <div className="card-container">
+          <div className="tabs">
+            <button className={this.state.eventType==='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={this.handleTab} id='tech-tab'>Tech</button>
+            <button className={this.state.eventType!=='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={this.handleTab} id='non-tech-tab'>Non-Tech</button>
+          </div>
+          {cards}
+        </div>
         :
         <MoreInfo close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />
       }

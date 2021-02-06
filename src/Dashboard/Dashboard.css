@@ -1,5 +1,12 @@
 
+.sample{
+background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/black-background-4.jpg?fit=1920%2C1080);
+}
+
 .dashboard{
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/black-background-4.jpg?fit=1920%2C1080);
     position: relative;
     width: 100%;
     height: max-content;
@@ -7,53 +14,50 @@
   }
   
   .tabs{
-    margin-top: 10px;
-    top: 10px;
-    height: 60px;
-    width: 100%;
-  }
-  
-  .tabs-div{
-    height: 100%;
-    display: inline-block;
-    width: 50%;
-    text-align: center;
-    margin: 0;
-  }
-  
-  .tabs-btn{
-  
-    transition-duration: 1s;
-  
-    width: 40%;
-    height: 100%;
-  
-    padding: 0%;
-    margin: 0%;
-  
-    font-size: 150%;
-  
-    background: none;
 
-    border: none;
-    border: 3px solid white;
-    border-bottom: 3px solid black;
-    border-right: 3px solid black;
-  
-    border-radius: 0%;
+    z-index: -2;
+
+    top: 10px;
+
+    padding: 5px;
+
+    height: fit-content;
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
     text-align: center;
-  
+    background: none;
   }
-  .tabs-btn:focus{
-    outline: none;
+
+  .tabs .active-tab{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(9, 255, 0, 0.9);
+    transition: ease 1s;
+    color: greenyellow;
+    border-bottom: 3px solid rgb(0, 255, 55);
+    border-top: 3px solid rgb(0, 255, 42);
   }
-  .active-tab{
-    font-size: 200%;
-    transition-duration: 1s;
-    background: transparent;
-    background-color: black;
-    border: 3px solid black;
+
+  .tabs button{
+    margin: 5px;
+    transition: ease 1s;
+    min-width: 200px;
     color: white;
-    outline: 0px;
+    font-size: 2em;
+    background: none;
+    outline: none;
+    border: none;
     border-radius: 0px;
+    width: 25%;
+
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+    border-top: 3px solid rgba(0, 0, 0, 0.2);
+    
+    border-bottom: 3px solid rgba(0, 255, 55,0.5);
+    border-top: 3px solid rgba(0, 255, 42, 0.5);
+  }
+
+  @media (max-width: 600){
+    .tabs button{
+      width: 100%
+    }
   }

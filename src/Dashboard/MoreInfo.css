@@ -1,48 +1,108 @@
-.mi{
-    width: 100%;
-    top: 2px;
+.jumbotron{
+    min-height: 100vh;
 }
-.mi-logo{
-    display: inline-block;
-    position: relative;
-    width: 50%;
-    height: 100%;
+
+.jumbotron{
+    animation-name: apear;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+}
+
+.jumbotron .logo{
+    width: 25%;
+    height: 200px;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.nav-link, .nav-link:hover{
+    outline: black;
+    border: black;
+    color: white;
+    background-color: black;
+    outline: none;
+}
+
+.active{
+    background-color: greenyellow;
+    color: black;
+}
+
+.tab-pane{
+    margin-top: 20px;
+    min-height:100px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.back-container{
+    overflow: hidden;
+    height: 50px;
+    width: 50px;
+    margin-top: 20px;
+    padding: 0px;
+    margin-left: 50px;
+    top: 0px;
     left: 0px;
+    position: absolute;
 }
 
-.mi-info{
-    min-width: fit-content;
-    position: absolute;
-    right: 0px;
+.back-container:hover{
+    transition: ease-in 200ms;
+    transform: scale(1.5);
+}
+
+.back-container img{
     height: 100%;
-    display: inline-block;
-    width: 50%;
-}
-
-.mi-title{
-    margin-top: 5%;
     width: 100%;
-    text-align: center;
 }
 
-.mi-register{
-    width: 100%;
-    position: absolute;
-    bottom: 5%;
-    display: inline-block;
-    left: 2%;
-    text-align: center;
+#e1.jumbotron{
+    background-color: rgba(0, 100, 200, 0.8);
+}
+#e2.jumbotron{
+    background-color: rgba(200, 0, 200, 0.8);
+}
+#e3.jumbotron{
+    background-color: rgba(0, 200, 0, 0.8);
+}
+#e4.jumbotron{
+    background-color: rgba(200, 200, 0, 0.8);
+}
+#e5.jumbotron{
+    background-color: rgba(0, 200, 200, 0.8);
+}
+#e6.jumbotron{
+    background-color: rgba(200, 0, 0, 0.8);
+}
+#e7.jumbotron{
+    background-color: rgba(240, 128, 128, 0.8);
+}
+#e8.jumbotron{
+    background-color: rgba(250, 120, 0, 0.8);
 }
 
-.mi-register > button{
-    text-align: center;
-    width: 75%;
-    margin: auto;
-}
 
-.mi-close{
-    position: absolute;
-    top: 5%;
-    display: inline-block;
-    right: 2%;
+#ne1.jumbotron{
+    background-color: rgba(0, 200, 200, 0.8);
+}
+#ne2.jumbotron{
+    background-color: rgba(200, 0, 0, 0.8);
+}
+#ne3.jumbotron{
+    background-color: rgba(240, 128, 128, 0.8);
+}
+#ne4.jumbotron{
+    background-color: rgba(250, 120, 0, 0.8);
+}
+#ne5.jumbotron{
+    background-color: rgba(0, 100, 200, 0.8);
+}
+#ne6.jumbotron{
+    background-color: rgba(200, 0, 200, 0.8);
+}
+#ne7.jumbotron{
+    background-color: rgba(0, 200, 0, 0.8);
+}
+#ne8.jumbotron{
+    background-color: rgba(200, 200, 0, 0.8);
 }
