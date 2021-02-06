@@ -1,0 +1,53 @@
+.Registrations{
+    color: white;
+}
+@media (min-width:1280px){
+    .Registrations{
+        display: flex;
+        flex-flow: row;
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: left;
+        align-items: left;
+    }
+}
+
+@media (min-width:501px) and (max-width:959px){
+    .Registrations{
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.Eves{
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+Box{
+    margin-top: 50px;
+}
+
+@media (min-width:500px){
+    .Registrations{
+        flex-flow: row;
+        text-align: left;
+    }
+    .Eves{
+        text-align: center;
+        flex-flow: row;
+        width: 60%;
+        float: right;
+    }
+    Box{
+        margin-top: 100px;
+    }
+}
+
+@media (max-width:500px){
+      div.Registrations>div{
+          margin: 0 !important;
+      }
+}

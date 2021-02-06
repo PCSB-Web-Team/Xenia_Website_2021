@@ -1,0 +1,283 @@
+.RegOpen{
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: 'planetn';
+    src:url('./nasalization.ttf') format("truetype");
+}
+
+@font-face{
+    font-family: 'planetns';
+    src:url('./Planetnsv2.ttf') format("truetype");
+}
+
+
+.Button{
+  font-family: 'planetns' !important;
+}
+
+h6{
+    font-family: 'planetns' !important;
+}
+
+@media (max-width:1279px){
+    .RegOpen{
+        text-align: center !important;
+    }
+}
+
+h5{
+    /* animation: glitch 1s linear infinite; */
+    font-family: 'planetn' !important;
+    margin: 0;
+    line-height: 0 !important;
+    animation: glitch1 2.5s infinite;
+  }
+  
+  h5:nth-child(2) {
+    color: #67f3da;
+    animation: glitch2 2.5s infinite;
+    margin: 0;
+    line-height: 0;
+  }
+  
+  h5:nth-child(3) {
+    color: #f16f6f;
+    animation: glitch3 2.5s infinite;
+    margin: 0;
+    line-height: 0;
+  }
+  /*Keyframes*/
+  
+  @keyframes glitch1 {
+    0% {
+      transform: none;
+      opacity: 1;
+    }
+    7% {
+      transform: skew(-0.5deg, -0.9deg);
+      opacity: 0.75;
+    }
+    10% {
+      transform: none;
+      opacity: 1;
+    }
+    27% {
+      transform: none;
+      opacity: 1;
+    }
+    30% {
+      transform: skew(0.8deg, -0.1deg);
+      opacity: 0.75;
+    }
+    35% {
+      transform: none;
+      opacity: 1;
+    }
+    52% {
+      transform: none;
+      opacity: 1;
+    }
+    55% {
+      transform: skew(-1deg, 0.2deg);
+      opacity: 0.75;
+    }
+    50% {
+      transform: none;
+      opacity: 1;
+    }
+    72% {
+      transform: none;
+      opacity: 1;
+    }
+    75% {
+      transform: skew(0.4deg, 1deg);
+      opacity: 0.75;
+    }
+    80% {
+      transform: none;
+      opacity: 1;
+    }
+    100% {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes glitch2 {
+    0% {
+      transform: none;
+      opacity: 0.25;
+    }
+    7% {
+      transform: translate(-2px, -3px);
+      opacity: 0.5;
+    }
+    10% {
+      transform: none;
+      opacity: 0.25;
+    }
+    27% {
+      transform: none;
+      opacity: 0.25;
+    }
+    30% {
+      transform: translate(-5px, -2px);
+      opacity: 0.5;
+    }
+    35% {
+      transform: none;
+      opacity: 0.25;
+    }
+    52% {
+      transform: none;
+      opacity: 0.25;
+    }
+    55% {
+      transform: translate(-5px, -1px);
+      opacity: 0.5;
+    }
+    50% {
+      transform: none;
+      opacity: 0.25;
+    }
+    72% {
+      transform: none;
+      opacity: 0.25;
+    }
+    75% {
+      transform: translate(-2px, -6px);
+      opacity: 0.5;
+    }
+    80% {
+      transform: none;
+      opacity: 0.25;
+    }
+    100% {
+      transform: none;
+      opacity: 0.25;
+    }
+  }
+  
+  @keyframes glitch3 {
+    0% {
+      transform: none;
+      opacity: 0.25;
+    }
+    7% {
+      transform: translate(2px, 3px);
+      opacity: 0.5;
+    }
+    10% {
+      transform: none;
+      opacity: 0.25;
+    }
+    27% {
+      transform: none;
+      opacity: 0.25;
+    }
+    30% {
+      transform: translate(5px, 2px);
+      opacity: 0.5;
+    }
+    35% {
+      transform: none;
+      opacity: 0.25;
+    }
+    52% {
+      transform: none;
+      opacity: 0.25;
+    }
+    55% {
+      transform: translate(5px, 1px);
+      opacity: 0.5;
+    }
+    50% {
+      transform: none;
+      opacity: 0.25;
+    }
+    72% {
+      transform: none;
+      opacity: 0.25;
+    }
+    75% {
+      transform: translate(2px, 6px);
+      opacity: 0.5;
+    }
+    80% {
+      transform: none;
+      opacity: 0.25;
+    }
+    100% {
+      transform: none;
+      opacity: 0.25;
+    }
+  }
+  /* @keyframes glitch{
+    2%,64%{
+      transform: translate(5px,0) skew(0deg);
+    }
+    4%,60%{
+      transform: translate(-5px,0) skew(0deg);
+    }
+    62%{
+      transform: translate(0,0) skew(10deg); 
+    }
+  }
+  
+  h5:before,
+  h5:after{
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+  
+  h5:before{
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+  
+  @keyframes glitchTop{
+    2%,64%{
+      transform: translate(5px,-5px);
+    }
+    4%,60%{
+      transform: translate(-5px,5px);
+    }
+    62%{
+      transform: translate(15px,-2px) skew(-15deg); 
+    }
+  }
+  
+  h5:after{
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+  
+  @keyframes glitchBotom{
+    2%,64%{
+      transform: translate(-5px,0);
+    }
+    4%,60%{
+      transform: translate(-5px,0);
+    }
+    62%{
+      transform: translate(-25px,7px) skew(23deg); 
+    }
+  } */
+
+ h5.MuiTypography-root.MuiTypography-h5{
+   line-height: 0 !important;
+ }
+
+ h5#demo{
+   line-height: 0;
+ }
+
+ h4{
+   font-family: 'planetns';
+ }

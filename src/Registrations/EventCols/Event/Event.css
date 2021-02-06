@@ -1,0 +1,17 @@
+@font-face{
+    font-family: 'planetn';
+    src:url('./nasalization.ttf') format("truetype");
+}
+
+@font-face{
+    font-family: 'planetns';
+    src:url('./Planetnsv2.ttf') format("truetype");
+}
+
+
+.Event{
+    /* border: 2px solid crimson; */
+    box-sizing: border-box;
+    font-family: 'planetns';
+}
+
