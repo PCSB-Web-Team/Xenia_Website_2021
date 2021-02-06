@@ -1,6 +1,5 @@
 .card-container{
   width: 100%;
-  margin: auto;
   text-align: center;
 }
 
@@ -51,7 +50,7 @@
   font-family: 'Montserrat', sans-serif;
   transition: all ease-in 100ms;
   animation-name: under-line;
-  animation-duration: 1s;
+  animation-duration: ease-in 1s;
 }
 
 .card p {
@@ -59,7 +58,7 @@
 }
 
 .card:hover .card-body{
-  transition-duration: 800ms;
+  transition-duration: ease-out 800ms;
   border-radius: 0px;
 }
 

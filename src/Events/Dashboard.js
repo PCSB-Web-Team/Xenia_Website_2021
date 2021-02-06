@@ -14,14 +14,14 @@ let TE6= {name: 'Project Presentation', logo: reactLogo, Fees: '', Slot: '', Con
 let TE7= {name: 'Data Cup', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e7', date: '00/00/00'};
 let TE8= {name: 'Automation Bots', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e8', date: '00/00/00'};
 
-let NTE1= {name: 'NonTech', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'ne1', date: '00/00/00'};
-let NTE2= {name: 'NonTech', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'ne2', date: '00/00/00'};
-let NTE3= {name: 'NonTech', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'ne3', date: '00/00/00'};
-let NTE4= {name: 'NonTech', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'ne4', date: '00/00/00'};
-let NTE5= {name: 'NonTech', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'ne5', date: '00/00/00'};
-let NTE6= {name: 'NonTech', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'ne6', date: '00/00/00'};
-let NTE7= {name: 'NonTech', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'ne7', date: '00/00/00'};
-let NTE8= {name: 'NonTech', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'ne8', date: '00/00/00'};
+let NTE1= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', id: 'ne1', date: '00/00/00'};
+let NTE2= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', id: 'ne2', date: '00/00/00'};
+let NTE3= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', id: 'ne3', date: '00/00/00'};
+let NTE4= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', id: 'ne4', date: '00/00/00'};
+let NTE5= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', id: 'ne5', date: '00/00/00'};
+let NTE6= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', id: 'ne6', date: '00/00/00'};
+let NTE7= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', id: 'ne7', date: '00/00/00'};
+let NTE8= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', id: 'ne8', date: '00/00/00'};
 
 let tech= [TE1,TE2,TE3,TE4,TE5,TE6,TE7,TE8];
 let nonTech= [NTE1,NTE2,NTE3,NTE4,NTE5,NTE6,NTE7,NTE8] ;  
