@@ -1,4 +1,5 @@
-.App {
+.NavBar {
+  position: static;
   text-align: center;
 }
 
@@ -21,7 +22,7 @@
   font-weight: bold;
 }
 
-.nav {
+.NavBar .nav{
   background: linear-gradient(90deg, rgb(0, 9, 88) 0%, rgb(51, 91, 219) 100%);
   background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(105, 105, 105) 100%);
 }
