@@ -5,7 +5,7 @@ import * as RBS from "react-bootstrap";
 
 function Navbar() {
     return (
-        <div className="App">
+        <div className="NavBar">
           <RBS.Navbar className="nav" collapseOnSelect sticky="top" expand="md" variant="dark">
             <RBS.Navbar.Brand href="#home">
               <img
@@ -20,18 +20,11 @@ function Navbar() {
             <RBS.Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <RBS.Navbar.Collapse id="responsive-navbar-nav">
               <RBS.Nav className="mr-auto">
-                <RBS.Nav.Link className="navlink-hover" href="#home">Home</RBS.Nav.Link>
-                <RBS.Nav.Link className="navlink-hover" href="#about-us">About Us</RBS.Nav.Link>
-                <RBS.NavDropdown title="Events" id="collasible-nav-dropdown">
-                  <RBS.NavDropdown.Item href="#action/3.1">Action</RBS.NavDropdown.Item>
-                  <RBS.NavDropdown.Item href="#action/3.2">Another action</RBS.NavDropdown.Item>
-                  <RBS.NavDropdown.Item href="#action/3.3">Something</RBS.NavDropdown.Item>
-                  {/* <RBS.NavDropdown.Divider />
-                  <RBS.NavDropdown.Item href="#action/3.4">Separated link</RBS.NavDropdown.Item> */}
-                </RBS.NavDropdown>
-                <RBS.Nav.Link className="navlink-hover" href="#team">Team</RBS.Nav.Link>
-                {/* <RBS.Nav.Link href="#gallery">Gallery</RBS.Nav.Link> */}
-                <RBS.Nav.Link className="navlink-hover" href="#contact-us">Contact Us</RBS.Nav.Link>
+                <RBS.Nav.Link className="navlink-hover" href="#Home">Home</RBS.Nav.Link>
+                <RBS.Nav.Link className="navlink-hover" href="#Events">Events</RBS.Nav.Link>
+                <RBS.Nav.Link className="navlink-hover" href="#Team">Team</RBS.Nav.Link>
+                <RBS.Nav.Link className="navlink-hover" href="#About-Us">About Us</RBS.Nav.Link>
+                <RBS.Nav.Link className="navlink-hover" href="#Contact-us">Contact Us</RBS.Nav.Link>
               </RBS.Nav>
             </RBS.Navbar.Collapse>
           </RBS.Navbar>
