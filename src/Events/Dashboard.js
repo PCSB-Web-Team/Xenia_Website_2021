@@ -27,7 +27,7 @@ let tech= [TE1,TE2,TE3,TE4,TE5,TE6,TE7,TE8];
 let nonTech= [NTE1,NTE2,NTE3,NTE4,NTE5,NTE6,NTE7,NTE8] ;  
 
 
-class Cards extends React.Component {
+class Events extends React.Component {
 
 
   constructor(props){
@@ -94,4 +94,4 @@ class Cards extends React.Component {
 }
 }
 
-export default Cards;
+export default Events;

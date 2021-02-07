@@ -1,4 +1,6 @@
 .Registrations{
+    background-color: black;
+    text-align: center;
     color: white;
 }
 @media (min-width:1280px){
@@ -8,7 +10,6 @@
         box-sizing: border-box;
         padding: 10px;
         text-align: left;
-        align-items: left;
     }
 }
 
@@ -33,7 +34,7 @@ Box{
 @media (min-width:500px){
     .Registrations{
         flex-flow: row;
-        text-align: left;
+        text-align: center;
     }
     .Eves{
         text-align: center;

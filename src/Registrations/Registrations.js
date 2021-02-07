@@ -32,7 +32,7 @@ class Registrations extends Component{
     render(){
         // cd Desktop/pict/react/react1
         return (
-            <Box className={styles.Registrations} alignItems="center" justifyContent="center" mt={10}>
+            <Box className={styles.Registrations} className='Registrations' alignItems="center" justifyContent="center" mt={10}>
                 <Box md={12} lg={4} sm={12} xs={12} m={10}>
                     <RegOpen />
                 </Box>
