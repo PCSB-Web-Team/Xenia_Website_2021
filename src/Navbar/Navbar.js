@@ -1,9 +1,8 @@
 import React from 'react';
-import './Navbar.css'
 import logo from './logo1.jpeg'; 
-import * as RBS from "react-bootstrap";
+import * as RBS from "react-bootstrap"; 
 
-function Navbar() {
+function Navbar(props) {
     return (
         <div className="NavBar">
           <RBS.Navbar className="nav" collapseOnSelect sticky="top" expand="md" variant="dark">
@@ -20,11 +19,11 @@ function Navbar() {
             <RBS.Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <RBS.Navbar.Collapse id="responsive-navbar-nav">
               <RBS.Nav className="mr-auto">
-                <RBS.Nav.Link className="navlink-hover" href="#Home">Home</RBS.Nav.Link>
-                <RBS.Nav.Link className="navlink-hover" href="#Events">Events</RBS.Nav.Link>
-                <RBS.Nav.Link className="navlink-hover" href="#Team">Team</RBS.Nav.Link>
-                <RBS.Nav.Link className="navlink-hover" href="#About-Us">About Us</RBS.Nav.Link>
-                <RBS.Nav.Link className="navlink-hover" href="#Contact-us">Contact Us</RBS.Nav.Link>
+                <RBS.Nav.Link className="navlink-hover" onClick={props.changeTab} id='home' href="#Home">Home</RBS.Nav.Link>
+                <RBS.Nav.Link className="navlink-hover" onClick={props.changeTab} id='events' href="#Events">Events</RBS.Nav.Link>
+                <RBS.Nav.Link className="navlink-hover" onClick={props.changeTab} id='teams' href="#Team">Team</RBS.Nav.Link>
+                <RBS.Nav.Link className="navlink-hover" onClick={props.changeTab} id='aboutus' href="#About-Us">About Us</RBS.Nav.Link>
+                <RBS.Nav.Link className="navlink-hover" onClick={props.changeTab} id='contact' href="#Contact-us">Contact Us</RBS.Nav.Link>
               </RBS.Nav>
             </RBS.Navbar.Collapse>
           </RBS.Navbar>
