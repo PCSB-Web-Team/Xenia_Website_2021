@@ -12,17 +12,17 @@ class Registrations extends Component{
         noofdays:3,
         days: {
             day1 :{
-                date: "14 March 2021",
+                date: "14 March",
                 noofevents: 6,
                 events : ["event1","event2","event3","event4","event5","event6"]
             },
             day2 :{
-                date: "15 March 2021",
+                date: "15 March",
                 noofevents: 3,
                 events : ["event1","event2","event3"]
             },
             day3 :{
-                date: "16 March 2021",
+                date: "16 March",
                 noofevents: 4,
                 events : ["event1","event2","event3","event4"]
             }
@@ -31,8 +31,9 @@ class Registrations extends Component{
 
     render(){
         // cd Desktop/pict/react/react1
+        console.log(styles);
         return (
-            <Box className={styles.Registrations} alignItems="center" justifyContent="center" mt={10}>
+            <Box className={styles.Registrations} className='Registrations' alignItems="center" justifyContent="center" >
                 <Box md={12} lg={4} sm={12} xs={12} m={10}>
                     <RegOpen />
                 </Box>

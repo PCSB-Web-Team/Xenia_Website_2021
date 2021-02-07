@@ -1,18 +1,16 @@
 import React from 'react';
-import Cards from './Dashboard/Cards.js';
-import styles from './App.css';
-import Registrations from './Registrations/Registrations';
 
+import styles from './App.css';
 import Cards from './Events/Dashboard.js';
+import Registrations from './Registrations/Registrations.js';
 
 class App extends React.Component {
   render(){
     return(
-
-      <div>
-        <Cards/>
+      <div className="Xenia">
+        <Registrations></Registrations>
+        <Cards></Cards>
       </div>
-      
     )
   }
 }

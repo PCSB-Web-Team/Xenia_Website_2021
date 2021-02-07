@@ -17,7 +17,7 @@ const regOpen = (props) =>{
             <Typography variant="h6">REGISTRATIONS OPEN</Typography>
             <h4>Loren ipsum Lorem ipsum Loren ipsum</h4>
               <Button variant="contained" color="secondary" className={styles.Button}>
-                  DOWNLOAD
+                  <span style={{fontFamily:'planetns'}}>DOWNLOAD</span>
               </Button>
         </Box>
     );

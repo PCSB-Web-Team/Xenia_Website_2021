@@ -1,6 +1,7 @@
 .RegOpen{
     text-align: center;
     box-sizing: border-box;
+    margin-top: 0 !important;
 }
 
 @font-face{
@@ -24,7 +25,7 @@ h6{
 
 @media (max-width:1279px){
     .RegOpen{
-        text-align: center !important;
+        text-align: center;
     }
 }
 
