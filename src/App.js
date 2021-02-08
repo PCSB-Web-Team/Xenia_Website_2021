@@ -1,10 +1,8 @@
 import React from 'react';
-<<<<<<< HEAD
 
 import styles from './App.css';
-=======
+
 import './Navbar/Navbar.css';
->>>>>>> a9a54a2901a45898d81b6388a9fae19d26c5640c
 import Cards from './Events/Dashboard.js';
 import Registrations from './Registrations/Registrations.js';
 import Navbar from './Navbar/Navbar';
