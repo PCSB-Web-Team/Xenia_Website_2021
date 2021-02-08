@@ -5,7 +5,7 @@ import back from './arrow-left.svg';
 class MoreInfo extends React.Component{
     render(){
         return(
-            <div class="more-info jumbotron text-center py-2 px-5" id={this.props.details.id}>
+            <div class="more-info jumbotron text-center py-2 px-5" id='e5'>
               <img class='logo' src={this.props.details.logo}></img>
               <h1 class="display-4">{this.props.details.name}</h1>
               <span class> {this.props.details.date} </span>
@@ -32,7 +32,7 @@ class MoreInfo extends React.Component{
 
                 <a onClick={this.props.handleRegister} class="btn btn-lg bg-success" href="#" role="button">Register</a>
 
-                <div class='back-container btn' onClick={this.props.close}><img src={back}/></div>
+                <div class='back-container' onClick={this.props.close}><img src={back}/></div>
               
             </div>
         )

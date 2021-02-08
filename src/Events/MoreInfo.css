@@ -46,7 +46,6 @@
     100%{
         transform: scale(1);
     }
-
 }
 
 .nav-link, .nav-link:hover{
@@ -57,8 +56,7 @@
     outline: none;
 }
 
-.active{
-    background-color: greenyellow;
+.more-info .active{
     color: black;
 }
 
@@ -114,7 +112,6 @@
 #e8.jumbotron{
     background-color: rgba(250, 120, 0, 0.8);
 }
-
 
 #ne1.jumbotron{
     background-color: rgba(0, 200, 200, 0.8);

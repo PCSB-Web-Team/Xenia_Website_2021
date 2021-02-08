@@ -28,6 +28,10 @@ class App extends React.Component {
   render(){
     return(
       <div className="Xenia">
+
+      
+      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      
         <Navbar changeTab={this.handleView.bind(this)} />
         {this.state.view==='home' ?<div><LandingPage/><Registrations/></div>: null}
         {this.state.view==='events' ? <Cards/> : null}
