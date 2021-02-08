@@ -4,6 +4,8 @@ import './Card.css'
 import MoreInfo from './MoreInfo';
 import './Dashboard.css';
 import Card from './Card';
+import Zoom from 'react-reveal/Zoom';
+
 
 let TE1= {name: 'CodeStrike', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e1', date: '00/00/00'};
 let TE2= {name: 'NinjaCoding', logo: reactLogo, Fees: '', Slot: '', Contact: '', id: 'e2', date: '00/00/00'};
@@ -67,7 +69,9 @@ class Events extends React.Component {
     const cards = this.state.allEvents.map(eve => {
       return(
         <div className="card-div">
+            <Zoom>
             <Card props={eve} readmore={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}/>
+            </Zoom>
         </div>
     )
     });

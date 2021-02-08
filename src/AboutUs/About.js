@@ -6,6 +6,7 @@ import about from "./hero.jpg";
 import data from "./datamastro.jpg";
 import code from "./sudocode.jpg";
 import { motion } from "framer-motion";
+
 const About = () => {
   useEffect(() => {
     AOS.init({});

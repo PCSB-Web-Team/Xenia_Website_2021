@@ -10,7 +10,7 @@ const eventCols = props =>{
     const list=eves.map(eve => <Grid item xs={12} key={eve}><Event key={eve} name={eve} /></Grid>);
 
     return (
-        <Grid container spacing={0} className={styles.EventCols}>
+        <Grid container spacing={0} className='EventCols'>
             <Grid item xs={12}><h3>{props.date}</h3></Grid>
             {list}
         </Grid>

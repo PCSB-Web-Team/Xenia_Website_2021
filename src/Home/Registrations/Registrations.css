@@ -1,11 +1,12 @@
 .Registrations{
-    background-color: black;
+    background: none;
     text-align: center;
     color: white;
     margin-top: 0 !important;
 }
 @media (min-width:1280px){
     .Registrations{
+        height: 100vh;
         display: flex;
         flex-flow: row;
         box-sizing: border-box;

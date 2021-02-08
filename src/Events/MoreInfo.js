@@ -13,19 +13,19 @@ class MoreInfo extends React.Component{
              
               <ul class="nav nav-tabs justify-content-center border-dark" id="myTab" role="tablist">
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Details</a>
+                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#mi-details" role="tab" aria-controls="home" aria-selected="true">Details</a>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Prices</a>
+                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#mi-prices" role="tab" aria-controls="profile" aria-selected="false">Prices</a>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                    <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#mi-contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
                   </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Complete Details TO be Displayed{this.props.details.info}</div>
-                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Team Details and Fees{this.props.details.fees}</div>
-                  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact Details{this.props.details.contact}</div>
+                  <div class="tab-pane fade show active" id="mi-details" role="tabpanel" aria-labelledby="home-tab">Complete Details TO be Displayed{this.props.details.info}</div>
+                  <div class="tab-pane fade" id="mi-prices" role="tabpanel" aria-labelledby="profile-tab">Team Details and Fees{this.props.details.fees}</div>
+                  <div class="tab-pane fade" id="mi-contact" role="tabpanel" aria-labelledby="contact-tab">Contact Details{this.props.details.contact}</div>
                 </div>
 
                 <hr class="my-4"/>

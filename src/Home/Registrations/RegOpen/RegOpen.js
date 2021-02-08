@@ -8,7 +8,11 @@ import Typography from '@material-ui/core/Typography';
 
 const regOpen = (props) =>{
     return (
+<<<<<<< HEAD:src/Registrations/RegOpen/RegOpen.js
         <Box md={12} lg={4} sm={12} xs={12} className="RegOpen">
+=======
+        <Box md={12} lg={4} sm={12} xs={12} className='RegOpen'>
+>>>>>>> 4b1cc0e2a2cf858b45e10f0b1133b950fce7f4f3:src/Home/Registrations/RegOpen/RegOpen.js
             <Box m={2}>
                 <h5 className="sche">&lt;EVENT SCHEDULE/&gt;</h5>
                 <h5  className="sche">&lt;EVENT SCHEDULE/&gt;</h5>

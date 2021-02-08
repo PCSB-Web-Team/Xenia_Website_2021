@@ -4,10 +4,10 @@ background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/bl
 }
 
 .dashboard{
+    vertical-align: center;
     overflow: hidden;
     padding: 5px;
     background: rgba(0, 0, 0, 0.8);
-    background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/black-background-4.jpg?fit=1920%2C1080);
     position: relative;
     width: 100%;
     height: max-content;
@@ -16,13 +16,13 @@ background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/bl
   
   .tabs{
 
+    display: none;
+
     z-index: -2;
 
     top: 10px;
-
     padding: 5px;
-
-    height: fit-content;
+    
     margin: auto;
     margin-top: 10px;
     width: 100%;
@@ -30,31 +30,30 @@ background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/bl
     background: none;
   }
 
-  .tabs .active-tab{
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(9, 255, 0, 0.9);
-    transition: ease 1s;
+  .tabs .active-tab {
+    transition: ease 500ms;
     color: greenyellow;
-    border-bottom: 3px solid rgb(0, 255, 55);
-    border-top: 3px solid rgb(0, 255, 42);
+    border: 3px solid rgb(0, 255, 55);
   }
 
   .tabs button{
-    margin: 5px;
-    transition: ease 1s;
+    margin-inline: 2%;
+    transition: ease 500ms;
     min-width: 200px;
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     background: none;
     outline: none;
     border: none;
     border-radius: 0px;
     width: 25%;
+    border: 1px solid green;
+  }
 
-    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
-    border-top: 3px solid rgba(0, 0, 0, 0.2);
-    
-    border-bottom: 3px solid rgba(0, 255, 55,0.5);
-    border-top: 3px solid rgba(0, 255, 42, 0.5);
+  .tabs button:hover{
+    color: black;
+    background-color: rgb(7, 255, 7);
+
   }
 
   @media (max-width: 600){
