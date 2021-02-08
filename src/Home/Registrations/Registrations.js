@@ -33,7 +33,7 @@ class Registrations extends Component{
         // cd Desktop/pict/react/react1
         console.log(styles);
         return (
-            <Box className={styles.Registrations} className='Registrations' alignItems="center" justifyContent="center" >
+            <Box className='Registrations' alignItems="center" justifyContent="center" >
                 <Box md={12} lg={4} sm={12} xs={12} m={10}>
                     <RegOpen />
                 </Box>

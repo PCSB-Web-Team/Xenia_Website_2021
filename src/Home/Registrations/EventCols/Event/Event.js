@@ -3,7 +3,7 @@ import styles from './Event.css';
 
 const event = props =>{
     return (
-        <div className={styles.Event}>
+        <div className='Event'>
             <p style={{fontFamily:'planetns'}}><img width="50"></img>{props.name}</p>
         </div>
     );

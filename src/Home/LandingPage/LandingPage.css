@@ -1,19 +1,51 @@
 
+  .videoContainer{
+    position: absolute;
+    margin-top: -50px;
+    text-align: center;
+    width: 100%;
+  }
 
   .container {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
-    margin: 0;
-    padding: 0;
+    text-align: center;
   }
   
+  h1#xenia{
+    font-family: 'planetns';
+    color: white;
+    font-size: 8vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #06e8f8, 0 0 20px #06e8f8, 0 0 25px #06e8f8, 0 0 30px #06e8f8, 0 0 35px #06e8f8;
+    animation: animate 2000ms alternate infinite;
+  }
+
+  @keyframes animate{
+    0%{
+      transform: translateY(0);
+    }
+    100%{
+      transform: translateY(-10px);
+    }
+  }
+
+  .container span {
+    font-family: 'planetn';
+    font-size: 30px;
+    color: white;
+    margin-bottom: 0;
+  }
+
   .background {
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
+    
+    top: 0px;
+    left: 0px;
     -o-object-fit: cover;
        object-fit: cover;
     width: 100%;
@@ -6123,30 +6155,4 @@
   @font-face{
     font-family: 'planetns';
     src: url('./Planetnsv2.ttf');
-  }
-
-  h1#xenia{
-    font-family: 'planetns';
-    color: white;
-    font-size: 15vw;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #06e8f8, 0 0 20px #06e8f8, 0 0 25px #06e8f8, 0 0 30px #06e8f8, 0 0 35px #06e8f8;
-    animation: animate 2000ms alternate infinite;
-  }
-
-  @keyframes animate{
-    0%{
-      transform: translateY(0);
-    }
-    100%{
-      transform: translateY(-10px);
-    }
-  }
-
-  h2{
-    font-family: 'planetn';
-    font-size: 3vw;
-    color: white;
-    margin-bottom: 0;
   }

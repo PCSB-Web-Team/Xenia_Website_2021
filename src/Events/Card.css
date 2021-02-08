@@ -68,6 +68,25 @@
   border-top-right-radius: 50%;
 }
 
+.card-body{
+  animation-name: shadoweffect;
+  animation-duration: 1s;
+  transition: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shadoweffect{
+  0%{
+    box-shadow: rgba(red, green, blue, 0.1);
+  }
+  50%{
+    box-shadow: rgba(red, green, blue, 0.9);
+  }
+  80%{
+    box-shadow: rgba(red, green, blue, 0.5);
+  }
+}
+
 @media (max-width: 600px){
 
   .card-div{

@@ -6,7 +6,6 @@ import Registrations from './Home/Registrations/Registrations.js';
 import Navbar from './Navbar/Navbar';
 import LandingPage from './Home/LandingPage/LandingPage';
 import Footer from './Footer/Footer';
-import AboutUs from './AboutUs/About';
 
 class App extends React.Component {
 
@@ -29,7 +28,6 @@ class App extends React.Component {
         <Navbar changeTab={this.handleView.bind(this)} />
         {this.state.view==='home' ?<div><LandingPage/><Registrations/></div>: null}
         {this.state.view==='events' ? <Cards/> : null}
-        {this.state.view==='aboutus' ? <AboutUs/>: null}
         <Footer/>
       </div>
     )
