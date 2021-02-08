@@ -1,0 +1,107 @@
+@font-face{
+    font-family: 'planetn';
+    src:url('../nasalization.ttf') format("truetype");
+}
+
+@font-face{
+    font-family: 'planetns';
+    src:url('../Planetnsv2.ttf') format("truetype");
+}
+
+.Member{
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+
+.photo{
+    width:100%;
+    height: 70%;
+}
+
+.linkedin{
+    height: 10%;
+    width: 100%;
+    background-color: wheat;
+}
+
+.name{
+    width: 100%;
+    color: white;
+    border: 1px solid white;
+    font-family: 'planetns';
+}
+
+
+.Member span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    display: block;
+    box-sizing: border-box;
+    
+  }
+  
+  .Member span:nth-child(1)
+  {
+    transform:rotate(0deg);
+  }
+  
+  .Member span:nth-child(2)
+  {
+    transform:rotate(90deg);
+  }
+  
+  .Member span:nth-child(3)
+  {
+    transform:rotate(180deg);
+  }
+  
+  .Member span:nth-child(4)
+  {
+    transform:rotate(270deg);
+  }
+  
+  .Member span:before
+  {
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 4px;
+    background: #50dfdb;
+    animation: animate 4s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+    transform:scaleX(0);
+    transform-origin: left;
+    }
+    50%
+    {
+      transform:scaleX(1);
+    transform-origin: left;
+    }
+    50.1%
+    {
+      transform:scaleX(1);
+    transform-origin: right;
+      
+    }
+    
+    100%
+    {
+      transform:scaleX(0);
+    transform-origin: right;
+      
+    }
+    
+    
+  } 

@@ -19,8 +19,9 @@
   font-family: 'planetns' !important;
 }
 
-h6{
+.open{
     font-family: 'planetns' !important;
+    font-size: 1.8vw;
 }
 
 @media (max-width:1279px){
@@ -29,22 +30,23 @@ h6{
     }
 }
 
-h5{
+.sche{
     /* animation: glitch 1s linear infinite; */
     font-family: 'planetn' !important;
     margin: 0;
     line-height: 0 !important;
     animation: glitch1 2.5s infinite;
+    font-size: 2vw;
   }
   
-  h5:nth-child(2) {
+  .sche:nth-child(2) {
     color: #67f3da;
     animation: glitch2 2.5s infinite;
     margin: 0;
     line-height: 0;
   }
   
-  h5:nth-child(3) {
+  .sche:nth-child(3) {
     color: #f16f6f;
     animation: glitch3 2.5s infinite;
     margin: 0;
@@ -279,6 +281,7 @@ h5{
    line-height: 0;
  }
 
- h4{
+ .loren{
    font-family: 'planetns';
+   font-size: 1vw;
  }
