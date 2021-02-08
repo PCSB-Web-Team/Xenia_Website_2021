@@ -7,6 +7,7 @@ import Navbar from './Navbar/Navbar';
 import LandingPage from './Home/LandingPage/LandingPage';
 import Footer from './Footer/Footer';
 import AboutUs from './AboutUs/About';
+import LightSpeed from 'react-reveal/LightSpeed';
 
 class App extends React.Component {
 

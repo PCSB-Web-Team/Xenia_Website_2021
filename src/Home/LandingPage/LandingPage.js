@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import styles from './LandingPage.css';
 import Video from './Video/Video';
+import Fade from 'react-reveal/Fade';
 
 class LandingPage extends Component{
 
@@ -12,7 +13,7 @@ class LandingPage extends Component{
             <div className='container'> 
             <h1 id='xenia'>XENIA</h1>
             <span>14-16 March</span>
-            <Video />
+            <Fade><Video/></Fade>
 
             <div className='circleContainer'>
                 <div className='circle'></div>

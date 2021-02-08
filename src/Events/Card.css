@@ -8,7 +8,7 @@
   min-width: 250px;
   width: 20%;
   display: inline-block;
-  margin: 2%;
+  margin: 5px;
 }
 
 .register{
@@ -23,8 +23,8 @@
 
   background: rgba(255, 255, 255, 0.2);
   width: 100%;
-  min-width: 200px;
-  border-radius: 0.6em;
+  min-width: 150px;
+  border-radius: 0px;
   margin: auto;
   overflow: hidden;
   height: auto;
@@ -40,7 +40,8 @@
 
 .card img {
   width: 100%;
-  object-fit: cover;
+  text-align: center;
+  height: 200px;
 }
 
 .card h2 {
@@ -54,6 +55,7 @@
 }
 
 .card p {
+  font-size: 0.8em;
   color: black;
 }
 
@@ -68,11 +70,10 @@
   border-top-right-radius: 50%;
 }
 
-.card-body{
-  animation-name: shadoweffect;
-  animation-duration: 1s;
-  transition: ease;
-  animation-iteration-count: infinite;
+.card-body span{
+  display: none;
+  height: fit-content;
+  font-size: 0.6em;
 }
 
 @keyframes shadoweffect{
@@ -90,8 +91,7 @@
 @media (max-width: 600px){
 
   .card-div{
-    min-width: 250px;
-    width: 80%;
+    min-width: 200px;
     display: inline-block;
     margin: 2%;
   }
@@ -103,13 +103,6 @@
       width: 100%;
   }
 }
-
-.card-body{
-  animation-name: shade;
-  animation-iteration-count: infinite;
-  animation-duration: 2s;
-  transition: ease 1s;
-  }
 
 #e1 .card-body{
   background: rgb(0, 100, 200);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Fade from 'react-reveal/Fade';
 
 const useStyles = makeStyles({
   root: {
@@ -15,7 +16,6 @@ export default function ImgMediaCard({props , readmore}) {
       <div className="card-body">
         <h2>{props.name}</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <div className="bg"></div>
         <span>{props.date}</span>
       </div>
     </div>

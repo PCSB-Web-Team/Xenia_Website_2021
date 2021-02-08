@@ -6,6 +6,7 @@
 }
 @media (min-width:1280px){
     .Registrations{
+        height: 100vh;
         display: flex;
         flex-flow: row;
         box-sizing: border-box;
