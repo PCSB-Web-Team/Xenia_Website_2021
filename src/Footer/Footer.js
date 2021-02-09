@@ -4,7 +4,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const Footer = () => {
   return (
-    <MDBFooter color="unique-color-dark" className="#424242 grey darken-3 page-footer font-small pt-0">
+    <MDBFooter color="unique-color-dark" className="page-footer font-small pt-0">
       <div style={{ backgroundColor: "#000" }}>
         <MDBContainer fluid className="text-center text-md-left">
           <MDBRow className="py-4 d-flex align-items-center">
@@ -27,14 +27,14 @@ const Footer = () => {
           </MDBRow>
         </MDBContainer>
       </div>
-      <MDBContainer className="#424242 grey darken-3 mt-5 mb-4 text-center text-md-left">
-        <MDBRow className="mt-3">
-          <MDBCol md="3" lg="4" xl="3" className="mb-4">
-            <h6 className="text-uppercase font-weight-bold">
+      <MDBContainer className="mt-5 mb-4 text-center d-flex justify-content-between">
+        <MDBRow className="nav-col mt-3">
+          <MDBCol md="3" lg="4" className="mb-4">
+            <h6 className="text-center text-uppercase font-weight-bold">
               <strong>PCSB - Xenia</strong>
             </h6>
             <hr className="#82b1ff blue accent-1 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
-            <p>
+            <p className="nav-content">
               About our Xenia event. Lorem ipsum dolor sit amet, consectetur adipisicing
               elit.
             </p>
@@ -44,10 +44,10 @@ const Footer = () => {
               <strong>Events</strong>
             </h6>
             <hr className="#82b1ff blue accent-1 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
-            <p>
+            <p className="nav-content">
               <a href="#!">Technical</a>
             </p>
-            <p>
+            <p className="nav-content">
               <a href="#!">Non-Technical</a>
             </p>
           </MDBCol>
@@ -56,13 +56,13 @@ const Footer = () => {
               <strong>Useful links</strong>
             </h6>
             <hr className="#82b1ff blue accent-1 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
-            <p>
+            <p className="nav-content">
               <a href="#!">Your Account</a>
             </p>
-            <p>
+            <p className="nav-content">
               <a href="#!">Log In</a>
             </p>
-            <p>
+            <p className="nav-content">
               <a href="#!">Help</a>
             </p>
           </MDBCol>
@@ -71,13 +71,13 @@ const Footer = () => {
               <strong>Contact</strong>
             </h6>
             <hr className="#82b1ff blue accent-1 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
-            <p>
+            <p className="nav-content">
               <i className="fa fa-home mr-3" /> Dhanakawadi, Katraj, Pune
             </p>
-            <p>
+            <p className="nav-content">
               <i className="fa fa-envelope mr-3" /> pictcsi@gmail.com
             </p>
-            <p>
+            <p className="nav-content">
               <i className="fa fa-phone mr-3" /> +91 1234567890
             </p>
           </MDBCol>
