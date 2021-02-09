@@ -1,28 +1,132 @@
 .NavBar {
   position: static;
-  text-align: center;
-}
-
-.navlink-hover:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
-}
-
-.navlink-hover:hover:after {
+  text-align: center !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  padding: 4px;
+  display: inline-block !important;
   width: 100%;
-  transition: width 0.3s;
+  height: 64px;
 }
 
-.brandName {
-  padding-left: 8px;
-  font-weight: bold;
+.NavBar .brand {
+  padding: 5px;
 }
 
-.NavBar .nav{
-  background: linear-gradient(90deg, rgb(0, 9, 88) 0%, rgb(51, 91, 219) 100%);
-  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(105, 105, 105) 100%);
+.NavBar .brand .nav-brand {
+  text-align: center;
+  display: inline-block;
+  padding: 3px;
+}
+
+.NavBar .brand .nav-brand .brandName {
+  padding: 7px;
+  font-weight: bold !important;
+  color: #fff;
+  font-size: 20px;
+}
+
+.NavBar .brand .nav-brand .logo {
+  padding: 5px;
+}
+
+.NavBar .items {
+  text-align: center !important;
+  width: 90%;
+  margin: auto;
+  padding: 5px;
+}
+
+.NavBar .items .nav-tabs {
+  width: 15%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  margin-top: 7px;
+  border-bottom: 0px;
+  cursor: pointer;
+  display: inline-block;
+  background-color: transparent;
+  border: 3px solid #010868;
+  border-radius: 50px;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #0555bd;
+}
+
+/* .NavBar .items .nav-tabs {
+  background-color: transparent;
+  border: 3px solid #00d7c3;
+  border-radius: 50px;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #00d7c3;
+} */
+
+.NavBar .items .nav-tabs:hover {
+  box-shadow: 0 0 10px 0 #010868 inset, 0 0 20px 2px #0555bd;
+  border: 3px solid #010868;
+}
+
+.NavBar .nav-label {
+  /* display: none; */
+  width: 100%;
+  padding: 0px;
+}
+
+label #btn,
+label #cancel {
+  color: white;
+  font-size: 30px;
+  float: right !important;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+  float: right;
+}
+
+.NavBar .nav-btn {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  label #btn {
+    display: block;
+    color: #fff;
+  }
+  .NavBar .items {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: none;
+    top: 70px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  .NavBar .items .nav-tabs {
+    display: block;
+    margin: 10px 0px;
+    line-height: 30px;
+    text-align: center;
+  }
+  #check:checked ~ .items {
+    left: 0;
+  }
+  #check:checked ~ label #btn {
+    display: none;
+  }
+  #check:checked ~ label #cancel {
+    display: block;
+    color: #fff;
+  }
 }

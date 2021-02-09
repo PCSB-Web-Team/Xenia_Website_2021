@@ -4,29 +4,36 @@ import * as RBS from "react-bootstrap";
 
 function Navbar(props) {
     return (
-        <div className="NavBar">
-          <RBS.Navbar className="nav" collapseOnSelect sticky="top" expand="md" variant="dark">
-            <RBS.Navbar.Brand href="#home">
-              <img
-                alt=""
-                src= {logo}
-                width="30"
-                height="30"
-                className="logo"  //"d-inline-block align-top"
-              />
-              <span className="brandName">PCSB</span>
-            </RBS.Navbar.Brand>
-            <RBS.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <RBS.Navbar.Collapse id="responsive-navbar-nav">
-              <RBS.Nav className="mr-auto">
-                <RBS.Nav.Link className="navlink-hover" onClick={props.changeTab} id='home' href="#Home">Home</RBS.Nav.Link>
-                <RBS.Nav.Link className="navlink-hover" onClick={props.changeTab} id='events' href="#Events">Events</RBS.Nav.Link>
-                <RBS.Nav.Link className="navlink-hover" onClick={props.changeTab} id='teams' href="#Team">Team</RBS.Nav.Link>
-                <RBS.Nav.Link className="navlink-hover" onClick={props.changeTab} id='aboutus' href="#About-Us">About Us</RBS.Nav.Link>
-                <RBS.Nav.Link className="navlink-hover" onClick={props.changeTab} id='contact' href="#Contact-us">Contact Us</RBS.Nav.Link>
-              </RBS.Nav>
-            </RBS.Navbar.Collapse>
-          </RBS.Navbar>
+        <div className="NavBar">         
+          
+          {/* <input type="checkbox" id="check" />
+          <label className="nav-label" for="check">
+            <i className="fas fa-bars" id="btn"></i>
+            <i className="fas fa-times" id="cancel"></i>
+          </label> */}
+          <button className="nav-btn">Nav</button>
+
+          <div className="brand" style={{float: "left"}}>
+            <a className="nav-brand" href="#home">
+                <img
+                  alt=""
+                  src= {logo}
+                  width="40"
+                  height="40"
+                  className="logo"  //"d-inline-block align-top"
+                />
+                <span className="brandName">PCSB</span>
+            </a>
+          </div>
+
+          <div className="items" >
+            <div className="nav-tabs" onClick={props.changeTab} id='home' href="#Home">Home</div>
+            <div className="nav-tabs" onClick={props.changeTab} id='events' href="#Events">Events</div>
+            <div className="nav-tabs" onClick={props.changeTab} id='teams' href="#Team">Team</div>
+            <div className="nav-tabs" onClick={props.changeTab} id='aboutus' href="#About-Us">About Us</div>
+            <div className="nav-tabs" onClick={props.changeTab} id='contact' href="#Contact-us">Contact Us</div>
+          </div>
+
         </div>
       );
 }
