@@ -4,6 +4,7 @@ import './Card.css'
 import MoreInfo from './MoreInfo';
 import './Dashboard.css';
 import Card from './Card';
+import Slide from 'react-reveal/Slide';
 import Zoom from 'react-reveal/Zoom';
 
 
@@ -28,7 +29,6 @@ let NTE8= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', 
 let tech= [TE1,TE2,TE3,TE4,TE5,TE6,TE7,TE8];
 let nonTech= [NTE1,NTE2,NTE3,NTE4,NTE5,NTE6,NTE7,NTE8] ;  
 
-
 class Events extends React.Component {
 
 
@@ -41,8 +41,6 @@ class Events extends React.Component {
         view: 'cards',
         
         currEvent: null,
-        
-        allEvents: tech
       }
   }
 
@@ -55,8 +53,8 @@ class Events extends React.Component {
   }
 
   handleTab = (e) => {
-    if(e.target.id==='tech-tab') this.setState({eventType: 'tech', allEvents: tech});
-    else this.setState({eventType: 'non-tech', allEvents: nonTech})
+    if(e.target.id==='tech-tab') this.setState({eventType: 'tech'});
+    else this.setState({eventType: 'non-tech'})
     this.setState({view: 'cards'})
   }
 
@@ -66,12 +64,18 @@ class Events extends React.Component {
 
   render(){
 
-    const cards = this.state.allEvents.map(eve => {
+    const techCards = tech.map(eve => {
       return(
         <div className="card-div">
-            <Zoom>
-            <Card props={eve} readmore={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}/>
-            </Zoom>
+            <Card props={eve} readmore={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}/>        
+        </div>
+    )
+    });
+    
+    const nonTechCards = nonTech.map(eve => {
+      return(
+        <div className="card-div">
+            <Card props={eve} readmore={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}/>        
         </div>
     )
     });
@@ -80,13 +84,15 @@ class Events extends React.Component {
     <div className="dashboard">
       <div>
       { 
-        this.state.view==='cards' ?         
+        this.state.view==='cards' 
+        ?         
         <div className="card-container">
           <div className="tabs">
             <button className={this.state.eventType==='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={this.handleTab} id='tech-tab'>Tech</button>
             <button className={this.state.eventType!=='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={this.handleTab} id='non-tech-tab'>Non-Tech</button>
           </div>
-          {cards}
+          {this.state.eventType==='tech' ? techCards : null}
+          {this.state.eventType!=='tech' ? nonTechCards : null}
         </div>
         :
         <MoreInfo close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />

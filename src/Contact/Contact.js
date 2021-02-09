@@ -1,5 +1,6 @@
 import React from 'react';
-import "./Contact.scss";
+import "./Contact.css";
+
 function Contact() {
     return (
         // <div className="container">
@@ -12,8 +13,9 @@ function Contact() {
         // </div>
         <div className="body">
        <div >
-        <div id="contact-container">
-            <div className="contact-info">
+        <div className='container d-block d-lg-block' id="contact-container">
+            <div className="row">
+            <div className="contact-info col-lg-4 d-none d-lg-block">
                 <h4>
                     Contact Information
                 </h4>
@@ -43,41 +45,44 @@ function Contact() {
                 </div>
                 
             </div>
-            <form>
-                <div className="col">
-               <div className="form-group">
-                   <label>First Name</label>
-                   <input type="text" />
-               </div>
-               <div className="form-group">
-                   <label>Last Name</label>
-                   <input type="text" />
-               </div>
-               </div>
-               <div className="col">
-               <div className="form-group">
-                   <label>E-Mail</label>
-                   <input type="email" />
-               </div>
-               <div className="form-group">
-                   <label>Phone Number</label>
-                   <input type="tel" />
-               </div>
-               </div>
+            <div className='col-lg-8'>
+                <form>
+                    <div>
+                   <div className="form-group">
+                       <label>First Name</label>
+                       <input className='form-control' type="text" />
+                   </div>
+                   <div className="form-group">
+                       <label>Last Name</label>
+                       <input className='form-control' type="text" />
+                   </div>
+                   </div>
+                   <div className="col">
+                   <div className="form-group">
+                       <label>E-Mail</label>
+                       <input className='form-control' type="email" />
+                   </div>
+                   <div className="form-group">
+                       <label>Phone Number</label>
+                       <input className='form-control' type="tel" />
+                   </div>
+                   </div>
 
-               <div className="col">
-               <div className="form-group solo">
-                   <label>Message</label>
-                   <textarea></textarea>
-               </div>
-               </div>
-               <div className="col">
-               <div className="form-group solo right">
-                   <button className="primary"> Send Message</button>
-               </div>
-               </div>
-          
-            </form>
+                   <div className="col">
+                   <div className="form-group solo">
+                       <label>Message</label>
+                       <textarea  className='form-control'></textarea>
+                   </div>
+                   </div>
+                   <div className="col">
+                   <div className="form-group solo right">
+                       <button className="primary"> Send Message</button>
+                   </div>
+                   </div>
+
+                </form>
+            </div>
+        </div>
         </div>
         </div>
         </div>
