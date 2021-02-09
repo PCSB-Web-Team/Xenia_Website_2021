@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap");
 .about-us {
   margin: 0;
   padding: 0;
@@ -6,26 +7,116 @@
 }
 
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('./background.jpg');
+  /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(./background.jpg);
   background-position: center;
-  background-size: cover;
-  height: 100vh;
+  background-size: cover; */
+  /* background: #8e2de2; 
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); 
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  );  */
+  background: #ffffff;
+
+  height: 95vh;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .content {
   margin-top: 200px;
-  color: #fff;
+  color: black;
   text-align: center;
+  font-family: monospace;
 }
-.about-us h1 {
-  font-size: 75px;
-  font-weight: bold;
-  font-family: "JetBrains Mono", monospace;
+.content h1 {
 }
 
-.about-us .btn {
-  padding: 10px 22px;
-  outline-style: solid;
-  outline: black;
+.about-us h1 {
+  font-size: 50px;
+
+  font-family: "Lexend Mega", sans-serif;
+}
+
+.events {
+  text-transform: uppercase;
+  font-family: "Roboto Mono", monospace;
+  font-size: 25px;
+}
+
+.events .typewriter-text1 {
+  animation-name: typewriter1;
+
+  color: #131313;
+  text-shadow: 0 0 2px #ffffff, 0 0 10px #ffffff, 0 0 20px #0ba9ca,
+    0 0 30px #0ba9ca, 0 0 40px #0ba9ca, 0 0 50px #0ba9ca;
+}
+
+.events .typewriter-text2 {
+  animation-name: typewriter2;
+
+  color: #131313;
+  text-shadow: 0 0 2px #ffffff, 0 0 10px #ffffff, 0 0 20px #0ba9ca,
+    0 0 30px #0ba9ca, 0 0 40px #0ba9ca, 0 0 50px #0ba9ca;
+}
+
+.events .typewriter-text1,
+.typewriter-text2 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  animation-duration: 20s;
+  animation-timing-function: steps(25, end);
+  animation-iteration-count: infinite;
+}
+
+.events .typewriter-text1::after,
+.typewriter-text2::after {
+  content: "_";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes typewriter1 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  10%,
+  40% {
+    width: 9em;
+  }
+}
+
+@keyframes typewriter2 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+
+  60%,
+  90% {
+    width: 11em;
+  }
+}
+
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }

@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import "./About.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import main from "./main1.jpg";
 import about from "./hero.jpg";
 import data from "./datamastro.jpg";
 import code from "./sudocode.jpg";
 import { motion } from "framer-motion";
-
 const About = () => {
   useEffect(() => {
     AOS.init({});
@@ -25,42 +25,61 @@ const About = () => {
   };
   return (
     <div className="section about-us">
-      <div className="row hero">
-        <div className="container">
-          <div className="col-lg-12 content">
-            <motion.h1
-              variants={fadeTop}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              Xenia
-            </motion.h1>
-            <motion.p
-              variants={fadeLeft}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 1, delay: 1 }}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perferendis aspernatur autem voluptatem iusto aperiam a id. Omnis,
-              molestias facere eius totam aspernatur autem itaque commodi
-              accusamus dolor officiis modi quas. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Unde omnis, ducimus, deserunt enim
-              corrupti explicabo eos praesentium ex qui rem quo aliquam? Qui
-              molestiae saepe perferendis magni, consequatur dicta ipsum!
-            </motion.p>
+      <div className="row hero p-5" style={{ padding: "20px" }}>
+        <div className="col-lg-4 content">
+          <motion.h1
+            variants={fadeTop}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1 }}
+          >
+            About Us
+          </motion.h1>
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1.5 }}
+            className="events"
+          >
+            <span className="typewriter-text1 major">Do participate</span>
+            <span className="typewriter-text2 major"> Test your skill</span>
+          </motion.div>
+          <motion.p
+            variants={fadeLeft}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1, delay: 1.5 }}
+            style={{ textAlign: "justify" }}
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+            aspernatur autem voluptatem iusto aperiam a id. Omnis, molestias
+            facere eius totam aspernatur autem itaque commodi accusamus dolor
+            officiis modi quas. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Unde omnis, ducimus, deserunt enim corrupti
+            explicabo eos praesentium ex qui rem quo aliquam? Qui molestiae
+            saepe perferendis magni, consequatur dicta ipsum!
+          </motion.p>
 
-            <motion.button
-              variants={fadeLeft}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 1, delay: 1.5 }}
-              className="btn btn-outline-light btn-lg"
-            >
-              Register Now
-            </motion.button>
-          </div>
+          {/* <motion.button
+            variants={fadeLeft}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1, delay: 1.5 }}
+            className="btn btn-outline-light btn-lg"
+          >
+            Register Now
+          </motion.button> */}
+        </div>
+        <div className="col-lg-8 d-none d-lg-block">
+          <motion.img
+            variants={fadeRight}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1, delay: 1 }}
+            src={main}
+            className="img-fluid my-5"
+          />
         </div>
       </div>
 
