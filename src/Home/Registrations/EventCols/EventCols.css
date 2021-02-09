@@ -8,7 +8,7 @@
     src:url('./Event/Planetnsv2.ttf') format("truetype");
 }
 
-h3{
+.evedate{
     font-family: 'planetn';
 }
 

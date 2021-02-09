@@ -11,7 +11,7 @@ const eventCols = props =>{
 
     return (
         <Grid container spacing={0} className='EventCols'>
-            <Grid item xs={12}><h3>{props.date}</h3></Grid>
+            <Grid item xs={12}><h3 className={styles.evedate}>{props.date}</h3></Grid>
             {list}
         </Grid>
     );

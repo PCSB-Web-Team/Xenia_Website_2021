@@ -6155,7 +6155,6 @@
   @font-face{
     font-family: 'planetns';
     src: url('./Planetnsv2.ttf');
-<<<<<<< HEAD:src/LandingPage/LandingPage.css
   }
 
   h1#xenia{
@@ -6182,6 +6181,4 @@
     font-size: 3vw;
     color: white;
     margin-bottom: 0;
-=======
->>>>>>> 4b1cc0e2a2cf858b45e10f0b1133b950fce7f4f3:src/Home/LandingPage/LandingPage.css
   }

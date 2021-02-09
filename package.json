@@ -10,6 +10,7 @@
     "aos": "^2.3.4",
     "framer-motion": "^3.3.0",
     "mdbootstrap": "^4.19.2",
+    "mdbreact": "^5.0.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",

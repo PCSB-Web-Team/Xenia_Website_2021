@@ -273,13 +273,7 @@
     }
   } */
 
- h5.MuiTypography-root.MuiTypography-h5{
-   line-height: 0 !important;
- }
 
- h5#demo{
-   line-height: 0;
- }
 
  .loren{
    font-family: 'planetns';

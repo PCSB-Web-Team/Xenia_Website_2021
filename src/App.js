@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-
-import React from "react";
-import styles from "./App.css";
-
-import "./Navbar/Navbar.css";
-import Cards from "./Events/Dashboard.js";
-import Registrations from "./Registrations/Registrations.js";
-import Navbar from "./Navbar/Navbar";
-import About from "./AboutUs/About";
-=======
 import React from 'react';
 import styles from './App.css';
 import './Navbar/Navbar.css';
@@ -19,7 +8,6 @@ import LandingPage from './Home/LandingPage/LandingPage';
 import Footer from './Footer/Footer';
 import AboutUs from './AboutUs/About';
 import LightSpeed from 'react-reveal/LightSpeed';
->>>>>>> 4b1cc0e2a2cf858b45e10f0b1133b950fce7f4f3
 
 class App extends React.Component {
 
