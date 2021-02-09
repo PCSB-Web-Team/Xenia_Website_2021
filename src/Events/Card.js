@@ -11,10 +11,11 @@ const useStyles = makeStyles({
 export default function ImgMediaCard({props , readmore}) {
   const classes = useStyles();
   return (
-    <div className="card" id={props.id} onClick={readmore}>
+    <div className="event-card" id={props.id} onClick={readmore}>
       <img src={props.logo}/>
       <div className="card-body">
-        <h2>{props.name}</h2>
+        <h2 className='eve-card-name'>{props.name}</h2>
+        <hr></hr>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         <span>{props.date}</span>
       </div>

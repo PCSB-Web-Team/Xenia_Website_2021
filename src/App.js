@@ -8,6 +8,7 @@ import LandingPage from './Home/LandingPage/LandingPage';
 import Footer from './Footer/Footer';
 import AboutUs from './AboutUs/About';
 import LightSpeed from 'react-reveal/LightSpeed';
+import Contact from './Contact/Contact';
 
 class App extends React.Component {
 
@@ -27,6 +28,7 @@ class App extends React.Component {
   render(){
     return(
       <div className="Xenia">
+      
         <Navbar changeTab={this.handleView.bind(this)} />
         {this.state.view==='home' ?<div><LandingPage/><Registrations/></div>: null}
         {this.state.view==='events' ? <Cards/> : null}
