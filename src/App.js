@@ -11,6 +11,7 @@ import Contact from "./Contact/Contact";
 import BG from './bg1.jpg';
 import LightSpeed from "react-reveal/LightSpeed";
 import Domains from '../src/Home/Domains/Domains';
+import Sponsors from '../src/Home/Sponsors/Sponsors';
 // import Contact from './Contact/Contact';
 
 class App extends React.Component {
@@ -37,6 +38,7 @@ class App extends React.Component {
             <LandingPage />
             <Registrations />
             <Domains />
+            <Sponsors />
           </div>
         ) : null}
         {this.state.view === "events" ? <Cards /> : null}
