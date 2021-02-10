@@ -5,6 +5,16 @@
   width: 100%;
 }
 
+@font-face {
+  font-family: "planetn";
+  src: url("./nasalization.ttf");
+}
+
+@font-face{
+  font-family: 'planetns';
+  src: url('./Planetnsv2.ttf');
+}
+
 .container {
   width: 100%;
   height: 100%;
@@ -6151,38 +6161,27 @@ h1#xenia {
   to {
     opacity: 1;
   }
-<<<<<<< HEAD
 
-  @font-face{
-    font-family: 'planetns';
-    src: url('./Planetnsv2.ttf');
-=======
+  
 }
 @keyframes message-frames {
   from {
     opacity: 0;
->>>>>>> 1b1cd0b8817ff1244a2fd014e7046ef8c34ac1ce
   }
   to {
     opacity: 1;
   }
 }
 
-@font-face {
-  font-family: "planetn";
-  src: url("./nasalization.ttf");
-}
 
-<<<<<<< HEAD
+
   .date{
     font-family: 'planetn';
     font-size: 3vw;
     color: white;
     margin-bottom: 0;
   }
-=======
 @font-face {
   font-family: "planetns";
   src: url("./Planetnsv2.ttf");
 }
->>>>>>> 1b1cd0b8817ff1244a2fd014e7046ef8c34ac1ce

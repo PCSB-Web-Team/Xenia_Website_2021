@@ -13,6 +13,9 @@
 #particleJs {
     position: relative;
 }
+
+
+
 .content-div {
     padding: 0.5rem;
     width: 33.333%;
@@ -72,5 +75,30 @@ iframe {
 }
 
 .domCards{
-    margin: 20px;
+    margin: 50px;
+}
+
+.domainRow{
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    margin-top: 3rem;
+}
+
+.domImage{
+    height: 70%;
+}
+
+@media (max-width:767px){
+    .marContain{
+        margin-top: 20px;
+    }
+    .domImage{
+        height: 50%;
+    }
+}
+
+@media (max-width:767px){
+    .domainRow{
+        margin-top: 0 !important;
+    }
 }

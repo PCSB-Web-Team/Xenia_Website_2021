@@ -7,7 +7,7 @@ background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/bl
     vertical-align: center;
     overflow: hidden;
     padding: 5px;
-    background: rgba(0, 0, 0, 0.8);
+    background: none;
     position: relative;
     width: 100%;
     height: max-content;
@@ -15,9 +15,6 @@ background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/bl
   }
   
   .tabs{
-
-    display: none;
-
     z-index: -2;
 
     top: 10px;
