@@ -9,6 +9,7 @@ import Footer from './Footer/Footer';
 import AboutUs from './AboutUs/About';
 import LightSpeed from 'react-reveal/LightSpeed';
 import Contact from './Contact/Contact';
+import Domains from '../src/Home/Domains/Domains';
 
 class App extends React.Component {
 
@@ -30,7 +31,7 @@ class App extends React.Component {
       <div className="Xenia">
       
         <Navbar changeTab={this.handleView.bind(this)} />
-        {this.state.view==='home' ?<div><LandingPage/><Registrations/></div>: null}
+        {this.state.view==='home' ?<div><LandingPage/><Registrations/><Domains /></div>: null}
         {this.state.view==='events' ? <Cards/> : null}
         {this.state.view==='aboutus' ? <AboutUs/>: null}
         <Footer/>
