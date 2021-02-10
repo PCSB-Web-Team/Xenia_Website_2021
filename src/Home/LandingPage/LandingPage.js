@@ -9,7 +9,7 @@ class LandingPage extends Component{
 
     render(){
         return(
-            
+            <div className='landing-page'>
             <div className='container'> 
             <h1 id='xenia'>XENIA</h1>
             <span>14-16 March</span>
@@ -314,6 +314,7 @@ class LandingPage extends Component{
             </div>
             <div className='circleContainer'>
                 <div className='circle'></div>
+            </div>
             </div>
             </div>
         );

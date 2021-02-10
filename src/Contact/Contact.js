@@ -1,92 +1,77 @@
-import React from 'react';
+import React from "react";
 import "./Contact.css";
-
-function Contact() {
-    return (
-        // <div className="container">
-        //     <div className="container-left">
-        //         <h1>Contact Information</h1>
-        //     </div>
-        //     <div className="container-right">
-
-        //     </div>
-        // </div>
-        <div className="body">
-       <div >
-        <div className='container d-block d-lg-block' id="contact-container">
-            <div className="row">
-            <div className="contact-info col-lg-4 d-none d-lg-block">
-                <h4>
-                    Contact Information
-                </h4>
-                <p>Fill Up The Form and Click Send</p>
-                <div className="icon-text">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span>719-239-4783</span>
+import { motion } from "framer-motion";
+const Contact = () => {
+  const fadeTop = {
+    hidden: { opacity: 0, y: -150 },
+    visible: { opacity: 1, y: 0 },
+  };
+  return (
+    <div className="contact text-center my-5">
+      <div className="container p-5">
+        <div className="row">
+          <div className="col-lg-12">
+            <motion.h3
+              variants={fadeTop}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 1 }}
+              className="display-4"
+            >
+              Get In Touch
+            </motion.h3>
+            <br />
+            <form action="">
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-user text-danger"></i>
+                  </span>
                 </div>
-                <div className="icon-text">
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    <span>admin@gmail.com</span>
-                </div>
-                <div className="icon-text">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <span>456 Grand oval. Ridgewood</span>
-                </div>
-                <div className="social-media">
-                    <a href="#" className="icon-circle">
-                        <i className="fa fa-instagram" arial-hidden="true"></i>
-                    </a>
-                    <a href="#" className="icon-circle">
-                        <i className="fa fa-linkedin" arial-hidden="true"></i>
-                    </a>
-                    <a href="#" className="icon-circle">
-                        <i className="fa fa-youtube" arial-hidden="true"></i>
-                    </a>
-                </div>
-                
-            </div>
-            <div className='col-lg-8'>
-                <form>
-                    <div>
-                   <div className="form-group">
-                       <label>First Name</label>
-                       <input className='form-control' type="text" />
-                   </div>
-                   <div className="form-group">
-                       <label>Last Name</label>
-                       <input className='form-control' type="text" />
-                   </div>
-                   </div>
-                   <div className="col">
-                   <div className="form-group">
-                       <label>E-Mail</label>
-                       <input className='form-control' type="email" />
-                   </div>
-                   <div className="form-group">
-                       <label>Phone Number</label>
-                       <input className='form-control' type="tel" />
-                   </div>
-                   </div>
+                <input type="text" class="form-control" placeholder="Name" />
+              </div>
 
-                   <div className="col">
-                   <div className="form-group solo">
-                       <label>Message</label>
-                       <textarea  className='form-control'></textarea>
-                   </div>
-                   </div>
-                   <div className="col">
-                   <div className="form-group solo right">
-                       <button className="primary"> Send Message</button>
-                   </div>
-                   </div>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-envelope text-warning"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Email" />
+              </div>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-phone text-success"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Phone" />
+              </div>
 
-                </form>
-            </div>
+              <div class="input-group input-group-lg mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-pencil-alt text-primary"></i>
+                  </span>
+                </div>
+                <textarea
+                  class="form-control"
+                  placeholder="Message"
+                  rows="5"
+                ></textarea>
+              </div>
+
+              <input
+                type="submit"
+                value="Submit"
+                class="btn btn-outline-light btn-block btn-lg"
+              />
+            </form>
+          </div>
         </div>
-        </div>
-        </div>
-        </div>
-    );
-  }
-  
-  export default Contact;
+      </div>
+    </div>
+  );
+};
+
+export default Contact;

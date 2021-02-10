@@ -4,9 +4,22 @@
 }
 
 .nav-content {
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 .md-4 {
   padding-inline: 10px;
 }
+
+.p-2 {
+  margin-inline: 0.5rem !important;
+}
+
+.page-footer {
+  /* text-align: center; */
+  /* display: inline-block; */
+  background: linear-gradient(black, rgba(0, 0, 0, 0));
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0)); */
+}
+
+/* color="unique-color-dark" */

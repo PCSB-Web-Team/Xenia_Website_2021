@@ -8,15 +8,19 @@
   src: url('./Planetnsv2.ttf');
 }
 
-.container {
+.landing-page{
+  width: 100%;
+  background: radial-gradient(rgb(0, 0, 0) 40%,rgba(0, 0, 0, 0));
+}
+
+.landing-page .container {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   position: relative;
   text-align: center;
 }
 
-h1#xenia {
+.landing-page h1#xenia {
   font-family: "planetns";
   color: white;
   font-size: 8vw;
@@ -36,14 +40,14 @@ h1#xenia {
   }
 }
 
-.container span {
+.landing-page .container span {
   font-family: "planetn";
   font-size: 30px;
   color: white;
   margin-bottom: 0;
 }
 
-.background {
+.landing-page .background {
   display: block;
   position: absolute;
 
@@ -6168,12 +6172,13 @@ h1#xenia {
 
 
 
-  .date{
+.landing-page .date{
     font-family: 'planetn';
     font-size: 3vw;
     color: white;
     margin-bottom: 0;
   }
+
 @font-face {
   font-family: "planetns";
   src: url("./Planetnsv2.ttf");

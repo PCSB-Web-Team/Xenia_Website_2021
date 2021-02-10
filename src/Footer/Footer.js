@@ -4,8 +4,8 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const Footer = () => {
   return (
-    <MDBFooter color="unique-color-dark" className="page-footer font-small pt-0">
-      <div style={{ backgroundColor: "#000" }}>
+    <MDBFooter className="page-footer font-small pt-0">
+      {/* <div style={{ backgroundColor: "#000" }}>
         <MDBContainer fluid className="text-center text-md-left">
           <MDBRow className="py-4 d-flex align-items-center">
             <MDBCol md="6" lg="5" className="text-center text-md-left mb-4 mb-md-0">
@@ -26,24 +26,24 @@ const Footer = () => {
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-      </div>
+      </div> */}
       <MDBContainer className="mt-5 mb-4 text-center d-flex justify-content-between">
-        <MDBRow className="nav-col mt-3">
-          <MDBCol md="3" lg="4" className="mb-4">
+        <MDBRow className="nav-col mt-3 p-4">
+          <MDBCol md="3" lg="4" className="mb-4 p-3">
             <h6 className="text-center text-uppercase font-weight-bold">
               <strong>PCSB - Xenia</strong>
             </h6>
-            <hr className="#82b1ff blue accent-1 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
+            <hr className="#ffffff white mb-4 mt-0 d-inline-block mx-auto" style={{ width: "80px" }} />
             <p className="nav-content">
               About our Xenia event. Lorem ipsum dolor sit amet, consectetur adipisicing
               elit.
             </p>
           </MDBCol>
-          <MDBCol md="2" lg="2" xl="2" className="mb-4">
+          <MDBCol md="2" lg="2" xl="2" className="mb-4 p-3">
             <h6 className="text-uppercase font-weight-bold">
               <strong>Events</strong>
             </h6>
-            <hr className="#82b1ff blue accent-1 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
+            <hr className="#ffffff white mb-4 mt-0 d-inline-block mx-auto" style={{ width: "50px" }} />
             <p className="nav-content">
               <a href="#!">Technical</a>
             </p>
@@ -51,11 +51,11 @@ const Footer = () => {
               <a href="#!">Non-Technical</a>
             </p>
           </MDBCol>
-          <MDBCol md="3" lg="2" xl="2" className="mb-4">
+          <MDBCol md="3" lg="2" xl="2" className="mb-4 p-3">
             <h6 className="text-uppercase font-weight-bold">
               <strong>Useful links</strong>
             </h6>
-            <hr className="#82b1ff blue accent-1 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
+            <hr className="#ffffff white mb-4 mt-0 d-inline-block mx-auto" style={{ width: "80px" }} />
             <p className="nav-content">
               <a href="#!">Your Account</a>
             </p>
@@ -66,11 +66,11 @@ const Footer = () => {
               <a href="#!">Help</a>
             </p>
           </MDBCol>
-          <MDBCol md="4" lg="3" xl="3" className="mb-4">
+          <MDBCol md="4" lg="3" xl="3" className="mb-4 p-3">
             <h6 className="text-uppercase font-weight-bold">
               <strong>Contact</strong>
             </h6>
-            <hr className="#82b1ff blue accent-1 mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
+            <hr className="#ffffff white mb-4 mt-0 d-inline-block mx-auto" style={{ width: "60px" }} />
             <p className="nav-content">
               <i className="fa fa-home mr-3" /> Dhanakawadi, Katraj, Pune
             </p>

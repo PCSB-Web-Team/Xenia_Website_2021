@@ -37,8 +37,8 @@ class App extends React.Component {
         {this.state.view === "home" ? (
           <div>
             <LandingPage />
-            <Registrations />
             <Domains />
+            <Registrations />
             <Sponsors />
           </div>
         ) : null}

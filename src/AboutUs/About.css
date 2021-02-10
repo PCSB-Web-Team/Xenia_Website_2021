@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 .about-us {
   margin: 0;
   padding: 0;
@@ -22,25 +24,39 @@
     #4a00e0,
     #8e2de2
   );  */
-  background: #ffffff;
 
   height: 95vh;
   overflow-x: hidden;
   overflow-y: hidden;
 }
+.content h1 {
+  font-family: "Major Mono Display" !important;
+}
 .content {
-  margin-top: 200px;
-  color: black;
+  margin-top: 50px;
+
+  color: #fff;
   text-align: center;
   font-family: monospace;
 }
-.content h1 {
+.content .firstChild {
+  font-size: 90px;
+}
+.content p {
+  font-family: "Poppins", sans-serif;
+  font-size: 19px;
 }
 
 .about-us h1 {
   font-size: 50px;
 
   font-family: "Lexend Mega", sans-serif;
+}
+
+.about-us h3,
+p {
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .events {
@@ -52,15 +68,15 @@
 .events .typewriter-text1 {
   animation-name: typewriter1;
 
-  color: #131313;
-  text-shadow: 0 0 2px #ffffff, 0 0 10px #ffffff, 0 0 20px #0ba9ca,
+  color: #fff;
+  text-shadow: 0 0 2px #aaa0a0, 0 0 10px #ffffff, 0 0 20px #0ba9ca,
     0 0 30px #0ba9ca, 0 0 40px #0ba9ca, 0 0 50px #0ba9ca;
 }
 
 .events .typewriter-text2 {
   animation-name: typewriter2;
 
-  color: #131313;
+  color: #fff;
   text-shadow: 0 0 2px #ffffff, 0 0 10px #ffffff, 0 0 20px #0ba9ca,
     0 0 30px #0ba9ca, 0 0 40px #0ba9ca, 0 0 50px #0ba9ca;
 }
@@ -94,7 +110,7 @@
   }
   10%,
   40% {
-    width: 9em;
+    width: 10em;
   }
 }
 
@@ -118,5 +134,72 @@
   }
   50% {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 676px) {
+  .content h1 {
+    font-family: "Major Mono Display";
+    font-size: 50px;
+  }
+  /* .content {
+    margin-top: 50px;
+  
+    color: #fff;
+    text-align: center;
+    font-family: monospace;
+  } */
+  .content .firstChild {
+    font-size: 70px;
+  }
+  .content p {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .content h1 {
+    font-family: "Major Mono Display";
+    font-size: 40px;
+  }
+  .content {
+    margin-top: 30px;
+    /*   
+    color: #fff;
+    text-align: center;
+    font-family: monospace; */
+  }
+  .content .firstChild {
+    font-size: 70px;
+  }
+  .content p {
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+  }
+
+  @keyframes typewriter1 {
+    0%,
+    50%,
+    100% {
+      width: 0;
+    }
+    10%,
+    40% {
+      width: 9em;
+    }
+  }
+
+  @keyframes typewriter2 {
+    0%,
+    50%,
+    100% {
+      width: 0;
+    }
+
+    60%,
+    90% {
+      width: 9em;
+    }
   }
 }
