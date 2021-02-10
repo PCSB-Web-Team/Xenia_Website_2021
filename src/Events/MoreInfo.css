@@ -1,4 +1,12 @@
-.jumbotron{
+.MoreInfo{
+    background: none;
+}
+.MoreInfo .type1{
+    background: none;
+    background-color: rgba(9, 54, 95, 0.699);
+}
+.MoreInfo .type1 .jumbotron{
+    background: none;
     min-height: 100vh;
 }
 
@@ -56,11 +64,14 @@
     outline: none;
 }
 
-.more-info .active{
-    color: black;
+.more-info, .active{
+    background-color: rgba( 0, 0, 0, 0.5);
+    color: white;
 }
 
-.tab-pane{
+
+
+.more-info.jumbotron .tab-pane{
     margin-top: 20px;
     min-height:100px;
     background: rgba(0, 0, 0, 0.2);
@@ -88,52 +99,55 @@
     width: 100%;
 }
 
-#e1.jumbotron{
-    background-color: rgba(0, 100, 200, 0.8);
-}
-#e2.jumbotron{
-    background-color: rgba(200, 0, 200, 0.8);
-}
-#e3.jumbotron{
-    background-color: rgba(0, 200, 0, 0.8);
-}
-#e4.jumbotron{
-    background-color: rgba(200, 200, 0, 0.8);
-}
-#e5.jumbotron{
-    background-color: rgba(0, 200, 200, 0.8);
-}
-#e6.jumbotron{
-    background-color: rgba(200, 0, 0, 0.8);
-}
-#e7.jumbotron{
-    background-color: rgba(240, 128, 128, 0.8);
-}
-#e8.jumbotron{
-    background-color: rgba(250, 120, 0, 0.8);
+
+.type2{
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
 }
 
-#ne1.jumbotron{
-    background-color: rgba(0, 200, 200, 0.8);
+.type2 .jumbotron{
+    font-weight: bold;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: radial-gradient(circle,rgba(15, 104, 131, 0.568),black);
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
 }
-#ne2.jumbotron{
-    background-color: rgba(200, 0, 0, 0.8);
+
+.MoreInfo .type2 .type2-nav{
+    
+    background: rgba( 0, 0, 0, 0.5);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+    
+    padding: 20px;
 }
-#ne3.jumbotron{
-    background-color: rgba(240, 128, 128, 0.8);
+
+.type2 .tab-pane{
+    padding: 5px;
+    min-height: 400px;
 }
-#ne4.jumbotron{
-    background-color: rgba(250, 120, 0, 0.8);
-}
-#ne5.jumbotron{
-    background-color: rgba(0, 100, 200, 0.8);
-}
-#ne6.jumbotron{
-    background-color: rgba(200, 0, 200, 0.8);
-}
-#ne7.jumbotron{
-    background-color: rgba(0, 200, 0, 0.8);
-}
-#ne8.jumbotron{
-    background-color: rgba(200, 200, 0, 0.8);
+
+@media (min-width: 700px){
+    .type1{
+        display: none;
+    }
+
+    .type2{
+        display: block;
+    }
+
+    .more-info.jumbotron .logo{
+        margin-block: 50px;
+        width: 50%;
+    }
 }

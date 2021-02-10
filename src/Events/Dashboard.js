@@ -82,7 +82,6 @@ class Events extends React.Component {
 
   return (
     <div className="dashboard">
-      <div>
       { 
         this.state.view==='cards' 
         ?         
@@ -97,7 +96,6 @@ class Events extends React.Component {
         :
         <MoreInfo close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />
       }
-      </div>
     </div>
   );
   

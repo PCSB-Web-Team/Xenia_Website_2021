@@ -13,7 +13,7 @@ class LandingPage extends Component{
             <div className='container'> 
             <h1 id='xenia'>XENIA</h1>
             <span>14-16 March</span>
-            <Video/>
+            <div className='video-container'><Video/></div>
 
             <div className='circleContainer'>
                 <div className='circle'></div>

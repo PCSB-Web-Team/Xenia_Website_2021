@@ -29,15 +29,15 @@ background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/bl
 
   .tabs .active-tab {
     transition: ease 500ms;
-    color: greenyellow;
-    border: 3px solid rgb(0, 255, 55);
+    color: rgb(0, 255, 213);
+    border: 2px solid rgb(22, 220, 235);
   }
 
   .tabs button{
     margin-inline: 2%;
     transition: ease 500ms;
     min-width: 200px;
-    color: white;
+    color: rgb(119, 119, 119);
     font-size: 1.5em;
     background: none;
     outline: none;
@@ -47,10 +47,13 @@ background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/bl
     border: 1px solid green;
   }
 
-  .tabs button:hover{
-    color: black;
-    background-color: rgb(7, 255, 7);
+  .tabs button:focus{
+    outline: none;
+  }
 
+  .tabs button:hover{
+    color: aqua;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 255, 255, 0.9);
   }
 
   @media (max-width: 600){
