@@ -7,7 +7,7 @@ const sponsors = props=>{
     return (
     <div>
         <h5 className='sponsorTitle' style={{textAlign:'center',fontFamily:'planetn'}}>Our Proud Sponsors</h5>
-        <Carousel interval={2000}>
+        <Carousel interval={2000} className="sponsorContainer">
         <Carousel.Item className='sponsor'>
             <img
             src={Logo}

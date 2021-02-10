@@ -4,7 +4,7 @@ import * as RBS from "react-bootstrap";
 
 function Navbar(props) {
     return (
-        <div className="NavBar">         
+        <div className="NavBar" id="navBar">         
           
           {/* <input type="checkbox" id="check" />
           <label className="nav-label" for="check">

@@ -12,6 +12,7 @@ import BG from './bg1.jpg';
 import LightSpeed from "react-reveal/LightSpeed";
 import Domains from '../src/Home/Domains/Domains';
 import Sponsors from '../src/Home/Sponsors/Sponsors';
+import BacktoTop from '../src/BackToTop/BacktoTop'
 // import Contact from './Contact/Contact';
 
 class App extends React.Component {
@@ -44,6 +45,7 @@ class App extends React.Component {
         {this.state.view === "events" ? <Cards /> : null}
         {this.state.view === "aboutus" ? <AboutUs /> : null}
         {this.state.view === "contact" ? <Contact/> : null}
+        <BacktoTop />
         <Footer />
       </div>
     );
