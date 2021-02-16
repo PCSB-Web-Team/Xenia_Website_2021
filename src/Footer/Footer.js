@@ -1,9 +1,13 @@
 import React from "react";
 import './Footer.css'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import BacktoTop from './BackToTop/BacktoTop';
 
 const Footer = () => {
   return (
+    <div>
+      <BacktoTop></BacktoTop>
+
     <MDBFooter className="page-footer font-small pt-0">
       {/* <div style={{ backgroundColor: "#000" }}>
         <MDBContainer fluid className="text-center text-md-left">
@@ -89,6 +93,8 @@ const Footer = () => {
         </MDBContainer>
       </div>
     </MDBFooter>
+    
+    </div>
   );
 }
 

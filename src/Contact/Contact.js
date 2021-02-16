@@ -1,6 +1,8 @@
 import React from "react";
 import "./Contact.css";
 import { motion } from "framer-motion";
+import FAQ from "./FAQ/FAQ";
+
 const Contact = () => {
   const fadeTop = {
     hidden: { opacity: 0, y: -150 },
@@ -70,6 +72,9 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      <FAQ/>
+
     </div>
   );
 };

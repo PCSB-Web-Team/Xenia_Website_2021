@@ -7,7 +7,8 @@ import about from "./hero.jpg";
 import data from "./datamastro.jpg";
 import code from "./sudocode.jpg";
 import { motion } from "framer-motion";
-import FAQ from "./FAQ";
+import Sponsors from './Sponsors/Sponsors';
+
 const About = () => {
   useEffect(() => {
     AOS.init({});
@@ -196,7 +197,7 @@ const About = () => {
           />
         </div>
       </div>
-      <FAQ />
+      <Sponsors />
     </div>
   );
 };

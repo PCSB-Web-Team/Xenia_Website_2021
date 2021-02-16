@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 export default function ImgMediaCard({props , readmore}) {
   const classes = useStyles();
   return (
-    <div className="event-card" id={props.id} onClick={readmore}>
+    <div className="event-card" onClick={readmore}>
       <Zoom><img src={props.logo}/></Zoom>
       <div className="card-body">
         <Slide left><h2 className='eve-card-name'>{props.name}</h2></Slide>

@@ -2,8 +2,9 @@
     background: none;
 }
 .MoreInfo .type1{
+    width: 50%;
     background: none;
-    background-color: rgba(9, 54, 95, 0.699);
+    background: radial-gradient(circle,rgba(15, 104, 131, 0.568),black);
 }
 .MoreInfo .type1 .jumbotron{
     background: none;
@@ -27,6 +28,11 @@
     100%{
         transform: scale(1);
     }
+}
+
+.more-info .name{
+    width: 100%;
+    font-size: 2em;
 }
 
 .more-info.jumbotron .logo{
@@ -79,8 +85,8 @@
 
 .back-container{
     overflow: hidden;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     margin-top: 20px;
     padding: 0px;
     margin-left: 50px;
@@ -136,9 +142,10 @@
     min-height: 400px;
 }
 
-@media (min-width: 700px){
-    .type1{
-        display: none;
+@media (max-width: 700px){
+    .MoreInfo .type1{
+        width: 100%;
+        display: block;
     }
 
     .type2{

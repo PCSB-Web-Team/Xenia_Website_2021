@@ -1,9 +1,3 @@
-.Xenia{
-    background: url('bg1.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-}
-
 .bg-div{
     z-index: -100;
     position: fixed;

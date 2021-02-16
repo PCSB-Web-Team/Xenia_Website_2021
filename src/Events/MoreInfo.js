@@ -13,7 +13,7 @@ class MoreInfo extends React.Component{
               <div className='type1'>
                 <div class="more-info jumbotron text-center py-2 px-5" id='e5'>
                   <img class='logo' src={this.props.details.logo}></img>
-                  <h1 class="display-4">{this.props.details.name}</h1>
+                  <h3 class="name">{this.props.details.name}</h3>
                   <span class> {this.props.details.date} </span>
                   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
 
@@ -38,11 +38,12 @@ class MoreInfo extends React.Component{
 
                     <a onClick={this.props.handleRegister} class="btn btn-lg bg-success" href="#" role="button">Register</a>
 
-                    <div class='back-container' onClick={this.props.close}><img src={back}/></div>
+                    <div class='back-container' onClick={this.props.close}><img src={back2}/></div>
 
                 </div>
                 </div>
 
+              {/*
                 <div className='type2'>
                   <div class="more-info jumbotron text-center py-2 px-5" id='e5'>
                     
@@ -56,6 +57,7 @@ class MoreInfo extends React.Component{
                     <hr></hr>
                   </div>
 
+                  
                   <Slide right>
                   <div className='type2-nav'>
                     <ul class="nav nav-tabs justify-content-center border-dark" id="myTab" role="tablist">
@@ -79,6 +81,7 @@ class MoreInfo extends React.Component{
                     </div>
                   </Slide>
                 </div>
+                */}
             
             </div>
         )

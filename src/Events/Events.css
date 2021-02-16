@@ -1,0 +1,63 @@
+
+.sample{
+background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/black-background-4.jpg?fit=1920%2C1080);
+}
+
+.dashboard{
+    vertical-align: center;
+    overflow: hidden;
+    padding: 5px;
+    background: none;
+    position: relative;
+    width: 100%;
+    height: max-content;
+    margin: auto;
+  }
+  
+  .tabs{
+    z-index: -2;
+
+    top: 10px;
+    padding: 5px;
+    
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    background: none;
+  }
+
+  .tabs .active-tab {
+    transition: ease 500ms;
+    color: rgb(0, 255, 213);
+    border: 2px solid rgb(22, 220, 235);
+  }
+
+  .tabs button{
+    margin-inline: 2%;
+    transition: ease 500ms;
+    min-width: 200px;
+    color: rgb(119, 119, 119);
+    font-size: 1.5em;
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    width: 25%;
+    border: 1px solid green;
+  }
+
+  .tabs button:focus{
+    outline: none;
+  }
+
+  .tabs button:hover{
+    color: aqua;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 255, 255, 0.9);
+  }
+
+  @media (max-width: 600){
+    .tabs button{
+      width: 100%
+    }
+  }

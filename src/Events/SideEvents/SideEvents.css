@@ -1,0 +1,21 @@
+.heading{
+    margin-top: 2vw;
+    color: white;
+}
+
+.side-events{
+    position: relative;
+    width: 100%;
+    padding-inline: 1vw;
+    text-align: center
+}
+
+.side-events .se{
+    color: seashell;
+    min-width: 400px;
+    margin: 10px;
+    min-height: 500px;
+    display: inline-block;
+    width: 20%;
+}
+
