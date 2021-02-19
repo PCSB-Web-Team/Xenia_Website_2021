@@ -64,7 +64,7 @@ class App extends React.Component {
         />
         
         {this.state.view === "home"     ? ( <div> <LandingPage /> {/*<Registrations />*/} </div> ) : null}
-        {this.state.view === "events"   ?   <Cards />  : null }
+        {this.state.view === "events"   ?   <Cards logedin={this.state.logedin} />  : null }
         {this.state.view === "aboutus"  ?  <AboutUs /> : null }
         {this.state.view === "contact"  ?  <Contact/>  : null }
         {this.state.view !== 'home'     ?  <Footer />  : null }

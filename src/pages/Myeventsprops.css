@@ -1,0 +1,10 @@
+.myevents {
+  width: 100%;
+  background-color: rgb(163, 163, 186);
+  height: 100vh;
+}
+.myEventsPage {
+  width: 800px;
+  height: 130px;
+  background-color: rgb(238, 253, 214);
+}

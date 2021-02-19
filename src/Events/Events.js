@@ -97,7 +97,7 @@ class Events extends React.Component {
           <SideEvents/>
         </div>
         :
-        <MoreInfo close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />
+        <MoreInfo logedin={this.props.logedin} close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />
       }
       {console.log(tech[0],techCards)}
     </div>

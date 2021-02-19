@@ -1,0 +1,14 @@
+.myprofile {
+  width: 100%;
+  background-color: rgb(163, 163, 186);
+  height: 100vh;
+}
+.myProfilePage {
+  width: 800px;
+  height: 60vh;
+  background-color: rgb(238, 253, 214);
+}
+.myProfilecontent {
+  display: flex;
+  justify-content: center;
+}
