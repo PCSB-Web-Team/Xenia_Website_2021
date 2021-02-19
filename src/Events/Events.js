@@ -29,6 +29,8 @@ let NTE8= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', 
 let tech= [TE1,TE2,TE3,TE4,TE5,TE6,TE7,TE8];
 let nonTech= [NTE1,NTE2,NTE3,NTE4,NTE5,NTE6,NTE7,NTE8] ;  
 
+let cart=tech.map(eve=> { return(<h1 className='event'>eve.name</h1>) })
+
 class Events extends React.Component {
 
 

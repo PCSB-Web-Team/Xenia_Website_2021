@@ -10,7 +10,6 @@ import layer3 from './layer3.jpg';
 
 class LandingPage extends Component{
 
-
     handleMove=(e)=>{
         const box = document.querySelector('.astranout');
     
