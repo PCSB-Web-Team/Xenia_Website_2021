@@ -1,12 +1,16 @@
 .contact .container {
-  max-width: 50%;
+  /* max-width: 50%; */
   background: rgba(0, 0, 0, 0.5);
+  margin-top: 35px;
 }
-.contact .contact h3 {
+
+.contact h3 {
   color: #fff;
   text-align: center;
 }
-
+.contact .fas {
+  font-size: 15px;
+}
 .contact input {
   background: rgba(255, 255, 255, 0.8);
 }
@@ -19,8 +23,8 @@
 .contact .btn:hover {
   transform: scale(1.02);
 }
-@media only screen and (max-width: 100px) {
-  .contact .container {
+@media only screen and (max-width: 720px) {
+  .container {
     max-width: 100%;
   }
   .contact {

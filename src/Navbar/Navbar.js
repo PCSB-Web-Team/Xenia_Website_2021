@@ -49,7 +49,7 @@ class Navbar extends React.Component {
           {!this.props.login ? <div className="nav-tabs" onClick={this.props.handleLogin}  id='contact' href="#Contact-us">Login</div> : null}
           {!this.props.login ? <div className="nav-tabs" onClick={this.props.handleSignUp} id='contact' href="#Contact-us">Sign Up</div> : null }
           
-          {this.props.login  ? <div className="nav-tabs"  id='contact' href="#Contact-us">Profile</div> : null }
+          {this.props.login  ? <div className={this.props.activeTab==='profile'  ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab} id='profile' href="#Contact-us">Profile</div> : null }
           {this.props.login  ? <div className="nav-tabs" onClick={this.props.handleLogout}  id='contact' href="#Contact-us">Logout</div> : null }
         </div>
 
@@ -68,7 +68,7 @@ class Navbar extends React.Component {
           {!this.props.login ?  <div className="nav-tabs" onClick={this.props.handleLogin}  id='contact' href="#Contact-us">Login</div> : null}
           {!this.props.login ? <div className="nav-tabs"  onClick={this.props.handleSignUp} id='contact' href="#Contact-us">Sign Up</div> : null }
           
-          {this.props.login  ? <div className="nav-tabs"  id='contact' href="#Contact-us">Profile</div> : null }
+          {this.props.login  ? <div className={this.props.activeTab==='profile'  ? "nav-tabs active-nav" : "nav-tabs"}  onClick={this.props.changeTab} id='profile' href="#Contact-us">Profile</div> : null }
           {this.props.login  ? <div className="nav-tabs"  onClick={this.props.handleLogout}  id='contact' href="#Contact-us">Logout</div> : null }
         
         </div>

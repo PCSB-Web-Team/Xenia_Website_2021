@@ -10,6 +10,7 @@ import AboutUs from "./AboutUs/About";
 import Contact from "./Contact/Contact";
 import BG from './bg1.jpg';
 import Store from './Store/Store';
+import Dashboard from './Dashboard/DashboardMain'
 import LightSpeed from "react-reveal/LightSpeed";
 import Domains from './Domains/Domains';
 import Planet from './LandingPage2/plane';
@@ -67,7 +68,9 @@ class App extends React.Component {
         {this.state.view === "events"   ?   <Cards logedin={this.state.logedin} />  : null }
         {this.state.view === "aboutus"  ?  <AboutUs /> : null }
         {this.state.view === "contact"  ?  <Contact/>  : null }
+        {this.state.view === 'profile' ? <Dashboard></Dashboard> : null}
         {this.state.view !== 'home'     ?  <Footer />  : null }
+        
         
         <LoginPage 
           openLogin = {this.state.popLogin} 
