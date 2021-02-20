@@ -27,21 +27,20 @@ export default class Login extends Component {
     axios
       .post("http://localhost:5000/api/login", { username, password })
       .then((res) => {
-        
-        let k=res.data.data;
+        let k = res.data.data;
 
-        if(res.data.status==='ok'){
-
+        if (res.data.status === "ok") {
           Store.dispatch({
-              type: 'logedin',
-              payload: k
-            })
+            type: "logedin",
+            payload: k,
+          });
 
-            {this.props.handleLogedin()}
+          {
+            this.props.handleLogedin();
           }
+        }
       })
       .catch((err) => console.log(err.message));
-
   };
 
   render() {
@@ -60,7 +59,7 @@ export default class Login extends Component {
                       <i className="fa fa-user"></i>
                     </div>
                   </div>
-                  {console.log('Login Form Opened')}
+                  {console.log("Login Form Opened")}
                   <input
                     className="form-control"
                     placeholder="username"
