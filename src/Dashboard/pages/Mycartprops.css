@@ -10,13 +10,14 @@
 
 .mycart {
   width: 100%;
-  background-color: rgb(163, 163, 186);
+  background-color: rgba(0, 0, 0,0);
   height: 100vh;
+  flex-flow: column;
 }
 .myCartPage {
-  width: 800px;
+  width: 55vw;
   height: 130px;
-  background-color: rgb(238, 253, 214);
+  background-color: rgba(0, 0, 0,0.4);
 }
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 

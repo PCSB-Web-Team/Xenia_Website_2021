@@ -118,6 +118,7 @@ const Contact = () => {
                 borderRadius: "12px",
                 boxShadow: "2px 2px 15px #131313",
                 opacity: 1,
+                background: '#0000'
               }}
             >
               <h4 className="text-center font-weight-bold">Social</h4>

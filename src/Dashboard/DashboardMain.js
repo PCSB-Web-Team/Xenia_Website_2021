@@ -10,7 +10,6 @@ function DashboardMain() {
     <div>
       {console.log("Dashboard View")}
       <Router>
-        <Navbar />
         <Switch>
           
           <Route path="/myprofile" exact component={Myprofile} />

@@ -51,7 +51,7 @@
   font-size: 0.8em;
 }
 
-.card-body span{
+.card-div .card-body span{
   display: none;
   height: fit-content;
   font-size: 0.6em;
@@ -73,7 +73,7 @@
   }
 }
 
-.card-body{
+.card-div .card-body{
   background: rgba(0, 0, 0,.5);
   
   transition: ease;

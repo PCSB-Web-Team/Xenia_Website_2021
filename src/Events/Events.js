@@ -7,27 +7,10 @@ import Card from './Card';
 import SideEvents from './SideEvents/SideEvents';
 import Slide from 'react-reveal/Slide';
 import Zoom from 'react-reveal/Zoom';
+import * as allEvents from '../AllEvents';
 
-let TE1= {name: 'CodeStrike', logo: reactLogo, Fees: '', Slot: '', Contact: '', group: 'tech', id: 1, date: '00/00/00'};
-let TE2= {name: 'NinjaCoding', logo: reactLogo, Fees: '', Slot: '', Contact: '', group: 'tech', id: 2, date: '00/00/00'};
-let TE3= {name: 'Design Maestro', logo: reactLogo, Fees: '', Slot: '', Contact: '', group: 'tech', id: 3, date: '00/00/00'};
-let TE4= {name: 'MineCraft Battles', logo: reactLogo, Fees: '', Slot: '', Contact: '', group: 'tech', id: 4, date: '00/00/00'};
-let TE5= {name: 'Circuit Creation', logo: reactLogo, Fees: '', Slot: '', Contact: '', group: 'tech', id: 5, date: '00/00/00'};
-let TE6= {name: 'Project Presentation', logo: reactLogo, Fees: '', Slot: '', Contact: '', group: 'tech', id: 6, date: '00/00/00'};
-let TE7= {name: 'Data Cup', logo: reactLogo, Fees: '', Slot: '', Contact: '', group: 'tech', id: 7, date: '00/00/00'};
-let TE8= {name: 'Automation Bots', logo: reactLogo, Fees: '', Slot: '', Contact: '', group: 'tech', id: 8, date: '00/00/00'};
-
-let NTE1= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', group: 'nonTech', id: 1, date: '00/00/00'};
-let NTE2= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', group: 'nonTech', id: 2, date: '00/00/00'};
-let NTE3= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', group: 'nonTech', id: 3, date: '00/00/00'};
-let NTE4= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', group: 'nonTech', id: 4, date: '00/00/00'};
-let NTE5= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', group: 'nonTech', id: 5, date: '00/00/00'};
-let NTE6= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', group: 'nonTech', id: 6, date: '00/00/00'};
-let NTE7= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', group: 'nonTech', id: 7, date: '00/00/00'};
-let NTE8= {name: 'Event Name', logo: reactLogo, Fees: 'Event Registration Fee', Slot: '', Contact: 'Contact Details', group: 'nonTech', id: 8, date: '00/00/00'};
-
-let tech= [TE1,TE2,TE3,TE4,TE5,TE6,TE7,TE8];
-let nonTech= [NTE1,NTE2,NTE3,NTE4,NTE5,NTE6,NTE7,NTE8] ;  
+let tech=allEvents.tech;
+let nonTech=allEvents.nonTech;
 
 let cart=tech.map(eve=> { return(<h1 className='event'>eve.name</h1>) })
 

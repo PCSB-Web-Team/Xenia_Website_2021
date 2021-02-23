@@ -3,9 +3,9 @@
   src: url("./nasalization.ttf");
 }
 
-.landing-page{
+.landing-page {
   z-index: -100;
-  background: linear-gradient(rgb(0, 0, 0),rgb(0, 174, 255) 200%);
+  background: linear-gradient(rgb(0, 0, 0), rgb(0, 174, 255) 200%);
   position: absolute;
   top: 0px;
   left: 0px;
@@ -14,31 +14,23 @@
   overflow: hidden;
 }
 
-.layer3{
+.layer3 {
   z-index: 97;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 800px;
   top: 0px;
   right: 0px;
+  transition: ease 500ms;
 }
 
-.layer3 img{
+.layer3 img {
   opacity: 1;
   width: 140%;
   height: 130%;
 }
 
-@media (max-width: 1300px){
-  .layer3{
-    width: 1300px;
-    height: 100%;
-    top: 0px;
-    right: 0px;
-  }
-}
-
-.landing-page .bg{
+.landing-page .bg {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -46,7 +38,7 @@
   left: 0px;
 }
 
-.landing-page .bg img{
+.landing-page .bg img {
   width: 100%;
   height: 150vw;
   transform: scale(1.5);
@@ -56,16 +48,16 @@
   animation-iteration-count: infinite;
 }
 
-@keyframes rot{
-  0%{
+@keyframes rot {
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
 
-.mars{
+.mars {
   z-index: 99;
   position: absolute;
   height: 200px;
@@ -73,7 +65,7 @@
   text-align: center;
 }
 
-.mars img{
+.mars img {
   position: absolute;
   top: 25%;
   left: 25%;
@@ -81,36 +73,36 @@
   height: 300%;
 }
 
-.lake{
+.lake {
+  background: linear-gradient(rgba(133, 9, 9, 0),rgba(255, 116, 2, 0.377));
   transition: 200ms ease;
   z-index: 99;
   height: 100vh;
-  width: 120%;
+  width: 100vw;
   position: absolute;
-  left: 0px;
-  bottom: -10px;
+  right: -10px;
+  bottom: -5px;
 }
 
-.lake img{
+.lake img {
   position: absolute;
-  height: 70%;
+  height: 150%;
   width: 100%;
   bottom: 0px;
   left: 0px;
 }
 
-.astranout{
-  
+.astranout {
   transition: 200ms ease;
   z-index: 100;
   position: absolute;
   height: 100vh;
   width: 1500px;
-  left: 0px;
-  bottom: 0px;
+  left: -20px;
+  bottom: -35px;
 }
 
-.astranout img{
+.astranout img {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -118,20 +110,19 @@
   width: 100%;
 }
 
-.SpaceShip{
+.SpaceShip {
   z-index: 100;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 400px;
 }
 
-.SpaceShip img{
+.SpaceShip img {
   z-index: 100;
   position: absolute;
   top: 200px;
-  height: 200px;
-  width: 500px;
+  height: 150px;
+  width: 200px;
 
-  
   transform: rotate(90deg);
 
   animation-name: shuttle;
@@ -139,53 +130,51 @@
   animation-iteration-count: infinite;
 }
 
-@keyframes shuttle{
-  0%{
+@keyframes shuttle {
+  0% {
     transition: ease-in;
     transform: scale(0.5);
     right: -100px;
   }
-  25%{
+  25% {
     transform: scale(1);
-    right: 200px;
+    right: 120px;
   }
-  40%{
+  40% {
     top: 300px;
-    right: 200px;
+    right: 120px;
     transform: scale(1);
   }
-  60%{
-    top: 600px;
-    right: 180px;
-    transform: scale(0.5)
+  60% {
+    top: 650px;
+    right: 100px;
+    transform: scale(0.5);
   }
-  80%{  
-    top: 600px;
-    right: 180px;
-    transform: scale(0.5)   
+  80% {
+    top: 650px;
+    right: 100px;
+    transform: scale(0.5);
   }
-  100%{
+  100% {
     top: -100px;
     right: 240px;
     transform: scale(0);
   }
-
 }
 
-
-@font-face{
-  font-family: 'planetns';
-  src: url('./Planetnsv2.ttf');
+@font-face {
+  font-family: "planetns";
+  src: url("./Planetnsv2.ttf");
 }
 
-.landing-page .landing-container{
+.landing-page .landing-container {
   width: 100%;
   height: 100%;
   position: relative;
   text-align: center;
 }
 
-.landing-page #xenia{
+.landing-page #xenia {
   z-index: +100;
   width: 100vw;
   position: absolute;
@@ -195,12 +184,14 @@
 .landing-page h1#xenia {
   font-family: "planetns";
   color: white;
-  font-size: 8vw;
+  font-size: 9vw;
   margin-top: 0;
   margin-bottom: 0;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #06e8f8, 0 0 20px #06e8f8,
     0 0 25px #06e8f8, 0 0 30px #06e8f8, 0 0 35px #06e8f8;
   animation: animate 2000ms alternate infinite;
+  letter-spacing: 70px;
+  transition: ease 5ms;
 }
 
 @keyframes animate {
@@ -219,11 +210,60 @@
   color: white;
   margin-bottom: 0;
   position: absolute;
-  top: 45%;
-  left: 50%;
+  top: 46%;
+  left: 63%;
 }
 
+@media (max-width: 1300px) {
+  .landing-page .landing-container span {
+    top: 43%;
+    left: 63%;
+    transition: ease 500ms;
+  }
+  .layer3 {
+    right: -20px;
+    top: 0px;
+    width: 1300px;
+    height: 800px;
+    transition: ease 2s;
+  }
+}
 
+@media (max-width: 1120px) {
+  .landing-page .landing-container span {
+    top: 41%;
+    left: 62%;
+    transition: ease 1s;
+  }
+  .layer3 {
+    right: -200px;
+    top: 0px;
+    width: 1300px;
+    height: 800px;
+    transition: ease 2s;
+  }
+}
+
+@media (max-width: 880px) {
+  .landing-page h1#xenia {
+    font-size: 80px;
+    letter-spacing: 25px;
+    
+  transition: ease 5ms;
+  }
+  .landing-page .landing-container span {
+    top: 38%;
+    left: 55%;
+    transition: ease 1s;
+  }
+  .layer3 {
+    right: -300px;
+    top: 0px;
+    width: 1300px;
+    height: 800px;
+    transition: ease 2s;
+  }
+}
 
 .circleContainer {
   position: absolute;
@@ -6313,8 +6353,6 @@
   to {
     opacity: 1;
   }
-
-  
 }
 @keyframes message-frames {
   from {
@@ -6325,14 +6363,12 @@
   }
 }
 
-
-
-.landing-page .date{
-    font-family: 'planetn';
-    font-size: 3vw;
-    color: white;
-    margin-bottom: 0;
-  }
+.landing-page .date {
+  font-family: "planetn";
+  font-size: 3vw;
+  color: white;
+  margin-bottom: 0;
+}
 
 @font-face {
   font-family: "planetns";

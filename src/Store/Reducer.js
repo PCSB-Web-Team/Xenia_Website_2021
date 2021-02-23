@@ -9,7 +9,7 @@ export default function (state=defaultState,action){
             return {
                 ...state,
                 login: false,
-                userDate: action.payload
+                userData: action.payload
             }
 
         case(actions.logged_out):
@@ -18,12 +18,12 @@ export default function (state=defaultState,action){
         case(actions.cart_added):
             return {
                 ...state,
-                cart: [...state.cart, action.event]
+                cart: [...state.cart, action.payload.event]
             }
-
         default:
             return {
                 ...state
             }    
+            
     }
 }

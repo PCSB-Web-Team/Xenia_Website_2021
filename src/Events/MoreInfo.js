@@ -7,6 +7,7 @@ import { Zoom } from "@material-ui/core";
 import Zzoom from "react-reveal/Zoom";
 import Store from "../Store/Store";
 import axios from "axios";
+import {tech,nonTech, EN1} from '../AllEvents';
 
 class MoreInfo extends React.Component {
   constructor(props) {
@@ -14,25 +15,49 @@ class MoreInfo extends React.Component {
 
     this.state = {
       addToCart: Store.getState().login,
-      user: Store.getState().userDate,
+      user: Store.getState().userData
     };
   }
 
   handleAddToCart = () => {
+    console.log(Store.getState())
     const { details } = this.props;
     const event = details.name;
-    const token = this.state.user.token;
+    const token = Store.getState().userData.token;
     console.log(event, token);
-    // axios
-    //   .post("http://localhost:5000/addToCart", { token, event })
-    //   .then((res) => console.log(res.data));
+
+    Store.dispatch({
+      type: 'addtocart',
+      payload: {
+        event: event
+      }
+    })
+
+    console.log(Store.getState());
+
+    axios
+    .post("http://localhost:5000/addToCart", { token, event })
+    .then((res) => console.log(res.data));
+  
   };
 
   render() {
-    console.log(this.props);
+
+    let e1,e2;
+
+    if(this.props.details.group==='tech'){
+      e1=tech[(this.props.details.No+1)%8]
+      e2=tech[(this.props.details.No+2)%8]
+    }
+    else{
+      e1=nonTech[(this.props.details.No+1)%8]
+      e2=nonTech[(this.props.details.No+2)%8]
+    }
+
     return (
       <div className="MoreInfo">
-        <div className="type1">
+
+        <div className="info1">
           <div class="more-info jumbotron text-center py-2 px-5" id="e5">
             <img class="logo" src={this.props.details.logo}></img>
             <h3 class="name">{this.props.details.name}</h3>
@@ -128,6 +153,24 @@ class MoreInfo extends React.Component {
             </div>
           </div>
         </div>
+
+        <div className='suggestion'>
+          <div class="card">
+            <img class="card-img-top" src={e1.logo} alt="Card image cap"/>
+            <div class="card-body">
+              <h3>{e1.name}</h3>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src={e2.logo} alt="Card image cap"/>
+            <div class="card-body">
+              <h3>{e2.name}</h3>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </div>
+
         {/*
               <div className='type2'>
                 <div class="more-info jumbotron text-center py-2 px-5" id='e5'>

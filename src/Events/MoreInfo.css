@@ -1,12 +1,14 @@
 .MoreInfo{
     background: none;
 }
-.MoreInfo .type1{
+.MoreInfo .info1{
     width: 50%;
+    display: inline-block;
     background: none;
     background: radial-gradient(circle,rgba(15, 104, 131, 0.568),black);
+    margin: 0px;
 }
-.MoreInfo .type1 .jumbotron{
+.MoreInfo .info1 .jumbotron{
     background: none;
     min-height: 100vh;
 }
@@ -106,6 +108,40 @@
 }
 
 
+
+
+.MoreInfo .suggestion{
+    margin: 0px;
+    top: 0px;
+    display: inline-block;
+    position: absolute;
+    width: 50%;
+    padding-inline: 5vh;
+    text-align: center;
+}
+
+.suggestion .card{
+    background: black;
+    width: 75%;
+    height: 45vh;
+    margin-block: 5vh;
+    margin-inline: 12.5%;
+}
+
+.suggestion .card img{
+    width: 100%;
+    height: 50%;
+}
+.suggestion h3{
+    color: white;
+}
+
+
+
+
+
+
+
 .type2{
     display: none;
     width: 100%;
@@ -127,7 +163,7 @@
 
 .MoreInfo .type2 .type2-nav{
     
-    background: rgba( 0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.425);
     position: absolute;
     right: 0px;
     top: 0px;
@@ -135,6 +171,7 @@
     width: 50%;
     display: inline-block;
     padding: 20px;
+    
 }
 
 .type2 .tab-pane{
@@ -143,7 +180,13 @@
 }
 
 @media (max-width: 700px){
-    .MoreInfo .type1{
+
+    .MoreInfo .suggestion{
+        position: relative;
+        width: 100%;
+    }
+
+    .MoreInfo .info1{
         width: 100%;
         display: block;
     }

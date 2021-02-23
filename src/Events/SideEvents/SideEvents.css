@@ -1,21 +1,42 @@
-.heading{
+.side-events .heading {
     margin-top: 2vw;
     color: white;
 }
 
-.side-events{
-    position: relative;
+.side-events .bg{
+    display: none;
+    z-index: -1;
+    position: absolute;
     width: 100%;
-    padding-inline: 1vw;
-    text-align: center
+    height: 100%;
+    top: 0px;
+    right: 0px;
 }
 
-.side-events .se{
+.side-events {
+    background: radial-gradient(rgba(0, 0, 0, 0),black 80%);
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-inline: 1vw;
+    text-align: center;
+}
+
+.side-events .se {
+    padding: 10px;
+    overflow: hidden;
+    text-align: center;
     color: seashell;
     min-width: 400px;
     margin: 10px;
     min-height: 500px;
     display: inline-block;
-    width: 20%;
+    width: 30%;
+    
+    background-size: contain;
+}
+
+.se .se-bg{
+    display: none;
 }
 

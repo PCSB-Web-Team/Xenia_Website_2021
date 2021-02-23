@@ -10,13 +10,14 @@ import layer3 from './layer3.jpg';
 
 class LandingPage extends Component{
 
+
     handleMove=(e)=>{
         const box = document.querySelector('.astranout');
     
         let x= e.pageX;
         let y=e.pageY;
-        let transX = -(e.target.offsetWidth*0.005 - x * 0.005);
-        let transY = -(e.target.offsetHeight*0.005 - y * 0.05);
+        let transX = (e.target.offsetWidth*0.005 - x * 0.05);
+        let transY = (e.target.offsetHeight*0.005 - y * 0.05);
         box.style.transform = `translateX(${transX}px) translateY(${transY}px)`;
         
         const mountain = document.querySelector('.lake');
@@ -39,7 +40,8 @@ class LandingPage extends Component{
             
             
                     <h1 id='xenia'>XENIA</h1>
-                    <span id='date'>14-16 March</span>
+                    <span id='date'>14 - 16 March</span>
+            
                 
                     <div className='bg'><img src={bg}></img></div>
                     <div className='layer3'><img src={layer3}></img></div>

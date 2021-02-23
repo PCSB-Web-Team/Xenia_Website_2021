@@ -4,7 +4,7 @@ import "./Question.css";
 const Question = ({ question, answer, sr }) => {
   return (
     <>
-      <Card className="bg-secondary">
+      <Card className="bg-primary">
         <Card.Header className="FAQ_header">
           <Accordion.Toggle
             style={{ color: "#ffff" }}

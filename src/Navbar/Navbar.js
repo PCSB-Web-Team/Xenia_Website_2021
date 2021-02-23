@@ -3,6 +3,7 @@ import logo from './logo1.jpeg';
 import down from './down.png';
 import Store from '../Store/Store';
 import store from '../Store/Store';
+
 class Navbar extends React.Component {
 
     constructor(props){
@@ -36,15 +37,15 @@ class Navbar extends React.Component {
                 height="40"
                 className="logo"  //"d-inline-block align-top"
               />
-              <span className="brandName">Xenia</span>
+              <span className="brandName">PCSB - Xenia</span>
           </a>
         </div>
 
         <div className="items" >
-          <div className={this.props.activeTab==='home'    ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab} id='home' href="#Home">Home</div>
-          <div className={this.props.activeTab==='events'  ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab} id='events' href="#Events">Events</div>
-          <div className={this.props.activeTab==='aboutus' ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab} id='aboutus' href="#About-Us">About Us</div>
-          <div className={this.props.activeTab==='contact' ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab} id='contact' href="#Contact-us">Contact Us</div>
+          <a className={this.props.activeTab==='home'    ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab} id='home'    href="#Xenia">Home</a>
+          <a className={this.props.activeTab==='events'  ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab} id='events'  href="#Xenia">Events</a>
+          <a className={this.props.activeTab==='aboutus' ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab} id='aboutus' href="#Xenia">About Us</a>
+          <a className={this.props.activeTab==='contact' ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab} id='contact' href="#Xenia">Contact Us</a>
 
           {!this.props.login ? <div className="nav-tabs" onClick={this.props.handleLogin}  id='contact' href="#Contact-us">Login</div> : null}
           {!this.props.login ? <div className="nav-tabs" onClick={this.props.handleSignUp} id='contact' href="#Contact-us">Sign Up</div> : null }
@@ -60,10 +61,10 @@ class Navbar extends React.Component {
         ?
         <div className="list-items" >
         
-          <div className={this.props.activeTab==='home'    ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab}  id='home' href="#Home">Home</div>
-          <div className={this.props.activeTab==='events'  ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab}  id='events' href="#Events">Events</div>
-          <div className={this.props.activeTab==='aboutus' ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab}  id='aboutus' href="#About-Us">About Us</div>
-          <div className={this.props.activeTab==='contact' ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab}  id='contact' href="#Contact-us">Contact Us</div>
+          <a className={this.props.activeTab==='home'    ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab}  id='home'    href="#Xenia">Home    </a>
+          <a className={this.props.activeTab==='events'  ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab}  id='events'  href="#Xenia">Events  </a>
+          <a className={this.props.activeTab==='aboutus' ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab}  id='aboutus' href="#Xenia">About Us  </a>
+          <a className={this.props.activeTab==='contact' ? "nav-tabs active-nav" : "nav-tabs"} onClick={this.props.changeTab}  id='contact' href="#Xenia">Contact Us</a>
 
           {!this.props.login ?  <div className="nav-tabs" onClick={this.props.handleLogin}  id='contact' href="#Contact-us">Login</div> : null}
           {!this.props.login ? <div className="nav-tabs"  onClick={this.props.handleSignUp} id='contact' href="#Contact-us">Sign Up</div> : null }
