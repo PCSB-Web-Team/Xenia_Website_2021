@@ -69,7 +69,6 @@ class App extends React.Component {
       type: 'logedout'
     })
     this.setState({logedin: Store.getState().login})
-    console.log(Store.getState())
   }
 
   handleView = (e) => { this.setState({ view: e.target.id }) }

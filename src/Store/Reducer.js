@@ -16,10 +16,36 @@ export default function (state=defaultState,action){
             return defaultState
 
         case(actions.cart_added):
+
+            let duplicate=false;
+
+            for(let i=0 ; i < state.cart.length ; i++)
+            {
+                if(state.cart[i]===action.payload.event){
+                    duplicate=true;
+                    break;
+                }
+            }
+
+            console.log(duplicate);
+
+            if(!duplicate){
+                return {
+                    ...state,
+                    cart: [...state.cart, action.payload.event]
+                }    
+            }
+
+            else{
+                return {...state}
+            }
+            
+        case(actions.cart_removed):
             return {
                 ...state,
-                cart: [...state.cart, action.payload.event]
+                cart: state.cart.filter(eve => eve !== action.payload.event)
             }
+
         default:
             return {
                 ...state

@@ -32,9 +32,7 @@ class MoreInfo extends React.Component {
         event: event
       }
     })
-
-    console.log(Store.getState());
-
+    
     axios
     .post("http://localhost:5000/addToCart", { token, event })
     .then((res) => console.log(res.data));

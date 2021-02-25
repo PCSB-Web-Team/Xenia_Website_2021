@@ -88,7 +88,6 @@ export default class Login extends Component {
                       <i className="fa fa-user text-danger"></i>
                     </div>
                   </div>
-                  {console.log("Login Form Opened")}
                   <input
                     className="form-control"
                     placeholder="Username"

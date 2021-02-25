@@ -4,53 +4,21 @@ import del from './delete_icon.png';
 import styles from './Cart.css';
 import CartItem from './CartItem/CartItem';
 import Promocode from './Promocode/Promocode';
+import Store from '../../Store/Store';
+
 class Mycart extends Component {
   state = {
-    techs: [
-      {
-        name: "CodeStrike",
-        logo: "reactLogo",
-        Fees: "",
-        Slot: "",
-        Contact: "",
-        group: "tech",
-        id: 1,
-        date: "00/00/00",
-        icon: del
-      },
-      {
-        name: "NinjaCoding",
-        logo: "reactLogo",
-        Fees: "",
-        Slot: "",
-        Contact: "",
-        group: "tech",
-        id: 2,
-        date: "00/00/00",
-        icon:del
-      },
-      {
-        name: "Design Maestro",
-        logo: "reactLogo",
-        Fees: "",
-        Slot: "",
-        Contact: "",
-        group: "tech",
-        id: 3,
-        date: "00/00/00",
-        icon:del
-      },
-    ],
-  };
+    techs: Store.getState().cart
+  }
+
 
   render() {
 
+    let cartEvents = this.state.techs.map( eve => <CartItem details={eve}></CartItem>);
     
     return (
       <div className={styles.myCart}>
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {cartEvents}
       </div>
     );
   }
