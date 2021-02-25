@@ -1,0 +1,44 @@
+.mycartContainer{
+    background: rgba(0,0,0,0);
+    width: 75vw;
+    display: flex;
+    flex-flow: row;
+    color: white;
+}
+
+.myCart{
+    display: flex;
+    flex-flow: column;
+    margin: 100px;
+}
+
+.cartLine{
+    width: 75vw;
+    color: white;
+}
+
+.cartInfoContainer{
+    display: flex;
+    flex-flow: row;
+    color: white;
+    width: 75vw;
+}
+
+.eventNo,.eventName,.eventSlot{
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+
+.noItem,.eveItem,.iconItem{
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.eventItemBar{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+}
+

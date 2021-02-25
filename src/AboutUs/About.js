@@ -67,17 +67,8 @@ const About = () => {
             transition={{ duration: 1, delay: 1.5 }}
             style={{ textAlign: "justify", color: "#ffff" }}
           >
-            <strong>
-              Modi quas. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Unde omnis, ducimus, deserunt enim corrupti
-            </strong>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            aspernatur autem voluptatem iusto aperiam a id. Omnis, molestias
-            facere eius totam aspernatur autem itaque commodi accusamus dolor
-            officiis modi quas. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Unde omnis, ducimus, deserunt enim corrupti
-            explicabo eos praesentium ex qui rem quo aliquam? Qui molestiae
-            saepe perferendis magni, consequatur dicta ipsum!
+          Xenia is the annual technical festival organised by the PICT CSI Student Branch. This is a technical event with the view to find out the best of each and everyone and grow their skills. Xenia not only aims to develop the coding skills but also develop your aptitude skills. 
+          <br></br>Xenia gives you the chance to discover your talents through its various events. The events like campus to corporate gives  the experience for interviews for placement activities. You will discover your coding skills with events like Code strike, Ninja Coding Contest and Data Cup. This is the unique opportunity for the students to think beyond their regular academics and find out their best . The pneuma of learning new things has inspired the PICT CSI Branch to present Xenia in order to nurture and cultivate the talent.
           </motion.p>
 
           {/* <motion.button

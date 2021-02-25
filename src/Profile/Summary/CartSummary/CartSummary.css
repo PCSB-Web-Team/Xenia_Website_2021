@@ -1,0 +1,61 @@
+.cartSummary{
+    display: flex;
+    flex-flow: column ;
+    background: white;
+    margin-top: 50px;
+}
+
+.paymentHeading{
+    background: rgba(0,0,0,0.04);
+    padding: 13px 20px
+}
+
+.priceSummary{
+    margin: 0;
+}
+
+.paymentBox{
+    padding: 15px 20px 0 ;
+}
+
+.paymentInner{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.33;
+    padding-bottom: 10px;
+}
+
+.paymentInner p{
+    margin: 0;
+}
+
+.pmtsBox{
+    background: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid rgba(0,0,0,0.12);
+    position: static;
+    width: 100%;
+}
+
+.pmtsWrap{
+    padding: 10px;
+    display: table;
+    width: 100%;
+}
+
+.pmtsPr{
+    width: auto;
+    vertical-align: middle;
+    padding-left: 10px;
+    display: table-cell;
+}
+
+@media (max-width:767px){
+    .paymentInner{
+        width: 80vw;
+    }
+}

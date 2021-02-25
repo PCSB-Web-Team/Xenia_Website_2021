@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+
 import { Modal } from "react-bootstrap";
+import logo from "./logo1.jpeg";
 import Store from "../Store/Store";
 
 export default class Login extends Component {
@@ -46,23 +48,50 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <Modal show={this.props.openLogin} onHide={this.props.closeLogin}>
-          <Modal.Header closeButton>
-            <Modal.Title>Login</Modal.Title>
+        <Modal
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+          show={this.props.openLogin}
+          onHide={this.props.closeLogin}
+        >
+          <Modal.Header
+            style={{
+              paddingLeft: "50px",
+              background: "#131313",
+              color: "#ffff",
+            }}
+            closeButton
+          >
+            <Modal.Title>
+              <img
+                src={logo}
+                className="img-fluid text-center"
+                height="50px"
+                width="50px"
+                style={{ padding: "5px" }}
+              />{" "}
+              <span
+                style={{ letterSpacing: "5px" }}
+                className="text-uppercase font-weight-bold"
+              >
+                {" "}
+                Welcome back
+              </span>
+            </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body style={{ background: "#131313", color: "#ffff" }}>
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="fa fa-user"></i>
+                      <i className="fa fa-user text-danger"></i>
                     </div>
                   </div>
                   {console.log("Login Form Opened")}
                   <input
                     className="form-control"
-                    placeholder="username"
+                    placeholder="Username"
                     name="username"
                     type="text"
                     value={this.state.username}
@@ -75,14 +104,14 @@ export default class Login extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="fa fa-lock"></i>
+                      <i className="fa fa-lock text-success"></i>
                     </div>
                   </div>
                   <input
                     className="form-control"
                     name="password"
                     type="password"
-                    placeholder="password"
+                    placeholder="Password"
                     value={this.state.password}
                     onChange={this.handlePassword}
                   />
@@ -90,11 +119,23 @@ export default class Login extends Component {
               </div>
               <button
                 onClick={this.props.closeLogin}
-                className="btn btn-outline-success btn-block"
+                className="btn btn-outline-light btn-block"
               >
                 Login
               </button>
             </form>
+            {/* <div className="text-center mt-4">
+              <a>
+                Don't have an account ?{" "}
+                <span
+                  onClick={this.props.openSignUp}
+                  className=" text-primary font-weight-bold"
+                >
+                  {" "}
+                  Sign Up here
+                </span>
+              </a>
+            </div> */}
           </Modal.Body>
         </Modal>
       </div>

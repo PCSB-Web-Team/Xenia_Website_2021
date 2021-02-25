@@ -17,6 +17,7 @@ import Planet from './LandingPage2/plane';
 // import Contact from './Contact/Contact';
 import LoginPage from './Auth/Login';
 import SignupPage from './Auth/Register';
+import Profile from './Profile/Profile';
 
 class App extends React.Component {
 
@@ -53,16 +54,15 @@ class App extends React.Component {
       logedin: false,
   
     };
-  
   }
 
-  handleLogin   = () => { this.setState({popLogin: true}) }
-  handleLogedin = () => { this.setState({logedin: true}) }
+  handleLogin   = () => { this.setState({popLogin: true}) } 
+  handleLogedin = () => { this.setState({logedin: true}) }  
   closeLogin    = () => { this.setState({popLogin: false}) }
 
-  handleSignUp  = () => { this.setState({popSignUp: true}) }
-  handleSignedUp= () => { this.setState({logedin: true}) }
-  closeSignUp   = () => { this.setState({popSignUp: false}) }
+  handleSignUp  = () => { this.setState({popSignUp: true}) }    
+  handleSignedUp= () => { this.setState({logedin: true}) }      
+  closeSignUp   = () => { this.setState({popSignUp: false}) }   
 
   handleLogout= () => {  
     Store.dispatch({
@@ -76,7 +76,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="Xenia" id='Xenia'>
+      <div className={this.state.view!=='home' ? 'Xenia' : null} id='Xenia'>
         
         {this.state.view!=='home' ? <div className='bg-div'><img className='main-bg' src={BG}></img></div> : null}
         
@@ -87,12 +87,14 @@ class App extends React.Component {
           login={this.state.logedin} 
         />
         
-        {this.state.view === "home"     ? ( <div> <LandingPage /> {/*<Registrations />*/} </div> ) : null}
+        {this.state.view === "home"     ?  <LandingPage /> : null}
+        {this.state.view === "schedule" ?  <Registrations /> : null}
         {this.state.view === "events"   ?  <Cards logedin={this.state.logedin} />  : null }
         {this.state.view === "aboutus"  ?  <AboutUs /> : null }
         {this.state.view === "contact"  ?  <Contact/>  : null }
-        {this.state.view === 'profile' ?   <Dashboard></Dashboard> : null}
-        {this.state.view !== 'home'     ?  <Footer />  : null }
+        {this.state.view === 'profile'  ?  <Dashboard></Dashboard> : null}
+        {this.state.view === 'profile'  ?  <Profile></Profile>: null}
+        {this.state.view !== 'home'     ?  <Footer view={this.state.view} />  : null }
         
         
         <LoginPage 

@@ -1,0 +1,12 @@
+.Summary{
+    display: flex;
+    flex-flow: column;
+    margin: 20px;
+    width: 40%;
+}
+
+@media (max-width:767px){
+    .Summary{
+        width: 80%;
+    }
+}

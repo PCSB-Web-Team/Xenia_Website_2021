@@ -1,0 +1,12 @@
+.myCart{
+    display: flex;
+    flex-flow: column;
+    height: auto;
+    align-items: center;
+    padding: 20px;
+}
+
+.myCartLine{
+    width: 700px;
+    border-top: 2px solid white;
+}

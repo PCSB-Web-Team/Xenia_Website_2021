@@ -1,0 +1,79 @@
+.ProfCard{
+    height: 60vh;
+    background: rgba(255,255,255,0.14);
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(92, 255, 255, 0.267);
+    -moz-box-shadow:    7px 7px 5px 0px rgba(92, 255, 255, 0.26);
+    box-shadow:         7px 7px 5px 0px rgba(92, 255, 255, 0.267);
+    border-radius: 10px;
+    width: 30%;
+    margin: 50px;
+    padding-bottom: 50px ;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+}
+
+.imgContainer{
+    position: absolute;
+    align-items: center;
+    border-radius: 100%;
+    left: 41%;
+    width: 6vw;
+    height: 6vw;
+    background: cyan;
+    top: 20px;
+}
+
+.ProfIcon{
+    width: 70%;
+    height: 70%;
+    margin-top: 10px;
+}
+
+.username{
+    position: absolute;
+    top:30%;
+    color: white ;
+    align-items: center;
+}
+
+.userInfo{
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    font-family: 'planetns';
+}
+
+@media (max-width:991px) and (min-width:768px){
+    .ProfCard{
+        width: 40%;
+    }
+    .imgContainer{
+        height: 7vw;
+        width: 7vw;
+    }
+}
+@media (max-width:767px) and (min-width:576px){
+    .ProfCard{
+        width: 50%;
+    }
+    .imgContainer{
+        height: 8vw;
+        width: 8vw;
+    }
+}
+@media (max-width:575px){
+    .ProfCard{
+        width: 60%;
+    }
+    .imgContainer{
+        height: 9vw;
+        width: 9vw;
+    }
+}

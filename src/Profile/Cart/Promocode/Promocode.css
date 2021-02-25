@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,600,700,800,900&display=swap");
+
+.promocode{
+    margin: 30px;
+    display: flex;
+    flex-flow: row;
+    height: 300px;
+}
+
+.promocodeItem{
+    height: 250px;
+    width: 150px;
+    margin: 20px;
+    color: white;
+    font-family: 'planetn';
+    background: linear-gradient(#ec0fb5,#d13fad);
+    border-radius: 10px;
+}
+

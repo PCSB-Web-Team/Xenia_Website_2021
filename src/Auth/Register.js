@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
+import logo from "./logo1.jpeg";
 export default class Register extends Component {
   constructor(props) {
     super(props);
@@ -48,22 +49,49 @@ export default class Register extends Component {
   render() {
     return (
       <div>
-        <Modal show={this.props.openSignUp} onHide={this.props.closeSignUp}>
-          <Modal.Header closeButton>
-            <Modal.Title>Sign Up</Modal.Title>
+        <Modal
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+          show={this.props.openSignUp}
+          onHide={this.props.closeSignUp}
+        >
+          <Modal.Header
+            style={{
+              paddingLeft: "120px",
+              background: "#131313",
+              color: "#fff",
+            }}
+            closeButton
+          >
+            <Modal.Title>
+              <img
+                src={logo}
+                className="img-fluid text-center"
+                height="50px"
+                width="50px"
+                style={{ padding: "5px" }}
+              />{" "}
+              <span
+                style={{ letterSpacing: "5px" }}
+                className="text-uppercase font-weight-bold"
+              >
+                {" "}
+                Sign Up
+              </span>
+            </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body style={{ background: "#131313", color: "#ffff" }}>
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="fa fa-user"></i>
+                      <i className="fa fa-user text-danger"></i>
                     </div>
                   </div>
                   <input
                     className="form-control"
-                    placeholder="username"
+                    placeholder="Username"
                     name="username"
                     value={this.state.username}
                     type="text"
@@ -75,12 +103,12 @@ export default class Register extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="fa fa-envelope"></i>
+                      <i className="fa fa-envelope text-warning"></i>
                     </div>
                   </div>
                   <input
                     className="form-control"
-                    name="email"
+                    name="Email"
                     type="email"
                     placeholder="Email"
                     value={this.state.email}
@@ -92,14 +120,14 @@ export default class Register extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="fa fa-lock"></i>
+                      <i className="fa fa-lock text-success"></i>
                     </div>
                   </div>
                   <input
                     className="form-control"
                     name="password"
                     type="password"
-                    placeholder="password"
+                    placeholder="Password"
                     value={this.state.password}
                     onChange={this.handlePassword}
                   />
@@ -124,7 +152,7 @@ export default class Register extends Component {
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
-                      <i className="fa fa-phone"></i>
+                      <i className="fa fa-phone text-primary"></i>
                     </div>
                   </div>
                   <input
@@ -158,7 +186,7 @@ export default class Register extends Component {
 
               <button
                 onClick={this.props.closeSignUp}
-                className="btn btn-outline-success btn-block"
+                className="btn btn-outline-light btn-block"
               >
                 Sign Up
               </button>
