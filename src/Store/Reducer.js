@@ -1,5 +1,6 @@
 import * as actions from './Actions';
 import defaultState from './DefaultState';
+import allEvents from '../Event Details/AllEvents';
 
 export default function (state=defaultState,action){
 
@@ -18,16 +19,26 @@ export default function (state=defaultState,action){
         case(actions.cart_added):
 
             let duplicate=false;
+            let eventToAdd=action.payload.event;
 
             for(let i=0 ; i < state.cart.length ; i++)
             {
-                if(state.cart[i]===action.payload.event){
+                if(state.cart[i]===eventToAdd){
                     duplicate=true;
                     break;
                 }
             }
 
-            console.log(duplicate);
+            let eventObject;
+
+            for(let i=0;i < allEvents.length ; i++){
+                if(eventToAdd===allEvents[i].name){
+                    eventObject=allEvents[i];
+                    break;
+                }
+            }
+
+            console.log(eventObject);
 
             if(!duplicate){
                 return {
