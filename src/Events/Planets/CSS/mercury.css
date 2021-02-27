@@ -1,0 +1,23 @@
+.mercury{
+    position: absolute;
+
+    top: 2vh;
+    right: 5vw;
+
+    height: 20vw;
+    width: 20vw;
+    
+    text-align: center;
+
+    animation-name: venusAnimation;
+}
+
+.mercury img{
+    position: absolute;
+
+    top: 0px;
+    right: 0px;
+    
+    width: 100%;
+    height: 100%;
+}

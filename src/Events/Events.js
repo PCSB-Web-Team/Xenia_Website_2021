@@ -8,6 +8,7 @@ import SideEvents from './SideEvents/SideEvents';
 import Slide from 'react-reveal/Slide';
 import Zoom from 'react-reveal/Zoom';
 import * as allEvents from '../AllEvents';
+import Planets from './Planets/planets';
 
 let tech=allEvents.tech;
 let nonTech=allEvents.nonTech;
@@ -77,6 +78,7 @@ class Events extends React.Component {
           </div>
           {this.state.eventType==='tech' ? techCards : null}
           {this.state.eventType!=='tech' ? nonTechCards : null}
+          <Planets/>
           <SideEvents/>
         </div>
         :

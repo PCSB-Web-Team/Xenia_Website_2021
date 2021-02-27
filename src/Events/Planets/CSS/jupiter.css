@@ -1,0 +1,24 @@
+.jupiter{
+    position: absolute;
+
+    transform-origin: top;
+
+    top: 60vh;
+    right: -3vw;
+
+    height: 50vw;
+    width: 50vw;
+    
+    text-align: center;
+    
+}
+
+.jupiter img{
+    position: absolute;
+    
+    top: 0px;
+    left: 0px;
+
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,22 @@
+.neptune{
+    position: absolute;
+
+    transform-origin: top;
+
+    top: 55vh;
+    left: 5vw;
+
+    height: 20vw;
+    width: 20vw;
+    
+    text-align: center;
+    
+}
+
+.neptune img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}

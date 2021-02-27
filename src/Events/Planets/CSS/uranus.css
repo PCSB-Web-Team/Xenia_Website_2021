@@ -1,0 +1,24 @@
+.uranus{
+    position: absolute;
+
+    transform-origin: top;
+
+    top: 45vh;
+    left: 30vw;
+
+    height: 15vw;
+    width: 15vw;
+    
+    text-align: center;
+    
+}
+
+.uranus img{
+    position: absolute;
+    
+    top: 0px;
+    left: 0px;
+
+    width: 100%;
+    height: 100%;
+}
