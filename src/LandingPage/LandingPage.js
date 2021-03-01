@@ -42,8 +42,6 @@ class LandingPage extends Component{
                     <h1 id='xenia'>XENIA</h1>
                     <span id='date'>14 - 16 March</span>
             
-                
-                    <div className='bg'><img src={bg}></img></div>
                     <div className='layer3'><img src={layer3}></img></div>
                     <div className='lake'><img src={lake}></img></div>
                     <div className='SpaceShip'><img src={shuttle}></img></div> 

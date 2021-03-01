@@ -2,13 +2,19 @@
     position: relative;
     width: 100vw;
     height: 100vh;
+  background-attachment:fixed;
 }
 
-.planets span{
-  top: 50%;
+.planets .planet-details{
   color: white;
   position: absolute;
   z-index: 1;
+  cursor: pointer;
+}
+
+.planet-details img{
+  font-family: lato;
+  z-index: 0;
 }
 
 .starContainer{

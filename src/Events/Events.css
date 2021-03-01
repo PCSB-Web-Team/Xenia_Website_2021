@@ -1,9 +1,15 @@
 
-.sample{
+.sample {
 background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/black-background-4.jpg?fit=1920%2C1080);
 }
 
-.dashboard{
+.planets {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.events-dashboard {
     vertical-align: center;
     overflow: hidden;
     padding: 5px;
@@ -14,7 +20,7 @@ background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/bl
     margin: auto;
   }
   
-  .tabs{
+  .tabs {
     z-index: -2;
 
     top: 10px;
@@ -33,7 +39,7 @@ background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/bl
     border: 2px solid rgb(22, 220, 235);
   }
 
-  .tabs button{
+  .tabs button {
     margin-inline: 2%;
     transition: ease 500ms;
     min-width: 200px;
@@ -47,16 +53,16 @@ background-image: url(https://i1.wp.com/wallur.com/wp-content/uploads/2016/12/bl
     border: 1px solid green;
   }
 
-  .tabs button:focus{
+  .tabs button:focus {
     outline: none;
   }
 
-  .tabs button:hover{
+  .tabs button:hover {
     color: aqua;
     box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 255, 255, 0.9);
   }
 
-  @media (max-width: 600){
+  @media (max-width: 600) {
     .tabs button{
       width: 100%
     }

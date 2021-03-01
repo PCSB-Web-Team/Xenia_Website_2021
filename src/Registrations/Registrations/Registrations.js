@@ -31,7 +31,6 @@ class Registrations extends Component{
 
     render(){
         // cd Desktop/pict/react/react1
-        console.log(styles);
         return (
             <Box className='Registrations' alignItems="center" justifyContent="center" >
                 <Box md={12} lg={4} sm={12} xs={12} m={10}>

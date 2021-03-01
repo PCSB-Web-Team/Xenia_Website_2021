@@ -9,7 +9,6 @@ export default function (state=defaultState,action){
         case(actions.logged_in):
             return {
                 ...state,
-                login: false,
                 userData: action.payload
             }
 
@@ -38,12 +37,10 @@ export default function (state=defaultState,action){
                 }
             }
 
-            console.log(eventObject);
-
             if(!duplicate){
                 return {
                     ...state,
-                    cart: [...state.cart, action.payload.event]
+                    cart: [...state.cart, eventObject]
                 }    
             }
 
@@ -52,10 +49,15 @@ export default function (state=defaultState,action){
             }
             
         case(actions.cart_removed):
+        {
+        
+            let newCart=state.cart.filter(eve => eve.name !== action.payload.event);
+
             return {
                 ...state,
-                cart: state.cart.filter(eve => eve !== action.payload.event)
+                cart: newCart
             }
+        }
 
         default:
             return {

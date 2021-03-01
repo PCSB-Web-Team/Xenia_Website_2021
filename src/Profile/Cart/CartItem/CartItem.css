@@ -14,8 +14,16 @@
     color: black;
 }
 
-.cartItemName,.cartItemPrice{
+.rem span{
+    margin: 0;
+}
+
+.cartItemName, .cartItemPrice{
     text-align: left;
+}
+
+.cartItemPrice{
+    color: black;
 }
 
 .cartItemImg{

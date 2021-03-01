@@ -3,16 +3,17 @@
     padding: 5px;
     width: 100%;
     background: white;
-    color: rgb(109, 118, 204);
+    
     transition: none;
 }
 
 .question{
     width: 100%;
     margin: 0;
+    color: rgb(109, 118, 204);
 }
 
-.Coupon:hover{
+.question:hover{
     color: rgb(8, 23, 151);
     cursor: pointer;
 }

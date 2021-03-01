@@ -86,7 +86,7 @@ const Contact = () => {
               initial="hidden"
               animate="visible"
               transition={{ duration: 1, delay: 0.5 }}
-              className="bg-white p-3 mx-5 "
+              className="text-primary bg-dark p-3 mx-5 "
               style={{
                 borderRadius: "12px",
                 boxShadow: "2px 2px 15px #131313",
@@ -101,7 +101,7 @@ const Contact = () => {
                   margin: "4% 20%",
                 }}
               />
-              <p className="text-dark">
+              <p className="text-primary">
                 Survey No. 27, Near, Trimurti Chowk,
                 <br />
                 Bharati Vidyapeeth Campus, Dhankawadi,
@@ -113,7 +113,7 @@ const Contact = () => {
               initial="hidden"
               animate="visible"
               transition={{ duration: 1, delay: 1 }}
-              className="bg-white p-3 m-5 "
+              className="bg-dark p-3 m-5 "
               style={{
                 borderRadius: "12px",
                 boxShadow: "2px 2px 15px #131313",
@@ -121,7 +121,7 @@ const Contact = () => {
                 background: '#0000'
               }}
             >
-              <h4 className="text-center font-weight-bold">Social</h4>
+              <h4 className="text-primary text-center font-weight-bold">Social</h4>
               <hr
                 style={{
                   color: "#004d33",
@@ -129,7 +129,7 @@ const Contact = () => {
                   margin: "4% 20%",
                 }}
               />
-              <p className="text-dark">
+              <p className="text-light">
                 <a href="">
                   {" "}
                   <i

@@ -12,6 +12,7 @@
 
 .priceSummary{
     margin: 0;
+    color: black;
 }
 
 .paymentBox{
@@ -29,6 +30,7 @@
 
 .paymentInner p{
     margin: 0;
+    color: black;
 }
 
 .pmtsBox{
@@ -52,6 +54,10 @@
     vertical-align: middle;
     padding-left: 10px;
     display: table-cell;
+}
+
+.pmtsPr span,.pmtsPr .p{
+    color: black;
 }
 
 @media (max-width:767px){

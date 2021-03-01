@@ -34,7 +34,6 @@ class Team extends Component{
                         (<Grid item lg={3} md={4} sm={6} xs={12} key={i}>
                             <Member name={member.name} link={member.link}/>
                          </Grid>));
-        console.log(members);
         return(
             <div className={classes.Team}>
                 <h1 className={classes.meet}>meet our team</h1>

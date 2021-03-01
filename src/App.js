@@ -8,6 +8,7 @@ import LandingPage from "./LandingPage/LandingPage";
 import Footer from "./Footer/Footer";
 import AboutUs from "./AboutUs/About";
 import Contact from "./Contact/Contact";
+import './background.css';
 import BG from './bg1.jpg';
 import Store from './Store/Store';
 import Dashboard from './Dashboard/DashboardMain'
@@ -18,6 +19,7 @@ import Planet from './LandingPage2/plane';
 import LoginPage from './Auth/Login';
 import SignupPage from './Auth/Register';
 import Profile from './Profile/Profile';
+import cart from './cart.png';
 
 class App extends React.Component {
 
@@ -51,7 +53,7 @@ class App extends React.Component {
       view: "home",
       popLogin: false,
       popSignUp: false,
-      logedin: false,
+      logedin: true,
   
     };
   }
@@ -76,7 +78,11 @@ class App extends React.Component {
   render() {
     return (
       <div className={this.state.view!=='home' ? 'Xenia' : null} id='Xenia'>
-        
+
+        {/** 
+        <div id='stars'></div>
+        <div id='stars2'></div>
+*/}
         {this.state.view!=='home' ? <div className='bg-div'><img className='main-bg' src={BG}></img></div> : null}
         
         <Navbar 
@@ -86,14 +92,15 @@ class App extends React.Component {
           login={this.state.logedin} 
         />
         
-        {this.state.view === "home"     ?  <LandingPage /> : null}
-        {this.state.view === "schedule" ?  <Registrations /> : null}
-        {this.state.view === "events"   ?  <Cards logedin={this.state.logedin} />  : null }
-        {this.state.view === "aboutus"  ?  <AboutUs /> : null }
-        {this.state.view === "contact"  ?  <Contact/>  : null }
-        {this.state.view === 'profile'  ?  <Dashboard></Dashboard> : null}
-        {this.state.view === 'profile'  ?  <Profile></Profile>: null}
-        {this.state.view !== 'home'     ?  <Footer view={this.state.view} />  : null }
+        {this.state.view === "home"     ?  <LandingPage />                          : null}
+        {this.state.view === "schedule" ?  <Registrations />                        : null}
+        {this.state.view === "events"   ?  <Cards logedin={this.state.logedin} />   : null}
+        {this.state.view === "aboutus"  ?  <AboutUs />                              : null}
+        {this.state.view === "contact"  ?  <Contact/>                               : null}
+        {this.state.view === 'profile'  ?  <Dashboard/>                             : null}
+        {this.state.view === 'profile'  ?  <Profile/>                               : null}
+        
+        {this.state.view !== 'home'     ?  <Footer view={this.state.view} />        : null}
         
         
         <LoginPage 
@@ -107,7 +114,17 @@ class App extends React.Component {
           handleSignedUp = {this.handleSignedUp.bind(this)} 
           closeSignUp = {this.closeSignUp.bind(this)}
         />
-      
+        
+        {
+            this.state.logedin
+            ?
+            <div className='cart-logo' id='profile' onClick={this.handleView}>
+                <img src={cart}></img>
+                <span>{Store.getState().cart.length}</span>
+            </div>
+            :
+            null
+        }
             {/* 
             <div className='particles'>
             <div className='circleContainer'>

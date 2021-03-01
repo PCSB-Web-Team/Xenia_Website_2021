@@ -1,0 +1,18 @@
+.EmptyCart{
+    width: 50vw;
+    background: white;
+    height: 60vh;
+    position: relative;
+}
+
+.emptyCartimg{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    bottom: 30%;
+    left: 25%;
+}
+
+.feelsLight h1{
+    color: black;
+}

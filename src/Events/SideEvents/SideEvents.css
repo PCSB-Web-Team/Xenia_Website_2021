@@ -36,7 +36,6 @@
     background-size: contain;
 }
 
-.se .se-bg{
-    display: none;
+.se .title{
+    font-family: lato;
 }
-

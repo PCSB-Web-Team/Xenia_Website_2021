@@ -25,11 +25,14 @@ class Profile extends Component {
     };    
     render() {
         return (
+          <div>
             <div className="Profile">
                 <CouponModal showState={this.state.show} couponHideHandler={this.hideModal} />
                 <Cart />
                 <Summary couponShowHandler={this.showModal} />
             </div>
+            <MyProf />
+          </div>
         )
     }
 }

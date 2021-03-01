@@ -47,14 +47,10 @@ class Mycart extends Component {
   handleRFC = (name) => {
     const token = this.state.user.token;
     const event = name;
-    console.log(this.state.user.token, name);
     axios
       .post("http://localhost:5000/removeFromCart", { token, event })
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err.message));
-
-
-    
   };
 
   render() {

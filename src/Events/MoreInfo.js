@@ -20,11 +20,9 @@ class MoreInfo extends React.Component {
   }
 
   handleAddToCart = () => {
-    console.log(Store.getState())
     const { details } = this.props;
     const event = details.name;
     const token = Store.getState().userData.token;
-    console.log(event, token);
 
     Store.dispatch({
       type: 'addtocart',

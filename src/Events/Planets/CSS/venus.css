@@ -1,18 +1,18 @@
 .venus{
     position: absolute;
 
-    top: 5vh;
-    right: 42vw;
+    top: 40vh;
+    left: 5vw;
 
-    height: 20vw;
-    width: 20vw;
+    height: 9.5vw;
+    width: 9.5vw;
     
     text-align: center;
 
     animation-name: venusAnimation;
 }
 
-.venus img{
+.venus .planet-img{
     position: absolute;
 
     top: 0px;
@@ -20,4 +20,22 @@
     
     width: 100%;
     height: 100%;
+}
+
+.venus{
+    animation-name: zoom;
+    animation-duration: 800ms;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    transition: ease-out;
+}
+
+@keyframes zoom{
+    from{
+        transform: scale(0);
+    }
+    
+    to{
+        transform: scale(1);
+    }
 }
