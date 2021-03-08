@@ -102,7 +102,3 @@
   transition: ease 500ms;
   background: rgba(0, 247, 255, 0.644)
 }
-
-.event-card:hover{
-  background: black;
-}

@@ -21,16 +21,19 @@ export default class Register extends Component {
   handlePassword = (e) => {
     this.setState({ password: e.target.value });
   };
-
+  
   handleEmail = (e) => {
     this.setState({ email: e.target.value });
   };
+  
   handleCollege = (e) => {
     this.setState({ college: e.target.value });
   };
+  
   handlePhone = (e) => {
     this.setState({ phone: e.target.value });
   };
+
   handleSubmit = (e) => {
     const { username, password, college, email, phone } = this.state;
     e.preventDefault();

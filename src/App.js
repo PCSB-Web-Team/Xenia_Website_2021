@@ -1,70 +1,64 @@
 import React from "react";
-import styles from "./App.css";
-import "./Navbar/Navbar.css";
-import Cards from "./Events/Events.js";
-import Registrations from "./Registrations/Registrations/Registrations.js";
+import "./App.css";
 import Navbar from "./Navbar/Navbar";
-import LandingPage from "./LandingPage/LandingPage";
-import Footer from "./Footer/Footer";
-import AboutUs from "./AboutUs/About";
-import Contact from "./Contact/Contact";
 import './background.css';
 import BG from './bg1.jpg';
 import Store from './Store/Store';
-import Dashboard from './Dashboard/DashboardMain'
-import LightSpeed from "react-reveal/LightSpeed";
-import Domains from './Domains/Domains';
-import Planet from './LandingPage2/plane';
-// import Contact from './Contact/Contact';
+
 import LoginPage from './Auth/Login';
 import SignupPage from './Auth/Register';
-import Profile from './Profile/Profile';
-import cart from './cart.png';
+
 
 class App extends React.Component {
 
 
     // fake authentication Promise
-    authenticate(){
-        return new Promise(resolve => setTimeout(resolve, 1)) // 2 seconds
-      }
+authenticate() {  
+  return new Promise(resolve => setTimeout(resolve, 1)) // 2 seconds
+}
     
-    componentDidMount(){
-      this.authenticate().then(() => {
-        const ele = document.getElementById('ipl-progress-indicator')
-        if(ele){
-          // fade out
-          ele.classList.add('available')
-          setTimeout(() => {
-            // remove from DOM
-            ele.outerHTML = ''
-          }, 2000)
-        }
-      })
+componentDidMount() {
+
+  this.authenticate().then(() => {
+    const ele = document.getElementById('ipl-progress-indicator')
+    if(ele){
+      // fade out
+      ele.classList.add('available')
+      setTimeout(() => {
+        // remove from DOM
+        ele.outerHTML = ''
+      }, 2000)
     }
+    console.log("inside Comonnent did mount")
+    this.checkLogin();
+  })
 
-
+}
 
   constructor(props) {
     super(props);
     
     this.state = {
 
-      view: "home",
       popLogin: false,
       popSignUp: false,
-      logedin: true,
-  
+      logedin: false,
+
     };
   }
 
-  handleLogin   = () => { this.setState({popLogin: true}) } 
-  handleLogedin = () => { this.setState({logedin: true}) }  
-  closeLogin    = () => { this.setState({popLogin: false}) }
+  handleLogin   = () => { this.setState({popLogin:  true  }) } 
+  handleLogedin = () => { this.setState({logedin:   true  }) }  
+  closeLogin    = () => { this.setState({popLogin:  false }) }
 
-  handleSignUp  = () => { this.setState({popSignUp: true}) }    
-  handleSignedUp= () => { this.setState({logedin: true}) }      
-  closeSignUp   = () => { this.setState({popSignUp: false}) }   
+  handleSignUp  = () => { this.setState({popSignUp: true  }) }    
+  handleSignedUp= () => { this.setState({logedin:   true  }) }      
+  closeSignUp   = () => { this.setState({popSignUp: false }) }   
+
+  toggleLoginSignup = () => {
+    if(this.state.popLogin === true) {  this.setState({popLogin: false, popSignUp: true}) }
+    else {  this.setState({popLogin: true, popSignUp: false}) }
+  }
 
   handleLogout= () => {  
     Store.dispatch({
@@ -73,37 +67,33 @@ class App extends React.Component {
     this.setState({logedin: Store.getState().login})
   }
 
-  handleView = (e) => { this.setState({ view: e.target.id }) }
+  checkLogin = ()  => {
+    let username = (localStorage.getItem('xeniausername'));
+    let password = (localStorage.getItem('xeniapassword'));
+
+    console.log('username: ',username,'password: ',password);
+    console.log('checking Login Status');
+
+    if(username !== undefined && username !== null && password !== undefined && password !== null) {
+      this.setState({ login: true })
+    }
+  }
 
   render() {
-    return (
-      <div className={this.state.view!=='home' ? 'Xenia' : null} id='Xenia'>
 
-        {/** 
-        <div id='stars'></div>
-        <div id='stars2'></div>
-*/}
+    return (
+      <div className='Xenia' id='Xenia'>
+
         {this.state.view!=='home' ? <div className='bg-div'><img className='main-bg' src={BG}></img></div> : null}
         
         <Navbar 
-          changeTab = {this.handleView.bind(this) } 
           activeTab = {this.state.view} handleLogin = {this.handleLogin.bind(this)} 
           handleSignUp = {this.handleSignUp} handleLogout={this.handleLogout} 
           login={this.state.logedin} 
         />
-        
-        {this.state.view === "home"     ?  <LandingPage />                          : null}
-        {this.state.view === "schedule" ?  <Registrations />                        : null}
-        {this.state.view === "events"   ?  <Cards logedin={this.state.logedin} />   : null}
-        {this.state.view === "aboutus"  ?  <AboutUs />                              : null}
-        {this.state.view === "contact"  ?  <Contact/>                               : null}
-        {this.state.view === 'profile'  ?  <Dashboard/>                             : null}
-        {this.state.view === 'profile'  ?  <Profile/>                               : null}
-        
-        {this.state.view !== 'home'     ?  <Footer view={this.state.view} />        : null}
-        
-        
+
         <LoginPage 
+          toggle = {this.toggleLoginSignup.bind(this)}
           openLogin = {this.state.popLogin} 
           handleLogedin = {this.handleLogedin.bind(this)} 
           closeLogin = {this.closeLogin.bind(this)}
@@ -114,321 +104,6 @@ class App extends React.Component {
           handleSignedUp = {this.handleSignedUp.bind(this)} 
           closeSignUp = {this.closeSignUp.bind(this)}
         />
-        
-        {
-            this.state.logedin
-            ?
-            <div className='cart-logo' id='profile' onClick={this.handleView}>
-                <img src={cart}></img>
-                <span>{Store.getState().cart.length}</span>
-            </div>
-            :
-            null
-        }
-            {/* 
-            <div className='particles'>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            <div className='circleContainer'>
-                <div className='circle'></div>
-            </div>
-            </div>
-            */}
 
       </div>
     );

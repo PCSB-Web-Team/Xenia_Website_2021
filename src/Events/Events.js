@@ -1,13 +1,12 @@
 import React from 'react';
-import './Card.css';
-import MoreInfo from './MoreInfo';
+import './Cards/Card.css';
+import MoreInfo from './MoreInfo/MoreInfo';
 import './Events.css';
-import Card from './Card';
+import Card from './Cards/Card';
 import SideEvents from './SideEvents/SideEvents';
 import Slide from 'react-reveal/Slide';
 import Zoom from 'react-reveal/Zoom';
 import * as allEvents from '../Event Details/AllEvents';
-import Planets from './Planets/planets';
 
 let tech=allEvents.tech;
 let nonTech=allEvents.nonTech;
@@ -69,18 +68,6 @@ class Events extends React.Component {
       </div>
   )
   });
-  
-  const techPlanets = tech.map(eve => {
-    return(
-          <Planets details={eve} readmore={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}/>        
-  )
-  });
-  
-  const nonTechPlanets = nonTech.map(eve => {
-    return(
-          <Planets details={eve} readmore={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}/>        
-  )
-  });
 
   return (
 
@@ -99,19 +86,11 @@ class Events extends React.Component {
           
           {this.state.eventType === 'tech' ? techCards    : null}
           {this.state.eventType !== 'tech' ? nonTechCards : null}
-          
-
-          {/** 
-          <div className='planets'>
-            {this.state.eventType==='tech' ? techPlanets: null}
-            {this.state.eventType!=='tech' ? nonTechPlanets: null}
-          </div>
-          */}
 
           <SideEvents/>
         </div>
         :
-        <MoreInfo logedin={this.props.logedin} close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />
+        <MoreInfo eventType={this.state.eventType} logedin={this.props.logedin} close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />
       }
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Cart from './Cart/Cart';
 import RegEves from './RegEves/RegEves';
-import MyProf from './MyProf/MyProf';
-import './Profile.css';
+import './Cart.css';
 import Summary from './Summary/Summary';
 import CouponModal from './Summary/Coupon/CouponModal/CouponModal';
+import logo from '../logo.svg';
 
 class Profile extends Component {
     constructor() {
@@ -16,24 +16,20 @@ class Profile extends Component {
         this.hideModal = this.hideModal.bind(this);
     }
     
-    showModal = () => {
-      this.setState({ show: true });
-    };
+    showModal = () => {  this.setState({ show: true }); };
   
-    hideModal = () => {
-      this.setState({ show: false });
-    };    
+    hideModal = () => {  this.setState({ show: false }); };    
+    
     render() {
+
         return (
-          <div>
             <div className="Profile">
                 <CouponModal showState={this.state.show} couponHideHandler={this.hideModal} />
                 <Cart />
                 <Summary couponShowHandler={this.showModal} />
             </div>
-            <MyProf />
-          </div>
         )
+        
     }
 }
 

@@ -4,10 +4,9 @@ import Slide from "react-reveal/Slide";
 import back from "./arrow-left.svg";
 import back2 from "./arrow-left2.png";
 import { Zoom } from "@material-ui/core";
-import Zzoom from "react-reveal/Zoom";
-import Store from "../Store/Store";
+import Store from "../../Store/Store";
 import axios from "axios";
-import {tech,nonTech, EN1} from '../AllEvents';
+import {tech,nonTech} from '../../Event Details/AllEvents';
 
 class MoreInfo extends React.Component {
   constructor(props) {
@@ -15,8 +14,18 @@ class MoreInfo extends React.Component {
 
     this.state = {
       addToCart: Store.getState().login,
-      user: Store.getState().userData
+      user: Store.getState().userData,
+      currEvent: props.details.No-1 
     };
+  }
+
+  handleToggle = (e) => {                     //setting the new Event
+    console.log(e.target);
+    this.setState({currEvent: e.target.id-1})
+  }
+
+  setInitial = () => {
+    if(true) this.setState({currEvent: this.props.details.No})
   }
 
   handleAddToCart = () => {
@@ -38,26 +47,44 @@ class MoreInfo extends React.Component {
   };
 
   render() {
-
+    
     let e1,e2;
 
     if(this.props.details.group==='tech'){
-      e1=tech[(this.props.details.No+1)%8]
-      e2=tech[(this.props.details.No+2)%8]
+      e1=tech[(this.state.currEvent+1)%8]
+      e2=tech[(this.state.currEvent+2)%8]
     }
     else{
-      e1=nonTech[(this.props.details.No+1)%8]
-      e2=nonTech[(this.props.details.No+2)%8]
+      e1=nonTech[(this.state.currEvent+1)%8]
+      e2=nonTech[(this.state.currEvent+2)%8]
     }
+    
+
+    let allEvents=(this.props.eventType==='tech' ? tech : nonTech);
+
+    let techList = tech.map((eve) => {return(
+      <div className='toggle-button' id={eve.No} onClick={this.handleToggle}>{eve.name}</div>
+    )})
+    
+    let nonTechList = nonTech.map((eve) => {return(
+      <div className='toggle-button' id={eve.No} onClick={this.handleToggle}>{eve.name}</div>  
+    )})
 
     return (
       <div className="MoreInfo">
 
-        <div className="info1">
-          <div class="more-info jumbotron text-center py-2 px-5" id="e5">
-            <img class="logo" src={this.props.details.logo}></img>
-            <h3 class="name">{this.props.details.name}</h3>
-            <span class> {this.props.details.date} </span>
+        <div class="back-container" onClick={this.props.close}>
+            <img src={back2} />
+        </div>
+
+        <div className="info1" id={allEvents[this.currEvent]}>
+
+          <div class="more-info jumbotron text-center py-2 px-5" id="main-detail">
+
+            <img className='logo' src={allEvents[this.state.currEvent].logo}></img>
+
+            <h3 class="name">{allEvents[this.state.currEvent].name}</h3>
+            <span class> {allEvents[this.state.currEvent].date} </span>
             <p class="lead">
               This is a simple hero unit, a simple jumbotron-style component for
               calling extra attention to featured content or information.
@@ -133,7 +160,7 @@ class MoreInfo extends React.Component {
                 Contact Details{this.props.details.contact}
               </div>
             </div>
-            <hr class="my-4" />
+            <hr class="my-1" />
             {this.props.logedin ? (
               <a
                 onClick={this.handleAddToCart}
@@ -143,31 +170,43 @@ class MoreInfo extends React.Component {
               >
                 Add To Cart
               </a>
-            ) : null}
-            <div class="back-container" onClick={this.props.close}>
-              <img src={back2} />
-            </div>
+            ) : 
+            <a
+                class="btn btn-lg bg-dark disable"
+                href="#"
+                role="button"
+              >
+                Add To Cart
+              </a>
+            }
           </div>
+
+
         </div>
 
-        <div className='suggestion'>
-          <div class="card">
-            <img class="card-img-top" src={e1.logo} alt="Card image cap"/>
-            <div class="card-body">
-              <h3>{e1.name}</h3>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <Slide right cascade>
+        <div className='suggestion' >
+          <a class="card" id={e1.No} onClick={this.handleToggle} href='#main-detail'>
+            <img class="card-img-top"  id={e1.No}  src={e1.logo} alt="Card image cap"/>
+            <div class="card-body" id={e1.No} >
+              <h3  id={e1.No}  >{e1.name}</h3>
+              <p class="card-text"  id={e1.No} >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
-          </div>
-          <div class="card">
-            <img class="card-img-top" src={e2.logo} alt="Card image cap"/>
-            <div class="card-body">
-              <h3>{e2.name}</h3>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </a>
+          <a class="card" id={e2.No} onClick={this.handleToggle} href='#main-detail'>
+            <img class="card-img-top" id={e2.No} src={e2.logo} alt="Card image cap"/>
+            <div class="card-body" id={e2.No}>
+              <h3 id={e2.No}>{e2.name}</h3>
+              <p class="card-text" id={e2.No}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
-          </div>
+          </a>
         </div>
+      </Slide>
 
-        {/*
+        
+        <div className='toggle-list'> {this.props.eventType === 'tech' ? techList : nonTechList}</div>
+
+    {/*
               <div className='type2'>
                 <div class="more-info jumbotron text-center py-2 px-5" id='e5'>
                   

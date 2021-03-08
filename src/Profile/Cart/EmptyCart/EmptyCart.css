@@ -5,6 +5,12 @@
     position: relative;
 }
 
+@media (max-width:767px){
+    .EmptyCart{
+        width: 90%;
+    }
+}
+
 .emptyCartimg{
     position: absolute;
     width: 50%;

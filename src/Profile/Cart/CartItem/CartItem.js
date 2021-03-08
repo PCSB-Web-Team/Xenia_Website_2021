@@ -9,15 +9,16 @@ const cartItem=(props)=> {
     return (
         <div className='cartItem'>
             
+            <div className='cartItemImg'>
+                <img src={props.details.logo} width="90%" height="100%" style={{float:'right',background:'rgba(0,0,0,0.14)',borderRadius:'5px'}} />
+            </div>
             <div className='cartItemInfo'>
                 <h3 className='cartItemName'> {props.details.name} </h3>
                 <p className='cartItemPrice'> ₹{props.details.fees} </p>
-                <Button variant="contained" color="secondary" className='rem' style={{float:'left'}} onClick={props.RFC} id={props.details.name}>Remove</Button>
+                <Button variant="contained" color="secondary" className='rem' onClick={props.RFC} id={props.details.name}>Remove</Button>
             </div>
 
-            <div className='cartItemImg'>
-                <img src={props.details.logo} width="50%" height="90%" style={{float:'right',background:'rgba(0,0,0,0.14)',borderRadius:'5px'}} />
-            </div>
+            
         </div>
     )
 }

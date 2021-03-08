@@ -1,0 +1,191 @@
+.ProfCard{
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 30px;
+}
+
+.ProfContainer{
+    z-index: 1;
+    width: 86%;
+    margin-inline: 2%;
+    height: 80vh;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    top: 60px;
+    position: absolute;
+    left: 4%;
+}
+
+.Prof{
+    width: 40%;
+
+    height: 100%;
+    background-color: black;
+    margin: 0;
+}
+
+.Reg{
+    width: 60%;
+    height: 100%;
+    background-color: rgb(197, 194, 194);
+}
+
+.Profh1{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.Profimgdiv{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 1px white solid;
+    margin-top: 30px;
+    margin-left: 38%;
+    text-align: center;
+}
+
+.Profimg{
+    height: 90%;
+    width: 90%;
+}
+
+
+
+.personalinfo{
+    padding: 15px;
+    margin: 30px 20px 0 20px;
+    text-align: left;
+}
+
+.Regh1{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.RegContainer{
+    margin: 40px 30px 0 30px;
+    overflow-y: auto;
+    height: 70%;
+}
+
+.RegContainer::-webkit-scrollbar {
+    width: 8px;
+    background-clip: content-box;
+}
+
+.Regdiv{
+    width: 98%;
+}
+
+.RegContainer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.RegContainer::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.RegP{
+    color: black;
+    border-radius: 8px ;
+    background: white;
+}
+
+.emailid{
+    display: flex;
+    flex-flow: row;
+}
+.phnno{
+    display: flex;
+    flex-flow: row;
+}
+.College{
+    display: flex;
+    flex-flow: row;
+}
+
+.emailid p:nth-child(1){
+    font-size: 20px;
+    width: 125px;
+    font-family: 'planetns';
+    margin: 0;
+    line-height: 1.8;
+}
+.phnno p:nth-child(1){
+    width: 125px;
+    font-size: 20px;
+    font-family: 'planetns';
+    margin: 0;
+    line-height: 1.8;
+}
+.College p:nth-child(1){
+    width: 125px;
+    font-size: 20px;
+    font-family: 'planetns';
+    margin: 0;
+    line-height: 1.8;
+}
+.emailid p:nth-child(2){
+    font-size: 20px;
+    line-height: 1.8;
+}
+.phnno p:nth-child(2){
+    font-size: 20px;
+    line-height: 1.8;
+}
+.College p:nth-child(2){
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.emailid span,.phnno span,.College span{
+    margin-left: 10px;
+}
+
+
+@media (max-width:997px){
+    .ProfContainer{
+        flex-flow: column;
+        margin-top: 30px;
+    }
+    .Prof,.Reg{
+        width: 100%;
+        height: auto;
+    }
+    .Reg{
+        height: 400px;
+    }
+    .Profimgdiv{
+        margin-left: 36%;
+    }
+    .emailid{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .phnno{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .College{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .personalinfo{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .emailid span,.phnno span,.College span{
+        margin-left: -8px;
+    }
+}

@@ -19,7 +19,7 @@ export const EN7= {name: 'Event Name', logo: reactLogo, fees: 100, Slot: '', Con
 export const EN8= {name: 'Event Name', logo: reactLogo, fees: 100, Slot: '', Contact: 'Contact Details', group: 'nonTech', No: 8, planet: 'mars', id: 'EN', date: '00/00/00'};
 
 export const tech= [CS,NC,DM,MCB,CC,PP,DC,AB];
-export const nonTech= [EN1,EN2,EN3,EN4,EN5,EN6,EN7,EN8] ;
+export const nonTech= [EN1,EN2,EN3,EN4,EN5,EN6,EN7,EN8];
 
 let allEvents = [CS,NC,DM,MCB,CC,PP,DC,AB,EN1,EN1,EN1,EN1,EN1,EN1,EN1,EN1];
 

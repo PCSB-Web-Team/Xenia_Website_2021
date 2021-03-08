@@ -1,7 +1,17 @@
 .contact .container {
   /* max-width: 50%; */
-  background: rgba(0, 0, 0, 0.5);
   margin-top: 35px;
+  height: 100vh;
+  background: linear-gradient(rgba(255, 255, 255, 0.5),black);
+  display: block;
+}
+
+.contact{
+  position: relative;
+  text-align: center;
+  background: url('./moon.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .contact h3 {
@@ -12,8 +22,14 @@
   font-size: 15px;
 }
 .contact input {
-  background: rgba(255, 255, 255, 0.8);
+  outline: none;
+  background-color: white;
 }
+
+.contact input:focus{
+  outline: none;
+}
+
 .contact textarea {
   background: rgba(255, 255, 255, 0.8);
 }
@@ -23,9 +39,11 @@
 .contact .btn:hover {
   transform: scale(1.02);
 }
+
 @media only screen and (max-width: 720px) {
   .container {
     max-width: 100%;
+    height: fit-content;
   }
   .contact {
     padding: 10px;

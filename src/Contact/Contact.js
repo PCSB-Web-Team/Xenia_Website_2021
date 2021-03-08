@@ -2,17 +2,23 @@ import React from "react";
 import "./Contact.css";
 import { motion } from "framer-motion";
 import FAQ from "./FAQ/FAQ";
+import moonbg from './moon.jpg';
+
 const Contact = () => {
   const fadeTop = {
     hidden: { opacity: 0, y: -150 },
     visible: { opacity: 1, y: 0 },
   };
+  
   const fade = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
+
   return (
-    <div className="contact text-center my-5">
+    <div className="contact text-center mb-5">
+
+
       <motion.div
         variants={fade}
         initial="hidden"
@@ -36,38 +42,35 @@ const Contact = () => {
             <form action="">
               <div class="input-group  mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="fas fa-user text-danger"></i>
-                  </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Name" />
+                <input type="text" class="form-control bg-dark border-0 rounded-0 text-light " placeholder="Name" />
               </div>
 
               <div class="input-group  mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="fas fa-envelope text-warning"></i>
-                  </span>
-                </div>
-                <input type="text" class="form-control" placeholder="Email" />
+                <input type="text" class="form-control bg-dark border-0 rounded-0 text-light" placeholder="Email" />
               </div>
+              
               <div class="input-group  mb-3">
+              {/** 
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="fas fa-phone text-success"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Phone" />
+              */}
+                <input type="text" class="form-control bg-dark border-0 rounded-0 text-light" placeholder="Phone" />
               </div>
 
               <div class="input-group  mb-3">
+              {/**
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="fas fa-pencil-alt text-primary"></i>
                   </span>
                 </div>
+              */}
                 <textarea
-                  class="form-control"
+                  class="form-control bg-dark border-0 rounded-0 text-light"
                   placeholder="Message"
                   rows="5"
                 ></textarea>
@@ -76,7 +79,7 @@ const Contact = () => {
               <input
                 type="submit"
                 value="Submit"
-                class="btn btn-outline-light btn-block btn-lg"
+                class="btn btn-block bg-dark text-light btn-lg border rounded-0"
               />
             </form>
           </div>
@@ -86,7 +89,7 @@ const Contact = () => {
               initial="hidden"
               animate="visible"
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-primary bg-dark p-3 mx-5 "
+              className="text-light rounded-0 p-3 mx-5 "
               style={{
                 borderRadius: "12px",
                 boxShadow: "2px 2px 15px #131313",
@@ -101,7 +104,7 @@ const Contact = () => {
                   margin: "4% 20%",
                 }}
               />
-              <p className="text-primary">
+              <p className="text-dark">
                 Survey No. 27, Near, Trimurti Chowk,
                 <br />
                 Bharati Vidyapeeth Campus, Dhankawadi,
@@ -113,7 +116,7 @@ const Contact = () => {
               initial="hidden"
               animate="visible"
               transition={{ duration: 1, delay: 1 }}
-              className="bg-dark p-3 m-5 "
+              className="rounded-0 p-3 m-5 "
               style={{
                 borderRadius: "12px",
                 boxShadow: "2px 2px 15px #131313",
@@ -121,7 +124,7 @@ const Contact = () => {
                 background: '#0000'
               }}
             >
-              <h4 className="text-primary text-center font-weight-bold">Social</h4>
+              <h4 className="text-light text-center font-weight-bold">Social</h4>
               <hr
                 style={{
                   color: "#004d33",

@@ -6,12 +6,12 @@ import astranout from './astranout.png';
 import shuttle from './spaceshuttle.png';
 import lake from './lake.png';
 import mars from './mars.png';
-import layer3 from './layer3.jpg';
+import layer3 from './jupiter.jpg';
 
 class LandingPage extends Component{
 
-
     handleMove=(e)=>{
+
         const box = document.querySelector('.astranout');
     
         let x= e.pageX;
@@ -19,14 +19,18 @@ class LandingPage extends Component{
         let transX = (e.target.offsetWidth*0.005 - x * 0.05);
         let transY = (e.target.offsetHeight*0.005 - y * 0.05);
         box.style.transform = `translateX(${transX}px) translateY(${transY}px)`;
+
+        const layer3 = document.querySelector('.layer3');
         
-        const mountain = document.querySelector('.lake');
+        let transXL = (e.target.offsetHeight*0.005 + x * 0.1);
+        let transYL = (e.target.offsetHeight*0.005 + y * 0.1);
+        layer3.style.transform = `translateX(${transXL}px) translateY(${transYL}px)`;
     
-        let u= e.pageX;
-        let v=e.pageY;
-        let transXM = -(e.target.offsetWidth*0.005 + u * 0.003);
-        let transYM = -(e.target.offsetHeight*0.005 + v * 0.003);
-        mountain.style.transform = `translateX(${transXM}px) translateY(${transYM}px)`;
+        const background=document.querySelector('.bg');
+        
+        let transXBG = (e.target.offsetHeight*0.005 + x * 0.05);
+        let transYBG = (e.target.offsetHeight*0.005 + y * 0.05);
+        background.style.transform = `translateX(${transXBG}px) translateY(${transYBG}px)`;
     }
 
 
@@ -38,10 +42,11 @@ class LandingPage extends Component{
                 
                 <div className='landing-container' onMouseMove={this.handleMove}>
             
-            
+
                     <h1 id='xenia'>XENIA</h1>
                     <span id='date'>14 - 16 March</span>
-            
+
+                    <div className='bg'><img src={bg}></img></div>
                     <div className='layer3'><img src={layer3}></img></div>
                     <div className='lake'><img src={lake}></img></div>
                     <div className='SpaceShip'><img src={shuttle}></img></div> 

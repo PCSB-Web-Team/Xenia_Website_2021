@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import del from './delete_icon.png';
-// import Store from "../../Store/Store"
 import './Cart.css';
 import CartItem from './CartItem/CartItem';
 import Promocode from './Promocode/Promocode';

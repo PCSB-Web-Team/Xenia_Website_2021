@@ -1,12 +1,33 @@
 .Cart{
     display: flex;
     flex-flow: column;
-    height: auto;
+    height: 75vh;
     align-items: center;
     padding: 20px;
+    overflow-y: auto;
+}
+
+@media (max-width:767px){
+    .Cart{
+        width: 100%;
+    }
 }
 
 .myCartLine{
     width: 700px;
     border-top: 2px solid white;
+}
+
+.Cart::-webkit-scrollbar {
+    width: 12px;
+}
+
+.Cart::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.Cart::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(153, 147, 147, 0.5);
 }

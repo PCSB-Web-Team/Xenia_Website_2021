@@ -77,11 +77,9 @@
     color: white;
 }
 
-
-
 .more-info.jumbotron .tab-pane{
-    margin-top: 20px;
-    min-height:100px;
+    margin-top: 10px;
+    min-height:200px;
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -113,6 +111,7 @@
 .MoreInfo .suggestion{
     margin: 0px;
     top: 0px;
+    right: 0px;
     display: inline-block;
     position: absolute;
     width: 50%;
@@ -121,14 +120,27 @@
 }
 
 .suggestion .card{
+
+    cursor: pointer;
+
     background: black;
+
+    
     width: 75%;
     height: 45vh;
+
     margin-block: 5vh;
     margin-inline: 12.5%;
 }
 
+.suggestion .card:hover{
+    transition: ease 1s;
+    scale: 1.2;
+    box-shadow: 0px 0px 0px 0px rgba(0, 255, 255, 0.2), 0 2px 100px 0px rgba(0, 255, 255, 0.37);
+}
+
 .suggestion .card img{
+    background: linear-gradient(rgba(0, 238, 255, 0.377),rgb(0, 0, 0));
     width: 100%;
     height: 50%;
 }
@@ -179,7 +191,7 @@
     min-height: 400px;
 }
 
-@media (max-width: 700px){
+@media (max-width: 800px){
 
     .MoreInfo .suggestion{
         position: relative;

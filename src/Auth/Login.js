@@ -9,6 +9,7 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
+
       username: "",
       password: "",
       token: "",
@@ -18,7 +19,7 @@ export default class Login extends Component {
   handleUserName = (e) => {
     this.setState({ username: e.target.value });
   };
-
+  
   handlePassword = (e) => {
     this.setState({ password: e.target.value });
   };
@@ -40,6 +41,9 @@ export default class Login extends Component {
           {
             this.props.handleLogedin();
           }
+
+          localStorage.setItem('xeniausername', username);
+          localStorage.setItem('xeniapassword', password);
         }
       })
       .catch((err) => console.log(err.message));
@@ -51,13 +55,16 @@ export default class Login extends Component {
         <Modal
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          show={this.props.openLogin}
-          onHide={this.props.closeLogin}
+          show    = {this.props.openLogin}
+          onHide  = {this.props.closeLogin}
+          style   = {{
+            background: 'transparent',
+          }}
         >
           <Modal.Header
             style={{
               paddingLeft: "50px",
-              background: "#131313",
+              background: 'black',
               color: "#ffff",
             }}
             closeButton
@@ -123,18 +130,8 @@ export default class Login extends Component {
                 Login
               </button>
             </form>
-            {/* <div className="text-center mt-4">
-              <a>
-                Don't have an account ?{" "}
-                <span
-                  onClick={this.props.openSignUp}
-                  className=" text-primary font-weight-bold"
-                >
-                  {" "}
-                  Sign Up here
-                </span>
-              </a>
-            </div> */}
+            <span> Don't have an account ? <a onClick={this.props.toggleLoginSignup}> SignUp Here </a> </span>
+
           </Modal.Body>
         </Modal>
       </div>
