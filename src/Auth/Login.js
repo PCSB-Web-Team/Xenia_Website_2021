@@ -15,7 +15,7 @@ export default class Login extends Component {
       token: "",
     };
   }
-
+  
   handleUserName = (e) => {
     this.setState({ username: e.target.value });
   };
@@ -30,12 +30,12 @@ export default class Login extends Component {
     axios
       .post("http://localhost:5000/api/login", { username, password })
       .then((res) => {
-        let k = res.data.data;
+        let userdata = res.data.data;
 
         if (res.data.status === "ok") {
           Store.dispatch({
             type: "logedin",
-            payload: k,
+            payload: userdata,
           });
 
           {
@@ -44,6 +44,7 @@ export default class Login extends Component {
 
           localStorage.setItem('xeniausername', username);
           localStorage.setItem('xeniapassword', password);
+
         }
       })
       .catch((err) => console.log(err.message));

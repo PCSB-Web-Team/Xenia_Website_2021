@@ -5,7 +5,6 @@ import Zoom from 'react-reveal/Zoom';
 import astranout from './astranout.png';
 import shuttle from './spaceshuttle.png';
 import lake from './lake.png';
-import mars from './mars.png';
 import layer3 from './jupiter.jpg';
 
 class LandingPage extends Component{

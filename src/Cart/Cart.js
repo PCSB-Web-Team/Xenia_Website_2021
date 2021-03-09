@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import Cart from './Cart/Cart';
-import RegEves from './RegEves/RegEves';
 import './Cart.css';
 import Summary from './Summary/Summary';
 import CouponModal from './Summary/Coupon/CouponModal/CouponModal';
-import logo from '../logo.svg';
+import Store from '../Store/Store';
+import {connect} from 'react-redux'; 
 
 class Profile extends Component {
     constructor() {
+        
         super();
+
         this.state = {
-          show: false
+          show: false,
+          sum: ()=>{
+              let currState=Store.getState();
+              let sum=0;
+          }
         };
+        
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
+
     }
     
     showModal = () => {  this.setState({ show: true }); };
@@ -22,16 +30,24 @@ class Profile extends Component {
     
     render() {
 
+        console.log(this.props.cart)
+
         return (
             <div className="Profile">
                 <CouponModal showState={this.state.show} couponHideHandler={this.hideModal} />
                 <Cart />
-                <Summary couponShowHandler={this.showModal} />
+                <Summary     couponShowHandler={this.showModal} />
             </div>
         )
         
     }
 }
 
-export default Profile;
+const mapStateToProps = state => {
+    return {
+        cart: state.cart
+    }
+}
+
+export default connect(mapStateToProps)(Profile);
 

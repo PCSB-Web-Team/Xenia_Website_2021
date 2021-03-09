@@ -5,21 +5,16 @@ import Store from '../Store/Store';
 import cart from './cart.png';
 import styles from './Navbar.css';
 
-import Home from '../LandingPage/LandingPage';
-import Schedule from '../Registrations/Registrations/Registrations';
-import Events from '../Events/Events';
-import AboutUs from '../AboutUs/About';
-import ContactUs from '../Contact/Contact';
-import Footer from '../Footer/Footer';
-import Cart from '../Profile/Cart';
-import Profile from '../MyProf/MyProf';
+import Home       from  '../LandingPage/LandingPage';
+import Schedule   from  '../Registrations/Registrations/Registrations';
+import Events     from  '../Events/Events';
+import AboutUs    from  '../AboutUs/About';
+import ContactUs  from  '../Contact/Contact';
+import Footer     from  '../Footer/Footer';
+import Cart       from  '../Cart/Cart';
+import Profile    from  '../Profile/Profile';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink
-} from "react-router-dom";
+import { BrowserRouter as Router,Switch,Route,NavLink } from "react-router-dom";
 
 class Navbar extends React.Component {
 
@@ -46,7 +41,7 @@ class Navbar extends React.Component {
 
    render(){
     return (
-    <Router>
+    <div>
       <div className="NavBar" id='navBar'>         
         
         <div className="brand" style={{float: "left"}}>
@@ -64,10 +59,11 @@ class Navbar extends React.Component {
           <NavLink to='/about-us'    activeClassName='active-nav' className='nav-tabs'>  About Us    </NavLink>
           <NavLink to='/contact-us'  activeClassName='active-nav' className='nav-tabs'>  Contact Us  </NavLink>
           
-          {this.props.login ? <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  Profile    </NavLink> : null }
+          {this.props.logedIn ? 
+          <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs'>  Profile    </NavLink> : null }
           
-          {!this.props.login ? <div className="nav-tabs" onClick={this.props.handleLogin}  id='contact' href="#Contact-us">Login</div> : null}
-          {!this.props.login ? <div className="nav-tabs" onClick={this.props.handleSignUp} id='contact' href="#Contact-us">Sign Up</div> : null }
+          {!this.props.logedIn ? <div className="nav-tabs" onClick={this.props.handleLogin}  id='contact' href="#Contact-us">Login</div> : null}
+          {!this.props.logedIn ? <div className="nav-tabs" onClick={this.props.handleSignUp} id='contact' href="#Contact-us">Sign Up</div> : null }
 
         </div>
 
@@ -83,19 +79,19 @@ class Navbar extends React.Component {
           <NavLink to='/about-us'    activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  About Us   </NavLink>
           <NavLink to='/contact-us'  activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  Contact Us </NavLink>
           
-          {this.props.login ? 
+          {this.props.logedIn ? 
           <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  Profile    </NavLink>
           : null }
           
-          {!this.props.login ? <div className="nav-tabs"  onClick={this.props.handleLogin}  id='contact' href="#Contact-us"> Login   </div> : null}
-          {!this.props.login ? <div className="nav-tabs"  onClick={this.props.handleSignUp} id='contact' href="#Contact-us"> Sign Up </div> : null }
+          {!this.props.logedIn ? <div className="nav-tabs"  onClick={this.props.handleLogin}  id='contact' href="#Contact-us"> Login   </div> : null}
+          {!this.props.logedIn ? <div className="nav-tabs"  onClick={this.props.handleSignUp} id='contact' href="#Contact-us"> Sign Up </div> : null }
         
         </div>
           :
           null
       }
-      <NavLink to='/cart'>  { this.props.login  ?
-          <div className='cart-logo' id='cart' onClick={this.handleNavView}>
+      <NavLink to='/cart'>  { this.props.logedIn  ?
+          <div className='cart-logo' id='cart' onClick={() => {this.setState({view: 'down'})}}>
               <img src={cart}></img>
               <span>{Store.getState().cart.length}</span>
           </div>
@@ -112,7 +108,7 @@ class Navbar extends React.Component {
           <Footer/>
         </Route>
         <Route path="/events">
-          <Events />
+          <Events logedIn={this.props.logedIn} />
           <Footer/>
         </Route>
         <Route path="/about-us">
@@ -128,7 +124,7 @@ class Navbar extends React.Component {
           <Footer/>
         </Route>
         <Route path='/profile'>
-          <Profile/>
+          <Profile handleLogout={this.props.handleLogout}/>
           <Footer/>
         </Route>
         <Route path="/">
@@ -137,7 +133,7 @@ class Navbar extends React.Component {
       
       </Switch>
 
-      </Router>
+      </div>
     );
    }
 }

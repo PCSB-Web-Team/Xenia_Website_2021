@@ -52,6 +52,7 @@ class MyProf extends Component {
                     </div>
                 
                 </div>
+                <button className='btn btn-lg text-success' onClick={this.props.handleLogout}>Logout</button>
             </div>
         )
     }

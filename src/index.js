@@ -6,11 +6,19 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "font-awesome/css/font-awesome.min.css";
+import store from './Store/Store';
+import {Provider} from 'react-redux';
 
+import {BrowserRouter} from 'react-router-dom';
+ 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
 

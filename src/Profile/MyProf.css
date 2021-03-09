@@ -6,7 +6,6 @@
 }
 
 .ProfContainer{
-    z-index: 1;
     width: 86%;
     margin-inline: 2%;
     height: 80vh;
@@ -15,8 +14,6 @@
     align-items: center;
     justify-content: center;
     top: 60px;
-    position: absolute;
-    left: 4%;
 }
 
 .Prof{
@@ -33,27 +30,20 @@
     background-color: rgb(197, 194, 194);
 }
 
-.Profh1{
+.Prof h1{
     color: white;
     text-align: center;
     margin-top: 20px;
 }
 
-.Profimgdiv{
-    height: 100px;
-    width: 100px;
+.Prof img{
+    height: 200px;
+    width: 200px;
     border-radius: 100%;
     border: 1px white solid;
     margin-top: 30px;
-    margin-left: 38%;
     text-align: center;
 }
-
-.Profimg{
-    height: 90%;
-    width: 90%;
-}
-
 
 
 .personalinfo{
@@ -154,17 +144,17 @@
     .ProfContainer{
         flex-flow: column;
         margin-top: 30px;
+        height: fit-content;
     }
     .Prof,.Reg{
         width: 100%;
-        height: auto;
+        height: fit-content;
     }
+    
     .Reg{
         height: 400px;
     }
-    .Profimgdiv{
-        margin-left: 36%;
-    }
+
     .emailid{
         display: flex;
         flex-flow: column;

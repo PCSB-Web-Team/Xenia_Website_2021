@@ -15,6 +15,7 @@ let cart=tech.map(eve=> { return(<h1 className='event'>eve.name</h1>) })
 
 
 class Events extends React.Component {
+  
   constructor(props){
     
     super(props);
@@ -90,7 +91,7 @@ class Events extends React.Component {
           <SideEvents/>
         </div>
         :
-        <MoreInfo eventType={this.state.eventType} logedin={this.props.logedin} close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />
+        <MoreInfo eventType={this.state.eventType} logedIn={this.props.logedIn} close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />
       }
     </div>
   );

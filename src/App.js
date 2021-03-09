@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import Navbar from "./Navbar/Navbar";
 import './background.css';
-import BG from './bg1.jpg';
 import Store from './Store/Store';
 
 import LoginPage from './Auth/Login';
@@ -29,13 +28,13 @@ componentDidMount() {
         ele.outerHTML = ''
       }, 2000)
     }
-    console.log("inside Comonnent did mount")
     this.checkLogin();
   })
 
 }
 
   constructor(props) {
+    
     super(props);
     
     this.state = {
@@ -74,8 +73,8 @@ componentDidMount() {
     console.log('username: ',username,'password: ',password);
     console.log('checking Login Status');
 
-    if(username !== undefined && username !== null && password !== undefined && password !== null) {
-      this.setState({ login: true })
+    if(username !== undefined && username !== null) {
+      this.setState({ logedin: true })
     }
   }
 
@@ -84,12 +83,12 @@ componentDidMount() {
     return (
       <div className='Xenia' id='Xenia'>
 
-        {this.state.view!=='home' ? <div className='bg-div'><img className='main-bg' src={BG}></img></div> : null}
-        
         <Navbar 
-          activeTab = {this.state.view} handleLogin = {this.handleLogin.bind(this)} 
-          handleSignUp = {this.handleSignUp} handleLogout={this.handleLogout} 
-          login={this.state.logedin} 
+          activeTab = {this.state.view} 
+          handleLogin = {this.handleLogin.bind(this)}
+          handleSignUp = {this.handleSignUp} 
+          handleLogout={this.handleLogout} 
+          logedIn={this.state.logedin}
         />
 
         <LoginPage 

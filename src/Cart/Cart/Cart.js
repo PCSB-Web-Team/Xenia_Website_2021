@@ -5,6 +5,7 @@ import CartItem from './CartItem/CartItem';
 import Promocode from './Promocode/Promocode';
 import Store from '../../Store/Store';
 import EmptyCart from './EmptyCart/EmptyCart';
+import {connect} from 'react-redux'
 
 class Mycart extends Component {
 
@@ -16,22 +17,23 @@ class Mycart extends Component {
             event: e.target.id,
         }
     })
-  
-    this.setState({cartEvents: Store.getState().cart.map( eve => <CartItem RFC={this.RFC} details={eve}></CartItem>)})
-  
+    
+    this.setState({ cartEvents: Store.getState().cart.map( eve => <CartItem RFC={this.RFC} details={eve}></CartItem>) })
   }
 
-  constructor(props){
+  constructor(props)  {
+
     super();
   
     this.state = {
-      cart: Store.getState().cart,
+      cart:       Store.getState().cart,
       cartEvents: Store.getState().cart.map( eve => <CartItem RFC={this.RFC} details={eve}></CartItem>)
     }
+
   }
 
   render() {
-    
+
     return (
       <div className="Cart">
           {this.state.cartEvents.length == 0 ? <EmptyCart /> : this.state.cartEvents}

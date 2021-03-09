@@ -22,7 +22,7 @@ export default function (state=defaultState,action){
 
             for(let i=0 ; i < state.cart.length ; i++)
             {
-                if(state.cart[i]===eventToAdd){
+                if(state.cart[i].name === eventToAdd){
                     duplicate=true;
                     break;
                 }
@@ -31,10 +31,12 @@ export default function (state=defaultState,action){
             let eventObject;
 
             for(let i=0;i < allEvents.length ; i++){
+
                 if(eventToAdd===allEvents[i].name){
                     eventObject=allEvents[i];
                     break;
                 }
+
             }
 
             if(!duplicate){
@@ -50,8 +52,8 @@ export default function (state=defaultState,action){
             
         case(actions.cart_removed):
         {
-        
-            let newCart=state.cart.filter(eve => eve.name !== action.payload.event);
+
+            let newCart = state.cart.filter(eve => eve.name !== action.payload.event);
 
             return {
                 ...state,
