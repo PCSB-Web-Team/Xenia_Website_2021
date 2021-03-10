@@ -1,29 +1,19 @@
 import React from 'react';
 import logo from './logo1.jpeg'; 
 import down from './down.png';
-import Store from '../Store/Store';
 import cart from './cart.png';
 import styles from './Navbar.css';
 
-import Home       from  '../LandingPage/LandingPage';
-import Schedule   from  '../Registrations/Registrations/Registrations';
-import Events     from  '../Events/Events';
-import AboutUs    from  '../AboutUs/About';
-import ContactUs  from  '../Contact/Contact';
-import Footer     from  '../Footer/Footer';
-import Cart       from  '../Cart/Cart';
-import Profile    from  '../Profile/Profile';
+import {popLogin,closeLogin, popSignUp, closeSignUp} from '../Store/Actions';
 
 import { BrowserRouter as Router,Switch,Route,NavLink } from "react-router-dom";
+import {connect} from 'react-redux';
 
 class Navbar extends React.Component {
 
     constructor(props){
-  
       super(props);
-  
       this.state={
-        login: Store.getState().login,
         view: 'down'
       }
   
@@ -59,11 +49,11 @@ class Navbar extends React.Component {
           <NavLink to='/about-us'    activeClassName='active-nav' className='nav-tabs'>  About Us    </NavLink>
           <NavLink to='/contact-us'  activeClassName='active-nav' className='nav-tabs'>  Contact Us  </NavLink>
           
-          {this.props.logedIn ? 
+          {this.props.isLoggedIn ? 
           <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs'>  Profile    </NavLink> : null }
           
-          {!this.props.logedIn ? <div className="nav-tabs" onClick={this.props.handleLogin}  id='contact' href="#Contact-us">Login</div> : null}
-          {!this.props.logedIn ? <div className="nav-tabs" onClick={this.props.handleSignUp} id='contact' href="#Contact-us">Sign Up</div> : null }
+          {!this.props.isLoggedIn ? <div className="nav-tabs" onClick={this.props.openLogin}  id='contact' href="#Contact-us">Login</div> : null}
+          {!this.props.isLoggedIn ? <div className="nav-tabs" onClick={this.props.openSignUp} id='contact' href="#Contact-us">Sign Up</div> : null }
 
         </div>
 
@@ -79,21 +69,22 @@ class Navbar extends React.Component {
           <NavLink to='/about-us'    activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  About Us   </NavLink>
           <NavLink to='/contact-us'  activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  Contact Us </NavLink>
           
-          {this.props.logedIn ? 
+          {this.props.isLoggedIn ? 
           <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  Profile    </NavLink>
           : null }
           
-          {!this.props.logedIn ? <div className="nav-tabs"  onClick={this.props.handleLogin}  id='contact' href="#Contact-us"> Login   </div> : null}
-          {!this.props.logedIn ? <div className="nav-tabs"  onClick={this.props.handleSignUp} id='contact' href="#Contact-us"> Sign Up </div> : null }
+          {!this.props.isLoggedIn ? <div className="nav-tabs"  onClick={this.props.openLogin}  id='contact' href="#Contact-us"> Login   </div> : null}
+          {!this.props.isLoggedIn ? <div className="nav-tabs"  onClick={this.props.openSignUp} id='contact' href="#Contact-us"> Sign Up </div> : null }
         
         </div>
           :
           null
       }
-      <NavLink to='/cart'>  { this.props.logedIn  ?
+      
+      <NavLink to='/cart'>  { this.props.isLoggedIn  ?
           <div className='cart-logo' id='cart' onClick={() => {this.setState({view: 'down'})}}>
               <img src={cart}></img>
-              <span>{Store.getState().cart.length}</span>
+              <span>{this.props.cart.length}</span>
           </div>
           :
           null
@@ -101,41 +92,26 @@ class Navbar extends React.Component {
       </NavLink>
 
       </div>
-      <Switch>
-        
-        <Route path="/schedule">
-          <Schedule />
-          <Footer/>
-        </Route>
-        <Route path="/events">
-          <Events logedIn={this.props.logedIn} />
-          <Footer/>
-        </Route>
-        <Route path="/about-us">
-          <AboutUs />
-          <Footer/>
-        </Route>
-        <Route path="/contact-us">
-          <ContactUs />
-          <Footer/>
-        </Route>
-        <Route path='/cart'>
-          <Cart/>
-          <Footer/>
-        </Route>
-        <Route path='/profile'>
-          <Profile handleLogout={this.props.handleLogout}/>
-          <Footer/>
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      
-      </Switch>
 
       </div>
     );
    }
 }
 
-export default Navbar;
+const mapStateToProps = state => {
+  return{
+    popLogin: state.popLogin,
+    isLoggedIn: state.login,
+    cart: state.cart
+  }
+}
+
+const mapActionsToProps = dispatch => {
+  return{
+    openLogin: () => { dispatch( popLogin()) },
+    closeLogin: () => { dispatch( closeLogin()) },
+    openSignUp: () => { dispatch( popSignUp()) }
+  }
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(Navbar);

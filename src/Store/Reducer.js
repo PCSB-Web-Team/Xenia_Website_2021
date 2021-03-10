@@ -6,16 +6,42 @@ export default function (state=defaultState,action){
 
     switch(action.type)
     {
-        case(actions.logged_in):
+        case(actions.LOGGEDIN):
+
             return {
                 ...state,
-                userData: action.payload
+                login: true,
+                userData: action.payload.userData
             }
 
-        case(actions.logged_out):
+        case(actions.LOGGEDOUT):
             return defaultState
 
-        case(actions.cart_added):
+        case(actions.POPLOGIN):
+            return {
+                ...state,
+                popLogin: true
+            }
+
+        case(actions.CLOSELOGIN):
+            return {
+                ...state,
+                popLogin: false
+            }
+        
+        case(actions.POPSIGNUP):
+            return {
+                ...state,
+                popSignUp: true
+            }
+
+        case(actions.CLOSESIGNUP): 
+            return {
+                ...state,
+                popSignUp: false
+            }
+
+        case(actions.ADDTOCART):
 
             let duplicate=false;
             let eventToAdd=action.payload.event;
@@ -50,10 +76,9 @@ export default function (state=defaultState,action){
                 return {...state}
             }
             
-        case(actions.cart_removed):
+        case(actions.REMOVEFROMCART):
         {
-
-            let newCart = state.cart.filter(eve => eve.name !== action.payload.event);
+            let newCart = state.cart.filter(eve => eve.name !== action.payload.eveName);
 
             return {
                 ...state,

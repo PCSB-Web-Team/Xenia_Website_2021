@@ -1,3 +1,6 @@
 export default {
-    cart: ['NinjaCoding']
+    login: false,
+    popLogin: false,
+    popSignUp: false,
+    cart: []
 }

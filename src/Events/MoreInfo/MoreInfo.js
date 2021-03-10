@@ -16,8 +16,6 @@ class MoreInfo extends React.Component {
 
     this.state = {
       allEvents: (this.props.eventType==='tech' ? tech : nonTech),
-      addToCart: Store.getState().login,
-      user: Store.getState().userData,
       currEvent: props.details.No-1 
     };
   }
@@ -36,12 +34,7 @@ class MoreInfo extends React.Component {
     const event = details.name;
     const token = Store.getState().userData.token;
 
-    Store.dispatch({
-      type: 'addtocart',
-      payload: {
-        event: event
-      }
-    })
+    this.props.addToCart(event);
     
     axios
     .post("http://localhost:5000/addToCart", { token, event })
@@ -52,15 +45,15 @@ class MoreInfo extends React.Component {
   render() {
 
     
-    let e1,e2;
+    let suggestion1,suggestion2;
 
     if(this.props.details.group==='tech'){
-      e1=tech[(this.state.currEvent+1)%8]
-      e2=tech[(this.state.currEvent+2)%8]
+      suggestion1=tech[(this.state.currEvent+1)%8]
+      suggestion2=tech[(this.state.currEvent+2)%8]
     }
     else{
-      e1=nonTech[(this.state.currEvent+1)%8]
-      e2=nonTech[(this.state.currEvent+2)%8]
+      suggestion1=nonTech[(this.state.currEvent+1)%8]
+      suggestion2=nonTech[(this.state.currEvent+2)%8]
     }
     
 
@@ -155,22 +148,22 @@ class MoreInfo extends React.Component {
               </div>
             </div>
             <hr class="my-1" />
-            {this.props.logedIn ? (
-              <a
+            {this.props.isLoggedIn ? 
+              <div
 
               /*
                 onClick={this.handleAddToCart}
               */
 
-                onClick={this.props.addToCart(this.state.allEvents[this.state.currEvent].name)}
+                onClick={() => {this.props.addToCart(this.state.allEvents[this.state.currEvent].name)} }
 
                 class="btn btn-lg bg-success"
                 href="#"
                 role="button"
               >
                 Add To Cart
-              </a>
-            ) : 
+              </div>
+             : 
               null
             }
           </div>
@@ -178,18 +171,18 @@ class MoreInfo extends React.Component {
 
       <Slide right cascade>
         <div className='suggestion' >
-          <a class="card" id={e1.No} onClick={this.handleToggle} href='#main-detail'>
-            <img class="card-img-top"  id={e1.No}  src={e1.logo} alt="Card image cap"/>
-            <div class="card-body" id={e1.No} >
-              <h3  id={e1.No}  >{e1.name}</h3>
-              <p class="card-text"  id={e1.No} >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a class="card" id={suggestion1.No} onClick={this.handleToggle} href='#main-detail'>
+            <img class="card-img-top"  id={suggestion1.No}  src={suggestion1.logo} alt="Card image cap"/>
+            <div class="card-body" id={suggestion1.No} >
+              <h3  id={suggestion1.No}  >{suggestion1.name}</h3>
+              <p class="card-text"  id={suggestion1.No} >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </a>
-          <a class="card" id={e2.No} onClick={this.handleToggle} href='#main-detail'>
-            <img class="card-img-top" id={e2.No} src={e2.logo} alt="Card image cap"/>
-            <div class="card-body" id={e2.No}>
-              <h3 id={e2.No}>{e2.name}</h3>
-              <p class="card-text" id={e2.No}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a class="card" id={suggestion2.No} onClick={this.handleToggle} href='#main-detail'>
+            <img class="card-img-top" id={suggestion2.No} src={suggestion2.logo} alt="Card image cap"/>
+            <div class="card-body" id={suggestion2.No}>
+              <h3 id={suggestion2.No}>{suggestion2.name}</h3>
+              <p class="card-text" id={suggestion2.No}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </a>
         </div>
@@ -202,7 +195,8 @@ class MoreInfo extends React.Component {
 
 const mapStateToProps = state => {
   return {
-      cart: state.cart
+      cart: state.cart,
+      isLoggedIn: state.login
   }
 }
 

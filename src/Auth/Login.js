@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
-
 import { Modal } from "react-bootstrap";
 import logo from "./logo1.jpeg";
 import Store from "../Store/Store";
+import {connect} from 'react-redux';
+import {loggedIn, popLogin, closeLogin} from '../Store/Actions';
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,6 +14,7 @@ export default class Login extends Component {
       username: "",
       password: "",
       token: "",
+
     };
   }
   
@@ -26,7 +28,9 @@ export default class Login extends Component {
 
   handleSubmit = (e) => {
     const { username, password, token } = this.state;
+    
     e.preventDefault();
+
     axios
       .post("http://localhost:5000/api/login", { username, password })
       .then((res) => {
@@ -39,8 +43,10 @@ export default class Login extends Component {
           });
 
           {
-            this.props.handleLogedin();
+            this.props.handleLogedin(userdata);
           }
+
+          this.props.loggedIn(userdata);
 
           localStorage.setItem('xeniausername', username);
           localStorage.setItem('xeniapassword', password);
@@ -56,8 +62,8 @@ export default class Login extends Component {
         <Modal
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          show    = {this.props.openLogin}
-          onHide  = {this.props.closeLogin}
+          show    = {this.props.popStoreLogin}
+          onHide  = {this.props.closeStoreLogin}
           style   = {{
             background: 'transparent',
           }}
@@ -125,13 +131,12 @@ export default class Login extends Component {
                 </div>
               </div>
               <button
-                onClick={this.props.closeLogin}
+                onClick={this.props.closeStoreLogin}
                 className="btn btn-outline-light btn-block"
               >
                 Login
               </button>
             </form>
-            <span> Don't have an account ? <a onClick={this.props.toggleLoginSignup}> SignUp Here </a> </span>
 
           </Modal.Body>
         </Modal>
@@ -139,3 +144,21 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    popStoreLogin: state.popLogin,
+  }
+}
+
+const mapActionsToProps = dispatch => {
+  return {
+
+    openStoreLogin: () => { dispatch(popLogin()) },
+    closeStoreLogin: () => { dispatch(closeLogin()) },
+    loggedIn: (userData) => { dispatch(loggedIn(userData)) }
+  
+  }
+}
+
+export default connect( mapStateToProps, mapActionsToProps ) (Login);

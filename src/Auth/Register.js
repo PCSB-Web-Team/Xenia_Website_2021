@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
 import logo from "./logo1.jpeg";
-export default class Register extends Component {
+
+import {connect} from 'react-redux';
+
+import {popSignUp, closeSignUp, loggedIn} from '../Store/Actions';
+
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -55,7 +60,7 @@ export default class Register extends Component {
         <Modal
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          show={this.props.openSignUp}
+          show={this.props.popSignUp}
           onHide={this.props.closeSignUp}
         >
           <Modal.Header
@@ -200,3 +205,18 @@ export default class Register extends Component {
     );
   }
 }
+
+const mapSatesToProps = state => {
+  return {
+    popSignUp: state.popSignUp
+  }
+}
+
+const mapActionsToProps = dispatch => {
+  return {
+    openSignUp: () => { dispatch(popSignUp()) },
+    closeSignUp: () => { dispatch(closeSignUp()) }
+  }
+}
+
+export default connect(mapSatesToProps, mapActionsToProps)(Register);

@@ -23,4 +23,6 @@ const cartItem=(props)=> {
     )
 }
 
+
+
 export default cartItem;

@@ -1,11 +1,10 @@
 import React,{Component} from 'react';
 import styles from './LandingPage.css';
-import bg from './bg.jpg';
-import Zoom from 'react-reveal/Zoom';
-import astranout from './astranout.png';
-import shuttle from './spaceshuttle.png';
-import lake from './lake.png';
-import layer3 from './jupiter.jpg';
+import bg from './images/bg.jpg';
+import astranout from './images/astranout.png';
+import shuttle from './images/spaceshuttle.png';
+import lake from './images/lake.png';
+import layer3 from './images/jupiter.jpg';
 
 class LandingPage extends Component{
 

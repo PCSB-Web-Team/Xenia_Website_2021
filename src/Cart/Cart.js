@@ -3,7 +3,6 @@ import Cart from './Cart/Cart';
 import './Cart.css';
 import Summary from './Summary/Summary';
 import CouponModal from './Summary/Coupon/CouponModal/CouponModal';
-import Store from '../Store/Store';
 import {connect} from 'react-redux'; 
 
 class Profile extends Component {
@@ -13,24 +12,17 @@ class Profile extends Component {
 
         this.state = {
           show: false,
-          sum: ()=>{
-              let currState=Store.getState();
-              let sum=0;
-          }
         };
         
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
-
     }
     
     showModal = () => {  this.setState({ show: true }); };
-  
+    
     hideModal = () => {  this.setState({ show: false }); };    
     
     render() {
-
-        console.log(this.props.cart)
 
         return (
             <div className="Profile">
@@ -39,7 +31,6 @@ class Profile extends Component {
                 <Summary     couponShowHandler={this.showModal} />
             </div>
         )
-        
     }
 }
 

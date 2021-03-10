@@ -8,11 +8,8 @@ import Slide from 'react-reveal/Slide';
 import Zoom from 'react-reveal/Zoom';
 import * as allEvents from '../Event Details/AllEvents';
 
-let tech=allEvents.tech;
-let nonTech=allEvents.nonTech;
-
-let cart=tech.map(eve=> { return(<h1 className='event'>eve.name</h1>) })
-
+let tech    = allEvents.tech;
+let nonTech = allEvents.nonTech;
 
 class Events extends React.Component {
   
