@@ -4,7 +4,7 @@ import './Cart.css';
 import CartItem from './CartItem/CartItem';
 import EmptyCart from './EmptyCart/EmptyCart';
 import {connect} from 'react-redux';
-import {removeFromCart} from '../../Store/Actions';
+import {removeFromCart} from '../../../Store/Actions';
 
 class Mycart extends Component {
 

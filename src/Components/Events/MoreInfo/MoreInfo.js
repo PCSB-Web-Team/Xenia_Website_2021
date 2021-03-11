@@ -4,9 +4,9 @@ import Slide from "react-reveal/Slide";
 import back from "./arrow-left.svg";
 import back2 from "./arrow-left2.png";
 import { Zoom } from "@material-ui/core";
-import Store from "../../Store/Store";
+import Store from "../../../Store/Store";
 import axios from "axios";
-import {tech,nonTech} from '../../Event Details/AllEvents';
+import {tech,nonTech} from '../../../Event Details/AllEvents';
 
 import {connect} from 'react-redux';
 
@@ -151,10 +151,6 @@ class MoreInfo extends React.Component {
             {this.props.isLoggedIn ? 
               <div
 
-              /*
-                onClick={this.handleAddToCart}
-              */
-
                 onClick={() => {this.props.addToCart(this.state.allEvents[this.state.currEvent].name)} }
 
                 class="btn btn-lg bg-success"
@@ -203,11 +199,13 @@ const mapStateToProps = state => {
 const mapActionToProps = dispatch => {
   return{
       addToCart: (eventName) => {
-        dispatch({
+        dispatch ({
+          
           type: 'addtocart',
           payload: {
             event: eventName
           }
+        
         })
       }
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CartSummary.css';
 import Button from '@material-ui/core/Button';
-import Store from '../../../Store/Store';
+import Store from '../../../../Store/Store';
 
 let sum=0;
 

@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import './MyProf.css';
 import user from './user.png';
-import logo from '../../src/logo.svg';
-import Store from '../Store/Store';
+import logo from '../../../src/logo.svg';
 import WebTeam from  '../WebTeam/WebTeam';
 
 import { connect } from 'react-redux';
-import { loggedOut } from '../Store/Actions';
+import { loggedOut } from '../../Store/Actions';
 import { NavLink } from 'react-bootstrap';
 
 const MyProf = (props) => {

@@ -6,7 +6,7 @@ import Card from './Cards/Card';
 import SideEvents from './SideEvents/SideEvents';
 import Slide from 'react-reveal/Slide';
 import Zoom from 'react-reveal/Zoom';
-import * as allEvents from '../Event Details/AllEvents';
+import * as allEvents from '../../Event Details/AllEvents';
 
 let tech    = allEvents.tech;
 let nonTech = allEvents.nonTech;

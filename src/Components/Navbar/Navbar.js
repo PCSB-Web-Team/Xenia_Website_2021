@@ -4,7 +4,7 @@ import down from './down.png';
 import cart from './cart.png';
 import styles from './Navbar.css';
 
-import {popLogin,closeLogin, popSignUp, closeSignUp} from '../Store/Actions';
+import {popLogin,closeLogin, popSignUp, closeSignUp} from '../../Store/Actions';
 
 import { BrowserRouter as Router,Switch,Route,NavLink } from "react-router-dom";
 import {connect} from 'react-redux';

@@ -1,6 +1,6 @@
 import React from 'react';
 import './WebTeam.css';
-import logo from '../logo.svg';
+import logo from '../../logo.svg';
 
 const webTeam = (props) => {
     return (

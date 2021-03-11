@@ -1,6 +1,6 @@
 import React from 'react';
 import './Sponsors.css';
-import Logo from "../../logo192.png";
+import Logo from "../../../logo192.png";
 import Carousel from 'react-bootstrap/Carousel';
 
 const sponsors = props=>{
