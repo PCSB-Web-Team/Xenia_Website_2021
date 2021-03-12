@@ -264,7 +264,13 @@
     top: 38%;
     left: 55%;
     transition: ease;
-  }/*
+  }
+  
+  .landing-page .lake {
+    width: 1000px;
+  }
+
+  /*
   .layer3 {
     right: unset;
     left: -70%;

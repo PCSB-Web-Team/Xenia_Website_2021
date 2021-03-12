@@ -1,38 +1,36 @@
-import React from 'react';
-import './WebTeam.css';
-import logo from '../../logo.svg';
+import React from "react";
+import "./WebTeam.css";
+import logo from "../../Assets/images/logo.svg";
 
 const webTeam = (props) => {
-    return (
-        <div className = "webTeam">
+  return (
+    <div className="webTeam">
+      <div class="teamcontainer">
+        <div class="teambg"></div>
+        <img class="teammain" src={logo} />
+      </div>
 
-              <div class="teamcontainer">
-                <div class="teambg"></div>
-                <img class="teammain" src={logo} />
-              </div>
+      <div class="teamcontainer">
+        <div class="teambg"></div>
+        <img class="teammain" src={logo} />
+      </div>
 
-              <div class="teamcontainer">
-                <div class="teambg"></div>
-                <img class="teammain" src={logo} />
-              </div>
-              
-              <div class="teamcontainer">
-                <div class="teambg"></div>
-                <img class="teammain" src={logo} />
-              </div>
-              
-              <div class="teamcontainer">
-                <div class="teambg"></div>
-                <img class="teammain" src={logo} />
-              </div>
-              
-              <div class="teamcontainer">
-                <div class="teambg"></div>
-                <img class="teammain" src={logo} />
-              </div>
-              
-        </div>
-    )
-}
+      <div class="teamcontainer">
+        <div class="teambg"></div>
+        <img class="teammain" src={logo} />
+      </div>
+
+      <div class="teamcontainer">
+        <div class="teambg"></div>
+        <img class="teammain" src={logo} />
+      </div>
+
+      <div class="teamcontainer">
+        <div class="teambg"></div>
+        <img class="teammain" src={logo} />
+      </div>
+    </div>
+  );
+};
 
 export default webTeam;

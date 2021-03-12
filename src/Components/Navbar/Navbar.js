@@ -1,13 +1,12 @@
 import React from 'react';
-import logo from './logo1.jpeg'; 
-import down from './down.png';
-import cart from './cart.png';
+import logo from '../../Assets/images/logo1.jpeg'; 
+import down from '../../Assets/images/down.png';
+import cart from '../../Assets/images/cart.png';
 import styles from './Navbar.css';
-
 import {popLogin,closeLogin, popSignUp, closeSignUp} from '../../Store/Actions';
-
 import { BrowserRouter as Router,Switch,Route,NavLink } from "react-router-dom";
 import {connect} from 'react-redux';
+
 
 class Navbar extends React.Component {
 

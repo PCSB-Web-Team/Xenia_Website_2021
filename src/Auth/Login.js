@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Modal } from "react-bootstrap";
-import logo from "./logo1.jpeg";
+import logo from "../Assets/images/logo1.jpeg";
 import Store from "../Store/Store";
 import {connect} from 'react-redux';
 import {loggedIn, popLogin, closeLogin} from '../Store/Actions';
@@ -27,24 +27,21 @@ class Login extends Component {
   };
 
   handleSubmit = (e) => {
+
+    this.props.closeStoreLogin()
+
     const { username, password, token } = this.state;
     
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/api/login", { username, password })
+      .post("http://localhost:5000/api/user/login", { username, password })
       .then((res) => {
         let userdata = res.data.data;
 
-        if (res.data.status === "ok") {
-          Store.dispatch({
-            type: "logedin",
-            payload: userdata,
-          });
+        console.log(res)
 
-          {
-            this.props.handleLogedin(userdata);
-          }
+        if (res.data.status === "ok") {
 
           this.props.loggedIn(userdata);
 
@@ -131,7 +128,7 @@ class Login extends Component {
                 </div>
               </div>
               <button
-                onClick={this.props.closeStoreLogin}
+                onClick={this.handleSubmit}
                 className="btn btn-outline-light btn-block"
               >
                 Login

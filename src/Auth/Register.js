@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
-import logo from "./logo1.jpeg";
+import logo from "../Assets/images/logo1.jpeg";
 
 import {connect} from 'react-redux';
 
@@ -11,7 +11,7 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      name: "",
       email: "",
       password: "",
       college: "",
@@ -19,8 +19,8 @@ class Register extends Component {
     };
   }
 
-  handleUserName = (e) => {
-    this.setState({ username: e.target.value });
+  handleName = (e) => {
+    this.setState({ name: e.target.value });
   };
 
   handlePassword = (e) => {
@@ -40,17 +40,19 @@ class Register extends Component {
   };
 
   handleSubmit = (e) => {
-    const { username, password, college, email, phone } = this.state;
+    const { name, password, college, email, phone } = this.state;
+
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/register", {
-        username,
+      .post("http://localhost:5000/api/user/register", {
+        name,
         password,
         college,
         email,
         phone,
       })
-      .then((res) => console.log(res))
+      .then((res) => {console.log(res)}
+      )
       .catch((err) => console.log(err));
   };
 
@@ -100,10 +102,10 @@ class Register extends Component {
                   <input
                     className="form-control"
                     placeholder="Username"
-                    name="username"
-                    value={this.state.username}
+                    name="name"
+                    value={this.state.name}
                     type="text"
-                    onChange={this.handleUserName}
+                    onChange={this.handleName}
                   />
                 </div>
               </div>
@@ -214,6 +216,7 @@ const mapSatesToProps = state => {
 
 const mapActionsToProps = dispatch => {
   return {
+    loggedIn: (data) => {dispatch(loggedIn(data))},
     openSignUp: () => { dispatch(popSignUp()) },
     closeSignUp: () => { dispatch(closeSignUp()) }
   }

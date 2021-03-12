@@ -2,14 +2,14 @@ import React from "react";
 import "./Contact.css";
 import { motion } from "framer-motion";
 import FAQ from "./FAQ/FAQ";
-import moonbg from './moon.jpg';
+import moonbg from "../../Assets/images/moon.jpg";
 
 const Contact = () => {
   const fadeTop = {
     hidden: { opacity: 0, y: -150 },
     visible: { opacity: 1, y: 0 },
   };
-  
+
   const fade = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -17,8 +17,6 @@ const Contact = () => {
 
   return (
     <div className="contact text-center mb-5">
-
-
       <motion.div
         variants={fade}
         initial="hidden"
@@ -41,28 +39,39 @@ const Contact = () => {
             <br />
             <form action="">
               <div class="input-group  mb-3">
-                <div class="input-group-prepend">
-                </div>
-                <input type="text" class="form-control bg-dark border-0 rounded-0 text-light " placeholder="Name" />
+                <div class="input-group-prepend"></div>
+                <input
+                  type="text"
+                  class="form-control bg-dark border-0 rounded-0 text-light "
+                  placeholder="Name"
+                />
               </div>
 
               <div class="input-group  mb-3">
-                <input type="text" class="form-control bg-dark border-0 rounded-0 text-light" placeholder="Email" />
+                <input
+                  type="text"
+                  class="form-control bg-dark border-0 rounded-0 text-light"
+                  placeholder="Email"
+                />
               </div>
-              
+
               <div class="input-group  mb-3">
-              {/** 
+                {/** 
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="fas fa-phone text-success"></i>
                   </span>
                 </div>
               */}
-                <input type="text" class="form-control bg-dark border-0 rounded-0 text-light" placeholder="Phone" />
+                <input
+                  type="text"
+                  class="form-control bg-dark border-0 rounded-0 text-light"
+                  placeholder="Phone"
+                />
               </div>
 
               <div class="input-group  mb-3">
-              {/**
+                {/**
                 <div class="input-group-prepend">
                   <span class="input-group-text">
                     <i class="fas fa-pencil-alt text-primary"></i>
@@ -121,10 +130,12 @@ const Contact = () => {
                 borderRadius: "12px",
                 boxShadow: "2px 2px 15px #131313",
                 opacity: 1,
-                background: '#0000'
+                background: "#0000",
               }}
             >
-              <h4 className="text-light text-center font-weight-bold">Social</h4>
+              <h4 className="text-light text-center font-weight-bold">
+                Social
+              </h4>
               <hr
                 style={{
                   color: "#004d33",

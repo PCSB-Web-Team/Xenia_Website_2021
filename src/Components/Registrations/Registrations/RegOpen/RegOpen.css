@@ -277,5 +277,29 @@
 
  .loren{
    font-family: 'planetns';
-   font-size: 0.8em;
+   font-size: 1vw;
  }
+
+ @media (max-width:600px){
+    .open{
+      font-size: 6vw;
+    }
+    .sche{
+      font-size: 6vw;
+    }
+    .loren{
+      font-size: 3vw;
+    }
+ }
+
+ @media (min-width:601px) and (max-width:960px){
+  .open{
+    font-size: 5vw;
+  }
+  .sche{
+    font-size: 5vw;
+  }
+  .loren{
+    font-size: 2.5vw;
+  }
+}

@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from './CartItem.css';
-import cross from './cross.png';
-import logo from '../../../../logo.svg';
-import Button from '@material-ui/core/Button';
+import React    from 'react';
+import styles   from './CartItem.css';
+//import cross    from '../../../../Assets/images/cross.png';
+import logo     from '../../../../Assets/images/logo.svg';
+import Button   from '@material-ui/core/Button';
 
 const cartItem=(props)=> {
     return (

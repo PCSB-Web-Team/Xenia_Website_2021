@@ -2,14 +2,14 @@
   /* max-width: 50%; */
   margin-top: 35px;
   height: 100vh;
-  background: linear-gradient(rgba(255, 255, 255, 0.5),black);
+  background: linear-gradient(rgba(255, 255, 255, 0.5), black);
   display: block;
 }
 
-.contact{
+.contact {
   position: relative;
   text-align: center;
-  background: url('./moon.jpg');
+  background: url("../../Assets/images/moon.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -26,7 +26,7 @@
   background-color: white;
 }
 
-.contact input:focus{
+.contact input:focus {
   outline: none;
 }
 

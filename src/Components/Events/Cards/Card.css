@@ -102,3 +102,9 @@
   transition: ease 500ms;
   background: rgba(0, 247, 255, 0.644)
 }
+
+@media (max-width: 400px){
+  .card-div{
+    width: 90%;
+  }
+}

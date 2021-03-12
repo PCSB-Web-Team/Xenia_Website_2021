@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import "./About.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import main from "./main_bg.jpg";
-import about from "./hero.jpg";
-import data from "./datamastro.jpg";
-import code from "./sudocode.jpg";
+import main from "../../Assets/images/main_bg.jpg";
+import about from "../../Assets/images/hero.jpg";
+import data from "../../Assets/images/datamastro.jpg";
+import code from "../../Assets/images/sudocode.jpg";
 import { motion } from "framer-motion";
-import Sponsors from './Sponsors/Sponsors';
+import Sponsors from "./Sponsors/Sponsors";
 
 const About = () => {
   useEffect(() => {
@@ -67,8 +67,22 @@ const About = () => {
             transition={{ duration: 1, delay: 1.5 }}
             style={{ textAlign: "center", color: "#ffff" }}
           >
-          Xenia is the annual technical festival organised by the PICT CSI Student Branch. This is a technical event with the view to find out the best of each and everyone and grow their skills. Xenia not only aims to develop the coding skills but also develop your aptitude skills. 
-          <br/><br/>Xenia gives you the chance to discover your talents through its various events. The events like campus to corporate gives  the experience for interviews for placement activities. You will discover your coding skills with events like Code strike, Ninja Coding Contest and Data Cup. This is the unique opportunity for the students to think beyond their regular academics and find out their best . The pneuma of learning new things has inspired the PICT CSI Branch to present Xenia in order to nurture and cultivate the talent.
+            Xenia is the annual technical festival organised by the PICT CSI
+            Student Branch. This is a technical event with the view to find out
+            the best of each and everyone and grow their skills. Xenia not only
+            aims to develop the coding skills but also develop your aptitude
+            skills.
+            <br />
+            <br />
+            Xenia gives you the chance to discover your talents through its
+            various events. The events like campus to corporate gives the
+            experience for interviews for placement activities. You will
+            discover your coding skills with events like Code strike, Ninja
+            Coding Contest and Data Cup. This is the unique opportunity for the
+            students to think beyond their regular academics and find out their
+            best . The pneuma of learning new things has inspired the PICT CSI
+            Branch to present Xenia in order to nurture and cultivate the
+            talent.
           </motion.p>
 
           {/* <motion.button

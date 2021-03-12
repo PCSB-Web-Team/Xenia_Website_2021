@@ -148,6 +148,21 @@
     color: white;
 }
 
+@media (max-width: 400px){
+    .suggestion{
+        width: 100%;
+        margin: 0px;
+    }
+
+    .suggestion .card{
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        margin-block: 10px;
+        height: fit-content;
+    }
+}
+
 
 
 

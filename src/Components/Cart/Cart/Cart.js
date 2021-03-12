@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import del from './delete_icon.png';
 import './Cart.css';
 import CartItem from './CartItem/CartItem';
 import EmptyCart from './EmptyCart/EmptyCart';
