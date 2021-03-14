@@ -1,5 +1,5 @@
 export default {
-    login: false,
+    login: true,
     popLogin: false,
     popSignUp: false,
     cart: [],

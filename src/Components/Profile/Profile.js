@@ -6,8 +6,7 @@ import WebTeam from  '../WebTeam/WebTeam';
 
 import { connect } from 'react-redux';
 import { loggedOut } from '../../Store/Actions';
-import { NavLink } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 
 const MyProf = (props) => {
 
@@ -58,7 +57,7 @@ const MyProf = (props) => {
             
             </div>
     
-            <NavLink to='/' exact className='btn btn-lg text-success' onClick={() => props.logout()}> Logout </NavLink>
+            <Link to='/' exact className='btn btn-lg text-success' onClick={() => props.logout()}> Logout </Link>
         
         </div>
     )
