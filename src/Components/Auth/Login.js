@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Modal } from "react-bootstrap";
-import logo from "../Assets/images/logo1.jpeg";
-import Store from "../Store/Store";
+import logo from  "../../Assets/images/logo1.jpeg";
 import {connect} from 'react-redux';
-import {loggedIn, popLogin, closeLogin} from '../Store/Actions';
+import {loggedIn, popLogin, closeLogin} from '../../Store/Actions';
 
 class Login extends Component {
   constructor(props) {

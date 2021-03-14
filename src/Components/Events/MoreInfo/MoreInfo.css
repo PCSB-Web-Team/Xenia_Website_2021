@@ -1,5 +1,6 @@
 .MoreInfo{
     background: none;
+    position: relative;
 }
 .MoreInfo .info1{
     width: 50%;
@@ -87,7 +88,7 @@
     overflow: hidden;
     height: 30px;
     width: 30px;
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 0px;
     margin-left: 50px;
     top: 0px;
@@ -160,70 +161,5 @@
         margin: 0px;
         margin-block: 10px;
         height: fit-content;
-    }
-}
-
-
-
-
-
-
-
-.type2{
-    display: none;
-    width: 100%;
-    min-height: 100vh;
-    text-align: center;
-}
-
-.type2 .jumbotron{
-    font-weight: bold;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background: radial-gradient(circle,rgba(15, 104, 131, 0.568),black);
-    text-align: center;
-    display: inline-block;
-    width: 50%;
-    height: 100%;
-}
-
-.MoreInfo .type2 .type2-nav{
-    
-    background: rgba(0, 0, 0, 0.425);
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    height: 100%;
-    width: 50%;
-    display: inline-block;
-    padding: 20px;
-    
-}
-
-.type2 .tab-pane{
-    padding: 5px;
-    min-height: 400px;
-}
-
-@media (max-width: 800px){
-
-    .MoreInfo .suggestion{
-        position: relative;
-        width: 100%;
-    }
-
-    .MoreInfo .info1{
-        width: 100%;
-        display: block;
-    }
-
-    .type2{
-        display: block;
-    }
-
-    .more-info.jumbotron .logo{
-        margin-block: 50px;
-        width: 50%;
     }
 }

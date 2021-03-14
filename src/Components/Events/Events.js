@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import './Cards/Card.css';
 import MoreInfo from './MoreInfo/MoreInfo';
 import './Events.css';
@@ -7,16 +7,74 @@ import SideEvents from './SideEvents/SideEvents';
 import Slide from 'react-reveal/Slide';
 import Zoom from 'react-reveal/Zoom';
 import * as allEvents from '../../Event Details/AllEvents';
+import {connect} from 'react-redux';
+import {Link} from  'react-router-dom';
+import {getEventData} from '../../Store/Actions';
+import axios from 'axios';
 
-let tech    = allEvents.tech;
-let nonTech = allEvents.nonTech;
-
-class Events extends React.Component {
+const Events = (props) => {
   
+  const [eventType, setEventType] = useState('tech');
+  const [view, setView] = useState('cards');
+  const [techEvents, setTech] = useState([]);
+  const [nonTechEvents, setNonTech] = useState([]);
+
+  useEffect(() => { fetchData() }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://xenia-backend.herokuapp.com/api/events')
+
+      if(response.data.ok){
+
+        let tech = [];
+        let nonTech =[];
+
+        tech = response.data.data.filter(  eve => eve.isTechnical )
+        nonTech = response.data.data.filter( eve => !eve.isTechnical )
+
+        setTech(tech);
+        setNonTech(nonTech);
+        
+      }
+
+    }
+    catch(err) {
+      console.log(err)
+    }
+  }
+
+  const changeEventType = () => {
+    if (eventType === 'tech') setEventType('nonTech')
+    else setEventType('tech')
+  }
+
+  return (
+    <div className="events-dashboard">
+      <div className="card-container">
+          
+          <div className="tabs">
+            <button className={eventType==='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={changeEventType} id='tech-tab'>Tech</button>
+            <button className={eventType!=='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={changeEventType} id='non-tech-tab'>Non-Tech</button>
+          </div>
+          
+          <div className="card-container">
+            {eventType ==='tech' ? techEvents.map( eve => (<div className='card-div'>    <Link key={eve._id} to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>) ) : null}
+            {eventType !=='tech' ? nonTechEvents.map( eve => (<div className='card-div'> <Link key={eve._id} to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>) ) : null}
+          </div>
+
+      </div>
+    </div>
+  )
+}
+
+/*
+class Events extends React.Component {
+
   constructor(props){
     
     super(props);
-    this.state={
+    this.state = {
         eventType: 'tech',
 
         view: 'cards',
@@ -45,16 +103,32 @@ class Events extends React.Component {
     alert("You WIll Be Redirected to Payments Portal")
   }
 
-  readMore = (e) => {
-    
+  render() {
+
+
+
+  let techEvents=[];
+  let nonTechEvents=[];
+
+  let eventData = this.props.eventData;
+
+  for(let i=0; i < 15; i++) {
+
+    let element=eventData[i];
+
+    if(element.isTechnical) {
+      techEvents[techEvents.length] = <div className='card-div'> <Card details = {element} readmore = { () => {console.log('clicked')} }></Card> </div>
+    }
+    else {
+      nonTechEvents [nonTechEvents.length] = <div className='card-div'> <Card details = {element} readmore = { () => {console.log('clicked')} }></Card> </div>
+    }
   }
 
-  render(){
-    
+
   const techCards = tech.map(eve => {
     return(
       <div className="card-div">
-          <Card props={eve} allEvents={tech} readmore={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}/>        
+            <Card details={eve} allEvents={tech} readmore={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}/>        
       </div>
   )
   });
@@ -62,7 +136,7 @@ class Events extends React.Component {
   const nonTechCards = nonTech.map(eve => {
     return(
       <div className="card-div">
-          <Card props={eve} allEvents={nonTech} readmore={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}/>        
+            <Card details={eve} allEvents={nonTech} readmore={()=>{this.setState({view: 'moreInfo', currEvent: eve})}}/>        
       </div>
   )
   });
@@ -81,7 +155,9 @@ class Events extends React.Component {
           </div>
           }
 
-          
+          {this.state.eventType === 'tech' ? techEvents : null}
+          {this.state.eventType !== 'tech' ? nonTechEvents : null}
+
           {this.state.eventType === 'tech' ? techCards    : null}
           {this.state.eventType !== 'tech' ? nonTechCards : null}
 
@@ -90,10 +166,28 @@ class Events extends React.Component {
         :
         <MoreInfo eventType={this.state.eventType} logedIn={this.props.logedIn} close={this.handleClose.bind(this)} handleRegister={this.handleRegister} details={this.state.currEvent} />
       }
+
+        
+
     </div>
   );
   
 }
 }
+*/
 
-export default Events;
+const mapStatesToProps = state => {
+
+  return {
+    eventData: state.eventData
+  }
+
+}
+
+const mapActionsToProps = dispatch => {
+  return {
+    storeEventData: (details) => { dispatch( getEventData( details ) ) }
+  }
+}
+
+export default connect( mapStatesToProps, mapActionsToProps )( Events );

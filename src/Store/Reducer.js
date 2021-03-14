@@ -76,6 +76,13 @@ export default function (state=defaultState,action){
                 return {...state}
             }
             
+        case(actions.GETEVENTDATA): {
+            return {
+                ...state,
+                eventData: action.payload.data, 
+            }
+        }
+
         case(actions.REMOVEFROMCART):
         {
             let newCart = state.cart.filter(eve => eve.name !== action.payload.eveName);

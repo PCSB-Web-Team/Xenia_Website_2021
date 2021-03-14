@@ -1,10 +1,11 @@
 import React      from  'react';
 import Navbar     from  './Components/Navbar/Navbar';
-import LoginPage  from  './Auth/Login';
-import SignupPage from  './Auth/Register';
+import LoginPage  from  './Components/Auth/Login';
+import SignupPage from  './Components/Auth/Register';
 import Home       from  './Components/LandingPage/LandingPage';
 import Schedule   from  './Components/Registrations/Registrations';
 import Events     from  './Components/Events/Events';
+import EventDetail from './Components/Events/MoreInfo/MoreInfo'; 
 import AboutUs    from  './Components/AboutUs/About';
 import ContactUs  from  './Components/Contact/Contact';
 import Footer     from  './Components/Footer/Footer';
@@ -13,28 +14,29 @@ import Profile    from  './Components/Profile/Profile';
 import styles     from  './App.css';
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import axios from 'axios';
+import {getEventData} from './Store/Actions';
+import {connect} from 'react-redux';
 
 class App extends React.Component {
 
   componentDidMount() {
-  
     let eventDetails=[];
 
     axios
     .get('https://xenia-backend.herokuapp.com/api/events')
     .then(res => {
-      
-      console.log(res);
 
       if(res.data.ok) {
         eventDetails = res.data.data;
       }
 
+      this.props.getEventData(eventDetails);
+
     })
     .catch(err => {
       console.log(err)
     })
-
+    
     let username = (localStorage.getItem('xeniausername'));
     let password = (localStorage.getItem('xeniapassword'));
   
@@ -48,6 +50,7 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route path="/schedule">    <Schedule /><Footer/>   </Route>
+          <Route path="/events/:id">  <EventDetail/><Footer/> </Route>
           <Route path="/events">      <Events/><Footer/>      </Route>
           <Route path="/about-us">    <AboutUs /><Footer/>    </Route>
           <Route path="/contact-us">  <ContactUs /><Footer/>  </Route>
@@ -62,4 +65,16 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStatesToProps = state => {
+  return{
+    state: state
+  }
+}
+
+const mapActionsToProps = dispatch => {
+  return {
+    getEventData: data => { dispatch( getEventData(data) ) }
+  }
+} 
+
+export default connect(mapStatesToProps, mapActionsToProps)(App);

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
-import logo from "../Assets/images/logo1.jpeg";
+import logo from "../../Assets/images/logo1.jpeg";
 
 import {connect} from 'react-redux';
 
-import {popSignUp, closeSignUp, loggedIn} from '../Store/Actions';
+import {popSignUp, closeSignUp, loggedIn} from '../../Store/Actions';
 
 class Register extends Component {
   constructor(props) {
