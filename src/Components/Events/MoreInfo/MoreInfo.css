@@ -2,6 +2,7 @@
     background: none;
     position: relative;
 }
+
 .MoreInfo .info1{
     width: 50%;
     display: inline-block;
@@ -9,6 +10,7 @@
     background: radial-gradient(circle,rgba(15, 104, 131, 0.568),black);
     margin: 0px;
 }
+
 .MoreInfo .info1 .jumbotron{
     background: none;
     min-height: 100vh;

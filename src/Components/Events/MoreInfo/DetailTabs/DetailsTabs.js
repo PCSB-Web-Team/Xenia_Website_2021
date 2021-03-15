@@ -59,9 +59,10 @@ const useStyles = makeStyles((theme) => ({
     width: '30%',
   },
   info: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
     textAlign: 'justify',
-    maxHeight: '400px',
-    overflow: 'auto', 
+    height: '400px',
+    overflow: 'auto',
   }
 }));
 

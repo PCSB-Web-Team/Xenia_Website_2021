@@ -200,7 +200,7 @@
     0 0 25px #06e8f8, 0 0 30px #06e8f8, 0 0 35px #06e8f8;
   animation: animate 2000ms alternate infinite;
   letter-spacing: 70px;
-  transition: ease 5ms;
+  transition: ease 1s;
 }
 
 @keyframes animate {
@@ -220,14 +220,15 @@
   margin-bottom: 0;
   position: absolute;
   top: 46%;
-  left: 63%;
+  left: 64%;
+  transition: ease 1s;
 }
 
 @media (max-width: 1300px) {
   .landing-page .landing-container span {
     top: 43%;
     left: 63%;
-    transition: ease;
+    transition: ease 1s;
   }
   .layer3 {
     right: -20px;
@@ -241,8 +242,8 @@
 @media (max-width: 1120px) {
   .landing-page .landing-container span {
     top: 41%;
-    left: 62%;
-    transition: ease-out;
+    left: 63%;
+    transition: ease 1s;
   }
 
   .layer3 {
@@ -253,32 +254,63 @@
   }
 }
 
-@media (max-width: 880px) {
+@media (max-width: 1100px) {
   .landing-page h1#xenia {
-    font-size: 80px;
-    letter-spacing: 25px;
+    font-size: 8vw;
+    letter-spacing: 50px;
     
-    transition: ease;
+    transition: ease 1s;
   }
   .landing-page .landing-container span {
-    top: 38%;
-    left: 55%;
-    transition: ease;
+    top: 39%;
+    left: 59%;
+    transition: ease 1s;
+  }
+}
+
+@media (max-width: 880px) {
+  .landing-page h1#xenia {
+    font-size: 85px;
+    letter-spacing: 30px;
+    
+    transition: ease 1s;
+  }
+  .landing-page .landing-container span {
+    top: 39%;
+    left: 58%;
+    transition: ease 1s;
   }
   
   .landing-page .lake {
     width: 1000px;
   }
+}
 
-  /*
-  .layer3 {
-    right: unset;
-    left: -70%;
-    top: 0px;
-    width: 1300px;
-    height: 800px;
-    transition: ease-out 5s;
-  }*/
+@media (max-width: 750px) {
+  .landing-page h1#xenia {
+    font-size: 70px;
+    letter-spacing: 30px;
+    
+    transition: ease 1s;
+  }
+  .landing-page .landing-container span {
+    top: 38%;
+    left: 55%;
+    transition: ease 1s;
+  }
+}
+
+@media (max-width: 650px) {
+  .landing-page h1#xenia {
+    font-size: 65px;
+    letter-spacing: 25px;
+    transition: ease 1s;
+  }
+  .landing-page .landing-container span {
+    top: 36%;
+    left: 54%;
+    transition: ease 1s;
+  }
 }
 
 .landing-page .date {
@@ -286,6 +318,7 @@
   font-size: 3vw;
   color: white;
   margin-bottom: 0;
+  transition: ease 1s;
 }
 
 @font-face {
