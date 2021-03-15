@@ -54,7 +54,14 @@ const useStyles = makeStyles((theme) => ({
   },
   details: {
     backgroundColor: 'black',
-    textAlign: 'left',
+  },
+  buttn: {
+    width: '30%',
+  },
+  info: {
+    textAlign: 'justify',
+    maxHeight: '400px',
+    overflow: 'auto', 
   }
 }));
 
@@ -70,18 +77,18 @@ export default function SimpleTabs(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs className={classes.tabs} indicatorColor='primary' value={value} onChange={handleChange} variant='fullWidth' aria-label="simple tabs example">
-          <Tab label="Rules" {...a11yProps(0)} />
-          <Tab label="Prizes" {...a11yProps(1)} />
-          <Tab label="Contact" {...a11yProps(2)} />
+          <Tab className={classes.buttn} label="Rules" {...a11yProps(0)} />
+          <Tab className={classes.buttn} label="Prizes" {...a11yProps(1)} />
+          <Tab className={classes.buttn} label="Contact" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
-      <TabPanel className='mi-details' value={value} index={0}>
+      <TabPanel className={classes.info} value={value} index={0}>
         {props.details.rules.map( rule => <p>{rule}</p> )}
       </TabPanel>
-      <TabPanel className='mi-details' value={value} index={1}>
+      <TabPanel className={classes.info} value={value} index={1}>
         {props.details.prizes.map( prizes => <p>{prizes}</p> )}
       </TabPanel>
-      <TabPanel className='mi-details' value={value} index={2}>
+      <TabPanel className={classes.info} value={value} index={2}>
         {props.details.contacts.map (contact => <p>{contact}</p>)}
       </TabPanel>
     </div>

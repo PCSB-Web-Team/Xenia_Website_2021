@@ -20,6 +20,8 @@ const MoreInfo = (props) => {
 
   let {id} = useParams();
 
+  useEffect(() => {fetchData()}, [id]);
+
   const fetchData = async () => {
     try {
       const response = await axios.get(`https://xenia-backend.herokuapp.com/api/events/${id}`);
@@ -36,23 +38,21 @@ const MoreInfo = (props) => {
     setLoading(false);
   }
 
-  useEffect(() => {fetchData()}, []);
-
-
   return (
     <div className = 'MoreInfo'>
+
+    {loading ? <h1>Loading</h1> : 
+      <div className="info1">
+
 
         <Link to='/events'>
           <div class="back-container">
             <img src={back2} />
           </div>
         </Link>
-        
 
-    {loading ? <h1>Loading</h1> : 
-      <div className="info1">
           <div
-            class="more-info jumbotron text-center py-2 px-5"
+            class="more-info jumbotron text-center py-2"
             id="main-detail"
           >
             <img

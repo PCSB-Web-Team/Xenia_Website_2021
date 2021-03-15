@@ -88,9 +88,9 @@
     overflow: hidden;
     height: 30px;
     width: 30px;
-    margin-top: 0px;
+    margin-top: 20px;
     padding: 0px;
-    margin-left: 50px;
+    margin-left: 20px;
     top: 0px;
     left: 0px;
     position: absolute;
@@ -130,7 +130,7 @@
     width: 75%;
     height: 45vh;
 
-    margin-block: 5vh;
+    margin-block: 1.5vh;
     margin-inline: 12.5%;
 }
 
@@ -149,10 +149,22 @@
     color: white;
 }
 
-@media (max-width: 400px){
-    .suggestion{
+@media (max-width: 800px){
+
+    .MoreInfo .info1{
+        width: 100%;
+    }
+
+    .more-info{
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+    }
+
+    .MoreInfo .suggestion{
         width: 100%;
         margin: 0px;
+        position: relative;
     }
 
     .suggestion .card{
