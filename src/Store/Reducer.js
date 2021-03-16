@@ -44,37 +44,25 @@ export default function (state=defaultState,action){
         case(actions.ADDTOCART):
 
             let duplicate=false;
-            let eventToAdd=action.payload.event;
+            let eventToAdd=action.payload.eveData;
 
             for(let i=0 ; i < state.cart.length ; i++)
             {
-                if(state.cart[i].name === eventToAdd){
+                if(state.cart[i].name === eventToAdd.name){
                     duplicate=true;
                     break;
                 }
             }
 
-            let eventObject;
+            console.log(eventToAdd);
 
-            for(let i=0;i < allEvents.length ; i++){
-
-                if(eventToAdd===allEvents[i].name){
-                    eventObject=allEvents[i];
-                    break;
-                }
-
-            }
-
-            if(!duplicate){
+            if(!duplicate)
                 return {
                     ...state,
-                    cart: [...state.cart, eventObject]
+                    cart: [...state.cart, eventToAdd]
                 }    
-            }
 
-            else{
-                return {...state}
-            }
+            else    return {...state}
             
         case(actions.GETEVENTDATA): {
             return {

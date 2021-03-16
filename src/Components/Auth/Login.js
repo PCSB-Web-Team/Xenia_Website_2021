@@ -34,11 +34,13 @@ class Login extends Component {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/api/user/login", { username, password })
+      .post("https://xenia-backend.herokuapp.com/api/user/login", {email: username, password })
       .then((res) => {
         let userdata = res.data.data;
 
         console.log(res)
+        
+        
 
         if (res.data.status === "ok") {
 

@@ -49,14 +49,13 @@ class App extends React.Component {
       <div className='Xenia' id='Xenia'>
         <Navbar />
         <Switch>
-          <Route path="/schedule">    <Schedule /><Footer/>   </Route>
-          <Route path="/events/:id">  <EventDetail/><Footer/> </Route>
-          <Route path="/events">      <Events/><Footer/>      </Route>
-          <Route path="/about-us">    <AboutUs /><Footer/>    </Route>
-          <Route path="/contact-us">  <ContactUs /><Footer/>  </Route>
-          <Route path='/cart'>        <Cart/><Footer/>        </Route>
-          <Route path='/profile'>     <Profile/><Footer/>     </Route>
-          <Route path="/">            <Home />                </Route>
+          <Route path="/schedule">    <Schedule /><Footer/>               </Route>
+          <Route path="/events/:id">  <EventDetail/><Footer/>             </Route>
+          <Route path="/events">      <Events/><Footer/>                  </Route>
+          <Route path="/about-us">    <AboutUs /><ContactUs/><Footer/>    </Route>
+          <Route path='/cart'>        <Cart/><Footer/>                    </Route>
+          <Route path='/profile'>     <Profile/><Footer/>                 </Route>
+          <Route path="/">            <Home />                            </Route>
         </Switch>
         <LoginPage />
         <SignupPage/>

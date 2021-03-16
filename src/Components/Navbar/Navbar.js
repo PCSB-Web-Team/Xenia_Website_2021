@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import logo from '../../Assets/images/logo1.jpeg'; 
 import down from '../../Assets/images/down.png';
 import cart from '../../Assets/images/cart.png';
@@ -7,29 +7,17 @@ import {popLogin,closeLogin, popSignUp, closeSignUp} from '../../Store/Actions';
 import { BrowserRouter as Router,Switch,Route,NavLink } from "react-router-dom";
 import {connect} from 'react-redux';
 
+const Navbar = (props) => {
 
-class Navbar extends React.Component {
+    const [view,setView] = useState('down');
 
-    constructor(props){
-      super(props);
-      this.state={
-        view: 'down'
-      }
-  
+    const handleNavView = (e) => {
+      if(view === 'down') setView('up')
+      else setView('down')
     }
 
-    handleNavDisplay = (e) => {
-      if(this.state.view==='down')  this.setState({view: 'up'})
-      else this.setState({view: 'down'})
-    }
-
-    handleNavView=()=>{
-      if(this.state.view==='down')  this.setState({view: 'up'})
-      else this.setState({view: 'down'})
-    }
-
-   render(){
     return (
+
     <div>
       <div className="NavBar" id='navBar'>         
         
@@ -46,44 +34,44 @@ class Navbar extends React.Component {
           <NavLink to='/schedule'    activeClassName='active-nav' className='nav-tabs'>  Schedule    </NavLink>
           <NavLink to='/events'      activeClassName='active-nav' className='nav-tabs'>  Events      </NavLink>
           <NavLink to='/about-us'    activeClassName='active-nav' className='nav-tabs'>  About Us    </NavLink>
-          <NavLink to='/contact-us'  activeClassName='active-nav' className='nav-tabs'>  Contact Us  </NavLink>
-          
-          {this.props.isLoggedIn ? 
+          {/* <NavLink to='/contact-us'  activeClassName='active-nav' className='nav-tabs'>  Contact Us  </NavLink>
+           */}
+          {props.isLoggedIn ? 
           <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs'>  Profile    </NavLink> : null }
           
-          {!this.props.isLoggedIn ? <div className="nav-tabs" onClick={this.props.openLogin}  id='contact' href="#Contact-us">Login</div> : null}
-          {!this.props.isLoggedIn ? <div className="nav-tabs" onClick={this.props.openSignUp} id='contact' href="#Contact-us">Sign Up</div> : null }
+          {!props.isLoggedIn ? <div className="nav-tabs" onClick={props.openLogin}  id='contact' href="#Contact-us">  Login   </div> : null}
+          {!props.isLoggedIn ? <div className="nav-tabs" onClick={props.openSignUp} id='contact' href="#Contact-us">  Sign Up </div> : null }
 
         </div>
 
-      <a id='nav-arrow' onClick={this.handleNavDisplay}><img src={down} className={this.state.view}></img></a>
+      <div id='nav-arrow' onClick={handleNavView}><img src={down} className={view}></img></div>
       {
-        this.state.view==='up'
+        view==='up'
         ?
         <div className="MobileNav" >
         
-          <NavLink to="/"      exact activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  Home       </NavLink>
-          <NavLink to='/schedule'    activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  Schedule   </NavLink>
-          <NavLink to='/events'      activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  Events     </NavLink>
-          <NavLink to='/about-us'    activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  About Us   </NavLink>
-          <NavLink to='/contact-us'  activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  Contact Us </NavLink>
-          
-          {this.props.isLoggedIn ? 
-          <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs' onClick={this.handleNavView}>  Profile    </NavLink>
+          <NavLink to="/"      exact activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Home       </NavLink>
+          <NavLink to='/schedule'    activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Schedule   </NavLink>
+          <NavLink to='/events'      activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Events     </NavLink>
+          <NavLink to='/about-us'    activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  About Us   </NavLink>
+          {/* <NavLink to='/contact-us'  activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Contact Us </NavLink>
+           */}
+          {props.isLoggedIn ? 
+          <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Profile    </NavLink>
           : null }
           
-          {!this.props.isLoggedIn ? <div className="nav-tabs"  onClick={this.props.openLogin}  id='contact' href="#Contact-us"> Login   </div> : null}
-          {!this.props.isLoggedIn ? <div className="nav-tabs"  onClick={this.props.openSignUp} id='contact' href="#Contact-us"> Sign Up </div> : null }
+          {!props.isLoggedIn ? <div className="nav-tabs"  onClick={props.openLogin}  id='contact' href="#Contact-us"> Login   </div> : null}
+          {!props.isLoggedIn ? <div className="nav-tabs"  onClick={props.openSignUp} id='contact' href="#Contact-us"> Sign Up </div> : null }
         
         </div>
           :
           null
       }
       
-      <NavLink to='/cart'>  { this.props.isLoggedIn  ?
-          <div className='cart-logo' id='cart' onClick={() => {this.setState({view: 'down'})}}>
+      <NavLink to='/cart'>  { props.isLoggedIn  ?
+          <div className='cart-logo' id='cart' onClick={() => {setView('down')}}>
               <img src={cart}></img>
-              <span>{this.props.cart.length}</span>
+              <span>{props.cart.length}</span>
           </div>
           :
           null
@@ -94,7 +82,6 @@ class Navbar extends React.Component {
 
       </div>
     );
-   }
 }
 
 const mapStateToProps = state => {

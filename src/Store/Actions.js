@@ -33,11 +33,11 @@ export const getEventData = (eveData) => {
     }
 }
 
-export const addToCart = (eveName) => {
+export const addToCart = (eveData) => {
     return {
         type: ADDTOCART,
         payload: {
-            eveName: eveName
+            eveData: eveData
         }
     }
 }

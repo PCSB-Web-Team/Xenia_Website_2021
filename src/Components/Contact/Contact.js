@@ -23,7 +23,7 @@ const Contact = () => {
         animate="visible"
         transition={{ duration: 1 }}
         className="display-4"
-        className="container p-5"
+        className="container col-lg-8 p-5"
       >
         <div className="row">
           <div className="col-lg-6">
@@ -98,7 +98,7 @@ const Contact = () => {
               initial="hidden"
               animate="visible"
               transition={{ duration: 1, delay: 0.5 }}
-              className="text-light rounded-0 p-3 mx-5 "
+              className="text-light rounded-0 p-3 my-5 "
               style={{
                 borderRadius: "12px",
                 boxShadow: "2px 2px 15px #131313",
@@ -113,7 +113,7 @@ const Contact = () => {
                   margin: "4% 20%",
                 }}
               />
-              <p className="text-dark">
+              <p className="address">
                 Survey No. 27, Near, Trimurti Chowk,
                 <br />
                 Bharati Vidyapeeth Campus, Dhankawadi,
@@ -125,12 +125,12 @@ const Contact = () => {
               initial="hidden"
               animate="visible"
               transition={{ duration: 1, delay: 1 }}
-              className="rounded-0 p-3 m-5 "
+              className="rounded-0 p-3 my-5 "
               style={{
                 borderRadius: "12px",
                 boxShadow: "2px 2px 15px #131313",
                 opacity: 1,
-                background: "#0000",
+                background: "#3333",
               }}
             >
               <h4 className="text-light text-center font-weight-bold">

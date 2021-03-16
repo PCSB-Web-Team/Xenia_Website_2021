@@ -25,7 +25,7 @@
     #8e2de2
   );  */
 
-  height: 95vh;
+  height: fit-content;
   overflow-x: hidden;
   overflow-y: hidden;
 }

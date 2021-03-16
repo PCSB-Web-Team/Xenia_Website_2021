@@ -12,6 +12,7 @@ import { NavLink, useParams, Link } from "react-router-dom";
 import ReactLogo  from '../../../Assets/images/logo.svg';
 import DetailsTab from './DetailTabs/DetailsTabs';
 import Suggestion from './Suggestion/Suggestion';
+import {addToCart} from '../../../Store/Actions';
 
 const MoreInfo = (props) => {
 
@@ -27,7 +28,6 @@ const MoreInfo = (props) => {
       const response = await axios.get(`https://xenia-backend.herokuapp.com/api/events/${id}`);
 
       if(response.data.ok) {
-
         setDetails(response.data.data)
       }
 
@@ -43,7 +43,6 @@ const MoreInfo = (props) => {
 
     {loading ? <h1>Loading</h1> : 
       <div className="info1">
-
 
         <Link to='/events'>
           <div class="back-container">
@@ -75,11 +74,7 @@ const MoreInfo = (props) => {
             <hr class="my-1" />
             {props.isLoggedIn ? (
               <div
-                onClick={() => {
-                  props.addToCart(
-                    details.name
-                  );
-                }}
+                onClick={ () => { props.addToCart(details); } }
                 class="btn btn-lg bg-success"
                 role="button"
               >
@@ -321,14 +316,7 @@ const mapStateToProps = (state) => {
 
 const mapActionToProps = (dispatch) => {
   return {
-    addToCart: (eventName) => {
-      dispatch({
-        type: "addtocart",
-        payload: {
-          event: eventName,
-        },
-      });
-    },
+    addToCart: (eventDetails) => {dispatch(addToCart(eventDetails))}
   };
 };
 

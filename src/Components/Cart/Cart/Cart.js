@@ -1,34 +1,42 @@
 import React, { Component } from "react";
 import './Cart.css';
 import CartItem from './CartItem/CartItem';
-import EmptyCart from './EmptyCart/EmptyCart';
 import {connect} from 'react-redux';
 import {removeFromCart} from '../../../Store/Actions';
 
-class Mycart extends Component {
+const Mycart = (props) => {
 
-  render() {
-
-    let cartEvents= this.props.cart.map( eve => <CartItem RFC={() => {this.props.RFC(eve.name)} } details={eve}></CartItem>)
+    let cartEvents= props.cart.map( eve => <CartItem removeFromCart={() => {props.removeFromCart(eve.name)} } details={eve}></CartItem>)
 
     return (
       <div className="Cart">
-          {cartEvents.length == 0 ? <EmptyCart /> : cartEvents}
+          {cartEvents.length == 0 ? 
+            <div className="EmptyCart">
+                <div className="feelsLight">
+                    <h1>Your Cart feels light</h1>
+                </div>
+            </div> 
+            
+            : 
+            
+            cartEvents}
       </div>
     );
 
-  }
 }
 
 const mapStatesToProps = state => {
+  
   return {
     cart: state.cart,
   }
+
 }
 
 const mapActionsToProps = dispatch => {
+  
   return {
-    RFC: (eventName) => { dispatch(removeFromCart(eventName)) }
+    removeFromCart: (eventName) => { dispatch(removeFromCart(eventName)) }
   }
 }
 

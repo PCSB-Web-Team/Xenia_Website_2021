@@ -1,26 +1,18 @@
 import React from 'react';
+import {connect} from 'react-redux';
+
 import styles from './CartSummary.css';
 import Button from '@material-ui/core/Button';
 import Store from '../../../../Store/Store';
 
-let sum=0;
-
-function getTotalValue() {
-    sum=0;
-
-    let cart=Store.getState().cart;
-
-    for(let i = 0; i<cart.length; i++){
-        sum+=cart[i].fees;
-    }   
-
-    return sum;
-}
-
-let discount=0;
-
 const cartSummary=(props)=> {
     
+    let sum = 0;
+    let discount = 0;
+    let totalValue = 0;
+
+    sum = sum + props.cart.map( eve => { return (eve.fees) } )
+
     return (
         <div className='cartSummary'>
             <div className='paymentHeading'>
@@ -44,7 +36,7 @@ const cartSummary=(props)=> {
                 <div className='pmtsWrap'>
                     <div className='pmtsPr'>
                         <span>Total</span>
-                        <p>{getTotalValue()}</p>
+                        <p>{totalValue}</p>
                     </div>
                     <Button variant="contained" color="primary" style={{outline:'0'}} className= "payBtn">
                         Proceed to Pay
@@ -55,4 +47,10 @@ const cartSummary=(props)=> {
     )
 }
 
-export default cartSummary;
+const mapStatesToProps = state => {
+    return{
+        cart: state.cart,
+    }
+}
+
+export default connect(mapStatesToProps)(cartSummary);

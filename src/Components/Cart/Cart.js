@@ -5,11 +5,12 @@ import Summary from './Summary/Summary';
 import CouponModal from './Summary/Coupon/CouponModal/CouponModal';
 import {connect} from 'react-redux'; 
 
-class Profile extends Component {
+class MainCart extends Component {
+
     constructor() {
         
         super();
-
+        
         this.state = {
           show: false,
         };
@@ -40,5 +41,5 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps)(MainCart);
 
