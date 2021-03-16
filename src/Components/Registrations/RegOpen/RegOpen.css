@@ -4,6 +4,15 @@
     margin-top: 0 !important;
 }
 
+@media (min-width:376px) and (max-width:500px){
+  .RegOpen{
+    margin-bottom: 50px;
+  }
+  .sche{
+    font-size: 1.8em;
+  }
+}
+
 @font-face{
     font-family: 'planetn';
     src:url('./nasalization.ttf') format("truetype");
@@ -22,6 +31,7 @@
 .open{
     font-family: 'planetns' !important;
     font-size: 1.5em;
+    margin-top: 20px;
 }
 
 @media (max-width:1279px){
@@ -36,7 +46,7 @@
     margin: 0;
     line-height: 0 !important;
     animation: glitch1 2.5s infinite;
-    font-size: 2em;
+    font-size: 1.8em;
   }
   
   .sche:nth-child(2) {
@@ -51,6 +61,22 @@
     animation: glitch3 2.5s infinite;
     margin: 0;
     line-height: 0;
+  }
+
+  @media(max-width : 375px){
+    .sche{
+      font-size: 1.5em;
+    }
+    .open{
+      font-size: 1.1em;
+      margin-top: 25px;
+    }
+    .loren{
+      margin-bottom: 30px;
+    }
+    .Button{
+      margin-bottom: 30px !important;
+    }
   }
   /*Keyframes*/
   
@@ -278,4 +304,5 @@
  .loren{
    font-family: 'planetns';
    font-size: 0.8em;
+   margin-bottom: 15px;
  }

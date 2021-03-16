@@ -1,58 +1,79 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Modal } from "react-bootstrap";
-import logo from  "../../Assets/images/logo1.jpeg";
-import {connect} from 'react-redux';
-import {loggedIn, popLogin, closeLogin} from '../../Store/Actions';
+import astronaut from "./astronaut.png";
+import { connect } from "react-redux";
+import { loggedIn, popLogin, closeLogin, popSignUp } from "../../Store/Actions";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
-      username: "",
+      email: "",
       password: "",
       token: "",
-
     };
   }
-  
+
   handleUserName = (e) => {
-    this.setState({ username: e.target.value });
+    this.setState({ email: e.target.value });
   };
-  
+
   handlePassword = (e) => {
     this.setState({ password: e.target.value });
   };
 
-  handleSubmit = (e) => {
+//  handleSubmit = async (e) => {
+//    const { email, password } = this.state;
+//
+//    e.preventDefault();
+//
+//    const user = { email, password };
+//    const res = await login(user);
+//    const userdata = res.data.data;
+//    console.log(res.data.ok);
+//    console.log(userdata);
+//
+//    if (res.data.ok === true) {
+//      Store.dispatch({
+//        type: "logedin",
+//        payload: userdata,
+//      });
+//
+//      // {
+//      //   this.props.handleLogedin(userdata);
+//      // }
+//
+//      // this.props.loggedIn(userdata);
+//
+//      localStorage.setItem("xeniaemail", email);
+//      localStorage.setItem("xeniapassword", password);
+//    }
+//
+    // axios
+    //   .post("http://localhost:5000/api/login", { username, password })
+    //   .then((res) => {
+    //     let userdata = res.data.data;
 
-    this.props.closeStoreLogin()
+    //     if (res.data.status === "ok") {
+    //       Store.dispatch({
+    //         type: "logedin",
+    //         payload: userdata,
+    //       });
 
-    const { username, password, token } = this.state;
-    
-    e.preventDefault();
+    //       {
+    //         this.props.handleLogedin(userdata);
+    //       }
 
-    axios
-      .post("https://xenia-backend.herokuapp.com/api/user/login", {email: username, password })
-      .then((res) => {
-        let userdata = res.data.data;
+    //       this.props.loggedIn(userdata);
 
-        console.log(res)
-        
-        
+    //       localStorage.setItem('xeniausername', username);
+    //       localStorage.setItem('xeniapassword', password);
 
-        if (res.data.status === "ok") {
-
-          this.props.loggedIn(userdata);
-
-          localStorage.setItem('xeniausername', username);
-          localStorage.setItem('xeniapassword', password);
-
-        }
-      })
-      .catch((err) => console.log(err.message));
-  };
+    //     }
+    //   })
+    //   .catch((err) => console.log(err.message));
+  //};
 
   render() {
     return (
@@ -60,35 +81,32 @@ class Login extends Component {
         <Modal
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          show    = {this.props.popStoreLogin}
-          onHide  = {this.props.closeStoreLogin}
-          style   = {{
-            background: 'transparent',
-          }}
+          show={this.props.popStoreLogin}
+          onHide={this.props.closeStoreLogin}
         >
           <Modal.Header
             style={{
               paddingLeft: "50px",
-              background: 'black',
+              background: "black",
               color: "#ffff",
             }}
             closeButton
           >
             <Modal.Title>
-              <img
-                src={logo}
-                className="img-fluid text-center"
-                height="50px"
-                width="50px"
-                style={{ padding: "5px" }}
-              />{" "}
-              <span
-                style={{ letterSpacing: "5px" }}
-                className="text-uppercase font-weight-bold"
-              >
-                {" "}
-                Welcome back
-              </span>
+              <div className="d-flex flex-column text-center">
+                <img
+                  src={astronaut}
+                  className="img-fluid"
+                  style={styles.imageStyles}
+                />{" "}
+                <span
+                  style={styles.title_text}
+                  className="text-uppercase font-weight-bold"
+                >
+                  {" "}
+                  Welcome back
+                </span>
+              </div>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body style={{ background: "#131313", color: "#ffff" }}>
@@ -105,12 +123,11 @@ class Login extends Component {
                     placeholder="Username"
                     name="username"
                     type="text"
-                    value={this.state.username}
+                    value={this.state.email}
                     onChange={this.handleUserName}
                   />
                 </div>
               </div>
-
               <div className="form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
@@ -129,13 +146,21 @@ class Login extends Component {
                 </div>
               </div>
               <button
-                onClick={this.handleSubmit}
+                onClick={this.props.closeStoreLogin}
                 className="btn btn-outline-light btn-block"
               >
                 Login
               </button>
+              <div className="text-center my-2">
+                Don't have an account ?{" "}
+                <a
+                  style={{ fontWeight: "bold", color: "blue" }}
+                  onClick={this.props.handleToggle}
+                >
+                  Sign Up
+                </a>
+              </div>
             </form>
-
           </Modal.Body>
         </Modal>
       </div>
@@ -143,20 +168,46 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const styles = {
+  imageStyles: {
+    padding: "5px",
+    height: "90px",
+    width: "90px",
+    marginTop: "-50px",
+    marginLeft: "150px",
+    borderRadius: "30px",
+    borderColor: "white",
+    borderWidth: "1px",
+  },
+  title_text: {
+    letterSpacing: "5px",
+    marginLeft: "60px",
+    marginTop: "20px",
+  },
+};
+
+const mapStateToProps = (state) => {
   return {
     popStoreLogin: state.popLogin,
-  }
-}
+  };
+};
 
-const mapActionsToProps = dispatch => {
+const mapActionsToProps = (dispatch) => {
   return {
+    openStoreLogin: () => {
+      dispatch(popLogin());
+    },
+    closeStoreLogin: () => {
+      dispatch(closeLogin());
+    },
+    loggedIn: (userData) => {
+      dispatch(loggedIn(userData));
+    },
+    handleToggle: () => {
+      dispatch(closeLogin());
+      dispatch(popSignUp());
+    },
+  };
+};
 
-    openStoreLogin: () => { dispatch(popLogin()) },
-    closeStoreLogin: () => { dispatch(closeLogin()) },
-    loggedIn: (userData) => { dispatch(loggedIn(userData)) }
-  
-  }
-}
-
-export default connect( mapStateToProps, mapActionsToProps ) (Login);
+export default connect(mapStateToProps, mapActionsToProps)(Login);

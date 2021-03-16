@@ -14,7 +14,7 @@
 
 .priceSummary{
     margin: 0;
-    color: #7154da;
+    color: aqua;
 }
 
 .paymentBox{
@@ -32,7 +32,7 @@
 
 .paymentInner p{
     margin: 0;
-    color: #7154da;
+    color: aqua;
 }
 
 .pmtsBox{
@@ -59,7 +59,7 @@
 }
 
 .pmtsPr span,.pmtsPr p{
-    color: #7154da;
+    color: aqua;
 }
 
 @media (max-width:767px){

@@ -28,7 +28,7 @@ const About = () => {
 
   return (
     <div className="section about-us">
-      <div className="row text-center hero p-5">
+      <div className="row text-center hero">
         <div className="col-lg-12 content px-5">
           <motion.h1
             variants={fadeTop}

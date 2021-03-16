@@ -1,5 +1,6 @@
 import React      from  'react';
 import Navbar     from  './Components/Navbar/Navbar';
+import LoginSignUp from './Components/Auth/LoginRegister';
 import LoginPage  from  './Components/Auth/Login';
 import SignupPage from  './Components/Auth/Register';
 import Home       from  './Components/LandingPage/LandingPage';
@@ -9,8 +10,9 @@ import EventDetail from './Components/Events/MoreInfo/MoreInfo';
 import AboutUs    from  './Components/AboutUs/About';
 import ContactUs  from  './Components/Contact/Contact';
 import Footer     from  './Components/Footer/Footer';
-import Cart       from  './Components/Cart/Cart';
+import Cart       from  './Components/Cart/MainCart';
 import Profile    from  './Components/Profile/Profile';
+import WebTeam    from  './Components/WebTeam/WebTeam';
 import styles     from  './App.css';
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import axios from 'axios';
@@ -55,6 +57,7 @@ class App extends React.Component {
           <Route path="/about-us">    <AboutUs /><ContactUs/><Footer/>    </Route>
           <Route path='/cart'>        <Cart/><Footer/>                    </Route>
           <Route path='/profile'>     <Profile/><Footer/>                 </Route>
+          <Route path='/webteam'>     <WebTeam/><Footer/>                 </Route>
           <Route path="/">            <Home />                            </Route>
         </Switch>
         <LoginPage />

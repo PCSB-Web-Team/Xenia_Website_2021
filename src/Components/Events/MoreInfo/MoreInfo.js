@@ -13,6 +13,7 @@ import ReactLogo  from '../../../Assets/images/logo.svg';
 import DetailsTab from './DetailTabs/DetailsTabs';
 import Suggestion from './Suggestion/Suggestion';
 import {addToCart} from '../../../Store/Actions';
+import Loader from '../../Loader/Loader';
 
 const MoreInfo = (props) => {
 
@@ -41,7 +42,7 @@ const MoreInfo = (props) => {
   return (
     <div className = 'MoreInfo'>
 
-    {loading ? <h1>Loading</h1> : 
+    {loading ? <Loader/> : 
       <div className="info1">
 
         <Link to='/events'>

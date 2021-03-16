@@ -34,8 +34,8 @@ const Navbar = (props) => {
           <NavLink to='/schedule'    activeClassName='active-nav' className='nav-tabs'>  Schedule    </NavLink>
           <NavLink to='/events'      activeClassName='active-nav' className='nav-tabs'>  Events      </NavLink>
           <NavLink to='/about-us'    activeClassName='active-nav' className='nav-tabs'>  About Us    </NavLink>
-          {/* <NavLink to='/contact-us'  activeClassName='active-nav' className='nav-tabs'>  Contact Us  </NavLink>
-           */}
+          <NavLink to='/sponsors'    activeClassName='active-nav' className='nav-tabs'>  Sponsors    </NavLink>
+
           {props.isLoggedIn ? 
           <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs'>  Profile    </NavLink> : null }
           
@@ -54,8 +54,7 @@ const Navbar = (props) => {
           <NavLink to='/schedule'    activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Schedule   </NavLink>
           <NavLink to='/events'      activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Events     </NavLink>
           <NavLink to='/about-us'    activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  About Us   </NavLink>
-          {/* <NavLink to='/contact-us'  activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Contact Us </NavLink>
-           */}
+
           {props.isLoggedIn ? 
           <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Profile    </NavLink>
           : null }
@@ -71,7 +70,8 @@ const Navbar = (props) => {
       <NavLink to='/cart'>  { props.isLoggedIn  ?
           <div className='cart-logo' id='cart' onClick={() => {setView('down')}}>
               <img src={cart}></img>
-              <span>{props.cart.length}</span>
+              <i class="fas fa-2x fa-shopping-cart text-primary"></i>
+              <span> {props.cart.length} </span>
           </div>
           :
           null

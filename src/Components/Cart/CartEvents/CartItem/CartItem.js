@@ -13,8 +13,10 @@ const cartItem=(props)=> {
             </div>
 
             <div className='cartItemInfo'>
-                <h3 className='cartItemName'> {props.details.name} </h3>
-                <p className='cartItemPrice'> ₹{props.details.fees} </p>
+                <div className="nameprice">
+                    <h3 className='cartItemName'> {props.details.name} </h3>
+                    <p className='cartItemPrice'> ₹{props.details.fees} </p>
+                </div>
                 <Button variant="contained" color="secondary" className='rem' onClick={props.removeFromCart} id={props.details.name}>Remove</Button>
             </div>
             

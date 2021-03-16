@@ -2,8 +2,10 @@
     width: 50vw;
     height: 18vh;
    
-    box-shadow: -10px -10px 30px 4px rgb(0 0 0 / 10%), 0 0px 30px 1px rgb(102 45 255 / 35%);
-    background: #262a2b;
+    box-shadow: 0px 0px 30px 4px rgba(0, 247, 255, 0), 0 0px 30px 1px rgba(45, 230, 255, 0);
+    
+    background: linear-gradient(to right,rgba(130, 238, 238, 0.39),black);
+
     margin: 20px;
     border-radius: 5px;
     padding: 0px;
@@ -11,7 +13,7 @@
     flex-flow: row;
     align-items: center;
     
-    color: rgb(109, 118, 204);
+    color: rgba(0, 255, 255, 0.979);
 }
 
 .rem{
@@ -61,8 +63,16 @@
     .cartItemInfo{
         flex-flow: column;
     }
+    .nameprice{
+        align-items: center;
+    }
 }
 
 .rem:focus{
     outline: 0;
+}
+
+.nameprice{
+    display: flex;
+    flex-flow: column;
 }

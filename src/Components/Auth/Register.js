@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
-import logo from "../../Assets/images/logo1.jpeg";
+import astronaut from "./astronaut.png";
 
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 
-import {popSignUp, closeSignUp, loggedIn} from '../../Store/Actions';
+import { popSignUp, closeSignUp, loggedIn, popLogin } from "../../Store/Actions";
 
 class Register extends Component {
   constructor(props) {
@@ -19,42 +19,45 @@ class Register extends Component {
     };
   }
 
-  handleName = (e) => {
+  handleUserName = (e) => {
     this.setState({ name: e.target.value });
   };
 
   handlePassword = (e) => {
     this.setState({ password: e.target.value });
   };
-  
+
   handleEmail = (e) => {
     this.setState({ email: e.target.value });
   };
-  
+
   handleCollege = (e) => {
     this.setState({ college: e.target.value });
   };
-  
+
   handlePhone = (e) => {
     this.setState({ phone: e.target.value });
   };
 
-  handleSubmit = (e) => {
-    const { name, password, college, email, phone } = this.state;
-
-    e.preventDefault();
-    axios
-      .post("http://localhost:5000/api/user/register", {
-        name,
-        password,
-        college,
-        email,
-        phone,
-      })
-      .then((res) => {console.log(res)}
-      )
-      .catch((err) => console.log(err));
-  };
+  // handleSubmit = async (e) => {
+    // const { name, password, college, email, phone } = this.state;
+    // e.preventDefault();
+    // const user = { name, password, college, email, phone };
+    // const res = await register(user);
+    // console.log(res.data);
+    // localStorage.setItem("authtoken", res.data.data.token);
+    // localStorage.setItem('xeniapassword', password);
+    // axios
+      // .post("http://localhost:5000/api/register", {
+        // username,
+        // password,
+        // college,
+        // email,
+        // phone,
+      // })
+      // .then((res) => console.log(res))
+      // .catch((err) => console.log(err));
+  // };
 
   render() {
     return (
@@ -74,20 +77,20 @@ class Register extends Component {
             closeButton
           >
             <Modal.Title>
-              <img
-                src={logo}
-                className="img-fluid text-center"
-                height="50px"
-                width="50px"
-                style={{ padding: "5px" }}
-              />{" "}
-              <span
-                style={{ letterSpacing: "5px" }}
-                className="text-uppercase font-weight-bold"
-              >
-                {" "}
-                Sign Up
-              </span>
+              <div className="d-flex flex-column text-center">
+                <img
+                  src={astronaut}
+                  className="img-fluid"
+                  style={styles.imageStyles}
+                />{" "}
+                <span
+                  style={styles.title_text}
+                  className="text-uppercase font-weight-bold"
+                >
+                  {" "}
+                  Sign Up
+                </span>
+              </div>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body style={{ background: "#131313", color: "#ffff" }}>
@@ -102,10 +105,10 @@ class Register extends Component {
                   <input
                     className="form-control"
                     placeholder="Username"
-                    name="name"
+                    name="username"
                     value={this.state.name}
                     type="text"
-                    onChange={this.handleName}
+                    onChange={this.handleUserName}
                   />
                 </div>
               </div>
@@ -200,6 +203,15 @@ class Register extends Component {
               >
                 Sign Up
               </button>
+              <div className="text-center my-2">
+                Already have an account ?{" "}
+                <a
+                  style={{ fontWeight: "bold", color: "blue" }}
+                  onClick={this.props.handleToggle}
+                >
+                  Login
+                </a>
+              </div>
             </form>
           </Modal.Body>
         </Modal>
@@ -207,19 +219,43 @@ class Register extends Component {
     );
   }
 }
+const styles = {
+  imageStyles: {
+    padding: "5px",
+    height: "90px",
+    width: "90px",
+    marginTop: "-50px",
+    marginLeft: "80px",
+    borderRadius: "30px",
+    borderColor: "white",
+    borderWidth: "1px",
+  },
+  title_text: {
+    letterSpacing: "5px",
+    marginLeft: "50px",
+    marginTop: "20px",
+  },
+};
 
-const mapSatesToProps = state => {
+const mapSatesToProps = (state) => {
   return {
-    popSignUp: state.popSignUp
-  }
-}
+    popSignUp: state.popSignUp,
+  };
+};
 
-const mapActionsToProps = dispatch => {
+const mapActionsToProps = (dispatch) => {
   return {
-    loggedIn: (data) => {dispatch(loggedIn(data))},
-    openSignUp: () => { dispatch(popSignUp()) },
-    closeSignUp: () => { dispatch(closeSignUp()) }
-  }
-}
+    openSignUp: () => {
+      dispatch(popSignUp());
+    },
+    closeSignUp: () => {
+      dispatch(closeSignUp());
+    },
+    handleToggle: () => {
+      dispatch(closeSignUp());
+      dispatch(popLogin());
+    },
+  };
+};
 
 export default connect(mapSatesToProps, mapActionsToProps)(Register);

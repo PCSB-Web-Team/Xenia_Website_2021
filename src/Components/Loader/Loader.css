@@ -1,0 +1,108 @@
+.loaderContainer{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* 
+.Container {
+  height: 100vh;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  place-items: center;
+  gap: 7rem;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .Container {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
+  }
+}
+.spinner:nth-child(1) {
+  --animation-duration: 1000ms;
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.spinner:nth-child(1) .spinner-item {
+  width: calc(var(--size) / 12);
+  height: 80%;
+  background: var(--clr-spinner);
+  animation: spinner1 var(--animation-duration) ease-in-out infinite;
+}
+@keyframes spinner1 {
+  50% {
+    transform: scaleY(0.25);
+  }
+}
+.spinner:nth-child(1) .spinner-item:nth-child(1) {
+  --clr-spinner: var(--clr1);
+  animation-delay: calc(var(--animation-duration) / 10 * -3);
+}
+.spinner:nth-child(1) .spinner-item:nth-child(2) {
+  --clr-spinner: var(--clr5);
+  animation-delay: calc(var(--animation-duration) / 10 * -1);
+}
+.spinner:nth-child(1) .spinner-item:nth-child(3) {
+  --clr-spinner: var(--clr3);
+  animation-delay: calc(var(--animation-duration) / 10 * -2);
+}
+.spinner:nth-child(1) .spinner-item:nth-child(4) {
+  --clr-spinner: var(--clr4);
+  animation-delay: calc(var(--animation-duration) / 10 * -1);
+}
+.spinner:nth-child(1) .spinner-item:nth-child(5) {
+  --clr-spinner: var(--clr2);
+  animation-delay: calc(var(--animation-duration) / 10 * -3);
+} */

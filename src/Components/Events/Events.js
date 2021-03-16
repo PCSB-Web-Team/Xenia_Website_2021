@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {Link} from  'react-router-dom';
+import Loader from '../Loader/Loader';
 
 import './Cards/Card.css';
 import './Events.css';
@@ -15,6 +16,7 @@ const Events = (props) => {
   const [view, setView] = useState('cards');
   const [techEvents, setTech] = useState([]);
   const [nonTechEvents, setNonTech] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => { fetchData() }, []);
 
@@ -39,6 +41,8 @@ const Events = (props) => {
     catch(err) {
       console.log(err)
     }
+
+    setLoading(false);
   }
 
   const changeEventType = () => {
@@ -47,7 +51,11 @@ const Events = (props) => {
   }
 
   return (
+
     <div className="events-dashboard">
+
+    {loading ? <Loader/> : 
+
       <div className="card-container">
           
           <div className="tabs">
@@ -61,6 +69,9 @@ const Events = (props) => {
           </div>
 
       </div>
+
+    }
+    
     </div>
   )
 }

@@ -2,17 +2,17 @@ import React from 'react';
 import './CouponModal.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import cross from '../../../../../Assets/images/cross.png';
+import cross from '../../../Assets/images/cross.png';
 
 const couponModal=(props)=> {
 
-    const classes = props.showState ? "couponModalOpen CouponModal" : "couponModalHide CouponModal";
+    const classes = props.view ? "couponModalOpen CouponModal" : "couponModalHide CouponModal";
     return (
         <div className={classes}>
             <section className="modalMain">
                 <div className="couponHeading">
                     <p className="couponQuestion">Have a Coupon?</p>
-                    <img className="couponCross" src={cross} onClick={props.couponHideHandler} />
+                    <img className="couponCross" src={cross} onClick={props.closeCoupon} />
                 </div>    
                 <TextField id="couponCode" label="ENTER COUPON CODE" />
                 <div className="errMsg">

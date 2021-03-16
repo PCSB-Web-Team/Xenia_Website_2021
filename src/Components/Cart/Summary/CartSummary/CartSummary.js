@@ -11,7 +11,7 @@ const cartSummary=(props)=> {
     let discount = 0;
     let totalValue = 0;
 
-    sum = sum + props.cart.map( eve => { return (eve.fees) } )
+    sum = sum + props.cart.map( eve => { return parseInt(eve.fees.split('/')[0]) } )
 
     return (
         <div className='cartSummary'>
