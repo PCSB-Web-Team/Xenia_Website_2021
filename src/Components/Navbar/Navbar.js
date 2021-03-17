@@ -65,7 +65,7 @@ const Navbar = (props) => {
           <NavLink to='/sponsors'    activeClassName='active-nav' className='nav-tabs'>  Sponsors    </NavLink>
 
           {props.isLoggedIn ? 
-          <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs'>  Profile    </NavLink> : null }
+          <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs'>  Slots    </NavLink> : null }
           
           {!props.isLoggedIn ? <div className="nav-tabs" onClick={ openLogin }  id='contact' href="#Contact-us">  Login   </div> : null}
         </div>
@@ -82,7 +82,7 @@ const Navbar = (props) => {
             <NavLink to='/about-us'    activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  About Us   </NavLink>
 
             {props.isLoggedIn ? 
-            <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Profile    </NavLink>
+            <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Slots    </NavLink>
             : null }
 
             <div className="navLogos">
