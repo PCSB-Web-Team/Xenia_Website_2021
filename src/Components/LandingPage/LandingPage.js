@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import styles from "./LandingPage.css";
-import bg from "../../Assets/images/bg.jpg";
-import astranout from "../../Assets/images/astranout.png";
-import shuttle from "../../Assets/images/spaceshuttle.png";
-import lake from "../../Assets/images/lake.png";
-import layer3 from "../../Assets/images/jupiter.jpg";
+import bg from "../../Assets/Images/bg.jpg";
+import astranout from "../../Assets/Images/astranout.png";
+import shuttle from "../../Assets/Images/spaceshuttle.png";
+import lake from "../../Assets/Images/lake.png";
+import layer3 from "../../Assets/Images/jupiter.jpg";
 
-class LandingPage extends Component {
-  handleMove = (e) => {
+const LandingPage = () => {
+    
+    const handleMove = (e) => {
     const box = document.querySelector(".astranout");
 
     let x = e.pageX;
@@ -29,10 +30,9 @@ class LandingPage extends Component {
     background.style.transform = `translateX(${transXBG}px) translateY(${transYBG}px)`;
   };
 
-  render() {
     return (
       <div className="landing-page">
-        <div className="landing-container" onMouseMove={this.handleMove}>
+        <div className="landing-container" onMouseMove={handleMove}>
           <h1 id="xenia">XENIA</h1>
           <span id="date">14 - 16 March</span>
 
@@ -55,6 +55,5 @@ class LandingPage extends Component {
       </div>
     );
   }
-}
 
 export default LandingPage;

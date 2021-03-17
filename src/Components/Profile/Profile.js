@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Profile.css';
-import user from '../../Assets/images/user.png';
-import logo from '../../Assets/images/logo.svg';
+import user from '../../Assets/Images/user.png';
+import logo from '../../Assets/Images/logo.svg';
 import WebTeam from  '../WebTeam/WebTeam';
 import {motion} from 'framer-motion';
 

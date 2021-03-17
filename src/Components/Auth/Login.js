@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Modal } from "react-bootstrap";
-import astronaut from "./astronaut.png";
+import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
-import { loggedIn, popLogin, closeLogin, popSignUp } from "../../Store/Actions";
+import { loggedIn} from "../../Store/Actions";
 
 class Login extends Component {
   constructor(props) {
@@ -81,8 +81,8 @@ class Login extends Component {
         <Modal
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          show={this.props.popStoreLogin}
-          onHide={this.props.closeStoreLogin}
+          show={this.props.view}
+          onHide={this.props.close}
         >
           <Modal.Header
             style={{
@@ -146,7 +146,7 @@ class Login extends Component {
                 </div>
               </div>
               <button
-                onClick={this.props.closeStoreLogin}
+                onClick={this.props.close}
                 className="btn btn-outline-light btn-block"
               >
                 Login
@@ -155,7 +155,7 @@ class Login extends Component {
                 Don't have an account ?{" "}
                 <a
                   style={{ fontWeight: "bold", color: "blue" }}
-                  onClick={this.props.handleToggle}
+                  onClick={this.props.toggle}
                 >
                   Sign Up
                 </a>
@@ -188,25 +188,13 @@ const styles = {
 
 const mapStateToProps = (state) => {
   return {
-    popStoreLogin: state.popLogin,
+    popStoreLogin: state.popLogin
   };
 };
 
 const mapActionsToProps = (dispatch) => {
   return {
-    openStoreLogin: () => {
-      dispatch(popLogin());
-    },
-    closeStoreLogin: () => {
-      dispatch(closeLogin());
-    },
-    loggedIn: (userData) => {
-      dispatch(loggedIn(userData));
-    },
-    handleToggle: () => {
-      dispatch(closeLogin());
-      dispatch(popSignUp());
-    },
+    loggedIn: (userData) => { dispatch(loggedIn(userData)) }
   };
 };
 

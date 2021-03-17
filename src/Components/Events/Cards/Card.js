@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
 import Zoom from 'react-reveal/Zoom';
 import Rotate from 'react-reveal/Rotate';
-import reactLogo from '../../../Assets/images/logo.svg';
+import reactLogo from '../../../Assets/Images/logo.svg';
 
 const useStyles = makeStyles({
   root: {

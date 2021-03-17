@@ -1,8 +1,5 @@
 import React      from  'react';
 import Navbar     from  './Components/Navbar/Navbar';
-import LoginSignUp from './Components/Auth/LoginRegister';
-import LoginPage  from  './Components/Auth/Login';
-import SignupPage from  './Components/Auth/Register';
 import Home       from  './Components/LandingPage/LandingPage';
 import Schedule   from  './Components/Registrations/Registrations';
 import Events     from  './Components/Events/Events';
@@ -60,8 +57,6 @@ class App extends React.Component {
           <Route path='/webteam'>     <WebTeam/><Footer/>                 </Route>
           <Route path="/">            <Home />                            </Route>
         </Switch>
-        <LoginPage />
-        <SignupPage/>
       </div>
     );
   }

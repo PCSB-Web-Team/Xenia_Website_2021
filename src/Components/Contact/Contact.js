@@ -2,7 +2,7 @@ import React from "react";
 import "./Contact.css";
 import { motion } from "framer-motion";
 import FAQ from "./FAQ/FAQ";
-import moonbg from "../../Assets/images/moon.jpg";
+import moonbg from "../../Assets/Images/moon.jpg";
 
 const Contact = () => {
   const fadeTop = {

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
-import astronaut from "./astronaut.png";
+import astronaut from "../../Assets/Images/astronaut.png";
 
 import { connect } from "react-redux";
 
-import { popSignUp, closeSignUp, loggedIn, popLogin } from "../../Store/Actions";
+import {} from "../../Store/Actions";
 
 class Register extends Component {
   constructor(props) {
@@ -65,8 +65,8 @@ class Register extends Component {
         <Modal
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          show={this.props.popSignUp}
-          onHide={this.props.closeSignUp}
+          show={this.props.view}
+          onHide={this.props.close}
         >
           <Modal.Header
             style={{
@@ -198,7 +198,7 @@ class Register extends Component {
               </div>
 
               <button
-                onClick={this.props.closeSignUp}
+                onClick={this.props.close}
                 className="btn btn-outline-light btn-block"
               >
                 Sign Up
@@ -207,7 +207,7 @@ class Register extends Component {
                 Already have an account ?{" "}
                 <a
                   style={{ fontWeight: "bold", color: "blue" }}
-                  onClick={this.props.handleToggle}
+                  onClick={this.props.toggle}
                 >
                   Login
                 </a>
@@ -245,16 +245,7 @@ const mapSatesToProps = (state) => {
 
 const mapActionsToProps = (dispatch) => {
   return {
-    openSignUp: () => {
-      dispatch(popSignUp());
-    },
-    closeSignUp: () => {
-      dispatch(closeSignUp());
-    },
-    handleToggle: () => {
-      dispatch(closeSignUp());
-      dispatch(popLogin());
-    },
+    
   };
 };
 
