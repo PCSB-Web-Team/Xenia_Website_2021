@@ -9,7 +9,7 @@ const cartItem=(props)=> {
         <div className='cartItem'>
             
             <div className='cartItemImg'>
-                <img src={logo} width="90%" height="100%" style={{float:'right',background:'rgba(0,0,0,0.14)',borderRadius:'5px'}} />
+                <img src={logo} width="90%" height="100%" style={{float:'right',borderRadius:'5px'}} />
             </div>
 
             <div className='cartItemInfo'>

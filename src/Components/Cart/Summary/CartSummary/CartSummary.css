@@ -1,9 +1,9 @@
 .cartSummary{
     display: flex;
     flex-flow: column ;
-    background: #262a2b;
+    background: rgba(0, 255, 255, 0.1);
     margin-top: 50px;
-    box-shadow: -10px -10px 30px 4px rgb(0 0 0 / 10%), 0 0px 30px 10px rgb(102 45 255 / 35%);
+    
 }
 
 .paymentHeading{
@@ -14,7 +14,7 @@
 
 .priceSummary{
     margin: 0;
-    color: aqua;
+    color: #46bcde;
 }
 
 .paymentBox{
@@ -32,11 +32,11 @@
 
 .paymentInner p{
     margin: 0;
-    color: aqua;
+    color: #46bcde;
 }
 
 .pmtsBox{
-    background: #262a2b;
+    background: rgba(0, 255, 255, 0.01);
     bottom: 0;
     left: 0;
     right: 0;
@@ -59,7 +59,7 @@
 }
 
 .pmtsPr span,.pmtsPr p{
-    color: aqua;
+    color: #46bcde;
 }
 
 @media (max-width:767px){

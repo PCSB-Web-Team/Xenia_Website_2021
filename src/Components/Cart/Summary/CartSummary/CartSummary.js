@@ -3,14 +3,17 @@ import {connect} from 'react-redux';
 
 import styles from './CartSummary.css';
 import Button from '@material-ui/core/Button';
+import Store from '../../../../Store/Store';
 
 const cartSummary=(props)=> {
     
     let sum = 0;
     let discount = 0;
-    let totalValue = 0;
 
-    sum = sum + props.cart.map( eve => { return parseInt(eve.fees.split('/')[0]) } )
+    props.cart.map( eve => { return (sum+=parseInt(eve.fees)) } )
+
+    
+    let totalValue = sum+discount;
 
     return (
         <div className='cartSummary'>
