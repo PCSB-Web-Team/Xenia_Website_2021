@@ -395,3 +395,9 @@ Change1 */
     box-shadow: -2vmin 0 0.26126973644531293vmin currentColor;
   }
   
+
+  @media (max-width:500px){
+    .RegopenCont{
+      margin: 80px 0 !important;
+    }
+  }

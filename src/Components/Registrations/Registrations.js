@@ -38,7 +38,7 @@ class Registrations extends Component {
           justifyContent="center"
         >
           <Zoom out>
-            <Box md={12} lg={4} sm={12} xs={12} m={10}>
+            <Box md={12} lg={4} sm={12} xs={12} m={10} className="RegopenCont">
               <RegOpen />
             </Box>
           </Zoom>
