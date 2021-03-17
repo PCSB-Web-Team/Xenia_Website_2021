@@ -1,10 +1,11 @@
 import React,{useState} from 'react';
 import {connect} from 'react-redux';
-import { BrowserRouter as Router,Switch,Route,NavLink } from "react-router-dom";
+import { BrowserRouter as Router,Switch,Route,NavLink,Link } from "react-router-dom";
 //Images
 import logo from '../../Assets/Images/logo1.jpeg'; 
 import down from '../../Assets/Images/down.png';
 import cart from '../../Assets/Images/cart.png';
+import pcsbLogo from '../../Assets/Images/PCSBlogo.jpeg';
 //components
 import styles         from './Navbar.css';
 import LoginModal     from '../Auth/Login';
@@ -50,10 +51,10 @@ const Navbar = (props) => {
       <div className="NavBar" id='navBar'>         
         
         <div className="brand" style={{float: "left"}}>
-          <a className="nav-brand" href="#home">
+          <Link className="nav-brand" to="/">
               <img  alt=""  src= {logo}  width="40"  height="40"  className="logo" />
               <span className="brandName">PCSB - Xenia</span>
-          </a>
+          </Link>
         </div>
 
         <div className="items" >
@@ -84,6 +85,19 @@ const Navbar = (props) => {
             <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Profile    </NavLink>
             : null }
 
+            <div className="navLogos">
+              <div className="xeniaLogo">
+                <Link to="/" onClick={handleNavView}>
+                  <img alt="" src={logo} width="140" height="140" className="moblogo2" />
+                </Link>
+              </div>
+              <div className="pcsbLogo">
+                <a href="https://www.pictcsi.com/" target="_blank" onClick={handleNavView} >
+                <img alt="" src={pcsbLogo} width="140" height="140" className="moblogo1" />
+                </a>
+              </div>
+            </div>
+
             {!props.isLoggedIn ? <div className="nav-tabs"  onClick={ openLogin }  id='contact' href="#Contact-us"> Login   </div> : null}
 
           </div>
@@ -94,7 +108,6 @@ const Navbar = (props) => {
         <NavLink to='/cart'>  { props.isLoggedIn  ?
             <div className='cart-logo' id='cart' onClick={() => {setView('down')}}>
                 <img src={cart}></img>
-                <i class="fas fa-2x fa-shopping-cart text-primary"></i>
                 <span> {props.cart.length} </span>
             </div>
             :
