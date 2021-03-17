@@ -55,7 +55,7 @@ class Registrations extends Component {
             </Grid>
 
             <Grid item xs={12} sm={12} md={4} lg={4} alignItems="center">
-              <Zoom cascade left>
+              <Zoom>
                 <EventCols
                   date={this.state.days.day2.date}
                   eventNames={this.state.days.day2.events}
@@ -77,7 +77,7 @@ class Registrations extends Component {
           {/* </Slide> */}
         </Box>
 
-        <Box>
+        {/* <Box>
           <div className="bgcolr">
             <span></span>
             <span></span>
@@ -109,7 +109,7 @@ class Registrations extends Component {
             <span></span>
             <span></span>
           </div>
-        </Box>
+        </Box> */}
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Domains.css';
 import Grid from '@material-ui/core/Grid';
-import Logo from '../../Assets/images/logo192.png';
+import Logo from '../../Assets/Images/logo192.png';
 
 const domains = props => {
 

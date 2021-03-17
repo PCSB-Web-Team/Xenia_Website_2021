@@ -1,13 +1,11 @@
 import * as actions from './Actions';
 import defaultState from './DefaultState';
-import allEvents from '../Event Details/AllEvents';
 
 export default function (state=defaultState,action){
 
     switch(action.type)
     {
         case(actions.LOGGEDIN):
-
             return {
                 ...state,
                 login: true,
@@ -17,32 +15,7 @@ export default function (state=defaultState,action){
         case(actions.LOGGEDOUT):
             return defaultState
 
-        case(actions.POPLOGIN):
-            return {
-                ...state,
-                popLogin: true
-            }
-
-        case(actions.CLOSELOGIN):
-            return {
-                ...state,
-                popLogin: false
-            }
-        
-        case(actions.POPSIGNUP):
-            return {
-                ...state,
-                popSignUp: true
-            }
-
-        case(actions.CLOSESIGNUP): 
-            return {
-                ...state,
-                popSignUp: false
-            }
-
-        case(actions.ADDTOCART):
-
+        case(actions.ADDTOCART): {
             let duplicate=false;
             let eventToAdd=action.payload.eveData;
 
@@ -63,7 +36,8 @@ export default function (state=defaultState,action){
                 }    
 
             else    return {...state}
-            
+        }
+         
         case(actions.GETEVENTDATA): {
             return {
                 ...state,
@@ -71,8 +45,7 @@ export default function (state=defaultState,action){
             }
         }
 
-        case(actions.REMOVEFROMCART):
-        {
+        case(actions.REMOVEFROMCART): {
             let newCart = state.cart.filter(eve => eve.name !== action.payload.eveName);
 
             return {

@@ -2,7 +2,7 @@ import React from 'react';
 import './CouponModal.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import cross from '../../../Assets/images/cross.png';
+import cross from '../../../Assets/Images/cross.png';
 
 const couponModal=(props)=> {
 

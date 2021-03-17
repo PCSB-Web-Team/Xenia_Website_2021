@@ -185,6 +185,9 @@ label #cancel {
   transform: rotate(90deg);
   cursor: pointer;
 }
+.MobileNav .navLogos {
+  display: none;
+}
 
 @media (max-width: 1300px) {
   .items {
@@ -196,21 +199,12 @@ label #cancel {
     color: #fff;
   }
 
-  .NavBar{
+  .NavBar {
     height: fit-content;
   }
 
   .NavBar .items {
     display: none;
-    /* position: fixed;
-    width: 100% !important;
-    height: 100vh !important;
-    background: none;
-    top: 70px;
-    left: 0;
-    text-align: center;
-    transition: all 0.5s;
-    flex-direction: column; */
   }
 
   .NavBar .MobileNav {
@@ -242,6 +236,60 @@ label #cancel {
   .up {
     z-index: +1;
     display: block;
+  }
+
+  .MobileNav .navLogos {
+    display: flex;
+  }
+  .MobileNav .navLogos .xeniaLogo {
+    width: 50%;
+    padding: 30px;
+  }
+  .MobileNav .navLogos .pcsbLogo {
+    width: 50%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 850px) {
+  .MobileNav .xeniaLogo .moblogo1 {
+    height: 130;
+    width: 130;
+  }
+  .MobileNav .xeniaLogo .moblogo2 {
+    height: 130;
+    width: 130;
+  }
+}
+
+@media (max-width: 750px) {
+
+  .NavBar .MobileNav .nav-tabs {
+    display: block;
+    
+    padding: 0px;
+    margin: 0px;
+
+    margin-block: 15px;
+
+    width: 100%;
+    text-align: center;
+  }
+
+  .NavBar .MobileNav {
+    padding-inline: 30px;
+  }
+
+  .MobileNav .navLogos {
+    display: block;
+  }
+  .MobileNav .navLogos .xeniaLogo {
+    width: 100%;
+    padding: 30px;
+  }
+  .MobileNav .navLogos .pcsbLogo {
+    width: 100%;
+    padding: 0px 30px 30px 30px;
   }
 }
 

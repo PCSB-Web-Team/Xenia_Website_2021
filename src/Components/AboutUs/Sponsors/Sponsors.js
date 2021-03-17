@@ -1,9 +1,9 @@
 import React from 'react';
 import './Sponsors.css';
-import Logo from "../../../Assets/images/logo192.png";
+import Logo from "../../../Assets/Images/logo192.png";
 import Carousel from 'react-bootstrap/Carousel';
 
-const sponsors = props=>{
+const sponsors = props=> {
     return (
     <div>
         <h5 className='sponsorTitle' style={{textAlign:'center',fontFamily:'planetn'}}>Our Proud Sponsors</h5>

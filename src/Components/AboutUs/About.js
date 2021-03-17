@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import "./About.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import main from "../../Assets/images/main_bg.jpg";
-import about from "../../Assets/images/hero.jpg";
-import data from "../../Assets/images/datamastro.jpg";
-import code from "../../Assets/images/sudocode.jpg";
+import main from "../../Assets/Images/main_bg.jpg";
+import about from "../../Assets/Images/hero.jpg";
+import data from "../../Assets/Images/datamastro.jpg";
+import code from "../../Assets/Images/sudocode.jpg";
 import { motion } from "framer-motion";
 import Sponsors from "./Sponsors/Sponsors";
 

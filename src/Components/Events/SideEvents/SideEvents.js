@@ -1,11 +1,10 @@
 import React from "react";
 import "./SideEvents.css";
-import logo from "../../../Assets/images/logo.svg";
+import logo from "../../../Assets/Images/logo.svg";
 
 import Fade from "react-reveal/Fade";
 
-export default class SideEvents extends React.Component {
-  render() {
+const SideEvents = () => {
     return (
       <div className="side-events">
         <h1 className="heading">Side Events</h1>
@@ -58,4 +57,5 @@ export default class SideEvents extends React.Component {
       </div>
     );
   }
-}
+
+  export default SideEvents;

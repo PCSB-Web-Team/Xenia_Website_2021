@@ -1,6 +1,6 @@
 import React from 'react';
 import { Profiler } from 'react';
-import logo from '../../Assets/images/logo.svg';
+import logo from '../../Assets/Images/logo.svg';
 
 const TeamProfile = ({details}) => {
     return (

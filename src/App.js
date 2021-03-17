@@ -1,8 +1,5 @@
 import React      from  'react';
 import Navbar     from  './Components/Navbar/Navbar';
-import LoginSignUp from './Components/Auth/LoginRegister';
-import LoginPage  from  './Components/Auth/Login';
-import SignupPage from  './Components/Auth/Register';
 import Home       from  './Components/LandingPage/LandingPage';
 import Schedule   from  './Components/Registrations/Registrations';
 import Events     from  './Components/Events/Events';
@@ -14,6 +11,7 @@ import Cart       from  './Components/Cart/MainCart';
 import Profile    from  './Components/Profile/Profile';
 import WebTeam    from  './Components/WebTeam/WebTeam';
 import styles     from  './App.css';
+import Background from  './Components/BackGround/Background';
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import axios from 'axios';
 import {getEventData} from './Store/Actions';
@@ -50,6 +48,7 @@ class App extends React.Component {
       
       <div className='Xenia' id='Xenia'>
         <Navbar />
+        <Background/>
         <Switch>
           <Route path="/schedule">    <Schedule /><Footer/>               </Route>
           <Route path="/events/:id">  <EventDetail/><Footer/>             </Route>
@@ -60,8 +59,6 @@ class App extends React.Component {
           <Route path='/webteam'>     <WebTeam/><Footer/>                 </Route>
           <Route path="/">            <Home />                            </Route>
         </Switch>
-        <LoginPage />
-        <SignupPage/>
       </div>
     );
   }

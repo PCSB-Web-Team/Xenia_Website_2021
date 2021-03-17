@@ -9,9 +9,11 @@ const cartSummary=(props)=> {
     
     let sum = 0;
     let discount = 0;
-    let totalValue = 0;
 
-    sum = sum + props.cart.map( eve => { return parseInt(eve.fees.split('/')[0]) } )
+    props.cart.map( eve => { return (sum+=parseInt(eve.fees)) } )
+
+    
+    let totalValue = sum+discount;
 
     return (
         <div className='cartSummary'>
