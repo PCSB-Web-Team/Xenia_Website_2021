@@ -15,6 +15,7 @@
 .priceSummary{
     margin: 0;
     color: #46bcde;
+    font-size: 1.5em;
 }
 
 .paymentBox{
@@ -25,7 +26,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    font-size: 12px;
+    font-size: 1em;
     line-height: 1.33;
     padding-bottom: 10px;
 }
@@ -57,6 +58,11 @@
     padding-left: 10px;
     display: table-cell;
 }
+.totalpay{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.3em;
+}
 
 .pmtsPr span,.pmtsPr p{
     color: #46bcde;
@@ -66,4 +72,17 @@
     .paymentInner{
         width: 100%;
     }
+}
+
+.payBtn{
+    padding: 10px;
+    background: #21a33daf;
+    cursor: pointer;
+    width: 70%;
+    float: right;
+}
+
+.payBtn p{
+    font-size: 1.1em;
+    margin: 0;
 }

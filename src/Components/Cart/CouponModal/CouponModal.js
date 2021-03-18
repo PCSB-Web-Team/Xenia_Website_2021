@@ -16,7 +16,7 @@ const couponModal=(props)=> {
                 </div>    
                 <TextField id="couponCode" label="ENTER COUPON CODE" />
                 <div className="errMsg">
-                    <p className="msg"></p>
+                    <p className="msg"> </p>
                 </div>
                 <Button variant="contained" color="primary" className="applyCoupon">
                     APPLY COUPON

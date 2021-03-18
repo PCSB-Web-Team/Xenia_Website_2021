@@ -5,7 +5,7 @@ import { BrowserRouter as Router,Switch,Route,NavLink,Link } from "react-router-
 import logo from '../../Assets/Images/logo1.jpeg'; 
 import down from '../../Assets/Images/down.png';
 import cart from '../../Assets/Images/cart.png';
-import pcsbLogo from '../../Assets/images/PCSBlogo.jpeg';
+import pcsbLogo from '../../Assets/Images/PCSBlogo.jpeg';
 //components
 import styles         from './Navbar.css';
 import LoginModal     from '../Auth/Login';
