@@ -10,6 +10,7 @@ import Footer     from  './Components/Footer/Footer';
 import Cart       from  './Components/Cart/MainCart';
 import Profile    from  './Components/Profile/Profile';
 import WebTeam    from  './Components/WebTeam/WebTeam';
+import Sponsors   from  './Components/Sponsors/Sponsors'; 
 import styles     from  './App.css';
 import Background from  './Components/BackGround/Background';
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
@@ -56,6 +57,7 @@ class App extends React.Component {
           <Route path="/about-us">    <AboutUs /><ContactUs/><Footer/>    </Route>
           <Route path='/cart'>        <Cart/><Footer/>                    </Route>
           <Route path='/profile'>     <Profile/><Footer/>                 </Route>
+          <Route path='/sponsors'>     <Sponsors/><Footer/>                 </Route>
           <Route path='/webteam'>     <WebTeam/><Footer/>                 </Route>
           <Route path="/">            <Home />                            </Route>
         </Switch>

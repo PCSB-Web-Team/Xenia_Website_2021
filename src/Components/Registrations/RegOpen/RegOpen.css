@@ -13,6 +13,18 @@
   }
 }
 
+@media (min-width:1280px){
+  .sche{
+    font-size: 3em !important;
+  }
+  .open{
+    font-size:  2.5em !important;
+  }
+  .loren{
+    font-size: 1.8em !important;
+  }
+}
+
 @font-face{
     font-family: 'planetn';
     src:url('./nasalization.ttf') format("truetype");
@@ -26,6 +38,10 @@
 
 .Button{
   font-family: 'planetns' !important;
+}
+
+.Button:focus{
+  outline: none;
 }
 
 .open{
