@@ -56,7 +56,7 @@ const App = () => {
         <Route path="/about-us">    <AboutUs /><ContactUs/><Footer/>    </Route>
         <Route path='/cart'>        <Cart/><Footer/>                    </Route>
         <Route path='/profile'>     <Profile/><Footer/>                 </Route>
-        <Route path='/sponsors'>     <Sponsors/><Footer/>                 </Route>
+        <Route path='/sponsors'>    <Sponsors/><Footer/>                </Route>
         <Route path='/webteam'>     <WebTeam/><Footer/>                 </Route>
         <Route path="/">            <Home />                            </Route>
       </Switch>
