@@ -9,6 +9,7 @@ import DetailsTab from './DetailTabs/DetailsTabs';
 import Suggestion from './Suggestion/Suggestion';
 import {addToCart} from '../../../Store/Actions';
 import Loader from '../../Loader/Loader';
+import {addToCartBackend} from '../../Config/api/User';
 
 const MoreInfo = (props) => {
 
@@ -21,6 +22,7 @@ const MoreInfo = (props) => {
 
   const fetchData = async () => {
     try {
+
       const response = await axios.get(`https://xenia-backend.herokuapp.com/api/events/${id}`);
 
       if(response.data.ok) {
@@ -32,6 +34,16 @@ const MoreInfo = (props) => {
     }
 
     setLoading(false);
+  }
+
+  const handleAddToCart = async () => {
+
+    const res = await addToCartBackend({ token: props.token, eventId: id} );
+
+    console.log(res);
+
+    props.addToCart(details);
+
   }
 
   return (
@@ -70,7 +82,7 @@ const MoreInfo = (props) => {
             <hr class="my-1" />
             {props.isLoggedIn ? (
               <div
-                onClick={ () => { props.addToCart(details); } }
+                onClick={handleAddToCart}
                 class="btn btn-lg bg-success"
                 role="button"
               >
@@ -92,6 +104,7 @@ const MoreInfo = (props) => {
 
 const mapStateToProps = (state) => {
   return {
+    token: state.token,
     cart: state.cart,
     isLoggedIn: state.login,
   };

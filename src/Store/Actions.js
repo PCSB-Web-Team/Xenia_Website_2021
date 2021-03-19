@@ -3,6 +3,7 @@ export const LOGGEDOUT = "LOGGEDOUT";
 export const ADDTOCART = 'ADDTOCART';
 export const REMOVEFROMCART = 'REMOVEFROMCART';
 export const GETEVENTDATA = 'GETEVENTDATA';
+export const STORETOKEN  =  'STORETOKEN';
 
 export const loggedIn = (userData) => {
 
@@ -10,6 +11,16 @@ export const loggedIn = (userData) => {
         type: LOGGEDIN,
         payload: {
             userData: userData,
+        }
+    }
+
+}
+
+export const storeToken = (token) => {
+    return {
+        type: STORETOKEN,
+        payload: {
+            token: token
         }
     }
 }
