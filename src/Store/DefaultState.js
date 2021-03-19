@@ -1,7 +1,7 @@
 export default {
-    login: true,
-    popLogin: false,
-    popSignUp: false,
-    cart: [],
-    eventData: [],
-}
+  login: false,
+  popLogin: false,
+  popSignUp: false,
+  cart: [],
+  eventData: [],
+};

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
 import astronaut from "../../Assets/Images/astronaut.png";
-import { register } from "../../config/api/User";
+import { register } from "../config/api/User";
 import { connect } from "react-redux";
 
 import {} from "../../Store/Actions";
@@ -47,21 +47,6 @@ class Register extends Component {
     console.log(res.data);
     localStorage.setItem("authtoken", res.data.data.token);
     localStorage.setItem("xeniapassword", password);
-    this.setState({ name: "" });
-    this.setState({ college: "" });
-    this.setState({ password: "" });
-    this.setState({ email: "" });
-    this.setState({ phone: "" });
-    // axios
-    //   .post("http://localhost:5000/api/register", {
-    //     username,
-    //     password,
-    //     college,
-    //     email,
-    //     phone,
-    //   })
-    //   .then((res) => console.log(res))
-    //   .catch((err) => console.log(err));
   };
 
   render() {

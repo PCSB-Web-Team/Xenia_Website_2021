@@ -3,7 +3,8 @@ import axios from "axios";
 import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
-import { login } from "../../config/api/User";
+
+import { login } from "../config/api/User";
 import { loggedIn } from "../../Store/Actions";
 
 class Login extends Component {
@@ -36,48 +37,36 @@ class Login extends Component {
     console.log(userdata);
 
     if (res.data.ok === true) {
-      // Store.dispatch({
-      //   type: "logedin",
-      //   payload: userdata,
-      // });
-
-      // {
-      //   this.props.handleLogedin(userdata);
-      // }
-
-      // this.props.loggedIn(userdata);
+      this.props.loggedIn(userdata);
 
       localStorage.setItem("xeniaemail", email);
       localStorage.setItem("xeniapassword", password);
-      this.setState({ email: "" });
-      this.setState({ password: "" });
     }
+
+    // axios
+    //   .post("http://localhost:5000/api/login", { username, password })
+    //   .then((res) => {
+    //     let userdata = res.data.data;
+
+    //     if (res.data.status === "ok") {
+    //       Store.dispatch({
+    //         type: "logedin",
+    //         payload: userdata,
+    //       });
+
+    //       {
+    //         this.props.handleLogedin(userdata);
+    //       }
+
+    //       this.props.loggedIn(userdata);
+
+    //       localStorage.setItem('xeniausername', username);
+    //       localStorage.setItem('xeniapassword', password);
+
+    //     }
+    //   })
+    //   .catch((err) => console.log(err.message));
   };
-
-  // axios
-  //   .post("http://localhost:5000/api/login", { username, password })
-  //   .then((res) => {
-  //     let userdata = res.data.data;
-
-  //     if (res.data.status === "ok") {
-  //       Store.dispatch({
-  //         type: "logedin",
-  //         payload: userdata,
-  //       });
-
-  //       {
-  //         this.props.handleLogedin(userdata);
-  //       }
-
-  //       this.props.loggedIn(userdata);
-
-  //       localStorage.setItem('xeniausername', username);
-  //       localStorage.setItem('xeniapassword', password);
-
-  //     }
-  //   })
-  //   .catch((err) => console.log(err.message));
-  //};
 
   render() {
     return (
