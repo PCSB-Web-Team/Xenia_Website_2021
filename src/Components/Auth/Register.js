@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
 import astronaut from "../../Assets/Images/astronaut.png";
-
+import { register } from "../../config/api/User";
 import { connect } from "react-redux";
 
 import {} from "../../Store/Actions";
@@ -39,25 +39,30 @@ class Register extends Component {
     this.setState({ phone: e.target.value });
   };
 
-  // handleSubmit = async (e) => {
-    // const { name, password, college, email, phone } = this.state;
-    // e.preventDefault();
-    // const user = { name, password, college, email, phone };
-    // const res = await register(user);
-    // console.log(res.data);
-    // localStorage.setItem("authtoken", res.data.data.token);
-    // localStorage.setItem('xeniapassword', password);
+  handleSubmit = async (e) => {
+    const { name, password, college, email, phone } = this.state;
+    e.preventDefault();
+    const user = { name, password, college, email, phone };
+    const res = await register(user);
+    console.log(res.data);
+    localStorage.setItem("authtoken", res.data.data.token);
+    localStorage.setItem("xeniapassword", password);
+    this.setState({ name: "" });
+    this.setState({ college: "" });
+    this.setState({ password: "" });
+    this.setState({ email: "" });
+    this.setState({ phone: "" });
     // axios
-      // .post("http://localhost:5000/api/register", {
-        // username,
-        // password,
-        // college,
-        // email,
-        // phone,
-      // })
-      // .then((res) => console.log(res))
-      // .catch((err) => console.log(err));
-  // };
+    //   .post("http://localhost:5000/api/register", {
+    //     username,
+    //     password,
+    //     college,
+    //     email,
+    //     phone,
+    //   })
+    //   .then((res) => console.log(res))
+    //   .catch((err) => console.log(err));
+  };
 
   render() {
     return (
@@ -244,9 +249,7 @@ const mapSatesToProps = (state) => {
 };
 
 const mapActionsToProps = (dispatch) => {
-  return {
-    
-  };
+  return {};
 };
 
 export default connect(mapSatesToProps, mapActionsToProps)(Register);

@@ -3,7 +3,8 @@ import axios from "axios";
 import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
-import { loggedIn} from "../../Store/Actions";
+import { login } from "../../config/api/User";
+import { loggedIn } from "../../Store/Actions";
 
 class Login extends Component {
   constructor(props) {
@@ -23,56 +24,59 @@ class Login extends Component {
     this.setState({ password: e.target.value });
   };
 
-//  handleSubmit = async (e) => {
-//    const { email, password } = this.state;
-//
-//    e.preventDefault();
-//
-//    const user = { email, password };
-//    const res = await login(user);
-//    const userdata = res.data.data;
-//    console.log(res.data.ok);
-//    console.log(userdata);
-//
-//    if (res.data.ok === true) {
-//      Store.dispatch({
-//        type: "logedin",
-//        payload: userdata,
-//      });
-//
-//      // {
-//      //   this.props.handleLogedin(userdata);
-//      // }
-//
-//      // this.props.loggedIn(userdata);
-//
-//      localStorage.setItem("xeniaemail", email);
-//      localStorage.setItem("xeniapassword", password);
-//    }
-//
-    // axios
-    //   .post("http://localhost:5000/api/login", { username, password })
-    //   .then((res) => {
-    //     let userdata = res.data.data;
+  handleSubmit = async (e) => {
+    const { email, password } = this.state;
 
-    //     if (res.data.status === "ok") {
-    //       Store.dispatch({
-    //         type: "logedin",
-    //         payload: userdata,
-    //       });
+    e.preventDefault();
 
-    //       {
-    //         this.props.handleLogedin(userdata);
-    //       }
+    const user = { email, password };
+    const res = await login(user);
+    const userdata = res.data.data;
+    console.log(res.data.ok);
+    console.log(userdata);
 
-    //       this.props.loggedIn(userdata);
+    if (res.data.ok === true) {
+      // Store.dispatch({
+      //   type: "logedin",
+      //   payload: userdata,
+      // });
 
-    //       localStorage.setItem('xeniausername', username);
-    //       localStorage.setItem('xeniapassword', password);
+      // {
+      //   this.props.handleLogedin(userdata);
+      // }
 
-    //     }
-    //   })
-    //   .catch((err) => console.log(err.message));
+      // this.props.loggedIn(userdata);
+
+      localStorage.setItem("xeniaemail", email);
+      localStorage.setItem("xeniapassword", password);
+      this.setState({ email: "" });
+      this.setState({ password: "" });
+    }
+  };
+
+  // axios
+  //   .post("http://localhost:5000/api/login", { username, password })
+  //   .then((res) => {
+  //     let userdata = res.data.data;
+
+  //     if (res.data.status === "ok") {
+  //       Store.dispatch({
+  //         type: "logedin",
+  //         payload: userdata,
+  //       });
+
+  //       {
+  //         this.props.handleLogedin(userdata);
+  //       }
+
+  //       this.props.loggedIn(userdata);
+
+  //       localStorage.setItem('xeniausername', username);
+  //       localStorage.setItem('xeniapassword', password);
+
+  //     }
+  //   })
+  //   .catch((err) => console.log(err.message));
   //};
 
   render() {
@@ -188,13 +192,15 @@ const styles = {
 
 const mapStateToProps = (state) => {
   return {
-    popStoreLogin: state.popLogin
+    popStoreLogin: state.popLogin,
   };
 };
 
 const mapActionsToProps = (dispatch) => {
   return {
-    loggedIn: (userData) => { dispatch(loggedIn(userData)) }
+    loggedIn: (userData) => {
+      dispatch(loggedIn(userData));
+    },
   };
 };
 
