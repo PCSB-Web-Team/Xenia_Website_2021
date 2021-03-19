@@ -22,41 +22,6 @@ const MyProf = (props) => {
             
             
             
-            <div className="ProfContainer">
-                
-                <div className="Prof">
-                
-                    <h1 className="Profh1">USERNAME</h1>
-                
-                    <div className="Profimgdiv">
-                        <img src={logo} className="Profimg"  />
-                    </div>
-                    
-                    <div className="personalinfo">
-                        <div className="emailid">
-                            <p>Email </p>
-                            <p><span>dummy@gmail.com</span></p>
-                        </div>
-                        <div className="phnno">
-                            <p>Phone </p>
-                            <p><span>9999999999</span></p>
-                        </div>
-                        <div className="College">
-                            <p>College</p>
-                            <p><span >PICT</span></p>
-                        </div>
-                    </div>
-                
-                </div>
-                
-                <div className="Reg">
-                    <h1 className="Regh1">Registered Events</h1>
-                    <div className="RegContainer">
-                        {props.cart.length!==0 ? list : <div className='not-registered-msg'>You Havent Registered in Any Event</div>}
-                    </div>
-                </div>
-            
-            </div>
     
             <Link to='/' exact className='btn btn-lg text-success' onClick={() => props.logout()}> Logout </Link>
         

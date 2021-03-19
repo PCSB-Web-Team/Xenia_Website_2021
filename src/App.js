@@ -1,4 +1,4 @@
-import React      from  'react';
+import React,{useEffect}      from  'react';
 import Navbar     from  './Components/Navbar/Navbar';
 import Home       from  './Components/LandingPage/LandingPage';
 import Schedule   from  './Components/Registrations/Registrations';
@@ -18,9 +18,9 @@ import axios from 'axios';
 import {getEventData} from './Store/Actions';
 import {connect} from 'react-redux';
 
-class App extends React.Component {
+const App = () => {
 
-  componentDidMount() {
+  useEffect( () => {
     let eventDetails=[];
 
     axios
@@ -41,29 +41,28 @@ class App extends React.Component {
     let username = (localStorage.getItem('xeniausername'));
     let password = (localStorage.getItem('xeniapassword'));
   
-  }
+  })
 
-  render() {
 
-    return (
-      
-      <div className='Xenia' id='Xenia'>
-        <Navbar />
-        <Background/>
-        <Switch>
-          <Route path="/schedule">    <Schedule /><Footer/>               </Route>
-          <Route path="/events/:id">  <EventDetail/><Footer/>             </Route>
-          <Route path="/events">      <Events/><Footer/>                  </Route>
-          <Route path="/about-us">    <AboutUs /><ContactUs/><Footer/>    </Route>
-          <Route path='/cart'>        <Cart/><Footer/>                    </Route>
-          <Route path='/profile'>     <Profile/><Footer/>                 </Route>
-          <Route path='/sponsors'>     <Sponsors/><Footer/>                 </Route>
-          <Route path='/webteam'>     <WebTeam/><Footer/>                 </Route>
-          <Route path="/">            <Home />                            </Route>
-        </Switch>
-      </div>
-    );
-  }
+  return (
+    
+    <div className='Xenia' id='Xenia'>
+      <Navbar />
+      <Background/>
+      <Switch>
+        <Route path="/schedule">    <Schedule /><Footer/>               </Route>
+        <Route path="/events/:id">  <EventDetail/><Footer/>             </Route>
+        <Route path="/events">      <Events/><Footer/>                  </Route>
+        <Route path="/about-us">    <AboutUs /><ContactUs/><Footer/>    </Route>
+        <Route path='/cart'>        <Cart/><Footer/>                    </Route>
+        <Route path='/profile'>     <Profile/><Footer/>                 </Route>
+        <Route path='/sponsors'>    <Sponsors/><Footer/>                </Route>
+        <Route path='/webteam'>     <WebTeam/><Footer/>                 </Route>
+        <Route path="/">            <Home />                            </Route>
+      </Switch>
+    </div>
+  );
+
 }
 
 const mapStatesToProps = state => {

@@ -1,13 +1,12 @@
-.webTeam{
+.webTeam {
   width: 100vw;
   text-align: center;
-  height: auto;
   display: inline-block;
   margin: 0px;
   margin-block: 20px;
 }
 
-.webTeam .profile{
+.webTeam .profile {
   position: relative;
 
   text-align: center;
@@ -18,29 +17,32 @@
 
   width: 250px;
   height: 350px;
+
+  overflow: hidden;
 }
 
-.webTeam h1{
-  color: aqua;
+.webTeam h1 {
+  color: white;
 }
 
-.webTeam .profile .picNLink{
+.webTeam .profile .picNLink {
   background-color: rgba(0, 0, 0, 0.418);
   border-radius: 50%;
   height: 250px;
   width: 250px;
+
+  position: relative;
+
   overflow: hidden;
 }
 
-.webTeam .profile .picNLink .memberPic{
+.webTeam .profile .picNLink .memberPic {
   height: 100%;
   width: 100%;
 }
 
-.webTeam .profile:hover .picNLink .memberLink{
+.webTeam .profile:hover .picNLink .memberLink {
   position: absolute;
-  
-  margin-top: 125px;
   
   left: 0px;
 
@@ -48,8 +50,20 @@
   height: 100%;
 
   color: black;
+
+  transition: ease 200ms;
 }
 
-.webTeam .profile:hover .picNLink .memberPic{
+.webTeam .profile .memberName {
+  color: white;
+  font-size: 20px;
+}
+
+.webTeam .profile .picNLink .memberLink i {
+  margin-top: 110px;
+}
+
+.webTeam .profile:hover .picNLink .memberPic {
+  transition: ease 300ms;
   filter: blur(5px);
 }
