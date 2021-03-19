@@ -85,6 +85,8 @@ const Navbar = (props) => {
             <NavLink to='/profile'     activeClassName='active-nav' className='nav-tabs' onClick={handleNavView}>  Slots    </NavLink>
             : null }
 
+            {!props.isLoggedIn ? <div className="nav-tabs"  onClick={ openLogin }  id='contact' href="#Contact-us"> Login   </div> : null}
+
             <div className="navLogos">
               <div className="xeniaLogo">
                 <Link to="/" onClick={handleNavView}>
@@ -97,8 +99,6 @@ const Navbar = (props) => {
                 </a>
               </div>
             </div>
-
-            {!props.isLoggedIn ? <div className="nav-tabs"  onClick={ openLogin }  id='contact' href="#Contact-us"> Login   </div> : null}
 
           </div>
             :
