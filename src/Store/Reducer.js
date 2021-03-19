@@ -9,19 +9,27 @@ export default function (state=defaultState,action){
             return {
                 ...state,
                 login: true,
+                cart: action.payload.userData.cart,
                 userData: action.payload.userData
             }
 
         case(actions.LOGGEDOUT):
             return defaultState
 
+        case(actions.STORETOKEN): {
+            return {
+                    ...state,
+                    token: action.payload.token
+            }
+        }
+        
         case(actions.ADDTOCART): {
             let duplicate=false;
             let eventToAdd=action.payload.eveData;
 
             for(let i=0 ; i < state.cart.length ; i++)
             {
-                if(state.cart[i].name === eventToAdd.name){
+                if(state.cart[i].name === eventToAdd.name) {
                     duplicate=true;
                     break;
                 }

@@ -1,7 +1,6 @@
 export default {
-    login: true,
-    popLogin: false,
-    popSignUp: false,
+    login: false,
+    token: '',
     cart: [],
     eventData: [],
 }

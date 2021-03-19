@@ -189,7 +189,7 @@ label #cancel {
   display: none;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1350px) {
   .items {
     display: none;
   }
@@ -272,12 +272,11 @@ label #cancel {
 
     margin-block: 15px;
 
-    width: 100%;
+    width: 400px;
     text-align: center;
   }
 
   .NavBar .MobileNav {
-    padding-inline: 30px;
   }
 
   .MobileNav .navLogos {
