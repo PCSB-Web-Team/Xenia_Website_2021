@@ -12,6 +12,11 @@
     font-family: 'planetn';
 }
 
+@media (min-width:1280px){
+    .evedate{
+        font-size: 2em;
+    }
+}
 .EventCols{
     display: flex;
     text-align: center;

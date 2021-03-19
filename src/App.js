@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/LandingPage/LandingPage";
 import Schedule from "./Components/Registrations/Registrations";
@@ -10,9 +10,9 @@ import Footer from "./Components/Footer/Footer";
 import Cart from "./Components/Cart/MainCart";
 import Profile from "./Components/Profile/Profile";
 import WebTeam from "./Components/WebTeam/WebTeam";
+import Sponsors from "./Components/Sponsors/Sponsors";
 import styles from "./App.css";
 import Background from "./Components/BackGround/Background";
-import { getEvents } from "./config/api/Events";
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,20 +23,21 @@ import axios from "axios";
 import { getEventData } from "./Store/Actions";
 import { connect } from "react-redux";
 
-class App extends React.Component {
-  async componentDidMount() {
+const App = () => {
+  useEffect(() => {
     let eventDetails = [];
-    try {
-      const res = await getEvents();
-      console.log(res.data.data);
 
-      if (res.data.ok) {
-        eventDetails = res.data.data;
-      }
-      this.props.getEventData(eventDetails);
-    } catch (error) {
-      console.log(error.message);
-    }
+    axios
+      .get("https://xenia-backend.herokuapp.com/api/events")
+      .then((res) => {
+        if (res.data.ok) {
+          eventDetails = res.data.data;
+        }
+        this.props.getEventData(eventDetails);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
 
     // axios
     //   .get("https://xenia-backend.herokuapp.com/api/events")
@@ -51,61 +52,64 @@ class App extends React.Component {
     //     console.log(err);
     //   });
 
-    // let username = localStorage.getItem("xeniausername");
-    // let password = localStorage.getItem("xeniapassword");
-  }
+    let username = localStorage.getItem("xeniausername");
+    let password = localStorage.getItem("xeniapassword");
+  });
 
-  render() {
-    return (
-      <div className="Xenia" id="Xenia">
-        <Navbar />
-        <Background />
-        <Switch>
-          <Route path="/schedule">
-            {" "}
-            <Schedule />
-            <Footer />{" "}
-          </Route>
-          <Route path="/events/:id">
-            {" "}
-            <EventDetail />
-            <Footer />{" "}
-          </Route>
-          <Route path="/events">
-            {" "}
-            <Events />
-            <Footer />{" "}
-          </Route>
-          <Route path="/about-us">
-            {" "}
-            <AboutUs />
-            <ContactUs />
-            <Footer />{" "}
-          </Route>
-          <Route path="/cart">
-            {" "}
-            <Cart />
-            <Footer />{" "}
-          </Route>
-          <Route path="/profile">
-            {" "}
-            <Profile />
-            <Footer />{" "}
-          </Route>
-          <Route path="/webteam">
-            {" "}
-            <WebTeam />
-            <Footer />{" "}
-          </Route>
-          <Route path="/">
-            {" "}
-            <Home />{" "}
-          </Route>
-        </Switch>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="Xenia" id="Xenia">
+      <Navbar />
+      <Background />
+      <Switch>
+        <Route path="/schedule">
+          {" "}
+          <Schedule />
+          <Footer />{" "}
+        </Route>
+        <Route path="/events/:id">
+          {" "}
+          <EventDetail />
+          <Footer />{" "}
+        </Route>
+        <Route path="/events">
+          {" "}
+          <Events />
+          <Footer />{" "}
+        </Route>
+        <Route path="/about-us">
+          {" "}
+          <AboutUs />
+          <ContactUs />
+          <Footer />{" "}
+        </Route>
+        <Route path="/cart">
+          {" "}
+          <Cart />
+          <Footer />{" "}
+        </Route>
+        <Route path="/profile">
+          {" "}
+          <Profile />
+          <Footer />{" "}
+        </Route>
+        <Route path="/sponsors">
+          {" "}
+          <Sponsors />
+          <Footer />{" "}
+        </Route>
+        <Route path="/webteam">
+          {" "}
+          <WebTeam />
+          <Footer />{" "}
+        </Route>
+        <Route path="/">
+          {" "}
+          <Home />{" "}
+        </Route>
+      </Switch>
+    </div>
+  );
+};
 
 const mapStatesToProps = (state) => {
   return {

@@ -1,5 +1,6 @@
 .Registrations{
-    display: block;
+    display: flex;
+    flex-flow: column !important;
     background: none;
     text-align: center;
     color: white;
@@ -9,12 +10,14 @@
     .Registrations{
         height: 100vh;
         display: flex;
-        flex-flow: row;
+        flex-flow: column;
         box-sizing: border-box;
         padding: 10px;
         text-align: left;
         margin-top:0;
     }
+    
+
 }
 
 @media (min-width:501px) and (max-width:959px){
