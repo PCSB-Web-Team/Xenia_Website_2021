@@ -21,9 +21,8 @@ import {
   NavLink,
 } from "react-router-dom";
 import axios from "axios";
-import { getEventData, loggedIn } from "./Store/Actions";
+import { getEventData, loggedIn, storeToken } from "./Store/Actions";
 import { connect } from "react-redux";
-
 
 const App = (props) => {
 
@@ -34,7 +33,7 @@ const App = (props) => {
 
     const res = await getLoggedInUser(userToken);
 
-    console.log(res);
+    props.storeToken(userToken)
 
     props.loggedIn(res.data.data);
 
@@ -54,19 +53,6 @@ const App = (props) => {
       .catch((error) => {
         console.log(error.message);
       });
-
-    // axios
-    //   .get("https://xenia-backend.herokuapp.com/api/events")
-    //   .then((res) => {
-    //     if (res.data.ok) {
-    //       eventDetails = res.data.data;
-    //     }
-
-    //     this.props.getEventData(eventDetails);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
 
       getUserData();
 
@@ -140,6 +126,9 @@ const mapActionsToProps = (dispatch) => {
     },
     loggedIn: (userdata) => {
       dispatch(loggedIn(userdata));
+    },
+    storeToken: (token) => {
+      dispatch(storeToken(token))
     }
   };
 };

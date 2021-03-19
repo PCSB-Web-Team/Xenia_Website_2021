@@ -119,8 +119,8 @@ const Footer = () => {
           style={{ backgroundColor: "#000" }}
         >
           <MDBContainer fluid style={{ color: "#fff" }}>
-            &copy; {new Date().getFullYear()} Copyright: PICT CSI Student
-            Branch. All Rights Reserved. Designed & Developed with ♥ by{" "}
+            &copy; {new Date().getFullYear()} PICT CSI Student
+            Branch. Designed & Developed with ♥ by{" "}
             <Link to='/webteam' className="footerWebTeam">
               PCSB Web Team
             </Link>

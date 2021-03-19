@@ -38,9 +38,7 @@ const MoreInfo = (props) => {
 
   const handleAddToCart = async () => {
 
-    const res = await addToCartBackend({ token: props.token, eventId: id} );
-
-    console.log(res);
+    const res = await addToCartBackend({eventId: id}, props.token);
 
     props.addToCart(details);
 

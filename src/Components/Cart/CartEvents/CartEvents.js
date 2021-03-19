@@ -4,7 +4,14 @@ import CartItem from './CartItem/CartItem';
 import {connect} from 'react-redux';
 import {removeFromCart} from '../../../Store/Actions';
 
+
+
 const Mycart = (props) => {
+
+    const handleRemoveFromCart = (id) => {
+      props.removeFromCart(id);
+      
+    }
 
     let cartEvents= props.cart.map( eve => <CartItem removeFromCart={() => {props.removeFromCart(eve.name)} } details={eve}></CartItem>)
 
