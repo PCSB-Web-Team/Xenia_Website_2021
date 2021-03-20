@@ -38,10 +38,10 @@ const MoreInfo = (props) => {
 
   const handleAddToCart = async () => {
     
-    props.addToCart(details);
-
     const res = await addToCartBackend({eventId: id}, props.token);
-
+    if(res.data.ok) {
+      props.addToCart(details);
+    }
   }
 
   return (

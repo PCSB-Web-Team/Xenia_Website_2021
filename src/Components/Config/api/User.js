@@ -21,7 +21,7 @@ export const addToCartBackend = (data, token) => {
 };
 
 export const removeFromCartBackend = (data, token) => {
-  return axiosInstance.post(`user/remove-from-cart`, data, {
+  return axiosInstance.post(`user/remove-from-cart`, { eventId : data }, {
     headers: { Authorization: token },
   });
 };
