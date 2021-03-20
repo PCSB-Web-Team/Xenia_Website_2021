@@ -121,7 +121,7 @@ const Footer = () => {
           <MDBContainer fluid style={{ color: "#fff" }}>
             &copy; {new Date().getFullYear()} PICT CSI Student
             Branch. Designed & Developed with ♥ by{" "}
-            <Link to='/webteam' className="footerWebTeam">
+            <Link onClick={document.documentElement.scrollTop=0} to='/webteam' className="footerWebTeam" >
               PCSB Web Team
             </Link>
           </MDBContainer>

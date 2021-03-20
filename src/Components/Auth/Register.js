@@ -47,6 +47,8 @@ class Register extends Component {
     console.log(res.data);
     localStorage.setItem("authtoken", res.data.data.token);
     localStorage.setItem("xeniapassword", password);
+
+    this.props.toggle();
   };
 
   render() {

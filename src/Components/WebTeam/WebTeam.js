@@ -27,7 +27,7 @@ const webTeam = (props) => {
   let teTeam = prernaSthhall.map( member => {return ( <ProfileCard details={ member }> </ProfileCard> )})
 
   return (
-    <div className="webTeam">
+    <div className="webTeam" id='webTeam'>
         {team}
         <h1>Guided By</h1>
         {teTeam}

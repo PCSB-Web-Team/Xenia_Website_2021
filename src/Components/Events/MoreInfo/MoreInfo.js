@@ -12,7 +12,7 @@ import Loader from '../../Loader/Loader';
 import {addToCartBackend} from '../../Config/api/User';
 
 const MoreInfo = (props) => {
-
+  
   const [details,setDetails] = useState(null);
   const [loading,setLoading] = useState(true);
   const [insideCart,setInsideCart] = useState(false);
@@ -48,10 +48,16 @@ const MoreInfo = (props) => {
 
   const handleAddToCart = async () => {
     
-    const res = await addToCartBackend({eventId: id}, props.token);
-    if(res.data.ok) {
-      props.addToCart(details);
+    if(props.isLoggedIn){
+      const res = await addToCartBackend({eventId: id}, props.token);
+      if(res.data.ok) {
+        props.addToCart(details);
+      }
     }
+    else{
+
+    }
+
   }
 
   return (
@@ -97,9 +103,7 @@ const MoreInfo = (props) => {
                 Add To Cart
               </div>
             ) 
-            : (props.isLoggedIn 
-              ? <span style={{color: 'green', fontWeight: 'bold'}}>Already In Your Cart</span> 
-              : <span style={{color: 'red', fontWeight: 'bold'}}>Login To Add To Cart</span>)
+            : <span style={{color: 'green', fontWeight: 'bold'}}>Already In Your Cart</span> 
             } 
 
           <DetailsTab details={details}/>
