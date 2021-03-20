@@ -9,9 +9,7 @@ export const loggedIn = (userData) => {
 
     return {
         type: LOGGEDIN,
-        payload: {
-            userData: userData,
-        }
+        payload : userData
     }
 
 }
@@ -19,9 +17,7 @@ export const loggedIn = (userData) => {
 export const storeToken = (token) => {
     return {
         type: STORETOKEN,
-        payload: {
-            token: token
-        }
+        payload: token
     }
 }
 
@@ -34,26 +30,20 @@ export const loggedOut = () => {
 export const getEventData = (eveData) => {
     return {
         type: GETEVENTDATA,
-        payload: {
-            data: eveData, 
-        }
+        payload: eveData
     }
 }
 
 export const addToCart = (eveData) => {
     return {
         type: ADDTOCART,
-        payload: {
-            eveData: eveData
-        }
+        payload: eveData
     }
 }
 
 export const removeFromCart = (eventId) => {
     return {
         type: REMOVEFROMCART,
-        payload: {
-            id: eventId
-        }
+        payload: eventId
     }
 }
