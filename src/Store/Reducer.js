@@ -28,7 +28,7 @@ export default function (state=defaultState,action){
 
             for(let i=0 ; i < state.userData.cart.length ; i++)
             {
-                if(state.userData.cart[i].name === eventToAdd.name) {
+                if(state.userData.cart[i].name === eventToAgtdd.name) {
                     duplicate=true;
                     break;
                 }
@@ -36,7 +36,7 @@ export default function (state=defaultState,action){
 
             if(!duplicate) {
 
-                let newCart = [state.userData.cart, eventToAdd]
+                let newCart = [...state.userData.cart, eventToAdd]
 
                 let newUserData = {...state.userData, cart: newCart}
 
