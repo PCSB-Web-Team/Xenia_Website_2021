@@ -72,7 +72,7 @@ const mapStatesToProps = state => {
 
 const mapActionsToProps = dispatch => {
     return {
-        logout: () => { dispatch(loggedOut()) },
+        logout: () => { localStorage.setItem('xeniaUserToken', null); dispatch(loggedOut()) },
     }
 }
 

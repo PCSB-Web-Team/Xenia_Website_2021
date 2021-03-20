@@ -15,10 +15,19 @@ const MoreInfo = (props) => {
 
   const [details,setDetails] = useState(null);
   const [loading,setLoading] = useState(true);
+  const [insideCart,setInsideCart] = useState(false);
 
   let {id} = useParams();
+  
+  const checkInsideCart = (eveId) => {
+    setInsideCart(false);
+    props.cart.forEach(eve => { if(eve._id === id) setInsideCart(true) });
+  }
 
-  useEffect(() => {fetchData()}, [id]);
+  useEffect(() => {
+    fetchData()
+    checkInsideCart();
+  }, [id, props.cart]);
 
   const fetchData = async () => {
     try {
@@ -35,6 +44,7 @@ const MoreInfo = (props) => {
 
     setLoading(false);
   }
+
 
   const handleAddToCart = async () => {
     
@@ -78,7 +88,7 @@ const MoreInfo = (props) => {
             </p>
             
             <hr class="my-1" />
-            {props.isLoggedIn ? (
+            {props.isLoggedIn && !insideCart ? (
               <div
                 onClick={handleAddToCart}
                 class="btn btn-lg bg-success"
@@ -86,7 +96,11 @@ const MoreInfo = (props) => {
               >
                 Add To Cart
               </div>
-            ) : null} 
+            ) 
+            : (props.isLoggedIn 
+              ? <span style={{color: 'green', fontWeight: 'bold'}}>Already In Your Cart</span> 
+              : <span style={{color: 'red', fontWeight: 'bold'}}>Login To Add To Cart</span>)
+            } 
 
           <DetailsTab details={details}/>
 
@@ -104,7 +118,7 @@ const mapStateToProps = (state) => {
 
   return {
     token: state.token,
-    cart: state.cart,
+    cart: state.userData.cart,
     isLoggedIn: state.login,
   };
 
