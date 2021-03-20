@@ -14,13 +14,14 @@ export const getLoggedInUser = (token) => {
 };
 
 export const addToCartBackend = (data, token) => {
+
   return axiosInstance.post(`user/add-to-cart`, data, {
     headers: { Authorization: token },
   });
 };
 
-export const removeFromCart = (data, token) => {
-  return axiosInstance.post(`user/remove-from-cart`, data, {
+export const removeFromCartBackend = (data, token) => {
+  return axiosInstance.post(`user/remove-from-cart`, { eventId : data }, {
     headers: { Authorization: token },
   });
 };

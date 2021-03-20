@@ -108,3 +108,9 @@
     width: 90%;
   }
 }
+
+.event-card hr{
+   font-size: '5px';
+   font-weight: 'bolder';
+   color: 'aqua';
+  }

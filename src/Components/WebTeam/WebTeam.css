@@ -41,7 +41,7 @@
   width: 100%;
 }
 
-.webTeam .profile:hover .picNLink .memberLink {
+.webTeam .profile .picNLink:hover .memberLink {
   position: absolute;
   
   left: 0px;
@@ -63,7 +63,7 @@
   margin-top: 110px;
 }
 
-.webTeam .profile:hover .picNLink .memberPic {
+.webTeam .profile .picNLink:hover .memberPic {
   transition: ease 300ms;
   filter: blur(5px);
 }

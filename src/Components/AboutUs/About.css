@@ -9,42 +9,62 @@
 }
 
 .hero {
-  /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(./background.jpg);
-  background-position: center;
-  background-size: cover; */
-  /* background: #8e2de2; 
-  background: -webkit-linear-gradient(
-    to right,
-    #4a00e0,
-    #8e2de2
-  ); 
-  background: linear-gradient(
-    to right,
-    #4a00e0,
-    #8e2de2
-  );  */
-
   height: fit-content;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-.content h1 {
+.content1 h1 {
   font-family: "Major Mono Display" !important;
+  margin: 10px auto;
+  width: 70%;
+  text-align: left;
 }
-.content {
-  margin-top: 50px;
-
+.content1 {
+  margin-top: 30px;
   color: #fff;
   text-align: center;
   font-family: monospace;
 }
-.content .firstChild {
+.content1 .firstChild {
   font-size: 90px;
 }
-.content p {
+.content1 p {
   font-family: "Poppins", sans-serif;
   font-size: 19px;
+  width: 70%;
+  display: inline-flex;
+}
+
+.content2 h1 {
+  font-family: "Major Mono Display" !important;
+  margin: 10px auto;
+  width: 65%;
+  text-align: right;
+}
+.content2 {
+  margin-top: 50px;
+  color: #fff;
+  text-align: center;
+  font-family: monospace;
+}
+.content2 .firstChild {
+  font-size: 90px;
+}
+.content2 p {
+  font-family: "Poppins", sans-serif;
+  font-size: 19px;
+  width: 70%;
+  display: inline-flex;
+}
+
+.eventContent {
+  display: block;
+  width: 75%;
+  padding: 3rem;
+}
+
+.event-info {
+  width: 85%;
 }
 
 .about-us h1 {
@@ -137,38 +157,61 @@ p {
   }
 }
 
-@media only screen and (max-width: 676px) {
-  .content h1 {
+@media (max-width: 676px) {
+  .content1 {
+    padding: 0px 5px;
+  }
+
+  .content2 {
+    padding: 0px 5px;
+  }
+  .content1 h1 {
     font-family: "Major Mono Display";
+    font-size: 50px !important;
+    text-align: center !important;
+  }
+
+  .content1 .firstChild {
     font-size: 50px;
   }
-  /* .content {
-    margin-top: 50px;
-  
-    color: #fff;
-    text-align: center;
-    font-family: monospace;
-  } */
-  .content .firstChild {
-    font-size: 70px;
-  }
-  .content p {
+  .content1 p {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
+    text-align: center !important;
+  }
+  .content2 h1 {
+    font-family: "Major Mono Display";
+    font-size: 50px !important;
+    text-align: center !important;
+  }
+
+  .content2 .firstChild {
+    font-size: 50px;
+  }
+  .content2 p {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    text-align: center !important;
+  }
+  .eventContent {
+    padding: 5px !important;
+    text-align: center !important;
+    margin: 0px 2px !important;
+  }
+  .event-info {
+    text-align: center !important;
+    width: 100%;
   }
 }
 
-@media only screen and (max-width: 360px) {
+@media (max-width: 360px) {
   .content h1 {
     font-family: "Major Mono Display";
     font-size: 40px;
   }
   .content {
-    margin-top: 30px;
-    /*   
-    color: #fff;
-    text-align: center;
-    font-family: monospace; */
+    margin-top: 10px;
+    padding: 5px !important;
   }
   .content .firstChild {
     font-size: 70px;

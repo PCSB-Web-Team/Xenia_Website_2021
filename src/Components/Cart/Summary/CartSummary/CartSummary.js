@@ -53,7 +53,7 @@ const cartSummary=(props)=> {
 
 const mapStatesToProps = state => {
     return{
-        cart: state.cart,
+        cart: state.userData.cart,
     }
 }
 

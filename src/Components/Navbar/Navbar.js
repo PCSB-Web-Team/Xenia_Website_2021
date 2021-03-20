@@ -262,7 +262,7 @@ const mapStateToProps = (state) => {
   return {
     popLogin: state.popLogin,
     isLoggedIn: state.login,
-    cart: state.cart,
+    cart: state.userData.cart,
   };
 };
 

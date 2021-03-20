@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import styles from "./Registrations.css";
+import "./Registrations.css";
 import RegOpen from "./RegOpen/RegOpen";
 import EventCols from "./EventCols/EventCols";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import Slide from "react-reveal/Slide";
 import Zoom from "react-reveal/Zoom";
-import Rotate from "react-reveal/Rotate";
+
 class Registrations extends Component {
   state = {
     noofdays: 3,
