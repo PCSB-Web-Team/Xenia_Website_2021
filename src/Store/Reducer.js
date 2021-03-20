@@ -28,7 +28,7 @@ export default function (state=defaultState,action){
 
             for(let i=0 ; i < state.userData.cart.length ; i++)
             {
-                if(state.userData.cart[i].name === eventToAgtdd.name) {
+                if(state.userData.cart[i].name === eventToAdd.name) {
                     duplicate=true;
                     break;
                 }
