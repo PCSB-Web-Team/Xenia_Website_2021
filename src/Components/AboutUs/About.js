@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./About.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import main from "../../Assets/Images/main_bg.jpg";
+//import main from "../../Assets/Images/main_bg.jpg";
 import about from "../../Assets/Images/hero.jpg";
 import data from "../../Assets/Images/datamastro.jpg";
 import code from "../../Assets/Images/sudocode.jpg";
@@ -43,7 +43,7 @@ const About = () => {
             variants={fadeLeft}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1, delay: 1.5 }}
+            transition={{ duration: 1, delay: 0.5 }}
             style={{ textAlign: "left", color: "#ffff" }}
           >
             Xenia is the annual technical festival organised by the PICT CSI
@@ -81,7 +81,7 @@ const About = () => {
             variants={fadeLeft}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1, delay: 1.5 }}
+            transition={{ duration: 1, delay: 0.5 }}
             style={{ textAlign: "left", color: "#ffff" }}
           >
             Xenia is the annual technical festival organised by the PICT CSI

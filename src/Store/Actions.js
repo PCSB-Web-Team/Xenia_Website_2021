@@ -49,11 +49,11 @@ export const addToCart = (eveData) => {
     }
 }
 
-export const removeFromCart = (eventName) => {
+export const removeFromCart = (eventId) => {
     return {
         type: REMOVEFROMCART,
         payload: {
-            eveName: eventName
+            id: eventId
         }
     }
 }

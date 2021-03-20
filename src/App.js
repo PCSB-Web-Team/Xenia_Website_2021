@@ -12,14 +12,9 @@ import Profile from "./Components/Profile/Profile";
 import WebTeam from "./Components/WebTeam/WebTeam";
 import Sponsors from "./Components/Sponsors/Sponsors";
 import {getLoggedInUser} from './Components/Config/api/User';
-import styles from "./App.css";
+import "./App.css";
 import Background from "./Components/BackGround/Background";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom";
 import axios from "axios";
 import { getEventData, loggedIn, storeToken } from "./Store/Actions";
 import { connect } from "react-redux";

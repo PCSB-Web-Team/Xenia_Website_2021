@@ -37,10 +37,10 @@ const MoreInfo = (props) => {
   }
 
   const handleAddToCart = async () => {
+    
+    props.addToCart(details);
 
     const res = await addToCartBackend({eventId: id}, props.token);
-
-    props.addToCart(details);
 
   }
 
@@ -101,11 +101,13 @@ const MoreInfo = (props) => {
 }
 
 const mapStateToProps = (state) => {
+
   return {
     token: state.token,
     cart: state.cart,
     isLoggedIn: state.login,
   };
+
 };
 
 const mapActionToProps = (dispatch) => {

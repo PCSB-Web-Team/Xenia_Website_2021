@@ -9,7 +9,6 @@ export default function (state=defaultState,action){
             return {
                 ...state,
                 login: true,
-                cart: action.payload.userData.cart,
                 userData: action.payload.userData
             }
 
@@ -27,21 +26,26 @@ export default function (state=defaultState,action){
             let duplicate=false;
             let eventToAdd=action.payload.eveData;
 
-            for(let i=0 ; i < state.cart.length ; i++)
+            for(let i=0 ; i < state.userData.cart.length ; i++)
             {
-                if(state.cart[i].name === eventToAdd.name) {
+                if(state.userData.cart[i].name === eventToAdd.name) {
                     duplicate=true;
                     break;
                 }
             }
 
-            console.log(eventToAdd);
+            if(!duplicate) {
 
-            if(!duplicate)
+                let newCart = [state.userData.cart, eventToAdd]
+
+                let newUserData = {...state.userData, cart: newCart}
+
                 return {
                     ...state,
-                    cart: [...state.cart, eventToAdd]
+                    userData: newUserData
                 }    
+
+            }
 
             else    return {...state}
         }
@@ -54,11 +58,17 @@ export default function (state=defaultState,action){
         }
 
         case(actions.REMOVEFROMCART): {
-            let newCart = state.cart.filter(eve => eve.name !== action.payload.eveName);
+
+            let newCart = state.userData.cart.filter(eve => eve._id !== action.payload.id);
+
+            let newUserData = {
+                ...state.userData,
+                cart: newCart
+            }
 
             return {
                 ...state,
-                cart: newCart
+                userData: newUserData
             }
         }
 

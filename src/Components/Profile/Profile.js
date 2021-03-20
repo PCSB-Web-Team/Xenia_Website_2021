@@ -24,7 +24,6 @@ const MyProf = (props) => {
                     <h1 class="slotAndTypeItem">Slot Details </h1><h1 class="slotAndTypeItem">Event Type</h1>
                 </div>
             </div>`;
-            console.log(props.cart);
         },
     );
     
@@ -67,7 +66,7 @@ const MyProf = (props) => {
 
 const mapStatesToProps = state => {
     return {
-        cart: state.cart
+        cart: state.userData.cart
     }
 }
 

@@ -3,17 +3,20 @@ import './CartEvents.css';
 import CartItem from './CartItem/CartItem';
 import {connect} from 'react-redux';
 import {removeFromCart} from '../../../Store/Actions';
-
+import {removeFromCartBackend} from '../../Config/api/User';
 
 
 const Mycart = (props) => {
 
-    const handleRemoveFromCart = (id) => {
-      props.removeFromCart(id);
+    const handleRemoveFromCart = async (data,token) => {
       
+      let res = await removeFromCartBackend(data,token) 
+      props.removeFromCart(data._id);
+
+      console.log(res)
     }
 
-    let cartEvents= props.cart.map( eve => <CartItem removeFromCart={() => {props.removeFromCart(eve.name)} } details={eve}></CartItem>)
+    let cartEvents= props.cart.map( eve => <CartItem removeFromCart={() => {handleRemoveFromCart(eve, props.token)} } details={eve}></CartItem>)
 
     return (
       <div className="Cart">
@@ -35,15 +38,15 @@ const Mycart = (props) => {
 const mapStatesToProps = state => {
   
   return {
-    cart: state.cart,
+    token: state.token,
+    cart: state.userData.cart,
   }
 
 }
 
 const mapActionsToProps = dispatch => {
-  
   return {
-    removeFromCart: (eventName) => { dispatch(removeFromCart(eventName)) }
+    removeFromCart: (eventId) => { dispatch(removeFromCart(eventId)) }
   }
 }
 

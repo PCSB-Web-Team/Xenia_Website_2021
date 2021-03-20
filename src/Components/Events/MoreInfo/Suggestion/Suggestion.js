@@ -5,8 +5,6 @@ import { getDefaultMiddleware } from '@reduxjs/toolkit';
 import {Link} from 'react-router-dom';
 
 const Suggestion = (props) => {
-    
-    console.log(props);
 
     return (
         
