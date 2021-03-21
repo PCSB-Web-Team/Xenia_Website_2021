@@ -58,7 +58,7 @@ const MyProf = (props) => {
                 </div>
             </div>    
     
-            <Link to='/' exact className='btn btn-lg text-success' onClick={() => props.logout()}> Logout </Link>
+            <Link to='/' exact className='btn btn-lg lgout' onClick={() => props.logout()}> Logout </Link>
         
         </div>
     )

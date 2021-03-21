@@ -12,7 +12,7 @@ const FAQ = () => {
           sr="0"
         />
         <Question
-          question="Does Xenia has only technical event?"
+          question="Does Xenia has only technical events?"
           answer="No, Xenia consists of technical as well as non-technical events."
           sr="1"
         />

@@ -8,7 +8,7 @@ import './Cards/Card.css';
 import './Events.css';
 import Card from './Cards/Card';
 import SideEvents from './SideEvents/SideEvents';
-import {getEventData} from '../../Store/Actions';
+import {getEventData, openLogin, closeLogin, toggleLogin} from '../../Store/Actions';
 
 const Events = (props) => {
   
