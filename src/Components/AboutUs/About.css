@@ -159,11 +159,11 @@ p {
 
 @media (max-width: 676px) {
   .content1 {
-    padding: 0px 5px;
+    padding: 0px 5px !important;
   }
 
   .content2 {
-    padding: 0px 5px;
+    padding: 0px 5px !important;
   }
   .content1 h1 {
     font-family: "Major Mono Display";
@@ -196,7 +196,8 @@ p {
   .eventContent {
     padding: 5px !important;
     text-align: center !important;
-    margin: 0px 2px !important;
+    margin: 0px 20px !important;
+    width: 90%;
   }
   .event-info {
     text-align: center !important;
