@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import BackToTop from "./BackToTop/BacktoTop";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -35,10 +35,20 @@ const Footer = () => {
                   style={{ width: "50px" }}
                 />
                 <div className="nav-content">
-                  <a href="#!">Technical</a>
+                  <Link
+                    onClick={(document.documentElement.scrollTop = 0)}
+                    to="/events"
+                  >
+                    Technical
+                  </Link>
                 </div>
                 <div className="nav-content">
-                  <a href="#!">Non-Technical</a>
+                  <Link
+                    onClick={(document.documentElement.scrollTop = 0)}
+                    to="/events"
+                  >
+                    Non-Technical
+                  </Link>
                 </div>
               </div>
             </div>
@@ -52,13 +62,13 @@ const Footer = () => {
                   style={{ width: "80px" }}
                 />
                 <div className="nav-content">
-                  <a href="#!">Your Account</a>
+                  <Link to="/">Your Account</Link>
                 </div>
                 <div className="nav-content">
-                  <a href="#!">Log In</a>
+                  <Link to="/">Log In</Link>
                 </div>
                 <div className="nav-content">
-                  <a href="#!">Help</a>
+                  <Link to="/about-us">Help</Link>
                 </div>
               </div>
               <div className="column4 mx-auto">
@@ -87,7 +97,11 @@ const Footer = () => {
           <div className="text-center">
             <ul className="list-unstyled list-inline">
               <li className="list-inline-item">
-                <a className="btn-floating btn-lg btn-ldi mx-1">
+                <a
+                  href="http://www.linkedin.com/company/pict-csi"
+                  target="_blank"
+                  className="btn-floating btn-lg btn-ldi mx-1"
+                >
                   <i
                     className="footerIcon fa fa-linkedin"
                     aria-hidden="true"
@@ -95,15 +109,23 @@ const Footer = () => {
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn-floating btn-lg btn-tw mx-1">
+                <a
+                  href="http://www.facebook.com/csipict"
+                  target="_blank"
+                  className="btn-floating btn-lg btn-fb mx-1"
+                >
                   <i
-                    className="footerIcon fa fa-twitter"
+                    className="footerIcon fa fa-facebook"
                     aria-hidden="true"
                   ></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn-floating btn-lg btn-itg mx-1">
+                <a
+                  href="http://www.instagram.com/csipict"
+                  target="_blank"
+                  className="btn-floating btn-lg btn-itg mx-1"
+                >
                   <i
                     className="footerIcon fa fa-instagram"
                     aria-hidden="true"
@@ -119,9 +141,13 @@ const Footer = () => {
           style={{ backgroundColor: "#000" }}
         >
           <MDBContainer fluid style={{ color: "#fff" }}>
-            &copy; {new Date().getFullYear()} PICT CSI Student
-            Branch. Designed & Developed with ♥ by{" "}
-            <Link onClick={document.documentElement.scrollTop=0} to='/webteam' className="footerWebTeam" >
+            &copy; {new Date().getFullYear()} PICT CSI Student Branch. Designed
+            & Developed with ♥ by{" "}
+            <Link
+              onClick={(document.documentElement.scrollTop = 0)}
+              to="/webteam"
+              className="footerWebTeam"
+            >
               PCSB Web Team
             </Link>
           </MDBContainer>
