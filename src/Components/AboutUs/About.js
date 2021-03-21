@@ -13,14 +13,17 @@ const About = () => {
   useEffect(() => {
     AOS.init({});
   }, []);
+
   const fadeLeft = {
     hidden: { opacity: 0, x: -150 },
     visible: { opacity: 1, x: 0 },
   };
+
   const fadeRight = {
     hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0 },
   };
+  
   const fadeTop = {
     hidden: { opacity: 0, y: -150 },
     visible: { opacity: 1, y: 0 },
