@@ -9,21 +9,26 @@ import DetailsTab from "./DetailTabs/DetailsTabs";
 import Suggestion from "./Suggestion/Suggestion";
 import { addToCart } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
-import { addToCartBackEnd } from "../../config/api/User";
-
-const handleAddToCart = async () => {
-  const res = await addToCartBackEnd();
-};
+import { addToCartBackend } from "../../Config/api/User";
 
 const MoreInfo = (props) => {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [insideCart, setInsideCart] = useState(false);
 
   let { id } = useParams();
 
+  const checkInsideCart = (eveId) => {
+    setInsideCart(false);
+    props.cart.forEach((eve) => {
+      if (eve._id === id) setInsideCart(true);
+    });
+  };
+
   useEffect(() => {
     fetchData();
-  }, [id]);
+    checkInsideCart();
+  }, [id, props.cart]);
 
   const fetchData = async () => {
     try {
@@ -37,6 +42,16 @@ const MoreInfo = (props) => {
     } catch (error) {}
 
     setLoading(false);
+  };
+
+  const handleAddToCart = async () => {
+    if (props.isLoggedIn) {
+      const res = await addToCartBackend({ eventId: id }, props.token);
+      if (res.data.ok) {
+        props.addToCart(details);
+      }
+    } else {
+    }
   };
 
   return (
@@ -62,17 +77,21 @@ const MoreInfo = (props) => {
             </p>
 
             <hr class="my-1" />
-            {props.isLoggedIn ? (
+            {props.isLoggedIn && !insideCart ? (
               <div
-                onClick={() => {
-                  props.addToCart(details);
-                }}
+                onClick={handleAddToCart}
                 class="btn btn-lg bg-success"
                 role="button"
               >
                 Add To Cart
               </div>
-            ) : null}
+            ) : (
+              <span style={{ color: "green", fontWeight: "bold" }}>
+                Already In Your Cart
+              </span>
+            )}
+
+            <DetailsTab details={details} />
 
             <DetailsTab details={details} />
           </div>
@@ -86,7 +105,8 @@ const MoreInfo = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    cart: state.cart,
+    token: state.token,
+    cart: state.userData.cart,
     isLoggedIn: state.login,
   };
 };

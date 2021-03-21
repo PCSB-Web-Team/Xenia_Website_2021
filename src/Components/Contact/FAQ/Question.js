@@ -7,7 +7,7 @@ const Question = ({ question, answer, sr }) => {
       <Card className="bg-primary">
         <Card.Header className="FAQ_header">
           <Accordion.Toggle
-            style={{ color: "#ffff" }}
+            style={{ background:'none', color: "#ffff" }}
             as={Card.Header}
             variant="link"
             eventKey={sr}
@@ -16,7 +16,7 @@ const Question = ({ question, answer, sr }) => {
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey={sr}>
-          <Card.Body style={{ color: "#131313", background: "#ffff" }}>
+          <Card.Body style={{ color: "#131313", background: "none" }}>
             {answer}
           </Card.Body>
         </Accordion.Collapse>

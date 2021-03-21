@@ -112,7 +112,7 @@ const Navbar = (props) => {
             </NavLink>
           ) : null}
 
-          {props.isLoggedIn ? (
+          {!props.isLoggedIn ? (
             <div
               className="nav-tabs"
               onClick={openLogin}
@@ -180,6 +180,20 @@ const Navbar = (props) => {
               </NavLink>
             ) : null}
 
+            {!props.isLoggedIn ? <div className="nav-tabs"  onClick={ openLogin }  id='contact' href="#Contact-us"> Login   </div> : null}
+            
+            {/* {!props.isLoggedIn ? (
+              <div
+                className="nav-tabs"
+                onClick={openLogin}
+                id="contact"
+                href="#Contact-us"
+              >
+                {" "}
+                Login{" "}
+              </div>
+            ) : null} */}
+
             <div className="navLogos">
               <div className="xeniaLogo">
                 <Link to="/" onClick={handleNavView}>
@@ -209,17 +223,7 @@ const Navbar = (props) => {
               </div>
             </div>
 
-            {!props.isLoggedIn ? (
-              <div
-                className="nav-tabs"
-                onClick={openLogin}
-                id="contact"
-                href="#Contact-us"
-              >
-                {" "}
-                Login{" "}
-              </div>
-            ) : null}
+
           </div>
         ) : null}
 
@@ -258,7 +262,7 @@ const mapStateToProps = (state) => {
   return {
     popLogin: state.popLogin,
     isLoggedIn: state.login,
-    cart: state.cart,
+    cart: state.userData.cart,
   };
 };
 
