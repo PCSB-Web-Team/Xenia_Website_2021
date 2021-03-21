@@ -1,71 +1,60 @@
 import * as actions from './Actions';
 import defaultState from './DefaultState';
 
-export default function (state=defaultState,action){
+const reducer = (state = defaultState, action) => {
+	switch (action.type) {
+		case actions.LOGGEDIN:
+			return {
+				...state,
+                login : true,
+				userData: action.payload,
+			};
 
-    switch(action.type)
-    {
-        case(actions.LOGGEDIN):
-            return {
-                ...state,
-                login: true,
-                cart: action.payload.userData.cart,
-                userData: action.payload.userData
-            }
+		case actions.STORETOKEN:
+			return {
+				...state,
+				token: action.payload,
+			};
 
-        case(actions.LOGGEDOUT):
-            return defaultState
+		case actions.LOGGEDOUT:
+			return {
+				...state,
+				token: '',
+				userData: { cart: [] },
+				login: false,
+			};
 
-        case(actions.STORETOKEN): {
-            return {
-                    ...state,
-                    token: action.payload.token
-            }
-        }
-        
-        case(actions.ADDTOCART): {
-            let duplicate=false;
-            let eventToAdd=action.payload.eveData;
+		case actions.GETEVENTDATA:
+			return {
+				...state,
+				eventData: action.payload,
+			};
 
-            for(let i=0 ; i < state.cart.length ; i++)
-            {
-                if(state.cart[i].name === eventToAdd.name) {
-                    duplicate=true;
-                    break;
-                }
-            }
+		case actions.ADDTOCART:
+			return {
+				...state,
+				userData: {
+					...state.userData,
+					cart: [...state.userData.cart, action.payload],
+				},
+			};
 
-            console.log(eventToAdd);
+		case actions.REMOVEFROMCART:
+			return {
+				...state,
+				userData: {
+					...state.userData,
+					cart: state.userData.cart.filter(
+						(e) => e._id !== action.payload
+					),
+				},
+			};
 
-            if(!duplicate)
-                return {
-                    ...state,
-                    cart: [...state.cart, eventToAdd]
-                }    
+		default:
+			return {
+				...state,
+			};
+	}
+};
 
-            else    return {...state}
-        }
-         
-        case(actions.GETEVENTDATA): {
-            return {
-                ...state,
-                eventData: action.payload.data, 
-            }
-        }
-
-        case(actions.REMOVEFROMCART): {
-            let newCart = state.cart.filter(eve => eve.name !== action.payload.eveName);
-
-            return {
-                ...state,
-                cart: newCart
-            }
-        }
-
-        default:
-            return {
-                ...state
-            }    
-            
-    }
-}
+export default reducer;
