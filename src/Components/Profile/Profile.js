@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,useCallback } from 'react'
 import './Profile.css';
 import user from '../../Assets/Images/user.png';
 import logo from '../../Assets/Images/logo.svg';
@@ -10,53 +10,53 @@ import { loggedOut } from '../../Store/Actions';
 import { Link } from 'react-router-dom';
 
 const MyProf = (props) => {
+
+
+    const showDetails = useCallback(
+        (e) => {
+            const cont = document.querySelector('.registeredEventInfo');
+            let nm;
+            
+            cont.innerHTML=
+            `<div class="slotDetails">
+                <h1 class="registeredEventInfoName">${e.target.textContent}</h1>
+                <div class="slotAndType">
+                    <h1 class="slotAndTypeItem">Slot Details </h1><h1 class="slotAndTypeItem">Event Type</h1>
+                </div>
+            </div>`;
+        },
+    );
     
     let list = props.cart.map( eve => { return(
         <div className="Regdiv">
-            <h3 className="RegP">{eve.name} </h3>
+            <h3 className="RegP" onMouseEnter={showDetails}>{eve.name} </h3>
         </div>
     )});
+
+
     
     return (
         <div className="ProfCard">
-            
-            
-            
-            <div className="ProfContainer">
-                
-                <div className="Prof">
-                
-                    <h1 className="Profh1">USERNAME</h1>
-                
-                    <div className="Profimgdiv">
-                        <img src={logo} className="Profimg"  />
-                    </div>
-                    
-                    <div className="personalinfo">
-                        <div className="emailid">
-                            <p>Email </p>
-                            <p><span>dummy@gmail.com</span></p>
-                        </div>
-                        <div className="phnno">
-                            <p>Phone </p>
-                            <p><span>9999999999</span></p>
-                        </div>
-                        <div className="College">
-                            <p>College</p>
-                            <p><span >PICT</span></p>
-                        </div>
-                    </div>
-                
-                </div>
-                
-                <div className="Reg">
-                    <h1 className="Regh1">Registered Events</h1>
-                    <div className="RegContainer">
-                        {props.cart.length!==0 ? list : <div className='not-registered-msg'>You Havent Registered in Any Event</div>}
-                    </div>
-                </div>
-            
+
+            <div className="usernameHeading">
+                <h1>USERNAME</h1>
             </div>
+            <div className="registeredEventsContainer">
+                <div className="registeredEvents">
+                    {list.length>0 ?list : <h1 className="usernameHeading">No Registered Events</h1>}
+                </div>
+                <div className="registeredEventInfo">
+                    {props.cart.length ==0 ?
+                    <h1 className="usernameHeading">No Event Registered</h1>
+                     : <div class="slotDetails">
+                            <h1 class="registeredEventInfoName">{props.cart[0].name}</h1>
+                            <div class="slotAndType">
+                                <h1 className="slotAndTypeItem">Slot Details </h1>
+                                <h1 className="slotAndTypeItem">Event Type</h1>
+                            </div>
+                        </div>}
+                </div>
+            </div>    
     
             <Link to='/' exact className='btn btn-lg text-success' onClick={() => props.logout()}> Logout </Link>
         
@@ -66,13 +66,13 @@ const MyProf = (props) => {
 
 const mapStatesToProps = state => {
     return {
-        cart: state.cart
+        cart: state.userData.cart
     }
 }
 
 const mapActionsToProps = dispatch => {
     return {
-        logout: () => { dispatch(loggedOut()) },
+        logout: () => { localStorage.setItem('xeniaUserToken', null); dispatch(loggedOut()) },
     }
 }
 

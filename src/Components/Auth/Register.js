@@ -1,142 +1,103 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
 import astronaut from "../../Assets/Images/astronaut.png";
-import { register } from "../config/api/User";
+import { register } from "../Config/api/User";
 import { connect } from "react-redux";
 
 import {} from "../../Store/Actions";
 
-class Register extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      email: "",
-      password: "",
-      college: "",
-      phone: "",
-    };
-  }
-
-  handleUserName = (e) => {
-    this.setState({ name: e.target.value });
-  };
-
-  handlePassword = (e) => {
-    this.setState({ password: e.target.value });
-  };
-
-  handleEmail = (e) => {
-    this.setState({ email: e.target.value });
-  };
-
-  handleCollege = (e) => {
-    this.setState({ college: e.target.value });
-  };
-
-  handlePhone = (e) => {
-    this.setState({ phone: e.target.value });
-  };
-
-  handleSubmit = async (e) => {
+const Register = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [college, setCollege] = useState("");
+  const [phone, setPhone] = useState("");
+  const handleSubmit = async (e) => {
     const { name, password, college, email, phone } = this.state;
     e.preventDefault();
     const user = { name, password, college, email, phone };
     const res = await register(user);
     console.log(res.data);
-    localStorage.setItem("authtoken", res.data.data.token);
-    localStorage.setItem("xeniapassword", password);
+    this.props.toggle();
+
+    setEmail("");
+    setPassword("");
+    setCollege("");
+    setPhone("");
   };
 
-  render() {
-    return (
-      <div>
-        <Modal
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-          show={this.props.view}
-          onHide={this.props.close}
+  return (
+    <div>
+      <Modal
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={props.view}
+        onHide={props.close}
+      >
+        <Modal.Header
+          style={{
+            paddingLeft: "120px",
+            background: "#131313",
+            color: "#fff",
+          }}
+          closeButton
         >
-          <Modal.Header
-            style={{
-              paddingLeft: "120px",
-              background: "#131313",
-              color: "#fff",
-            }}
-            closeButton
-          >
-            <Modal.Title>
-              <div className="d-flex flex-column text-center">
-                <img
-                  src={astronaut}
-                  className="img-fluid"
-                  style={styles.imageStyles}
-                />{" "}
-                <span
-                  style={styles.title_text}
-                  className="text-uppercase font-weight-bold"
-                >
-                  {" "}
-                  Sign Up
-                </span>
-              </div>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body style={{ background: "#131313", color: "#ffff" }}>
-            <form onSubmit={this.handleSubmit}>
-              <div className="form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="fa fa-user text-danger"></i>
-                    </div>
+          <Modal.Title>
+            <div className="d-flex flex-column text-center">
+              <img
+                src={astronaut}
+                className="img-fluid"
+                style={styles.imageStyles}
+              />{" "}
+              <span
+                style={styles.title_text}
+                className="text-uppercase font-weight-bold"
+              >
+                {" "}
+                Sign Up
+              </span>
+            </div>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{ background: "#131313", color: "#ffff" }}>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-envelope text-warning"></i>
                   </div>
-                  <input
-                    className="form-control"
-                    placeholder="Username"
-                    name="username"
-                    value={this.state.name}
-                    type="text"
-                    onChange={this.handleUserName}
-                  />
                 </div>
+                <input
+                  className="form-control"
+                  name="Email"
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
-              <div className="form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="fa fa-envelope text-warning"></i>
-                    </div>
+            </div>
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-lock text-success"></i>
                   </div>
-                  <input
-                    className="form-control"
-                    name="Email"
-                    type="email"
-                    placeholder="Email"
-                    value={this.state.email}
-                    onChange={this.handleEmail}
-                  />
                 </div>
+                <input
+                  className="form-control"
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
               </div>
-              <div className="form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="fa fa-lock text-success"></i>
-                    </div>
-                  </div>
-                  <input
-                    className="form-control"
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    value={this.state.password}
-                    onChange={this.handlePassword}
-                  />
-                </div>
-              </div>
-              {/* <div className="form-group">
+            </div>
+            {/* <div className="form-group">
                 <div className="input-group">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
@@ -151,64 +112,63 @@ class Register extends Component {
                   />
                 </div>
               </div> */}
-              <div className="form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="fa fa-phone text-primary"></i>
-                    </div>
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-phone text-primary"></i>
                   </div>
-                  <input
-                    className="form-control"
-                    name="phone"
-                    type="text"
-                    placeholder="Phone"
-                    value={this.state.phone}
-                    onChange={this.handlePhone}
-                  />
                 </div>
+                <input
+                  className="form-control"
+                  name="phone"
+                  type="text"
+                  placeholder="Phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
               </div>
+            </div>
 
-              <div className="form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="fa fa-university"></i>
-                    </div>
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-university"></i>
                   </div>
-                  <input
-                    className="form-control"
-                    name="college"
-                    type="text"
-                    placeholder="College"
-                    value={this.state.college}
-                    onChange={this.handleCollege}
-                  />
                 </div>
+                <input
+                  className="form-control"
+                  name="college"
+                  type="text"
+                  placeholder="College"
+                  value={college}
+                  onChange={(e) => setCollege(e.target.value)}
+                />
               </div>
+            </div>
 
-              <button
-                onClick={this.props.close}
-                className="btn btn-outline-light btn-block"
+            <button
+              onClick={props.close}
+              className="btn btn-outline-light btn-block"
+            >
+              Sign Up
+            </button>
+            <div className="text-center my-2">
+              Already have an account ?{" "}
+              <a
+                style={{ fontWeight: "bold", color: "blue" }}
+                onClick={props.toggle}
               >
-                Sign Up
-              </button>
-              <div className="text-center my-2">
-                Already have an account ?{" "}
-                <a
-                  style={{ fontWeight: "bold", color: "blue" }}
-                  onClick={this.props.toggle}
-                >
-                  Login
-                </a>
-              </div>
-            </form>
-          </Modal.Body>
-        </Modal>
-      </div>
-    );
-  }
-}
+                Login
+              </a>
+            </div>
+          </form>
+        </Modal.Body>
+      </Modal>
+    </div>
+  );
+};
 const styles = {
   imageStyles: {
     padding: "5px",
