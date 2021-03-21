@@ -4,8 +4,8 @@ import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
 
-import { login } from "../config/api/User";
-import { loggedIn } from "../../Store/Actions";
+import { login, getLoggedInUser} from "../Config/api/User";
+import { loggedIn, storeToken } from "../../Store/Actions";
 
 class Login extends Component {
   constructor(props) {
@@ -32,15 +32,17 @@ class Login extends Component {
 
     const user = { email, password };
     const res = await login(user);
-    const userdata = res.data.data;
-    console.log(res.data.ok);
-    console.log(userdata);
+    const token = res.data.data.token;
 
     if (res.data.ok === true) {
-      this.props.loggedIn(userdata);
 
-      localStorage.setItem("xeniaemail", email);
-      localStorage.setItem("xeniapassword", password);
+      const res = await getLoggedInUser(token);
+
+      localStorage.setItem('xeniaUserToken', token);
+
+      this.props.loggedIn(res.data.data);
+      this.props.storeToken(token);
+
     }
 
     // axios
@@ -190,6 +192,9 @@ const mapActionsToProps = (dispatch) => {
     loggedIn: (userData) => {
       dispatch(loggedIn(userData));
     },
+    storeToken: (token) => {
+      dispatch(storeToken(token));
+    }
   };
 };
 

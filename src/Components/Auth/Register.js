@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
 import astronaut from "../../Assets/Images/astronaut.png";
-import { register } from "../config/api/User";
+import { register } from "../Config/api/User";
 import { connect } from "react-redux";
 
 import {} from "../../Store/Actions";
