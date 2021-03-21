@@ -103,7 +103,7 @@
   background: rgba(0, 247, 255, 0.644)
 }
 
-@media (max-width: 400px){
+@media (max-width: 450px){
   .card-div{
     width: 90%;
   }

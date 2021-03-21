@@ -12,7 +12,7 @@ import Loader from '../../Loader/Loader';
 import {addToCartBackend} from '../../Config/api/User';
 
 const MoreInfo = (props) => {
-  
+
   const [details,setDetails] = useState(null);
   const [loading,setLoading] = useState(true);
   const [insideCart,setInsideCart] = useState(false);
@@ -103,7 +103,7 @@ const MoreInfo = (props) => {
                 Add To Cart
               </div>
             ) 
-            : <span style={{color: 'green', fontWeight: 'bold'}}>Already In Your Cart</span> 
+            : <span style={{color: 'green', fontWeight: 'bold', fontSize: '20px'}}>In Your Cart</span> 
             } 
 
           <DetailsTab details={details}/>
