@@ -3,7 +3,7 @@ import Question from "./Question";
 import { Accordion, Row, Col } from "react-bootstrap";
 const FAQ = () => {
   return (
-    <div className="p-5 bg-dark text-white">
+    <div className="p-5 bg-transparent text-white">
       <Accordion>
         <h2 className="text-center">Frequently Asked Questions</h2>{" "}
         <Question

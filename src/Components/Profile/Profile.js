@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 
 const MyProf = (props) => {
 
-
     const showDetails = useCallback(
         (e) => {
             const cont = document.querySelector('.registeredEventInfo');
