@@ -13,17 +13,18 @@ const Register = (props) => {
   const [password, setPassword] = useState("");
   const [college, setCollege] = useState("");
   const [phone, setPhone] = useState("");
+
   const handleSubmit = async (e) => {
-    const { name, password, college, email, phone } = this.state;
     e.preventDefault();
     
-    const user = { name, password, college, email, phone };
+    const user = { password, college, email, phone };
     const res = await register(user);
+
     console.log(res.data);
 
     if(res.data.ok){
       signUpSuccess();
-      this.props.toggle();
+      props.toggle();
     }
     else signUpFail();
 
