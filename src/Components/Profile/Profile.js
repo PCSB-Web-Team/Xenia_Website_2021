@@ -3,9 +3,10 @@ import "./Profile.css";
 import user from "../../Assets/Images/user.png";
 import logo from "../../Assets/Images/logo.svg";
 import WebTeam from "../WebTeam/WebTeam";
+import {loggedOut as notifyLoggedOut} from '../Notifications/Notification';
 
 import { connect } from "react-redux";
-import { loggedOut } from "../../Store/Actions";
+import { loggedOut  } from "../../Store/Actions";
 import { Link } from "react-router-dom";
 
 const MyProf = (props) => {
@@ -63,7 +64,7 @@ const MyProf = (props) => {
         to="/"
         exact
         className="btn btn-lg lgout"
-        onClick={() => props.logout()}
+        onClick={() => { notifyLoggedOut(); props.logout() }}
       >
         {" "}
         Logout{" "}

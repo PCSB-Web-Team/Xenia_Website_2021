@@ -83,6 +83,13 @@ export const removeFromCartFail = () => {
   });
 };
 
+export const loggedOut = () => {
+  toast.error("Logged Out", {
+    position: toast.POSITION.TOP_RIGHT,
+    autoClose: 3000,
+  });
+};
+
 export const instruction = () => {
   toast.info("Instruction", {
     position: toast.POSITION.TOP_RIGHT,
