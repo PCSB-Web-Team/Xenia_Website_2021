@@ -73,7 +73,7 @@
 .lake {
   user-select: none;
   -webkit-user-drag: none;
-  background: linear-gradient(rgba(133, 9, 9, 0) 40%,rgb(2, 133, 255) 70%) ;
+  background: linear-gradient(rgba(255, 255, 255, 0) 40%,rgb(2, 133, 255) 70%) ;
   z-index: 99;
   height: 100%;
   width: 110%;

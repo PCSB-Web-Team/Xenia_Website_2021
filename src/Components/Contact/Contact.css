@@ -1,7 +1,7 @@
 .contact .container {
   /* max-width: 50%; */
   height: fit-content;
-  background: linear-gradient(rgba(0, 225, 255, 0.308),black);
+  background: linear-gradient(rgba(0, 112, 177, 0.308),black);
   display: block;
   margin-bottom: 30px;
 }

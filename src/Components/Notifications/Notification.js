@@ -70,7 +70,7 @@ export const addToCartFail = () => {
 };
 
 export const removedFromCart = () => {
-  toast.success("Successfully removed from cart", {
+  toast.error("Successfully removed from cart", {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: 3000,
   });
