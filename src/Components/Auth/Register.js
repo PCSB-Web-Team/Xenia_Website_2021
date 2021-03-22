@@ -5,33 +5,42 @@ import astronaut from "../../Assets/Images/astronaut.png";
 import { register } from "../Config/api/User";
 import { connect } from "react-redux";
 
-import {toggleLogin, openSignUp, closeLogin} from "../../Store/Actions";
-import {signUpSuccess, signUpFail} from '../Notifications/Notification';
+import { toggleLogin, openSignUp, closeLogin } from "../../Store/Actions";
+import { signUpSuccess, signUpFail } from "../Notifications/Notification";
 
 const Register = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [college, setCollege] = useState("");
   const [phone, setPhone] = useState("");
-
+  const [error, setError] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     const user = { password, college, email, phone };
     const res = await register(user);
 
     console.log(res.data);
 
-    if(res.data.ok){
+    if (res.data.ok) {
       signUpSuccess();
-      props.toggle();
+      this.props.toggle();
+    } else {
+      signUpFail();
+      setError("Invalid Credentials");
     }
-    else signUpFail();
 
     setEmail("");
     setPassword("");
     setCollege("");
     setPhone("");
+  };
+
+  const handleHide = () => {
+    if (error === "Invalid Credentials") {
+      return props.closeLogin();
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -157,7 +166,7 @@ const Register = (props) => {
             </div>
 
             <button
-              onClick={props.closeLogin}
+              onClick={handleHide}
               className="btn btn-outline-light btn-block"
             >
               Sign Up
@@ -203,9 +212,15 @@ const mapSatesToProps = (state) => {
 
 const mapActionsToProps = (dispatch) => {
   return {
-    openSignUp: () => {dispatch(openSignUp())},
-    closeLogin:  () => {dispatch(closeLogin())},
-    toggleLogin: () => {dispatch(toggleLogin())}
+    openSignUp: () => {
+      dispatch(openSignUp());
+    },
+    closeLogin: () => {
+      dispatch(closeLogin());
+    },
+    toggleLogin: () => {
+      dispatch(toggleLogin());
+    },
   };
 };
 

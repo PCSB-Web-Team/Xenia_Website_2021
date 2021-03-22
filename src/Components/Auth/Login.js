@@ -4,18 +4,24 @@ import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
 
-import { loginFail, loginSuccess } from '../Notifications/Notification';
+import { loginFail, loginSuccess } from "../Notifications/Notification";
 import { login, getLoggedInUser } from "../Config/api/User";
-import { loggedIn, storeToken, openLogin, closeLogin, toggleLogin } from "../../Store/Actions";
+import {
+  loggedIn,
+  storeToken,
+  openLogin,
+  closeLogin,
+  toggleLogin,
+} from "../../Store/Actions";
 
 const Login = (props) => {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const user = { email, password };
     let res = await login(user);
 
@@ -24,18 +30,28 @@ const Login = (props) => {
       res = await getLoggedInUser(token);
 
       localStorage.setItem("xeniaUserToken", token);
-      
+
       props.loggedIn(res.data.data);
       props.storeToken(token);
-      
+
       loginSuccess();
-    }
-    else{
+      props.closeLogin();
+      setError("");
+    } else {
       loginFail();
+      setError("Invalid Credentials");
     }
 
     setEmail("");
     setPassword("");
+  };
+
+  const handleHide = () => {
+    if (error === "Invalid Credentials") {
+      return props.closeLogin();
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -91,6 +107,11 @@ const Login = (props) => {
                   }}
                 />
               </div>
+              {error && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {error}
+                </span>
+              )}
             </div>
             <div className="form-group">
               <div className="input-group">
@@ -112,7 +133,7 @@ const Login = (props) => {
               </div>
             </div>
             <button
-              onClick={props.closeLogin}
+              onClick={handleHide}
               className="btn btn-outline-light btn-block"
             >
               Login
@@ -173,7 +194,7 @@ const mapActionsToProps = (dispatch) => {
     },
     closeLogin: () => {
       dispatch(closeLogin());
-    }
+    },
   };
 };
 
