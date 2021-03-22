@@ -2,7 +2,7 @@
     width: 50vw;
     height: 18vh;
     
-    background: rgba(59, 99, 99, 0.315);
+    background: rgba(0, 255, 255, 0.1);
 
     margin: 20px;
     padding: 0px;
@@ -64,6 +64,12 @@
     }
     .nameprice{
         align-items: center;
+    }
+    .cartItemName, .cartItemPrice{
+        font-size: 1em;
+    }
+    .cartItem,.cartItemInfo{
+        height: fit-content;
     }
 }
 

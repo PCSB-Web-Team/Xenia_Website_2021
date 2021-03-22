@@ -6,13 +6,16 @@ import logo from '../../../../Assets/Images/logo.svg';
 import Button from '@material-ui/core/Button';
 import { removeFromCartBackend } from '../../../Config/api/User';
 import { removeFromCart } from '../../../../Store/Actions';
+import {removedFromCart as notifyRemoved, removeFromCartFail as notifyFailed} from '../../../Notifications/Notification';
 
 const cartItem = (props) => {
 	const handleRemoveFromCart = async (data, token) => {
 		let res = await removeFromCartBackend(data, token);
 		if(res.data.ok) {
             props.removeFromCart(props.details._id)
-        }
+			notifyRemoved();
+		}
+		else notifyFailed();
 	};
 	return (
 		<div className="cartItem">

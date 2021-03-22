@@ -1,136 +1,172 @@
-.sponsorscontain {
-  height: 250vh;
+.maincontainer {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
 }
-.sponsorscontain h2 {
+
+.headingmain {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.5;
   text-align: center;
-  color: rgb(255, 255, 255);
-  padding-top: 80px !important;
-  margin-top: 0;
-  padding-bottom: 40px;
+  padding: 3.5rem 0;
+  color: #ffffff;
 }
-/* 1 columns */
-.grid1 {
-  /* border: 1px rgb(255, 254, 254) solid; */
-  width: 100%;
-  height: auto;
+
+.headingmain span {
+  display: block;
+}
+/* Title Sponsor */
+
+.mainboxtitle {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-flow: wrap;
+  flex-wrap: wrap;
+  /* Compensate for excess margin on outer mainbox flex items */
+  margin: -1rem -1rem;
+  padding-bottom: 160px;
 }
 
-.grid1 .box1 {
-  margin: 25px;
-  width: 30%;
-  height: 350px;
-  /* background: yellow; */
-  box-sizing: border-box;
+.mainboxItemtitle {
+  /* Minimum width of 24rem and grow to fit available space */
+  flex: 1 0 24rem;
+  /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+  margin: 1rem;
+
+  overflow: hidden;
 }
-/* 2 columns */
-.grid2 {
-  /* border: 1px rgb(255, 254, 254) solid; */
-  width: 100%;
-  height: auto;
+
+.mainboxImagetitle {
+  display: block;
+  height: 200px;
+  width: 600px;
+  margin: auto;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+  padding: 20px;
+}
+
+@supports (display: grid) {
+  .mainbox {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60rem, 1fr));
+    grid-gap: 2rem;
+  }
+
+  .mainboxtitle,
+  .mainboxItemtitle {
+    margin: 0;
+  }
+}
+.mainbox {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-flow: wrap;
+  flex-wrap: wrap;
+  /* Compensate for excess margin on outer mainbox flex items */
+  margin: -1rem -1rem;
 }
 
-.grid2 .box1 {
-  margin: 15px;
-  width: 30%;
-  height: 350px;
-  /* background: yellow; */
-  box-sizing: border-box;
+.mainboxItem {
+  /* Minimum width of 24rem and grow to fit available space */
+  flex: 1 0 24rem;
+  /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+  margin: 1rem;
+  overflow: hidden;
+  padding-bottom: 160px;
 }
 
-.grid2 .box2 {
-  margin: 15px;
-  width: 30%;
-  height: 350px;
-  /* background: yellow; */
-  box-sizing: border-box;
-}
-/* 3 columns */
-.grid3 {
-  /* border: 1px rgb(255, 254, 254) solid; */
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-flow: wrap;
+.mainboxImage1 {
+  display: block;
+  height: 200px;
+  width: 600px;
+  margin: auto;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+  padding: 20px;
 }
 
-.grid3 .box1 {
-  margin: 15px;
-  width: 30%;
+.mainboxImage2 {
+  display: block;
+  height: 220px;
+  width: 200px;
+  margin: auto;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+}
+
+.mainboxImage3 {
+  display: block;
+  height: 200px;
+  width: 640px;
+  margin: auto;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+}
+
+.mainboxImage4 {
+  display: block;
+  height: 200px;
+  width: 400px;
+  margin: auto;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+}
+
+.mainboxImage5 {
+  display: block;
   height: 300px;
-  /* background: yellow; */
-  box-sizing: border-box;
+  width: 500px;
+  margin: auto;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
 }
 
-.grid3 .box2 {
-  margin: 15px;
-  width: 30%;
-  height: 300px;
-  /* background: yellow; */
-  box-sizing: border-box;
+.mainboxImage6 {
+  display: block;
+  height: 300;
+  width: 500px;
+  margin: auto;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
 }
 
-.grid3 .box3 {
-  margin: 15px;
-  width: 30%;
-  height: 300px;
-  /* background: yellow; */
-  box-sizing: border-box;
-}
+@supports (display: grid) {
+  .mainbox {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 2rem;
+  }
 
-.grid3 .box4 {
-  margin: 15px;
-  width: 30%;
-  height: 300px;
-  /* background: yellow; */
-  box-sizing: border-box;
-}
-
-.grid3 .box5 {
-  margin: 15px;
-  width: 30%;
-  height: 300px;
-  /* background: yellow; */
-  box-sizing: border-box;
-}
-
-.grid3 .box6 {
-  margin: 15px;
-  width: 30%;
-  height: 300px;
-  /* background: yellow; */
-  box-sizing: border-box;
-}
-.grid3 div img {
-  height: auto;
+  .mainbox,
+  .mainboxItem {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 1100px) {
-  .sponsorscontain {
-    height: 350vh;
-  }
-  .grid3 div {
-    width: 40%;
-    height: 350px;
-  }
 }
 
 @media screen and (max-width: 600px) {
-  .sponsorscontain {
-    height: 350vh;
-  }
-  .grid3 div {
-    width: 90%;
-    margin-left: auto;
-    height: 350px;
+  @supports (display: grid) {
+    .mainboxImagetitle,
+    .mainboxImage1,
+    .mainboxImage2,
+    .mainboxImage3,
+    .mainboxImage4,
+    .mainboxImage5,
+    .mainboxImage6 {
+      width: 100%;
+      height: 100%;
+    }
+    .mainbox,
+    .mainboxtitle {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      grid-gap: 2rem;
+    }
+
+    .mainbox,
+    .mainboxItem {
+      margin: 0;
+    }
   }
 }

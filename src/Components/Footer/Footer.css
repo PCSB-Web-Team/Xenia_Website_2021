@@ -33,7 +33,7 @@
 }
 
 .footerIcon:hover {
-  transition: ease 500ms;
+  transition: ease 250ms;
   transform: scale(1.4);
 }
 

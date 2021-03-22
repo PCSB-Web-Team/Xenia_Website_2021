@@ -3,7 +3,7 @@ import Question from "./Question";
 import { Accordion, Row, Col } from "react-bootstrap";
 const FAQ = () => {
   return (
-    <div className="p-5 bg-dark text-white">
+    <div className="p-5 bg-transparent text-white">
       <Accordion>
         <h2 className="text-center">Frequently Asked Questions</h2>{" "}
         <Question
@@ -12,7 +12,7 @@ const FAQ = () => {
           sr="0"
         />
         <Question
-          question="Does Xenia has only technical event?"
+          question="Does Xenia has only technical events?"
           answer="No, Xenia consists of technical as well as non-technical events."
           sr="1"
         />

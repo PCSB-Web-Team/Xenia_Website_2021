@@ -5,6 +5,12 @@ export const REMOVEFROMCART = 'REMOVEFROMCART';
 export const GETEVENTDATA = 'GETEVENTDATA';
 export const STORETOKEN  =  'STORETOKEN';
 
+export const OPENLOGIN = 'OPENLOGIN';
+export const OPENSIGNUP = 'OPENSIGNUP';
+export const TOGGLELOGIN = 'TOGGLELOGIN';
+export const CLOSELOGIN = 'CLOSELOGIN';
+
+
 export const loggedIn = (userData) => {
 
     return {
@@ -45,5 +51,29 @@ export const removeFromCart = (eventId) => {
     return {
         type: REMOVEFROMCART,
         payload: eventId
+    }
+}
+
+export const openLogin = () => {
+    return {
+        type: OPENLOGIN
+    }
+}
+
+export const openSignUp = () => {
+    return {
+        type: OPENSIGNUP
+    }
+}
+
+export const toggleLogin = () => {
+    return {
+        type: TOGGLELOGIN
+    }
+}
+
+export const closeLogin = () => {
+    return {
+        type: CLOSELOGIN
     }
 }
