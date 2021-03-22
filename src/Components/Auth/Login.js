@@ -4,7 +4,7 @@ import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
 
-import { login, getLoggedInUser} from "../Config/api/User";
+import { login, getLoggedInUser } from "../Config/api/User";
 import { loggedIn, storeToken } from "../../Store/Actions";
 
 class Login extends Component {
@@ -35,14 +35,12 @@ class Login extends Component {
     const token = res.data.data.token;
 
     if (res.data.ok === true) {
-
       const res = await getLoggedInUser(token);
 
-      localStorage.setItem('xeniaUserToken', token);
+      localStorage.setItem("xeniaUserToken", token);
 
       this.props.loggedIn(res.data.data);
       this.props.storeToken(token);
-
     }
 
     // axios
@@ -194,7 +192,7 @@ const mapActionsToProps = (dispatch) => {
     },
     storeToken: (token) => {
       dispatch(storeToken(token));
-    }
+    },
   };
 };
 
