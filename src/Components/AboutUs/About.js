@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./About.css";
-import "aos/dist/aos.css";
 //import main from "../../Assets/Images/main_bg.jpg";
 import about from "../../Assets/Images/hero.jpg";
 import data from "../../Assets/Images/datamastro.jpg";

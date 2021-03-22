@@ -1,6 +1,5 @@
 import React from "react";
 import "./Contact.css";
-import { motion } from "framer-motion";
 import FAQ from "./FAQ/FAQ";
 import moonbg from "../../Assets/Images/moon.jpg";
 import Fade from 'react-reveal/Fade';

@@ -78,6 +78,7 @@
   
   transition: ease;
   animation-name: shade;
+  font-size: 18px;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   transition-delay: -3s;

@@ -32,7 +32,6 @@ const MoreInfo = (props) => {
   }, [id, props.cart]);
 
   const fetchData = async () => {
-    setLoading(true);
 
     try {
       const response = await axios.get(
@@ -91,7 +90,7 @@ const MoreInfo = (props) => {
                 Add To Cart
               </div>
             ) 
-            : <span style={{color: 'green', fontWeight: 'bold', fontSize: '20px'}}>In Your Cart</span> 
+            : <span style={{color: 'green', fontWeight: 'bold', fontSize: '20px'}}>Added to Your Cart</span> 
             } 
 
             <DetailsTab details={details} />

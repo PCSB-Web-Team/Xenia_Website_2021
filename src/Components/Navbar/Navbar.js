@@ -169,6 +169,16 @@ const Navbar = (props) => {
               About Us{" "}
             </NavLink>
 
+            <NavLink
+              to="/sponsors"
+              activeClassName="active-nav"
+              className="nav-tabs"
+              onClick={handleNavView}
+            >
+              {" "}
+              Sponsors{" "}
+            </NavLink>
+
             {props.isLoggedIn ? (
               <NavLink
                 to="/profile"

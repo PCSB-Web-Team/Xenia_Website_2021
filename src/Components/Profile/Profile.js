@@ -3,7 +3,6 @@ import './Profile.css';
 import user from '../../Assets/Images/user.png';
 import logo from '../../Assets/Images/logo.svg';
 import WebTeam from  '../WebTeam/WebTeam';
-import {motion} from 'framer-motion';
 
 import { connect } from 'react-redux';
 import { loggedOut } from '../../Store/Actions';
