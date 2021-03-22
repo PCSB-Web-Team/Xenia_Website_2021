@@ -1,0 +1,36 @@
+.cont404{
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.content404{
+    color: white;
+}
+
+.content404 h1{
+    font-size: 6em;
+}
+.content404 p{
+    font-size: 2em;
+}
+
+.cont404 img{
+    height: 50%;
+    width: 40%;
+    animation: astro 4s infinite alternate;
+    transition: 2s ease;
+    margin-top: 30px;
+}
+
+@keyframes astro{
+    0%{
+        transform: rotate(15deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
