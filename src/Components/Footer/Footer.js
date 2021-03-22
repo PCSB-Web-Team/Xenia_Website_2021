@@ -152,7 +152,7 @@ const Footer = (props) => {
             &copy; {new Date().getFullYear()} PICT CSI Student Branch. Designed
             & Developed with ♥ by{" "}
             <Link
-              onClick={(document.documentElement.scrollTop = 0)}
+              onClick = {() => {(document.documentElement.scrollTop = 0)}}
               to="/webteam"
               className="footerWebTeam"
             >
