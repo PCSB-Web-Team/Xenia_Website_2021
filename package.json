@@ -2,7 +2,7 @@
   "name": "eventsdashboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://daigavane70.github.io/xenia-dashboard",
+  "homepage": "https://daigavane70.github.io/xenia-dashboard",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@material-ui/core": "^4.11.3",
