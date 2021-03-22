@@ -46,7 +46,7 @@
 
 .open{
     font-family: 'planetns' !important;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-top: 20px;
 }
 
@@ -62,7 +62,7 @@
     margin: 0;
     line-height: 0 !important;
     animation: glitch1 2.5s infinite;
-    font-size: 1.8em;
+    font-size: 1.5em;
   }
   
   .sche:nth-child(2) {
@@ -319,6 +319,6 @@
 
  .loren{
    font-family: 'planetns';
-   font-size: 0.8em;
+   font-size: 0.6em;
    margin-bottom: 15px;
  }

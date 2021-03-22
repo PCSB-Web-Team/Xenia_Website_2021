@@ -1,6 +1,6 @@
 .Registrations{
     display: flex;
-    flex-flow: column !important;
+    flex-flow: row;
     background: none;
     text-align: center;
     color: white;
@@ -10,7 +10,7 @@
     .Registrations{
         height: 100vh;
         display: flex;
-        flex-flow: column;
+        flex-flow: row;
         box-sizing: border-box;
         padding: 10px;
         text-align: left;
@@ -40,9 +40,9 @@ Box{
     margin-top: 50px;
 }
 
-@media (min-width:500px){
+@media (min-width:500px) and (max-width:1279px){
     .Registrations{
-        flex-flow: row;
+        flex-flow: column;
         text-align: center;
     }
     .Eves{
@@ -402,5 +402,8 @@ Change1 */
   @media (max-width:500px){
     .RegopenCont{
       margin: 80px 0 !important;
+    }
+    .Registrations{
+      flex-flow: column;
     }
   }

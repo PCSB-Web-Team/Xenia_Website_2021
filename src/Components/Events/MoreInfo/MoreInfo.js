@@ -7,9 +7,10 @@ import { useParams, Link } from "react-router-dom";
 import ReactLogo from "../../../Assets/Images/logo.svg";
 import DetailsTab from "./DetailTabs/DetailsTabs";
 import Suggestion from "./Suggestion/Suggestion";
-import { addToCart } from "../../../Store/Actions";
+import { addToCart, openLogin } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
 import { addToCartBackend } from "../../Config/api/User";
+import { addToCartSuccess, addToCartFail } from '../../Notifications/Notification';
 
 const MoreInfo = (props) => {
   const [details, setDetails] = useState(null);
@@ -31,6 +32,7 @@ const MoreInfo = (props) => {
   }, [id, props.cart]);
 
   const fetchData = async () => {
+
     try {
       const response = await axios.get(
         `https://xenia-backend.herokuapp.com/api/events/${id}`
@@ -49,8 +51,10 @@ const MoreInfo = (props) => {
       const res = await addToCartBackend({ eventId: id }, props.token);
       if (res.data.ok) {
         props.addToCart(details);
+        addToCartSuccess();
       }
     } else {
+      addToCartFail();
     }
   };
 
@@ -77,21 +81,17 @@ const MoreInfo = (props) => {
             </p>
 
             <hr class="my-1" />
-            {props.isLoggedIn && !insideCart ? (
+            {!insideCart ? (
               <div
-                onClick={handleAddToCart}
+                onClick={ props.isLoggedIn ? handleAddToCart : props.openLogin}
                 class="btn btn-lg bg-success"
                 role="button"
               >
                 Add To Cart
               </div>
-            ) : (
-              <span style={{ color: "green", fontWeight: "bold" }}>
-                Already In Your Cart
-              </span>
-            )}
-
-            <DetailsTab details={details} />
+            ) 
+            : <span style={{color: 'green', fontWeight: 'bold', fontSize: '20px'}}>Added to Your Cart</span> 
+            } 
 
             <DetailsTab details={details} />
           </div>
@@ -116,6 +116,9 @@ const mapActionToProps = (dispatch) => {
     addToCart: (eventDetails) => {
       dispatch(addToCart(eventDetails));
     },
+    openLogin: () => {
+      dispatch(openLogin());
+    }
   };
 };
 

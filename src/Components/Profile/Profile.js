@@ -3,14 +3,12 @@ import './Profile.css';
 import user from '../../Assets/Images/user.png';
 import logo from '../../Assets/Images/logo.svg';
 import WebTeam from  '../WebTeam/WebTeam';
-import {motion} from 'framer-motion';
 
 import { connect } from 'react-redux';
 import { loggedOut } from '../../Store/Actions';
 import { Link } from 'react-router-dom';
 
 const MyProf = (props) => {
-
 
     const showDetails = useCallback(
         (e) => {
@@ -58,7 +56,7 @@ const MyProf = (props) => {
                 </div>
             </div>    
     
-            <Link to='/' exact className='btn btn-lg text-success' onClick={() => props.logout()}> Logout </Link>
+            <Link to='/' exact className='btn btn-lg lgout' onClick={() => props.logout()}> Logout </Link>
         
         </div>
     )

@@ -4,32 +4,51 @@ import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
 
+import { loginFail, loginSuccess } from "../Notifications/Notification";
 import { login, getLoggedInUser } from "../Config/api/User";
-import { loggedIn, storeToken } from "../../Store/Actions";
+import {
+  loggedIn,
+  storeToken,
+  openLogin,
+  closeLogin,
+  toggleLogin,
+} from "../../Store/Actions";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const user = { email, password };
-    const res = await login(user);
+    let res = await login(user);
 
     if (res.data.ok === true) {
       const token = res.data.data.token;
-      const res = await getLoggedInUser(token);
+      res = await getLoggedInUser(token);
 
       localStorage.setItem("xeniaUserToken", token);
 
       props.loggedIn(res.data.data);
       props.storeToken(token);
+
+      loginSuccess();
+      setError("");
+    } else {
+      loginFail();
+      setError("Invalid Credentials");
     }
 
     setEmail("");
     setPassword("");
+  };
+  const handleHide = () => {
+    if (error === "Invalid Credentials") {
+      return props.closeLogin();
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -37,8 +56,8 @@ const Login = (props) => {
       <Modal
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        show={props.view}
-        onHide={props.close}
+        show={props.popLogin}
+        onHide={props.closeLogin}
       >
         <Modal.Header
           style={{
@@ -85,6 +104,11 @@ const Login = (props) => {
                   }}
                 />
               </div>
+              {error && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {error}
+                </span>
+              )}
             </div>
             <div className="form-group">
               <div className="input-group">
@@ -106,7 +130,7 @@ const Login = (props) => {
               </div>
             </div>
             <button
-              onClick={props.close}
+              onClick={handleHide}
               className="btn btn-outline-light btn-block"
             >
               Login
@@ -115,7 +139,7 @@ const Login = (props) => {
               Don't have an account ?{" "}
               <a
                 style={{ fontWeight: "bold", color: "blue" }}
-                onClick={props.toggle}
+                onClick={props.toggleLogin}
               >
                 Sign Up
               </a>
@@ -147,7 +171,7 @@ const styles = {
 
 const mapStateToProps = (state) => {
   return {
-    popStoreLogin: state.popLogin,
+    popLogin: state.openLogin,
   };
 };
 
@@ -158,6 +182,15 @@ const mapActionsToProps = (dispatch) => {
     },
     storeToken: (token) => {
       dispatch(storeToken(token));
+    },
+    openLogin: () => {
+      dispatch(openLogin());
+    },
+    toggleLogin: () => {
+      dispatch(toggleLogin());
+    },
+    closeLogin: () => {
+      dispatch(closeLogin());
     },
   };
 };

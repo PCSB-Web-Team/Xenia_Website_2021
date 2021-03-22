@@ -1,13 +1,13 @@
 import React from "react";
 import "./WebTeam.css";
 import ProfileCard from './TeamProfile';
-import Vedant from '../../Assets/Images/vedant.jpeg';
-import Gaurav from '../../Assets/Images/gaurav.jpg';
-import Amit from '../../Assets/Images/amit.jpg';
-import Atharva from '../../Assets/Images/atharva.jpeg';
-import Siddhesh from '../../Assets/Images/siddhesh.jpg';
-import Pranil from '../../Assets/Images/pranil.jpeg';
-import Sourav from '../../Assets/Images/sourav.jpg';
+import Vedant   from '../../Assets/Images/WebTeam/vedant.jpeg';
+import Gaurav   from '../../Assets/Images/WebTeam/gaurav.jpg';
+import Amit     from '../../Assets/Images/WebTeam/amit.jpg';
+import Atharva  from '../../Assets/Images/WebTeam/atharva.jpeg';
+import Siddhesh from '../../Assets/Images/WebTeam/siddhesh.jpg';
+import Pranil   from '../../Assets/Images/WebTeam/pranil.jpeg';
+import Sourav   from '../../Assets/Images/WebTeam/sourav.jpg';
 
 let teamDetails = [
   {name: 'Vedant Daigavane',  linkedIn: 'https://www.linkedin.com/in/vedant-daigavane-25785315a', pic: Vedant},

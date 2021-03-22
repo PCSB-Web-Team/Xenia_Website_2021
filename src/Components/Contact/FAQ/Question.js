@@ -4,10 +4,10 @@ import "./Question.css";
 const Question = ({ question, answer, sr }) => {
   return (
     <>
-      <Card className="bg-primary">
+      <Card style={{background: 'rgba(0,0,0,0.5)'}}>
         <Card.Header className="FAQ_header">
           <Accordion.Toggle
-            style={{ background:'none', color: "#ffff" }}
+            style={{ background:'rgba(255,255,255,0.2)', color: "#ffff" }}
             as={Card.Header}
             variant="link"
             eventKey={sr}
@@ -16,7 +16,7 @@ const Question = ({ question, answer, sr }) => {
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey={sr}>
-          <Card.Body style={{ color: "#131313", background: "none" }}>
+          <Card.Body style={{ color: "green", background: "transparent" }}>
             {answer}
           </Card.Body>
         </Accordion.Collapse>

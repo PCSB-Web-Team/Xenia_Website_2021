@@ -78,6 +78,7 @@
   
   transition: ease;
   animation-name: shade;
+  font-size: 18px;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   transition-delay: -3s;
@@ -103,7 +104,7 @@
   background: rgba(0, 247, 255, 0.644)
 }
 
-@media (max-width: 400px){
+@media (max-width: 450px){
   .card-div{
     width: 90%;
   }

@@ -16,6 +16,7 @@ import pcsbLogo from "../../Assets/Images/PCSBlogo.jpeg";
 import styles from "./Navbar.css";
 import LoginModal from "../Auth/Login";
 import RegisterModal from "../Auth/Register";
+import {openLogin, closeLogin, toggleLogin} from '../../Store/Actions';
 
 const Navbar = (props) => {
   const [view, setView] = useState("down");
@@ -26,27 +27,27 @@ const Navbar = (props) => {
   };
 
   //States For Login/Signup PopUp
-  const [viewLogin, setLogin] = useState(false);
-  const [viewRegister, setRegister] = useState(false);
+  // const [viewLogin, setLogin] = useState(false);
+  // const [viewRegister, setRegister] = useState(false);
 
-  const openLogin = () => setLogin(true);
+  // const openLogin = () => setLogin(true);
 
-  const toggleView = () => {
-    console.log("toggle");
+  // const toggleView = () => {
+  //   console.log("toggle");
 
-    if (viewLogin) {
-      setLogin(false);
-      setRegister(true);
-    } else {
-      setLogin(true);
-      setRegister(false);
-    }
-  };
+  //   if (viewLogin) {
+  //     setLogin(false);
+  //     setRegister(true);
+  //   } else {
+  //     setLogin(true);
+  //     setRegister(false);
+  //   }
+  // };
 
-  const closeView = () => {
-    setLogin(false);
-    setRegister(false);
-  };
+  // const closeView = () => {
+  //   setLogin(false);
+  //   setRegister(false);
+  // };
 
   return (
     <div>
@@ -115,7 +116,7 @@ const Navbar = (props) => {
           {!props.isLoggedIn ? (
             <div
               className="nav-tabs"
-              onClick={openLogin}
+              onClick={props.openLogin}
               id="contact"
               href="#Contact-us"
             >
@@ -168,6 +169,16 @@ const Navbar = (props) => {
               About Us{" "}
             </NavLink>
 
+            <NavLink
+              to="/sponsors"
+              activeClassName="active-nav"
+              className="nav-tabs"
+              onClick={handleNavView}
+            >
+              {" "}
+              Sponsors{" "}
+            </NavLink>
+
             {props.isLoggedIn ? (
               <NavLink
                 to="/profile"
@@ -180,7 +191,7 @@ const Navbar = (props) => {
               </NavLink>
             ) : null}
 
-            {!props.isLoggedIn ? <div className="nav-tabs"  onClick={ openLogin }  id='contact' href="#Contact-us"> Login   </div> : null}
+            {!props.isLoggedIn ? <div className="nav-tabs"  onClick={ props.openLogin }  id='contact' href="#Contact-us"> Login   </div> : null}
             
             {/* {!props.isLoggedIn ? (
               <div
@@ -245,14 +256,14 @@ const Navbar = (props) => {
       </div>
 
       <LoginModal
-        view={viewLogin}
-        close={closeView}
-        toggle={toggleView}
+        // view={viewLogin}
+        // close={closeView}
+        // toggle={toggleView}
       ></LoginModal>
       <RegisterModal
-        view={viewRegister}
-        close={closeView}
-        toggle={toggleView}
+        // view={viewRegister}
+        // close={closeView}
+        // toggle={toggleView}
       ></RegisterModal>
     </div>
   );
@@ -266,4 +277,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Navbar);
+const mapActionsToProps = (dispatch) => {
+  return {
+    openLogin: () => {dispatch(openLogin())},
+  }
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(Navbar);

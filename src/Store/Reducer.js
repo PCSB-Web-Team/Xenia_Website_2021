@@ -24,6 +24,32 @@ const reducer = (state = defaultState, action) => {
 				login: false,
 			};
 
+		case actions.OPENLOGIN: 
+			return {
+				...state,
+				openLogin: true
+			}
+
+		case actions.OPENSIGNUP:
+			return {
+				...state,
+				openSignUp: true
+			}
+
+		case actions.TOGGLELOGIN:
+			return {
+				...state,
+				openSignUp: !state.openSignUp,
+				openLogin: !state.openLogin,
+			}
+
+		case actions.CLOSELOGIN:
+			return{
+				...state,
+				openLogin: false,
+				openSignUp: false,
+			}
+
 		case actions.GETEVENTDATA:
 			return {
 				...state,
