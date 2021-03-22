@@ -76,7 +76,7 @@ const Footer = (props) => {
                 }
                 
                 <div className="nav-content">
-                  <Link to="/about-us">Help</Link>
+                  <Link to="/about-us" onClick={ () => {document.documentElement.scrollTop = 0} }>Help</Link>
                 </div>
               </div>
               <div className="column4 mx-auto">
