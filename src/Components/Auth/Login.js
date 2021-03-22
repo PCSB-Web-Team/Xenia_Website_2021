@@ -10,26 +10,38 @@ import { loggedIn, storeToken } from "../../Store/Actions";
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const user = { email, password };
-    const res = await login(user);
+    let res = await login(user);
+    if (res.data.error) {
+      setError("Invalid Credentials");
+      console.log(error);
+    }
 
     if (res.data.ok === true) {
       const token = res.data.data.token;
-      const res = await getLoggedInUser(token);
+      res = await getLoggedInUser(token);
 
       localStorage.setItem("xeniaUserToken", token);
 
       props.loggedIn(res.data.data);
       props.storeToken(token);
+      setError("");
     }
 
     setEmail("");
     setPassword("");
+  };
+
+  const handleHide = () => {
+    if (error === "Invalid Credentials") {
+      return props.close();
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -38,7 +50,7 @@ const Login = (props) => {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         show={props.view}
-        onHide={props.close}
+        onHide={handleHide}
       >
         <Modal.Header
           style={{
@@ -85,6 +97,7 @@ const Login = (props) => {
                   }}
                 />
               </div>
+              {error && <span className="text-danger">{error}</span>}
             </div>
             <div className="form-group">
               <div className="input-group">
@@ -106,7 +119,7 @@ const Login = (props) => {
               </div>
             </div>
             <button
-              onClick={props.close}
+              onClick={handleHide}
               className="btn btn-outline-light btn-block"
             >
               Login

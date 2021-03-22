@@ -13,12 +13,12 @@ const Register = (props) => {
   const [college, setCollege] = useState("");
   const [phone, setPhone] = useState("");
   const handleSubmit = async (e) => {
-    const { name, password, college, email, phone } = this.state;
     e.preventDefault();
-    const user = { name, password, college, email, phone };
+    console.log("HandleSubmit");
+    const user = { password, college, email, phone };
     const res = await register(user);
     console.log(res.data);
-    this.props.toggle();
+    props.toggle();
 
     setEmail("");
     setPassword("");
