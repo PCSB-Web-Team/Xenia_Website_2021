@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import styles from "./LandingPage.css";
-import bg from "../../Assets/Images/bg.jpg";
-import astranout from "../../Assets/Images/astranout.png";
-import shuttle from "../../Assets/Images/spaceshuttle.png";
-import lake from "../../Assets/Images/lake.png";
-import layer3 from "../../Assets/Images/jupiter.jpg";
+import bg from "../../Assets/Images//LandingPage/bg.jpg";
+import astranout from "../../Assets/Images//LandingPage/astranout.png";
+import shuttle from "../../Assets/Images//LandingPage/spaceshuttle.png";
+import lake from "../../Assets/Images//LandingPage/lake.png";
+import layer3 from "../../Assets/Images//LandingPage/jupiter.jpg";
+import Fade from 'react-reveal/Fade';
+import Flash from 'react-reveal/Flash';
+import Zoom from 'react-reveal/Zoom';
 
 const LandingPage = () => {
     
@@ -33,7 +36,7 @@ const LandingPage = () => {
     return (
       <div className="landing-page">
         <div className="landing-container" onMouseMove={handleMove}>
-          <h1 id="xenia">XENIA</h1>
+          <Fade> <h1 id="xenia">XENIA</h1> </Fade>
           <span id="date">14 - 16 March</span>
 
           <div className="bg">

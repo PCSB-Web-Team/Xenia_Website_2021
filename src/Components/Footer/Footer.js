@@ -3,8 +3,10 @@ import "./Footer.css";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import BackToTop from "./BackToTop/BacktoTop";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { openLogin } from "../../Store/Actions";
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <div>
       <BackToTop></BackToTop>
@@ -36,18 +38,26 @@ const Footer = () => {
                 />
                 <div className="nav-content">
                   <Link
-                    onClick={(document.documentElement.scrollTop = 0)}
+                    onClick={() => {
+                      document.documentElement.scrollTop = 0;
+                    }}
                     to="/events"
                   >
-                    Technical
+                    All Events
                   </Link>
                 </div>
                 <div className="nav-content">
                   <Link
-                    onClick={(document.documentElement.scrollTop = 0)}
-                    to="/events"
+                    onClick={
+                      props.loggedIn
+                        ? () => {
+                            document.documentElement.scrollTop = 0;
+                          }
+                        : props.openLogin
+                    }
+                    to={props.loggedIn ? "/profile" : ""}
                   >
-                    Non-Technical
+                    Registered Events
                   </Link>
                 </div>
               </div>
@@ -61,14 +71,32 @@ const Footer = () => {
                   className="#ffffff white mt-0 d-inline-block mx-auto"
                   style={{ width: "80px" }}
                 />
+                {props.loggedIn ? (
+                  <div className="nav-content">
+                    <Link
+                      to="/cart"
+                      onClick={() => {
+                        document.documentElement.scrollTop = 0;
+                      }}
+                    >
+                      Cart
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="nav-content">
+                    <Link onClick={props.openLogin}>Log In</Link>
+                  </div>
+                )}
+
                 <div className="nav-content">
-                  <Link to="/">Your Account</Link>
-                </div>
-                <div className="nav-content">
-                  <Link to="/">Log In</Link>
-                </div>
-                <div className="nav-content">
-                  <Link to="/about-us">Help</Link>
+                  <Link
+                    onClick={() => {
+                      document.documentElement.scrollTop = 0;
+                    }}
+                    to="/about-us"
+                  >
+                    Help
+                  </Link>
                 </div>
               </div>
               <div className="column4 mx-auto">
@@ -144,7 +172,9 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} PICT CSI Student Branch. Designed
             & Developed with ♥ by{" "}
             <Link
-              onClick={(document.documentElement.scrollTop = 0)}
+              onClick={() => {
+                document.documentElement.scrollTop = 0;
+              }}
               to="/webteam"
               className="footerWebTeam"
             >
@@ -157,4 +187,18 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+const mapStatesToProps = (state) => {
+  return {
+    loggedIn: state.login,
+  };
+};
+
+const mapActionsToProps = (dispatch) => {
+  return {
+    openLogin: () => {
+      dispatch(openLogin());
+    },
+  };
+};
+
+export default connect(mapStatesToProps, mapActionsToProps)(Footer);
