@@ -39,7 +39,7 @@ const Footer = (props) => {
                 />
                 <div className="nav-content">
                   <Link
-                    onClick={(document.documentElement.scrollTop = 0)}
+                    onClick={ () => {document.documentElement.scrollTop = 0} }
                     to="/events"
                   >
                     All Events
@@ -47,7 +47,7 @@ const Footer = (props) => {
                 </div>
                 <div className="nav-content">
                   <Link  
-                  onClick = { props.loggedIn ? (document.documentElement.scrollTop = 0) : (props.openLogin)}
+                  onClick = { props.loggedIn ? () => {document.documentElement.scrollTop = 0} : (props.openLogin)}
                   to = { props.loggedIn ? "/profile" : '' }
                   >
                     Registered Events
@@ -67,7 +67,7 @@ const Footer = (props) => {
                 {props.loggedIn 
                 ? 
                 <div className="nav-content">
-                  <Link to="/cart">Cart</Link>
+                  <Link to="/cart" onClick={ () => {document.documentElement.scrollTop = 0} }>Cart</Link>
                 </div>
                  : 
                 <div className="nav-content">
@@ -152,7 +152,7 @@ const Footer = (props) => {
             &copy; {new Date().getFullYear()} PICT CSI Student Branch. Designed
             & Developed with ♥ by{" "}
             <Link
-              onClick={(document.documentElement.scrollTop = 0)}
+              onClick = {() => {(document.documentElement.scrollTop = 0)}}
               to="/webteam"
               className="footerWebTeam"
             >

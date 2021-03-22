@@ -15,11 +15,11 @@ const Register = (props) => {
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
   const handleSubmit = async (e) => {
-    const { name, password, college, email, phone } = this.state;
     e.preventDefault();
 
-    const user = { name, password, college, email, phone };
+    const user = { password, college, email, phone };
     const res = await register(user);
+
     console.log(res.data);
 
     if (res.data.ok) {
