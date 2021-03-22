@@ -1,4 +1,16 @@
-.backtotop{
-    background: rgba(0,0, 0, 0.14);
-    padding: 10px;
+@font-face {
+  src: url(../../../Assets/Fonts/PTSans-Bold.ttf);
+  font-family: SansBold;
+}
+
+.backtotop {
+  background: rgba(0, 0, 0, 0.14);
+  padding: 10px;
+  text-align: center;
+  color: white;
+  margin: 30px 0px;
+}
+
+.backtotop h4 {
+  font-family: SansBold;
 }

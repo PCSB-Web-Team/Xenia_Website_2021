@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./About.css";
-import "aos/dist/aos.css";
 //import main from "../../Assets/Images/main_bg.jpg";
 import about from "../../Assets/Images/hero.jpg";
 import data from "../../Assets/Images/datamastro.jpg";
@@ -17,10 +16,10 @@ const About = () => {
         <div className="col-lg-12 content1 px-sm-5">
           <Fade top duration={1000}>
             <h1 style={{ fontSize: "75px" }}>
-              <span className="firstChild">X</span>ENIA
+              <span className="firstChild">XENIA</span>
             </h1>
           </Fade>
-          <Fade left duration={1000} delay={600}>
+          <Fade bottom duration={1000} delay={600}>
             <p style={{ textAlign: "left", color: "#ffff" }}>
               Xenia is the annual technical festival organised by the PICT CSI
               Student Branch. This is a technical event with the view to find
@@ -47,10 +46,10 @@ const About = () => {
         <div className="col-lg-12 content2 px-sm-5">
           <Fade top duration={1000}>
             <h1 style={{ fontSize: "75px" }}>
-              <span className="firstChild">P</span>csb
+              <span className="firstChild">PCSB</span>
             </h1>
           </Fade>
-          <Fade right duration={1000} delay={600}>
+          <Fade bottom duration={1000} delay={600}>
             <p style={{ textAlign: "left", color: "#ffff" }}>
               Xenia is the annual technical festival organised by the PICT CSI
               Student Branch. This is a technical event with the view to find
@@ -165,7 +164,7 @@ const About = () => {
           </Fade>
         </div>
       </div>
-      <Sponsors />
+      {/* <Sponsors /> */}
     </div>
   );
 };

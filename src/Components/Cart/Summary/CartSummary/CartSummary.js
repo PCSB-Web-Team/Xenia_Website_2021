@@ -37,12 +37,12 @@ const cartSummary=(props)=> {
             <div className='pmtsBox'>
                 <div className='pmtsWrap'>
                     <div className='pmtsPr'>
-                        <span>Total</span>
+                        <span>Total : </span>
                         <p>{totalValue}</p>
                     </div>
-                    <Button variant="contained" color="primary" style={{outline:'0'}} className= "payBtn">
-                        Proceed to Pay
-                    </Button>
+                    <div className= "payBtn">
+                        <a href="">Proceed to Pay</a>
+                    </div>
                 </div>
             </div>
         </div>

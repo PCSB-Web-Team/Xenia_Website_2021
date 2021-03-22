@@ -1,7 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@font-face {
+  src: url(../../Assets/Fonts/PTSans-Bold.ttf);
+  font-family: SansBold;
+}
+
+@font-face {
+  src: url(../../Assets/Fonts/Barlow-Light.ttf);
+  font-family: Barlow;
+}
+
 .about-us {
   margin: 0;
   padding: 0;
@@ -14,7 +20,6 @@
   overflow-y: hidden;
 }
 .content1 h1 {
-  font-family: "Major Mono Display" !important;
   margin: 10px auto;
   width: 70%;
   text-align: left;
@@ -23,20 +28,19 @@
   margin-top: 30px;
   color: #fff;
   text-align: center;
-  font-family: monospace;
 }
 .content1 .firstChild {
   font-size: 90px;
+  font-family: SansBold;
 }
 .content1 p {
-  font-family: "Poppins", sans-serif;
   font-size: 19px;
   width: 70%;
   display: inline-flex;
+  font-family: Barlow;
 }
 
 .content2 h1 {
-  font-family: "Major Mono Display" !important;
   margin: 10px auto;
   width: 65%;
   text-align: right;
@@ -45,16 +49,17 @@
   margin-top: 50px;
   color: #fff;
   text-align: center;
-  font-family: monospace;
 }
+
 .content2 .firstChild {
   font-size: 90px;
+  font-family: SansBold;
 }
 .content2 p {
-  font-family: "Poppins", sans-serif;
   font-size: 19px;
   width: 70%;
   display: inline-flex;
+  font-family: Barlow;
 }
 
 .eventContent {
@@ -67,16 +72,18 @@
   width: 85%;
 }
 
-.about-us h1 {
-  font-size: 50px;
-
-  font-family: "Lexend Mega", sans-serif;
+.event-info h3 {
+  font-family: SansBold;
+  color: #ffffff;
 }
 
-.about-us h3,
-p {
+.event-info p {
+  font-family: Barlow;
   color: #ffffff;
-  font-weight: bold;
+}
+
+.about-us h1 {
+  font-size: 50px;
 }
 
 .events {
@@ -166,7 +173,6 @@ p {
     padding: 0px 5px !important;
   }
   .content1 h1 {
-    font-family: "Major Mono Display";
     font-size: 50px !important;
     text-align: center !important;
   }
@@ -175,12 +181,10 @@ p {
     font-size: 50px;
   }
   .content1 p {
-    font-family: "Poppins", sans-serif;
     font-size: 15px;
     text-align: center !important;
   }
   .content2 h1 {
-    font-family: "Major Mono Display";
     font-size: 50px !important;
     text-align: center !important;
   }
@@ -189,7 +193,6 @@ p {
     font-size: 50px;
   }
   .content2 p {
-    font-family: "Poppins", sans-serif;
     font-size: 15px;
     text-align: center !important;
   }
@@ -207,7 +210,6 @@ p {
 
 @media (max-width: 360px) {
   .content h1 {
-    font-family: "Major Mono Display";
     font-size: 40px;
   }
   .content {
@@ -218,7 +220,6 @@ p {
     font-size: 70px;
   }
   .content p {
-    font-family: "Poppins", sans-serif;
     font-size: 10px;
   }
 
