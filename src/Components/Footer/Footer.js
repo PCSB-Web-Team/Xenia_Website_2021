@@ -3,9 +3,8 @@ import "./Footer.css";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import BackToTop from "./BackToTop/BacktoTop";
 import { Link } from "react-router-dom";
-import {connect} from 'react-redux';
-import {openLogin} from '../../Store/Actions';
-
+import { connect } from "react-redux";
+import { openLogin } from "../../Store/Actions";
 
 const Footer = (props) => {
   return (
@@ -46,9 +45,13 @@ const Footer = (props) => {
                   </Link>
                 </div>
                 <div className="nav-content">
-                  <Link  
-                  onClick = { props.loggedIn ? (document.documentElement.scrollTop = 0) : (props.openLogin)}
-                  to = { props.loggedIn ? "/profile" : '' }
+                  <Link
+                    onClick={
+                      props.loggedIn
+                        ? (document.documentElement.scrollTop = 0)
+                        : props.openLogin
+                    }
+                    to={props.loggedIn ? "/profile" : ""}
                   >
                     Registered Events
                   </Link>
@@ -64,17 +67,16 @@ const Footer = (props) => {
                   className="#ffffff white mt-0 d-inline-block mx-auto"
                   style={{ width: "80px" }}
                 />
-                {props.loggedIn 
-                ? 
-                <div className="nav-content">
-                  <Link to="/cart">Cart</Link>
-                </div>
-                 : 
-                <div className="nav-content">
-                  <Link onClick = {props.openLogin} >Log In</Link>
-                </div>
-                }
-                
+                {props.loggedIn ? (
+                  <div className="nav-content">
+                    <Link to="/cart">Cart</Link>
+                  </div>
+                ) : (
+                  <div className="nav-content">
+                    <Link onClick={props.openLogin}>Log In</Link>
+                  </div>
+                )}
+
                 <div className="nav-content">
                   <Link to="/about-us">Help</Link>
                 </div>
@@ -167,14 +169,16 @@ const Footer = (props) => {
 
 const mapStatesToProps = (state) => {
   return {
-    loggedIn: state.login
-  }
-}
+    loggedIn: state.login,
+  };
+};
 
 const mapActionsToProps = (dispatch) => {
   return {
-    openLogin: () => {dispatch(openLogin())}
-  }
-}
+    openLogin: () => {
+      dispatch(openLogin());
+    },
+  };
+};
 
-export default connect( mapStatesToProps, mapActionsToProps )(Footer);
+export default connect(mapStatesToProps, mapActionsToProps)(Footer);
