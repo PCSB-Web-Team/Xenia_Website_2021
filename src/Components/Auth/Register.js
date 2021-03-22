@@ -5,20 +5,29 @@ import astronaut from "../../Assets/Images/astronaut.png";
 import { register } from "../Config/api/User";
 import { connect } from "react-redux";
 
-import {} from "../../Store/Actions";
+import { toggleLogin, openSignUp, closeLogin } from "../../Store/Actions";
+import { signUpSuccess, signUpFail } from "../Notifications/Notification";
 
 const Register = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [college, setCollege] = useState("");
   const [phone, setPhone] = useState("");
+  const [error, setError] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("HandleSubmit");
     const user = { password, college, email, phone };
     const res = await register(user);
+
     console.log(res.data);
-    props.toggle();
+
+    if (res.data.ok) {
+      signUpSuccess();
+      this.props.toggle();
+    } else {
+      signUpFail();
+      setError("Invalid Credentials");
+    }
 
     setEmail("");
     setPassword("");
@@ -26,13 +35,21 @@ const Register = (props) => {
     setPhone("");
   };
 
+  const handleHide = () => {
+    if (error === "Invalid Credentials") {
+      return props.closeLogin();
+    } else {
+      return null;
+    }
+  };
+
   return (
     <div>
       <Modal
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        show={props.view}
-        onHide={props.close}
+        show={props.popSignUp}
+        onHide={props.closeLogin}
       >
         <Modal.Header
           style={{
@@ -149,7 +166,7 @@ const Register = (props) => {
             </div>
 
             <button
-              onClick={props.close}
+              onClick={handleHide}
               className="btn btn-outline-light btn-block"
             >
               Sign Up
@@ -158,7 +175,7 @@ const Register = (props) => {
               Already have an account ?{" "}
               <a
                 style={{ fontWeight: "bold", color: "blue" }}
-                onClick={props.toggle}
+                onClick={props.toggleLogin}
               >
                 Login
               </a>
@@ -189,12 +206,22 @@ const styles = {
 
 const mapSatesToProps = (state) => {
   return {
-    popSignUp: state.popSignUp,
+    popSignUp: state.openSignUp,
   };
 };
 
 const mapActionsToProps = (dispatch) => {
-  return {};
+  return {
+    openSignUp: () => {
+      dispatch(openSignUp());
+    },
+    closeLogin: () => {
+      dispatch(closeLogin());
+    },
+    toggleLogin: () => {
+      dispatch(toggleLogin());
+    },
+  };
 };
 
 export default connect(mapSatesToProps, mapActionsToProps)(Register);

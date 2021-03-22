@@ -1,14 +1,13 @@
 import React,{useEffect,useState} from 'react';
-import axios from 'axios';
-import {connect} from 'react-redux';
-import {Link} from  'react-router-dom';
-import Loader from '../Loader/Loader';
-
+import axios      from 'axios';
+import {connect}  from 'react-redux';
+import {Link}     from  'react-router-dom';
+import Loader     from '../Loader/Loader';
 import './Cards/Card.css';
 import './Events.css';
 import Card from './Cards/Card';
 import SideEvents from './SideEvents/SideEvents';
-import {getEventData} from '../../Store/Actions';
+import {getEventData, openLogin, closeLogin, toggleLogin} from '../../Store/Actions';
 
 const Events = (props) => {
   

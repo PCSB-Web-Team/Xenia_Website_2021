@@ -1,8 +1,8 @@
 import React from "react";
 import "./Contact.css";
-import { motion } from "framer-motion";
 import FAQ from "./FAQ/FAQ";
 import moonbg from "../../Assets/Images/moon.jpg";
+import Fade from 'react-reveal/Fade';
 
 const Contact = () => {
   const fadeTop = {
@@ -17,25 +17,20 @@ const Contact = () => {
 
   return (
     <div className="contact text-center mb-5">
-      <motion.div
-        variants={fade}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 1 }}
+      <Fade>
+      <div
         className="display-4"
         className="container col-lg-8 p-5"
       >
         <div className="row">
           <div className="col-lg-6">
-            <motion.h3
-              variants={fadeTop}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 1 }}
+            <Fade top duration={1000}>
+            <h3
               className="display-4"
             >
               Get In Touch
-            </motion.h3>
+            </h3>
+            </Fade>
             <br />
             <form action="">
               <div class="input-group  mb-3">
@@ -93,11 +88,8 @@ const Contact = () => {
             </form>
           </div>
           <div className="col-lg-6 my-5">
-            <motion.div
-              variants={fade}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 1, delay: 0.5 }}
+            <Fade delay={500}>
+            <div
               className="text-light rounded-0 p-3 my-5 "
               style={{
                 borderRadius: "12px",
@@ -119,12 +111,10 @@ const Contact = () => {
                 Bharati Vidyapeeth Campus, Dhankawadi,
                 <br /> Pune, Maharashtra 411043
               </p>
-            </motion.div>
-            <motion.div
-              variants={fade}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 1, delay: 1 }}
+            </div>
+            </Fade>
+            <Fade delay={500}>
+            <div
               className="rounded-0 p-3 my-5 "
               style={{
                 borderRadius: "12px",
@@ -165,10 +155,12 @@ const Contact = () => {
                   ></i>
                 </a>
               </p>
-            </motion.div>
+            </div>
+            </Fade>
           </div>
         </div>
-      </motion.div>
+      </div>
+      </Fade>
       <FAQ></FAQ>
     </div>
   );

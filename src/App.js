@@ -89,6 +89,7 @@ const App = (props) => {
 					{' '}
 					<Home />{' '}
 				</Route>
+				
 			</Switch>
 		</div>
 	);
