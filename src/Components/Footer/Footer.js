@@ -38,16 +38,24 @@ const Footer = (props) => {
                 />
                 <div className="nav-content">
                   <Link
-                    onClick={ () => {document.documentElement.scrollTop = 0} }
+                    onClick={() => {
+                      document.documentElement.scrollTop = 0;
+                    }}
                     to="/events"
                   >
                     All Events
                   </Link>
                 </div>
                 <div className="nav-content">
-                  <Link  
-                  onClick = { props.loggedIn ? () => {document.documentElement.scrollTop = 0} : (props.openLogin)}
-                  to = { props.loggedIn ? "/profile" : '' }
+                  <Link
+                    onClick={
+                      props.loggedIn
+                        ? () => {
+                            document.documentElement.scrollTop = 0;
+                          }
+                        : props.openLogin
+                    }
+                    to={props.loggedIn ? "/profile" : ""}
                   >
                     Registered Events
                   </Link>
@@ -63,19 +71,32 @@ const Footer = (props) => {
                   className="#ffffff white mt-0 d-inline-block mx-auto"
                   style={{ width: "80px" }}
                 />
-                {props.loggedIn 
-                ? 
+                {props.loggedIn ? (
+                  <div className="nav-content">
+                    <Link
+                      to="/cart"
+                      onClick={() => {
+                        document.documentElement.scrollTop = 0;
+                      }}
+                    >
+                      Cart
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="nav-content">
+                    <Link onClick={props.openLogin}>Log In</Link>
+                  </div>
+                )}
+
                 <div className="nav-content">
-                  <Link to="/cart" onClick={ () => {document.documentElement.scrollTop = 0} }>Cart</Link>
-                </div>
-                 : 
-                <div className="nav-content">
-                  <Link onClick = {props.openLogin} >Log In</Link>
-                </div>
-                }
-                
-                <div className="nav-content">
-                  <Link to="/about-us" onClick={ () => {document.documentElement.scrollTop = 0} }>Help</Link>
+                  <Link
+                    onClick={() => {
+                      document.documentElement.scrollTop = 0;
+                    }}
+                    to="/about-us"
+                  >
+                    Help
+                  </Link>
                 </div>
               </div>
               <div className="column4 mx-auto">
@@ -151,7 +172,9 @@ const Footer = (props) => {
             &copy; {new Date().getFullYear()} PICT CSI Student Branch. Designed
             & Developed with ♥ by{" "}
             <Link
-              onClick = {() => {(document.documentElement.scrollTop = 0)}}
+              onClick={() => {
+                document.documentElement.scrollTop = 0;
+              }}
               to="/webteam"
               className="footerWebTeam"
             >
@@ -166,14 +189,16 @@ const Footer = (props) => {
 
 const mapStatesToProps = (state) => {
   return {
-    loggedIn: state.login
-  }
-}
+    loggedIn: state.login,
+  };
+};
 
 const mapActionsToProps = (dispatch) => {
   return {
-    openLogin: () => {dispatch(openLogin())}
-  }
-}
+    openLogin: () => {
+      dispatch(openLogin());
+    },
+  };
+};
 
-export default connect( mapStatesToProps, mapActionsToProps )(Footer);
+export default connect(mapStatesToProps, mapActionsToProps)(Footer);

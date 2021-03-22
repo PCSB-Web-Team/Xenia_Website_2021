@@ -16,7 +16,7 @@ const About = () => {
         <div className="col-lg-12 content1 px-sm-5">
           <Fade top duration={1000}>
             <h1 style={{ fontSize: "75px" }}>
-              <span className="firstChild">X</span>ENIA
+              <span className="firstChild">XENIA</span>
             </h1>
           </Fade>
           <Fade bottom duration={1000} delay={600}>
@@ -46,7 +46,7 @@ const About = () => {
         <div className="col-lg-12 content2 px-sm-5">
           <Fade top duration={1000}>
             <h1 style={{ fontSize: "75px" }}>
-              <span className="firstChild">P</span>csb
+              <span className="firstChild">PCSB</span>
             </h1>
           </Fade>
           <Fade bottom duration={1000} delay={600}>

@@ -1,11 +1,12 @@
 import React from "react";
 import Question from "./Question";
+import "./FAQ.css";
 import { Accordion, Row, Col } from "react-bootstrap";
 const FAQ = () => {
   return (
     <div className="p-5 bg-transparent text-white">
       <Accordion>
-        <h2 className="text-center">Frequently Asked Questions</h2>{" "}
+        <h2 className="FAQ text-center">Frequently Asked Questions</h2>{" "}
         <Question
           question="What is Xenia?"
           answer="Xenia is an annual festival organised by PICT CSI club of College, this multitude of other events."

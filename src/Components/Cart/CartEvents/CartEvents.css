@@ -1,58 +1,64 @@
-.Cart{
-    display: flex;
-    flex-flow: column;
-    height: 75vh;
-    align-items: center;
-    padding: 20px;
-    overflow-y: auto;
+@font-face {
+  src: url(../../../Assets/Fonts/PTSans-Bold.ttf);
+  font-family: SansBold;
 }
 
-@media (max-width:767px){
-    .Cart{
-        width: 100%;
-    }
+.Cart {
+  display: flex;
+  flex-flow: column;
+  height: 75vh;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-.myCartLine{
-    width: 700px;
-    border-top: 2px solid white;
+@media (max-width: 767px) {
+  .Cart {
+    width: 100%;
+  }
+}
+
+.myCartLine {
+  width: 700px;
+  border-top: 2px solid white;
 }
 
 .Cart::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 .Cart::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
 .Cart::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 247, 255, 0.418);
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 247, 255, 0.418);
 }
 
-.EmptyCart{
-    width: 50vw;
-    height: 60vh;
-    background: radial-gradient(rgba(56, 56, 56, 0.308),rgba(0, 0, 0, 0) 50%);
-    position: relative;
+.EmptyCart {
+  width: 50vw;
+  height: 60vh;
+  background: radial-gradient(rgba(56, 56, 56, 0.308), rgba(0, 0, 0, 0) 50%);
+  position: relative;
 }
 
-@media (max-width:767px){
-    .EmptyCart{
-        width: 90%;
-    }
+@media (max-width: 767px) {
+  .EmptyCart {
+    width: 90%;
+  }
 }
 
-.emptyCartimg{
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    bottom: 30%;
-    left: 25%;
+.emptyCartimg {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  bottom: 30%;
+  left: 25%;
 }
 
-.feelsLight h1{
-    color: white;
+.feelsLight h1 {
+  color: white;
+  font-family: SansBold;
 }

@@ -1,124 +1,136 @@
-.ProfCard{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    height: 100vh;
-    margin: 20px;
+@font-face {
+  src: url(../../Assets/Fonts/PTSans-Bold.ttf);
+  font-family: SansBold;
 }
 
-.registeredEventsContainer{
+@font-face {
+  src: url(../../Assets/Fonts/Barlow-Light.ttf);
+  font-family: Barlow;
+}
+
+.ProfCard {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 100vh;
+  margin: 20px;
+}
+
+.registeredEventsContainer {
+  width: 100%;
+  margin: 30px;
+  display: flex;
+}
+
+.registeredEvents {
+  width: 60%;
+  display: flex;
+  flex-flow: column;
+  direction: rtl;
+  overflow-y: auto;
+  height: 60vh;
+  padding: 20px;
+}
+
+.registeredEventInfo {
+  width: 40%;
+  height: 50vh;
+  padding: 20px;
+}
+
+.registeredEventInfoName {
+  text-align: center;
+  color: #46bcde;
+  font-size: 4em;
+  font-weight: 500;
+  min-height: 150px;
+}
+
+.usernameHeading {
+  color: white;
+  font-family: Barlow;
+}
+
+.Regdiv {
+  transition: 0.1s ease-in;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.RegP {
+  font-size: 4em;
+  color: white;
+  font-weight: 500;
+}
+
+.Regdiv:hover {
+  transform: translateX(5%);
+}
+
+.RegP:hover {
+  color: #46bcde;
+}
+
+.slotAndType {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: auto;
+  color: white;
+  font-family: Barlow;
+}
+
+@media (max-width: 900px) {
+  .RegP {
+    font-size: 3em;
+    font-weight: 400;
+  }
+  .registeredEventInfoName {
+    font-size: 3em;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 750px) {
+  .RegP {
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+  .registeredEventInfoName {
+    font-size: 2em;
+    font-weight: 400;
+  }
+  .registeredEventsContainer {
+    flex-flow: column;
+    align-items: center;
+  }
+  .ProfCard {
+    height: auto;
+  }
+  .registeredEvents {
+    height: 40vh;
     width: 100%;
-    margin: 30px;
-    display: flex;
+  }
+  .registeredEventInfoName {
+    min-height: 30px;
+  }
+  .registeredEventInfo {
+    width: 100%;
+    margin-top: 30px;
+    height: auto;
+  }
+  .slotAndTypeItem {
+    font-size: 1.5em;
+  }
 }
 
-.registeredEvents{
-    width: 60%;
-    display: flex;
-    flex-flow: column;
-    direction: rtl;
-    overflow-y: auto;
-    height: 60vh;
-    padding: 20px;
+.btn.btn-lg {
+  background: crimson;
+  color: white;
 }
 
-.registeredEventInfo{
-    width: 40%;
-    height: 50vh;
-    padding: 20px;
-}
-
-.registeredEventInfoName{
-    text-align: center;
-    color: #46bcde;
-    font-size: 4em;
-    font-weight: 500;
-    min-height: 150px;
-}
-
-.usernameHeading{
-    color: white;
-}
-
-.Regdiv{
-    transition: 0.1s ease-in;
-    cursor: pointer;
-    margin: 5px 0;
-}
-
-.RegP{
-    font-size: 4em;
-    color: white;
-    font-weight: 500;
-}
-
-.Regdiv:hover{
-    transform: translateX(5%);
-}
-
-.RegP:hover{
-    color: #46bcde;
-}
-
-.slotAndType{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    padding: auto;
-    color: white;
-}
-
-@media (max-width: 900px){
-    .RegP{
-        font-size: 3em;
-        font-weight: 400;
-    }
-    .registeredEventInfoName{
-        font-size: 3em;
-        font-weight: 400;
-    }
-}
-
-@media (max-width:750px){
-    .RegP{
-        font-size: 1.5em;
-        font-weight: 400;
-    }
-    .registeredEventInfoName{
-        font-size: 2em;
-        font-weight: 400;
-    }
-    .registeredEventsContainer{
-        flex-flow: column;
-        align-items: center;
-    }
-    .ProfCard{
-        height: auto;
-    }
-    .registeredEvents{
-        height: 40vh;
-        width: 100%;
-    }
-    .registeredEventInfoName{
-        min-height: 30px;
-    }
-    .registeredEventInfo{
-        width: 100%;
-        margin-top: 30px;
-        height: auto;
-    }
-    .slotAndTypeItem{
-        font-size: 1.5em;
-    }
-}
-
-.btn.btn-lg{
-    background: crimson;
-    color: white;
-}
-
-@media (min-width:1200px){
-    .registeredEvents{
-        margin-left: 60px;
-    }
+@media (min-width: 1200px) {
+  .registeredEvents {
+    margin-left: 60px;
+  }
 }

@@ -1,176 +1,188 @@
-.MoreInfo{
-    background: none;
-    position: relative;
+@font-face {
+  src: url(../../../Assets/Fonts/Barlow-Light.ttf);
+  font-family: Barlow;
 }
 
-.MoreInfo .info1{
-    width: 50%;
-    display: inline-block;
-    background: none;
-    background: radial-gradient(circle,rgba(15, 104, 131, 0.568),black);
-    margin: 0px;
+@font-face {
+  src: url(../../../Assets/Fonts/PTSans-Bold.ttf);
+  font-family: SansBold;
 }
 
-.MoreInfo .info1 .jumbotron{
-    background: none;
-    min-height: 100vh;
+.MoreInfo {
+  background: none;
+  position: relative;
 }
 
-.jumbotron{
-    animation-name: apear;
-    animation-duration: 1s;
-    transition: ease-out;
-    animation-iteration-count: 1;
+.MoreInfo .info1 {
+  width: 50%;
+  display: inline-block;
+  background: none;
+  background: radial-gradient(circle, rgba(15, 104, 131, 0.568), black);
+  margin: 0px;
 }
 
-@keyframes apear{
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
+.MoreInfo .info1 .jumbotron {
+  background: none;
+  min-height: 100vh;
 }
 
-.more-info .name{
+.jumbotron {
+  animation-name: apear;
+  animation-duration: 1s;
+  transition: ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes apear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.more-info .name {
+  width: 100%;
+  font-size: 2em;
+  font-family: SansBold;
+}
+
+.more-info .lead {
+  font-family: Barlow;
+}
+
+.more-info.jumbotron .logo {
+  width: 25%;
+  height: 200px;
+  min-width: 200px;
+  min-height: 200px;
+  transition: ease;
+}
+
+.more-info.jumbotron .logo {
+  animation-name: logoScaling;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  transition: ease;
+}
+
+@keyframes logoScaling {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nav-link,
+.nav-link:hover {
+  outline: black;
+  border: black;
+  color: white;
+  background-color: black;
+  outline: none;
+}
+
+.more-info,
+.active {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.more-info.jumbotron .tab-pane {
+  margin-top: 10px;
+  min-height: 200px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.back-container {
+  overflow: hidden;
+  height: 30px;
+  width: 30px;
+  margin-top: 20px;
+  padding: 0px;
+  margin-left: 20px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+}
+
+.back-container:hover {
+  transition: ease-in 200ms;
+  transform: scale(1.5);
+}
+
+.back-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.MoreInfo .suggestion {
+  margin: 0px;
+  top: 0px;
+  right: 0px;
+  display: inline-block;
+  position: absolute;
+  width: 50%;
+  padding-inline: 5vh;
+  text-align: center;
+}
+
+.suggestion .card {
+  cursor: pointer;
+
+  background: black;
+
+  width: 75%;
+  height: 45vh;
+
+  margin-block: 1.5vh;
+  margin-inline: 12.5%;
+}
+
+.suggestion .card:hover {
+  transition: ease 1s;
+  scale: 1.2;
+  box-shadow: 0px 0px 0px 0px rgba(0, 255, 255, 0.2),
+    0 2px 100px 0px rgba(0, 255, 255, 0.37);
+}
+
+.suggestion .card img {
+  background: linear-gradient(rgba(0, 238, 255, 0.377), rgb(0, 0, 0));
+  width: 100%;
+  height: 50%;
+}
+.suggestion h3 {
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .MoreInfo .info1 {
     width: 100%;
-    font-size: 2em;
-}
+  }
 
-.more-info.jumbotron .logo{
-    width: 25%;
-    height: 200px;
-    min-width: 200px;
-    min-height: 200px;
-    transition: ease;
-}
-
-.more-info.jumbotron .logo{
-    animation-name: logoScaling;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    transition: ease;
-}
-
-@keyframes logoScaling{
-    0%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(1.2);
-    }
-    100%{
-        transform: scale(1);
-    }
-}
-
-.nav-link, .nav-link:hover{
-    outline: black;
-    border: black;
-    color: white;
-    background-color: black;
-    outline: none;
-}
-
-.more-info, .active{
-    background-color: rgba( 0, 0, 0, 0.5);
-    color: white;
-}
-
-.more-info.jumbotron .tab-pane{
-    margin-top: 10px;
-    min-height:200px;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.back-container{
-    overflow: hidden;
-    height: 30px;
-    width: 30px;
-    margin-top: 20px;
+  .more-info {
     padding: 0px;
-    margin-left: 20px;
-    top: 0px;
-    left: 0px;
-    position: absolute;
-}
-
-.back-container:hover{
-    transition: ease-in 200ms;
-    transform: scale(1.5);
-}
-
-.back-container img{
-    height: 100%;
-    width: 100%;
-}
-
-
-
-
-.MoreInfo .suggestion{
     margin: 0px;
-    top: 0px;
-    right: 0px;
-    display: inline-block;
-    position: absolute;
-    width: 50%;
-    padding-inline: 5vh;
-    text-align: center;
-}
-
-.suggestion .card{
-
-    cursor: pointer;
-
-    background: black;
-
-    
-    width: 75%;
-    height: 45vh;
-
-    margin-block: 1.5vh;
-    margin-inline: 12.5%;
-}
-
-.suggestion .card:hover{
-    transition: ease 1s;
-    scale: 1.2;
-    box-shadow: 0px 0px 0px 0px rgba(0, 255, 255, 0.2), 0 2px 100px 0px rgba(0, 255, 255, 0.37);
-}
-
-.suggestion .card img{
-    background: linear-gradient(rgba(0, 238, 255, 0.377),rgb(0, 0, 0));
     width: 100%;
-    height: 50%;
-}
-.suggestion h3{
-    color: white;
-}
+  }
 
-@media (max-width: 800px){
+  .MoreInfo .suggestion {
+    width: 100%;
+    margin: 0px;
+    position: relative;
+  }
 
-    .MoreInfo .info1{
-        width: 100%;
-    }
-
-    .more-info{
-        padding: 0px;
-        margin: 0px;
-        width: 100%;
-    }
-
-    .MoreInfo .suggestion{
-        width: 100%;
-        margin: 0px;
-        position: relative;
-    }
-
-    .suggestion .card{
-        width: 100%;
-        padding: 0px;
-        margin: 0px;
-        margin-block: 10px;
-        height: fit-content;
-    }
+  .suggestion .card {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    margin-block: 10px;
+    height: fit-content;
+  }
 }

@@ -1,98 +1,104 @@
-.cartSummary{
-    display: flex;
-    flex-flow: column ;
-    background: rgba(0, 255, 255, 0.1);
-    margin-top: 50px;
-    
+@font-face {
+  src: url(../../../../Assets/Fonts/PTSans-Bold.ttf);
+  font-family: SansBold;
 }
 
-.paymentHeading{
-    background: rgba(0,0,0,0.04);
-    padding: 13px 20px;
-    color: rgb(255, 255, 255);
-    font-size: 1.7em;
+.cartSummary {
+  display: flex;
+  flex-flow: column;
+  background: rgba(0, 255, 255, 0.1);
+  margin-top: 50px;
 }
 
-.priceSummary{
-    margin: 0;
-    color: white;
+.paymentHeading {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 13px 20px;
+  color: rgb(255, 255, 255);
+  font-size: 1.7em;
 }
 
-.paymentBox{
-    padding: 15px 20px 0 ;
+.priceSummary {
+  margin: 0;
+  color: white;
+  font-family: SansBold;
 }
 
-.paymentInner{
-    display: flex;
-    justify-content: space-between;
+.paymentBox {
+  padding: 15px 20px 0;
+}
+
+.paymentInner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.33;
+  padding-bottom: 10px;
+}
+
+.paymentInner p {
+  margin: 0;
+  font-weight: normal;
+  color: white;
+}
+
+.pmtsBox {
+  background: rgba(0, 255, 255, 0.01);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  position: static;
+  width: 100%;
+}
+
+.pmtsWrap {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.pmtsPr {
+  width: auto;
+  vertical-align: middle;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pmtsPr span,
+.pmtsPr p {
+  color: white;
+  margin: 0 10px;
+  font-family: SansBold;
+}
+
+@media (max-width: 767px) {
+  .paymentInner {
     width: 100%;
-    font-weight :normal;
-    font-size: 1em;
-    line-height: 1.33;
-    padding-bottom: 10px;
+  }
+  .pmtsWrap {
+    flex-flow: column;
+    align-items: center;
+  }
+  .pmtsPr span {
+    margin-bottom: 5px;
+  }
 }
 
-.paymentInner p{
-    margin: 0;
-    font-weight: normal;
-    color: white;
+.payBtn {
+  background: rgba(29, 212, 29, 0.637);
+  padding: 10px;
 }
 
-.pmtsBox{
-    background: rgba(0, 255, 255, 0.01);
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-top: 1px solid rgba(0,0,0,0.12);
-    position: static;
-    width: 100%;
+.payBtn a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
 }
-
-.pmtsWrap{
-    padding: 10px;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.pmtsPr{
-    width: auto;
-    vertical-align: middle;
-    padding-left: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.pmtsPr span,.pmtsPr p{
-    color: white;
-    margin: 0 10px;
-}
-
-@media (max-width:767px){
-    .paymentInner{
-        width: 100%;
-    }
-    .pmtsWrap{
-        flex-flow: column;
-        align-items: center;
-    }
-    .pmtsPr span{
-        margin-bottom: 5px;
-    }
-}
-
-.payBtn{
-    background: rgba(29, 212, 29, 0.637);
-    padding: 10px;
-    
-}
-
-.payBtn a{
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-}
-.payBtn a:hover{
-    text-decoration: none;
-    color: white;
+.payBtn a:hover {
+  text-decoration: none;
+  color: white;
 }

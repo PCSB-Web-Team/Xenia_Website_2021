@@ -1,3 +1,13 @@
+@font-face {
+  src: url(../../Assets/Fonts/PTSans-Bold.ttf);
+  font-family: SansBold;
+}
+
+@font-face {
+  src: url(../../Assets/Fonts/Barlow-Light.ttf);
+  font-family: Barlow;
+}
+
 .pageFooter {
   background: linear-gradient(black, rgba(0, 183, 255, 0));
   transition: ease 1s;
@@ -11,6 +21,14 @@
 .pageFooter .block2 {
   justify-content: space-between;
   width: 50%;
+}
+
+.pageFooter .text-uppercase {
+  font-family: SansBold;
+}
+
+.pageFooter .nav-content {
+  font-family: Barlow;
 }
 
 .pageFooter .column1 {

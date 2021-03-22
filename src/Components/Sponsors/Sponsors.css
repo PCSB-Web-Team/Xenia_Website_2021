@@ -1,3 +1,8 @@
+@font-face {
+  src: url(../../Assets/Fonts/PTSans-Bold.ttf);
+  font-family: SansBold;
+}
+
 .maincontainer {
   max-width: 100rem;
   margin: 0 auto;
@@ -5,7 +10,7 @@
 }
 
 .headingmain {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: SansBold;
   font-size: 4rem;
   font-weight: 500;
   line-height: 1.5;
