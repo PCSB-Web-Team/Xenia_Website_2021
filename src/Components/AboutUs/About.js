@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import "./About.css";
 //import main from "../../Assets/Images/main_bg.jpg";
 import about from "../../Assets/Images/hero.jpg";
 import data from "../../Assets/Images/datamastro.jpg";
 import code from "../../Assets/Images/sudocode.jpg";
-import Sponsors from "./Sponsors/Sponsors";
+// import Sponsors from "./Sponsors/Sponsors";
 import Fade from "react-reveal/Fade";
-import Zoom from "react-reveal/Zoom";
+// import Zoom from "react-reveal/Zoom";
 import Reveal from "react-reveal/Reveal";
 
 const About = () => {
@@ -89,6 +89,7 @@ const About = () => {
         <div className="col-lg-6 text-center  d-none d-lg-block">
           <Fade up duration={1500}>
             <img
+              alt='img'
               src={data}
               style={{ objectFit: "contain" }}
               className="img-fluid ml-5"
@@ -120,6 +121,7 @@ const About = () => {
         <div className="col-lg-6 d-none d-lg-block">
           <Fade up duration={1500}>
             <img
+              alt='img'
               src={about}
               style={{ objectFit: "contain" }}
               className="img-fluid ml-5"
@@ -151,6 +153,7 @@ const About = () => {
         <div className="col-lg-6 text-center d-none d-lg-block">
           <Fade up duration={1500}>
             <img
+              alt='img'
               src={code}
               style={{ objectFit: "contain" }}
               className="img-fluid ml-5"

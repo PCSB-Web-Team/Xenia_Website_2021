@@ -62,6 +62,7 @@ const Register = (props) => {
           <Modal.Title>
             <div className="d-flex flex-column text-center">
               <img
+                alt='sign-up'
                 src={astronaut}
                 className="img-fluid"
                 style={styles.imageStyles}

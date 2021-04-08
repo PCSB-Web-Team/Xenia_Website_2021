@@ -5,7 +5,7 @@ const event = (props) => {
   return (
     <div className="Event">
       <p>
-        <img width="50"></img>
+        <img width="50" alt=''></img>
         {props.name}
       </p>
     </div>

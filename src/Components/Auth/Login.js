@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
@@ -73,6 +73,7 @@ const Login = (props) => {
           <Modal.Title>
             <div className="d-flex flex-column text-center">
               <img
+                alt='welcome-back'
                 src={astronaut}
                 className="img-fluid"
                 style={styles.imageStyles}

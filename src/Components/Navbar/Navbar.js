@@ -127,7 +127,7 @@ const Navbar = (props) => {
         </div>
 
         <div id="nav-arrow" onClick={handleNavView}>
-          <img src={down} className={view}></img>
+          <img src={down} className={view} alt=''></img>
         </div>
         {view === "up" ? (
           <div className="MobileNav">
@@ -248,7 +248,7 @@ const Navbar = (props) => {
                 setView("down");
               }}
             >
-              <img src={cart}></img>
+              <img src={cart} alt=''></img>
               <span> {props.cart.length} </span>
             </div>
           ) : null}

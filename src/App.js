@@ -16,12 +16,9 @@ import NotFound from './Components/404/404';
 import './App.css';
 import Background from './Components/BackGround/Background';
 import {
-	BrowserRouter as Router,
 	Switch,
-	Route,
-	NavLink,
+	Route
 } from 'react-router-dom';
-import axios from 'axios';
 import { getEventData, loggedIn, storeToken } from './Store/Actions';
 import { connect } from 'react-redux';
 

@@ -21,6 +21,7 @@ const cartItem = (props) => {
 		<div className="cartItem">
 			<div className="cartItemImg">
 				<img
+					alt='item'
 					src={logo}
 					width="90%"
 					height="100%"

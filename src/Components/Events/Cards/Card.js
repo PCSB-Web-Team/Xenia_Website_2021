@@ -16,7 +16,7 @@ export default function ImgMediaCard({details , readmore}) {
   const classes = useStyles();
   return (
     <div className="event-card" onClick={readmore}>
-      <Zoom><img src={reactLogo}/></Zoom>
+      <Zoom><img src={reactLogo} alt='logo'/></Zoom>
       <div className="card-body">
         <Slide left><h2 className='eve-card-name'>{details.name}</h2></Slide>
         <Slide right><hr></hr></Slide>

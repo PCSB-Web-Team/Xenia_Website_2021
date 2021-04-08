@@ -40,19 +40,19 @@ const LandingPage = () => {
           <span id="date">14 - 16 March</span>
 
           <div className="bg">
-            <img src={bg}></img>
+            <img src={bg} alt=''></img>
           </div>
           <div className="layer3">
-            <img src={layer3}></img>
+            <img src={layer3} alt=''></img>
           </div>
           <div className="lake">
-            <img src={lake}></img>
+            <img src={lake} alt=''></img>
           </div>
           <div className="SpaceShip">
-            <img src={shuttle}></img>
+            <img src={shuttle} alt=''></img>
           </div>
           <div className="astranout">
-            <img src={astranout}></img>
+            <img src={astranout} alt=''></img>
           </div>
         </div>
       </div>

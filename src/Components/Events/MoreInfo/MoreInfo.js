@@ -66,12 +66,12 @@ const MoreInfo = (props) => {
         <div className="info1">
           <Link to="/events">
             <div class="back-container">
-              <img src={back2} />
+              <img src={back2} alt='go back' />
             </div>
           </Link>
 
           <div class="more-info jumbotron text-center py-2" id="main-detail">
-            <img className="logo" src={ReactLogo}></img>
+            <img className="logo" src={ReactLogo} alt='logo'></img>
 
             <h3 class="name">{details.name}</h3>
             <span class> {details.date} </span>

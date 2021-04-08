@@ -10,7 +10,7 @@ const SideEvents = () => {
         <h1 className="heading">Side Events</h1>
         <Fade>
           <div className="se">
-            <img className="logo" src={logo}></img>
+            <img className="logo" src={logo} alt='logo'></img>
             <hr></hr>
             <h2 className="title">Event Name</h2>
             <hr></hr>
@@ -25,7 +25,7 @@ const SideEvents = () => {
           </div>
 
           <div className="se">
-            <img className="logo" src={logo}></img>
+            <img className="logo" src={logo} alt='logo'></img>
             <hr></hr>
             <h2 className="title">Event Name</h2>
             <hr></hr>
@@ -40,7 +40,7 @@ const SideEvents = () => {
           </div>
 
           <div className="se">
-            <img className="logo" src={logo}></img>
+            <img className="logo" src={logo} alt='logo'></img>
             <hr></hr>
             <h2 className="title">Event Name</h2>
             <hr></hr>
