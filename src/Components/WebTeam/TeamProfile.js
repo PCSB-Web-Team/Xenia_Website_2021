@@ -1,6 +1,6 @@
 import React from 'react';
-import { Profiler } from 'react';
-import logo from '../../Assets/Images/logo.svg';
+// import { Profiler } from 'react';
+// import logo from '../../Assets/Images/logo.svg';
 
 const TeamProfile = ({details}) => {
     return (
@@ -8,7 +8,7 @@ const TeamProfile = ({details}) => {
             
           <div className='picNLink'>
             <img src={details.pic} className="memberPic" alt=''></img>
-            <a className=" memberLink" href={details.linkedIn} target='_blank'>
+            <a className=" memberLink" href={details.linkedIn}>
               <i className="footerIcon fa fa-3x fa-linkedin-square text-primary" aria-hidden="true" /> 
             </a>
           </div>

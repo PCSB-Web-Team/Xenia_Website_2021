@@ -1,5 +1,3 @@
-import React from "react";
-import { Component } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Notification.css";

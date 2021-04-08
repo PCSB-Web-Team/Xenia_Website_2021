@@ -8,16 +8,16 @@ const Suggestion = (props) => {
   return (
     <Slide right cascade>
       <div className="suggestion">
-        <Link to={`/events/${props.suggestions[0]._id}`} class="card">
+        <Link to={`/events/${props.suggestions[0]._id}`} className="card">
           <img
-            class="card-img-top"
+            className="card-img-top"
             id="1"
             src={ReactLogo}
-            alt="Card image cap"
+            alt="Card cap"
           />
-          <div class="card-body" id="1">
+          <div className="card-body" id="1">
             <h3>{props.suggestions[0].name}</h3>
-            <p class="card-text" id="2">
+            <p className="card-text" id="2">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
@@ -26,13 +26,13 @@ const Suggestion = (props) => {
 
         <Link
           to={`/events/${props.suggestions[1]._id}`}
-          class="card"
+          className="card"
           href="#main-detail"
         >
-          <img class="card-img-top" src={ReactLogo} alt="Card image cap" />
-          <div class="card-body">
+          <img className="card-img-top" src={ReactLogo} alt="Card cap" />
+          <div className="card-body">
             <h3>{props.suggestions[1].name}</h3>
-            <p class="card-text">
+            <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>

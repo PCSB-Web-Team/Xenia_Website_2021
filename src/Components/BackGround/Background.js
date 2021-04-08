@@ -1,4 +1,4 @@
-import react from 'react';
+// import react from 'react';
 import './Background.css';
 
 const Background = () => {

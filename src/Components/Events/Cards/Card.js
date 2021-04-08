@@ -1,19 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
 import Zoom from 'react-reveal/Zoom';
-import Rotate from 'react-reveal/Rotate';
 import reactLogo from '../../../Assets/Images/logo.svg';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-});
-
 export default function ImgMediaCard({details , readmore}) {
-  const classes = useStyles();
   return (
     <div className="event-card" onClick={readmore}>
       <Zoom><img src={reactLogo} alt='logo'/></Zoom>

@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   NavLink,
   Link,
 } from "react-router-dom";
@@ -13,10 +10,10 @@ import down from "../../Assets/Images/down.png";
 import cart from "../../Assets/Images/cart.png";
 import pcsbLogo from "../../Assets/Images/PCSBlogo.jpeg";
 //components
-import styles from "./Navbar.css";
+import "./Navbar.css";
 import LoginModal from "../Auth/Login";
 import RegisterModal from "../Auth/Register";
-import {openLogin, closeLogin, toggleLogin} from '../../Store/Actions';
+import {openLogin} from '../../Store/Actions';
 
 const Navbar = (props) => {
   const [view, setView] = useState("down");
@@ -127,7 +124,7 @@ const Navbar = (props) => {
         </div>
 
         <div id="nav-arrow" onClick={handleNavView}>
-          <img src={down} className={view} alt=''></img>
+          <img src={down} alt='' className={view}></img>
         </div>
         {view === "up" ? (
           <div className="MobileNav">
@@ -220,7 +217,6 @@ const Navbar = (props) => {
               <div className="pcsbLogo">
                 <a
                   href="https://www.pictcsi.com/"
-                  target="_blank"
                   onClick={handleNavView}
                 >
                   <img

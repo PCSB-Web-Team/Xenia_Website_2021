@@ -1,8 +1,8 @@
-import React, { Component, useCallback } from "react";
+import React, {useCallback } from "react";
 import "./Profile.css";
-import user from "../../Assets/Images/user.png";
-import logo from "../../Assets/Images/logo.svg";
-import WebTeam from "../WebTeam/WebTeam";
+// import user from "../../Assets/Images/user.png";
+// import logo from "../../Assets/Images/logo.svg";
+// import WebTeam from "../WebTeam/WebTeam";
 import {loggedOut as notifyLoggedOut} from '../Notifications/Notification';
 
 import { connect } from "react-redux";
@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 const MyProf = (props) => {
   const showDetails = useCallback((e) => {
     const cont = document.querySelector(".registeredEventInfo");
-    let nm;
 
     cont.innerHTML = `<div class="slotDetails">
                 <h1 class="registeredEventInfoName">${e.target.textContent}</h1>
@@ -24,7 +23,7 @@ const MyProf = (props) => {
 
   let list = props.cart.map((eve) => {
     return (
-      <div className="Regdiv">
+      <div className="Regdiv" key={eve}>
         <h3 className="RegP" onMouseEnter={showDetails}>
           {eve.name}{" "}
         </h3>
@@ -46,12 +45,12 @@ const MyProf = (props) => {
           )}
         </div>
         <div className="registeredEventInfo">
-          {props.cart.length == 0 ? (
+          {props.cart.length === 0 ? (
             <h1 className="usernameHeading">No Event Registered</h1>
           ) : (
-            <div class="slotDetails">
-              <h1 class="registeredEventInfoName">{props.cart[0].name}</h1>
-              <div class="slotAndType">
+            <div className="slotDetails">
+              <h1 className="registeredEventInfoName">{props.cart[0].name}</h1>
+              <div className="slotAndType">
                 <h1 className="slotAndTypeItem">Slot Details </h1>
                 <h1 className="slotAndTypeItem">Event Type</h1>
               </div>

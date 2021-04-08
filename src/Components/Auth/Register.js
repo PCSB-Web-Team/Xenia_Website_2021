@@ -1,6 +1,6 @@
-import React, { Component, useState } from "react";
+import React, {useState } from "react";
 import { Modal } from "react-bootstrap";
-import axios from "axios";
+// import axios from "axios";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { register } from "../Config/api/User";
 import { connect } from "react-redux";
@@ -174,12 +174,12 @@ const Register = (props) => {
             </button>
             <div className="text-center my-2">
               Already have an account ?{" "}
-              <a
-                style={{ fontWeight: "bold", color: "blue" }}
+              <span
+                style={{ fontWeight: "bold", color: "blue", cursor: 'pointer' }}
                 onClick={props.toggleLogin}
               >
                 Login
-              </a>
+              </span>
             </div>
           </form>
         </Modal.Body>

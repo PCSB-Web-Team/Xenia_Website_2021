@@ -91,11 +91,11 @@ const About = () => {
             <img
               alt='img'
               src={data}
-              style={{ objectFit: "contain" }}
               className="img-fluid ml-5"
               height="300px"
               width="300px"
               style={{
+                objectFit: "contain",
                 boxShadow: "2px 2px 30px  #131313",
                 borderRadius: "18px",
               }}
@@ -123,11 +123,11 @@ const About = () => {
             <img
               alt='img'
               src={about}
-              style={{ objectFit: "contain" }}
               className="img-fluid ml-5"
               height="300px"
               width="300px"
               style={{
+                objectFit: "contain" ,
                 boxShadow: "2px 2px 30px  #131313",
                 borderRadius: "18px",
               }}
@@ -155,11 +155,11 @@ const About = () => {
             <img
               alt='img'
               src={code}
-              style={{ objectFit: "contain" }}
               className="img-fluid ml-5"
               height="300px"
               width="300px"
               style={{
+                objectFit: "contain",
                 boxShadow: "2px 2px 30px  #131313",
                 borderRadius: "18px",
               }}

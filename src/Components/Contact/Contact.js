@@ -1,26 +1,25 @@
 import React from "react";
 import "./Contact.css";
 import FAQ from "./FAQ/FAQ";
-import moonbg from "../../Assets/Images/moon.jpg";
+// import moonbg from "../../Assets/Images/moon.jpg";
 import Fade from 'react-reveal/Fade';
 
 const Contact = () => {
-  const fadeTop = {
-    hidden: { opacity: 0, y: -150 },
-    visible: { opacity: 1, y: 0 },
-  };
+  // const fadeTop = {
+  //   hidden: { opacity: 0, y: -150 },
+  //   visible: { opacity: 1, y: 0 },
+  // };
 
-  const fade = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
+  // const fade = {
+  //   hidden: { opacity: 0 },
+  //   visible: { opacity: 1 },
+  // };
 
   return (
     <div className="contact text-center mb-5">
       <Fade>
       <div
-        className="display-4"
-        className="container col-lg-8 p-5"
+        className="display-4 container col-lg-8 p-5"
       >
         <div className="row">
           <div className="col-lg-6">
@@ -33,24 +32,24 @@ const Contact = () => {
             </Fade>
             <br />
             <form action="">
-              <div class="input-group  mb-3">
-                <div class="input-group-prepend"></div>
+              <div className="input-group  mb-3">
+                <div className="input-group-prepend"></div>
                 <input
                   type="text"
-                  class="form-control bg-dark border-0 rounded-0 text-light "
+                  className="form-control bg-dark border-0 rounded-0 text-light "
                   placeholder="Name"
                 />
               </div>
 
-              <div class="input-group  mb-3">
+              <div className="input-group  mb-3">
                 <input
                   type="text"
-                  class="form-control bg-dark border-0 rounded-0 text-light"
+                  className="form-control bg-dark border-0 rounded-0 text-light"
                   placeholder="Email"
                 />
               </div>
 
-              <div class="input-group  mb-3">
+              <div className="input-group  mb-3">
                 {/** 
                 <div class="input-group-prepend">
                   <span class="input-group-text">
@@ -60,12 +59,12 @@ const Contact = () => {
               */}
                 <input
                   type="text"
-                  class="form-control bg-dark border-0 rounded-0 text-light"
+                  className="form-control bg-dark border-0 rounded-0 text-light"
                   placeholder="Phone"
                 />
               </div>
 
-              <div class="input-group  mb-3">
+              <div className="input-group  mb-3">
                 {/**
                 <div class="input-group-prepend">
                   <span class="input-group-text">
@@ -74,7 +73,7 @@ const Contact = () => {
                 </div>
               */}
                 <textarea
-                  class="form-control bg-dark border-0 rounded-0 text-light"
+                  className="form-control bg-dark border-0 rounded-0 text-light"
                   placeholder="Message"
                   rows="5"
                 ></textarea>
@@ -83,7 +82,7 @@ const Contact = () => {
               <input
                 type="submit"
                 value="Submit"
-                class="btn btn-block bg-dark text-light btn-lg border rounded-0"
+                className="btn btn-block bg-dark text-light btn-lg border rounded-0"
               />
             </form>
           </div>
@@ -134,20 +133,20 @@ const Contact = () => {
                 }}
               />
               <p className="text-light">
-                <a href="">
+                <a href="/">
                   {" "}
                   <i
                     className="fa fa-2x fa-instagram mx-4 text-danger"
                     aria-hidden="true"
                   ></i>
                 </a>
-                <a href="">
+                <a href="/">
                   <i
                     className="fa fa-2x fa-facebook-official mx-4 text-primary"
                     aria-hidden="true"
                   ></i>
                 </a>
-                <a href="">
+                <a href="/">
                   <i
                     className="fa fa-2x fa-linkedin mx-4"
                     style={{ color: "#0099ff" }}

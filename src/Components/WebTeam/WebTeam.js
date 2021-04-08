@@ -23,8 +23,8 @@ let prernaSthhall = [
 
 const webTeam = (props) => {
 
-  let team = teamDetails.map( member => {return ( <ProfileCard details={ member }> </ProfileCard> )})
-  let teTeam = prernaSthhall.map( member => {return ( <ProfileCard details={ member }> </ProfileCard> )})
+  let team = teamDetails.map( member => {return ( <ProfileCard details={ member } key={member}> </ProfileCard> )})
+  let teTeam = prernaSthhall.map( member => {return ( <ProfileCard details={ member }  key={member}> </ProfileCard> )})
 
   return (
     <div className="webTeam" id='webTeam'>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import BackToTop from "./BackToTop/BacktoTop";
 import { Link } from "react-router-dom";
 import {connect} from 'react-redux';
@@ -127,7 +127,6 @@ const Footer = (props) => {
               <li className="list-inline-item">
                 <a
                   href="http://www.linkedin.com/company/pict-csi"
-                  target="_blank"
                   className="btn-floating btn-lg btn-ldi mx-1"
                 >
                   <i
@@ -139,7 +138,6 @@ const Footer = (props) => {
               <li className="list-inline-item">
                 <a
                   href="http://www.facebook.com/csipict"
-                  target="_blank"
                   className="btn-floating btn-lg btn-fb mx-1"
                 >
                   <i
@@ -151,7 +149,6 @@ const Footer = (props) => {
               <li className="list-inline-item">
                 <a
                   href="http://www.instagram.com/csipict"
-                  target="_blank"
                   className="btn-floating btn-lg btn-itg mx-1"
                 >
                   <i

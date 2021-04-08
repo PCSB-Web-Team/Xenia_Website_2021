@@ -1,13 +1,11 @@
-import React, { Component } from "react";
-import styles from "./LandingPage.css";
+import React from "react";
+import "./LandingPage.css";
 import bg from "../../Assets/Images//LandingPage/bg.jpg";
 import astranout from "../../Assets/Images//LandingPage/astranout.png";
 import shuttle from "../../Assets/Images//LandingPage/spaceshuttle.png";
 import lake from "../../Assets/Images//LandingPage/lake.png";
 import layer3 from "../../Assets/Images//LandingPage/jupiter.jpg";
 import Fade from 'react-reveal/Fade';
-import Flash from 'react-reveal/Flash';
-import Zoom from 'react-reveal/Zoom';
 
 const LandingPage = () => {
     

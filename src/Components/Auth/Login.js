@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
@@ -141,12 +141,12 @@ const Login = (props) => {
             </button>
             <div className="text-center my-2">
               Don't have an account ?{" "}
-              <a
-                style={{ fontWeight: "bold", color: "blue" }}
+              <span
+                style={{ fontWeight: "bold", color: "blue", cursor: 'pointer'}}
                 onClick={props.toggleLogin}
               >
                 Sign Up
-              </a>
+              </span>
             </div>
           </form>
         </Modal.Body>

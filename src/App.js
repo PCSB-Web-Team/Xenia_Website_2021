@@ -23,6 +23,9 @@ import { getEventData, loggedIn, storeToken } from './Store/Actions';
 import { connect } from 'react-redux';
 
 const App = (props) => {
+
+	useEffect(() => {
+
 	const getUserData = async () => {
 		let userToken = localStorage.getItem('xeniaUserToken');
 
@@ -32,9 +35,9 @@ const App = (props) => {
 
 		props.loggedIn(res.data.data);
 	};
-
-	useEffect(() => {
-		getUserData();
+	
+	getUserData();
+	
 	}, []);
 
 	return (

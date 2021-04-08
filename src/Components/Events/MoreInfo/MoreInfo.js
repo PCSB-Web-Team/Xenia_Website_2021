@@ -65,26 +65,26 @@ const MoreInfo = (props) => {
       ) : (
         <div className="info1">
           <Link to="/events">
-            <div class="back-container">
+            <div className="back-container">
               <img src={back2} alt='go back' />
             </div>
           </Link>
 
-          <div class="more-info jumbotron text-center py-2" id="main-detail">
+          <div className="more-info jumbotron text-center py-2" id="main-detail">
             <img className="logo" src={ReactLogo} alt='logo'></img>
 
-            <h3 class="name">{details.name}</h3>
-            <span class> {details.date} </span>
-            <p class="lead">
+            <h3 className="name">{details.name}</h3>
+            <span className> {details.date} </span>
+            <p className="lead">
               This is a simple hero unit, a simple jumbotron-style component for
               calling extra attention to featured content or information.
             </p>
 
-            <hr class="my-1" />
+            <hr className="my-1" />
             {!insideCart ? (
               <div
                 onClick={ props.isLoggedIn ? handleAddToCart : props.openLogin}
-                class="btn btn-lg bg-success"
+                className="btn btn-lg bg-success"
                 role="button"
               >
                 Add To Cart

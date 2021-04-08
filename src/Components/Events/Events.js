@@ -60,8 +60,8 @@ const Events = (props) => {
             <button className={eventType!=='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={changeEventType} id='non-tech-tab'>Non-Tech</button>
           </div>
           
-            {eventType ==='tech' ? techEvents.map( eve => (<div    key={eve.id} className='card-div'>     <Link key={eve._id} to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>) ) : null}
-            {eventType !=='tech' ? nonTechEvents.map( eve => (<div key={eve.id} className='card-div'>  <Link key={eve._id} to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>) ) : null}
+            {eventType ==='tech' ? techEvents.map( eve => {return(<div    key={eve.id} className='card-div'>  <Link to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>)} ) : null}
+            {eventType !=='tech' ? nonTechEvents.map( eve => {return(<div key={eve.id} className='card-div'>  <Link to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>)} ) : null}
       </div>
 
     }

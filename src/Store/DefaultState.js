@@ -1,4 +1,4 @@
-export default {
+let default_state = {
     login: false,
     openLogin: false,
     openSignUp: false,
@@ -6,3 +6,5 @@ export default {
     eventData: [],
     userData: {cart: []}
 }
+
+export default default_state;

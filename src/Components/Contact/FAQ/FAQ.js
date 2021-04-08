@@ -1,7 +1,7 @@
 import React from "react";
 import Question from "./Question";
 import "./FAQ.css";
-import { Accordion, Row, Col } from "react-bootstrap";
+import { Accordion} from "react-bootstrap";
 const FAQ = () => {
   return (
     <div className="p-5 bg-transparent text-white">
