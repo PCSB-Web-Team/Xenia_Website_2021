@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+
 import './Summary.css';
 import CartSummary from './CartSummary/CartSummary';
 

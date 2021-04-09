@@ -1,10 +1,12 @@
 import React from "react";
 import "./Footer.css";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import BackToTop from "./BackToTop/BacktoTop";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
+import {connect} from 'react-redux';
+import {openLogin} from '../../Store/Actions';
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <div>
       <BackToTop></BackToTop>
@@ -35,10 +37,28 @@ const Footer = () => {
                   style={{ width: "50px" }}
                 />
                 <div className="nav-content">
-                  <a href="#!">Technical</a>
+                  <Link
+                    onClick={() => {
+                      document.documentElement.scrollTop = 0;
+                    }}
+                    to="/events"
+                  >
+                    All Events
+                  </Link>
                 </div>
                 <div className="nav-content">
-                  <a href="#!">Non-Technical</a>
+                  <Link
+                    onClick={
+                      props.loggedIn
+                        ? () => {
+                            document.documentElement.scrollTop = 0;
+                          }
+                        : props.openLogin
+                    }
+                    to={props.loggedIn ? "/profile" : ""}
+                  >
+                    Registered Events
+                  </Link>
                 </div>
               </div>
             </div>
@@ -51,14 +71,32 @@ const Footer = () => {
                   className="#ffffff white mt-0 d-inline-block mx-auto"
                   style={{ width: "80px" }}
                 />
+                {props.loggedIn ? (
+                  <div className="nav-content">
+                    <Link
+                      to="/cart"
+                      onClick={() => {
+                        document.documentElement.scrollTop = 0;
+                      }}
+                    >
+                      Cart
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="nav-content">
+                    <Link onClick={props.openLogin}>Log In</Link>
+                  </div>
+                )}
+
                 <div className="nav-content">
-                  <a href="#!">Your Account</a>
-                </div>
-                <div className="nav-content">
-                  <a href="#!">Log In</a>
-                </div>
-                <div className="nav-content">
-                  <a href="#!">Help</a>
+                  <Link
+                    onClick={() => {
+                      document.documentElement.scrollTop = 0;
+                    }}
+                    to="/about-us"
+                  >
+                    Help
+                  </Link>
                 </div>
               </div>
               <div className="column4 mx-auto">
@@ -87,7 +125,10 @@ const Footer = () => {
           <div className="text-center">
             <ul className="list-unstyled list-inline">
               <li className="list-inline-item">
-                <a className="btn-floating btn-lg btn-ldi mx-1">
+                <a
+                  href="http://www.linkedin.com/company/pict-csi"
+                  className="btn-floating btn-lg btn-ldi mx-1"
+                >
                   <i
                     className="footerIcon fa fa-linkedin"
                     aria-hidden="true"
@@ -95,15 +136,21 @@ const Footer = () => {
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn-floating btn-lg btn-tw mx-1">
+                <a
+                  href="http://www.facebook.com/csipict"
+                  className="btn-floating btn-lg btn-fb mx-1"
+                >
                   <i
-                    className="footerIcon fa fa-twitter"
+                    className="footerIcon fa fa-facebook"
                     aria-hidden="true"
                   ></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn-floating btn-lg btn-itg mx-1">
+                <a
+                  href="http://www.instagram.com/csipict"
+                  className="btn-floating btn-lg btn-itg mx-1"
+                >
                   <i
                     className="footerIcon fa fa-instagram"
                     aria-hidden="true"
@@ -119,9 +166,15 @@ const Footer = () => {
           style={{ backgroundColor: "#000" }}
         >
           <MDBContainer fluid style={{ color: "#fff" }}>
-            &copy; {new Date().getFullYear()} PICT CSI Student
-            Branch. Designed & Developed with ♥ by{" "}
-            <Link to='/webteam' className="footerWebTeam">
+            &copy; {new Date().getFullYear()} PICT CSI Student Branch. Designed
+            & Developed with ♥ by{" "}
+            <Link
+              onClick={() => {
+                document.documentElement.scrollTop = 0;
+              }}
+              to="/webteam"
+              className="footerWebTeam"
+            >
               PCSB Web Team
             </Link>
           </MDBContainer>
@@ -131,4 +184,18 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+const mapStatesToProps = (state) => {
+  return {
+    loggedIn: state.login,
+  };
+};
+
+const mapActionsToProps = (dispatch) => {
+  return {
+    openLogin: () => {
+      dispatch(openLogin());
+    },
+  };
+};
+
+export default connect(mapStatesToProps, mapActionsToProps)(Footer);

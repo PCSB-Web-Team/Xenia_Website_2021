@@ -1,167 +1,159 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+// import axios from "axios";
 import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
 
-import { login, getLoggedInUser} from "../Config/api/User";
-import { loggedIn, storeToken } from "../../Store/Actions";
+import { loginFail, loginSuccess } from "../Notifications/Notification";
+import { login, getLoggedInUser } from "../Config/api/User";
+import {
+  loggedIn,
+  storeToken,
+  openLogin,
+  closeLogin,
+  toggleLogin,
+} from "../../Store/Actions";
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-      token: "",
-    };
-  }
+const Login = (props) => {
+  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  handleUserName = (e) => {
-    this.setState({ email: e.target.value });
-  };
-
-  handlePassword = (e) => {
-    this.setState({ password: e.target.value });
-  };
-
-  handleSubmit = async (e) => {
-    const { email, password } = this.state;
-
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     const user = { email, password };
-    const res = await login(user);
-    const token = res.data.data.token;
+    let res = await login(user);
 
     if (res.data.ok === true) {
+      const token = res.data.data.token;
+      res = await getLoggedInUser(token);
 
-      const res = await getLoggedInUser(token);
+      localStorage.setItem("xeniaUserToken", token);
 
-      localStorage.setItem('xeniaUserToken', token);
+      props.loggedIn(res.data.data);
+      props.storeToken(token);
 
-      this.props.loggedIn(res.data.data);
-      this.props.storeToken(token);
-
+      loginSuccess();
+      props.closeLogin();
+      setError("");
+    } else {
+      loginFail();
+      setError("Invalid Credentials");
     }
 
-    // axios
-    //   .post("http://localhost:5000/api/login", { username, password })
-    //   .then((res) => {
-    //     let userdata = res.data.data;
-
-    //     if (res.data.status === "ok") {
-    //       Store.dispatch({
-    //         type: "logedin",
-    //         payload: userdata,
-    //       });
-
-    //       {
-    //         this.props.handleLogedin(userdata);
-    //       }
-
-    //       this.props.loggedIn(userdata);
-
-    //       localStorage.setItem('xeniausername', username);
-    //       localStorage.setItem('xeniapassword', password);
-
-    //     }
-    //   })
-    //   .catch((err) => console.log(err.message));
+    setEmail("");
+    setPassword("");
   };
 
-  render() {
-    return (
-      <div>
-        <Modal
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
-          show={this.props.view}
-          onHide={this.props.close}
+  const handleHide = () => {
+    if (error === "Invalid Credentials") {
+      return props.closeLogin();
+    } else {
+      return null;
+    }
+  };
+
+  return (
+    <div>
+      <Modal
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        show={props.popLogin}
+        onHide={props.closeLogin}
+      >
+        <Modal.Header
+          style={{
+            paddingLeft: "50px",
+            background: "black",
+            color: "#ffff",
+          }}
+          closeButton
         >
-          <Modal.Header
-            style={{
-              paddingLeft: "50px",
-              background: "black",
-              color: "#ffff",
-            }}
-            closeButton
-          >
-            <Modal.Title>
-              <div className="d-flex flex-column text-center">
-                <img
-                  src={astronaut}
-                  className="img-fluid"
-                  style={styles.imageStyles}
-                />{" "}
-                <span
-                  style={styles.title_text}
-                  className="text-uppercase font-weight-bold"
-                >
-                  {" "}
-                  Welcome back
-                </span>
-              </div>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body style={{ background: "#131313", color: "#ffff" }}>
-            <form onSubmit={this.handleSubmit}>
-              <div className="form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="fa fa-user text-danger"></i>
-                    </div>
-                  </div>
-                  <input
-                    className="form-control"
-                    placeholder="Username"
-                    name="username"
-                    type="text"
-                    value={this.state.email}
-                    onChange={this.handleUserName}
-                  />
-                </div>
-              </div>
-              <div className="form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="fa fa-lock text-success"></i>
-                    </div>
-                  </div>
-                  <input
-                    className="form-control"
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    value={this.state.password}
-                    onChange={this.handlePassword}
-                  />
-                </div>
-              </div>
-              <button
-                onClick={this.props.close}
-                className="btn btn-outline-light btn-block"
+          <Modal.Title>
+            <div className="d-flex flex-column text-center">
+              <img
+                alt='welcome-back'
+                src={astronaut}
+                className="img-fluid"
+                style={styles.imageStyles}
+              />{" "}
+              <span
+                style={styles.title_text}
+                className="text-uppercase font-weight-bold"
               >
-                Login
-              </button>
-              <div className="text-center my-2">
-                Don't have an account ?{" "}
-                <a
-                  style={{ fontWeight: "bold", color: "blue" }}
-                  onClick={this.props.toggle}
-                >
-                  Sign Up
-                </a>
+                {" "}
+                Welcome back
+              </span>
+            </div>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{ background: "#131313", color: "#ffff" }}>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-envelope text-warning"></i>
+                  </div>
+                </div>
+                <input
+                  className="form-control"
+                  placeholder="Email"
+                  name="email"
+                  type="text"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
               </div>
-            </form>
-          </Modal.Body>
-        </Modal>
-      </div>
-    );
-  }
-}
+              {error && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {error}
+                </span>
+              )}
+            </div>
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-lock text-success"></i>
+                  </div>
+                </div>
+                <input
+                  className="form-control"
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+              </div>
+            </div>
+            <button
+              onClick={handleHide}
+              className="btn btn-outline-light btn-block"
+            >
+              Login
+            </button>
+            <div className="text-center my-2">
+              Don't have an account ?{" "}
+              <span
+                style={{ fontWeight: "bold", color: "blue", cursor: 'pointer'}}
+                onClick={props.toggleLogin}
+              >
+                Sign Up
+              </span>
+            </div>
+          </form>
+        </Modal.Body>
+      </Modal>
+    </div>
+  );
+};
 
 const styles = {
   imageStyles: {
@@ -183,7 +175,7 @@ const styles = {
 
 const mapStateToProps = (state) => {
   return {
-    popStoreLogin: state.popLogin,
+    popLogin: state.openLogin,
   };
 };
 
@@ -194,7 +186,16 @@ const mapActionsToProps = (dispatch) => {
     },
     storeToken: (token) => {
       dispatch(storeToken(token));
-    }
+    },
+    openLogin: () => {
+      dispatch(openLogin());
+    },
+    toggleLogin: () => {
+      dispatch(toggleLogin());
+    },
+    closeLogin: () => {
+      dispatch(closeLogin());
+    },
   };
 };
 

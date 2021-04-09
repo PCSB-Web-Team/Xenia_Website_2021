@@ -1,19 +1,17 @@
 import React,{useEffect,useState} from 'react';
-import axios from 'axios';
-import {connect} from 'react-redux';
-import {Link} from  'react-router-dom';
-import Loader from '../Loader/Loader';
-
+import axios      from 'axios';
+import {connect}  from 'react-redux';
+import {Link}     from  'react-router-dom';
+import Loader     from '../Loader/Loader';
 import './Cards/Card.css';
 import './Events.css';
 import Card from './Cards/Card';
-import SideEvents from './SideEvents/SideEvents';
 import {getEventData} from '../../Store/Actions';
 
 const Events = (props) => {
   
   const [eventType, setEventType] = useState('tech');
-  const [view, setView] = useState('cards');
+//  const [view, setView] = useState('cards');
   const [techEvents, setTech] = useState([]);
   const [nonTechEvents, setNonTech] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,7 +23,7 @@ const Events = (props) => {
       const response = await axios.get('https://xenia-backend.herokuapp.com/api/events')
 
       if(response.data.ok){
-
+        
         let tech = [];
         let nonTech =[];
 
@@ -62,8 +60,8 @@ const Events = (props) => {
             <button className={eventType!=='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={changeEventType} id='non-tech-tab'>Non-Tech</button>
           </div>
           
-            {eventType ==='tech' ? techEvents.map( eve => (<div className='card-div'>    <Link key={eve._id} to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>) ) : null}
-            {eventType !=='tech' ? nonTechEvents.map( eve => (<div className='card-div'> <Link key={eve._id} to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>) ) : null}
+            {eventType ==='tech' ? techEvents.map( eve => {return(<div    key={eve.id} className='card-div'>  <Link to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>)} ) : null}
+            {eventType !=='tech' ? nonTechEvents.map( eve => {return(<div key={eve.id} className='card-div'>  <Link to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>)} ) : null}
       </div>
 
     }

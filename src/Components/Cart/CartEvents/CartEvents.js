@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './CartEvents.css';
 import CartItem from './CartItem/CartItem';
 import { connect } from 'react-redux';
 import { removeFromCart } from '../../../Store/Actions';
-import { removeFromCartBackend } from '../../Config/api/User';
 
 const Mycart = (props) => {
 
 
 	let cartEvents = props.cart.map((eve) => (
 		<CartItem
+			key={eve}
 			details={eve}
 		></CartItem>
 	));
 
 	return (
 		<div className="Cart">
-			{cartEvents.length == 0 ? (
+			{cartEvents.length === 0 ? (
 				<div className="EmptyCart">
 					<div className="feelsLight">
 						<h1>Your Cart feels light</h1>

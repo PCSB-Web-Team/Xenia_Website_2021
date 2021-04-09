@@ -1,3 +1,8 @@
+@font-face {
+  src: url("../../Assets/Fonts/PTSans-Regular.ttf");
+  font-family: "SansRegular";
+}
+
 .NavBar {
   text-align: center !important;
   background: linear-gradient(black, rgba(0, 0, 0, 0));
@@ -39,6 +44,7 @@
 }
 
 .NavBar .items .nav-tabs {
+  font-family: SansRegular;
   min-width: 135px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -92,8 +98,7 @@ label #cancel {
   float: right;
 }
 
-
-.cart-logo{
+.cart-logo {
   position: absolute;
   top: 8px;
   right: 60px;
@@ -102,19 +107,19 @@ label #cancel {
   cursor: pointer;
 }
 
-.cart-logo img{
-  -webkit-filter:invert(1);
-        filter:invert(1);
-        
+.cart-logo img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+
   width: 100%;
   height: 100%;
 }
 
-.cart-logo i{
+.cart-logo i {
   top: 0px;
 }
 
-.cart-logo span{
+.cart-logo span {
   color: black;
   z-index: +1;
   font-weight: bold;
@@ -122,7 +127,6 @@ label #cancel {
   top: 12px;
   right: 16px;
 }
-
 
 .NavBar .nav-menu .nav-btn {
   /* display: none; */
@@ -144,6 +148,7 @@ label #cancel {
 }
 
 .MobileNav .nav-tabs {
+  font-family: SansRegular;
   display: none;
   max-width: 100%;
   padding-block: 2px;
@@ -152,7 +157,7 @@ label #cancel {
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
-  
+
   margin: 5%;
 
   border: 3px solid #0a93e2;
@@ -263,10 +268,9 @@ label #cancel {
 }
 
 @media (max-width: 750px) {
-
   .NavBar .MobileNav .nav-tabs {
     display: block;
-    
+
     padding: 0px;
     margin: 0px;
 
@@ -292,8 +296,7 @@ label #cancel {
   }
 }
 
-.NavBar .active-nav{
+.NavBar .active-nav {
   box-shadow: 0 0 10px 0 #0df0f8 inset, 0 0 20px 2px #00eeff;
   border: 3px solid #0df0f8;
 }
-
