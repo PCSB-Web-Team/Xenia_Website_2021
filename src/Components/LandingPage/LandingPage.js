@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import styles from "./LandingPage.css";
-import bg from "../../Assets/Images/bg.jpg";
-import astranout from "../../Assets/Images/astranout.png";
-import shuttle from "../../Assets/Images/spaceshuttle.png";
-import lake from "../../Assets/Images/lake.png";
-import layer3 from "../../Assets/Images/jupiter.jpg";
+import React from "react";
+import "./LandingPage.css";
+import bg from "../../Assets/Images//LandingPage/bg.jpg";
+import astranout from "../../Assets/Images//LandingPage/astranout.png";
+import shuttle from "../../Assets/Images//LandingPage/spaceshuttle.png";
+import lake from "../../Assets/Images//LandingPage/lake.png";
+import layer3 from "../../Assets/Images//LandingPage/jupiter.jpg";
+import Fade from 'react-reveal/Fade';
 
 const LandingPage = () => {
     
@@ -33,23 +34,23 @@ const LandingPage = () => {
     return (
       <div className="landing-page">
         <div className="landing-container" onMouseMove={handleMove}>
-          <h1 id="xenia">XENIA</h1>
+          <Fade> <h1 id="xenia">XENIA</h1> </Fade>
           <span id="date">14 - 16 March</span>
 
           <div className="bg">
-            <img src={bg}></img>
+            <img src={bg} alt=''></img>
           </div>
           <div className="layer3">
-            <img src={layer3}></img>
+            <img src={layer3} alt=''></img>
           </div>
           <div className="lake">
-            <img src={lake}></img>
+            <img src={lake} alt=''></img>
           </div>
           <div className="SpaceShip">
-            <img src={shuttle}></img>
+            <img src={shuttle} alt=''></img>
           </div>
           <div className="astranout">
-            <img src={astranout}></img>
+            <img src={astranout} alt=''></img>
           </div>
         </div>
       </div>

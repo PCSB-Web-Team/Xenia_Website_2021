@@ -1,9 +1,19 @@
-.card-container{
+@font-face {
+  src: url(../../../Assets/Fonts/PTSans-Bold.ttf);
+  font-family: SansBold;
+}
+
+@font-face {
+  src: url(../../../Assets/Fonts/Barlow-Light.ttf);
+  font-family: Barlow;
+}
+
+.card-container {
   text-align: center;
   width: 100%;
 }
 
-.card-div{
+.card-div {
   user-select: none;
   min-width: 250px;
   width: 22%;
@@ -12,7 +22,6 @@
 }
 
 .event-card {
-  
   align-items: flex-start;
   justify-content: center;
 
@@ -26,91 +35,99 @@
   overflow: hidden;
   height: auto;
   cursor: pointer;
-  box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
+  box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25),
+    0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
   transition: all ease 200ms;
 }
 
 .event-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12), 0 8px 32px -8px hsla(0, 0%, 0%, 0.14), 0 -6px 32px -6px hsla(0, 0%, 0%, 0.08);
+  box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12),
+    0 8px 32px -8px hsla(0, 0%, 0%, 0.14),
+    0 -6px 32px -6px hsla(0, 0%, 0%, 0.08);
 }
 
-.event-card img{
+.event-card img {
   width: 100%;
   height: 180px;
 }
 
-.eve-card-name{
+.eve-card-name {
   margin-top: -0.2em;
   font-size: 1.3em;
   transition: all ease-in 100ms;
   animation-duration: ease-in 1s;
+  font-family: SansBold;
 }
 
 .event-card p {
   font-size: 0.8em;
+  font-family: Barlow;
 }
 
-.card-div .card-body span{
+.card-div .card-body span {
   display: none;
   height: fit-content;
   font-size: 0.6em;
 }
 
-@media (max-width: 600px){
-
-  .card-div{
+@media (max-width: 600px) {
+  .card-div {
     min-width: 200px;
     display: inline-block;
     margin: 2%;
   }
 
-  .event-card{
-      scale: 0.5;
-      margin: auto;
-      margin-bottom: 5px;
-      width: 100%;
+  .event-card {
+    scale: 0.5;
+    margin: auto;
+    margin-bottom: 5px;
+    width: 100%;
   }
 }
 
-.card-div .card-body{
-  background: rgba(0, 0, 0,.5);
-  
+.card-div .card-body {
+  background: rgba(0, 0, 0, 0.5);
+
   transition: ease;
   animation-name: shade;
+  font-size: 18px;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   transition-delay: -3s;
 }
 
-@keyframes shade{
-  0%{
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 255, 255, 0);
-  }  
-
-  50%{
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 255, 255, 0.9);
+@keyframes shade {
+  0% {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 100px 0 rgba(0, 255, 255, 0);
   }
 
-  100%{
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 255, 255, 0.0);
+  50% {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 100px 0 rgba(0, 255, 255, 0.9);
+  }
+
+  100% {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 100px 0 rgba(0, 255, 255, 0);
   }
 }
 
-.event-card:hover .card-body{
+.event-card:hover .card-body {
   color: black;
   transition: ease 500ms;
-  background: rgba(0, 247, 255, 0.644)
+  background: rgba(0, 247, 255, 0.644);
 }
 
-@media (max-width: 400px){
-  .card-div{
+@media (max-width: 450px) {
+  .card-div {
     width: 90%;
   }
 }
 
-.event-card hr{
-   font-size: '5px';
-   font-weight: 'bolder';
-   color: 'aqua';
-  }
+.event-card hr {
+  font-size: "5px";
+  font-weight: "bolder";
+  color: "aqua";
+}

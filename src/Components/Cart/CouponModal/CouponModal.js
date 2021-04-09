@@ -12,7 +12,7 @@ const couponModal=(props)=> {
             <section className="modalMain">
                 <div className="couponHeading">
                     <p className="couponQuestion">Have a Coupon?</p>
-                    <img className="couponCross" src={cross} onClick={props.closeCoupon} />
+                    <img className="couponCross" src={cross} alt='coupon' onClick={props.closeCoupon} />
                 </div>    
                 <TextField id="couponCode" label="ENTER COUPON CODE" />
                 <div className="errMsg">

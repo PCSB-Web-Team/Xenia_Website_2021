@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import styles from './CartSummary.css';
-import Button from '@material-ui/core/Button';
-import Store from '../../../../Store/Store';
+import './CartSummary.css';
+// import Button from '@material-ui/core/Button';
+// import Store from '../../../../Store/Store';
 
 const cartSummary=(props)=> {
     
@@ -37,13 +37,11 @@ const cartSummary=(props)=> {
             <div className='pmtsBox'>
                 <div className='pmtsWrap'>
                     <div className='pmtsPr'>
-                        <div className="totalpay">
-                            <span>Total</span>
-                            <p>{totalValue}</p>
-                        </div>
+                        <span>Total : </span>
+                        <p>{totalValue}</p>
                     </div>
-                    <div className="payBtn">
-                        <p>PROCEED TO PAY</p>
+                    <div className= "payBtn">
+                        <a href="\">Proceed to Pay</a>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { AccordionDetails, colors } from '@material-ui/core';
 import './DetailsTabs.css';
 
 function TabPanel(props) {
@@ -85,13 +84,13 @@ export default function SimpleTabs(props) {
         </Tabs>
       </AppBar>
       <TabPanel className='mi-details' value={value} index={0}>
-        {props.details.rules.map( rule => <p>{rule}</p> )}
+        {props.details.rules.map( rule => <p key={rule}>{rule}</p> )}
       </TabPanel>
       <TabPanel className='mi-details' value={value} index={1}>
-        {props.details.prizes.map( prizes => <p>{prizes}</p> )}
+        {props.details.prizes.map( prizes => <p key={prizes}>{prizes}</p> )}
       </TabPanel>
       <TabPanel className='mi-details' value={value} index={2}>
-        {props.details.contacts.map (contact => <p>{contact}</p>)}
+        {props.details.contacts.map (contact => <p key={contact}>{contact}</p>)}
       </TabPanel>
     </div>
   );

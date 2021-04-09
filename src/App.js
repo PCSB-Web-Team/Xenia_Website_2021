@@ -12,19 +12,20 @@ import Profile from './Components/Profile/Profile';
 import WebTeam from './Components/WebTeam/WebTeam';
 import Sponsors from './Components/Sponsors/Sponsors';
 import { getLoggedInUser } from './Components/Config/api/User';
+import NotFound from './Components/404/404';
 import './App.css';
 import Background from './Components/BackGround/Background';
 import {
-	BrowserRouter as Router,
 	Switch,
-	Route,
-	NavLink,
+	Route
 } from 'react-router-dom';
-import axios from 'axios';
 import { getEventData, loggedIn, storeToken } from './Store/Actions';
 import { connect } from 'react-redux';
 
 const App = (props) => {
+
+	useEffect(() => {
+
 	const getUserData = async () => {
 		let userToken = localStorage.getItem('xeniaUserToken');
 
@@ -34,9 +35,9 @@ const App = (props) => {
 
 		props.loggedIn(res.data.data);
 	};
-
-	useEffect(() => {
-		getUserData();
+	
+	getUserData();
+	
 	}, []);
 
 	return (
@@ -44,51 +45,53 @@ const App = (props) => {
 			<Navbar />
 			<Background />
 			<Switch>
-				<Route path="/schedule">
+				<Route exact path="/schedule">
 					{' '}
 					<Schedule />
 					<Footer />{' '}
 				</Route>
-				<Route path="/events/:id">
+				<Route exact path="/events/:id">
 					{' '}
 					<EventDetail />
 					<Footer />{' '}
 				</Route>
-				<Route path="/events">
+				<Route exact path="/events">
 					{' '}
 					<Events />
 					<Footer />{' '}
 				</Route>
-				<Route path="/about-us">
+				<Route exact path="/about-us">
 					{' '}
 					<AboutUs />
 					<ContactUs />
 					<Footer />{' '}
 				</Route>
-				<Route path="/cart">
+				<Route exact path="/cart">
 					{' '}
 					<Cart />
 					<Footer />{' '}
 				</Route>
-				<Route path="/profile">
+				<Route exact path="/profile">
 					{' '}
 					<Profile />
 					<Footer />{' '}
 				</Route>
-				<Route path="/sponsors">
+				<Route exact path="/sponsors">
 					{' '}
 					<Sponsors />
 					<Footer />{' '}
 				</Route>
-				<Route path="/webteam">
+				<Route exact path="/webteam">
 					{' '}
 					<WebTeam />
 					<Footer />{' '}
 				</Route>
-				<Route path="/">
+				<Route exact path="/">
 					{' '}
 					<Home />{' '}
 				</Route>
+				<Route component={NotFound}/>
+				
 			</Switch>
 		</div>
 	);

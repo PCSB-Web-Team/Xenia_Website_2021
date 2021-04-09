@@ -1,26 +1,25 @@
-@font-face{
-    font-family: 'planetn';
-    src:url('./Event/nasalization.ttf') format("truetype");
+@font-face {
+  font-family: SansBold;
+  src: url(../../../Assets/Fonts/PTSans-Bold.ttf);
 }
 
-@font-face{
-    font-family: 'planetns';
-    src:url('./Event/Planetnsv2.ttf') format("truetype");
+@font-face {
+  font-family: Barlow;
+  src: url(../../../Assets/Fonts/Barlow-Light.ttf);
 }
 
-.evedate{
-    font-family: 'planetn';
+.evedate {
+  font-family: SansBold;
 }
 
-@media (min-width:1280px){
-    .evedate{
-        font-size: 2em;
-    }
+@media (min-width: 1280px) {
+  .evedate {
+    font-size: 2.2em;
+  }
 }
-.EventCols{
-    display: flex;
-    text-align: center;
-    /* border: 4px solid salmon; */
-    box-sizing: border-box;
+.EventCols {
+  display: flex;
+  text-align: center;
+  /* border: 4px solid salmon; */
+  box-sizing: border-box;
 }
-

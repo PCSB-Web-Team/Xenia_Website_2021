@@ -1,34 +1,38 @@
-.Summary{
-    display: flex;
-    flex-flow: column;
-    margin: 39px 20px 20px 20px;
-    width: 40%;
+@font-face {
+  src: url(../../../Assets/Fonts/Barlow-Light.ttf);
+  font-family: Barlow;
 }
 
-@media (max-width:767px){
-    .Summary{
-        width: 80%;
-    }
+.Summary {
+  display: flex;
+  flex-flow: column;
+  margin: 39px 20px 20px 20px;
+  width: 40%;
+}
+
+@media (max-width: 767px) {
+  .Summary {
+    width: 80%;
+  }
 }
 
 .Coupon {
-    
-    padding: 15px;
-    width: 100%;
-    background: rgba(0, 255, 255, 0.1);
-    
-    transition: none;
+  padding: 5px;
+  width: 100%;
+  background: rgba(0, 255, 255, 0.1);
+
+  transition: none;
 }
 
 .question {
-    width: 100%;
-    margin: 0;
-    color: rgb(109, 118, 204);
-    color: #46bcde;
-    font-size: 1.5em;
+  width: 100%;
+  margin: 0;
+  color: rgb(109, 118, 204);
+  color: white;
+  font-size: 1.7em;
+  font-family: Barlow;
 }
 
-.question:hover{
-    color:aqua;
-    cursor: pointer;
+.question:hover {
+  cursor: pointer;
 }
