@@ -26,19 +26,19 @@ const App = (props) => {
 
 	useEffect(() => {
 
-	const getUserData = async () => {
-		let userToken = localStorage.getItem('xeniaUserToken');
+		const getUserData = async () => {
+			let userToken = localStorage.getItem('xeniaUserToken');
 
-		const res = await getLoggedInUser(userToken);
+			const res = await getLoggedInUser(userToken);
 
-		props.storeToken(userToken);
+			props.storeToken(userToken);
 
-		props.loggedIn(res.data.data);
-	};
-	
-	getUserData();
-	
-	}, []);
+			props.loggedIn(res.data.data);
+		};
+
+		getUserData();
+
+	});
 
 	return (
 		<div className="Xenia" id="Xenia">
@@ -90,8 +90,8 @@ const App = (props) => {
 					{' '}
 					<Home />{' '}
 				</Route>
-				<Route component={NotFound}/>
-				
+				<Route component={NotFound} />
+
 			</Switch>
 		</div>
 	);

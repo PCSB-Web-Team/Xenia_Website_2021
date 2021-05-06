@@ -19,7 +19,7 @@ const MyProf = (props) => {
                     <h1 class="slotAndTypeItem">Slot Details </h1><h1 class="slotAndTypeItem">Event Type</h1>
                 </div>
             </div>`;
-  });
+  }, []);
 
   let list = props.cart.map((eve) => {
     return (
