@@ -26,6 +26,7 @@ header .nav-item{
   color: #00eeff;
   margin-inline: 20px;
   background-color: black;
+
 }
 
 header .nav-item:hover{
@@ -56,6 +57,35 @@ header .active-nav{
   }
 }
 
+.cart-logo {
+  position: fixed;
+  top: 8px;
+  right: 60px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.cart-logo img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+
+  width: 100%;
+  height: 100%;
+}
+
+.cart-logo i {
+  top: 0px;
+}
+
+.cart-logo span {
+  color: black;
+  z-index: +1;
+  font-weight: bold;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+}
 
 /* 
 .NavBar {
