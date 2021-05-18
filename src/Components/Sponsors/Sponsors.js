@@ -15,7 +15,6 @@ const Sponsors = () => {
   return (
     <div className="maincontainer">
       <h1 className="headingmain">Sponsors</h1>
-
       <div className="mainboxtitle">
         <div className="mainboxItemtitle">
           <img

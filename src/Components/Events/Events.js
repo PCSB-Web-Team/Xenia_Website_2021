@@ -16,7 +16,7 @@ const Events = (props) => {
   const [nonTechEvents, setNonTech] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => { fetchData() }, []);
+  useEffect(() => { fetchData() });
 
   const fetchData = async () => {
     try {
@@ -32,7 +32,7 @@ const Events = (props) => {
 
         setTech(tech);
         setNonTech(nonTech);
-
+        
       }
 
     }
@@ -55,6 +55,7 @@ const Events = (props) => {
     {loading ? <Loader/> : 
 
       <div className="card-container">
+
           <div className="tabs">
             <button className={eventType==='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={changeEventType} id='tech-tab'>Tech</button>
             <button className={eventType!=='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={changeEventType} id='non-tech-tab'>Non-Tech</button>
@@ -62,6 +63,7 @@ const Events = (props) => {
           
             {eventType ==='tech' ? techEvents.map( eve => {return(<div    key={eve.id} className='card-div'>  <Link to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>)} ) : null}
             {eventType !=='tech' ? nonTechEvents.map( eve => {return(<div key={eve.id} className='card-div'>  <Link to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>)} ) : null}
+      
       </div>
 
     }
