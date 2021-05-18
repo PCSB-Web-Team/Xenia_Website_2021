@@ -10,7 +10,7 @@ const Mycart = (props) => {
 
 	let cartEvents = props.cart.map((eve) => (
 		<CartItem
-			key={eve}
+			key={eve._id}
 			details={eve}
 		></CartItem>
 	));
