@@ -16,7 +16,7 @@ const Events = (props) => {
   const [nonTechEvents, setNonTech] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => { fetchData() });
+  useEffect(() => { fetchData() }, []);
 
   const fetchData = async () => {
     try {

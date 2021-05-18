@@ -27,6 +27,7 @@ const App = (props) => {
 	useEffect(() => {
 
 		const getUserData = async () => {
+
 			let userToken = localStorage.getItem('xeniaUserToken');
 
 			const res = await getLoggedInUser(userToken);
@@ -38,7 +39,7 @@ const App = (props) => {
 
 		getUserData();
 
-	});
+	}, []);
 
 	return (
 		<div className="Xenia" id="Xenia">

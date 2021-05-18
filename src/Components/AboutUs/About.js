@@ -74,7 +74,7 @@ const About = () => {
 
       <div className="row mx-sm-auto eventContent">
         <div className="col-lg-6">
-          <Reveal effect="fadeInDown" duration={1500}>
+          <Reveal effect="fadeInDown" duration={1000}>
             <div className="event-info mt-5">
               <h3 className="font-weight-bold display-5">Event Name</h3>
               <p>
@@ -87,7 +87,7 @@ const About = () => {
           </Reveal>
         </div>
         <div className="col-lg-6 text-center  d-none d-lg-block">
-          <Fade up duration={1500}>
+          <Fade up duration={1000}>
             <img
               alt='img'
               src={data}
@@ -106,7 +106,7 @@ const About = () => {
 
       <div className="row mx-auto eventContent">
         <div className="col-lg-6 order-2">
-          <Reveal effect="fadeInDown" duration={1500}>
+          <Reveal effect="fadeInDown" duration={1000}>
             <div className="event-info mt-5">
               <h3 className="font-weight-bold display-5">Event Name</h3>
               <p>
@@ -119,7 +119,7 @@ const About = () => {
           </Reveal>
         </div>
         <div className="col-lg-6 d-none d-lg-block">
-          <Fade up duration={1500}>
+          <Fade up duration={1000}>
             <img
               alt='img'
               src={about}
@@ -138,7 +138,7 @@ const About = () => {
 
       <div className="row mx-auto mb-5 eventContent">
         <div className="col-lg-6">
-          <Reveal effect="fadeInDown" duration={1500}>
+          <Reveal effect="fadeInDown" duration={1000}>
             <div className="event-info mt-5">
               <h3 className="font-weight-bold display-5">Event Name</h3>
               <p>
@@ -151,7 +151,7 @@ const About = () => {
           </Reveal>
         </div>
         <div className="col-lg-6 text-center d-none d-lg-block">
-          <Fade up duration={1500}>
+          <Fade up duration={1000}>
             <img
               alt='img'
               src={code}

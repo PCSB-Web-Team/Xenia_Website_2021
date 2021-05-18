@@ -56,9 +56,9 @@ const Navbar = (props) => {
                 <NavLink className='nav-item' activeClassName='active-nav' to='/events'> Events </NavLink>
                 <NavLink className='nav-item' activeClassName='active-nav' to='/about-us'> About Us </NavLink>
                 <NavLink className='nav-item' activeClassName='active-nav' to='/sponsors'> Sponsors </NavLink>
-                { props.isLoggedIn ? null : <div className='nav-item' activeClassName='active-nav' onClick={props.openLogin}> Login </div> }
+                {props.isLoggedIn ? null : <div className='nav-item' activeClassName='active-nav' onClick={props.openLogin}> Login </div>}
 
-                { props.isLoggedIn ? (
+                {props.isLoggedIn ? (
                   <NavLink
                     to="/profile"
                     activeClassName="active-nav"
@@ -69,16 +69,22 @@ const Navbar = (props) => {
                   </NavLink>
                 ) : null}
 
-                  {props.isLoggedIn ? (
-                    <NavLink to='/cart'
-                      className="nav-item nav-cart"
-                      activeClassName='active-nav'
-                      id="cart"
-                    >
-                      <img src={cart} alt=''></img>
-                      {/* <span> {props.cart.length} </span> */}
-                    </NavLink>
-                  ) : null}
+                {props.isLoggedIn ? (
+                  <NavLink to='/cart'
+                    className="nav-item nav-cart"
+                    activeClassName='active-nav'
+                    id="cart"
+                  >
+                    <img src={cart} alt=''></img>
+                    {/* <span> {props.cart.length} </span> */}
+                    
+                    <i
+                      className="footerIcon fa fa-cart"
+                      aria-hidden="true"
+                    ></i>
+                  
+                  </NavLink>
+                ) : null}
 
               </ul>
             </div>
