@@ -3,13 +3,98 @@
   font-family: "SansRegular";
 }
 
+header{
+  position: relative;
+  z-index: +1;
+  text-align: center;
+}
+
+header .nav-item{
+  font-family: SansRegular;
+  min-width: 135px;
+  padding-block: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  border-bottom: 0px;
+  cursor: pointer;
+  display: inline-block;
+  border: 3px solid #0a93e2;
+  border-radius: 50px;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #00eeff;
+  margin-inline: 20px;
+  background-color: black;
+
+}
+
+header .nav-item:hover{
+  color: #00eeff;
+  box-shadow: 0 0 10px 0 #0df0f8 inset, 0 0 20px 2px #00eeff;
+  border: 3px solid #0df0f8;
+}
+
+header .active-nav{  
+  box-shadow: 0 0 10px 0 #0df0f8 inset, 0 0 20px 2px #00eeff;
+}
+
+@media (max-width: 950px){
+  
+  .navbar-collapse{
+    text-align: center;
+  }
+
+  header .nav-item{
+    width: 100%;
+    margin: 0px;
+    margin-top: 10px;
+  }
+  
+  header ul{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.cart-logo {
+  position: fixed;
+  top: 8px;
+  right: 60px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.cart-logo img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+
+  width: 100%;
+  height: 100%;
+}
+
+.cart-logo i {
+  top: 0px;
+}
+
+.cart-logo span {
+  color: black;
+  z-index: +1;
+  font-weight: bold;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+}
+
+/* 
 .NavBar {
   text-align: center !important;
   background: linear-gradient(black, rgba(0, 0, 0, 0));
   padding: 4px;
   display: inline-block !important;
   width: 100%;
-  height: fit-content; /* fit-content */
+  height: fit-content;
   top: 0px;
   position: relative;
   z-index: +1;
@@ -90,7 +175,6 @@ label #cancel {
   line-height: 60px;
   margin-right: 20px;
   cursor: pointer;
-  /* display: none; */
 }
 
 #check {
@@ -129,7 +213,6 @@ label #cancel {
 }
 
 .NavBar .nav-menu .nav-btn {
-  /* display: none; */
   float: right;
 }
 
@@ -299,4 +382,4 @@ label #cancel {
 .NavBar .active-nav {
   box-shadow: 0 0 10px 0 #0df0f8 inset, 0 0 20px 2px #00eeff;
   border: 3px solid #0df0f8;
-}
+} */
