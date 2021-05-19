@@ -29,7 +29,7 @@ const MoreInfo = (props) => {
   useEffect(() => {
     fetchData();
     checkInsideCart();
-  }, [id, props.cart]);
+  }, [id]);
 
   const fetchData = async () => {
 
@@ -52,6 +52,7 @@ const MoreInfo = (props) => {
       if (res.data.ok) {
         props.addToCart(details);
         addToCartSuccess();
+        setInsideCart(true);
       }
     } else {
       addToCartFail();

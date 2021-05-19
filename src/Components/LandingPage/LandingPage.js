@@ -46,9 +46,9 @@ const LandingPage = () => {
           <div className="lake">
             <img src={lake} alt=''></img>
           </div>
-          <div className="SpaceShip">
+          {/* <div className="SpaceShip">
             <img src={shuttle} alt=''></img>
-          </div>
+          </div> */}
           <div className="astranout">
             <img src={astranout} alt=''></img>
           </div>

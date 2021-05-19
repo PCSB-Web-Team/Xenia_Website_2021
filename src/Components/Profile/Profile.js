@@ -20,7 +20,7 @@ const MyProf = (props) => {
 
   let list = props.cart.map((eve) => {
     return (
-      <div className="Regdiv" key={eve}>
+      <div className="Regdiv" key={eve._id}>
         <h3 className="RegP" onMouseEnter={showDetails}>
           {eve.name}{" "}
         </h3>

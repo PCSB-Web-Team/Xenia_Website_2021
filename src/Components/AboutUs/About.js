@@ -6,7 +6,7 @@ import data from "../../Assets/Images/datamastro.jpg";
 import code from "../../Assets/Images/sudocode.jpg";
 // import Sponsors from "./Sponsors/Sponsors";
 import Fade from "react-reveal/Fade";
-// import Zoom from "react-reveal/Zoom";
+import Zoom from "react-reveal/Zoom";
 import Reveal from "react-reveal/Reveal";
 
 const About = () => {
@@ -14,12 +14,12 @@ const About = () => {
     <div className="section about-us">
       <div className="row text-center hero">
         <div className="col-lg-12 content1 px-sm-5">
-          <Fade top duration={1000}>
+          <Fade bottom duration={1000}>
             <h1 style={{ fontSize: "75px" }}>
               <span className="firstChild">XENIA</span>
             </h1>
           </Fade>
-          <Fade bottom duration={1000} delay={600}>
+          <Fade duration={1000} bottom>
             <p style={{ textAlign: "left", color: "#ffff" }}>
               Xenia is the annual technical festival organised by the PICT CSI
               Student Branch. This is a technical event with the view to find
@@ -44,12 +44,12 @@ const About = () => {
 
       <div className="row text-center hero">
         <div className="col-lg-12 content2 px-sm-5">
-          <Fade top duration={1000}>
+          <Fade duration={1000} bottom>
             <h1 style={{ fontSize: "75px" }}>
               <span className="firstChild">PCSB</span>
             </h1>
           </Fade>
-          <Fade bottom duration={1000} delay={600}>
+          <Fade duration={1000} bottom>
             <p style={{ textAlign: "left", color: "#ffff" }}>
               Xenia is the annual technical festival organised by the PICT CSI
               Student Branch. This is a technical event with the view to find
@@ -74,7 +74,7 @@ const About = () => {
 
       <div className="row mx-sm-auto eventContent">
         <div className="col-lg-6">
-          <Reveal effect="fadeInDown" duration={1500}>
+          <Reveal effect="fadeInDown" duration={1000}>
             <div className="event-info mt-5">
               <h3 className="font-weight-bold display-5">Event Name</h3>
               <p>
@@ -87,7 +87,7 @@ const About = () => {
           </Reveal>
         </div>
         <div className="col-lg-6 text-center  d-none d-lg-block">
-          <Fade up duration={1500}>
+          <Fade up duration={1000}>
             <img
               alt='img'
               src={data}
@@ -106,7 +106,7 @@ const About = () => {
 
       <div className="row mx-auto eventContent">
         <div className="col-lg-6 order-2">
-          <Reveal effect="fadeInDown" duration={1500}>
+          <Reveal effect="fadeInDown" duration={1000}>
             <div className="event-info mt-5">
               <h3 className="font-weight-bold display-5">Event Name</h3>
               <p>
@@ -119,7 +119,7 @@ const About = () => {
           </Reveal>
         </div>
         <div className="col-lg-6 d-none d-lg-block">
-          <Fade up duration={1500}>
+          <Fade up duration={1000}>
             <img
               alt='img'
               src={about}
@@ -138,7 +138,7 @@ const About = () => {
 
       <div className="row mx-auto mb-5 eventContent">
         <div className="col-lg-6">
-          <Reveal effect="fadeInDown" duration={1500}>
+          <Reveal effect="fadeInDown" duration={1000}>
             <div className="event-info mt-5">
               <h3 className="font-weight-bold display-5">Event Name</h3>
               <p>
@@ -151,7 +151,7 @@ const About = () => {
           </Reveal>
         </div>
         <div className="col-lg-6 text-center d-none d-lg-block">
-          <Fade up duration={1500}>
+          <Fade up duration={1000}>
             <img
               alt='img'
               src={code}
