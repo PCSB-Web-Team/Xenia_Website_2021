@@ -62,7 +62,7 @@ const Navbar = (props) => {
                 <div><NavLink className='nav-item' activeClassName='active-nav' exact to='/'> Home </NavLink></div>
                 <div><NavLink className='nav-item' activeClassName='active-nav' to='/schedule'> Schedule </NavLink></div>
                 <div><NavLink className='nav-item' activeClassName='active-nav' to='/events'> Events </NavLink></div>
-                <div><NavLink className='nav-item' activeClassName='active-nav' to='/about-us'> About Us </NavLink></div>
+                <div><NavLink className='nav-item' activeClassName='active-nav' to='/side-events'> Side Events </NavLink></div>
                 <div><NavLink className='nav-item' activeClassName='active-nav' to='/sponsors'> Sponsors </NavLink></div>
                 {props.isLoggedIn ? null : <div className='nav-item' activeClassName='active-nav' onClick={props.openLogin}> Login </div> }
 

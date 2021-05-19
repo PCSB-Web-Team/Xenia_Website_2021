@@ -16,13 +16,15 @@ const Contact = () => {
             className="contactFill"
           ></input>
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             id="emailInputId"
             className="contactFill"
           ></input>
           <input
-            type="text"
+            type="number"
+            min='7000000000'
+            max='9999999999'
             placeholder="Phone"
             id="phoneInputId"
             className="contactFill"

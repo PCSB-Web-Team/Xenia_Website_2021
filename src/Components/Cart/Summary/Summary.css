@@ -6,6 +6,7 @@
 .Summary {
   display: flex;
   flex-flow: column;
+  font-size: 20px;
   margin: 39px 20px 20px 20px;
   width: 40%;
 }
