@@ -83,6 +83,7 @@ const About = () => {
                 sint quis architecto. Nemo impedit commodi fuga natus sunt
                 magnam id quos mollitia.
               </p>
+              <div className='btn btn-success rounded-0'> Register </div>
             </div>
           </Reveal>
         </div>
@@ -115,6 +116,7 @@ const About = () => {
                 sint quis architecto. Nemo impedit commodi fuga natus sunt
                 magnam id quos mollitia.
               </p>
+              <div className='btn btn-success rounded-0'> Register </div>
             </div>
           </Reveal>
         </div>
@@ -147,6 +149,7 @@ const About = () => {
                 sint quis architecto. Nemo impedit commodi fuga natus sunt
                 magnam id quos mollitia.
               </p>
+              <div className='btn btn-success rounded-0'> Register </div>
             </div>
           </Reveal>
         </div>

@@ -17,7 +17,8 @@ import './App.css';
 import Background from './Components/BackGround/Background';
 import {
 	Switch,
-	Route
+	Route,
+	Redirect
 } from 'react-router-dom';
 import { getEventData, loggedIn, storeToken } from './Store/Actions';
 import { connect } from 'react-redux';
@@ -67,16 +68,29 @@ const App = (props) => {
 					<ContactUs />
 					<Footer />{' '}
 				</Route>
+				
 				<Route exact path="/cart">
-					{' '}
-					<Cart />
-					<Footer />{' '}
+					{props.login ?
+						<div>
+							<Cart />
+							<Footer />
+						</div>
+						:
+						<Redirect to='/'></Redirect>
+					}
 				</Route>
+				
 				<Route exact path="/profile">
-					{' '}
-					<Profile />
-					<Footer />{' '}
+					{props.login ?
+						<div>
+							<Profile />
+							<Footer />
+						</div>
+						:
+						<Redirect to='/'></Redirect>
+					}
 				</Route>
+
 				<Route exact path="/sponsors">
 					{' '}
 					<Sponsors />
@@ -100,7 +114,7 @@ const App = (props) => {
 
 const mapStatesToProps = (state) => {
 	return {
-		state: state,
+		login: state.login,
 	};
 };
 

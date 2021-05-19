@@ -16,6 +16,14 @@ import { openLogin } from '../../Store/Actions';
 
 const Navbar = (props) => {
 
+  const toggleHeaderHeight = () => {
+    
+    // let header = document.getElementsByTagName("header")
+
+    // header[0].classList.toggle("open-mobile-nav")
+
+  }
+
   return (
     <div>
 
@@ -46,19 +54,20 @@ const Navbar = (props) => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon text-black"></span>
+              <span onClick={toggleHeaderHeight} className="navbar-toggler-icon text-black"></span>
             </button>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center">
-                <NavLink className='nav-item' activeClassName='active-nav' exact to='/'> Home </NavLink>
-                <NavLink className='nav-item' activeClassName='active-nav' to='/schedule'> Schedule </NavLink>
-                <NavLink className='nav-item' activeClassName='active-nav' to='/events'> Events </NavLink>
-                <NavLink className='nav-item' activeClassName='active-nav' to='/about-us'> About Us </NavLink>
-                <NavLink className='nav-item' activeClassName='active-nav' to='/sponsors'> Sponsors </NavLink>
-                {props.isLoggedIn ? null : <div className='nav-item' activeClassName='active-nav' onClick={props.openLogin}> Login </div>}
+                <div><NavLink className='nav-item' activeClassName='active-nav' exact to='/'> Home </NavLink></div>
+                <div><NavLink className='nav-item' activeClassName='active-nav' to='/schedule'> Schedule </NavLink></div>
+                <div><NavLink className='nav-item' activeClassName='active-nav' to='/events'> Events </NavLink></div>
+                <div><NavLink className='nav-item' activeClassName='active-nav' to='/about-us'> About Us </NavLink></div>
+                <div><NavLink className='nav-item' activeClassName='active-nav' to='/sponsors'> Sponsors </NavLink></div>
+                {props.isLoggedIn ? null : <div className='nav-item' activeClassName='active-nav' onClick={props.openLogin}> Login </div> }
 
                 {props.isLoggedIn ? (
+                  <div>
                   <NavLink
                     to="/profile"
                     activeClassName="active-nav"
@@ -67,9 +76,11 @@ const Navbar = (props) => {
                     {" "}
                 Slots{" "}
                   </NavLink>
+                  </div>
                 ) : null}
 
                 {props.isLoggedIn ? (
+                  <div>
                   <NavLink to='/cart'
                     className="nav-item nav-cart"
                     activeClassName='active-nav'
@@ -84,6 +95,7 @@ const Navbar = (props) => {
                     ></i>
                   
                   </NavLink>
+                  </div>
                 ) : null}
 
               </ul>
