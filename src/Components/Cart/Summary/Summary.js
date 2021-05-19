@@ -6,10 +6,6 @@ const Summary = (props) => {
     return (
         <div className="Summary">
             
-            <div className="Coupon">
-                <p className="question" onClick={props.showCoupon}><u>Have a Coupon?</u></p>
-            </div>
-            
             <CartSummary />
         
         </div>

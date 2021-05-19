@@ -32,21 +32,20 @@ const Contact = () => {
             id="messageInputId"
             className="contactFill"
           ></textarea>
-          <div class="container"><a class="border-animation" href="#">
-    <div class="border-animation__inner">SUBMIT</div></a></div>
+          <button id="contactSubmit">SUBMIT</button>
         </form>
       </div>
       <div className="contactInfo">
         <h1>Contact info</h1>
         <div className="address">
-          <h1>Where to find us</h1>
+          <h3>Where to find us</h3>
           <p>Survey no. 27,</p>
           <p>Near Trimurti Chowk,</p>
           <p>Bharati Vidyapeeth Campus,</p>
           <p>Dhankawadi,Pune-411043</p>
         </div>
         <div className="phoneAndMail">
-          <h1>Phone and Mail</h1>
+          <h3>Phone and Mail</h3>
           <p>
             Phone <span>9999999999</span>
           </p>
@@ -55,7 +54,7 @@ const Contact = () => {
           </p>
         </div>
         <div className="socialMedia">
-          <h1>Social Links</h1>
+          <h3>Social Links</h3>
           <p class="text-light">
             <a href="/">
               {" "}

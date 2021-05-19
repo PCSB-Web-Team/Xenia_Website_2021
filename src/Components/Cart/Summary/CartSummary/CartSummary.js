@@ -24,7 +24,7 @@ const cartSummary=(props)=> {
                     <p>{sum}</p>
                 </div>
                 <div className='paymentInner'>
-                    <p>Promocode Discount</p>
+                    <p>No of events</p>
                     <p>{discount}</p>
                 </div>
                 <div className='paymentInner'>

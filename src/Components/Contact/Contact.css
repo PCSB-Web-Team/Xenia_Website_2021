@@ -21,10 +21,12 @@
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  margin-top: 1.7rem;
 }
 
 .contactForm h1,.contactInfo h1{
   color: white;
+  font-family: 'SansBold';
 }
 
 .contactFill{
@@ -45,7 +47,7 @@ textarea.contactFill{
   min-height: 10rem;
 }
 
-button#contactSubmit{
+#contactSubmit{
   outline: 0;
   margin-top: 30px;
   width: 50%;
@@ -53,279 +55,97 @@ button#contactSubmit{
   font-size: 1.4rem;
   background: none;
   border-color: aqua;
+  transition: 100ms ease;
+}
+
+#contactSubmit:hover{
+  transform: scale(1.1);
 }
 
 
-
-
-.container {
-  width: 100%;
+.address{
+  margin-top: 1.7rem;
 }
 
-.border-animation {
-  --border-width: 0.1em;
-  --animation-speed: 0.5s;
-  --color: aqua;
+.address h3,.phoneAndMail h3,.socialMedia h3{
   color: white;
-  position: relative;
-  display: inline-block;
-  font-size: 3rem;
-  line-height: 1em;
-  transform: scale(1, 0.8);
-  border: var(--border-width) solid transparent;
-}
-.border-animation .border-animation__inner {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  font-family: "Six Caps", sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  padding: 0.2em;
-  background: #333;
-  z-index: 1;
-  border: solid var(--border-width) transparent;
-}
-.border-animation:before, .border-animation:after {
-  content: "";
-  position: absolute;
-  background: var(--color);
-}
-.border-animation:focus:before, .border-animation:hover:before {
-  -webkit-animation: beforeBorders var(--animation-speed) forwards ease-in-out;
-          animation: beforeBorders var(--animation-speed) forwards ease-in-out;
-}
-.border-animation:focus:after, .border-animation:hover:after {
-  -webkit-animation: afterBorders var(--animation-speed) forwards ease-in-out;
-          animation: afterBorders var(--animation-speed) forwards ease-in-out;
-}
-.border-animation:focus, .border-animation:hover {
-  -webkit-animation: borderColors var(--animation-speed) steps(1) forwards;
-          animation: borderColors var(--animation-speed) steps(1) forwards;
-  outline: none;
-}
-.border-animation:focus .border-animation__inner, .border-animation:hover .border-animation__inner {
-  -webkit-animation: background calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
-          animation: background calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
-  -webkit-animation-delay: calc(var(--animation-speed) / 5 * 2);
-          animation-delay: calc(var(--animation-speed) / 5 * 2);
+  font-family: 'SansBold';
 }
 
-@-webkit-keyframes beforeBorders {
-  0% {
-    top: calc(var(--border-width) * -1);
-    left: 50%;
-    bottom: auto;
-    right: auto;
-    width: 0;
-    height: var(--border-width);
-  }
-  33% {
-    top: calc(var(--border-width) * -1);
-    left: calc(var(--border-width) * -1);
-    bottom: auto;
-    right: auto;
-    width: calc(var(--border-width) + 50%);
-    height: var(--border-width);
-  }
-  66% {
-    top: calc(var(--border-width) * -1);
-    left: calc(var(--border-width) * -1);
-    bottom: auto;
-    right: auto;
-    width: var(--border-width);
-    height: calc((var(--border-width) * 2) + 100%);
-  }
-  100% {
-    top: auto;
-    left: calc(var(--border-width) * -1);
-    bottom: calc(var(--border-width) * -1);
-    right: auto;
-    width: calc(var(--border-width) + 50%);
-    height: calc((var(--border-width) * 2) + 100%);
+.address p,.phoneAndMail p,.socialMedia p{
+  color: white;
+}
+
+.phoneAndMail,.socialMedia{
+  margin-top: 1.6rem;
+}
+
+.fa-instagram{
+  color: rgb(193,53,132);
+  font-size: xx-large !important;
+  transition: 100ms ease;
+}
+
+.fa-facebook-official{
+  color : rgb(66,103,178);
+  font-size: xx-large !important;
+  transition: 100ms ease;
+  margin-left: 20px;
+}
+
+.fa-linkedin{
+  color : rgb(40,103,178);
+  font-size: xx-large !important;
+  transition: 100ms ease;
+  margin-left: 20px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.fa-facebook-official:hover,.fa-instagram:hover,.fa-linkedin:hover{
+  transform: scale(1.1);
+}
+
+@media (min-width:851px) and (max-width:100px){
+  .contactUs{
+    width: 90%;
   }
 }
 
-@keyframes beforeBorders {
-  0% {
-    top: calc(var(--border-width) * -1);
-    left: 50%;
-    bottom: auto;
-    right: auto;
-    width: 0;
-    height: var(--border-width);
+@media(max-width:850px){
+  .contactUs{
+    width: 100%;
+    flex-flow: column;
+    align-items: center;
   }
-  33% {
-    top: calc(var(--border-width) * -1);
-    left: calc(var(--border-width) * -1);
-    bottom: auto;
-    right: auto;
-    width: calc(var(--border-width) + 50%);
-    height: var(--border-width);
+  .contactForm{
+    width: 100%;
+    align-items: center;
   }
-  66% {
-    top: calc(var(--border-width) * -1);
-    left: calc(var(--border-width) * -1);
-    bottom: auto;
-    right: auto;
-    width: var(--border-width);
-    height: calc((var(--border-width) * 2) + 100%);
+  .contactInfo{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
   }
-  100% {
-    top: auto;
-    left: calc(var(--border-width) * -1);
-    bottom: calc(var(--border-width) * -1);
-    right: auto;
-    width: calc(var(--border-width) + 50%);
-    height: calc((var(--border-width) * 2) + 100%);
+  #contactSubmit{
+    margin: 30px auto 50px auto;
   }
-}
-@-webkit-keyframes afterBorders {
-  0% {
-    top: calc(var(--border-width) * -1);
-    left: auto;
-    bottom: auto;
-    right: 50%;
-    width: 0;
-    height: var(--border-width);
+  .contactFill{
+    font-size: 1rem;
   }
-  33% {
-    top: calc(var(--border-width) * -1);
-    left: auto;
-    bottom: auto;
-    right: calc(var(--border-width) * -1);
-    width: calc(var(--border-width) + 50%);
-    height: var(--border-width);
+  .contactForm form{
+    width: 85%;
   }
-  66% {
-    top: calc(var(--border-width) * -1);
-    left: auto;
-    bottom: auto;
-    right: calc(var(--border-width) * -1);
-    width: var(--border-width);
-    height: calc((var(--border-width) * 2) + 100%);
+  .address p,.phoneAndMail p,.socialMedia{
+    text-align: center;
   }
-  100% {
-    top: auto;
-    left: auto;
-    bottom: calc(var(--border-width) * -1);
-    right: calc(var(--border-width) * -1);
-    width: calc(var(--border-width) + 50%);
-    height: calc((var(--border-width) * 2) + 100%);
-  }
-}
-@keyframes afterBorders {
-  0% {
-    top: calc(var(--border-width) * -1);
-    left: auto;
-    bottom: auto;
-    right: 50%;
-    width: 0;
-    height: var(--border-width);
-  }
-  33% {
-    top: calc(var(--border-width) * -1);
-    left: auto;
-    bottom: auto;
-    right: calc(var(--border-width) * -1);
-    width: calc(var(--border-width) + 50%);
-    height: var(--border-width);
-  }
-  66% {
-    top: calc(var(--border-width) * -1);
-    left: auto;
-    bottom: auto;
-    right: calc(var(--border-width) * -1);
-    width: var(--border-width);
-    height: calc((var(--border-width) * 2) + 100%);
-  }
-  100% {
-    top: auto;
-    left: auto;
-    bottom: calc(var(--border-width) * -1);
-    right: calc(var(--border-width) * -1);
-    width: calc(var(--border-width) + 50%);
-    height: calc((var(--border-width) * 2) + 100%);
-  }
-}
-@-webkit-keyframes borderColors {
-  0% {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  33% {
-    border-top-color: var(--color);
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  66% {
-    border-top-color: var(--color);
-    border-right-color: var(--color);
-    border-bottom-color: transparent;
-    border-left-color: var(--color);
-  }
-  100% {
-    border-top-color: var(--color);
-    border-right-color: var(--color);
-    border-bottom-color: var(--color);
-    border-left-color: var(--color);
-  }
-}
-@keyframes borderColors {
-  0% {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  33% {
-    border-top-color: var(--color);
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  66% {
-    border-top-color: var(--color);
-    border-right-color: var(--color);
-    border-bottom-color: transparent;
-    border-left-color: var(--color);
-  }
-  100% {
-    border-top-color: var(--color);
-    border-right-color: var(--color);
-    border-bottom-color: var(--color);
-    border-left-color: var(--color);
-  }
-}
-@-webkit-keyframes background {
-  to {
-    background: #555;
-    text-shadow: 0 0.1em 0.1em #111;
-  }
-}
-@keyframes background {
-  to {
-    background: #555;
-    text-shadow: 0 0.1em 0.1em #111;
-  }
-}
-@media (min-width: 850px) {
-  body {
-    justify-content: center;
-  }
-}
-@media (min-width: 1200px) {
-  .border-animation {
-    font-size: 3em;
-    line-height: 1em;
-  }
-}
-
-a:hover{
-  color: white !important;
 }
