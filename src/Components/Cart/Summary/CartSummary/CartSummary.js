@@ -2,8 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import './CartSummary.css';
-// import Button from '@material-ui/core/Button';
-// import Store from '../../../../Store/Store';
 
 const cartSummary=(props)=> {
     

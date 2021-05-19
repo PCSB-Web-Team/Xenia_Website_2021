@@ -1,8 +1,5 @@
 import React, {useCallback } from "react";
 import "./Profile.css";
-// import user from "../../Assets/Images/user.png";
-// import logo from "../../Assets/Images/logo.svg";
-// import WebTeam from "../WebTeam/WebTeam";
 import {loggedOut as notifyLoggedOut} from '../Notifications/Notification';
 
 import { connect } from "react-redux";

@@ -22,7 +22,7 @@ const couponModal=(props)=> {
                     <p className="msg"></p>
                 </div>
                 <div className="applyCoupon">
-                    <a href="">APPLY COUPON</a>
+                    <a href="#">APPLY COUPON</a>
                 </div>
             </section>
         </div>
