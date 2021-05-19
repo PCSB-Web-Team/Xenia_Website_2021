@@ -1,60 +1,151 @@
-.contact .container {
-  /* max-width: 50%; */
-  height: fit-content;
-  background: linear-gradient(rgba(0, 112, 177, 0.308),black);
-  display: block;
-  margin-bottom: 30px;
+.contactUs{
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+  margin: 0 auto;
 }
 
-.contact {
-  padding-top: 30px;
-  position: relative;
-  text-align: center;
-
-  background: url("../../Assets/Images/moon.jpg");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+.contactForm{
+  display: flex;
+  flex-flow: column;
+  width: 60%;
+  padding: 0 10px;
 }
 
-.contact .address{
-  color: aqua;
+.contactInfo{
+  width: 40%;
+  padding: 0 10px;
 }
 
-.contact h3 {
-  color: #fff;
-  text-align: center;
+.contactForm form{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin-top: 1.7rem;
 }
 
-.contact .fas {
-  font-size: 15px;
+.contactForm h1,.contactInfo h1{
+  color: white;
+  font-family: 'SansBold';
 }
 
-.contact input {
-  outline: none;
-  background-color: white;
+.contactFill{
+  color: white;
+  height: 3rem;
+  background: rgba(0,0,0,0);
+  outline: 0;
+  border: 0;
+  border-left: 2px aqua solid;
+  padding: 1rem 2.4rem;
+  font-size: 1.5rem;
+  line-height: 2.8rem;
+  margin-bottom: 3rem;
 }
 
-.contact input:focus {
-  outline: none;
+textarea.contactFill{
+  resize: none;
+  min-height: 10rem;
 }
 
-.contact textarea {
-  background: rgba(255, 255, 255, 0.8);
-}
-.contact .btn {
-  transition: ease-out 200ms;
-}
-.contact .btn:hover {
-  transform: scale(1.02);
+#contactSubmit{
+  outline: 0;
+  margin-top: 30px;
+  width: 50%;
+  color: white;
+  font-size: 1.4rem;
+  background: none;
+  border-color: aqua;
+  transition: 100ms ease;
 }
 
-@media only screen and (max-width: 720px) {
-  .container {
-    max-width: 100%;
-    height: fit-content;
+#contactSubmit:hover{
+  transform: scale(1.1);
+}
+
+
+.address{
+  margin-top: 1.7rem;
+}
+
+.address h3,.phoneAndMail h3,.socialMedia h3{
+  color: white;
+  font-family: 'SansBold';
+}
+
+.address p,.phoneAndMail p,.socialMedia p{
+  color: white;
+}
+
+.phoneAndMail,.socialMedia{
+  margin-top: 1.6rem;
+}
+
+.fa-instagram{
+  color: rgb(193,53,132);
+  font-size: xx-large !important;
+  transition: 100ms ease;
+}
+
+.fa-facebook-official{
+  color : rgb(66,103,178);
+  font-size: xx-large !important;
+  transition: 100ms ease;
+  margin-left: 20px;
+}
+
+.fa-linkedin{
+  color : rgb(40,103,178);
+  font-size: xx-large !important;
+  transition: 100ms ease;
+  margin-left: 20px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.fa-facebook-official:hover,.fa-instagram:hover,.fa-linkedin:hover{
+  transform: scale(1.1);
+}
+
+@media (min-width:851px) and (max-width:100px){
+  .contactUs{
+    width: 90%;
   }
-  .contact {
-    padding: 10px;
+}
+
+@media(max-width:850px){
+  .contactUs{
+    width: 100%;
+    flex-flow: column;
+    align-items: center;
+  }
+  .contactForm{
+    width: 100%;
+    align-items: center;
+  }
+  .contactInfo{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  #contactSubmit{
+    margin: 30px auto 50px auto;
+  }
+  .contactFill{
+    font-size: 1rem;
+  }
+  .contactForm form{
+    width: 85%;
+  }
+  .address p,.phoneAndMail p,.socialMedia{
+    text-align: center;
   }
 }

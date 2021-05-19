@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './CartItem.css';
-//import cross    from '../../../../Assets/images/cross.png';
 import logo from '../../../../Assets/Images/logo.svg';
 import Button from '@material-ui/core/Button';
 import { removeFromCartBackend } from '../../../Config/api/User';

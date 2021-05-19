@@ -2,8 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import './CartSummary.css';
-// import Button from '@material-ui/core/Button';
-// import Store from '../../../../Store/Store';
 
 const cartSummary=(props)=> {
     
@@ -26,7 +24,7 @@ const cartSummary=(props)=> {
                     <p>{sum}</p>
                 </div>
                 <div className='paymentInner'>
-                    <p>Promocode Discount</p>
+                    <p>No of events</p>
                     <p>{discount}</p>
                 </div>
                 <div className='paymentInner'>

@@ -1,7 +1,5 @@
 import React from 'react';
 import './CouponModal.css';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import cross from '../../../Assets/Images/cross.png';
 
 const couponModal=(props)=> {
@@ -12,15 +10,20 @@ const couponModal=(props)=> {
             <section className="modalMain">
                 <div className="couponHeading">
                     <p className="couponQuestion">Have a Coupon?</p>
-                    <img className="couponCross" src={cross} alt='coupon' onClick={props.closeCoupon} />
+                    <img className="couponCross" alt="cross" src={cross} onClick={props.closeCoupon} />
                 </div>    
-                <TextField id="couponCode" label="ENTER COUPON CODE" />
+                <div className="containerInput">
+                    <div className="material-textfield">
+                        <input placeholder=" " type="text" />
+                        <label>ENTER COUPON CODE</label>
+                    </div>
+                </div>
                 <div className="errMsg">
                     <p className="msg"></p>
                 </div>
-                <Button variant="contained" color="primary" className="applyCoupon">
-                    APPLY COUPON
-                </Button>
+                <div className="applyCoupon">
+                    <a href="#">APPLY COUPON</a>
+                </div>
             </section>
         </div>
     )

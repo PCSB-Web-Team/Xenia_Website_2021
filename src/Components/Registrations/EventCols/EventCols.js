@@ -4,7 +4,6 @@ import Event from "./Event/Event";
 import Grid from "@material-ui/core/Grid";
 
 const eventCols = (props) => {
-  // const n = props.eventNo;
   const eves = props.eventNames;
   const list = eves.map((eve) => (
     <Grid item xs={12} key={eve}>

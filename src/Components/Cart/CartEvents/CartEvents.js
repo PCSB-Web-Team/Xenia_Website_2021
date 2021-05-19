@@ -3,7 +3,6 @@ import './CartEvents.css';
 import CartItem from './CartItem/CartItem';
 import { connect } from 'react-redux';
 import { removeFromCart } from '../../../Store/Actions';
-// import { removeFromCartBackend } from '../../Config/api/User';
 
 const Mycart = (props) => {
 

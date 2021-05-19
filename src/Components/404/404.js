@@ -1,4 +1,4 @@
-//import React,{useCallback} from 'react'
+
 import astro from '../../Assets/Images/astro1.png';
 import './404.css'
 

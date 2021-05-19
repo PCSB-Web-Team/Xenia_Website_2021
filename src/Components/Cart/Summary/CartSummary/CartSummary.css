@@ -87,18 +87,44 @@
     margin-bottom: 5px;
   }
 }
+.totalpay{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.3em;
+}
 
 .payBtn {
   background: rgba(29, 212, 29, 0.637);
   padding: 10px;
 }
 
-.payBtn a {
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
+@media (max-width:767px){
+    .paymentInner{
+        width: 100%;
+    }
 }
-.payBtn a:hover {
-  text-decoration: none;
+
+.payBtn{
+    padding: 10px;
+    background: #21a33daf;
+    cursor: pointer;
+    width: 50%;
+    float: right;
+}
+
+.payBtn a{
   color: white;
+}
+
+.payBtn a:hover{
+  color: white;
+}
+
+.payBtn a:focus{
+  color: white;
+}
+
+.payBtn p{
+    font-size: 1.1em;
+    margin: 0;
 }
