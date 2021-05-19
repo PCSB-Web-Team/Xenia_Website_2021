@@ -8,23 +8,15 @@ header{
   z-index: +1;
   text-align: center;
 
-  overflow: visible;
-
-  /* background: linear-gradient(black, rgba(255, 255, 255, 0)); */
-  /* backdrop-filter: blur(100px); */
+  margin-block: 10px;
+  padding-inline: 20px;
 }
 
-.navbar{
-  overflow: visible;
-}
-
-header .nav-item{
+header .navItem{
   font-family: SansRegular;
   min-width: 135px;
   padding-block: 2px;
-  text-align: center;
   text-transform: uppercase;
-  font-weight: 300;
   cursor: pointer;
   display: inline-block;
   border: 3px solid #0a93e2;
@@ -33,10 +25,10 @@ header .nav-item{
   transition: all 0.15s ease-in-out;
   color: #00eeff;
   margin-inline: 20px;
-  background-color: black;
+  background-color: black; 
 }
 
-header .nav-item:hover{
+header .navItem:hover{
   color: #00eeff;
   box-shadow: 0 0 10px 0 #0df0f8 inset, 0 0 20px 2px #00eeff;
   border: 3px solid #0df0f8;
@@ -46,40 +38,85 @@ header .active-nav{
   box-shadow: 0 0 10px 0 #0df0f8 inset, 0 0 20px 2px #00eeff;
 }
 
-header .nav-item img {
+header .navItem img {
   -webkit-filter: invert(1);
   filter: invert(1);
 
   height: 18px;
 } 
 
-@media (max-width: 991px){
+.navBar{
+  display: flex;
+  justify-content: space-between;
+}
 
-  header .nav-item{
-    width: 100%;
-    margin: 0px;
-    margin-block: 5px;
-  }
+.navBar .list{
+  display: flex;
+}
+
+.nav-toggler{
+  z-index: +1;
+}
+
+header .brand{
+  font-size: 24px;
+  color: white;
+}
+
+.mob-nav {
   
-  header ul{
-    width: 100%;
-    text-align: center;
-  }
+  transition: ease 500ms;
 
-  .open-mobile-nav {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-  }
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  z-index: +1;
 
 }
 
-.open-mobile-nav .navbar-nav{
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+.mob-nav .navItem{
+  font-size: 32px;
+  width: 350px;
+  margin-block: 5px;
+}
 
+.nav-close{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+  font-weight: 500;
+  color: white;
+  display: none;
+  z-index: +1;
+}
+
+.nav-close:hover{
+  transition: ease 500ms;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.navbar-toggler{
+  cursor: pointer;
+  color: white;
+}
+
+@media (min-width: 1000px) {
+  .navbar-toggler{
+    display: none;
+  }
+}
+
+@media (max-width: 1000px){
+  .navBar .list{
+    display: none;
+  }
 }
