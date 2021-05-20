@@ -24,7 +24,7 @@ import {
 } from 'react-router-dom';
 import { getEventData, loggedIn, storeToken } from './Store/Actions';
 import { connect } from 'react-redux';
-// import ForgotPassword from './Components/Forgot/form';
+import ForgotPassword from './Components/Forgot/form';
 
 const App = (props) => {
 
@@ -107,6 +107,11 @@ const App = (props) => {
 					<WebTeam />
 					<Footer />{' '}
 				</Route>
+				
+				<Route exact path="/reset-password">
+					<ForgotPassword/>
+				</Route>
+
 				<Route exact path="/">
 					{' '}
 					<Home />{' '}
