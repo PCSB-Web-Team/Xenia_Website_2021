@@ -8,6 +8,7 @@ import "./Navbar.css";
 import LoginModal from "../Auth/Login";
 import RegisterModal from "../Auth/Register";
 import { openLogin } from '../../Store/Actions';
+import { Zoom } from 'react-reveal'
 
 const Navbar = (props) => {
 
@@ -44,56 +45,54 @@ const Navbar = (props) => {
 
           <div className='brand'> XENIA </div>
 
-          <div className='list nav-list'>
-            
-            <div><NavLink className='navItem' activeClassName='active-nav' exact to='/'> Home </NavLink></div>
-            <div><NavLink className='navItem' activeClassName='active-nav' to='/schedule'> Schedule </NavLink></div>
-            <div><NavLink className='navItem' activeClassName='active-nav' to='/events'> Events </NavLink></div>
-            <div><NavLink className='navItem' activeClassName='active-nav' to='/side-events'> Side Events </NavLink></div>
-            <div><NavLink className='navItem' activeClassName='active-nav' to='/sponsors'> Sponsors </NavLink></div>
-            
-            {props.isLoggedIn ? null : <div className='navItem' activeClassName='active-nav' onClick={props.openLogin}> Login </div>}
+          <Zoom bottom cascade duration={500}>
 
-            {props.isLoggedIn ? (
-              <div>
-                <NavLink
-                  to="/profile"
-                  activeClassName="active-nav"
-                  className="navItem"
-                >
-                  {" "}
+            <div className='list nav-list'>
+
+              <div><NavLink className='navItem' activeClassName='active-nav' exact to='/'> Home </NavLink></div>
+              <div><NavLink className='navItem' activeClassName='active-nav' to='/schedule'> Schedule </NavLink></div>
+              <div><NavLink className='navItem' activeClassName='active-nav' to='/events'> Events </NavLink></div>
+              <div><NavLink className='navItem' activeClassName='active-nav' to='/side-events'> Side Events </NavLink></div>
+              <div><NavLink className='navItem' activeClassName='active-nav' to='/sponsors'> Sponsors </NavLink></div>
+
+              {props.isLoggedIn ? null : <div className='navItem' activeClassName='active-nav' onClick={props.openLogin}> Login </div>}
+
+              {props.isLoggedIn ? (
+                <div>
+                  <NavLink
+                    to="/profile"
+                    activeClassName="active-nav"
+                    className="navItem"
+                  >
+                    {" "}
                 Profile{" "}
-                </NavLink>
-              </div>
-            ) : null}
+                  </NavLink>
+                </div>
+              ) : null}
 
-            {props.isLoggedIn ? (
-              <div>
-                <NavLink to='/cart'
-                  className="navItem nav-cart"
-                  activeClassName='active-nav'
-                  id="cart"
-                >
-                  <img src={cart} alt=''></img>
-                  <i
-                    className="footerIcon fa fa-cart"
-                    aria-hidden="true"
-                  ></i>
-                </NavLink>
-              </div>
-            ) : null}
+              {props.isLoggedIn ? (
+                <div>
+                  <NavLink to='/cart'
+                    className="nav-cart"
+                    id="cart"
+                  >
+                    <i class="fa fa-shopping-cart"></i>
+                  </NavLink>
+                </div>
+              ) : null}
 
-          </div>
+            </div>
 
-          <div><div onClick={openNavBar} className="navbar-toggler">&#9776; </div></div>
-          <div onClick={closeNavBar} className='nav-close'>X</div>
+            <div><div onClick={openNavBar} className="navbar-toggler">&#9776; </div></div>
+            <div onClick={closeNavBar} className='nav-close'>X</div>
+          </Zoom>
 
         </div>
 
       </header>
 
-      <LoginModal/>
-      <RegisterModal/>
+      <LoginModal />
+      <RegisterModal />
 
     </div>
   );

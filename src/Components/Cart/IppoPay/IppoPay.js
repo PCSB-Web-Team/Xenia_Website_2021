@@ -30,7 +30,7 @@ const IppoPay = () => {
 
     return (
         <div>
-            <div onClick={ippopayOpener}> Proceed to Pay </div>
+            <div onClick={ippopayOpener} className='priceSummary'> Proceed to Pay </div>
             <Ippopay
                 ippopayOpen={ippopayOpen}
                 ippopayClose={true}

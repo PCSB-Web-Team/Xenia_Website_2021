@@ -38,7 +38,7 @@ const MyProf = (props) => {
           {list.length > 0 ? (
             list
           ) : (
-            <h1 className="usernameHeading">No Registered Events</h1>
+            <h1 className="noRegistered">No Registered Events</h1>
           )}
         </div>
         <div className="registeredEventsDashboard">

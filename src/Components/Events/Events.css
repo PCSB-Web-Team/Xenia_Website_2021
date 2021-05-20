@@ -24,8 +24,8 @@
 
 .tabs .active-tab {
   transition: ease 500ms;
-  color: rgb(0, 255, 213);
-  border: 2px solid rgb(22, 220, 235);
+  color: #00b4d8;
+  border: 2px solid #00b4d8;
 }
 
 .tabs button {

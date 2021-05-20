@@ -46,6 +46,12 @@
   min-height: 150px;
 }
 
+.noRegistered{
+  color: white;
+  font-size: 4em;
+  font-weight: 450;
+}
+
 .usernameHeading h1{
   color: white;
   font-size: 4em;

@@ -40,7 +40,7 @@ const FAQ = () => {
   } )
 
   return (
-    <div className="p-5 bg-transparent text-white mx-5 text-center">
+    <div className="p-5 bg-transparent text-white text-center">
       <Accordion>
         <h2 className="FAQ">Frequently Asked Questions</h2>{" "}
         {list}
