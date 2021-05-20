@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import "./form.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "react-bootstrap";
-
-const Eye = <FontAwesomeIcon className="icon" icon={faEye} />;
-const EyeSlash = <FontAwesomeIcon className="icon" icon={faEyeSlash} />;
+const Eye = <i className="show fas fa-eye"></i>;
+const EyeSlash = <i className="show fas fa-eye-slash"></i>;
 
 const Form = () => {
   const [formdata, setformdata] = useState({

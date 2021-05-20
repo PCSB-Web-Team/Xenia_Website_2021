@@ -3,16 +3,18 @@
   font-family: "SansRegular";
 }
 
-header{
+header {
   position: relative;
   z-index: +1;
   text-align: center;
+
+  user-select: none;
 
   margin-block: 10px;
   padding-inline: 20px;
 }
 
-header .navItem{
+header .navItem {
   font-family: SansRegular;
   min-width: 135px;
   padding-block: 2px;
@@ -28,13 +30,13 @@ header .navItem{
   background-color: black; 
 }
 
-header .navItem:hover{
+header .navItem:hover {
   color: #00eeff;
   box-shadow: 0 0 10px 0 #0df0f8 inset, 0 0 20px 2px #00eeff;
   border: 3px solid #0df0f8;
 }
 
-header .active-nav{  
+header .active-nav {  
   box-shadow: 0 0 10px 0 #0df0f8 inset, 0 0 20px 2px #00eeff;
 }
 
@@ -45,16 +47,16 @@ header .navItem img {
   height: 18px;
 } 
 
-header .navBar{
+header .navBar {
   display: flex;
   justify-content: space-between;
 }
 
-.navBar .list{
+.navBar .list {
   display: flex;
 }
 
-.nav-toggler{
+.nav-toggler {
   z-index: +1;
 }
 

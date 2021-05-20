@@ -24,6 +24,7 @@ import {
 } from 'react-router-dom';
 import { getEventData, loggedIn, storeToken } from './Store/Actions';
 import { connect } from 'react-redux';
+// import ForgotPassword from './Components/Forgot/form';
 
 const App = (props) => {
 
@@ -52,7 +53,8 @@ const App = (props) => {
 				<Route exact path="/schedule">
 					{' '}
 					<Schedule />
-					<Footer />{' '}
+					<Footer />
+					{' '}
 				</Route>
 				<Route exact path="/events/:id">
 					{' '}

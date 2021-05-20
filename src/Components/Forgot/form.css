@@ -54,6 +54,10 @@ input:focus {
   box-shadow: 0 0 6px red;
 }
 
+.show {
+  color: black;
+}
+
 .eye {
   position: relative;
   display: flex;
