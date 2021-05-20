@@ -1,19 +1,21 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import './CartSummary.css';
+import IppoPay from '../../IppoPay/IppoPay';
 
-const cartSummary=(props)=> {
-    
+const cartSummary = (props) => {
+
     let sum = 0;
     let discount = 0;
 
-    props.cart.map( eve => { return (sum+=parseInt(eve.fees)) } )
+    props.cart.map(eve => { return (sum += parseInt(eve.fees)) })
 
-    
-    let totalValue = sum+discount;
+
+    let totalValue = sum + discount;
 
     return (
+
         <div className='cartSummary'>
             <div className='paymentHeading'>
                 <p className='priceSummary'>Price Summary</p>
@@ -29,7 +31,7 @@ const cartSummary=(props)=> {
                 </div>
                 <div className='paymentInner'>
                     <p>Cart Subtotal</p>
-                    <p>{discount+sum}</p>
+                    <p>{discount + sum}</p>
                 </div>
             </div>
             <div className='pmtsBox'>
@@ -38,17 +40,18 @@ const cartSummary=(props)=> {
                         <span>Total : </span>
                         <p>{totalValue}</p>
                     </div>
-                    <div className= "payBtn">
-                        <a href="\">Proceed to Pay</a>
+                    <div className="payBtn">
+                        <IppoPay />
                     </div>
                 </div>
             </div>
         </div>
+        
     )
 }
 
 const mapStatesToProps = state => {
-    return{
+    return {
         cart: state.userData.cart,
     }
 }
