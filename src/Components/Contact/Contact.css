@@ -81,31 +81,31 @@ textarea.contactFill{
 }
 
 .fa-instagram{
-  color: rgb(193,53,132);
+  color: white;
   font-size: xx-large !important;
   transition: 100ms ease;
 }
 
 .fa-facebook-official{
-  color : rgb(66,103,178);
+  color : white;
   font-size: xx-large !important;
   transition: 100ms ease;
   margin-left: 20px;
 }
 
 .fa-linkedin{
-  color : rgb(40,103,178);
+  color : white;
   font-size: xx-large !important;
   transition: 100ms ease;
   margin-left: 20px;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus {
+input.contactFill:-webkit-autofill,
+input.contactFill:-webkit-autofill:hover, 
+input.contactFill:-webkit-autofill:focus,
+textarea.contactFill:-webkit-autofill,
+textarea.contactFill:-webkit-autofill:hover,
+textarea.contactFill:-webkit-autofill:focus {
   -webkit-text-fill-color: white;
   transition: background-color 5000s ease-in-out 0s;
 }

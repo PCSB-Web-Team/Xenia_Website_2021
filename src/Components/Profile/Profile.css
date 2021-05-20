@@ -46,9 +46,11 @@
   min-height: 150px;
 }
 
-.usernameHeading {
+.usernameHeading h1{
   color: white;
+  font-size: 4em;
   font-family: Barlow;
+  font-weight: 300;
 }
 
 .Regdiv {
@@ -91,6 +93,49 @@
   }
 }
 
+
+
+.btn.btn-lg {
+  background: crimson;
+  color: white;
+}
+
+@media (min-width: 1200px) {
+  .registeredEvents {
+    margin-left: 60px;
+  }
+}
+
+
+.registeredEventsDashboard{
+  color: white;
+  padding: 20px;
+}
+
+.registeredEventsDashboard p{
+  font-size: 2.3rem;
+  color : #46bcde;
+  font-weight: 350;
+}
+
+.registeredEventsDashboard h1{
+  font-size: 3.3rem;
+  font-weight: 500;
+}
+
+.dashboardTech{
+  margin-top: 30px;
+}
+
+.dashboardNonTech{
+  margin-top: 30px;
+}
+
+.registeredEventsDashboard span{
+  color: white;
+}
+
+
 @media (max-width: 750px) {
   .RegP {
     font-size: 1.5em;
@@ -122,15 +167,18 @@
   .slotAndTypeItem {
     font-size: 1.5em;
   }
-}
 
-.btn.btn-lg {
-  background: crimson;
-  color: white;
-}
+  .registeredEventsDashboard p{
+    font-size: 1.5rem;
+    font-weight: 250;
+  }
+  
+  .registeredEventsDashboard h1{
+    font-size: 2.3rem;
+    font-weight: 300;
+  }
 
-@media (min-width: 1200px) {
-  .registeredEvents {
-    margin-left: 60px;
+  .usernameHeading h1{
+    font-size: 2.5rem;
   }
 }
