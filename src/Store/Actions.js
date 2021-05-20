@@ -78,3 +78,10 @@ export const closeLogin = () => {
         type: CLOSELOGIN
     }
 }
+
+export const paymentDetails = (details) => {
+    return {
+        type: PAYMENTDETAILS,
+        details: details
+    }
+}

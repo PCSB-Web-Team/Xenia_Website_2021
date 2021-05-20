@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Ippopay } from 'react-ippopay';
 
-const IppoPay = () => {
+const IppoPay = ({details}) => {
 
     const [ippopayOpen, setippopayOpen] = useState(false)
     const [order_id, setorder_id] = useState("order_MpBA$7Z2K")
@@ -21,6 +21,9 @@ const IppoPay = () => {
     })
 
     const ippopayOpener = () => {
+
+        //send backend details
+
         setippopayOpen(() => true)
     }
 

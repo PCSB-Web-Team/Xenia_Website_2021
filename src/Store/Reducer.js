@@ -76,6 +76,12 @@ const reducer = (state = defaultState, action) => {
 				},
 			};
 
+		case actions.PAYMENTDETAILS:
+			return {
+				...state,
+				paymentDetails: action.details
+			}
+
 		default:
 			return {
 				...state,
