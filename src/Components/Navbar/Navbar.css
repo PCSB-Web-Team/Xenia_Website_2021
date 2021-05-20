@@ -50,20 +50,20 @@ header .navBar{
   justify-content: space-between;
 }
 
-header .navBar .list{
+.navBar .list{
   display: flex;
 }
 
-header .nav-toggler{
+.nav-toggler{
   z-index: +1;
 }
 
-header .brand{
+.brand{
   font-size: 24px;
   color: white;
 }
 
-header .mob-nav {
+.mob-nav {
   
   transition: ease 500ms;
 

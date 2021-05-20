@@ -62,7 +62,7 @@ const Navbar = (props) => {
                   className="navItem"
                 >
                   {" "}
-                Slots{" "}
+                Profile{" "}
                 </NavLink>
               </div>
             ) : null}
