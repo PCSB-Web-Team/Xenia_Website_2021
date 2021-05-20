@@ -4,7 +4,10 @@ let default_state = {
     openSignUp: false,
     token: '',
     eventData: [],
-    userData: {cart: []}
+    userData: {
+        cart: [],
+    },
+    paymentDetails: []
 }
 
 export default default_state;

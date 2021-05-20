@@ -41,7 +41,7 @@ const cartSummary = (props) => {
                         <p>{totalValue}</p>
                     </div>
                     <div className="payBtn">
-                        <IppoPay />
+                        <IppoPay details = { {...props.paymentDetails, amount: totalValue} } />
                     </div>
                 </div>
             </div>
@@ -51,8 +51,16 @@ const cartSummary = (props) => {
 }
 
 const mapStatesToProps = state => {
+    
+    let user = state.userData
+
     return {
         cart: state.userData.cart,
+        paymentDetails: {
+            name: user.name,
+            email: user.email,
+            phone: user.phone,
+        }
     }
 }
 
