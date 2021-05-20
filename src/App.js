@@ -102,6 +102,7 @@ const App = (props) => {
 					<FAQ/>
 					<Footer />{' '}
 				</Route>
+				
 				<Route exact path="/webteam">
 					{' '}
 					<WebTeam />
