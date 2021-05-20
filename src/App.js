@@ -24,7 +24,7 @@ import {
 } from 'react-router-dom';
 import { getEventData, loggedIn, storeToken } from './Store/Actions';
 import { connect } from 'react-redux';
-import { Avatar } from '@material-ui/core';
+import ForgotPassword from './Components/Forgot/form';
 
 const App = (props) => {
 
@@ -53,7 +53,8 @@ const App = (props) => {
 				<Route exact path="/schedule">
 					{' '}
 					<Schedule />
-					<Footer />{' '}
+					<Footer />
+					{' '}
 				</Route>
 				<Route exact path="/events/:id">
 					{' '}
@@ -106,6 +107,11 @@ const App = (props) => {
 					<WebTeam />
 					<Footer />{' '}
 				</Route>
+				
+				<Route exact path="/reset-password">
+					<ForgotPassword/>
+				</Route>
+
 				<Route exact path="/">
 					{' '}
 					<Home />{' '}

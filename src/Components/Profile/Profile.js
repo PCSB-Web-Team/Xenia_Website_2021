@@ -7,21 +7,21 @@ import { loggedOut  } from "../../Store/Actions";
 import { Link } from "react-router-dom";
 
 const MyProf = (props) => {
-  const showDetails = useCallback((e) => {
-    const cont = document.querySelector(".registeredEventInfo");
+  // const showDetails = useCallback((e) => {
+  //   const cont = document.querySelector(".registeredEventInfo");
 
-    cont.innerHTML = `<div class="slotDetails">
-                <h1 class="registeredEventInfoName">${e.target.textContent}</h1>
-                <div class="slotAndType">
-                    <h1 class="slotAndTypeItem">Slot Details </h1><h1 class="slotAndTypeItem">Event Type</h1>
-                </div>
-            </div>`;
-  }, []);
+  //   cont.innerHTML = `<div class="slotDetails">
+  //               <h1 class="registeredEventInfoName">${e.target.textContent}</h1>
+  //               <div class="slotAndType">
+  //                   <h1 class="slotAndTypeItem">Slot Details </h1><h1 class="slotAndTypeItem">Event Type</h1>
+  //               </div>
+  //           </div>`;
+  // }, []);
 
   let list = props.cart.map((eve) => {
     return (
       <div className="Regdiv" key={eve._id}>
-        <h3 className="RegP" onMouseEnter={showDetails}>
+        <h3 className="RegP">
           {eve.name}{" "}
         </h3>
       </div>
@@ -38,21 +38,18 @@ const MyProf = (props) => {
           {list.length > 0 ? (
             list
           ) : (
-            <h1 className="usernameHeading">No Registered Events</h1>
+            <h1 className="noRegistered">No Registered Events</h1>
           )}
         </div>
-        <div className="registeredEventInfo">
-          {props.cart.length === 0 ? (
-            <h1 className="usernameHeading">No Event Registered</h1>
-          ) : (
-            <div className="slotDetails">
-              <h1 className="registeredEventInfoName">{props.cart[0].name}</h1>
-              <div className="slotAndType">
-                <h1 className="slotAndTypeItem">Slot Details </h1>
-                <h1 className="slotAndTypeItem">Event Type</h1>
-              </div>
-            </div>
-          )}
+        <div className="registeredEventsDashboard">
+          <h1>DASHBOARD</h1>
+          <div className="dashboardTech">
+            <p>Technical Events : <span>1</span></p>
+            <p>Non Technical Events : <span>1</span></p>
+          </div>
+          <div className="dashboardNonTech">
+
+          </div>
         </div>
       </div>
 

@@ -49,10 +49,10 @@ const Contact = () => {
         <div className="phoneAndMail">
           <h3>Phone and Mail</h3>
           <p>
-            Phone <span>9999999999</span>
+            <i className="fa fa-phone"></i> <span style={{marginLeft:'5px'}}> 9999999999</span>
           </p>
           <p>
-            Mail <span>abc@mail.com</span>
+          <i className="fa fa-envelope"></i> <span style={{marginLeft:'5px'}}> abc@mail.com</span>
           </p>
         </div>
         <div className="socialMedia">

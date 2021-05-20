@@ -10,6 +10,7 @@ export const OPENSIGNUP = 'OPENSIGNUP';
 export const TOGGLELOGIN = 'TOGGLELOGIN';
 export const CLOSELOGIN = 'CLOSELOGIN';
 
+export const PAYMENTDETAILS = "PAYMENTDETAILS";
 
 export const loggedIn = (userData) => {
 

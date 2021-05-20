@@ -6,9 +6,8 @@ import Loader     from '../Loader/Loader';
 import './Cards/Card.css';
 import './Events.css';
 import Card from './Cards/Card';
-import {getEventData} from '../../Store/Actions';
 
-const Events = (props) => {
+const Events = () => {
   
   const [eventType, setEventType] = useState('tech');
 //  const [view, setView] = useState('cards');
@@ -72,18 +71,4 @@ const Events = (props) => {
   )
 }
 
-const mapStatesToProps = state => {
-
-  return {
-    eventData: state.eventData
-  }
-
-}
-
-const mapActionsToProps = dispatch => {
-  return {
-    storeEventData: (details) => { dispatch( getEventData( details ) ) }
-  }
-}
-
-export default connect( mapStatesToProps, mapActionsToProps )( Events );
+export default Events;
