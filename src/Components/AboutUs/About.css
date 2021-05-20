@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  margin-bottom: 50px;
 }
 
 .hero {
@@ -19,6 +20,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
 .content1 h1 {
   margin: 10px auto;
   width: 70%;
@@ -60,26 +62,6 @@
   width: 70%;
   display: inline-flex;
   font-family: Barlow;
-}
-
-.eventContent {
-  display: block;
-  width: 75%;
-  padding: 3rem;
-}
-
-.event-info {
-  width: 85%;
-}
-
-.event-info h3 {
-  font-family: SansBold;
-  color: #ffffff;
-}
-
-.event-info p {
-  font-family: Barlow;
-  color: #ffffff;
 }
 
 .about-us h1 {

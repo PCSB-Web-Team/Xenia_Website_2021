@@ -16,6 +16,30 @@ import { openLogin } from '../../Store/Actions';
 
 const Navbar = (props) => {
 
+  const openNavBar = () => {
+
+    let cross = document.getElementsByClassName("nav-close");
+    let list = document.getElementsByClassName("nav-list");
+
+    list[0].classList.toggle("mob-nav")
+    list[0].classList.toggle("list")
+
+    cross[0].style.display = "block"
+
+  }
+
+  const closeNavBar = () => {
+
+    let cross = document.getElementsByClassName("nav-close");
+    let list = document.getElementsByClassName("nav-list");
+
+    list[0].classList.toggle("mob-nav")
+    list[0].classList.toggle("list")
+
+    cross[0].style.display = "none"
+
+  }
+
   return (
     <div>
 
@@ -32,65 +56,55 @@ const Navbar = (props) => {
 
       <header className='Header'>
 
-        <nav className="navbar navbar-expand-lg navbar-dark">
-          <div className="container-fluid">
+        <div className='navBar'>
 
-            <span className="navbar-brand">XENIA</span>
+          <div className='brand'> XENIA </div>
 
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon text-black"></span>
-            </button>
+          <div className='list nav-list'>
+            <div><NavLink className='navItem' activeClassName='active-nav' exact to='/'> Home </NavLink></div>
+            <div><NavLink className='navItem' activeClassName='active-nav' to='/schedule'> Schedule </NavLink></div>
+            <div><NavLink className='navItem' activeClassName='active-nav' to='/events'> Events </NavLink></div>
+            <div><NavLink className='navItem' activeClassName='active-nav' to='/side-events'> Side Events </NavLink></div>
+            <div><NavLink className='navItem' activeClassName='active-nav' to='/sponsors'> Sponsors </NavLink></div>
+            {props.isLoggedIn ? null : <div className='navItem' activeClassName='active-nav' onClick={props.openLogin}> Login </div>}
 
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center">
-                <NavLink className='nav-item' activeClassName='active-nav' exact to='/'> Home </NavLink>
-                <NavLink className='nav-item' activeClassName='active-nav' to='/schedule'> Schedule </NavLink>
-                <NavLink className='nav-item' activeClassName='active-nav' to='/events'> Events </NavLink>
-                <NavLink className='nav-item' activeClassName='active-nav' to='/about-us'> About Us </NavLink>
-                <NavLink className='nav-item' activeClassName='active-nav' to='/sponsors'> Sponsors </NavLink>
-                {props.isLoggedIn ? null : <div className='nav-item' activeClassName='active-nav' onClick={props.openLogin}> Login </div>}
-
-                {props.isLoggedIn ? (
-                  <NavLink
-                    to="/profile"
-                    activeClassName="active-nav"
-                    className="nav-item"
-                  >
-                    {" "}
+            {props.isLoggedIn ? (
+              <div>
+                <NavLink
+                  to="/profile"
+                  activeClassName="active-nav"
+                  className="navItem"
+                >
+                  {" "}
                 Slots{" "}
-                  </NavLink>
-                ) : null}
+                </NavLink>
+              </div>
+            ) : null}
 
-                {props.isLoggedIn ? (
-                  <NavLink to='/cart'
-                    className="nav-item nav-cart"
-                    activeClassName='active-nav'
-                    id="cart"
-                  >
-                    <img src={cart} alt=''></img>
-                    {/* <span> {props.cart.length} </span> */}
-                    
-                    <i
-                      className="footerIcon fa fa-cart"
-                      aria-hidden="true"
-                    ></i>
-                  
-                  </NavLink>
-                ) : null}
+            {props.isLoggedIn ? (
+              <div>
+                <NavLink to='/cart'
+                  className="navItem nav-cart"
+                  activeClassName='active-nav'
+                  id="cart"
+                >
+                  <img src={cart} alt=''></img>
 
-              </ul>
-            </div>
+                  <i
+                    className="footerIcon fa fa-cart"
+                    aria-hidden="true"
+                  ></i>
 
+                </NavLink>
+              </div>
+            ) : null}
           </div>
-        </nav>
+
+          <div><div onClick={openNavBar} className="navbar-toggler">&#9776; </div></div>
+          <div onClick={closeNavBar} className='nav-close'>X</div>
+
+        </div>
+
       </header>
 
     </div>

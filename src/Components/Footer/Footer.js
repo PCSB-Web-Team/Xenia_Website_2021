@@ -127,6 +127,7 @@ const Footer = (props) => {
               <li className="list-inline-item">
                 <a
                   href="http://www.linkedin.com/company/pict-csi"
+                  target='_blank'
                   className="btn-floating btn-lg btn-ldi mx-1"
                 >
                   <i
@@ -138,6 +139,7 @@ const Footer = (props) => {
               <li className="list-inline-item">
                 <a
                   href="http://www.facebook.com/csipict"
+                  target='_blank'
                   className="btn-floating btn-lg btn-fb mx-1"
                 >
                   <i
@@ -150,6 +152,7 @@ const Footer = (props) => {
                 <a
                   href="http://www.instagram.com/csipict"
                   className="btn-floating btn-lg btn-itg mx-1"
+                  target='_blank'
                 >
                   <i
                     className="footerIcon fa fa-instagram"

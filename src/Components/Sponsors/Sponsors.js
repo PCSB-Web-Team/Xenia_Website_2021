@@ -8,6 +8,7 @@ import Google from "../../Assets/Images/SponsorImages/Google.jpg";
 import Lg from "../../Assets/Images/SponsorImages/Lg.jpg";
 import Microsoft from "../../Assets/Images/SponsorImages/Microsoft.jpg";
 import Netflix from "../../Assets/Images/SponsorImages/Netflix.jpg";
+import Sponsor from "../../Assets/Images/main_bg.jpg";
 // import Tata from "../../Assets/Images/SponsorImages/Tata.jpg";
 // import Vodafone from "../../Assets/Images/SponsorImages/Vodafone.jpg";
 
@@ -19,7 +20,7 @@ const Sponsors = () => {
         <div className="mainboxItemtitle">
           <img
             className="mainboxImagetitle"
-            src={Netflix}
+            src={Sponsor}
             alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer"
           ></img>
         </div>
@@ -28,7 +29,7 @@ const Sponsors = () => {
         <div className="mainboxItem">
           <img
             className="mainboxImage1"
-            src={Amazon}
+            src={Sponsor}
             alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer"
           ></img>
         </div>
@@ -36,7 +37,7 @@ const Sponsors = () => {
         <div className="mainboxItem">
           <img
             className="mainboxImage2"
-            src={Codechef}
+            src={Sponsor}
             alt="sunset behind San Francisco city skyline"
           ></img>
         </div>
@@ -44,7 +45,7 @@ const Sponsors = () => {
         <div className="mainboxItem">
           <img
             className="mainboxImage3"
-            src={Facebook}
+            src={Sponsor}
             alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan"
           ></img>
         </div>
@@ -52,7 +53,7 @@ const Sponsors = () => {
         <div className="mainboxItem">
           <img
             className="mainboxImage4"
-            src={Google}
+            src={Sponsor}
             alt="car interior from central back seat position showing driver and blurred view through windscreen of a busy road at night"
           ></img>
         </div>
@@ -60,7 +61,7 @@ const Sponsors = () => {
         <div className="mainboxItem">
           <img
             className="mainboxImage5"
-            src={Lg}
+            src={Sponsor}
             alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA"
           ></img>
         </div>
@@ -68,7 +69,7 @@ const Sponsors = () => {
         <div className="mainboxItem">
           <img
             className="mainboxImage6"
-            src={Microsoft}
+            src={Sponsor}
             alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp"
           ></img>
         </div>

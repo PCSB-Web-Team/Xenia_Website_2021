@@ -1,0 +1,56 @@
+
+.side-events {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.eventContent {
+    display: block;
+    width: 75%;
+    padding: 3rem;
+  }
+  
+  .event-info {
+    width: 85%;
+  }
+  
+  .event-info h3 {
+    font-family: SansBold;
+    color: #ffffff;
+  }
+  
+  .event-info p {
+    font-family: Barlow;
+    color: #ffffff;
+  }
+
+  @media (max-width: 676px) {
+    .eventContent {
+      padding: 5px !important;
+      text-align: center !important;
+      margin: 0px 20px !important;
+      width: 90%;
+    }
+    .event-info {
+      text-align: center !important;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .content h1 {
+      font-size: 40px;
+    }
+    .content {
+      margin-top: 10px;
+      padding: 5px !important;
+    }
+    .content .firstChild {
+      font-size: 70px;
+    }
+    .content p {
+      font-size: 10px;
+    }
+  }
