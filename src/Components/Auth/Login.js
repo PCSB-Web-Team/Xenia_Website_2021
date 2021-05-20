@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import sendEmail from "./sendEmail";
 // import axios from "axios";
 import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 import { loginFail, loginSuccess } from "../Notifications/Notification";
 import { login, getLoggedInUser } from "../Config/api/User";
 import {
@@ -51,6 +52,11 @@ const Login = (props) => {
     } else {
       return null;
     }
+  };
+
+  const forgotPassword = () => {
+    sendEmail();
+    console.log("Email");
   };
 
   return (
@@ -148,11 +154,18 @@ const Login = (props) => {
               </span>
             </div>
             <div className="text-center">
-              <span
-                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
-              >
-                forgot password
-              </span>
+              <Link to="/reset-password">
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    color: "blue",
+                    cursor: "pointer",
+                  }}
+                  onClick={forgotPassword}
+                >
+                  forgot password
+                </span>
+              </Link>
             </div>
           </form>
         </Modal.Body>

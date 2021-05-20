@@ -16,7 +16,7 @@ const Question = ({ question, answer, sr }) => {
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey={sr}>
-          <Card.Body style={{ color: "#00b4d8", background: "transparent" }}>
+          <Card.Body style={{ color: "white", background: "transparent" }}>
             {answer}
           </Card.Body>
         </Accordion.Collapse>
@@ -24,5 +24,7 @@ const Question = ({ question, answer, sr }) => {
     </>
   );
 };
+
+// #00b4d8
 
 export default Question;

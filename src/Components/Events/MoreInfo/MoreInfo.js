@@ -13,13 +13,14 @@ import { addToCartBackend } from "../../Config/api/User";
 import { addToCartSuccess, addToCartFail } from '../../Notifications/Notification';
 
 const MoreInfo = (props) => {
+  
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [insideCart, setInsideCart] = useState(false);
 
   let { id } = useParams();
 
-  const checkInsideCart = (eveId) => {
+  const checkInsideCart = () => {
     setInsideCart(false);
     props.cart.forEach((eve) => {
       if (eve._id === id) setInsideCart(true);

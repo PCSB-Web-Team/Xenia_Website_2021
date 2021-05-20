@@ -25,7 +25,7 @@
   align-items: flex-start;
   justify-content: center;
 
-  color: aqua;
+  color: #00b4d8;
 
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -104,7 +104,7 @@
 
   50% {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-      0 6px 100px 0 rgba(0, 255, 255, 0.9);
+      0 6px 100px 0 #00b4d8;
   }
 
   100% {
@@ -116,7 +116,7 @@
 .event-card:hover .card-body {
   color: black;
   transition: ease 500ms;
-  background: rgba(0, 247, 255, 0.644);
+  background: #00b4d8;
 }
 
 @media (max-width: 450px) {
