@@ -15,7 +15,6 @@ import {
 } from "../../Store/Actions";
 
 const Login = (props) => {
-  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -73,7 +72,7 @@ const Login = (props) => {
           <Modal.Title>
             <div className="d-flex flex-column text-center">
               <img
-                alt='welcome-back'
+                alt="welcome-back"
                 src={astronaut}
                 className="img-fluid"
                 style={styles.imageStyles}
@@ -142,10 +141,17 @@ const Login = (props) => {
             <div className="text-center my-2">
               Don't have an account ?{" "}
               <span
-                style={{ fontWeight: "bold", color: "blue", cursor: 'pointer'}}
+                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
                 onClick={props.toggleLogin}
               >
                 Sign Up
+              </span>
+            </div>
+            <div className="text-center">
+              <span
+                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
+              >
+                forgot password
               </span>
             </div>
           </form>
