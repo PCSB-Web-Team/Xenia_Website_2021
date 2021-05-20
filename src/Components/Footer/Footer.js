@@ -9,7 +9,7 @@ import {openLogin} from '../../Store/Actions';
 const Footer = (props) => {
   return (
     <div>
-      <BackToTop></BackToTop>
+      <BackToTop/>
 
       <MDBFooter className="pageFooter pt-0">
         <MDBContainer className="mt-2 mb-2 text-center">

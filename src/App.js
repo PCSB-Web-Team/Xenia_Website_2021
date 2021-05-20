@@ -24,7 +24,6 @@ import {
 } from 'react-router-dom';
 import { getEventData, loggedIn, storeToken } from './Store/Actions';
 import { connect } from 'react-redux';
-import { Avatar } from '@material-ui/core';
 
 const App = (props) => {
 

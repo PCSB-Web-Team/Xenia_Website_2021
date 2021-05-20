@@ -45,16 +45,16 @@ header .navItem img {
   height: 18px;
 } 
 
-.navBar{
+header .navBar{
   display: flex;
   justify-content: space-between;
 }
 
-.navBar .list{
+header .navBar .list{
   display: flex;
 }
 
-.nav-toggler{
+header .nav-toggler{
   z-index: +1;
 }
 
@@ -63,7 +63,7 @@ header .brand{
   color: white;
 }
 
-.mob-nav {
+header .mob-nav {
   
   transition: ease 500ms;
 
