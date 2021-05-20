@@ -1,11 +1,12 @@
 import React from "react";
 import "./LandingPage.css";
-import bg from "../../Assets/Images//LandingPage/xeniabg3.jpg";
+import bg from "../../Assets/Images//LandingPage/bg.jpg";
 import astranout from "../../Assets/Images//LandingPage/astranout.png";
 import shuttle from "../../Assets/Images//LandingPage/spaceshuttle.png";
 import lake from "../../Assets/Images//LandingPage/lake.png";
 import layer3 from "../../Assets/Images//LandingPage/jupiter.jpg";
 import Fade from 'react-reveal/Fade';
+import XeniaLogo from '../../Assets/Images/Xenia 21 Final.png';
 
 const LandingPage = () => {
     
@@ -36,7 +37,7 @@ const LandingPage = () => {
     return (
       <div className="landing-page">
         <div className="landing-container" onMouseMove={handleMove}>
-          <Fade> <h1 id="xenia">XENIA</h1> </Fade>
+          {/* <Fade> <h1 id="xenia">XENIA</h1> </Fade> */}
           <span id="date">14 - 16 March</span>
 
           <div className="bg">
@@ -51,9 +52,12 @@ const LandingPage = () => {
           {/* <div className="SpaceShip">
             <img src={shuttle} alt=''></img>
           </div> */}
+
           <div className="astranout">
             <img src={astranout} alt=''></img>
           </div>
+          
+          <Fade><div className='logo-div'> <img src={XeniaLogo}></img> </div></Fade>
         </div>
       </div>
     );
