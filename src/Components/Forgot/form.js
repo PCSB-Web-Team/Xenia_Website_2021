@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./form.css";
+// import "./form.css";
 import { Button } from "react-bootstrap";
 const Eye = <i className="show fas fa-eye"></i>;
 const EyeSlash = <i className="show fas fa-eye-slash"></i>;
