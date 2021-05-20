@@ -23,7 +23,6 @@ const IppoPay = ({ details }) => {
     //send backend details
     const res = await payAmount(details);
     console.log(res.data);
-
     setippopayOpen(() => true);
   };
 
