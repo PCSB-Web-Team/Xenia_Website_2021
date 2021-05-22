@@ -28,6 +28,10 @@
   align-items: center;
 }
 
+.logo-div img{
+  max-width: 80%;
+}
+
 .logo-div .event-date{
   font-family: "planetn";
   color: white;
@@ -347,6 +351,10 @@
     top: 36%;
     left: 54%;
     transition: ease 1s;
+  }
+
+  .logo-div .event-date{
+    font-size: 25px;
   }
 }
 

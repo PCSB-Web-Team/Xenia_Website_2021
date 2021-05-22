@@ -2,10 +2,10 @@ import React from "react";
 import "./LandingPage.css";
 import bg from "../../Assets/Images//LandingPage/bg.jpg";
 import astranout from "../../Assets/Images//LandingPage/astranout.png";
-import shuttle from "../../Assets/Images//LandingPage/spaceshuttle.png";
+// import shuttle from "../../Assets/Images//LandingPage/spaceshuttle.png";
 import lake from "../../Assets/Images//LandingPage/lake.png";
-import layer3 from "../../Assets/Images//LandingPage/jupiter.jpg";
-import Zoom from 'react-reveal/Zoom';
+// import layer3 from "../../Assets/Images//LandingPage/jupiter.jpg";
+// import Zoom from 'react-reveal/Zoom';
 import Fade from 'react-reveal/Slide';
 import XeniaLogo from '../../Assets/Images/Xenia 21 Final.png';
 
@@ -58,12 +58,12 @@ const LandingPage = () => {
           <img src={astranout} alt=''></img>
         </div>
 
-        <Zoom cascade in>
+        <Fade cascade>
           <div className='logo-div'>
             <img src={XeniaLogo} />
             <div className='event-date'>14 - 16 March</div>
           </div>
-        </Zoom>
+        </Fade>
         
       </div>
     </div>
