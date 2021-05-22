@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 // import axios from "axios";
 import astronaut from "../../Assets/Images/astronaut.png";
@@ -9,6 +9,7 @@ import { toggleLogin, openSignUp, closeLogin } from "../../Store/Actions";
 import { signUpSuccess, signUpFail } from "../Notifications/Notification";
 
 const Register = (props) => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [college, setCollege] = useState("");
@@ -16,14 +17,14 @@ const Register = (props) => {
   const [error, setError] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = { password, college, email, phone };
+    const user = { name, password, college, email, phone };
     const res = await register(user);
 
     console.log(res.data);
 
     if (res.data.ok) {
       signUpSuccess();
-      this.props.toggle();
+      props.toggleLogin();
     } else {
       signUpFail();
       setError("Invalid Credentials");
@@ -62,7 +63,7 @@ const Register = (props) => {
           <Modal.Title>
             <div className="d-flex flex-column text-center">
               <img
-                alt='sign-up'
+                alt="sign-up"
                 src={astronaut}
                 className="img-fluid"
                 style={styles.imageStyles}
@@ -79,6 +80,23 @@ const Register = (props) => {
         </Modal.Header>
         <Modal.Body style={{ background: "#131313", color: "#ffff" }}>
           <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-user"></i>
+                  </div>
+                </div>
+                <input
+                  className="form-control"
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+            </div>
             <div className="form-group">
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -175,7 +193,7 @@ const Register = (props) => {
             <div className="text-center my-2">
               Already have an account ?{" "}
               <span
-                style={{ fontWeight: "bold", color: "blue", cursor: 'pointer' }}
+                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
                 onClick={props.toggleLogin}
               >
                 Login

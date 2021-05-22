@@ -84,7 +84,7 @@ const Navbar = (props) => {
             </div>
 
             <div><div onClick={openNavBar} className="navbar-toggler">&#9776; </div></div>
-            <div onClick={closeNavBar} className='nav-close'>X</div>
+            <div onClick={closeNavBar} className='nav-close'><i class="fa fa-close"></i></div>
           </Zoom>
 
         </div>

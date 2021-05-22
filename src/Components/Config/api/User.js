@@ -14,14 +14,21 @@ export const getLoggedInUser = (token) => {
 };
 
 export const addToCartBackend = (data, token) => {
-
   return axiosInstance.post(`user/add-to-cart`, data, {
     headers: { Authorization: token },
   });
 };
 
 export const removeFromCartBackend = (data, token) => {
-  return axiosInstance.post(`user/remove-from-cart`, { eventId : data }, {
-    headers: { Authorization: token },
-  });
+  return axiosInstance.post(
+    `user/remove-from-cart`,
+    { eventId: data },
+    {
+      headers: { Authorization: token },
+    }
+  );
+};
+
+export const payAmount = (details) => {
+  return axiosInstance.post("http://localhost:5000/api/payment", details);
 };

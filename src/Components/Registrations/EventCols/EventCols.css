@@ -23,3 +23,20 @@
   /* border: 4px solid salmon; */
   box-sizing: border-box;
 }
+
+.Event {
+  /* border: 2px solid crimson; */
+  box-sizing: border-box;
+  font-family: SansBold;
+}
+
+@media (min-width: 1280px) {
+  .Event {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+}
+
+#EveName {
+  font-family: Barlow;
+}

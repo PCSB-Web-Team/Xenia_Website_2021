@@ -28,6 +28,14 @@
   align-items: center;
 }
 
+.logo-div .event-date{
+  font-family: "planetn";
+  color: white;
+  font-weight: 400;
+  font-size: 38px;
+  margin-bottom: 80px;
+}
+
 .layer3 {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -148,7 +156,7 @@
   width: 100%;
 }
 
-.SpaceShip {
+/* .SpaceShip {
   z-index: 100;
   width: 200px;
   height: 400px;
@@ -166,7 +174,7 @@
   animation-name: shuttle;
   animation-duration: 20s;
   animation-iteration-count: infinite;
-}
+} */
 
 @keyframes shuttle {
   0% {

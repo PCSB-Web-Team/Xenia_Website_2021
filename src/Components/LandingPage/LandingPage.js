@@ -5,12 +5,13 @@ import astranout from "../../Assets/Images//LandingPage/astranout.png";
 import shuttle from "../../Assets/Images//LandingPage/spaceshuttle.png";
 import lake from "../../Assets/Images//LandingPage/lake.png";
 import layer3 from "../../Assets/Images//LandingPage/jupiter.jpg";
-import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Slide';
 import XeniaLogo from '../../Assets/Images/Xenia 21 Final.png';
 
 const LandingPage = () => {
-    
-    const handleMove = (e) => {
+
+  const handleMove = (e) => {
 
     const box = document.querySelector(".astranout");
 
@@ -34,33 +35,39 @@ const LandingPage = () => {
 
   };
 
-    return (
-      <div className="landing-page">
-        <div className="landing-container" onMouseMove={handleMove}>
-          {/* <Fade> <h1 id="xenia">XENIA</h1> </Fade> */}
-          <span id="date">14 - 16 March</span>
+  return (
+    <div className="landing-page">
+      <div className="landing-container" onMouseMove={handleMove}>
+        {/* <Fade> <h1 id="xenia">XENIA</h1> </Fade> */}
+        {/* <span id="date">14 - 16 March</span> */}
 
-          <div className="bg">
-            <img src={bg} alt=''></img>
-          </div>
-          {/* <div className="layer3">
+        <div className="bg">
+          <img src={bg} alt=''></img>
+        </div>
+        {/* <div className="layer3">
             <img src={layer3} alt=''></img>
           </div> */}
-          <div className="lake">
-            <img src={lake} alt=''></img>
-          </div>
-          {/* <div className="SpaceShip">
+        <div className="lake">
+          <img src={lake} alt=''></img>
+        </div>
+        {/* <div className="SpaceShip">
             <img src={shuttle} alt=''></img>
           </div> */}
 
-          <div className="astranout">
-            <img src={astranout} alt=''></img>
-          </div>
-          
-          <Fade><div className='logo-div'> <img src={XeniaLogo}></img> </div></Fade>
+        <div className="astranout">
+          <img src={astranout} alt=''></img>
         </div>
+
+        <Zoom cascade in>
+          <div className='logo-div'>
+            <img src={XeniaLogo} />
+            <div className='event-date'>14 - 16 March</div>
+          </div>
+        </Zoom>
+        
       </div>
-    );
-  }
+    </div>
+  );
+}
 
 export default LandingPage;
