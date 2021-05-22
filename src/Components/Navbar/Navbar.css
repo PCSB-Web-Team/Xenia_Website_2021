@@ -21,23 +21,22 @@ header .navItem {
   text-transform: uppercase;
   cursor: pointer;
   display: inline-block;
-  border: 3px solid #00b4d8;
+  border: 3px solid rgba(0, 0, 0, 0);
   border-radius: 50px;
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
   color: #00b4d8;
   margin-inline: 20px;
-  background-color: black; 
   font-weight: 600;
 }
 
 header .navItem:hover {
-  color: #00b4d8;
-  box-shadow: 0 0 10px 0 #00b4d8 inset, 0 0 20px 2px #00eeff;
-  border: 3px solid #00b4d8;
+  color: aqua;
+  border: 3px solid aqua;
 }
 
 header .active-nav {  
+  border: 3px solid aqua;
   box-shadow: 0 0 10px 0 #00b4d8 inset, 0 0 20px 2px #00eeff;
 }
 
@@ -100,6 +99,8 @@ header .navBar {
   color: white;
   display: none;
   z-index: +1;
+  
+  -webkit-transition: all 0.15s ease-in-out;
 }
 
 .nav-close:hover{

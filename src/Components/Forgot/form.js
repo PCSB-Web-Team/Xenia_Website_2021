@@ -1,117 +1,60 @@
 import React, { useState } from "react";
-// import "./form.css";
-import { Button } from "react-bootstrap";
-const Eye = <i className="show fas fa-eye"></i>;
-const EyeSlash = <i className="show fas fa-eye-slash"></i>;
+import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
+import "./form.css";
 
 const Form = () => {
-  const [formdata, setformdata] = useState({
-    newPassword: "",
-    confirmPassword: "",
-  });
 
-  const { newPassword, confirmPassword } = formdata;
+  const [error, seterror] = useState(null);
+  const [message, setmessage] = useState(null);
 
-  const [type1, settype1] = useState("password");
-  const [type2, settype2] = useState("password");
 
-  const [error, seterror] = useState("");
+  const ValidateEmail = () => {
 
-  const change = (e) => {
-    setformdata({ ...formdata, [e.target.name]: e.target.value });
-  };
+    const input = document.getElementById("input-email")
 
-  const submit = (e) => {
-    e.preventDefault();
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    let pass1 = document.getElementById("pass1").value;
-    let pass2 = document.getElementById("pass2").value;
+    console.log(input.value);
 
-    if (pass1 !== pass2) {
-      seterror("Passwords do not match");
+    if (input.value.match(validRegex)) {
+
+      seterror(null);
+      return true;
+
     } else {
-      seterror("");
-      setformdata({
-        newPassword: "",
-        confirmPassword: "",
-      });
-    }
-  };
 
-  const toggleView1 = () => {
-    if (type1 === "password") {
-      settype1("text");
-    } else {
-      settype1("password");
-    }
-  };
+      seterror("Invalid email address!");
+      input.focus();
+      return false;
 
-  const toggleView2 = () => {
-    if (type2 === "password") {
-      settype2("text");
-    } else {
-      settype2("password");
     }
-  };
+  }
 
-  const myStyle = {
-    color: "red",
-    paddingBottom: "10px",
-  };
+  const handleSubmit = () => {
+
+    if (ValidateEmail()) {
+      setmessage("Please Check Your Mail!")
+    }
+    else {
+      console.log(error)
+    }
+  }
 
   return (
-    <div>
-      <form>
-        <div className="grid">
-          <div className="topic">Reset Password</div>
-          <div className="label">New Password:</div>
-          <div className="eye">
-            <input
-              id="pass1"
-              type={type1}
-              placeholder="Enter new Password"
-              value={newPassword}
-              name="newPassword"
-              onChange={change}
-            ></input>
-
-            {type1 === "password" ? (
-              <i onClick={toggleView1}>{EyeSlash}</i>
-            ) : (
-              <i onClick={toggleView1}>{Eye}</i>
-            )}
-          </div>
-
-          <div className="label">Confirm New Password:</div>
-          <div className="eye">
-            <input
-              id="pass2"
-              type={type2}
-              placeholder="Confirm new Password"
-              value={confirmPassword}
-              name="confirmPassword"
-              onChange={change}
-            ></input>
-
-            {type2 === "password" ? (
-              <i onClick={toggleView2}>{EyeSlash}</i>
-            ) : (
-              <i onClick={toggleView2}>{Eye}</i>
-            )}
-          </div>
-          <span style={myStyle}>{error}</span>
-          <div className="buttons">
-            <div className="submitButton">
-              <Button className="bclass" onClick={submit}>
-                SUBMIT
-              </Button>
-            </div>
-            <div className="cancelButton">
-              <Button className="bclass">CANCEL</Button>
-            </div>
-          </div>
+    <div className='forgot-password'>
+      <div className='form-box'>
+        <div className='title'>Enter Your Email</div>
+        <input type='email' placeholder='abc@gmail.com' id='input-email' ></input>
+        <div className='alerts'>
+          <span className='error'>{error}</span>
+          <span className='message'>{message}</span>
         </div>
-      </form>
+        <div className='button-group'>
+          <Link to='/'><button className='cancel'>Cancel</button></Link>
+          <button className='send' onClick={handleSubmit}>Send Mail</button>
+        </div>
+      </div>
     </div>
   );
 };

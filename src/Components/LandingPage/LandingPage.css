@@ -17,6 +17,29 @@
   user-select: none;
 }
 
+.logo-div{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: +100;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-div img{
+  max-width: 80%;
+}
+
+.logo-div .event-date{
+  font-family: "planetn";
+  color: white;
+  font-weight: 400;
+  font-size: 38px;
+  margin-bottom: 80px;
+}
+
 .layer3 {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -91,7 +114,7 @@
 
   user-select: none;
   -webkit-user-drag: none;
-  background: linear-gradient(rgba(1, 47, 78, 0.5) 40%,rgba(2, 133, 255, 0.61) 70%);
+  background: linear-gradient(rgba(0, 81, 105, 0.3) 40%,rgba(2, 133, 255, 0.7) 70%);
   z-index: 99;
   height: 100%;
   width: 110%;
@@ -137,7 +160,7 @@
   width: 100%;
 }
 
-.SpaceShip {
+/* .SpaceShip {
   z-index: 100;
   width: 200px;
   height: 400px;
@@ -155,7 +178,7 @@
   animation-name: shuttle;
   animation-duration: 20s;
   animation-iteration-count: infinite;
-}
+} */
 
 @keyframes shuttle {
   0% {
@@ -328,6 +351,10 @@
     top: 36%;
     left: 54%;
     transition: ease 1s;
+  }
+
+  .logo-div .event-date{
+    font-size: 25px;
   }
 }
 

@@ -1,7 +1,17 @@
 import React from "react";
 import "./EventCols.css";
-import Event from "./Event/Event";
 import Grid from "@material-ui/core/Grid";
+
+const Event = props => {
+  return (
+    <div className="Event">
+      <p>
+        <img width="50" alt=''></img>
+        {props.name}
+      </p>
+    </div>
+    )
+}
 
 const eventCols = (props) => {
   const eves = props.eventNames;

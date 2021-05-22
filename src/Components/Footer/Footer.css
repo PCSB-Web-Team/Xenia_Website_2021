@@ -82,3 +82,17 @@
     width: 50%;
   }
 }
+
+/* Get Back To Top */
+
+.backtotop {
+  background: rgba(0, 0, 0, 0.14);
+  padding: 10px;
+  text-align: center;
+  color: white;
+  margin: 30px 0px;
+}
+
+.backtotop h4 {
+  font-family: SansBold;
+}

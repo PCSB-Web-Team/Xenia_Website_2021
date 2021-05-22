@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import sendEmail from "./sendEmail";
 // import axios from "axios";
 import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 import { loginFail, loginSuccess } from "../Notifications/Notification";
 import { login, getLoggedInUser } from "../Config/api/User";
 import {
@@ -15,7 +16,6 @@ import {
 } from "../../Store/Actions";
 
 const Login = (props) => {
-  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -54,6 +54,11 @@ const Login = (props) => {
     }
   };
 
+  const forgotPassword = () => {
+    sendEmail();
+    console.log("Email");
+  };
+
   return (
     <div>
       <Modal
@@ -73,7 +78,7 @@ const Login = (props) => {
           <Modal.Title>
             <div className="d-flex flex-column text-center">
               <img
-                alt='welcome-back'
+                alt="welcome-back"
                 src={astronaut}
                 className="img-fluid"
                 style={styles.imageStyles}
@@ -142,11 +147,25 @@ const Login = (props) => {
             <div className="text-center my-2">
               Don't have an account ?{" "}
               <span
-                style={{ fontWeight: "bold", color: "blue", cursor: 'pointer'}}
+                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
                 onClick={props.toggleLogin}
               >
                 Sign Up
               </span>
+            </div>
+            <div className="text-center">
+              <Link to="/reset-password">
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    color: "blue",
+                    cursor: "pointer",
+                  }}
+                  onClick={forgotPassword}
+                >
+                  forgot password
+                </span>
+              </Link>
             </div>
           </form>
         </Modal.Body>
