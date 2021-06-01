@@ -154,7 +154,7 @@ const Login = (props) => {
               </span>
             </div>
             <div className="text-center">
-              <Link to="/reset-password">
+              <Link to="/forgot-password">
                 <span
                   style={{
                     fontWeight: "bold",
@@ -163,7 +163,7 @@ const Login = (props) => {
                   }}
                   onClick={forgotPassword}
                 >
-                  forgot password
+                  Forgot Password
                 </span>
               </Link>
             </div>

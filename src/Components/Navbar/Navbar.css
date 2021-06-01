@@ -32,12 +32,14 @@ header .navItem {
 
 header .navItem:hover {
   color: aqua;
-  border: 3px solid aqua;
+  border-bottom: 3px solid aqua;
+  border-top: 3px solid aqua;
 }
 
 header .active-nav {  
-  border: 3px solid aqua;
-  box-shadow: 0 0 10px 0 #00b4d8 inset, 0 0 20px 2px #00eeff;
+  color: aqua;
+  border-bottom: 3px solid aqua;
+  border-top: 3px solid aqua;
 }
 
 header .navItem img {

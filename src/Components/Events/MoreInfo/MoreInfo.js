@@ -9,7 +9,7 @@ import DetailsTab from "./DetailTabs/DetailsTabs";
 import Suggestion from "./Suggestion/Suggestion";
 import { addToCart, openLogin } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
-import { addToCartBackend } from "../../Config/api/User";
+import { addToCartBackend, setRegisteredEvents } from "../../Config/api/User";
 import { addToCartSuccess, addToCartFail } from '../../Notifications/Notification';
 
 const MoreInfo = (props) => {
@@ -17,6 +17,7 @@ const MoreInfo = (props) => {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [insideCart, setInsideCart] = useState(false);
+  const [registered, setRegistered] = useState(false);
 
   let { id } = useParams();
 
@@ -27,9 +28,18 @@ const MoreInfo = (props) => {
     });
   };
 
+  const checkRegistered = () => {
+    setRegistered(false);
+    props.registeredEvents.forEach( eve => {
+      console.log(eve.event._id, id)
+      if (eve.event._id === id) setRegistered(true);
+    });
+  };
+
   useEffect(() => {
     fetchData();
     checkInsideCart();
+    checkRegistered();
   }, [id]);
 
   const fetchData = async () => {
@@ -45,6 +55,7 @@ const MoreInfo = (props) => {
     } catch (error) {}
 
     setLoading(false);
+
   };
 
   const handleAddToCart = async () => {
@@ -83,7 +94,10 @@ const MoreInfo = (props) => {
             </p>
 
             <hr className="my-1" />
-            {!insideCart ? (
+
+            { !registered ? (
+
+              !insideCart ? (
               <div
                 onClick={ props.isLoggedIn ? handleAddToCart : props.openLogin}
                 className="btn btn-lg bg-success"
@@ -91,9 +105,13 @@ const MoreInfo = (props) => {
               >
                 Add To Cart
               </div>
-            ) 
-            : <span style={{color: 'green', fontWeight: 'bold', fontSize: '20px'}}>Added to Your Cart</span> 
-            } 
+              ) 
+              : <span style={{color: 'green', fontWeight: 'bold', fontSize: '20px'}}>Added to Your Cart</span> 
+            )
+
+            : <span style={{color: 'blue', fontWeight: 'bold', fontSize: '20px'}}>Registered</span> 
+            
+            }
 
             <DetailsTab details={details} />
           </div>
@@ -110,6 +128,7 @@ const mapStateToProps = (state) => {
     token: state.token,
     cart: state.userData.cart,
     isLoggedIn: state.login,
+    registeredEvents: state.userData.registeredEvents
   };
 };
 
