@@ -53,26 +53,25 @@ const App = (props) => {
 			<Navbar />
 			<Background />
 			<Switch>
+				
 				<Route exact path="/schedule">
-					{' '}
 					<Schedule />
 					<Footer />
-					{' '}
 				</Route>
+				
 				<Route exact path="/events/:id">
-					{' '}
 					<EventDetail />
-					<Footer />{' '}
+					<Footer />
 				</Route>
+				
 				<Route exact path="/events">
-					{' '}
 					<Events />
-					<Footer />{' '}
+					<Footer />
 				</Route>
+
 				<Route exact path="/side-events">
-					{' '}
 					<SideEvents />
-					<Footer />{' '}
+					<Footer />
 				</Route>
 				
 				<Route exact path="/cart">
@@ -98,18 +97,16 @@ const App = (props) => {
 				</Route>
 
 				<Route exact path="/sponsors">
-					{' '}
 					<Sponsors />
 					<AboutUs/>
 					<ContactUs />
 					<FAQ/>
-					<Footer />{' '}
+					<Footer />
 				</Route>
 				
 				<Route exact path="/webteam">
-					{' '}
 					<WebTeam />
-					<Footer />{' '}
+					<Footer />
 				</Route>
 				
 				<Route exact path="/forgot-password">
@@ -121,9 +118,9 @@ const App = (props) => {
 				</Route>
 
 				<Route exact path="/">
-					{' '}
-					<Home />{' '}
+					<Home />
 				</Route>
+
 				<Route component={NotFound} />
 
 			</Switch>
