@@ -1,9 +1,43 @@
+.mi-container{
+    margin-top: 10px;
+}
+
 .mi-details{
+    margin-top: 5px;
     overflow-y: scroll;
     min-height: 300px;
     background-color: rgba(0,0,0,0.5);
     text-align: justify;
+    padding: 20px;
     height: 400px;
+}
+
+.mi-container .mi-head{
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mi-container .head-items{
+    font-size: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 255, 255, 0);
+    width: 100%;
+}
+
+.mi-container .active-item{
+    color: aqua;
+    border-bottom: 1px solid aqua;
+}
+
+.mi-details .mi-content{
+    display: none;
+}
+
+.mi-details .active{
+    background: none;
+    display: block;
 }
 
 .mi-details::-webkit-scrollbar {

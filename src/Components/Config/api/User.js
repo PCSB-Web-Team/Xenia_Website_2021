@@ -29,6 +29,16 @@ export const removeFromCartBackend = (data, token) => {
   );
 };
 
-export const payAmount = (details) => {
-  return axiosInstance.post("http://localhost:5000/api/payment", details);
+export const payAmount = (details, token) => {
+  return axiosInstance.post("/payment", details,
+    {
+      headers: { Authorization: token },
+    });
+};
+
+export const setRegisteredEvents = (details, token) => {
+  return axiosInstance.post("/register-events", details,
+    {
+      headers: { Authorization: token },
+    });
 };

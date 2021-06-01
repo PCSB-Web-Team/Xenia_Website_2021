@@ -94,3 +94,10 @@ export const instruction = () => {
     autoClose: 6000,
   });
 };
+
+export const changedSuccessFully = () => {
+  toast.success("Password Changed Successfully", {
+    position: toast.POSITION.TOP_RIGHT,
+    autoClose: 3000,
+  });
+};

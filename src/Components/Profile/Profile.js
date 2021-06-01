@@ -18,11 +18,11 @@ const MyProf = (props) => {
   //           </div>`;
   // }, []);
 
-  let list = props.cart.map((eve) => {
+  let list = props.registeredEvents.map((eve) => {
     return (
       <div className="Regdiv" key={eve._id}>
         <h3 className="RegP">
-          {eve.name}{" "}
+          {eve.event.name}
         </h3>
       </div>
     );
@@ -68,7 +68,7 @@ const MyProf = (props) => {
 
 const mapStatesToProps = (state) => {
   return {
-    cart: state.userData.cart,
+    registeredEvents: state.userData.registeredEvents,
   };
 };
 

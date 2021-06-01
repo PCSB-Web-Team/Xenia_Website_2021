@@ -1,17 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { Ippopay } from "react-ippopay";
-import { payAmount } from "../../Config/api/User";
-const IppoPay = ({ details }) => {
-  const [ippopayOpen, setippopayOpen] = useState(false);
-  const [order_id, setorder_id] = useState("order_MpBA$7Z2K");
-  const [public_key, setpublic_key] = useState("pk_test_xnM80OWvynpL");
+import { payAmount, setRegisteredEvents, getLoggedInUser } from "../../Config/api/User";
 
-  const ippopayHandler = (e) => {
-    if (e.data.status === "success") {
-      console.log(e.data);
+import { loggedIn } from '../../../Store/Actions';
+
+import { connect } from 'react-redux';
+
+const IppoPay = ({ details, token, loggedIn }) => {
+  const [ippopayOpen, setippopayOpen] = useState(false);
+  const [orderId, setOrderId] = useState("");
+  const [publicKey, setPublicKey] = useState("");
+
+  const ippopayHandler = async (e) => {
+
+    try {
+      if (e.data.status === "success") {
+
+        // console.log(e.data);
+        
+        const detailsData = {
+          orderId: e.data.order_id,
+          transactionNo: e.data.transaction_no
+        }
+
+        const data  = await setRegisteredEvents(detailsData, token)
+        
+        const userData = await getLoggedInUser( token );
+
+        loggedIn(userData.data.data);
+
+        console.log(userData)
+        console.log(data)
+
+      }
+      else {
+        console.log(e.data);
+      }
     }
-    if (e.data.status === "failure") {
-      console.log(e.data);
+
+    catch (e) {
+      console.log(e);
     }
   };
 
@@ -21,13 +49,27 @@ const IppoPay = ({ details }) => {
 
   const ippopayOpener = async () => {
     //send backend details
-    const res = await payAmount(details);
-    console.log(res.data);
-    setippopayOpen(() => true);
+    try {
+      const res = await payAmount(details, token);
+      // console.log(res.data);
+
+      if (res.data.success) {
+
+        setOrderId(res.data.data.order.order_id);
+        setPublicKey(res.data.data.order.public_key);
+        setippopayOpen(true);
+
+      }
+
+    }
+
+    catch (e) {
+      console.log(e)
+    }
   };
 
   const closeippopay = () => {
-    setippopayOpen(() => false);
+    setippopayOpen(false);
   };
 
   return (
@@ -39,11 +81,23 @@ const IppoPay = ({ details }) => {
       <Ippopay
         ippopayOpen={ippopayOpen}
         ippopayClose={true}
-        order_id={order_id}
-        public_key={public_key}
+        order_id={orderId}
+        public_key={publicKey}
       />
     </div>
   );
 };
 
-export default IppoPay;
+const mapStatesToProps = state => {
+  return {
+    token: state.token
+  }
+}
+
+const mapActionsToProps = dispatch => {
+  return {
+    loggedIn: data => { dispatch(loggedIn(data)) }
+  }
+}
+
+export default connect(mapStatesToProps, mapActionsToProps)(IppoPay);
