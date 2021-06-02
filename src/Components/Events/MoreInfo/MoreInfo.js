@@ -85,7 +85,7 @@ const MoreInfo = (props) => {
             <img className="logo" src={ReactLogo} alt='logo'></img>
 
             <h3 className="name">{details.name}</h3>
-            <span className> {details.date} </span>
+            <span className> {details.date.split('T')[0]} </span>
             <p className="lead">
               This is a simple hero unit, a simple jumbotron-style component for
               calling extra attention to featured content or information.

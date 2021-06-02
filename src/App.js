@@ -97,8 +97,8 @@ const App = (props) => {
 				</Route>
 
 				<Route exact path="/sponsors">
-					<Sponsors />
 					<AboutUs/>
+					<Sponsors />
 					<ContactUs />
 					<FAQ/>
 					<Footer />

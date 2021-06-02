@@ -61,7 +61,7 @@ const LandingPage = () => {
         <Fade cascade>
           <div className='logo-div'>
             <img src={XeniaLogo} />
-            <div className='event-date'>14 - 16 March</div>
+            <div className='event-date'>25 - 27 March</div>
           </div>
         </Fade>
         
