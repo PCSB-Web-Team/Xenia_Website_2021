@@ -2,20 +2,21 @@ import React from "react";
 import "./Footer.css";
 import { MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import { Link } from "react-router-dom";
-import { connect } from 'react-redux';
-import { openLogin } from '../../Store/Actions';
+import { connect } from "react-redux";
+import { openLogin } from "../../Store/Actions";
 
 const Footer = (props) => {
   return (
     <div>
-    
       <div className="backtotop">
         <h4
           onClick={() => {
             document.documentElement.scrollTop = 0;
           }}
           style={{ textDecoration: "none", color: "white", cursor: "pointer" }}
-        >GET BACK TO THE TOP</h4>
+        >
+          GET BACK TO THE TOP
+        </h4>
       </div>
 
       <MDBFooter className="pageFooter pt-0">
@@ -58,8 +59,8 @@ const Footer = (props) => {
                     onClick={
                       props.loggedIn
                         ? () => {
-                          document.documentElement.scrollTop = 0;
-                        }
+                            document.documentElement.scrollTop = 0;
+                          }
                         : props.openLogin
                     }
                     to={props.loggedIn ? "/profile" : ""}
@@ -135,11 +136,11 @@ const Footer = (props) => {
                 <a
                   href="http://www.linkedin.com/company/pict-csi"
                   className="btn-floating btn-lg btn-ldi mx-1"
-                  target='_blank'
+                  target="_blank"
                   rel="noreferrer"
                 >
                   <i
-                    className="footerIcon fa fa-linkedin"
+                    className="footerIcon fa fa-linkedin fa-lg"
                     aria-hidden="true"
                   ></i>
                 </a>
@@ -148,11 +149,11 @@ const Footer = (props) => {
                 <a
                   href="http://www.facebook.com/csipict"
                   className="btn-floating btn-lg btn-fb mx-1"
-                  target='_blank'
+                  target="_blank"
                   rel="noreferrer"
                 >
                   <i
-                    className="footerIcon fa fa-facebook"
+                    className="footerIcon fa fa-facebook fa-lg"
                     aria-hidden="true"
                   ></i>
                 </a>
@@ -161,11 +162,11 @@ const Footer = (props) => {
                 <a
                   href="http://www.instagram.com/csipict"
                   className="btn-floating btn-lg btn-itg mx-1"
-                  target='_blank'
+                  target="_blank"
                   rel="noreferrer"
                 >
                   <i
-                    className="footerIcon fa fa-instagram"
+                    className="footerIcon fa fa-instagram fa-lg"
                     aria-hidden="true"
                   ></i>
                 </a>

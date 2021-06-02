@@ -1,6 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
-import bg from "../../Assets/Images//LandingPage/bg.jpg";
+import bg from "../../Assets/Images//LandingPage/xeniabg7.jpg";
 import astranout from "../../Assets/Images//LandingPage/astranout.png";
 // import shuttle from "../../Assets/Images//LandingPage/spaceshuttle.png";
 import lake from "../../Assets/Images//LandingPage/lake.png";
@@ -27,11 +27,11 @@ const LandingPage = () => {
     // let transYL = e.target.offsetHeight * 0.005 + y * 0.1;
     // layer3.style.transform = `translateX(${transXL}px) translateY(${transYL}px)`;
 
-    const background = document.querySelector(".bg");
+    // const background = document.querySelector(".bg");
 
-    let transXBG = e.target.offsetHeight * 0.005 + x * 0.05;
-    let transYBG = e.target.offsetHeight * 0.005 + y * 0.05;
-    background.style.transform = `translateX(${transXBG}px) translateY(${transYBG}px)`;
+    // let transXBG = e.target.offsetHeight * 0.005 + x * 0.05;
+    // let transYBG = e.target.offsetHeight * 0.005 + y * 0.05;
+    // background.style.transform = `translateX(${transXBG}px) translateY(${transYBG}px)`;
 
   };
 
@@ -47,9 +47,9 @@ const LandingPage = () => {
         {/* <div className="layer3">
             <img src={layer3} alt=''></img>
           </div> */}
-        <div className="lake">
+        {/* <div className="lake">
           <img src={lake} alt=''></img>
-        </div>
+        </div> */}
         {/* <div className="SpaceShip">
             <img src={shuttle} alt=''></img>
           </div> */}

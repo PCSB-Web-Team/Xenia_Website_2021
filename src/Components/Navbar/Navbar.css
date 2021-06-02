@@ -36,7 +36,7 @@ header .navItem:hover {
   border-top: 3px solid aqua;
 }
 
-header .active-nav {  
+header .active-nav {
   color: aqua;
   border-bottom: 3px solid aqua;
   border-top: 3px solid aqua;
@@ -47,7 +47,7 @@ header .navItem img {
   filter: invert(1);
 
   height: 18px;
-} 
+}
 
 header .navBar {
   display: flex;
@@ -62,13 +62,12 @@ header .navBar {
   z-index: +1;
 }
 
-.brand{
+.brand {
   font-size: 24px;
   color: white;
 }
 
 .mob-nav {
-  
   transition: ease 500ms;
 
   position: fixed;
@@ -83,67 +82,67 @@ header .navBar {
   backdrop-filter: blur(10px);
   z-index: +1;
   background: rgba(0, 0, 0, 0.8);
-
 }
 
-.mob-nav .navItem{
+.mob-nav .navItem {
   font-size: 32px;
   width: 350px;
   margin-block: 5px;
 }
 
-.nav-close{
+.nav-close {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 35px;
   font-size: 32px;
   font-weight: 500;
   color: white;
   display: none;
   z-index: +1;
-  
+
   -webkit-transition: all 0.15s ease-in-out;
 }
 
-.nav-close:hover{
+.nav-close:hover {
   transition: ease 500ms;
   transform: scale(1.2);
   cursor: pointer;
 }
 
-.navbar-toggler{
+.navbar-toggler {
+  font-size: 2rem !important;
   cursor: pointer;
   color: white;
 }
 
-.nav-cart.active{
+.nav-cart.active {
   background: none;
 }
 
-.navBar .fa-shopping-cart{
-  margin-inline: 20px ;
+.navBar .fa-shopping-cart {
+  margin-inline: 20px;
   font-size: 32px;
   color: white;
 }
 
-.navBar .fa-shopping-cart:hover{
+.navBar .fa-shopping-cart:hover {
   color: #00b4d8;
   transition: ease 500ms;
   transform: scale(1.3);
 }
 
 @media (min-width: 1000px) {
-  .navbar-toggler{
+  .navbar-toggler {
     display: none;
   }
 }
 
-@media (max-width: 1000px){
-  .navBar .list{
+@media (max-width: 1000px) {
+  .navBar .list {
     display: none;
   }
 
-  .navBar .fa-shopping-cart{
+  .navBar .fa-shopping-cart {
     margin-top: 10px;
     font-size: 60px;
   }
