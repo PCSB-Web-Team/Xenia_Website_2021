@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div className="contactUs">
       <div className="contactForm">
-        <h1>Send us a message</h1>
+        <h1>Send us a Message</h1>
         <form>
           <input
             type="text"

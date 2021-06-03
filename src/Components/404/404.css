@@ -5,6 +5,7 @@
     flex-flow: column;
     align-items: center;
     padding: 30px;
+    text-align: center;
 }
 
 .content404{
@@ -30,5 +31,11 @@
     }
     100%{
         transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .cont404 img{
+        width: 80%;
     }
 }

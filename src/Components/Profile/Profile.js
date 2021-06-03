@@ -22,7 +22,7 @@ const MyProf = (props) => {
     return (
       <div className="Regdiv" key={eve._id}>
         <h3 className="RegP">
-          {eve.event.name}
+          {eve.name}
         </h3>
       </div>
     );
