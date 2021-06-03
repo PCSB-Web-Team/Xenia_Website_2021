@@ -49,29 +49,38 @@ const Contact = () => {
         <div className="phoneAndMail">
           <h3>Phone and Mail</h3>
           <p>
-            <i className="fa fa-phone"></i> <span style={{marginLeft:'5px'}}> 9999999999</span>
+            <i className="fa fa-phone"></i> <span style={{ marginLeft: '5px' }}> 9999999999</span>
           </p>
           <p>
-          <i className="fa fa-envelope"></i> <span style={{marginLeft:'5px'}}> abc@mail.com</span>
+            <i className="fa fa-envelope"></i> <span style={{ marginLeft: '5px' }}> abc@mail.com</span>
           </p>
         </div>
         <div className="socialMedia">
           <h3>Social Links</h3>
           <p class="text-light">
-            <a href="/">
+            <a
+              href="http://www.instagram.com/csipict"
+              target="_blank"
+              rel="noreferrer">
               {" "}
               <i
                 className="fa fa-instagram"
                 ariaHidden="true"
               ></i>
             </a>
-            <a href="/">
+            <a
+              href="http://www.facebook.com/csipict"
+              target="_blank"
+              rel="noreferrer">
               <i
                 class="fa fa-facebook-official"
                 ariaHidden="true"
               ></i>
             </a>
-            <a href="/">
+            <a
+              href="http://www.linkedin.com/company/pict-csi"
+              target="_blank"
+              rel="noreferrer">
               <i
                 class="fa fa-linkedin"
                 ariaHidden="true"

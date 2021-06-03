@@ -41,19 +41,19 @@ export const getEventData = (eveData) => {
     }
 }
 
-export const addToCart = (eveData) => {
-    return {
-        type: ADDTOCART,
-        payload: eveData
-    }
-}
+// export const addToCart = (eveData) => {
+//     return {
+//         type: ADDTOCART,
+//         payload: eveData
+//     }
+// }
 
-export const removeFromCart = (eventId) => {
-    return {
-        type: REMOVEFROMCART,
-        payload: eventId
-    }
-}
+// export const removeFromCart = (eventId) => {
+//     return {
+//         type: REMOVEFROMCART,
+//         payload: eventId
+//     }
+// }
 
 export const openLogin = () => {
     return {

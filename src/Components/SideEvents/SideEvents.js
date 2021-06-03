@@ -70,7 +70,7 @@ const About = () => {
               height="300px"
               width="300px"
               style={{
-                objectFit: "contain" ,
+                objectFit: "contain",
                 // boxShadow: "2px 2px 30px  #131313",
                 borderRadius: "18px",
               }}

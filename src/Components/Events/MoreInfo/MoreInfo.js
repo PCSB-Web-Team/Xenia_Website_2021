@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./MoreInfo.css";
 import back2 from "../../../Assets/Images/arrow-left2.png";
-import axios from "axios";
 import { connect } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import ReactLogo from "../../../Assets/Images/logo.svg";
 import DetailsTab from "./DetailTabs/DetailsTabs";
 import Suggestion from "./Suggestion/Suggestion";
-import { addToCart, openLogin } from "../../../Store/Actions";
+import { openLogin } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
 import {
   addToCartBackend,
@@ -22,17 +21,9 @@ import {
 const MoreInfo = (props) => {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [insideCart, setInsideCart] = useState(false);
   const [registered, setRegistered] = useState(false);
 
   let { id } = useParams();
-
-  const checkInsideCart = () => {
-    setInsideCart(false);
-    props.cart.forEach((eve) => {
-      if (eve._id === id) setInsideCart(true);
-    });
-  };
 
   const checkRegistered = () => {
     setRegistered(false);
@@ -44,29 +35,34 @@ const MoreInfo = (props) => {
 
   useEffect(() => {
     fetchData();
-    checkInsideCart();
     checkRegistered();
   }, [id]);
 
   const fetchData = async () => {
     try {
       const response = await getEventDetails(id);
-
       if (response.data.ok) {
         setDetails(response.data.data);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
 
     setLoading(false);
   };
 
-  const handleAddToCart = async () => {
+  const handleRegister = async () => {
     if (props.isLoggedIn) {
+      // if(details.additionalInfo.required){
+      // showPopUp
+      // fire modal and recieve the details object
+      // }
+
       const res = await addToCartBackend({ eventId: id }, props.token);
       if (res.data.ok) {
         props.addToCart(details);
         addToCartSuccess();
-        setInsideCart(true);
+        setRegistered(true);
       }
     } else {
       addToCartFail();
@@ -101,25 +97,13 @@ const MoreInfo = (props) => {
             <hr className="my-1" />
 
             {!registered ? (
-              !insideCart ? (
-                <div
-                  onClick={props.isLoggedIn ? handleAddToCart : props.openLogin}
-                  className="btn btn-lg bg-success"
-                  role="button"
-                >
-                  Add To Cart
-                </div>
-              ) : (
-                <span
-                  style={{
-                    color: "green",
-                    fontWeight: "bold",
-                    fontSize: "20px",
-                  }}
-                >
-                  Added to Your Cart
-                </span>
-              )
+              <div
+                onClick={props.isLoggedIn ? handleRegister : props.openLogin}
+                className="btn btn-lg bg-success"
+                role="button"
+              >
+                Register Now
+              </div>
             ) : (
               <span
                 style={{ color: "blue", fontWeight: "bold", fontSize: "20px" }}
@@ -141,7 +125,6 @@ const MoreInfo = (props) => {
 const mapStateToProps = (state) => {
   return {
     token: state.token,
-    cart: state.userData.cart,
     isLoggedIn: state.login,
     registeredEvents: state.userData.registeredEvents,
   };
@@ -149,9 +132,6 @@ const mapStateToProps = (state) => {
 
 const mapActionToProps = (dispatch) => {
   return {
-    addToCart: (eventDetails) => {
-      dispatch(addToCart(eventDetails));
-    },
     openLogin: () => {
       dispatch(openLogin());
     },
