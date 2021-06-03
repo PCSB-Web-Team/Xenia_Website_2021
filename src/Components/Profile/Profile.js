@@ -31,7 +31,7 @@ const MyProf = (props) => {
   return (
     <div className="ProfCard">
       <div className="usernameHeading">
-        <h1>USERNAME</h1>
+        <h1>{props.userName.toUpperCase()}</h1>
       </div>
       <div className="registeredEventsContainer">
         <div className="registeredEvents">
@@ -69,6 +69,7 @@ const MyProf = (props) => {
 const mapStatesToProps = (state) => {
   return {
     registeredEvents: state.userData.registeredEvents,
+    userName: state.userData.name
   };
 };
 

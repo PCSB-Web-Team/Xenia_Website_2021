@@ -42,3 +42,11 @@ export const setRegisteredEvents = (details, token) => {
       headers: { Authorization: token },
     });
 };
+
+export const getAllEvents = () => {
+  return axiosInstance.get("/events")
+}
+
+export const getEventDetails = (id) => {
+  return axiosInstance.get(`/events/${id}`)
+}

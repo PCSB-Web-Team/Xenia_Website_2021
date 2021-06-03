@@ -1,9 +1,9 @@
 // import React, { useEffect } from "react";
 import "./SideEvents.css";
 //import main from "../../Assets/Images/main_bg.jpg";
-import about from "../../Assets/Images/hero.jpg";
-import data from "../../Assets/Images/datamastro.jpg";
-import code from "../../Assets/Images/sudocode.jpg";
+import about from "../../Assets/Images/icon4.png";
+import data from "../../Assets/Images/icon4.png";
+import code from "../../Assets/Images/icon4.png";
 // import Sponsors from "./Sponsors/Sponsors";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
@@ -24,7 +24,7 @@ const About = () => {
                 sint quis architecto. Nemo impedit commodi fuga natus sunt
                 magnam id quos mollitia.
               </p>
-              <div className='btn btn-success rounded-0'> Register </div>
+              <div className='btn'> Register </div>
             </div>
           </Reveal>
         </div>
@@ -38,7 +38,7 @@ const About = () => {
               width="300px"
               style={{
                 objectFit: "contain",
-                boxShadow: "2px 2px 30px  #131313",
+                // boxShadow: "2px 2px 30px  #131313",
                 borderRadius: "18px",
               }}
             />
@@ -57,7 +57,7 @@ const About = () => {
                 sint quis architecto. Nemo impedit commodi fuga natus sunt
                 magnam id quos mollitia.
               </p>
-              <div className='btn btn-success rounded-0'> Register </div>
+              <div className='btn'> Register </div>
             </div>
           </Reveal>
         </div>
@@ -71,7 +71,7 @@ const About = () => {
               width="300px"
               style={{
                 objectFit: "contain" ,
-                boxShadow: "2px 2px 30px  #131313",
+                // boxShadow: "2px 2px 30px  #131313",
                 borderRadius: "18px",
               }}
             />
@@ -90,7 +90,7 @@ const About = () => {
                 sint quis architecto. Nemo impedit commodi fuga natus sunt
                 magnam id quos mollitia.
               </p>
-              <div className='btn btn-success rounded-0'> Register </div>
+              <div className='btn'> Register </div>
             </div>
           </Reveal>
         </div>
@@ -104,7 +104,7 @@ const About = () => {
               width="300px"
               style={{
                 objectFit: "contain",
-                boxShadow: "2px 2px 30px  #131313",
+                // boxShadow: "2px 2px 30px  #131313",
                 borderRadius: "18px",
               }}
             />

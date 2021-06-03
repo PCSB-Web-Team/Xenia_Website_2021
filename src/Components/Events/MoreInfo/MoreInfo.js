@@ -9,7 +9,7 @@ import DetailsTab from "./DetailTabs/DetailsTabs";
 import Suggestion from "./Suggestion/Suggestion";
 import { addToCart, openLogin } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
-import { addToCartBackend, setRegisteredEvents } from "../../Config/api/User";
+import { addToCartBackend, setRegisteredEvents, getEventDetails } from "../../Config/api/User";
 import { addToCartSuccess, addToCartFail } from '../../Notifications/Notification';
 
 const MoreInfo = (props) => {
@@ -45,9 +45,7 @@ const MoreInfo = (props) => {
   const fetchData = async () => {
 
     try {
-      const response = await axios.get(
-        `https://xenia-backend.herokuapp.com/api/events/${id}`
-      );
+      const response = await getEventDetails(id);
 
       if (response.data.ok) {
         setDetails(response.data.data);
@@ -87,7 +85,7 @@ const MoreInfo = (props) => {
             <img className="logo" src={ReactLogo} alt='logo'></img>
 
             <h3 className="name">{details.name}</h3>
-            <span className> {details.date} </span>
+            <span className> {details.date.split('T')[0]} </span>
             <p className="lead">
               This is a simple hero unit, a simple jumbotron-style component for
               calling extra attention to featured content or information.

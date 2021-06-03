@@ -6,6 +6,19 @@
   overflow-y: hidden;
 }
 
+.side-events .btn{
+  background-color: none;
+  color: aqua;
+  border: 2px solid aqua; 
+  border-radius: 0px;
+  transition: ease 200ms;
+}
+
+.side-events .btn:hover{
+  color: aqua;
+  transform: scale(1.1);
+}
+
 .eventContent {
     display: block;
     width: 75%;
@@ -13,11 +26,13 @@
   }
   
   .event-info {
+    font-size: 20px;
     width: 85%;
   }
   
   .event-info h3 {
     font-family: SansBold;
+    font-size: 32px;
     color: #ffffff;
   }
   
