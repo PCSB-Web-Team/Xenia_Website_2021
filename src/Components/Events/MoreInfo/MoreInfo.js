@@ -9,11 +9,17 @@ import DetailsTab from "./DetailTabs/DetailsTabs";
 import Suggestion from "./Suggestion/Suggestion";
 import { addToCart, openLogin } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
-import { addToCartBackend, setRegisteredEvents, getEventDetails } from "../../Config/api/User";
-import { addToCartSuccess, addToCartFail } from '../../Notifications/Notification';
+import {
+  addToCartBackend,
+  setRegisteredEvents,
+  getEventDetails,
+} from "../../Config/api/User";
+import {
+  addToCartSuccess,
+  addToCartFail,
+} from "../../Notifications/Notification";
 
 const MoreInfo = (props) => {
-  
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [insideCart, setInsideCart] = useState(false);
@@ -30,8 +36,8 @@ const MoreInfo = (props) => {
 
   const checkRegistered = () => {
     setRegistered(false);
-    props.registeredEvents.forEach( eve => {
-      console.log(eve.event._id, id)
+    props.registeredEvents.forEach((eve) => {
+      console.log(eve.event._id, id);
       if (eve.event._id === id) setRegistered(true);
     });
   };
@@ -43,7 +49,6 @@ const MoreInfo = (props) => {
   }, [id]);
 
   const fetchData = async () => {
-
     try {
       const response = await getEventDetails(id);
 
@@ -53,7 +58,6 @@ const MoreInfo = (props) => {
     } catch (error) {}
 
     setLoading(false);
-
   };
 
   const handleAddToCart = async () => {
@@ -77,15 +81,18 @@ const MoreInfo = (props) => {
         <div className="info1">
           <Link to="/events">
             <div className="back-container">
-              <img src={back2} alt='go back' />
+              <img src={back2} alt="go back" />
             </div>
           </Link>
 
-          <div className="more-info jumbotron text-center py-2" id="main-detail">
-            <img className="logo" src={ReactLogo} alt='logo'></img>
+          <div
+            className="more-info jumbotron text-center py-2"
+            id="main-detail"
+          >
+            <img className="logo" src={ReactLogo} alt="logo"></img>
 
             <h3 className="name">{details.name}</h3>
-            <span className> {details.date.split('T')[0]} </span>
+            <span className> {details.date.split("T")[0]} </span>
             <p className="lead">
               This is a simple hero unit, a simple jumbotron-style component for
               calling extra attention to featured content or information.
@@ -93,23 +100,33 @@ const MoreInfo = (props) => {
 
             <hr className="my-1" />
 
-            { !registered ? (
-
+            {!registered ? (
               !insideCart ? (
-              <div
-                onClick={ props.isLoggedIn ? handleAddToCart : props.openLogin}
-                className="btn btn-lg bg-success"
-                role="button"
+                <div
+                  onClick={props.isLoggedIn ? handleAddToCart : props.openLogin}
+                  className="btn btn-lg bg-success"
+                  role="button"
+                >
+                  Add To Cart
+                </div>
+              ) : (
+                <span
+                  style={{
+                    color: "green",
+                    fontWeight: "bold",
+                    fontSize: "20px",
+                  }}
+                >
+                  Added to Your Cart
+                </span>
+              )
+            ) : (
+              <span
+                style={{ color: "blue", fontWeight: "bold", fontSize: "20px" }}
               >
-                Add To Cart
-              </div>
-              ) 
-              : <span style={{color: 'green', fontWeight: 'bold', fontSize: '20px'}}>Added to Your Cart</span> 
-            )
-
-            : <span style={{color: 'blue', fontWeight: 'bold', fontSize: '20px'}}>Registered</span> 
-            
-            }
+                Registered
+              </span>
+            )}
 
             <DetailsTab details={details} />
           </div>
@@ -126,7 +143,7 @@ const mapStateToProps = (state) => {
     token: state.token,
     cart: state.userData.cart,
     isLoggedIn: state.login,
-    registeredEvents: state.userData.registeredEvents
+    registeredEvents: state.userData.registeredEvents,
   };
 };
 
@@ -137,7 +154,7 @@ const mapActionToProps = (dispatch) => {
     },
     openLogin: () => {
       dispatch(openLogin());
-    }
+    },
   };
 };
 

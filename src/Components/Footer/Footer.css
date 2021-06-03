@@ -77,9 +77,21 @@
 
   .pageFooter .column1 {
     width: 50%;
+    text-align: left;
+    padding-left: 2em;
   }
   .pageFooter .column2 {
     width: 50%;
+    text-align: left;
+    padding-left: 3em;
+  }
+  .pageFooter .column3 {
+    text-align: left;
+    padding-left: 2em;
+  }
+  .pageFooter .column4 {
+    text-align: left;
+    padding-left: 2em;
   }
 }
 
