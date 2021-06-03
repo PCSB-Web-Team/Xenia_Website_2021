@@ -9,6 +9,7 @@
     background-color: rgba(0,0,0,0.5);
     text-align: justify;
     padding: 20px;
+    padding-inline: 40px;
     height: 400px;
 }
 
@@ -20,7 +21,11 @@
 }
 
 .mi-container .head-items{
+
+    transition: ease-in-out 500ms;
+
     font-size: 20px;
+    padding-block: 10px;
     cursor: pointer;
     border-bottom: 1px solid rgba(0, 255, 255, 0);
     width: 100%;

@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { connect } from "react-redux";
 import {
   NavLink,
 } from "react-router-dom";
-import cart from "../../Assets/Images/cart.png";
+// import cart from "../../Assets/Images/cart.png";
 import "./Navbar.css";
 import LoginModal from "../Auth/Login";
 import RegisterModal from "../Auth/Register";
@@ -11,6 +11,8 @@ import { openLogin } from '../../Store/Actions';
 import { Zoom } from 'react-reveal'
 
 const Navbar = (props) => {
+
+  const [navState, setNavState] = useState(false); 
 
   const openNavBar = () => {
 
@@ -22,6 +24,7 @@ const Navbar = (props) => {
 
     cross[0].style.display = "block"
 
+    setNavState(true);
   }
 
   const closeNavBar = () => {
@@ -33,6 +36,8 @@ const Navbar = (props) => {
     list[0].classList.toggle("list")
 
     cross[0].style.display = "none"
+
+    setNavState(false);
 
   }
 
@@ -49,11 +54,11 @@ const Navbar = (props) => {
 
             <div className='list nav-list'>
 
-              <div><NavLink className='navItem' activeClassName='active-nav' exact to='/'> Home </NavLink></div>
-              <div><NavLink className='navItem' activeClassName='active-nav' to='/schedule'> Schedule </NavLink></div>
-              <div><NavLink className='navItem' activeClassName='active-nav' to='/events'> Events </NavLink></div>
-              <div><NavLink className='navItem' activeClassName='active-nav' to='/side-events'> Side Events </NavLink></div>
-              <div><NavLink className='navItem' activeClassName='active-nav' to='/sponsors'> Sponsors </NavLink></div>
+              <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } exact to='/'> Home </NavLink></div>
+              <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } to='/schedule'> Schedule </NavLink></div>
+              <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } to='/events'> Events </NavLink></div>
+              <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } to='/side-events'> Side Events </NavLink></div>
+              <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } to='/sponsors'> Sponsors </NavLink></div>
 
               {props.isLoggedIn ? null : <div className='navItem' activeClassName='active-nav' onClick={props.openLogin}> Login </div>}
 
@@ -64,19 +69,7 @@ const Navbar = (props) => {
                     activeClassName="active-nav"
                     className="navItem"
                   >
-                    {" "}
-                Profile{" "}
-                  </NavLink>
-                </div>
-              ) : null}
-
-              {props.isLoggedIn ? (
-                <div>
-                  <NavLink to='/cart'
-                    className="nav-cart"
-                    id="cart"
-                  >
-                    <i class="fa fa-shopping-cart"></i>
+                    Profile
                   </NavLink>
                 </div>
               ) : null}
@@ -102,7 +95,7 @@ const mapStateToProps = (state) => {
   return {
     popLogin: state.popLogin,
     isLoggedIn: state.login,
-    cart: state.userData.cart,
+    // cart: state.userData.cart,
   };
 };
 

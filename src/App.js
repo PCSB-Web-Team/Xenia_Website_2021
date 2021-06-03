@@ -6,7 +6,6 @@ import EventDetail from './Components/Events/MoreInfo/MoreInfo';
 import AboutUs from './Components/AboutUs/About';
 import ContactUs from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
-import Cart from './Components/Cart/MainCart';
 import Profile from './Components/Profile/Profile';
 import WebTeam from './Components/WebTeam/WebTeam';
 import Sponsors from './Components/Sponsors/Sponsors';
@@ -52,6 +51,7 @@ const App = (props) => {
 		<div className="Xenia" id="Xenia">
 			<Navbar />
 			<Background />
+			
 			<Switch>
 				
 				<Route exact path="/schedule">
@@ -59,30 +59,19 @@ const App = (props) => {
 					<Footer />
 				</Route>
 				
-				<Route exact path="/events/:id">
-					<EventDetail />
+				<Route exact path="/events">
+					<Events />
 					<Footer />
 				</Route>
 				
-				<Route exact path="/events">
-					<Events />
+				<Route exact path="/events/:id">
+					<EventDetail />
 					<Footer />
 				</Route>
 
 				<Route exact path="/side-events">
 					<SideEvents />
 					<Footer />
-				</Route>
-				
-				<Route exact path="/cart">
-					{props.login ?
-						<div>
-							<Cart />
-							<Footer />
-						</div>
-						:
-						<Redirect to='/'></Redirect>
-					}
 				</Route>
 				
 				<Route exact path="/profile">

@@ -1,13 +1,42 @@
 @font-face {
-  font-family: "planetn";
-  src: url("../../Assets/Fonts/nasalization.ttf");
+  font-family: "SansBold";
+  src: url('../../Assets/Fonts/PTSans-Bold.ttf');
+}
+
+.landing-page .bg{
+  transition: ease-out 1s;
+
+  z-index: 96;
+
+  position: absolute;
+
+  min-width: 100%;
+  height: 100vh;
+
+  right: 0px;
+  top: 0px;
+
+  /* right: 0px;
+  top: -50px; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.landing-page .bg img{
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
 
 .landing-page {
   zoom: 1;
   z-index: 0;
   position: absolute;
-  background: linear-gradient(rgb(0, 0, 0) 30%, white);
+  /* background: linear-gradient(rgb(0, 0, 0) 30%, white); */
+  background-color: black;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -28,113 +57,63 @@
   align-items: center;
 }
 
-.logo-div img{
-  max-width: 80%;
+.logo-div .logo-container{
+  height: 100vh;
+  text-align: center;
+}
+
+.logo-container img{
+  margin-top: 220px;
 }
 
 .logo-div .event-date{
-  font-family: "planetn";
-  color: white;
-  font-weight: 400;
+  font-family: "SansBold";
+  color: rgb(183, 0, 255);
+  font-weight: 600;
   font-size: 38px;
   margin-bottom: 80px;
 }
 
-.layer3 {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-
-  z-index: 97;
-  position: absolute;
-
-  transition: ease-out 10s;
-
-  width: 100%;
-  height: 100%;
-  background: none;
-
-  overflow: hidden;
-
-  padding-top: 15vw;
-  padding-left: 50vw;
-
-  top: 0px;
-  right: 0px;
-}
-
-.layer3 img {
-  opacity: 1;
-
-  border-radius: 50%;
-
-  height: 500px;
-  width: 500px;
-}
-
-/* .landing-page .bg {
-  transition: ease-out 10s;
-
-  z-index: 96;
-
-  position: absolute;
-
-  min-width: 120%;
-  height: 80%;
-
-  left: -10%;
-  top: -5%;
-} */
-
-/* .landing-page .bg img {
-  width: 100%;
-  height: 100%;
-} */
-
-.landing-page .bg{
-  transition: ease-out 1s;
-
-  z-index: 96;
-
-  position: absolute;
-
-  min-width: 100%;
-  height: 100%;
-
-  right: 0px;
-  top: 0px;
-
-  /* right: 0px;
-  top: -50px; */
-}
-
-.landing-page .bg img{
-  width: 100%;
-  height: 100%;
-}
 
 .lake {
 
   user-select: none;
   -webkit-user-drag: none;
-  background: linear-gradient(rgba(0, 81, 105, 0.3) 40%,rgba(2, 133, 255, 0.7) 70%);
+  
+  /* background: linear-gradient(rgba(0, 81, 105, 0.3) 40%,rgba(2, 133, 255, 0.7) 70%); */
+  
   z-index: 99;
-  height: 100%;
-  width: 110%;
+  
+  height: 100vh;
+  width: 100%;
+
   position: absolute;
   user-zoom: initial;
-  left: -10%;
 
+  left: 0;
+  bottom: 0px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  background: radial-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+
+.lake .ast-container{
+  height: 100%;
+  width: 300px;
+  position: relative;
+  transition: ease-out 2s;
 }
 
 .lake img {
   user-select: none;
   -webkit-user-drag: none;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  bottom: -1%;
+  transform: rotate(30deg);
   left: 0px;
+  bottom: 20px;
+  position: absolute;
 }
 
 .astranout {
@@ -161,6 +140,15 @@
   left: 0px;
   height: 100%;
   width: 100%;
+}
+
+.landing-page-stars{
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  z-index: 100;
 }
 
 /* .SpaceShip {
@@ -274,13 +262,6 @@
     left: 63%;
     transition: ease 1s;
   }
-  .layer3 {
-    right: -20px;
-    top: 0px;
-    width: 1300px;
-    height: 800px;
-    transition: ease;
-  }
 }
 
 @media (max-width: 1120px) {
@@ -288,13 +269,6 @@
     top: 41%;
     left: 63%;
     transition: ease 1s;
-  }
-
-  .layer3 {
-    top: 0px;
-    width: 1300px;
-    height: 800px;
-    transition: ease-out 5s;
   }
 }
 
@@ -324,10 +298,6 @@
     left: 58%;
     transition: ease 1s;
   }
-
-  .landing-page .lake {
-    width: 1000px;
-  }
 }
 
 @media (max-width: 750px) {
@@ -356,20 +326,11 @@
     transition: ease 1s;
   }
 
+  .logo-div img{
+    width: 450px;
+  }
+
   .logo-div .event-date{
     font-size: 25px;
   }
-}
-
-.landing-page .date {
-  font-family: "planetn";
-  font-size: 3vw;
-  color: white;
-  margin-bottom: 0;
-  transition: ease 1s;
-}
-
-@font-face {
-  font-family: "planetns";
-  src: url("../../Assets/Fonts/Planetnsv2.ttf");
 }
