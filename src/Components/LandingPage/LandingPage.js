@@ -7,14 +7,12 @@ import astranout2 from "../../Assets/Images//LandingPage/astranout.png";
 import astranout1 from "../../Assets/Images//LandingPage/xeniabg10.png";
 // import layer3 from "../../Assets/Images//LandingPage/jupiter.jpg";
 // import Zoom from 'react-reveal/Zoom';
-import Fade from 'react-reveal/Slide';
-import XeniaLogo from '../../Assets/Images/Xenia 21 Final.png';
-import Stars from './LandingPageStars/LandingPageStars';
+import Fade from "react-reveal/Slide";
+import XeniaLogo from "../../Assets/Images/Xenia 21 Final.png";
+import Stars from "./LandingPageStars/LandingPageStars";
 
 const LandingPage = () => {
-
   const handleMove = (e) => {
-
     const box = document.querySelector(".astranout");
 
     let x = e.pageX;
@@ -36,43 +34,40 @@ const LandingPage = () => {
     let transYBG = e.target.offsetHeight * 0.005 - y * 0.03;
 
     background.style.transform = `translateX(${transXBG}px) translateY(${transYBG}px)`;
-
   };
 
   return (
     <div className="landing-page">
       <div className="landing-container" onMouseMove={handleMove}>
-
         <div className="bg">
-          <img src={bg} alt=''></img>
+          <img src={bg} alt=""></img>
         </div>
 
         <div className="lake">
-          <div className='ast-container'>
-            <img className='main-ast' src={astranout1} alt=''></img>
+          <div className="ast-container">
+            <img className="main-ast" src={astranout1} alt=""></img>
           </div>
         </div>
 
-        <div className='landing-page-stars'>
-            <Stars/>      
+        <div className="landing-page-stars">
+          <Stars />
         </div>
-{/* 
+        {/* 
         <div className="astranout">
           <img src={astranout2} alt=''></img>
         </div> */}
 
         <Fade cascade>
-        <div className='logo-div'>
-          <div className='logo-container'>
-            <img src={XeniaLogo} />
-            <div className='event-date'>25 - 27 June</div>
+          <div className="logo-div">
+            <div className="logo-container">
+              <img src={XeniaLogo} />
+              <div className="event-date">25 - 27 June</div>
+            </div>
           </div>
-        </div>
         </Fade>
-
       </div>
     </div>
   );
-}
+};
 
 export default LandingPage;
