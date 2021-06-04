@@ -110,6 +110,48 @@
 
 }
 
+.button-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .forgot-password .button-group{
   margin-bottom: 1rem;
+}
+
+.button-group .mainButton .btn{
+  color: white;
+}
+
+.button-group a .mainButton{
+  width: 100%;
+}
+
+.button-group a {
+  width: 50%;
+}
+
+.button-group .mainButton{
+  width: 50%;
+}
+
+.button-group .mainButton .btn:hover{
+  color: white;
+}
+
+
+
+.button-group .mainButton .btn-six::after {
+  transition: all 0.3s;
+  border: 1px solid white;
+}
+
+@media(max-width:700px){
+  .forgot-password .form-box{
+    width: 90%;
+  }
+  .button-group span{
+    font-size: 0.75rem !important;
+  }
 }

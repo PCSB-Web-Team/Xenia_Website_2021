@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import astro from "../../Assets/Images/astronaut.png";
+import Themebutton from '../Button/button';
 import "./forgot.css";
 
 const Form = () => {
@@ -63,8 +64,8 @@ const Form = () => {
           <span className='message'>{message}</span>
         </div>
         <div className='button-group'>
-          <Link to='/'><button className='cancel'>Cancel</button></Link>
-          <button className='send' onClick={handleSubmit}>Send Mail</button>
+          <Link to='/'><Themebutton value="Cancel"/></Link>
+          <Themebutton value="Send Mail" onClick={handleSubmit}/>
         </div>
       </div>
     </div>

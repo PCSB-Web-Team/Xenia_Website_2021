@@ -42,7 +42,7 @@ const FAQ = () => {
   return (
     <div className="FAQ-container bg-transparent text-white text-center">
       <Accordion>
-        <h2 className="FAQ">Frequently Asked Questions</h2>{" "}
+        <h2 className="FAQ mb-3">Frequently Asked Questions</h2>{" "}
         {list}
       </Accordion>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import sendEmail from "./sendEmail";
+import './Login.css';
 // import axios from "axios";
 import validInfo from "./validInfo";
 import { Modal } from "react-bootstrap";
@@ -8,6 +9,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { loginFail, loginSuccess } from "../Notifications/Notification";
 import { login, getLoggedInUser } from "../Config/api/User";
+import Themebutton from '../Button/button';
 import {
   loggedIn,
   storeToken,
@@ -66,7 +68,7 @@ const Login = (props) => {
 
   const forgotPassword = () => {
     sendEmail();
-    console.log("Email");
+    props.closeLogin();
   };
 
   return (
@@ -153,12 +155,12 @@ const Login = (props) => {
                 </span>
               )}
             </div>
-            <button
-              onClick={handleHide}
-              className="btn btn-outline-light btn-block"
-            >
-              Login
-            </button>
+            <div className="loginButtonNew">
+              <Themebutton
+                onClick={handleHide}
+                value='Login'
+              />
+            </div>
             <div className="text-center my-2">
               Don't have an account ?{" "}
               <span

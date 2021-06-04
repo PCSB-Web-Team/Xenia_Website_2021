@@ -1,15 +1,21 @@
+@font-face {
+    font-family: 'SansBold';
+    src: url('../../Assets/Fonts/PTSans-Bold.ttf');
+}
+
 .mainButton {
     text-align: center;
     height: 33%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: fit-content;
 }
 
 /* BUTTON STYLING */
 .mainButton .btn {
     position: relative;
-    color: white;
+    color: aqua;
     width: 256px;
     height: 64px;
     line-height: 64px;
@@ -18,6 +24,8 @@
     flex-flow: column;
     justify-content: center;
     border-radius: 32px;
+    font-size: 20px;
+    font-family: SansBold;
 }
 .mainButton .btn span {
     transition: all 0.3s;
@@ -25,7 +33,7 @@
 }
 
 .mainButton .btn:hover{
-    color: white;
+    color: aqua;
 }
 
 .mainButton .btn::before, .mainButton .btn::after {
@@ -43,7 +51,7 @@
     left: 4px;
     z-index: 1;
     opacity: 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
     transform: scale(0.1, 1);
 }
 .mainButton .btn-one:hover::before {
@@ -52,7 +60,7 @@
 }
 .mainButton .btn-one::after {
     transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid aqua;
 }
 .mainButton .btn-one:hover::after {
     transform: scale(1, 0.1);
@@ -62,7 +70,7 @@
 /* BTN SIX */
 .mainButton .btn-six::before {
     opacity: 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
     transform: scale(1.3, 1.3);
 }
 .mainButton .btn-six:hover::before {
@@ -71,9 +79,15 @@
 }
 .mainButton .btn-six::after {
     transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid aqua;
 }
 .mainButton .btn-six:hover::after {
     transform: scale(0, 0);
     opacity: 0;
+}
+
+@media (max-width: 676px){
+    .mainButton {
+        width: 100%;
+    }
 }
