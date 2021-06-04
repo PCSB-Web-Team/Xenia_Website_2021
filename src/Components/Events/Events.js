@@ -6,6 +6,7 @@ import Loader     from '../Loader/Loader';
 import './Cards/Card.css';
 import './Events.css';
 import Card from './Cards/Card';
+import {getAllEvents} from '../Config/api/User'
 
 const Events = () => {
   
@@ -19,7 +20,8 @@ const Events = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://xenia-backend.herokuapp.com/api/events')
+      
+      const response = await getAllEvents();
 
       if(response.data.ok){
         

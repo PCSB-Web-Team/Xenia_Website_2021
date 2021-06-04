@@ -6,6 +6,7 @@ let default_state = {
     eventData: [],
     userData: {
         cart: [],
+        registeredEvents: []
     },
     paymentDetails: []
 }

@@ -12,12 +12,12 @@
   justify-content: center;
   align-items: center;
  
-  margin-top: 50px;
+  margin-top: 80px;
   width: 100%;
 
 }
 
-.form-box {
+.forgot-password .form-box {
 
   display: flex;
   flex-direction: column;
@@ -25,49 +25,50 @@
   justify-content: center;
 
   width: 400px;
-  height: 400px;
+  height: fit-content;
 
   max-width: 100%;
 
-  background: rgba(112, 112, 112, 0.2);
+  background: rgb(19,19,19);
   backdrop-filter: blur(5px);
 
   margin-inline: 10px;
 
-  padding: 20px;
+  padding: 0px;
 
 }
 
-.form-box .title {
+.forgot-password>.form-box .title {
   user-select: none;
   color: white;
   font-size: 32px;
   margin-bottom: 30px;
+  background-color: black;
+  border-bottom: 1px solid white;
 }
 
-.form-box input{
+.forgot-password>.form-box input{
   height: 40px;
   background: black;
   color: white;
   outline: none;
   border: none;
+  text-align: left;
 
   border-radius: 10px;
 
-  text-align: center;
-
-  border-bottom: 2px solid aqua;
-  border-right: 2px solid aqua;
+  border : 0;
 
   transition: 400ms ease;
 
-  margin-bottom: 5px;
+  margin: 1rem;
+  width: auto;
 
 }
 
-.form-box input:focus{
+.forgot-password>.form-box input:focus{
   border: none;
-  border: 2px solid aqua;
+  border: 0;
 }
 
 .form-box .alerts{
@@ -82,7 +83,7 @@
   color: rgb(0, 175, 0);
 }
 
-.form-box button {
+.forgot-password>.form-box button {
   border: none;
 
   background: black;
@@ -90,12 +91,13 @@
   height: 40px;
   font-size: 20px;
   width: 160px;
-  border-radius: 10px;
   margin-inline: 10px;
 
   outline: none;
 
   user-select: none;
+  border: 1px solid white;
+  border-radius: 0;
 }
 
 .form-box button:focus {
@@ -106,4 +108,8 @@
   border-top: none;
   border-left: none;
 
+}
+
+.forgot-password .button-group{
+  margin-bottom: 1rem;
 }

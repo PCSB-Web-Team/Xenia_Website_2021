@@ -9,6 +9,7 @@
 }
 
 .ProfCard {
+  font-family: SansBold;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -55,8 +56,8 @@
 .usernameHeading h1{
   color: white;
   font-size: 4em;
-  font-family: Barlow;
-  font-weight: 300;
+  font-family: SansBold;
+  font-weight: 600;
 }
 
 .Regdiv {
@@ -66,9 +67,9 @@
 }
 
 .RegP {
-  font-size: 4em;
+  font-size: 3em;
   color: white;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .Regdiv:hover {
@@ -101,8 +102,14 @@
 
 
 
-.btn.btn-lg {
+.ProfCard .btn {
   background: crimson;
+  border-radius: 25px;
+  color: white;
+}
+
+.ProfCard .btn:hover{
+  transform: scale(1.1);
   color: white;
 }
 
@@ -111,7 +118,6 @@
     margin-left: 60px;
   }
 }
-
 
 .registeredEventsDashboard{
   color: white;
@@ -125,8 +131,8 @@
 }
 
 .registeredEventsDashboard h1{
-  font-size: 3.3rem;
-  font-weight: 500;
+  font-size: 3.5rem;
+  font-weight: 300;
 }
 
 .dashboardTech{

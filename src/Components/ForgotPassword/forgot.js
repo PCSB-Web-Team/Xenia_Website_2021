@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import astro from "../../Assets/Images/astronaut.png";
 import "./forgot.css";
 
 const Form = () => {
@@ -39,10 +40,23 @@ const Form = () => {
     }
   }
 
+  const imageStyles={
+    padding: "5px",
+    height: "90px",
+    width: "90px",
+    marginTop: "-30px",
+    borderRadius: "30px",
+    borderColor: "white",
+    borderWidth: "1px",
+  }
+
   return (
     <div className='forgot-password'>
       <div className='form-box'>
-        <div className='title'>Enter Your Email</div>
+        <div className='title'>
+          <img src={astro} style={imageStyles}></img>
+          <p>Enter your email</p>
+        </div>
         <input type='email' placeholder='abc@gmail.com' id='input-email' ></input>
         <div className='alerts'>
           <span className='error'>{error}</span>

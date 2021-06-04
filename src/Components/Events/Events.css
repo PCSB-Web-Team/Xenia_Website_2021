@@ -37,7 +37,7 @@
   background: none;
   outline: none;
   border: none;
-  border-radius: 0px;
+  border-radius: 20px;
   width: 25%;
   border: 1px solid rgb(0, 124, 128);
 }
@@ -48,7 +48,7 @@
 
 .tabs button:hover {
   color: aqua;
-  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 255, 255, 0.9);
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 255, 255, 0.9);
 }
 
 @media (max-width: 600px) {
