@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
+import validInfo from "./validInfo";
 // import axios from "axios";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { register } from "../Config/api/User";
@@ -12,36 +13,40 @@ const Register = (props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
   const [college, setCollege] = useState("");
   const [phone, setPhone] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState(null);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = { name, password, college, email, phone };
-    const res = await register(user);
+    setErrors(validInfo({ name, email, password, password2 }));
+    if (errors === null) {
+      const user = { name, password, college, email, phone };
+      const res = await register(user);
 
-    console.log(res.data);
+      console.log(res.data);
 
-    if (res.data.ok) {
-      signUpSuccess();
-      props.toggleLogin();
-    } else {
-      signUpFail();
-      setError("Invalid Credentials");
+      if (res.data.ok) {
+        signUpSuccess();
+        props.toggleLogin();
+      } else {
+        signUpFail();
+      }
+
+      setEmail("");
+      setPassword("");
+      setCollege("");
+      setPhone("");
+      setErrors(null);
     }
-
-    setEmail("");
-    setPassword("");
-    setCollege("");
-    setPhone("");
   };
 
   const handleHide = () => {
-    if (error === "Invalid Credentials") {
-      return props.closeLogin();
-    } else {
-      return null;
-    }
+    // if (error === "Invalid Credentials") {
+    //   return props.closeLogin();
+    // } else {
+    //   return null;
+    // }
   };
 
   return (
@@ -96,7 +101,13 @@ const Register = (props) => {
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
+              {errors !== null && errors.name !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.name}`}
+                </span>
+              )}
             </div>
+
             <div className="form-group">
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -107,12 +118,17 @@ const Register = (props) => {
                 <input
                   className="form-control"
                   name="Email"
-                  type="email"
+                  type="text"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
+              {errors !== null && errors.email !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.email}`}
+                </span>
+              )}
             </div>
             <div className="form-group">
               <div className="input-group">
@@ -132,22 +148,38 @@ const Register = (props) => {
                   }}
                 />
               </div>
+              {errors !== null && errors.password !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.password}`}
+                </span>
+              )}
             </div>
-            {/* <div className="form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="fa fa-lock"></i>
-                    </div>
+
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-lock text-success"></i>
                   </div>
-                  <input
-                    className="form-control"
-                    name="college"
-                    type="test"
-                    placeholder=""
-                  />
                 </div>
-              </div> */}
+                <input
+                  className="form-control"
+                  name="password2"
+                  type="password"
+                  placeholder="Confirm Password"
+                  value={password2}
+                  onChange={(e) => {
+                    setPassword2(e.target.value);
+                  }}
+                />
+              </div>
+              {errors !== null && errors.password2 !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.password2}`}
+                </span>
+              )}
+            </div>
+
             <div className="form-group">
               <div className="input-group">
                 <div className="input-group-prepend">

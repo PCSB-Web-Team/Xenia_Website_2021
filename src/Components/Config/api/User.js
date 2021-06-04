@@ -30,23 +30,25 @@ export const removeFromCartBackend = (data, token) => {
 };
 
 export const payAmount = (details, token) => {
-  return axiosInstance.post("/payment", details,
-    {
-      headers: { Authorization: token },
-    });
+  return axiosInstance.post("/payment", details, {
+    headers: { Authorization: token },
+  });
 };
 
 export const setRegisteredEvents = (details, token) => {
-  return axiosInstance.post("/register-events", details,
-    {
-      headers: { Authorization: token },
-    });
+  return axiosInstance.post("/register-events", details, {
+    headers: { Authorization: token },
+  });
 };
 
 export const getAllEvents = () => {
-  return axiosInstance.get("/events")
-}
+  return axiosInstance.get("/events");
+};
 
 export const getEventDetails = (id) => {
-  return axiosInstance.get(`/events/${id}`)
-}
+  return axiosInstance.get(`/events/${id}`);
+};
+
+export const contactus = (data) => {
+  return axiosInstance.post("/contact-us", data);
+};

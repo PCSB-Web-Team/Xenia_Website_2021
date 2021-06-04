@@ -1,6 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
-import bg from "../../Assets/Images//LandingPage/xeniabg7.jpg";
+import bg from "../../Assets/Images/LandingPage/xeniabg6.jpg";
 import astranout from "../../Assets/Images//LandingPage/astranout.png";
 // import shuttle from "../../Assets/Images//LandingPage/spaceshuttle.png";
 import lake from "../../Assets/Images//LandingPage/lake.png";
