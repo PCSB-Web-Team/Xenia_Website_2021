@@ -66,7 +66,7 @@ const Login = (props) => {
 
   const forgotPassword = () => {
     sendEmail();
-    console.log("Email");
+    props.closeLogin();
   };
 
   return (

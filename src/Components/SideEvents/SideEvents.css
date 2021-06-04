@@ -37,6 +37,9 @@
     .event-info {
       width: 100%;
     }
+    .event-info p {
+      text-align: justify;
+    }
   }
   
   @media (max-width: 360px) {
@@ -49,8 +52,5 @@
     }
     .content .firstChild {
       font-size: 70px;
-    }
-    .content p {
-      font-size: 10px;
     }
   }
