@@ -8,14 +8,17 @@ import DetailsTab from "./DetailTabs/DetailsTabs";
 import Suggestion from "./Suggestion/Suggestion";
 import { openLogin, addToRegistered } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
-import { addToCartBackend, setRegisteredEvents, getEventDetails } from "../../Config/api/User";
-import { addToCartSuccess, addToCartFail } from '../../Notifications/Notification';
+import { setRegisteredEvents, getEventDetails } from "../../Config/api/User";
+import { addToCartFail } from '../../Notifications/Notification';
+import Modal from './Modal/Modal';
 
 const MoreInfo = (props) => {
 
   const [details, setDetails] = useState({ date: '', rules: [] });
   const [loading, setLoading] = useState(true);
   const [registered, setRegistered] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [registerLoading, setRegisterLoading] = useState(false)
 
   let { id } = useParams();
   let history = useHistory();
@@ -50,7 +53,13 @@ const MoreInfo = (props) => {
     setLoading(false);
   };
 
+  
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
+
   const handleRegister = async () => {
+
+    setRegisterLoading(true)
 
     if (props.isLoggedIn) {
 
@@ -60,16 +69,21 @@ const MoreInfo = (props) => {
       // }
 
       const res = await setRegisteredEvents(id, props.token);
+
       if (res.data.ok) {
-        console.log(res)
         props.addToRegistered(res.data.data.event);
         // addToCartSuccess();
         setRegistered(true);
+        setRegisterLoading(false)
+        setShowModal(false);
       }
     } else {
       addToCartFail();
     }
+
+    
   };
+
 
   return (
     <div className="MoreInfo">
@@ -100,7 +114,7 @@ const MoreInfo = (props) => {
 
             {!registered ? (
               <div
-                onClick={props.isLoggedIn ? handleRegister : props.openLogin}
+                onClick={props.isLoggedIn ? openModal : props.openLogin}
                 className="btn btn-lg bg-success"
                 role="button"
               >
@@ -116,6 +130,7 @@ const MoreInfo = (props) => {
           <Suggestion suggestions={details.suggestions}></Suggestion>
         </div>
       )}
+      <Modal showModal={showModal} closeModal={closeModal} openModal={openModal} load={registerLoading} handleRegister={handleRegister}/>
     </div>
   );
 };
