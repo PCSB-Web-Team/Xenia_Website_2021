@@ -1,13 +1,6 @@
 import React from "react";
 // import Logo from "../../Assets/Images/logo.svg";
 import "./Sponsors.css";
-import Amazon from "../../Assets/Images/SponsorImages/Amazon.jpg";
-import Codechef from "../../Assets/Images/SponsorImages/Codechef.jpg";
-import Facebook from "../../Assets/Images/SponsorImages/Facebook.jpg";
-import Google from "../../Assets/Images/SponsorImages/Google.jpg";
-import Lg from "../../Assets/Images/SponsorImages/Lg.jpg";
-import Microsoft from "../../Assets/Images/SponsorImages/Microsoft.jpg";
-import Netflix from "../../Assets/Images/SponsorImages/Netflix.jpg";
 import Sponsor from "../../Assets/Images/main_bg.jpg";
 // import Tata from "../../Assets/Images/SponsorImages/Tata.jpg";
 // import Vodafone from "../../Assets/Images/SponsorImages/Vodafone.jpg";

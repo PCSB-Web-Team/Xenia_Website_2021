@@ -81,14 +81,26 @@ const Contact = () => {
         <div className="socialMedia">
           <h3>Social Links</h3>
           <p class="text-light">
-            <a href="/">
+            <a
+              href="http://www.instagram.com/csipict"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
               <i className="fa fa-instagram" ariaHidden="true"></i>
             </a>
-            <a href="/">
+            <a
+              href="http://www.facebook.com/csipict"
+              target="_blank"
+              rel="noreferrer"
+            >
               <i class="fa fa-facebook-official" ariaHidden="true"></i>
             </a>
-            <a href="/">
+            <a
+              href="http://www.linkedin.com/company/pict-csi"
+              target="_blank"
+              rel="noreferrer"
+            >
               <i class="fa fa-linkedin" ariaHidden="true"></i>
             </a>
           </p>

@@ -17,6 +17,10 @@ const Register = (props) => {
   const [college, setCollege] = useState("");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState(null);
+  if (errors !== null) {
+    setTimeout(() => setErrors(null), 5000);
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors(validInfo({ name, email, password, password2 }));

@@ -22,7 +22,7 @@ const MyProf = (props) => {
     return (
       <div className="Regdiv" key={eve._id}>
         <h3 className="RegP">
-          {eve.event.name}
+          {eve.name}
         </h3>
       </div>
     );
@@ -30,9 +30,7 @@ const MyProf = (props) => {
 
   return (
     <div className="ProfCard">
-      <div className="usernameHeading">
-        <h1>USERNAME</h1>
-      </div>
+      <header className='page-headers'><h1> {props.userName} </h1></header>
       <div className="registeredEventsContainer">
         <div className="registeredEvents">
           {list.length > 0 ? (
@@ -69,6 +67,7 @@ const MyProf = (props) => {
 const mapStatesToProps = (state) => {
   return {
     registeredEvents: state.userData.registeredEvents,
+    userName: state.userData.name
   };
 };
 

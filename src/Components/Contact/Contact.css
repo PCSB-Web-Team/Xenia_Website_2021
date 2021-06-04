@@ -5,6 +5,14 @@
   margin: 0 auto;
 }
 
+.contactUs input{
+  background-color: rgba(133, 133, 133, 0.1);
+}
+
+.contactUs textarea{
+  background-color:  rgba(133, 133, 133, 0.1);
+}
+
 .contactForm{
   display: flex;
   flex-flow: column;

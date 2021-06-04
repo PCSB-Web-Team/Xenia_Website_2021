@@ -28,6 +28,7 @@ const webTeam = (props) => {
 
   return (
     <div className="webTeam" id='webTeam'>
+      <header className='page-headers'><h1> WEB-TEAM </h1></header>
         {team}
         <h1>Guided By</h1>
         {teTeam}

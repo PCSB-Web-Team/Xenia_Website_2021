@@ -1,3 +1,19 @@
-.FAQ_header:hover {
+@font-face {
+  src: url(../../../Assets/Fonts/PTSans-Bold.ttf);
+  font-family: SansBold;
+}
+
+.question {
+  font-family: SansBold;
+  user-select: none;
+}
+
+.question .que{
   cursor: pointer;
+  /* color: rgba(0, 255, 255, 0.7); */
+  color: white;
+}
+
+.question .ans{
+  color: white;
 }

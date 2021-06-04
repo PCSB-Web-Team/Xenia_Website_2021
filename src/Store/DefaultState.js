@@ -5,7 +5,6 @@ let default_state = {
     token: '',
     eventData: [],
     userData: {
-        cart: [],
         registeredEvents: []
     },
     paymentDetails: []
