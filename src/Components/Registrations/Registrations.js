@@ -31,6 +31,9 @@ class Registrations extends Component {
   render() {
     return (
       <div>
+
+        <header className='page-headers'><h1> SCHEDULE </h1></header>
+
         <Box
           className="Registrations"
           alignItems="center"

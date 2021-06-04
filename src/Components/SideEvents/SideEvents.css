@@ -6,19 +6,6 @@
   overflow-y: hidden;
 }
 
-.side-events .btn{
-  background-color: none;
-  color: aqua;
-  border: 2px solid aqua; 
-  border-radius: 0px;
-  transition: ease 200ms;
-}
-
-.side-events .btn:hover{
-  color: aqua;
-  transform: scale(1.1);
-}
-
 .eventContent {
     display: block;
     width: 75%;
@@ -44,12 +31,10 @@
   @media (max-width: 676px) {
     .eventContent {
       padding: 5px !important;
-      text-align: center !important;
       margin: 0px 20px !important;
       width: 90%;
     }
     .event-info {
-      text-align: center !important;
       width: 100%;
     }
   }
