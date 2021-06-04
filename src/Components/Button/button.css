@@ -18,7 +18,7 @@
 }
 .mainButton .btn span {
     transition: all 0.3s;
-    tranform: scale(1, 1);
+    transform: scale(1, 1);
 }
 .mainButton .btn::before, .mainButton .btn::after {
     content: "";
