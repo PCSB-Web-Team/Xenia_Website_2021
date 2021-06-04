@@ -13,6 +13,8 @@ const About = () => {
   return (
     <div className="section side-events">
 
+      <header className='page-headers'><h1> SIDE - EVENTS </h1></header>
+
       <div className="row mx-sm-auto eventContent">
         <div className="col-lg-6">
           <Reveal effect="fadeInDown" duration={1000}>
@@ -70,7 +72,7 @@ const About = () => {
               height="300px"
               width="300px"
               style={{
-                objectFit: "contain" ,
+                objectFit: "contain",
                 // boxShadow: "2px 2px 30px  #131313",
                 borderRadius: "18px",
               }}

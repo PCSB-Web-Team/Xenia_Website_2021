@@ -1,17 +1,17 @@
-import React,{useEffect,useState} from 'react';
-import axios      from 'axios';
-import {connect}  from 'react-redux';
-import {Link}     from  'react-router-dom';
-import Loader     from '../Loader/Loader';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Loader from '../Loader/Loader';
 import './Cards/Card.css';
 import './Events.css';
 import Card from './Cards/Card';
-import {getAllEvents} from '../Config/api/User'
+import { getAllEvents } from '../Config/api/User'
 
 const Events = () => {
-  
+
   const [eventType, setEventType] = useState('tech');
-//  const [view, setView] = useState('cards');
+  //  const [view, setView] = useState('cards');
   const [techEvents, setTech] = useState([]);
   const [nonTechEvents, setNonTech] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,24 +20,24 @@ const Events = () => {
 
   const fetchData = async () => {
     try {
-      
+
       const response = await getAllEvents();
 
-      if(response.data.ok){
-        
-        let tech = [];
-        let nonTech =[];
+      if (response.data.ok) {
 
-        tech = response.data.data.filter(  eve => eve.isTechnical )
-        nonTech = response.data.data.filter( eve => !eve.isTechnical )
+        let tech = [];
+        let nonTech = [];
+
+        tech = response.data.data.filter(eve => eve.isTechnical)
+        nonTech = response.data.data.filter(eve => !eve.isTechnical)
 
         setTech(tech);
         setNonTech(nonTech);
-        
+
       }
 
     }
-    catch(err) {
+    catch (err) {
       console.log(err)
     }
 
@@ -53,22 +53,24 @@ const Events = () => {
 
     <div className="events-dashboard">
 
-    {loading ? <Loader/> : 
+      <header className='page-headers'><h1> EVENTS </h1></header>
 
-      <div className="card-container">
+      {loading ? <Loader /> :
+
+        <div className="card-container">
 
           <div className="tabs">
-            <button className={eventType==='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={changeEventType} id='tech-tab'>Tech</button>
-            <button className={eventType!=='tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={changeEventType} id='non-tech-tab'>Non-Tech</button>
+            <button className={eventType === 'tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={() => setEventType('tech')} id='tech-tab'>Tech</button>
+            <button className={eventType !== 'tech' ? 'tabs-btn active-tab' : 'tabs-btn'} onClick={() => setEventType('non-tech')} id='non-tech-tab'>Non-Tech</button>
           </div>
-          
-          {eventType ==='tech' ? techEvents.map( eve => {return(<div    key={eve._id} className='card-div'>  <Link to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>)} ) : null}
-          {eventType !=='tech' ? nonTechEvents.map( eve => {return(<div key={eve._id} className='card-div'>  <Link to={`/events/${eve._id}`}><Card details = {eve} ></Card></Link> </div>)} ) : null}
-      
-      </div>
 
-    }
-    
+          {eventType === 'tech' ? techEvents.map(eve => { return (<div key={eve._id} className='card-div'>  <Link to={`/events/${eve._id}`}><Card details={eve} ></Card></Link> </div>) }) : null}
+          {eventType !== 'tech' ? nonTechEvents.map(eve => { return (<div key={eve._id} className='card-div'>  <Link to={`/events/${eve._id}`}><Card details={eve} ></Card></Link> </div>) }) : null}
+
+        </div>
+
+      }
+
     </div>
   )
 }
