@@ -54,8 +54,8 @@ const MoreInfo = (props) => {
   };
 
   
-  const openModal = () => setShowModal(true);
-  const closeModal = () => setShowModal(false);
+  const openModal = () => {setShowModal(true); setRegisterLoading(false)};
+  const closeModal = () => {setShowModal(false); setRegisterLoading(false)};
 
   const handleRegister = async () => {
 

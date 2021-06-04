@@ -1,7 +1,6 @@
 import { colors } from '@material-ui/core';
 import React from 'react';
 import Modal from 'react-modal';
-import Background from '../../../BackGround/Background';
 import './Modal.css';
 import Font from '../../../../Assets/Fonts/PTSans-Bold.ttf'
 

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: SansBold;
+  src: url('./Assets/Fonts/PTSans-Bold.ttf');
+}
+
 .Xenia{
   background-color: black;
   background-size: cover;
@@ -25,4 +30,22 @@
 
 .main-bg{
     width: 100%;
+}
+
+.page-headers{
+  width: 100%;  
+  text-align: center;
+  font-family: SansBold;
+  margin-block: 10px;
+}
+
+.page-headers h1{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 64px;
+}
+
+@media (max-width: 400px) {
+  .page-headers h1{
+    font-size: 40px;
+  }
 }
