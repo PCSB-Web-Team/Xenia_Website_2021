@@ -11,6 +11,7 @@ import Loader from "../../Loader/Loader";
 import { setRegisteredEvents, getEventDetails } from "../../Config/api/User";
 import { addToCartFail } from '../../Notifications/Notification';
 import Modal from './Modal/Modal';
+import Themebutton from '../../Button/button';
 
 const MoreInfo = (props) => {
 
@@ -113,12 +114,11 @@ const MoreInfo = (props) => {
             <hr className="my-1" />
 
             {!registered ? (
-              <div
-                onClick={props.isLoggedIn ? openModal : props.openLogin}
-                className="btn btn-lg bg-success"
-                role="button"
-              >
-                Register Now
+              <div style={{display:'flex',flexFlow:'column',alignItems:'center'}}>
+                <Themebutton
+                  onClick={props.isLoggedIn ? openModal : props.openLogin}
+                  value='Register Now'
+                />
               </div>
             )
               : <span style={{ color: 'blue', fontWeight: 'bold', fontSize: '20px' }}>Registered</span>

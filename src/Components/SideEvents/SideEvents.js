@@ -6,7 +6,6 @@ import data from "../../Assets/Images/icon4.png";
 import code from "../../Assets/Images/icon4.png";
 // import Sponsors from "./Sponsors/Sponsors";
 import Fade from "react-reveal/Fade";
-import Zoom from "react-reveal/Zoom";
 import Reveal from "react-reveal/Reveal";
 import ThemeButtton from '../Button/button';
 
