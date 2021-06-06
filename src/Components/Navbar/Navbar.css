@@ -104,8 +104,10 @@ header .navBar {
 
 .nav-close {
   position: fixed;
+  
   top: 15px;
   right: 35px;
+  
   font-size: 32px;
   font-weight: 500;
   color: white;

@@ -22,7 +22,7 @@ const Contact = () => {
     <div className="contactUs mb-3">
       <div className="contactForm mb-3">
         <h1>Send us a message</h1>
-        <form onSubmit={Submit}>
+        <form onSubmit={Submit} id='contactUsForm'>
           <input
             type="text"
             placeholder="Your Name"
@@ -30,6 +30,7 @@ const Contact = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="contactFill"
+            required={true}
           ></input>
           <input
             type="email"
@@ -38,6 +39,7 @@ const Contact = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="contactFill"
+            required={true}
           ></input>
           <input
             type="number"
@@ -56,7 +58,8 @@ const Contact = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
-          <ThemeButton onClick={Submit} value='Submit'/>
+          <button type='submit'>
+          <ThemeButton value='Submit'/></button>
         </form>
       </div>
       <div className="contactInfo">
