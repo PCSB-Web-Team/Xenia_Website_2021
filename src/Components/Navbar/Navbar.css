@@ -58,8 +58,8 @@ header .navBar {
 .navBar .brand{  
   background: none;
   position: relative;
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
 }
 
 .navBar .brand img{

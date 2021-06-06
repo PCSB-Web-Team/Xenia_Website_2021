@@ -9,7 +9,14 @@ const Sponsors = () => {
   return (
     <div className="maincontainer">
 
-      <header className='page-headers mb-5'> <h1>Coming Soon...</h1> </header>
+      <header className="page-headers">
+        <h1 className="header-name"> SPONSORS </h1>
+      </header>
+
+      <header className="page-headers mb-3">
+        {" "}
+        <h1 className="header-name">Coming Soon...</h1>{" "}
+      </header>
 
       {/* <h1 className="headingmain">Sponsors</h1>
       <div className="mainboxtitle">
