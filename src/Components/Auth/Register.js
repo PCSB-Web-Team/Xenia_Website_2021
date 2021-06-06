@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import './Register.css';
 import { Modal } from "react-bootstrap";
 import validInfo from "./validInfo";
 // import axios from "axios";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { register } from "../Config/api/User";
 import { connect } from "react-redux";
-
+import Themebutton from '../Button/button';
 import { toggleLogin, openSignUp, closeLogin } from "../../Store/Actions";
 import { signUpSuccess, signUpFail } from "../Notifications/Notification";
 
@@ -220,12 +221,12 @@ const Register = (props) => {
               </div>
             </div>
 
-            <button
-              onClick={handleHide}
-              className="btn btn-outline-light btn-block"
-            >
-              Sign Up
-            </button>
+            <div className="signupButtonNew">
+              <Themebutton
+                onClick={handleSubmit}
+                value='Sign up'
+              />
+            </div>
             <div className="text-center my-2">
               Already have an account ?{" "}
               <span

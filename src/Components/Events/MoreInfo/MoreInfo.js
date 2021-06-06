@@ -11,6 +11,7 @@ import Loader from "../../Loader/Loader";
 import { setRegisteredEvents, getEventDetails } from "../../Config/api/User";
 import { addToCartFail } from "../../Notifications/Notification";
 import Modal from "./Modal/Modal";
+import Themebutton from "../../Button/button";
 
 const MoreInfo = (props) => {
   const [details, setDetails] = useState({ date: "", rules: [] });
@@ -113,11 +114,16 @@ const MoreInfo = (props) => {
 
             {!registered ? (
               <div
-                onClick={props.isLoggedIn ? openModal : props.openLogin}
-                className="btn btn-lg bg-success"
-                role="button"
+                style={{
+                  display: "flex",
+                  flexFlow: "column",
+                  alignItems: "center",
+                }}
               >
-                Register Now
+                <Themebutton
+                  onClick={props.isLoggedIn ? openModal : props.openLogin}
+                  value="Register Now"
+                />
               </div>
             ) : (
               <span

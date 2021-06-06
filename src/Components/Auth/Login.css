@@ -1,0 +1,20 @@
+.loginButtonNew{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.loginButtonNew .mainButton .btn{
+    color: white;
+}
+
+.loginButtonNew .mainButton .btn:hover{
+    color: white;
+}
+
+
+
+.loginButtonNew .mainButton .btn-six::after {
+    transition: all 0.3s;
+    border: 1px solid white;
+}

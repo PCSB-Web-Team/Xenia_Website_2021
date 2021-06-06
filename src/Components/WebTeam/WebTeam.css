@@ -19,7 +19,9 @@
 .webTeam .profile {
   position: relative;
 
+  font-family: SansBold;
   text-align: center;
+  font-weight: 600;
 
   margin: 10px;
 
