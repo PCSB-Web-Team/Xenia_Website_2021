@@ -54,6 +54,7 @@
 textarea.contactFill {
   resize: none;
   min-height: 10rem;
+  line-height: 0.9;
 }
 
 #contactSubmit {
@@ -86,7 +87,7 @@ textarea.contactFill {
 .phoneAndMail p,
 .socialMedia p {
   color: white;
-  margin-bottom: 0em !important;
+  margin: 0;
 }
 
 .phoneAndMail,
@@ -130,8 +131,14 @@ textarea.contactFill:-webkit-autofill:focus {
   transform: scale(1.1);
 }
 
-@media (min-width: 851px) and (max-width: 100px) {
-  .contactUs {
+.themeButtCont{
+  background: none;
+  width: fit-content;
+  border: 0;
+}
+
+@media (min-width:851px) and (max-width:100px){
+  .contactUs{
     width: 90%;
   }
 }

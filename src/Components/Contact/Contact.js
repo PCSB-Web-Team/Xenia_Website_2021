@@ -58,7 +58,7 @@ const Contact = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
-          <button type='submit'>
+          <button type='submit' className='themeButtCont'>
           <ThemeButton value='Submit'/></button>
         </form>
       </div>

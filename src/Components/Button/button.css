@@ -26,6 +26,7 @@
     border-radius: 25px;
     font-size: 20px;
     font-family: SansBold;
+    z-index: 0;
 }
 .mainButton .btn span {
     transition: all 0.3s;
