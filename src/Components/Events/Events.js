@@ -82,7 +82,7 @@ const Events = () => {
                 return (
                   <div key={eve._id} className="card-div">
                     {" "}
-                    <Link to={`/events/${eve._id}`}>
+                    <Link to={`/events/${eve._id}`} onClick={ () => document.documentElement.scrollTop = 0 }>
                       <Card details={eve}></Card>
                     </Link>{" "}
                   </div>
@@ -94,7 +94,7 @@ const Events = () => {
                 return (
                   <div key={eve._id} className="card-div">
                     {" "}
-                    <Link to={`/events/${eve._id}`}>
+                    <Link to={`/events/${eve._id}`} onClick={ () => document.documentElement.scrollTop = 0 }>
                       <Card details={eve}></Card>
                     </Link>{" "}
                   </div>
