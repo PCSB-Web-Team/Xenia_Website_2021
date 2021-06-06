@@ -9,7 +9,7 @@ import Suggestion from "./Suggestion/Suggestion";
 import { openLogin, addToRegistered } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
 import { setRegisteredEvents, getEventDetails } from "../../Config/api/User";
-import { addToCartFail } from "../../Notifications/Notification";
+import { addToCartFail, registrationsClosed } from "../../Notifications/Notification";
 import Modal from "./Modal/Modal";
 import Themebutton from "../../Button/button";
 
@@ -78,6 +78,10 @@ const MoreInfo = (props) => {
         setRegistered(true);
         setRegisterLoading(false);
         setShowModal(false);
+      }
+      else{
+        closeModal();
+        // registrationsClosed();
       }
     } else {
       addToCartFail();
