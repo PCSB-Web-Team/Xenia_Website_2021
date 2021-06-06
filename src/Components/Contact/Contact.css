@@ -124,6 +124,12 @@ textarea.contactFill:-webkit-autofill:focus {
   transform: scale(1.1);
 }
 
+.themeButtCont{
+  background: none;
+  width: fit-content;
+  border: 0;
+}
+
 @media (min-width:851px) and (max-width:100px){
   .contactUs{
     width: 90%;
