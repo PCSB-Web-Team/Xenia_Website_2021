@@ -53,6 +53,7 @@
 textarea.contactFill{
   resize: none;
   min-height: 10rem;
+  line-height: 0.9;
 }
 
 #contactSubmit{
@@ -82,6 +83,7 @@ textarea.contactFill{
 
 .address p,.phoneAndMail p,.socialMedia p{
   color: white;
+  margin: 0;
 }
 
 .phoneAndMail,.socialMedia{

@@ -1,7 +1,7 @@
 import React from 'react';
 import './RegOpen.css';
 import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
+import Themebutton from '../../Button/button';
 
 const regOpen = (props) =>{
     return (
@@ -13,9 +13,9 @@ const regOpen = (props) =>{
             </Box>
             <h6 className="open">REGISTRATIONS OPEN</h6>
             <h4 className="loren">Loren ipsum Lorem ipsum Loren ipsum</h4>
-              <Button variant="contained" color="secondary" className="Button">
-                  <span style={{fontFamily:'planetns'}}>DOWNLOAD</span>
-              </Button>
+              <div style={{display:'flex',flexFlow:'column',alignItems:'center'}}>
+                  <Themebutton value="DOWNLOAD"/>
+              </div>
         </Box>
     );
 }

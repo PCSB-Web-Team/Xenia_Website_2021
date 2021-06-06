@@ -9,6 +9,7 @@ import LoginModal from "../Auth/Login";
 import RegisterModal from "../Auth/Register";
 import { openLogin } from '../../Store/Actions';
 import { Zoom } from 'react-reveal'
+import XeniaLogo from '../../Assets/Images/xeniaLogo.png';
 
 const Navbar = (props) => {
 
@@ -48,7 +49,7 @@ const Navbar = (props) => {
 
         <div className='navBar'>
 
-          <div className='brand'> XENIA </div>
+          <NavLink to='/' className='brand'> <img src={XeniaLogo}/> </NavLink>
 
           <Zoom bottom cascade duration={500}>
 
