@@ -3,7 +3,7 @@ import "./Contact.css";
 import FAQ from "./FAQ/FAQ";
 import Fade from "react-reveal/Fade";
 import { contactus } from "../Config/api/User";
-import ThemeButton from '../Button/button';
+import ThemeButton from "../Button/button";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -19,8 +19,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="contactUs mb-3">
-      <div className="contactForm mb-3">
+    <div className="contactUs mb-4">
+      <div className="contactForm mb-4">
         <h1>Send us a message</h1>
         <form onSubmit={Submit}>
           <input
@@ -56,10 +56,10 @@ const Contact = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
-          <ThemeButton onClick={Submit} value='Submit'/>
+          <ThemeButton onClick={Submit} value="Submit" />
         </form>
       </div>
-      <div className="contactInfo">
+      <div className="contactInfo mb-4">
         <h1>Contact info</h1>
         <div className="address">
           <h3>Where to find us</h3>

@@ -7,13 +7,14 @@ import code from "../../Assets/Images/icon4.png";
 // import Sponsors from "./Sponsors/Sponsors";
 import Fade from "react-reveal/Fade";
 import Reveal from "react-reveal/Reveal";
-import ThemeButtton from '../Button/button';
+import ThemeButtton from "../Button/button";
 
 const About = () => {
   return (
     <div className="section side-events">
-
-      <header className='page-headers'><h1> SIDE-EVENTS </h1></header>
+      <header className="page-headers">
+        <h1 className="header-name"> SIDE-EVENTS </h1>
+      </header>
 
       <div className="row mx-sm-auto eventContent">
         <div className="col-lg-6">
@@ -21,16 +22,19 @@ const About = () => {
             <div className="event-info mt-5">
               <h3 className="font-weight-bold display-5">Event Name</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, veritatis error impedit neque harum asperiores provident suntsint quis architecto. Nemo impedit commodi fuga natus suntmagnam id quos mollitia.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+                veritatis error impedit neque harum asperiores provident
+                suntsint quis architecto. Nemo impedit commodi fuga natus
+                suntmagnam id quos mollitia.
               </p>
-              <ThemeButtton value='Register'/>
+              <ThemeButtton value="Register" />
             </div>
           </Reveal>
         </div>
         <div className="col-lg-6 text-center  d-none d-lg-block">
           <Fade up duration={1000}>
             <img
-              alt='img'
+              alt="img"
               src={data}
               className="img-fluid ml-5"
               height="300px"
@@ -56,14 +60,14 @@ const About = () => {
                 sint quis architecto. Nemo impedit commodi fuga natus sunt
                 magnam id quos mollitia.
               </p>
-              <ThemeButtton value='Register'/>
+              <ThemeButtton value="Register" />
             </div>
           </Reveal>
         </div>
         <div className="col-lg-6 d-none d-lg-block">
           <Fade up duration={1000}>
             <img
-              alt='img'
+              alt="img"
               src={about}
               className="img-fluid ml-5"
               height="300px"
@@ -89,14 +93,14 @@ const About = () => {
                 sint quis architecto. Nemo impedit commodi fuga natus sunt
                 magnam id quos mollitia.
               </p>
-              <ThemeButtton value='Register'/>
+              <ThemeButtton value="Register" />
             </div>
           </Reveal>
         </div>
         <div className="col-lg-6 text-center d-none d-lg-block">
           <Fade up duration={1000}>
             <img
-              alt='img'
+              alt="img"
               src={code}
               className="img-fluid ml-5"
               height="300px"

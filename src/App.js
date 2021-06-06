@@ -77,10 +77,10 @@ const App = (props) => {
 
         <Route exact path="/sponsors">
           <header className="page-headers">
-            <h1> SPONSORS </h1>
+            <h1 className="header-name"> SPONSORS </h1>
           </header>
-          <AboutUs />
           <Sponsors />
+          <AboutUs />
           <ContactUs />
           <FAQ />
           <Footer />
