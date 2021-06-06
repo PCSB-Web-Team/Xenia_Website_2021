@@ -3,6 +3,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import './Modal.css';
 import Font from '../../../../Assets/Fonts/PTSans-Bold.ttf'
+import ThemeButton from '../../../Button/button';
 
 const customStyles = {
 
@@ -19,12 +20,13 @@ const customStyles = {
         left: '50%',
         right: 'auto',
         bottom: 'auto',
+        overflow: 'hidden',
         marginRight: '-50%',
         fontFamily: { Font },
         transform: 'translate(-50%, -50%)',
         background: 'rgba(255,255,255,0.1)',
         border: 'none',
-        color: 'white',
+        color: 'aqua',
         backdropFilter: 'blur(5px)',
     }
 };
@@ -89,8 +91,8 @@ const RegisterModal = (props) => {
                             </div>
                             :
                             <>  
-                                <button onClick={props.closeModal} style={buttonStyle}>Cancel</button>
-                                <button onClick={props.handleRegister} style={buttonStyle}>Register</button>
+                                <ThemeButton onClick={props.closeModal} value='Cancel'></ThemeButton>
+                                <ThemeButton onClick={props.handleRegister} value='Register'></ThemeButton>
                             </>
                     }
 

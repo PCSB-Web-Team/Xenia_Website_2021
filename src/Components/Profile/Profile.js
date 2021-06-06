@@ -30,7 +30,7 @@ const MyProf = (props) => {
 
   return (
     <div className="ProfCard">
-      <header className='page-headers'><h1> {props.userName} </h1></header>
+      <header className='page-headers'><h1 className='header-name'> {props.userName} </h1></header>
       <div className="registeredEventsContainer">
         <div className="registeredEvents">
           {list.length > 0 ? (

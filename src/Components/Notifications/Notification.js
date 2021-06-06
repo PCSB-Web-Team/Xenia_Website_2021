@@ -68,7 +68,7 @@ export const addToCartFail = () => {
 };
 
 export const removedFromCart = () => {
-  toast.error("Successfully removed from cart", {
+  toast.success("Successfully removed from cart", {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: 3000,
   });
@@ -82,7 +82,7 @@ export const removeFromCartFail = () => {
 };
 
 export const loggedOut = () => {
-  toast.error("Logged Out", {
+  toast.success("Logged Out", {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: 3000,
   });

@@ -39,6 +39,13 @@ export default function validateInfo(values, signup) {
     } else if (values.password2 !== values.password) {
       errors.password2 = "Passwords do not match";
     }
+
+    if (!values.phone.trim()) {
+      errors.phone = "Phone No. is required";
+    }
+    if (!values.college.trim()) {
+      errors.college = "College is required";
+    }
     return errors;
   }
 }

@@ -3,6 +3,7 @@ import "./Contact.css";
 import FAQ from "./FAQ/FAQ";
 import Fade from "react-reveal/Fade";
 import { contactus } from "../Config/api/User";
+import ThemeButton from "../Button/button";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -18,10 +19,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="contactUs">
-      <div className="contactForm">
+    <div className="contactUs mb-4">
+      <div className="contactForm mb-4">
         <h1>Send us a message</h1>
-        <form onSubmit={Submit}>
+        <form onSubmit={Submit} id='contactUsForm'>
           <input
             type="text"
             placeholder="Your Name"
@@ -29,6 +30,7 @@ const Contact = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="contactFill"
+            required={true}
           ></input>
           <input
             type="email"
@@ -37,6 +39,7 @@ const Contact = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="contactFill"
+            required={true}
           ></input>
           <input
             type="number"
@@ -55,10 +58,11 @@ const Contact = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
-          <button id="contactSubmit">SUBMIT</button>
+          <button type='submit' className='themeButtCont'>
+          <ThemeButton value='Submit'/></button>
         </form>
       </div>
-      <div className="contactInfo">
+      <div className="contactInfo mb-4">
         <h1>Contact info</h1>
         <div className="address">
           <h3>Where to find us</h3>

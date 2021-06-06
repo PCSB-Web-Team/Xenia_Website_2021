@@ -14,6 +14,7 @@
   padding-inline: 20px;
 }
 
+
 header .navItem {
   font-family: SansRegular;
   min-width: 135px;
@@ -53,6 +54,18 @@ header .navBar {
   justify-content: space-between;
 }
 
+
+.navBar .brand{  
+  background: none;
+  position: relative;
+  height: 35px;
+  width: 35px;
+}
+
+.navBar .brand img{
+  cursor: pointer;
+  height: 100%;
+}
 .navBar .list {
   display: flex;
 }
@@ -91,8 +104,10 @@ header .navBar {
 
 .nav-close {
   position: fixed;
+  
   top: 15px;
   right: 35px;
+  
   font-size: 32px;
   font-weight: 500;
   color: white;

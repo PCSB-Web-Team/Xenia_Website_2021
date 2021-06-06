@@ -8,7 +8,17 @@ import Sponsor from "../../Assets/Images/main_bg.jpg";
 const Sponsors = () => {
   return (
     <div className="maincontainer">
-      <h1 className="headingmain">Sponsors</h1>
+
+      <header className="page-headers">
+        <h1 className="header-name"> SPONSORS </h1>
+      </header>
+
+      <header className="page-headers mb-3">
+        {" "}
+        <h1 className="header-name">Coming Soon...</h1>{" "}
+      </header>
+
+      {/* <h1 className="headingmain">Sponsors</h1>
       <div className="mainboxtitle">
         <div className="mainboxItemtitle">
           <img
@@ -66,7 +76,7 @@ const Sponsors = () => {
             alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp"
           ></img>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

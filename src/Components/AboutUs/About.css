@@ -27,7 +27,7 @@
   text-align: left;
 }
 .content1 {
-  margin-top: 30px;
+  margin-top: 5px;
   color: #fff;
   text-align: center;
 }
@@ -164,7 +164,6 @@
   }
   .content1 p {
     font-size: 15px;
-    text-align: center !important;
   }
   .content2 h1 {
     font-size: 50px !important;

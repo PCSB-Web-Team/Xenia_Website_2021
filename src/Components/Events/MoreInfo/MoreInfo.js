@@ -9,23 +9,23 @@ import Suggestion from "./Suggestion/Suggestion";
 import { openLogin, addToRegistered } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
 import { setRegisteredEvents, getEventDetails } from "../../Config/api/User";
-import { addToCartFail } from '../../Notifications/Notification';
-import Modal from './Modal/Modal';
+import { addToCartFail } from "../../Notifications/Notification";
+import Modal from "./Modal/Modal";
+import Themebutton from "../../Button/button";
 
 const MoreInfo = (props) => {
-
-  const [details, setDetails] = useState({ date: '', rules: [] });
+  const [details, setDetails] = useState({ date: "", rules: [] });
   const [loading, setLoading] = useState(true);
   const [registered, setRegistered] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [registerLoading, setRegisterLoading] = useState(false)
+  const [registerLoading, setRegisterLoading] = useState(false);
 
   let { id } = useParams();
   let history = useHistory();
 
   const checkRegistered = () => {
     setRegistered(false);
-    props.registeredEvents.forEach(eve => {
+    props.registeredEvents.forEach((eve) => {
       if (eve._id === id) setRegistered(true);
     });
   };
@@ -36,33 +36,35 @@ const MoreInfo = (props) => {
   }, [id]);
 
   const fetchData = async (props) => {
-
     try {
       const response = await getEventDetails(id);
 
-      console.log(response.data)
+      console.log(response.data);
 
       if (response.data.ok) {
         setDetails(response.data.data);
       }
     } catch (error) {
-      console.log(error)
-      history.push('/events');
+      console.log(error);
+      history.push("/events");
     }
 
     setLoading(false);
   };
 
-  
-  const openModal = () => {setShowModal(true); setRegisterLoading(false)};
-  const closeModal = () => {setShowModal(false); setRegisterLoading(false)};
+  const openModal = () => {
+    setShowModal(true);
+    setRegisterLoading(false);
+  };
+  const closeModal = () => {
+    setShowModal(false);
+    setRegisterLoading(false);
+  };
 
   const handleRegister = async () => {
-
-    setRegisterLoading(true)
+    setRegisterLoading(true);
 
     if (props.isLoggedIn) {
-
       // if(details.additionalInfo.required){
       // showPopUp
       // fire modal and recieve the details object
@@ -74,16 +76,13 @@ const MoreInfo = (props) => {
         props.addToRegistered(res.data.data.event);
         // addToCartSuccess();
         setRegistered(true);
-        setRegisterLoading(false)
+        setRegisterLoading(false);
         setShowModal(false);
       }
     } else {
       addToCartFail();
     }
-
-    
   };
-
 
   return (
     <div className="MoreInfo">
@@ -91,16 +90,17 @@ const MoreInfo = (props) => {
         <Loader />
       ) : (
         <div className="info1">
-
           <Link to="/events">
             <div className="back-container">
-              <img src={back2} alt='go back' />
+              <img src={back2} alt="go back" />
             </div>
           </Link>
 
-          <div className="more-info jumbotron text-center py-2" id="main-detail">
-
-            <img className="logo" src={ReactLogo} alt='logo'></img>
+          <div
+            className="more-info jumbotron text-center py-2"
+            id="main-detail"
+          >
+            <img className="logo" src={ReactLogo} alt="logo"></img>
 
             <h3 className="name">{details.name}</h3>
             <span className> {details.date.substring(0, 10)} </span>
@@ -114,15 +114,24 @@ const MoreInfo = (props) => {
 
             {!registered ? (
               <div
-                onClick={props.isLoggedIn ? openModal : props.openLogin}
-                className="btn btn-lg bg-success"
-                role="button"
+                style={{
+                  display: "flex",
+                  flexFlow: "column",
+                  alignItems: "center",
+                }}
               >
-                Register Now
+                <Themebutton
+                  onClick={props.isLoggedIn ? openModal : props.openLogin}
+                  value="Register Now"
+                />
               </div>
-            )
-              : <span style={{ color: 'blue', fontWeight: 'bold', fontSize: '20px' }}>Registered</span>
-            }
+            ) : (
+              <span
+                style={{ color: "blue", fontWeight: "bold", fontSize: "20px" }}
+              >
+                Registered
+              </span>
+            )}
 
             <DetailsTab details={details} />
           </div>
@@ -130,7 +139,13 @@ const MoreInfo = (props) => {
           <Suggestion suggestions={details.suggestions}></Suggestion>
         </div>
       )}
-      <Modal showModal={showModal} closeModal={closeModal} openModal={openModal} load={registerLoading} handleRegister={handleRegister}/>
+      <Modal
+        showModal={showModal}
+        closeModal={closeModal}
+        openModal={openModal}
+        load={registerLoading}
+        handleRegister={handleRegister}
+      />
     </div>
   );
 };
@@ -139,7 +154,7 @@ const mapStateToProps = (state) => {
   return {
     token: state.token,
     isLoggedIn: state.login,
-    registeredEvents: state.userData.registeredEvents
+    registeredEvents: state.userData.registeredEvents,
   };
 };
 
@@ -148,9 +163,9 @@ const mapActionToProps = (dispatch) => {
     openLogin: () => {
       dispatch(openLogin());
     },
-    addToRegistered: details => {
+    addToRegistered: (details) => {
       dispatch(addToRegistered(details));
-    }
+    },
   };
 };
 

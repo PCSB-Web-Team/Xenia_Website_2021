@@ -24,7 +24,7 @@ const Footer = (props) => {
           <MDBRow className="footerRow p-4 d-flex mx-auto">
             <div className="block1 d-flex mx-auto">
               <div className="column1 mx-auto">
-                <h6 className="text-center text-uppercase ">
+                <h6 className="text-uppercase ">
                   <strong>PCSB - Xenia</strong>
                 </h6>
                 <hr
@@ -116,15 +116,15 @@ const Footer = (props) => {
                   style={{ width: "60px" }}
                 />
                 <div className="nav-content">
-                  <i className="fa fa-home mr-3" />
+                  <i className="fa fa-home mr-2" />
                   Dhanakawadi, Katraj, Pune
                 </div>
                 <div className="nav-content">
-                  <i className="fa fa-envelope mr-3" />
+                  <i className="fa fa-envelope mr-2" />
                   pictcsi@gmail.com
                 </div>
                 <div className="nav-content">
-                  <i className="fa fa-phone mr-3" />
+                  <i className="fa fa-phone mr-2" />
                   +91 1234567890
                 </div>
               </div>

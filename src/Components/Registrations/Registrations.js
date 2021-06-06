@@ -30,9 +30,10 @@ class Registrations extends Component {
 
   render() {
     return (
-      <div>
-
-        <header className='page-headers'><h1> SCHEDULE </h1></header>
+      <>
+        <header className="page-headers">
+          <h1 className="header-name"> SCHEDULE </h1>
+        </header>
 
         <Box
           className="Registrations"
@@ -78,7 +79,7 @@ class Registrations extends Component {
           </Grid>
           {/* </Slide> */}
         </Box>
-      </div>
+      </>
     );
   }
 }

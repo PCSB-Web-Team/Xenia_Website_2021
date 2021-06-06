@@ -1,0 +1,20 @@
+.signupButtonNew{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.signupButtonNew .mainButton .btn{
+    color: white;
+}
+
+.signupButtonNew .mainButton .btn:hover{
+    color: white;
+}
+
+
+
+.signupButtonNew .mainButton .btn-six::after {
+    transition: all 0.3s;
+    border: 1px solid white;
+}

@@ -1,7 +1,7 @@
 .events-dashboard {
   vertical-align: center;
   overflow: hidden;
-  padding: 5px;
+  padding-inline: 5px;
   background: none;
   position: relative;
   width: 100%;
