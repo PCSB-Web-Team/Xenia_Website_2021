@@ -30,11 +30,6 @@ let teamDetails = [
     linkedIn: "https://www.linkedin.com/in/atharva-belekar-0121",
     pic: Atharva,
   },
-  {
-    name: "Sourav Borate",
-    linkedIn: "https://www.linkedin.com/in/sourav-borate-bb25831b2/",
-    pic: Sourav,
-  },
 ];
 let prernaSthhall = [
   {
@@ -71,7 +66,7 @@ const webTeam = (props) => {
         <h1 className="header-name"> WEB-TEAM </h1>
       </header>
       {team}
-      <h1>Guided By</h1>
+      <br/>
       {teTeam}
     </div>
   );

@@ -64,7 +64,7 @@ const Events = () => {
               onClick={() => setEventType("tech")}
               id="tech-tab"
             >
-              Tech
+              Technical
             </button>
             <button
               className={
@@ -73,7 +73,7 @@ const Events = () => {
               onClick={() => setEventType("non-tech")}
               id="non-tech-tab"
             >
-              Non-Tech
+              Non-Technical
             </button>
           </div>
 
