@@ -11,16 +11,15 @@ const Suggestion = (props) => {
         <Link to={`/events/${props.suggestions[0]._id}`} className="card">
           <img
             className="card-img-top"
-            id="1"
             src={ReactLogo}
             alt="Card cap"
           />
           <div className="card-body" id="1">
             <h3>{props.suggestions[0].name}</h3>
-            <p className="card-text" id="2">
+            <div className="suggestion-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
-            </p>
+            </div>
           </div>
         </Link>
 
@@ -32,10 +31,10 @@ const Suggestion = (props) => {
           <img className="card-img-top" src={ReactLogo} alt="Card cap" />
           <div className="card-body">
             <h3>{props.suggestions[1].name}</h3>
-            <p className="card-text">
+            <div className="suggestion-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
-            </p>
+            </div>
           </div>
         </Link>
       </div>
