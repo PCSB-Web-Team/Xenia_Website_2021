@@ -131,10 +131,15 @@ textarea.contactFill:-webkit-autofill:focus {
   transform: scale(1.1);
 }
 
-.themeButtCont{
+.themeButtCont {
   background: none;
   width: fit-content;
   border: 0;
+}
+
+.themeButtCont:focus{
+  outline: none;
+  border: none;
 }
 
 @media (min-width:851px) and (max-width:100px){
@@ -163,6 +168,11 @@ textarea.contactFill:-webkit-autofill:focus {
   #contactSubmit {
     margin: 30px auto 50px auto;
   }
+
+  .socialMedia{
+    text-align: center;
+  }
+
   .contactFill {
     font-size: 1rem;
   }
@@ -171,6 +181,10 @@ textarea.contactFill:-webkit-autofill:focus {
   }
   .address {
     margin-top: 0.6rem;
+  }
+
+  .themeButtCont{
+    width: 100%;
   }
   /* .address p,
   .phoneAndMail p,

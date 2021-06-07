@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./LandingPage.css";
 // import bg from "../../Assets/Images//LandingPage/layer3.jpg";
 import bg from "../../Assets/Images//LandingPage/bg5.png";
@@ -7,29 +7,28 @@ import astranout2 from "../../Assets/Images//LandingPage/astranout.png";
 import astranout1 from "../../Assets/Images//LandingPage/xeniabg10.png";
 // import layer3 from "../../Assets/Images//LandingPage/jupiter.jpg";
 // import Zoom from 'react-reveal/Zoom';
-import Fade from "react-reveal/Slide";
+import Zoom from "react-reveal/Zoom";
 import XeniaLogo from "../../Assets/Images/Xenia 21 Final.png";
 import Stars from "./LandingPageStars/LandingPageStars";
 import Mountain from '../../Assets/Images/LandingPage/mid.png';
 import Moon from './Moon/Moon';
 import Shuttle from '../../Assets/Images/LandingPage/shuttle.png';
+import Loader from '../Loader/Loader';
+
 
 const LandingPage = () => {
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setLoading(false)
+  }, [])
+
   const handleMove = (e) => {
     const box = document.querySelector(".astranout");
 
     let x = e.pageX;
     let y = e.pageY;
-
-    // let transX = e.target.offsetWidth * 0.005 - x * 0.05;
-    // let transY = e.target.offsetHeight * 0.005 - y * 0.05;
-    // box.style.transform = `translateX(${transX}px) translateY(${transY}px)`;
-
-    // const layer3 = document.querySelector(".layer3");
-
-    // let transXL = e.target.offsetHeight * 0.005 + x * 0.1;
-    // let transYL = e.target.offsetHeight * 0.005 + y * 0.1;
-    // layer3.style.transform = `translateX(${transXL}px) translateY(${transYL}px)`;
 
     const background = document.querySelector(".mountain");
 
@@ -40,9 +39,12 @@ const LandingPage = () => {
   };
 
   return (
+      loading ?
+      <Loader/>
+      :
     <div className="landing-page">
       <div className="landing-container" onMouseMove={handleMove}>
-        
+
         <div className="bg">
           <img src={bg} alt=""></img>
         </div>
@@ -51,37 +53,24 @@ const LandingPage = () => {
           <img src={Mountain}></img>
         </div>
 
-        {/* 
-        <div className="lake">
-          <div className="ast-container">
-            <img className="main-ast" src={astranout1} alt=""></img>
-          </div>
-        </div> */}
-
-        <div className = 'shuttle'>
-          <img src={Shuttle}/>
+        <div className='shuttle'>
+          <img src={Shuttle} />
         </div>
 
-        <Moon/>
+        <Moon />
 
         <div className="landing-page-stars">
           <Stars />
         </div>
 
-        {/* 
-        <div className="astranout">
-          <img src={astranout2} alt=''></img>
-        </div> 
-        */}
-
-        <Fade cascade>
-          <div className="logo-div">
-            <div className="logo-container">
+        <div className="logo-div">
+          <div className="logo-container">
+            <Zoom bottom>
               <img src={XeniaLogo} />
               <div className="event-date">25 - 27 June</div>
-            </div>
+            </Zoom>
           </div>
-        </Fade>
+        </div>
 
       </div>
     </div>

@@ -60,11 +60,11 @@ export const registrationsClosed = () => {
   });
 };
 
-export const addToCartSuccess = () => {
-  toast.success("Successfully added to cart", {
+export const formSubmitted = () => {
+  toast.success("Form Submitted SuccessFully", {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: 3000,
-  });
+  } );
 };
 
 export const addToCartFail = () => {

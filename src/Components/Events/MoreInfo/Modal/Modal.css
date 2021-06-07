@@ -10,3 +10,8 @@
 .ReactModal__Overlay--before-close{
     opacity: 0;
 }
+
+#g-recaptcha{
+    width: 100%;
+    text-align: center;
+}

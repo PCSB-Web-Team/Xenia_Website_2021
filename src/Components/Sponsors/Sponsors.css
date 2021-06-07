@@ -9,6 +9,10 @@
   /* padding: 0 2rem 2rem; */
 }
 
+.coming-soon{
+  color: rgba(0, 255, 255, 0.8);
+}
+
 .headingmain {
   font-family: SansBold;
   font-size: 4rem;
