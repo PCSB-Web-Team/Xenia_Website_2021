@@ -1,5 +1,7 @@
 export default function validateInfo(values, signup) {
+  
   let errors = {};
+
   if (signup === false) {
     if (!values.email) {
       errors.email = "Email is  required";
@@ -8,8 +10,8 @@ export default function validateInfo(values, signup) {
     }
     if (!values.password) {
       errors.password = "Password is required";
-    } else if (values.password.length < 6) {
-      errors.password = "Password needs to be 6 characters or more";
+    } else if (values.password.length < 8) {
+      errors.password = "Password needs to be 8 characters or more";
     }
 
     //   if (!values.password2) {

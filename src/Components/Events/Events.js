@@ -72,7 +72,7 @@ const Events = () => {
               onClick={() => setEventType("non-tech")}
               id="non-tech-tab"
             >
-              Non-Technical
+              Non Technical
             </button>
           </div>
 

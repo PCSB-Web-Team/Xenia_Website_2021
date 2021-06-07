@@ -37,6 +37,7 @@ const Login = (props) => {
     if (errors === null) {
 
       setLoading(true);
+
       let res = await login(user);
 
       if (res.data.ok === true) {

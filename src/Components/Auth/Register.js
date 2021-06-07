@@ -11,6 +11,7 @@ import { toggleLogin, openSignUp, closeLogin } from "../../Store/Actions";
 import { signUpSuccess, signUpFail } from "../Notifications/Notification";
 
 const Register = (props) => {
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +19,7 @@ const Register = (props) => {
   const [college, setCollege] = useState("");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState(null);
+  
   const [loading, setLoading] = useState(false);
 
   if (errors !== null) {
@@ -28,11 +30,12 @@ const Register = (props) => {
 
     e.preventDefault();
 
-    setErrors(validInfo({ name, email, password, password2 }));
+    setErrors( validInfo({ name, email, password, password2 }) );
     
     if (errors === null) {
-      
+
       setLoading(true);
+
       const user = { name, password, college, email, phone };
       const res = await register(user);
 
@@ -50,6 +53,7 @@ const Register = (props) => {
       setCollege("");
       setPhone("");
       setErrors(null);
+
     }
 
     setLoading(false);
@@ -204,7 +208,9 @@ const Register = (props) => {
                 <input
                   className="form-control"
                   name="phone"
-                  type="text"
+                  type="number"
+                  min='7000000000'
+                  max='9999999999'
                   placeholder="Phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
