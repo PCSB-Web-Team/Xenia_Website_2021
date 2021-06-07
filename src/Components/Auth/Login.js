@@ -22,17 +22,21 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(null);
+  const [loading, setLoading] = useState(false)
 
   if (errors !== null) {
-    setTimeout(() => setErrors(null), 5000);
+    setTimeout(() => {setErrors(null); setLoading(false)}, 5000);
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setErrors(validInfo({ email, password }, false));
     const user = { email, password };
 
     if (errors === null) {
+
+      setLoading(true);
       let res = await login(user);
 
       if (res.data.ok === true) {
@@ -56,6 +60,9 @@ const Login = (props) => {
       setPassword("");
       setErrors(null);
     }
+
+    setLoading(false);
+
   };
 
   const handleHide = () => {
@@ -155,34 +162,50 @@ const Login = (props) => {
                 </span>
               )}
             </div>
-            <div className="loginButtonNew">
-              <Themebutton
-                onClick={handleSubmit}
-                value='Login'
-              />
-            </div>
-            <div className="text-center my-2">
-              Don't have an account ?{" "}
-              <span
-                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
-                onClick={props.toggleLogin}
-              >
-                Sign Up
-              </span>
-            </div>
-            <div className="text-center">
-              <Link to="/forgot-password">
-                <span
-                  style={{
-                    fontWeight: "bold",
-                    color: "blue",
-                    cursor: "pointer",
-                  }}
-                  onClick={forgotPassword}
-                >
-                  Forgot Password
-                </span>
-              </Link>
+
+            <div className='login-button-group'>
+
+              {
+                loading
+                  ?
+                  <div className='loginButtonNew my-5'>
+                    <div className="spinner-border text-info aqua" role="status">
+                      <span className="sr-only">Loading...</span>
+                    </div>
+                  </div>
+                  :
+                  <>
+                    <div className="loginButtonNew">
+                      <Themebutton
+                        onClick={handleSubmit}
+                        value='Login'
+                      />
+                    </div>
+                    <div className="text-center my-2">
+                      Don't have an account ?{" "}
+                      <span
+                        style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
+                        onClick={props.toggleLogin}
+                      >
+                        Sign Up
+                      </span>
+                    </div>
+                    <div className="text-center">
+                      <Link to="/forgot-password">
+                        <span
+                          style={{
+                            fontWeight: "bold",
+                            color: "blue",
+                            cursor: "pointer",
+                          }}
+                          onClick={forgotPassword}
+                        >
+                          Forgot Password
+                        </span>
+                      </Link>
+                    </div>
+                  </>
+              }
             </div>
           </form>
         </Modal.Body>

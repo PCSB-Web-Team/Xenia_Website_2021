@@ -18,14 +18,21 @@ const Register = (props) => {
   const [college, setCollege] = useState("");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   if (errors !== null) {
-    setTimeout(() => setErrors(null), 5000);
+    setTimeout(() => {setErrors(null); setLoading(false)}, 5000);
   }
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
+
     setErrors(validInfo({ name, email, password, password2 }));
+    
     if (errors === null) {
+      
+      setLoading(true);
       const user = { name, password, college, email, phone };
       const res = await register(user);
 
@@ -44,6 +51,8 @@ const Register = (props) => {
       setPhone("");
       setErrors(null);
     }
+
+    setLoading(false);
   };
 
   const handleHide = () => {
@@ -221,21 +230,35 @@ const Register = (props) => {
               </div>
             </div>
 
-            <div className="signupButtonNew">
-              <Themebutton
-                onClick={handleSubmit}
-                value='Sign up'
-              />
-            </div>
-            <div className="text-center my-2">
-              Already have an account ?{" "}
-              <span
-                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
-                onClick={props.toggleLogin}
-              >
-                Login
-              </span>
-            </div>
+            {
+              loading
+                ?
+                <div className='loginButtonNew my-5'>
+                  <div className="spinner-border text-info aqua" role="status">
+                    <span className="sr-only">Loading...</span>
+                  </div>
+                </div>
+                :
+                <>
+                  <div className="signupButtonNew">
+                    <Themebutton
+                      onClick={handleSubmit}
+                      value='Sign up'
+                    />
+                  </div>
+                  <div className="text-center my-2">
+                    Already have an account ?{" "}
+                    <span
+                      style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
+                      onClick={props.toggleLogin}
+                    >
+                      Login
+                    </span>
+                  </div>
+                </>
+            }
+
+
           </form>
         </Modal.Body>
       </Modal>
