@@ -18,10 +18,19 @@ const MyProf = (props) => {
   //           </div>`;
   // }, []);
 
+  const handleMouse = (name)=>{
+    const listEves = document.querySelector('.RegP');
+    const evename = document.getElementById('eveDetailsName');
+    console.log(listEves);
+    if(listEves.length!=0){
+      evename.textContent==''?   evename.textContent=listEves.textContent : evename.textContent = name;
+    }
+  }
+
   let list = props.registeredEvents.map((eve) => {
     return (
       <div className="Regdiv" key={eve._id}>
-        <h3 className="RegP">
+        <h3 className="RegP" onMouseEnter={()=>handleMouse(eve.name)}>
           {eve.name}
         </h3>
       </div>
@@ -40,10 +49,10 @@ const MyProf = (props) => {
           )}
         </div>
         <div className="registeredEventsDashboard">
-          <h1>DASHBOARD</h1>
+          <h1>SLOT DETAILS</h1>
           <div className="dashboardTech">
-            <p>Technical Events : <span>1</span></p>
-            <p>Non Technical Events : <span>1</span></p>
+            <p id="eveDetailsName"></p>
+            <p id="slotTime">Coming Soon!!!</p>
           </div>
           <div className="dashboardNonTech">
 

@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import {changedSuccessFully} from '../Notifications/Notification';
 import "./reset.css";
 import ThemeButton from '../Button/button';
+import astro from '../../Assets/Images/astronaut.png';
 
 
 const Form = () => {
@@ -82,6 +83,10 @@ const Form = () => {
                         :
 
                         <div>
+                            <div className="resetPassHead">
+                                <img src={astro}/>
+                                <p>Reset Password</p>
+                            </div>
                             <label>New Password</label>
                             <div>
                                 <input type={!view1 ? 'password' : 'text'} id='pass1' ></input>

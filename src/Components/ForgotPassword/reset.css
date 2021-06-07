@@ -15,24 +15,20 @@
     margin-top: 50px;
     width: 100%;
   }
-  .form-box{
+  .reset-password .form-box{
   
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
   
-    width: 400px;
-    height: 400px;
+    width: fit-content;
+    height: fit-content;
   
-    max-width: 100%;
+    max-width: 400px;
   
     background: rgba(112, 112, 112, 0.2);
     backdrop-filter: blur(5px);
-  
-    margin-inline: 10px;
-  
-    padding: 20px;
   }
   
   .form-box .title{
@@ -49,16 +45,13 @@
   
   .form-box input{
     height: 40px;
-    width: 100%;
+    width: 95%;
     background: black;
     color: white;
     outline: none;
     border: none;
   
     border-radius: 10px;
-  
-    border-bottom: 2px solid aqua;
-    border-right: 2px solid aqua;
   
     transition: 400ms ease;
 
@@ -89,7 +82,6 @@
   
   .form-box input:focus{
     border: none;
-    border: 2px solid aqua;
   }
   
   .form-box .alerts{
@@ -131,4 +123,38 @@
     border: 2px solid aqua;
     border-top: none;
     border-left: none;
+  }
+
+  .resetPassHead{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: black;
+    border-bottom: 1px solid white;
+  }
+
+  .resetPassHead img{
+    height: 90px;
+    width: 90px;
+    margin-top: -30px;
+  }
+
+  .resetPassHead p{
+    color: white;
+    font-size: 32px;
+    font-family: SansRegular;
+  }
+
+  @media(max-width:500px){
+    .reset-password{
+      width: 300px;
+      margin: 50px auto;
+    }
+    .reset-password .form-box{
+      width: 100%;
+    }
+    .reset-password .resetPassHead{
+      width: 100%;
+    }
   }
