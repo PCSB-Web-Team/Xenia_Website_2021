@@ -14,6 +14,7 @@ import Modal from "./Modal/Modal";
 import Themebutton from "../../Button/button";
 
 const MoreInfo = (props) => {
+  
   const [details, setDetails] = useState({ date: "", rules: [] });
   const [loading, setLoading] = useState(true);
   const [registered, setRegistered] = useState(false);

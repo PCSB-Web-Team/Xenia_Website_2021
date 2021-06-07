@@ -57,7 +57,7 @@ const Form = () => {
     <div className='forgot-password'>
       <div className='form-box'>
         <div className='title'>
-          <img src={astro} style={imageStyles}></img>
+          <img src={astro} style={imageStyles} alt=''></img>
           <p>Enter your email</p>
         </div>
         <input type='email' placeholder='abc@gmail.com' id='input-email' ></input>

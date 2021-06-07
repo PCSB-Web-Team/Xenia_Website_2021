@@ -7,7 +7,6 @@ import Amit from "../../Assets/Images/WebTeam/amit.jpg";
 import Atharva from "../../Assets/Images/WebTeam/atharva.jpeg";
 import Siddhesh from "../../Assets/Images/WebTeam/siddhesh.jpg";
 import Pranil from "../../Assets/Images/WebTeam/pranil.jpeg";
-import Sourav from "../../Assets/Images/WebTeam/sourav.jpg";
 
 let teamDetails = [
   {

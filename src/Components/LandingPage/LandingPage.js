@@ -19,7 +19,8 @@ const LandingPage = () => {
   }, [])
 
   const handleMove = (e) => {
-    const box = document.querySelector(".astranout");
+
+    // const box = document.querySelector(".astranout");
 
     let x = e.pageX;
     let y = e.pageY;
@@ -44,11 +45,11 @@ const LandingPage = () => {
         </div>
 
         <div className='mountain'>
-          <img src={Mountain}></img>
+          <img src={Mountain} alt=""></img>
         </div>
 
         <div className='shuttle'>
-          <img src={Shuttle} />
+          <img src={Shuttle} alt="" />
         </div>
 
         <Moon />
@@ -60,7 +61,7 @@ const LandingPage = () => {
         <div className="logo-div">
           <div className="logo-container">
             <Zoom bottom>
-              <img src={XeniaLogo} />
+              <img src={XeniaLogo}  alt=""/>
               <div className="event-date">25 - 27 June</div>
             </Zoom>
           </div>

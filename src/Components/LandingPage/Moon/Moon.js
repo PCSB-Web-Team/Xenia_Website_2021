@@ -1,5 +1,5 @@
 import './Moon.css';
-import MoonImage from '../../../Assets/Images/LandingPage/moon.png'
+// import MoonImage from '../../../Assets/Images/LandingPage/moon.png'
 
 const Moon = () => {
     return (

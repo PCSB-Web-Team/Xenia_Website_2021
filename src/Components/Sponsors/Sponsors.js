@@ -1,7 +1,7 @@
 import React from "react";
 // import Logo from "../../Assets/Images/logo.svg";
 import "./Sponsors.css";
-import Sponsor from "../../Assets/Images/main_bg.jpg";
+// import Sponsor from "../../Assets/Images/main_bg.jpg";
 // import Tata from "../../Assets/Images/SponsorImages/Tata.jpg";
 // import Vodafone from "../../Assets/Images/SponsorImages/Vodafone.jpg";
 
