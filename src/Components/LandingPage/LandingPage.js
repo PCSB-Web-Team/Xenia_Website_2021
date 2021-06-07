@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./LandingPage.css";
-// import bg from "../../Assets/Images//LandingPage/layer3.jpg";
 import bg from "../../Assets/Images//LandingPage/bg5.png";
-import astranout2 from "../../Assets/Images//LandingPage/astranout.png";
-// import shuttle from "../../Assets/Images//LandingPage/spaceshuttle.png";
-import astranout1 from "../../Assets/Images//LandingPage/xeniabg10.png";
-// import layer3 from "../../Assets/Images//LandingPage/jupiter.jpg";
-// import Zoom from 'react-reveal/Zoom';
 import Zoom from "react-reveal/Zoom";
 import XeniaLogo from "../../Assets/Images/Xenia 21 Final.png";
 import Stars from "./LandingPageStars/LandingPageStars";
