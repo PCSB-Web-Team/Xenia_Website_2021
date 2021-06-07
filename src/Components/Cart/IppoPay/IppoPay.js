@@ -1,44 +1,103 @@
-import React, { useState, useEffect } from 'react';
-import { Ippopay } from 'react-ippopay';
+import React, { useState, useEffect } from "react";
+import { Ippopay } from "react-ippopay";
+import { payAmount, setRegisteredEvents, getLoggedInUser } from "../../Config/api/User";
 
-const IppoPay = () => {
+import { loggedIn } from '../../../Store/Actions';
 
-    const [ippopayOpen, setippopayOpen] = useState(false)
-    const [order_id, setorder_id] = useState("order_MpBA$7Z2K")
-    const [public_key, setpublic_key] = useState("pk_test_xnM80OWvynpL")
+import { connect } from 'react-redux';
 
-    const ippopayHandler = (e) => {
-        if (e.data.status === 'success') {
-            console.log(e.data);
+const IppoPay = ({ details, token, loggedIn }) => {
+  const [ippopayOpen, setippopayOpen] = useState(false);
+  const [orderId, setOrderId] = useState("");
+  const [publicKey, setPublicKey] = useState("");
+
+  const ippopayHandler = async (e) => {
+
+    try {
+      if (e.data.status === "success") {
+
+        // console.log(e.data);
+        
+        const detailsData = {
+          orderId: e.data.order_id,
+          transactionNo: e.data.transaction_no
         }
-        if (e.data.status === 'failure') {
-            console.log(e.data);
-        }
+
+        const data  = await setRegisteredEvents(detailsData, token)
+        
+        const userData = await getLoggedInUser( token );
+
+        loggedIn(userData.data.data);
+
+        console.log(userData)
+        console.log(data)
+
+      }
+      else {
+        console.log(e.data);
+      }
     }
 
-    useEffect(() => {
-        window.addEventListener('message', ippopayHandler);
-    })
+    catch (e) {
+      console.log(e);
+    }
+  };
 
-    const ippopayOpener = () => {
-        setippopayOpen(() => true)
+  useEffect(() => {
+    window.addEventListener("message", ippopayHandler);
+  });
+
+  const ippopayOpener = async () => {
+    //send backend details
+    try {
+      const res = await payAmount(details, token);
+      // console.log(res.data);
+
+      if (res.data.success) {
+
+        setOrderId(res.data.data.order.order_id);
+        setPublicKey(res.data.data.order.public_key);
+        setippopayOpen(true);
+
+      }
+
     }
 
-    const closeippopay = () => {
-        setippopayOpen( () => false )
+    catch (e) {
+      console.log(e)
     }
+  };
 
-    return (
-        <div>
-            <div onClick={ippopayOpener}> Proceed to Pay </div>
-            <Ippopay
-                ippopayOpen={ippopayOpen}
-                ippopayClose={true}
-                order_id={order_id}
-                public_key={public_key}
-            />
-        </div>
-    );
+  const closeippopay = () => {
+    setippopayOpen(false);
+  };
+
+  return (
+    <div>
+      <div onClick={ippopayOpener} className="priceSummary">
+        {" "}
+        Proceed to Pay{" "}
+      </div>
+      <Ippopay
+        ippopayOpen={ippopayOpen}
+        ippopayClose={true}
+        order_id={orderId}
+        public_key={publicKey}
+      />
+    </div>
+  );
+};
+
+const mapStatesToProps = state => {
+  return {
+    token: state.token
+  }
 }
 
-export default IppoPay;
+const mapActionsToProps = dispatch => {
+  return {
+    loggedIn: data => { dispatch(loggedIn(data)) }
+  }
+}
+
+export default connect(mapStatesToProps, mapActionsToProps)(IppoPay);

@@ -1,22 +1,30 @@
 import React from "react";
 import "./Footer.css";
 import { MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-import BackToTop from "./BackToTop/BacktoTop";
 import { Link } from "react-router-dom";
-import {connect} from 'react-redux';
-import {openLogin} from '../../Store/Actions';
+import { connect } from "react-redux";
+import { openLogin } from "../../Store/Actions";
 
 const Footer = (props) => {
   return (
     <div>
-      <BackToTop/>
+      <div className="backtotop">
+        <h4
+          onClick={() => {
+            document.documentElement.scrollTop = 0;
+          }}
+          style={{ textDecoration: "none", color: "white", cursor: "pointer" }}
+        >
+          GET BACK TO THE TOP
+        </h4>
+      </div>
 
       <MDBFooter className="pageFooter pt-0">
         <MDBContainer className="mt-2 mb-2 text-center">
           <MDBRow className="footerRow p-4 d-flex mx-auto">
             <div className="block1 d-flex mx-auto">
               <div className="column1 mx-auto">
-                <h6 className="text-center text-uppercase ">
+                <h6 className="text-uppercase ">
                   <strong>PCSB - Xenia</strong>
                 </h6>
                 <hr
@@ -108,15 +116,15 @@ const Footer = (props) => {
                   style={{ width: "60px" }}
                 />
                 <div className="nav-content">
-                  <i className="fa fa-home mr-3" />
+                  <i className="fa fa-home mr-2" />
                   Dhanakawadi, Katraj, Pune
                 </div>
                 <div className="nav-content">
-                  <i className="fa fa-envelope mr-3" />
+                  <i className="fa fa-envelope mr-2" />
                   pictcsi@gmail.com
                 </div>
                 <div className="nav-content">
-                  <i className="fa fa-phone mr-3" />
+                  <i className="fa fa-phone mr-2" />
                   +91 1234567890
                 </div>
               </div>
@@ -127,11 +135,12 @@ const Footer = (props) => {
               <li className="list-inline-item">
                 <a
                   href="http://www.linkedin.com/company/pict-csi"
-                  target='_blank'
                   className="btn-floating btn-lg btn-ldi mx-1"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <i
-                    className="footerIcon fa fa-linkedin"
+                    className="footerIcon fa fa-linkedin fa-lg"
                     aria-hidden="true"
                   ></i>
                 </a>
@@ -139,11 +148,12 @@ const Footer = (props) => {
               <li className="list-inline-item">
                 <a
                   href="http://www.facebook.com/csipict"
-                  target='_blank'
                   className="btn-floating btn-lg btn-fb mx-1"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <i
-                    className="footerIcon fa fa-facebook"
+                    className="footerIcon fa fa-facebook fa-lg"
                     aria-hidden="true"
                   ></i>
                 </a>
@@ -152,10 +162,11 @@ const Footer = (props) => {
                 <a
                   href="http://www.instagram.com/csipict"
                   className="btn-floating btn-lg btn-itg mx-1"
-                  target='_blank'
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <i
-                    className="footerIcon fa fa-instagram"
+                    className="footerIcon fa fa-instagram fa-lg"
                     aria-hidden="true"
                   ></i>
                 </a>

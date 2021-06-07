@@ -1,7 +1,7 @@
 .events-dashboard {
   vertical-align: center;
   overflow: hidden;
-  padding: 5px;
+  padding-inline: 5px;
   background: none;
   position: relative;
   width: 100%;
@@ -24,8 +24,8 @@
 
 .tabs .active-tab {
   transition: ease 500ms;
-  color: rgb(0, 255, 213);
-  border: 2px solid rgb(22, 220, 235);
+  color: #00b4d8;
+  border: 2px solid #00b4d8;
 }
 
 .tabs button {
@@ -37,7 +37,7 @@
   background: none;
   outline: none;
   border: none;
-  border-radius: 0px;
+  border-radius: 20px;
   width: 25%;
   border: 1px solid rgb(0, 124, 128);
 }
@@ -48,7 +48,7 @@
 
 .tabs button:hover {
   color: aqua;
-  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 255, 255, 0.9);
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 255, 255, 0.9);
 }
 
 @media (max-width: 600px) {

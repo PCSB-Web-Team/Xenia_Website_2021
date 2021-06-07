@@ -22,16 +22,12 @@ const cartSummary = (props) => {
             </div>
             <div className='paymentBox'>
                 <div className='paymentInner'>
+                    <p>No of events</p>
+                    <p>{props.cart.length}</p>
+                </div>
+                <div className='paymentInner'>
                     <p>Total value</p>
                     <p>{sum}</p>
-                </div>
-                <div className='paymentInner'>
-                    <p>No of events</p>
-                    <p>{discount}</p>
-                </div>
-                <div className='paymentInner'>
-                    <p>Cart Subtotal</p>
-                    <p>{discount + sum}</p>
                 </div>
             </div>
             <div className='pmtsBox'>
@@ -41,7 +37,7 @@ const cartSummary = (props) => {
                         <p>{totalValue}</p>
                     </div>
                     <div className="payBtn">
-                        <IppoPay />
+                        <IppoPay details = { {...props.paymentDetails, amount: totalValue} } />
                     </div>
                 </div>
             </div>
@@ -51,8 +47,16 @@ const cartSummary = (props) => {
 }
 
 const mapStatesToProps = state => {
+    
+    let user = state.userData
+
     return {
         cart: state.userData.cart,
+        paymentDetails: {
+            name: user.name,
+            email: user.email,
+            phone: user.phone
+        }
     }
 }
 

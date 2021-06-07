@@ -5,7 +5,8 @@
     z-index: -1;
     height: 100%;
     width: 100%;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
+    background: radial-gradient(ellipse at bottom, #1b2d35 0%, #000000 100%);
     overflow: hidden;
   }
   

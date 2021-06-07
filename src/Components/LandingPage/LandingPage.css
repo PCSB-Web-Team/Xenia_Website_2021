@@ -1,13 +1,12 @@
 @font-face {
-  font-family: "planetn";
-  src: url("../../Assets/Fonts/nasalization.ttf");
+  font-family: "SansBold";
+  src: url('../../Assets/Fonts/PTSans-Bold.ttf');
 }
 
 .landing-page {
-  zoom: 1;
   z-index: 0;
   position: absolute;
-  background: linear-gradient(rgb(0, 0, 0) 30%, white);
+  background-color: black;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -17,181 +16,55 @@
   user-select: none;
 }
 
-.layer3 {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-
-  z-index: 97;
-  position: absolute;
-
-  transition: ease-out 10s;
-
+.landing-page .landing-container {
   width: 100%;
   height: 100%;
-  background: none;
+  position: relative;
+  text-align: center;
+}
 
-  overflow: hidden;
+.landing-page .bg {
+  transition: ease-out 1s;
 
-  padding-top: 15vw;
-  padding-left: 50vw;
+  z-index: 96;
 
+  position: absolute;
+
+  min-width: 100%;
+  height: 100vh;
+
+  right: 0px;
   top: 0px;
-  right: 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.layer3 img {
-  opacity: 1;
-
-  border-radius: 50%;
-
-  height: 500px;
-  width: 500px;
-}
-
-/* .landing-page .bg {
-  transition: ease-out 10s;
-
-  z-index: 96;
-
+.landing-page .bg img {
   position: absolute;
-
-  min-width: 120%;
-  height: 80%;
-
-  left: -10%;
-  top: -5%;
-} */
-
-/* .landing-page .bg img {
-  width: 100%;
-  height: 100%;
-} */
-
-.landing-page .bg{
-  transition: ease-out 10s;
-
-  z-index: 96;
-
-  position: absolute;
-
-  min-width: 120%;
-  height: 120%;
-
-  right: 0px;
-  top: -50px;
-}
-
-.landing-page .bg img{
-  width: 100%;
-  height: 100%;
-}
-
-.lake {
-
-  user-select: none;
-  -webkit-user-drag: none;
-  background: linear-gradient(rgba(1, 47, 78, 0.5) 40%,rgba(2, 133, 255, 0.61) 70%);
-  z-index: 99;
-  height: 100%;
-  width: 110%;
-  position: absolute;
-  user-zoom: initial;
-  left: -10%;
-
-}
-
-.lake img {
-  user-select: none;
-  -webkit-user-drag: none;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  bottom: -1%;
+  min-width: 100%;
+  min-height: 100vh;
   left: 0px;
+  top: 0px;
 }
 
-.astranout {
-  user-zoom: inherit;
-  z-index: 100;
+/* Xenia Logo */
+.logo-div {
   position: absolute;
-
-  transition: ease-out 2s;
-
-  height: 60%;
-  width: 45%;
-  min-width: 700px;
-
-  left: -20px;
-  bottom: -45px;
-}
-
-.astranout img {
-  user-select: none;
-  -webkit-user-drag: none;
-
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: +100;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.SpaceShip {
-  z-index: 100;
-  width: 200px;
-  height: 400px;
-}
-
-.SpaceShip img {
-  z-index: 100;
-  position: absolute;
-  top: 200px;
-  height: 150px;
-  width: 200px;
-
-  transform: rotate(90deg);
-
-  animation-name: shuttle;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes shuttle {
-  0% {
-    transition: ease-in;
-    transform: scale(0.5);
-    right: -100px;
-  }
-  25% {
-    transform: scale(1);
-    right: 120px;
-  }
-  40% {
-    top: 300px;
-    right: 120px;
-    transform: scale(1);
-  }
-  60% {
-    top: 630px;
-    right: 100px;
-    transform: scale(0.5);
-  }
-  80% {
-    top: 630px;
-    right: 100px;
-    transform: scale(0.5);
-  }
-  100% {
-    top: -100px;
-    right: 240px;
-    transform: scale(0);
-  }
-}
-
-@font-face {
-  font-family: "planetns";
-  src: url("../../Assets/Fonts/Planetnsv2.ttf");
+.logo-div .logo-container {
+  height: 100vh;
+  text-align: center;
 }
 
 .landing-page .landing-container {
@@ -201,145 +74,127 @@
   text-align: center;
 }
 
-.landing-page #xenia {
-  z-index: +100;
-  width: 100%;
+.logo-container img {
+  margin-top: 220px;
+}
+
+.logo-div .event-date {
+  font-family: "SansBold";
+  color: rgb(183, 0, 255);
+  font-weight: 600;
+  font-size: 38px;
+  margin-bottom: 80px;
+}
+
+/* Landing Page Mountains */
+.mountain {
+  height: 80vh;
+  width: 110%;
+
+  transition: ease-out 500ms;
+
   position: absolute;
-  top: 25vh;
+
+  bottom: -50px;
+  left: -30px;
+
+  z-index: 98;
+
 }
 
-.landing-page h1#xenia {
-  font-family: "planetns";
-  color: white;
-  font-size: 9vw;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #06e8f8, 0 0 20px #06e8f8,
-    0 0 25px #06e8f8, 0 0 30px #06e8f8, 0 0 35px #06e8f8;
-  animation: animate 2000ms alternate infinite;
-  letter-spacing: 70px;
-  transition: ease 1s;
+.mountain img{
+  height: 100%;
+  width: 100%;
+  min-width: 1500px;
 }
 
-@keyframes animate {
+/* Moon */
+.moon-container{
+  position: absolute;
+  width: 350px;
+  height: 250px;
+  left: 0px;
+}
+
+/* Stars */
+.landing-page-stars{
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  z-index: 97;
+}
+
+/* Shuttle */
+.shuttle {
+  position: absolute;
+  
+  width: 150px;
+  height: 240px;
+
+  top: 0px;
+  right: -300px;
+
+  z-index: 100;
+
+  animation-name: shuttle;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-delay: 5s;
+}
+
+.shuttle img{
+  width: 100%;
+}
+
+@keyframes shuttle {
   0% {
-    transform: translateY(0);
+    transform: scale(0.5);
+    right: -300px;
+  }
+  25% {
+    transform: scale(1);
+    right: 220px;
+  }
+  40% {
+    top: 300px;
+    right: 220px;
+    transform: scale(1);
+  }
+  60% {
+    top: 630px;
+    right: 220px;
+    transform: scale(0.5);
+  }
+  80% {
+    top: 630px;
+    right: 220px;
+    transform: scale(0.5);
   }
   100% {
-    transform: translateY(-10px);
-  }
-}
-
-.landing-page .landing-container span {
-  z-index: +100;
-  font-family: "planetn";
-  font-size: 1em;
-  color: rgb(255, 255, 255);
-  margin-bottom: 0;
-  position: absolute;
-  top: 46%;
-  left: 64%;
-  transition: ease 1s;
-}
-
-@media (max-width: 1300px) {
-  .landing-page .landing-container span {
-    top: 43%;
-    left: 63%;
-    transition: ease 1s;
-  }
-  .layer3 {
-    right: -20px;
-    top: 0px;
-    width: 1300px;
-    height: 800px;
-    transition: ease;
-  }
-}
-
-@media (max-width: 1120px) {
-  .landing-page .landing-container span {
-    top: 41%;
-    left: 63%;
-    transition: ease 1s;
-  }
-
-  .layer3 {
-    top: 0px;
-    width: 1300px;
-    height: 800px;
-    transition: ease-out 5s;
-  }
-}
-
-@media (max-width: 1100px) {
-  .landing-page h1#xenia {
-    font-size: 8vw;
-    letter-spacing: 50px;
-
-    transition: ease 1s;
-  }
-  .landing-page .landing-container span {
-    top: 39%;
-    left: 59%;
-    transition: ease 1s;
+    top: -100px;
+    right: 220px;
+    transform: scale(0);
   }
 }
 
 @media (max-width: 880px) {
-  .landing-page h1#xenia {
-    font-size: 85px;
-    letter-spacing: 30px;
-
-    transition: ease 1s;
-  }
-  .landing-page .landing-container span {
-    top: 39%;
-    left: 58%;
-    transition: ease 1s;
-  }
-
-  .landing-page .lake {
-    width: 1000px;
-  }
-}
-
-@media (max-width: 750px) {
-  .landing-page h1#xenia {
-    font-size: 70px;
-    letter-spacing: 30px;
-
-    transition: ease 1s;
-  }
-  .landing-page .landing-container span {
-    top: 38%;
-    left: 55%;
-    transition: ease 1s;
+  .mountain{
+    width: 1500px;
+    left: -200px;
+    bottom: -120px;
   }
 }
 
 @media (max-width: 650px) {
-  .landing-page h1#xenia {
-    font-size: 65px;
-    letter-spacing: 25px;
-    transition: ease 1s;
-  }
-  .landing-page .landing-container span {
-    top: 36%;
-    left: 54%;
-    transition: ease 1s;
-  }
-}
 
-.landing-page .date {
-  font-family: "planetn";
-  font-size: 3vw;
-  color: white;
-  margin-bottom: 0;
-  transition: ease 1s;
-}
+  .logo-div img{
+    max-width: 90%;
+  }
 
-@font-face {
-  font-family: "planetns";
-  src: url("../../Assets/Fonts/Planetnsv2.ttf");
+  .logo-div .event-date{
+    font-size: 25px;
+  }
 }

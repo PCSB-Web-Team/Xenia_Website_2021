@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import sendEmail from "./sendEmail";
+import './Login.css';
 // import axios from "axios";
+import validInfo from "./validInfo";
 import { Modal } from "react-bootstrap";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { connect } from "react-redux";
-
+import { Link } from "react-router-dom";
 import { loginFail, loginSuccess } from "../Notifications/Notification";
 import { login, getLoggedInUser } from "../Config/api/User";
+import Themebutton from '../Button/button';
 import {
   loggedIn,
   storeToken,
@@ -15,43 +19,56 @@ import {
 } from "../../Store/Actions";
 
 const Login = (props) => {
-  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState(null);
+
+  if (errors !== null) {
+    setTimeout(() => setErrors(null), 5000);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors(validInfo({ email, password }, false));
     const user = { email, password };
-    let res = await login(user);
 
-    if (res.data.ok === true) {
-      const token = res.data.data.token;
-      res = await getLoggedInUser(token);
+    if (errors === null) {
+      let res = await login(user);
 
-      localStorage.setItem("xeniaUserToken", token);
+      if (res.data.ok === true) {
+        const token = res.data.data.token;
+        res = await getLoggedInUser(token);
 
-      props.loggedIn(res.data.data);
-      props.storeToken(token);
+        localStorage.setItem("xeniaUserToken", token);
 
-      loginSuccess();
-      props.closeLogin();
-      setError("");
-    } else {
-      loginFail();
-      setError("Invalid Credentials");
+        props.loggedIn(res.data.data);
+        props.storeToken(token);
+
+        loginSuccess();
+        props.closeLogin();
+        // setError("");
+      } else {
+        loginFail();
+        // setError("Invalid Credentials");
+      }
+
+      setEmail("");
+      setPassword("");
+      setErrors(null);
     }
-
-    setEmail("");
-    setPassword("");
   };
 
   const handleHide = () => {
-    if (error === "Invalid Credentials") {
-      return props.closeLogin();
-    } else {
-      return null;
-    }
+    // if (error === "Invalid Credentials") {
+    //   return props.closeLogin();
+    // } else {
+    //   return null;
+    // }
+  };
+
+  const forgotPassword = () => {
+    sendEmail();
+    props.closeLogin();
   };
 
   return (
@@ -73,7 +90,7 @@ const Login = (props) => {
           <Modal.Title>
             <div className="d-flex flex-column text-center">
               <img
-                alt='welcome-back'
+                alt="welcome-back"
                 src={astronaut}
                 className="img-fluid"
                 style={styles.imageStyles}
@@ -108,9 +125,9 @@ const Login = (props) => {
                   }}
                 />
               </div>
-              {error && (
+              {errors !== null && errors.email !== undefined && (
                 <span className="text-danger pl-5 font-weight-bold">
-                  {error}
+                  {`* ${errors.email}`}
                 </span>
               )}
             </div>
@@ -132,21 +149,40 @@ const Login = (props) => {
                   }}
                 />
               </div>
+              {errors !== null && errors.password !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.password}`}
+                </span>
+              )}
             </div>
-            <button
-              onClick={handleHide}
-              className="btn btn-outline-light btn-block"
-            >
-              Login
-            </button>
+            <div className="loginButtonNew">
+              <Themebutton
+                onClick={handleSubmit}
+                value='Login'
+              />
+            </div>
             <div className="text-center my-2">
               Don't have an account ?{" "}
               <span
-                style={{ fontWeight: "bold", color: "blue", cursor: 'pointer'}}
+                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
                 onClick={props.toggleLogin}
               >
                 Sign Up
               </span>
+            </div>
+            <div className="text-center">
+              <Link to="/forgot-password">
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    color: "blue",
+                    cursor: "pointer",
+                  }}
+                  onClick={forgotPassword}
+                >
+                  Forgot Password
+                </span>
+              </Link>
             </div>
           </form>
         </Modal.Body>

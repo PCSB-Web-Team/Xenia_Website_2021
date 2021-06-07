@@ -5,6 +5,7 @@
     flex-flow: column;
     align-items: center;
     padding: 30px;
+    text-align: center;
 }
 
 .content404{
@@ -18,9 +19,7 @@
     font-size: 2em;
 }
 
-.cont404 img{
-    height: 50%;
-    width: 40%;
+.cont404 img {
     animation: astro 4s infinite alternate;
     transition: 2s ease;
     margin-top: 30px;
@@ -32,5 +31,11 @@
     }
     100%{
         transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .cont404 img{
+        width: 80%;
     }
 }

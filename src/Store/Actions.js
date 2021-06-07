@@ -1,7 +1,6 @@
 export const LOGGEDIN = "LOGGEDIN";
 export const LOGGEDOUT = "LOGGEDOUT";
-export const ADDTOCART = 'ADDTOCART';
-export const REMOVEFROMCART = 'REMOVEFROMCART';
+export const ADDTOREGISTERED = 'ADDTOCART';
 export const GETEVENTDATA = 'GETEVENTDATA';
 export const STORETOKEN  =  'STORETOKEN';
 
@@ -41,17 +40,10 @@ export const getEventData = (eveData) => {
     }
 }
 
-export const addToCart = (eveData) => {
+export const addToRegistered = (eveData) => {
     return {
-        type: ADDTOCART,
+        type: ADDTOREGISTERED,
         payload: eveData
-    }
-}
-
-export const removeFromCart = (eventId) => {
-    return {
-        type: REMOVEFROMCART,
-        payload: eventId
     }
 }
 
@@ -76,5 +68,12 @@ export const toggleLogin = () => {
 export const closeLogin = () => {
     return {
         type: CLOSELOGIN
+    }
+}
+
+export const paymentDetails = (details) => {
+    return {
+        type: PAYMENTDETAILS,
+        details: details
     }
 }

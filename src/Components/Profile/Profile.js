@@ -18,11 +18,11 @@ const MyProf = (props) => {
   //           </div>`;
   // }, []);
 
-  let list = props.cart.map((eve) => {
+  let list = props.registeredEvents.map((eve) => {
     return (
       <div className="Regdiv" key={eve._id}>
         <h3 className="RegP">
-          {eve.name}{" "}
+          {eve.name}
         </h3>
       </div>
     );
@@ -30,15 +30,13 @@ const MyProf = (props) => {
 
   return (
     <div className="ProfCard">
-      <div className="usernameHeading">
-        <h1>USERNAME</h1>
-      </div>
+      <header className='page-headers'><h1 className='header-name'> {props.userName} </h1></header>
       <div className="registeredEventsContainer">
         <div className="registeredEvents">
           {list.length > 0 ? (
             list
           ) : (
-            <h1 className="usernameHeading">No Registered Events</h1>
+            <h1 className="noRegistered">No Registered Events</h1>
           )}
         </div>
         <div className="registeredEventsDashboard">
@@ -68,7 +66,8 @@ const MyProf = (props) => {
 
 const mapStatesToProps = (state) => {
   return {
-    cart: state.userData.cart,
+    registeredEvents: state.userData.registeredEvents,
+    userName: state.userData.name
   };
 };
 

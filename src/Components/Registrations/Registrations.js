@@ -30,7 +30,11 @@ class Registrations extends Component {
 
   render() {
     return (
-      <div>
+      <>
+        <header className="page-headers">
+          <h1 className="header-name"> SCHEDULE </h1>
+        </header>
+
         <Box
           className="Registrations"
           alignItems="center"
@@ -44,7 +48,7 @@ class Registrations extends Component {
           {/* <Slide left cascade> */}
           <Grid container spacing={2} lg={6} md={12} sm={12} xs={12}>
             <Grid item xs={12} sm={12} md={4} lg={4} alignItems="center">
-              <Zoom>
+              <Zoom duration={500}>
                 <EventCols
                   date={this.state.days.day1.date}
                   eventNames={this.state.days.day1.events}
@@ -54,7 +58,7 @@ class Registrations extends Component {
             </Grid>
 
             <Grid item xs={12} sm={12} md={4} lg={4} alignItems="center">
-              <Zoom>
+              <Zoom duration={500}>
                 <EventCols
                   date={this.state.days.day2.date}
                   eventNames={this.state.days.day2.events}
@@ -64,7 +68,7 @@ class Registrations extends Component {
             </Grid>
 
             <Grid item xs={12} sm={12} md={4} lg={4} alignItems="center">
-              <Zoom>
+              <Zoom duration={500}>
                 <EventCols
                   date={this.state.days.day3.date}
                   eventNames={this.state.days.day3.events}
@@ -75,7 +79,7 @@ class Registrations extends Component {
           </Grid>
           {/* </Slide> */}
         </Box>
-      </div>
+      </>
     );
   }
 }

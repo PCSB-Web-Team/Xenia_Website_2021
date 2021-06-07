@@ -56,25 +56,20 @@ const reducer = (state = defaultState, action) => {
 				eventData: action.payload,
 			};
 
-		case actions.ADDTOCART:
+		case actions.ADDTOREGISTERED:
 			return {
 				...state,
 				userData: {
 					...state.userData,
-					cart: [...state.userData.cart, action.payload],
+					registeredEvents: [...state.userData.registeredEvents, action.payload],
 				},
 			};
 
-		case actions.REMOVEFROMCART:
+		case actions.PAYMENTDETAILS:
 			return {
 				...state,
-				userData: {
-					...state.userData,
-					cart: state.userData.cart.filter(
-						(e) => e._id !== action.payload
-					),
-				},
-			};
+				paymentDetails: action.details
+			}
 
 		default:
 			return {

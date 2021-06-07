@@ -3,6 +3,11 @@
   src: url(../../Assets/Fonts/Barlow-Light.ttf);
 }
 
+@font-face {
+  font-family: SansBold;
+  src: url(../../Assets/Fonts/PTSans-Bold.ttf);
+}
+
 .Registrations {
   display: flex;
   flex-flow: row;
@@ -11,9 +16,10 @@
   color: white;
   margin-top: 0 !important;
 }
+
 @media (min-width: 1280px) {
   .Registrations {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-flow: row;
     box-sizing: border-box;

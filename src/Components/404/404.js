@@ -8,7 +8,7 @@ const Page404 =() =>{
     return (
         <div className="cont404">
            <div className="content404">
-               <h1>404 Error </h1>
+               <h1>404</h1>
                <p>Seems like you lost in space.... </p>
            </div>
            <img alt='astranout' src={astro} />

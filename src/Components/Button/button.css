@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'SansBold';
+    src: url('../../Assets/Fonts/PTSans-Bold.ttf');
+}
+
+.mainButton {
+    text-align: center;
+    height: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+/* BUTTON STYLING */
+.mainButton .btn {
+    position: relative;
+    color: aqua;
+    width: 220px;
+    height: 50px;
+    line-height: 50px;
+    transition: all 0.3s;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    border-radius: 25px;
+    font-size: 20px;
+    font-family: SansBold;
+    z-index: 0;
+}
+.mainButton .btn span {
+    transition: all 0.3s;
+    transform: scale(1, 1);
+}
+
+.mainButton .btn:hover{
+    color: aqua;
+}
+
+.mainButton .btn::before, .mainButton .btn::after {
+    content: "";
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    z-index: 1;
+}
+/* BTN SIX */
+.mainButton .btn-six::before {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1.3, 1.3);
+}
+.mainButton .btn-six:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+.mainButton .btn-six::after {
+    transition: all 0.3s;
+    border: 1px solid aqua;
+}
+.mainButton .btn-six:hover::after {
+    transform: scale(0, 0);
+    opacity: 0;
+}
+
+@media (max-width: 676px){
+    .mainButton {
+        width: 100%;
+    }
+}

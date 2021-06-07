@@ -1,53 +1,63 @@
-.contactUs{
+.contactUs {
   display: flex;
   justify-content: space-evenly;
   width: 70%;
   margin: 0 auto;
 }
 
-.contactForm{
+.contactUs input {
+  background-color: rgba(133, 133, 133, 0.1);
+}
+
+.contactUs textarea {
+  background-color: rgba(133, 133, 133, 0.1);
+}
+
+.contactForm {
   display: flex;
   flex-flow: column;
   width: 60%;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
-.contactInfo{
+.contactInfo {
   width: 40%;
   padding: 0 10px;
 }
 
-.contactForm form{
+.contactForm form {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   margin-top: 1.7rem;
 }
 
-.contactForm h1,.contactInfo h1{
+.contactForm h1,
+.contactInfo h1 {
   color: white;
-  font-family: 'SansBold';
+  font-family: "SansBold";
 }
 
-.contactFill{
+.contactFill {
   color: white;
   height: 3rem;
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
   outline: 0;
   border: 0;
   border-left: 2px aqua solid;
   padding: 1rem 2.4rem;
   font-size: 1.5rem;
   line-height: 2.8rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
-textarea.contactFill{
+textarea.contactFill {
   resize: none;
   min-height: 10rem;
+  line-height: 0.9;
 }
 
-#contactSubmit{
+#contactSubmit {
   outline: 0;
   margin-top: 30px;
   width: 50%;
@@ -58,50 +68,55 @@ textarea.contactFill{
   transition: 100ms ease;
 }
 
-#contactSubmit:hover{
+#contactSubmit:hover {
   transform: scale(1.1);
 }
 
-
-.address{
+.address {
   margin-top: 1.7rem;
 }
 
-.address h3,.phoneAndMail h3,.socialMedia h3{
+.address h3,
+.phoneAndMail h3,
+.socialMedia h3 {
   color: white;
-  font-family: 'SansBold';
+  font-family: "SansBold";
 }
 
-.address p,.phoneAndMail p,.socialMedia p{
+.address p,
+.phoneAndMail p,
+.socialMedia p {
   color: white;
+  margin: 0;
 }
 
-.phoneAndMail,.socialMedia{
+.phoneAndMail,
+.socialMedia {
   margin-top: 1.6rem;
 }
 
-.fa-instagram{
+.fa-instagram {
   color: white;
   font-size: xx-large !important;
   transition: 100ms ease;
 }
 
-.fa-facebook-official{
-  color : white;
+.fa-facebook-official {
+  color: white;
   font-size: xx-large !important;
   transition: 100ms ease;
   margin-left: 20px;
 }
 
-.fa-linkedin{
-  color : white;
+.fa-linkedin {
+  color: white;
   font-size: xx-large !important;
   transition: 100ms ease;
   margin-left: 20px;
 }
 
 input.contactFill:-webkit-autofill,
-input.contactFill:-webkit-autofill:hover, 
+input.contactFill:-webkit-autofill:hover,
 input.contactFill:-webkit-autofill:focus,
 textarea.contactFill:-webkit-autofill,
 textarea.contactFill:-webkit-autofill:hover,
@@ -110,8 +125,21 @@ textarea.contactFill:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.fa-facebook-official:hover,.fa-instagram:hover,.fa-linkedin:hover{
+.fa-facebook-official:hover,
+.fa-instagram:hover,
+.fa-linkedin:hover {
   transform: scale(1.1);
+}
+
+.themeButtCont {
+  background: none;
+  width: fit-content;
+  border: 0;
+}
+
+.themeButtCont:focus{
+  outline: none;
+  border: none;
 }
 
 @media (min-width:851px) and (max-width:100px){
@@ -120,32 +148,47 @@ textarea.contactFill:-webkit-autofill:focus {
   }
 }
 
-@media(max-width:850px){
-  .contactUs{
+@media (max-width: 850px) {
+  .contactUs {
     width: 100%;
     flex-flow: column;
     align-items: center;
   }
-  .contactForm{
+  .contactForm {
     width: 100%;
     align-items: center;
   }
-  .contactInfo{
+  .contactInfo {
     width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
+    margin-top: 1.5rem;
   }
-  #contactSubmit{
+  #contactSubmit {
     margin: 30px auto 50px auto;
   }
-  .contactFill{
-    font-size: 1rem;
-  }
-  .contactForm form{
-    width: 85%;
-  }
-  .address p,.phoneAndMail p,.socialMedia{
+
+  .socialMedia{
     text-align: center;
   }
+
+  .contactFill {
+    font-size: 1rem;
+  }
+  .contactForm form {
+    width: 85%;
+  }
+  .address {
+    margin-top: 0.6rem;
+  }
+
+  .themeButtCont{
+    width: 100%;
+  }
+  /* .address p,
+  .phoneAndMail p,
+  .socialMedia {
+    text-align: center;
+  } */
 }

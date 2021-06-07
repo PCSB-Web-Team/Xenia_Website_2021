@@ -1,46 +1,57 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
+import './Register.css';
 import { Modal } from "react-bootstrap";
+import validInfo from "./validInfo";
 // import axios from "axios";
 import astronaut from "../../Assets/Images/astronaut.png";
 import { register } from "../Config/api/User";
 import { connect } from "react-redux";
-
+import Themebutton from '../Button/button';
 import { toggleLogin, openSignUp, closeLogin } from "../../Store/Actions";
 import { signUpSuccess, signUpFail } from "../Notifications/Notification";
 
 const Register = (props) => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
   const [college, setCollege] = useState("");
   const [phone, setPhone] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState(null);
+  if (errors !== null) {
+    setTimeout(() => setErrors(null), 5000);
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = { password, college, email, phone };
-    const res = await register(user);
+    setErrors(validInfo({ name, email, password, password2 }));
+    if (errors === null) {
+      const user = { name, password, college, email, phone };
+      const res = await register(user);
 
-    console.log(res.data);
+      console.log(res.data);
 
-    if (res.data.ok) {
-      signUpSuccess();
-      this.props.toggle();
-    } else {
-      signUpFail();
-      setError("Invalid Credentials");
+      if (res.data.ok) {
+        signUpSuccess();
+        props.toggleLogin();
+      } else {
+        signUpFail();
+      }
+
+      setEmail("");
+      setPassword("");
+      setCollege("");
+      setPhone("");
+      setErrors(null);
     }
-
-    setEmail("");
-    setPassword("");
-    setCollege("");
-    setPhone("");
   };
 
   const handleHide = () => {
-    if (error === "Invalid Credentials") {
-      return props.closeLogin();
-    } else {
-      return null;
-    }
+    // if (error === "Invalid Credentials") {
+    //   return props.closeLogin();
+    // } else {
+    //   return null;
+    // }
   };
 
   return (
@@ -62,7 +73,7 @@ const Register = (props) => {
           <Modal.Title>
             <div className="d-flex flex-column text-center">
               <img
-                alt='sign-up'
+                alt="sign-up"
                 src={astronaut}
                 className="img-fluid"
                 style={styles.imageStyles}
@@ -83,18 +94,46 @@ const Register = (props) => {
               <div className="input-group">
                 <div className="input-group-prepend">
                   <div className="input-group-text">
+                    <i className="fa fa-user"></i>
+                  </div>
+                </div>
+                <input
+                  className="form-control"
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              {errors !== null && errors.name !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.name}`}
+                </span>
+              )}
+            </div>
+
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
                     <i className="fa fa-envelope text-warning"></i>
                   </div>
                 </div>
                 <input
                   className="form-control"
                   name="Email"
-                  type="email"
+                  type="text"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
+              {errors !== null && errors.email !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.email}`}
+                </span>
+              )}
             </div>
             <div className="form-group">
               <div className="input-group">
@@ -114,22 +153,38 @@ const Register = (props) => {
                   }}
                 />
               </div>
+              {errors !== null && errors.password !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.password}`}
+                </span>
+              )}
             </div>
-            {/* <div className="form-group">
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">
-                      <i className="fa fa-lock"></i>
-                    </div>
+
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-lock text-success"></i>
                   </div>
-                  <input
-                    className="form-control"
-                    name="college"
-                    type="test"
-                    placeholder=""
-                  />
                 </div>
-              </div> */}
+                <input
+                  className="form-control"
+                  name="password2"
+                  type="password"
+                  placeholder="Confirm Password"
+                  value={password2}
+                  onChange={(e) => {
+                    setPassword2(e.target.value);
+                  }}
+                />
+              </div>
+              {errors !== null && errors.password2 !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.password2}`}
+                </span>
+              )}
+            </div>
+
             <div className="form-group">
               <div className="input-group">
                 <div className="input-group-prepend">
@@ -166,16 +221,16 @@ const Register = (props) => {
               </div>
             </div>
 
-            <button
-              onClick={handleHide}
-              className="btn btn-outline-light btn-block"
-            >
-              Sign Up
-            </button>
+            <div className="signupButtonNew">
+              <Themebutton
+                onClick={handleSubmit}
+                value='Sign up'
+              />
+            </div>
             <div className="text-center my-2">
               Already have an account ?{" "}
               <span
-                style={{ fontWeight: "bold", color: "blue", cursor: 'pointer' }}
+                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
                 onClick={props.toggleLogin}
               >
                 Login

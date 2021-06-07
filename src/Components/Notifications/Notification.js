@@ -53,11 +53,18 @@ export const invalidCredentials = () => {
   });
 };
 
-export const addToCartSuccess = () => {
-  toast.success("Successfully added to cart", {
+export const registrationsClosed = () => {
+  toast.info("Registrations Closed", {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: 3000,
   });
+};
+
+export const formSubmitted = () => {
+  toast.success("Form Submitted SuccessFully", {
+    position: toast.POSITION.TOP_RIGHT,
+    autoClose: 3000,
+  } );
 };
 
 export const addToCartFail = () => {
@@ -68,7 +75,7 @@ export const addToCartFail = () => {
 };
 
 export const removedFromCart = () => {
-  toast.error("Successfully removed from cart", {
+  toast.success("Successfully removed from cart", {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: 3000,
   });
@@ -82,7 +89,7 @@ export const removeFromCartFail = () => {
 };
 
 export const loggedOut = () => {
-  toast.error("Logged Out", {
+  toast.success("Logged Out", {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: 3000,
   });
@@ -92,5 +99,12 @@ export const instruction = () => {
   toast.info("Instruction", {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: 6000,
+  });
+};
+
+export const changedSuccessFully = () => {
+  toast.success("Password Changed Successfully", {
+    position: toast.POSITION.TOP_RIGHT,
+    autoClose: 3000,
   });
 };

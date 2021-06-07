@@ -13,11 +13,13 @@
   }
   
   .event-info {
+    font-size: 20px;
     width: 85%;
   }
   
   .event-info h3 {
     font-family: SansBold;
+    font-size: 32px;
     color: #ffffff;
   }
   
@@ -29,13 +31,14 @@
   @media (max-width: 676px) {
     .eventContent {
       padding: 5px !important;
-      text-align: center !important;
       margin: 0px 20px !important;
       width: 90%;
     }
     .event-info {
-      text-align: center !important;
       width: 100%;
+    }
+    .event-info p {
+      text-align: justify;
     }
   }
   
@@ -49,8 +52,5 @@
     }
     .content .firstChild {
       font-size: 70px;
-    }
-    .content p {
-      font-size: 10px;
     }
   }

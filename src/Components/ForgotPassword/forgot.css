@@ -1,0 +1,133 @@
+@font-face {
+  src: url("../../Assets/Fonts/PTSans-Regular.ttf");
+  font-family: "SansRegular";
+}
+
+.forgot-password {
+
+  font-family: SansRegular;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  margin-top: 80px;
+  width: 100%;
+
+}
+
+.forgot-password .form-box {
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+
+  width: 400px;
+  height: fit-content;
+
+  max-width: 100%;
+
+  background: rgb(19,19,19);
+  backdrop-filter: blur(5px);
+
+  margin-inline: 10px;
+
+  padding: 0px;
+
+}
+
+.forgot-password>.form-box .title {
+  user-select: none;
+  color: white;
+  font-size: 32px;
+  margin-bottom: 30px;
+  background-color: black;
+  border-bottom: 1px solid aqua;
+}
+
+.forgot-password>.form-box input{
+  height: 40px;
+  background: black;
+  color: white;
+  outline: none;
+  border: none;
+  text-align: left;
+
+  border-radius: 10px;
+
+  border : 0;
+
+  transition: 400ms ease;
+
+  margin: 1rem;
+  width: auto;
+
+}
+
+.forgot-password>.form-box input:focus{
+  border: none;
+  border: 0;
+}
+
+.form-box .alerts{
+  margin-bottom: 10px;
+}
+
+.form-box .error{
+  color: rgb(255, 0, 0);
+}
+
+.form-box .message{
+  color: rgb(0, 175, 0);
+}
+
+.forgot-password .form-box button {
+  border: none;
+
+  background: black;
+  color: white;
+  height: 40px;
+  font-size: 20px;
+  width: 160px;
+  margin-inline: 10px;
+
+  outline: none;
+
+  user-select: none;
+  border: 1px solid white;
+  border-radius: 0;
+}
+
+.button-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgot-password .button-group{
+  margin-bottom: 15px;
+}
+
+.button-group a .mainButton{
+  width: 100%;
+}
+
+.button-group a {
+  width: 50%;
+}
+
+.button-group .mainButton{
+  width: 50%;
+}
+
+.button-group .mainButton .btn-six::after {
+  transition: all 0.3s;
+}
+
+@media(max-width:700px){
+  .forgot-password .form-box{
+    width: 90%;
+  }
+}
