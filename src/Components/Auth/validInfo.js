@@ -1,51 +1,67 @@
 export default function validateInfo(values, signup) {
-  let errors = {};
+  let errors = { errorFound: false };
   if (signup === false) {
     if (!values.email) {
-      errors.email = "Email is  required";
+      errors.email = "Email is Required";
+      errors.errorFound = true;
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-      errors.email = "Email address is invalid";
+      errors.email = "Email Address is Invalid";
+      errors.errorFound = true;
     }
     if (!values.password) {
       errors.password = "Password is required";
-    } else if (values.password.length < 6) {
-      errors.password = "Password needs to be 6 characters or more";
+      errors.errorFound = true;
+    } else if (values.password.length < 8) {
+      errors.password = "Password Needs to be 8 Characters or More";
+      errors.errorFound = true;
     }
 
-    //   if (!values.password2) {
-    //     errors.password2 = "Password is required";
-    //   } else if (values.password2 !== values.password) {
-    //     errors.password2 = "Passwords do not match";
-    //   }
+    console.log("validinfo: ", errors);
     return errors;
   } else {
     if (!values.name.trim()) {
-      errors.name = "Username is required";
+      errors.name = "Username is Required";
+      errors.errorFound = true;
     }
 
     if (!values.email) {
-      errors.email = "Email is required";
+      errors.email = "Email is Required";
+      errors.errorFound = true;
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-      errors.email = "Email address is invalid";
+      errors.email = "Email Address is Invalid";
+      errors.errorFound = true;
     }
     if (!values.password) {
-      errors.password = "Password is required";
+      errors.password = "Password is Required";
+      errors.errorFound = true;
     } else if (values.password.length < 8) {
-      errors.password = "Password needs to be 8 characters or more";
+      errors.password = "Password Needs to be 8 Characters or More";
+      errors.errorFound = true;
     }
 
     if (!values.password2) {
-      errors.password2 = "Password is required";
+      errors.password2 = "Password is Required";
+      errors.errorFound = true;
     } else if (values.password2 !== values.password) {
-      errors.password2 = "Passwords do not match";
+      errors.password2 = "Passwords do not Match";
+      errors.errorFound = true;
     }
 
     if (!values.phone.trim()) {
-      errors.phone = "Phone No. is required";
+      errors.phone = "Phone No. is Required";
+      errors.errorFound = true;
+    } else if (
+      parseInt(values.phone) < 7000000000 ||
+      parseInt(values.phone) > 10000000000
+    ) {
+      errors.phone = "Invalid Phone Number";
+      errors.errorFound = true;
     }
     if (!values.college.trim()) {
-      errors.college = "College is required";
+      errors.college = "College is Required";
+      errors.errorFound = true;
     }
+
     return errors;
   }
 }

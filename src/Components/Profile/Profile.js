@@ -1,4 +1,4 @@
-import React, {useCallback } from "react";
+import React from "react";
 import "./Profile.css";
 import {loggedOut as notifyLoggedOut} from '../Notifications/Notification';
 

@@ -4,6 +4,7 @@ import FAQ from "./FAQ/FAQ";
 import Fade from "react-reveal/Fade";
 import { contactus } from "../Config/api/User";
 import ThemeButton from "../Button/button";
+import {formSubmitted} from '../Notifications/Notification';
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -15,7 +16,11 @@ const Contact = () => {
     e.preventDefault();
     const data = { name, phone, email, message };
     const res = await contactus(data);
-    console.log(res.data);
+    
+    if(res.data.ok){
+      formSubmitted();
+    }
+
   };
 
   return (
@@ -58,10 +63,14 @@ const Contact = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
+
           <button type='submit' className='themeButtCont'>
-          <ThemeButton value='Submit'/></button>
+            <ThemeButton value='Submit'/>
+          </button>
+        
         </form>
       </div>
+      
       <div className="contactInfo mb-4">
         <h1>Contact info</h1>
         <div className="address">

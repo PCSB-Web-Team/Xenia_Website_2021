@@ -25,6 +25,7 @@ const Form = () => {
     } else {
 
       seterror("Invalid email address!");
+      setmessage(null)
       input.focus();
       return false;
 
@@ -35,13 +36,14 @@ const Form = () => {
 
     if (ValidateEmail()) {
       setmessage("Please Check Your Mail!")
+      seterror(null)
     }
     else {
       console.log(error)
     }
   }
 
-  const imageStyles={
+  const imageStyles = {
     padding: "5px",
     height: "90px",
     width: "90px",
@@ -55,7 +57,7 @@ const Form = () => {
     <div className='forgot-password'>
       <div className='form-box'>
         <div className='title'>
-          <img src={astro} style={imageStyles}></img>
+          <img src={astro} style={imageStyles} alt=''></img>
           <p>Enter your email</p>
         </div>
         <input type='email' placeholder='abc@gmail.com' id='input-email' ></input>

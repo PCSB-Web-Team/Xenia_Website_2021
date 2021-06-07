@@ -44,7 +44,7 @@
   font-size: 32px;
   margin-bottom: 30px;
   background-color: black;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid aqua;
 }
 
 .forgot-password>.form-box input{
@@ -83,7 +83,7 @@
   color: rgb(0, 175, 0);
 }
 
-.forgot-password>.form-box button {
+.forgot-password .form-box button {
   border: none;
 
   background: black;
@@ -100,16 +100,6 @@
   border-radius: 0;
 }
 
-.form-box button:focus {
-
-  outline: none;
-
-  border: 2px solid aqua;
-  border-top: none;
-  border-left: none;
-
-}
-
 .button-group{
   display: flex;
   justify-content: center;
@@ -117,11 +107,7 @@
 }
 
 .forgot-password .button-group{
-  margin-bottom: 1rem;
-}
-
-.button-group .mainButton .btn{
-  color: white;
+  margin-bottom: 15px;
 }
 
 .button-group a .mainButton{
@@ -136,22 +122,12 @@
   width: 50%;
 }
 
-.button-group .mainButton .btn:hover{
-  color: white;
-}
-
-
-
 .button-group .mainButton .btn-six::after {
   transition: all 0.3s;
-  border: 1px solid white;
 }
 
 @media(max-width:700px){
   .forgot-password .form-box{
     width: 90%;
-  }
-  .button-group span{
-    font-size: 0.75rem !important;
   }
 }

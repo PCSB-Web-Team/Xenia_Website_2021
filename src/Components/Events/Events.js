@@ -10,7 +10,6 @@ import { getAllEvents } from "../Config/api/User";
 
 const Events = () => {
   const [eventType, setEventType] = useState("tech");
-  //  const [view, setView] = useState('cards');
   const [techEvents, setTech] = useState([]);
   const [nonTechEvents, setNonTech] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -40,10 +39,10 @@ const Events = () => {
     setLoading(false);
   };
 
-  const changeEventType = () => {
-    if (eventType === "tech") setEventType("nonTech");
-    else setEventType("tech");
-  };
+  // const changeEventType = () => {
+  //   if (eventType === "tech") setEventType("nonTech");
+  //   else setEventType("tech");
+  // };
 
   return (
     <div className="events-dashboard">
@@ -82,7 +81,7 @@ const Events = () => {
                 return (
                   <div key={eve._id} className="card-div">
                     {" "}
-                    <Link to={`/events/${eve._id}`}>
+                    <Link to={`/events/${eve._id}`} onClick={ () => document.documentElement.scrollTop = 0 }>
                       <Card details={eve}></Card>
                     </Link>{" "}
                   </div>
@@ -94,7 +93,7 @@ const Events = () => {
                 return (
                   <div key={eve._id} className="card-div">
                     {" "}
-                    <Link to={`/events/${eve._id}`}>
+                    <Link to={`/events/${eve._id}`} onClick={ () => document.documentElement.scrollTop = 0 }>
                       <Card details={eve}></Card>
                     </Link>{" "}
                   </div>

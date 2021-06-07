@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import {changedSuccessFully} from '../Notifications/Notification';
 import "./reset.css";
+import ThemeButton from '../Button/button';
 
 
 const Form = () => {
@@ -97,8 +98,8 @@ const Form = () => {
                             </div>
 
                             <div className='button-group'>
-                                <Link to='/'><button className='cancel'>Cancel</button></Link>
-                                <button className='send' onClick={handleSubmit}>Submit</button>
+                                <Link to='/'><ThemeButton value='Cancel' /></Link>
+                                <ThemeButton onClick={ handleSubmit } value='Submit'/>
                             </div>
                         </div>
                 }

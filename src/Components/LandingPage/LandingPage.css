@@ -4,7 +4,6 @@
 }
 
 .landing-page {
-  zoom: 1;
   z-index: 0;
   position: absolute;
   background-color: black;
@@ -17,7 +16,14 @@
   user-select: none;
 }
 
-.landing-page .bg{
+.landing-page .landing-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.landing-page .bg {
   transition: ease-out 1s;
 
   z-index: 96;
@@ -36,13 +42,16 @@
   flex-direction: column;
 }
 
-.landing-page .bg img{
+.landing-page .bg img {
   position: absolute;
+  min-width: 100%;
+  min-height: 100vh;
   left: 0px;
   top: 0px;
 }
 
-.logo-div{
+/* Xenia Logo */
+.logo-div {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -53,16 +62,23 @@
   align-items: center;
 }
 
-.logo-div .logo-container{
+.logo-div .logo-container {
   height: 100vh;
   text-align: center;
 }
 
-.logo-container img{
+.landing-page .landing-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.logo-container img {
   margin-top: 220px;
 }
 
-.logo-div .event-date{
+.logo-div .event-date {
   font-family: "SansBold";
   color: rgb(183, 0, 255);
   font-weight: 600;
@@ -70,6 +86,7 @@
   margin-bottom: 80px;
 }
 
+/* Landing Page Mountains */
 .mountain {
   height: 80vh;
   width: 110%;
@@ -88,10 +105,10 @@
 .mountain img{
   height: 100%;
   width: 100%;
+  min-width: 1500px;
 }
 
 /* Moon */
-
 .moon-container{
   position: absolute;
   width: 350px;
@@ -99,72 +116,7 @@
   left: 0px;
 }
 
-/* 
-.lake {
-
-  user-select: none;
-  -webkit-user-drag: none;
-  
-  z-index: 97;
-  
-  height: 100vh;
-  width: 100%;
-
-  position: absolute;
-  user-zoom: initial;
-
-  left: 0;
-  bottom: 0px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-  background: radial-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-}
-.lake .ast-container{
-  height: 100%;
-  width: 300px;
-  position: relative;
-  transition: ease-out 2s;
-}
-
-.lake img {
-  user-select: none;
-  -webkit-user-drag: none;
-  transform: rotate(30deg);
-  left: 0px;
-  bottom: 20px;
-  position: absolute;
-} 
-.astranout {
-  user-zoom: inherit;
-  z-index: 100;
-  position: absolute;
-
-  transition: ease-out 2s;
-
-  height: 60%;
-  width: 45%;
-  min-width: 700px;
-
-  left: -20px;
-  bottom: -45px;
-}
-
-.astranout img {
-  user-select: none;
-  -webkit-user-drag: none;
-
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-} */
-
-
-
+/* Stars */
 .landing-page-stars{
   position: absolute;
   width: 100%;
@@ -174,6 +126,7 @@
   z-index: 97;
 }
 
+/* Shuttle */
 .shuttle {
   position: absolute;
   
@@ -227,102 +180,7 @@
   }
 }
 
-@font-face {
-  font-family: "planetns";
-  src: url("../../Assets/Fonts/Planetnsv2.ttf");
-}
-
-.landing-page .landing-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  text-align: center;
-}
-
-.landing-page #xenia {
-  z-index: +100;
-  width: 100%;
-  position: absolute;
-  top: 25vh;
-}
-
-.landing-page h1#xenia {
-  font-family: "planetns";
-  color: white;
-  font-size: 9vw;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #06e8f8, 0 0 20px #06e8f8,
-    0 0 25px #06e8f8, 0 0 30px #06e8f8, 0 0 35px #06e8f8;
-  animation: animate 2000ms alternate infinite;
-  letter-spacing: 70px;
-  transition: ease 1s;
-}
-
-@keyframes animate {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
-
-.landing-page .landing-container span {
-  z-index: +100;
-  font-family: "planetn";
-  font-size: 1em;
-  color: rgb(255, 255, 255);
-  margin-bottom: 0;
-  position: absolute;
-  top: 46%;
-  left: 64%;
-  transition: ease 1s;
-}
-
-@media (max-width: 1300px) {
-  .landing-page .landing-container span {
-    top: 43%;
-    left: 63%;
-    transition: ease 1s;
-  }
-}
-
-@media (max-width: 1120px) {
-  .landing-page .landing-container span {
-    top: 41%;
-    left: 63%;
-    transition: ease 1s;
-  }
-}
-
-@media (max-width: 1100px) {
-  .landing-page h1#xenia {
-    font-size: 8vw;
-    letter-spacing: 50px;
-
-    transition: ease 1s;
-  }
-  .landing-page .landing-container span {
-    top: 39%;
-    left: 59%;
-    transition: ease 1s;
-  }
-}
-
 @media (max-width: 880px) {
-  .landing-page h1#xenia {
-    font-size: 85px;
-    letter-spacing: 30px;
-
-    transition: ease 1s;
-  }
-  .landing-page .landing-container span {
-    top: 39%;
-    left: 58%;
-    transition: ease 1s;
-  }
-  
   .mountain{
     width: 1500px;
     left: -200px;
@@ -330,31 +188,7 @@
   }
 }
 
-@media (max-width: 750px) {
-  .landing-page h1#xenia {
-    font-size: 70px;
-    letter-spacing: 30px;
-
-    transition: ease 1s;
-  }
-  .landing-page .landing-container span {
-    top: 38%;
-    left: 55%;
-    transition: ease 1s;
-  }
-}
-
 @media (max-width: 650px) {
-  .landing-page h1#xenia {
-    font-size: 65px;
-    letter-spacing: 25px;
-    transition: ease 1s;
-  }
-  .landing-page .landing-container span {
-    top: 36%;
-    left: 54%;
-    transition: ease 1s;
-  }
 
   .logo-div img{
     max-width: 90%;

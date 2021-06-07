@@ -18,14 +18,32 @@ const Register = (props) => {
   const [college, setCollege] = useState("");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState(null);
+
+  const [loading, setLoading] = useState(false);
+
   if (errors !== null) {
-    setTimeout(() => setErrors(null), 5000);
+    setTimeout(() => {
+      setErrors(null);
+      setLoading(false);
+    }, 5000);
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrors(validInfo({ name, email, password, password2, phone, college }));
-    if (errors === null) {
+    setErrors(null);
+    setErrors(() =>
+      validInfo({
+        name,
+        email,
+        password,
+        password2,
+        phone,
+        college,
+      })
+    );
+    console.log(errors);
+    if (errors !== null && !errors.errorFound) {
+      setLoading(true);
       const user = { name, password, college, email, phone };
       const res = await register(user);
 
@@ -43,15 +61,8 @@ const Register = (props) => {
       setCollege("");
       setPhone("");
       setErrors(null);
+      setLoading(false);
     }
-  };
-
-  const handleHide = () => {
-    // if (error === "Invalid Credentials") {
-    //   return props.closeLogin();
-    // } else {
-    //   return null;
-    // }
   };
 
   return (
@@ -106,11 +117,13 @@ const Register = (props) => {
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              {errors !== null && errors.name !== undefined && (
+              {errors !== null &&
+              errors.errorFound &&
+              errors.name !== undefined ? (
                 <span className="text-danger pl-5 font-weight-bold">
                   {`* ${errors.name}`}
                 </span>
-              )}
+              ) : null}
             </div>
 
             <div className="form-group">
@@ -129,11 +142,13 @@ const Register = (props) => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              {errors !== null && errors.email !== undefined && (
+              {errors !== null &&
+              errors.errorFound &&
+              errors.email !== undefined ? (
                 <span className="text-danger pl-5 font-weight-bold">
                   {`* ${errors.email}`}
                 </span>
-              )}
+              ) : null}
             </div>
             <div className="form-group">
               <div className="input-group">
@@ -153,11 +168,13 @@ const Register = (props) => {
                   }}
                 />
               </div>
-              {errors !== null && errors.password !== undefined && (
+              {errors !== null &&
+              errors.errorFound &&
+              errors.password !== undefined ? (
                 <span className="text-danger pl-5 font-weight-bold">
                   {`* ${errors.password}`}
                 </span>
-              )}
+              ) : null}
             </div>
 
             <div className="form-group">
@@ -178,11 +195,13 @@ const Register = (props) => {
                   }}
                 />
               </div>
-              {errors !== null && errors.password2 !== undefined && (
+              {errors !== null &&
+              errors.errorFound &&
+              errors.password2 !== undefined ? (
                 <span className="text-danger pl-5 font-weight-bold">
                   {`* ${errors.password2}`}
                 </span>
-              )}
+              ) : null}
             </div>
 
             <div className="form-group">
@@ -201,11 +220,13 @@ const Register = (props) => {
                   onChange={(e) => setPhone(e.target.value)}
                 />
               </div>{" "}
-              {errors !== null && errors.phone !== undefined && (
+              {errors !== null &&
+              errors.errorFound &&
+              errors.phone !== undefined ? (
                 <span className="text-danger pl-5 font-weight-bold">
                   {`* ${errors.phone}`}
                 </span>
-              )}
+              ) : null}
             </div>
 
             <div className="form-group">
@@ -224,25 +245,41 @@ const Register = (props) => {
                   onChange={(e) => setCollege(e.target.value)}
                 />
               </div>
-              {errors !== null && errors.college !== undefined && (
+              {errors !== null &&
+              errors.errorFound &&
+              errors.college !== undefined ? (
                 <span className="text-danger pl-5 font-weight-bold">
                   {`* ${errors.college}`}
                 </span>
-              )}
+              ) : null}
             </div>
 
-            <div className="signupButtonNew">
-              <Themebutton onClick={handleSubmit} value="Sign up" />
-            </div>
-            <div className="text-center my-2">
-              Already have an account ?{" "}
-              <span
-                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
-                onClick={props.toggleLogin}
-              >
-                Login
-              </span>
-            </div>
+            {loading ? (
+              <div className="loginButtonNew my-5">
+                <div className="spinner-border text-info aqua" role="status">
+                  <span className="sr-only">Loading...</span>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="signupButtonNew">
+                  <Themebutton onClick={handleSubmit} value="Sign up" />
+                </div>
+                <div className="text-center my-2">
+                  Already have an account ?{" "}
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      color: "blue",
+                      cursor: "pointer",
+                    }}
+                    onClick={props.toggleLogin}
+                  >
+                    Login
+                  </span>
+                </div>
+              </>
+            )}
           </form>
         </Modal.Body>
       </Modal>

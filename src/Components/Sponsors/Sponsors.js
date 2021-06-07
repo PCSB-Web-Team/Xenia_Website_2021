@@ -1,7 +1,7 @@
 import React from "react";
 // import Logo from "../../Assets/Images/logo.svg";
 import "./Sponsors.css";
-import Sponsor from "../../Assets/Images/main_bg.jpg";
+// import Sponsor from "../../Assets/Images/main_bg.jpg";
 // import Tata from "../../Assets/Images/SponsorImages/Tata.jpg";
 // import Vodafone from "../../Assets/Images/SponsorImages/Vodafone.jpg";
 
@@ -14,8 +14,7 @@ const Sponsors = () => {
       </header>
 
       <header className="page-headers mb-3">
-        {" "}
-        <h1 className="header-name">Coming Soon...</h1>{" "}
+        <h1 className="coming-soon">Coming Soon...</h1>
       </header>
 
       {/* <h1 className="headingmain">Sponsors</h1>

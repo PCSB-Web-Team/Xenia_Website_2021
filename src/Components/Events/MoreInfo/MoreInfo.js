@@ -14,11 +14,13 @@ import Modal from "./Modal/Modal";
 import Themebutton from "../../Button/button";
 
 const MoreInfo = (props) => {
+  
   const [details, setDetails] = useState({ date: "", rules: [] });
   const [loading, setLoading] = useState(true);
   const [registered, setRegistered] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [registerLoading, setRegisterLoading] = useState(false);
+  const [userVerified, setUserVerified] = useState(false)
 
   let { id } = useParams();
   let history = useHistory();
@@ -93,7 +95,7 @@ const MoreInfo = (props) => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="info1">
+        <div className="more-info">
           <Link to="/events">
             <div className="back-container">
               <img src={back2} alt="go back" />
@@ -101,7 +103,7 @@ const MoreInfo = (props) => {
           </Link>
 
           <div
-            className="more-info jumbotron text-center py-2"
+            className="jumbotron text-center py-2"
             id="main-detail"
           >
             <img className="logo" src={ReactLogo} alt="logo"></img>

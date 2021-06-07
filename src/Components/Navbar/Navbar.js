@@ -49,7 +49,7 @@ const Navbar = (props) => {
 
         <div className='navBar'>
 
-          <NavLink to='/' className='brand'> <img src={XeniaLogo}/> </NavLink>
+          <NavLink to='/' className='brand'> <img src={XeniaLogo} alt='img'/> </NavLink>
 
           <Zoom bottom cascade duration={500}>
 
