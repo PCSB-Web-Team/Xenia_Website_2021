@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./Contact.css";
-import FAQ from "./FAQ/FAQ";
-import Fade from "react-reveal/Fade";
 import { contactus } from "../Config/api/User";
 import ThemeButton from "../Button/button";
 import {formSubmitted} from '../Notifications/Notification';
@@ -18,7 +16,14 @@ const Contact = () => {
     const res = await contactus(data);
     
     if(res.data.ok){
+      
       formSubmitted();
+      
+      setName('');
+      setPhone('');
+      setEmail('');
+      setMessage('');
+
     }
 
   };
