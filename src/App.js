@@ -35,13 +35,13 @@ const App = (props) => {
       props.loggedIn(res.data.data);
     };
 
-    const PreLoader = document.getElementById("preLoader");
-    PreLoader.style.display = "none";    
+    // const PreLoader = document.getElementById("preLoader");
+    // PreLoader.style.display = "none";    
 
-    // setTimeout(() => {
-    //   const PreLoader = document.getElementById("preLoader");
-    //   PreLoader.style.display = "none";
-    // }, 6000);
+    setTimeout(() => {
+      const PreLoader = document.getElementById("preLoader");
+      PreLoader.style.display = "none";
+    }, 6000);
 
     getUserData();
 
