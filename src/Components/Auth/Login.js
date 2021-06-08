@@ -33,36 +33,47 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrors(null);
-    setErrors(() => validInfo({ email, password }, false));
-    const user = { email, password };
-    console.log(errors);
-    if (errors !== null && !errors.errorFound) {
-      setLoading(true);
 
-      let res = await login(user);
+    try {
 
-      if (res.data.ok === true) {
-        const token = res.data.data.token;
-        res = await getLoggedInUser(token);
+      setErrors(null);
 
-        localStorage.setItem("xeniaUserToken", token);
+      setErrors(() => validInfo({ email, password }, false));
+      const user = { email, password };
 
-        props.loggedIn(res.data.data);
-        props.storeToken(token);
+      if (errors !== null && !errors.errorFound) {
+        setLoading(true);
 
-        loginSuccess();
-        props.closeLogin();
-        // setError("");
-      } else {
-        loginFail();
-        // setError("Invalid Credentials");
+        let res = await login(user);
+
+        if (res.data.ok === true) {
+          const token = res.data.data.token;
+          res = await getLoggedInUser(token);
+
+          localStorage.setItem("xeniaUserToken", token);
+
+          props.loggedIn(res.data.data);
+          props.storeToken(token);
+
+          loginSuccess();
+          props.closeLogin();
+          // setError("");
+        } else {
+          console.log("login Failed")
+          loginFail();
+          // setError("Invalid Credentials");
+        }
+
+        setEmail("");
+        setPassword("");
+        setErrors(null);
+        setLoading(false);
       }
 
-      setEmail("");
-      setPassword("");
-      setErrors(null);
+    } catch (error) {
+      console.log(error);
       setLoading(false);
+      loginFail()
     }
   };
 
