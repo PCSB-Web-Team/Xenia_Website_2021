@@ -50,3 +50,11 @@ export const getEventDetails = (id) => {
 export const contactus = (data) => {
   return axiosInstance.post("/contact-us", data);
 };
+
+export const forgotPassword = (data) => {
+  return axiosInstance.post("/user/forgot-password", data);
+};
+
+export const resetPassword = (id, token, data) => {
+  return axiosInstance.post(`/user/reset-password/${id}/${token}`, data);
+}

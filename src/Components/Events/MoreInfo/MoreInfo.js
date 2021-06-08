@@ -112,8 +112,7 @@ const MoreInfo = (props) => {
             <span className> {details.date.substring(0, 10)} </span>
 
             <p className="lead">
-              This is a simple hero unit, a simple jumbotron-style component for
-              calling extra attention to featured content or information.
+              {details.details}
             </p>
 
             <hr className="my-1" />

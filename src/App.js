@@ -99,7 +99,7 @@ const App = (props) => {
           <ForgotPassword />
         </Route>
 
-        <Route exact path="/reset-password">
+        <Route exact path="/reset-password/:id/:token">
           <ResetPassword />
         </Route>
 
