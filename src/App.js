@@ -35,13 +35,16 @@ const App = (props) => {
       props.loggedIn(res.data.data);
     };
 
-    setTimeout( () => {
-      const PreLoader = document.getElementById('preLoader');
-      PreLoader.style.display = 'none';
-    }, 6000 )
+    const PreLoader = document.getElementById("preLoader");
+    PreLoader.style.display = "none";    
+
+    // setTimeout(() => {
+    //   const PreLoader = document.getElementById("preLoader");
+    //   PreLoader.style.display = "none";
+    // }, 6000);
+
     getUserData();
-  
-    
+
   }, []);
 
   return (
@@ -50,7 +53,6 @@ const App = (props) => {
       <Background />
 
       <Switch>
-
         <Route exact path="/schedule">
           <Schedule />
           <Footer />
@@ -99,7 +101,7 @@ const App = (props) => {
           <ForgotPassword />
         </Route>
 
-        <Route exact path="/reset-password">
+        <Route exact path="/reset-password/:id/:token">
           <ResetPassword />
         </Route>
 

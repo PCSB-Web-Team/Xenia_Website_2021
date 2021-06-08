@@ -5,9 +5,9 @@ const Moon = () => {
     return (
         <div className='moon-container'>
             <div className='moon-div'>
-                <div class="pulse1"></div>
-                <div class="pulse2"></div>
-                <div class="moon">
+                <div className="pulse1"></div>
+                <div className="pulse2"></div>
+                <div className="moon">
                 {/* <img src={Moon}/> */}
                 </div>
             </div>

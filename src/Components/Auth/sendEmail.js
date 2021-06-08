@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 const log = console.log;
-export default () => {
+const MailSender = () => {
   //Nodemailer;
 
   // Step 1
@@ -63,3 +63,5 @@ export default () => {
     return log("Email sent!!!");
   });
 };
+
+export default MailSender;

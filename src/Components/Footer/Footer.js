@@ -32,8 +32,7 @@ const Footer = (props) => {
                   style={{ width: "80px" }}
                 />
                 <div className="nav-content">
-                  About our Xenia event. Lorem ipsum dolor sit amet, consectetur
-                  adipisicing elit.
+                  Exclusive Event, Priceless Memories.
                 </div>
               </div>
               <div className="column2 mx-auto">

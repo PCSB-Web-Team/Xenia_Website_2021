@@ -14,6 +14,7 @@
 }
 
 .card-div {
+  vertical-align: top;
   user-select: none;
   min-width: 250px;
   width: 22%;
@@ -94,6 +95,8 @@
   animation-duration: 10s;
   animation-iteration-count: infinite;
   transition-delay: -3s;
+  
+  min-height: 180px;
 }
 
 @keyframes shade {
@@ -116,7 +119,7 @@
 .event-card:hover .card-body {
   color: black;
   transition: ease 500ms;
-  background: #00b4d8;
+  background: rgba(0, 255, 255, 0.5);
 }
 
 @media (max-width: 450px) {

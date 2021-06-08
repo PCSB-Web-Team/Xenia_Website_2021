@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { connect } from "react-redux";
+// import axios from "axios";
+// import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import "./Cards/Card.css";

@@ -20,7 +20,6 @@ const MoreInfo = (props) => {
   const [registered, setRegistered] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [registerLoading, setRegisterLoading] = useState(false);
-  const [userVerified, setUserVerified] = useState(false)
 
   let { id } = useParams();
   let history = useHistory();
@@ -67,6 +66,7 @@ const MoreInfo = (props) => {
     setRegisterLoading(true);
 
     if (props.isLoggedIn) {
+      
       // if(details.additionalInfo.required){
       // showPopUp
       // fire modal and recieve the details object
@@ -112,8 +112,7 @@ const MoreInfo = (props) => {
             <span className> {details.date.substring(0, 10)} </span>
 
             <p className="lead">
-              This is a simple hero unit, a simple jumbotron-style component for
-              calling extra attention to featured content or information.
+              {details.details}
             </p>
 
             <hr className="my-1" />
@@ -132,9 +131,7 @@ const MoreInfo = (props) => {
                 />
               </div>
             ) : (
-              <span
-                style={{ color: "blue", fontWeight: "bold", fontSize: "20px" }}
-              >
+              <span className='already-registered'>
                 Registered
               </span>
             )}

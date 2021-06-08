@@ -1,10 +1,9 @@
-import { colors } from '@material-ui/core';
+// import { colors } from '@material-ui/core';
 import React from 'react';
 import Modal from 'react-modal';
 import './Modal.css';
 import Font from '../../../../Assets/Fonts/PTSans-Bold.ttf'
 import ThemeButton from '../../../Button/button';
-import Recaptcha from 'react-recaptcha';
 
 const customStyles = {
 
@@ -16,7 +15,7 @@ const customStyles = {
         bottom: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.8)'
     },
-    
+
     content: {
         top: '50%',
         left: '50%',
@@ -37,25 +36,25 @@ const customStyles = {
     }
 };
 
-const buttonStyle = {
-    color: 'aqua',
-    border: 'none',
-    fontSize: '20px',
-    background: 'black',
-    border: '1px solid aqua',
-    borderRadius: '30px',
-    padding: '10px',
-    paddingBlock: '5px',
-    fontFamily: { Font },
+// const buttonStyle = {
+//     color: 'aqua',
+//     border: 'none',
+//     fontSize: '20px',
+//     background: 'black',
+//     border: '1px solid aqua',
+//     borderRadius: '30px',
+//     padding: '10px',
+//     paddingBlock: '5px',
+//     fontFamily: { Font },
 
-    "&:focus": {
-        outline: 'none',
-    },
+//     "&:focus": {
+//         outline: 'none',
+//     },
 
-    "&:hover": {
-        transform: 'scale(1.1)',
-    },
-}
+//     "&:hover": {
+//         transform: 'scale(1.1)',
+//     },
+// }
 
 const buttonGroup = {
     marginBlock: '20px',
@@ -75,10 +74,6 @@ const RegisterModal = (props) => {
         // references are now sync'd and can be accessed.
     }
 
-    const recaptchaLoaded = () => {
-        console.log("recaptch loaded")
-    }
-
     return (
         <div className='register-modal'>
 
@@ -91,19 +86,13 @@ const RegisterModal = (props) => {
 
                 <h2 ref={_subtitle => (subtitle = _subtitle)}>Confirm Registration</h2>
 
-                <Recaptcha
-                    sitekey="xxxxxxxxxxxxxxxxxxxx"
-                    render="explicit"
-                    onloadCallback={recaptchaLoaded}
-                />
-
                 <div className='button-group' style={buttonGroup}>
 
                     {
                         props.load
                             ?
-                            <div class="spinner-border text-info aqua" role="status">
-                                <span class="sr-only">Loading...</span>
+                            <div className="spinner-border text-info aqua" role="status">
+                                <span className="sr-only">Loading...</span>
                             </div>
                             :
                             <>

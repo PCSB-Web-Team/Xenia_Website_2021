@@ -101,8 +101,6 @@
   }
 }
 
-
-
 .ProfCard .btn {
   background: crimson;
   border-radius: 25px;
@@ -131,6 +129,13 @@
   font-weight: 350;
 }
 
+#slotTime{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 32px;
+
+  animation: coming-soon-pulse;
+}
+
 .registeredEventsDashboard h1{
   font-size: 3.5rem;
   font-weight: 300;
@@ -147,7 +152,6 @@
 .registeredEventsDashboard span{
   color: white;
 }
-
 
 @media (max-width: 750px) {
   .RegP {
