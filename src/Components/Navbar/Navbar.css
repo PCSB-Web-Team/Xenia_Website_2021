@@ -101,6 +101,8 @@ header .navBar {
   font-size: 32px;
   width: 350px;
   margin-block: 5px;
+  
+  max-width: 80%;
 }
 
 .nav-close {

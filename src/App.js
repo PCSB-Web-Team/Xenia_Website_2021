@@ -24,26 +24,29 @@ import { connect } from "react-redux";
 import "./App.css";
 
 const App = (props) => {
+
+  const getUserData = async () => {
+    let userToken = localStorage.getItem("xeniaUserToken");
+
+    const res = await getLoggedInUser(userToken);
+
+    props.storeToken(userToken);
+
+    props.loggedIn(res.data.data);
+  };
+
   useEffect(() => {
-    const getUserData = async () => {
-      let userToken = localStorage.getItem("xeniaUserToken");
-
-      const res = await getLoggedInUser(userToken);
-
-      props.storeToken(userToken);
-
-      props.loggedIn(res.data.data);
-    };
-
-    const PreLoader = document.getElementById("preLoader");
-    PreLoader.style.display = "none";    
-
-    // setTimeout(() => {
-    //   const PreLoader = document.getElementById("preLoader");
-    //   PreLoader.style.display = "none";
-    // }, 6000);
 
     getUserData();
+
+    // const PreLoader = document.getElementById("preLoader");
+    // PreLoader.style.display = "none";    
+
+    setTimeout(() => {
+      const PreLoader = document.getElementById("preLoader");
+      PreLoader.style.display = "none";
+    }, 6000);
+
 
   }, []);
 
