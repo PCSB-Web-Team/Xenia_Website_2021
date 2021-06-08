@@ -9,7 +9,6 @@ import { connect } from "react-redux";
 import Themebutton from "../Button/button";
 import { toggleLogin, openSignUp, closeLogin } from "../../Store/Actions";
 import { signUpSuccess, signUpFail } from "../Notifications/Notification";
-import Recaptcha from 'react-recaptcha';
 
 const Register = (props) => {
 
