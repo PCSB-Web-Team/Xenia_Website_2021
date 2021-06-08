@@ -132,9 +132,7 @@ const MoreInfo = (props) => {
                 />
               </div>
             ) : (
-              <span
-                style={{ color: "blue", fontWeight: "bold", fontSize: "20px" }}
-              >
+              <span className='already-registered'>
                 Registered
               </span>
             )}

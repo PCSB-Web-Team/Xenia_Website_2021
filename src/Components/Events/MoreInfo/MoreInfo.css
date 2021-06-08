@@ -189,6 +189,11 @@
   margin-bottom: 30px;
 }
 
+.already-registered{
+  color: green;
+  font-size: 32px;
+}
+
 @media (max-width: 800px) {
   
   .MoreInfo .more-info {

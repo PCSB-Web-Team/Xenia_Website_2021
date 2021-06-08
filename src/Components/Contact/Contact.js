@@ -23,7 +23,7 @@ const Contact = () => {
       setPhone('');
       setEmail('');
       setMessage('');
-
+      
     }
 
   };
@@ -58,6 +58,7 @@ const Contact = () => {
             placeholder="Phone"
             id="phoneInputId"
             value={phone}
+            required={true}
             onChange={(e) => setPhone(e.target.value)}
             className="contactFill"
           ></input>
@@ -66,6 +67,7 @@ const Contact = () => {
             id="messageInputId"
             className="contactFill"
             value={message}
+            required={true}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
 
