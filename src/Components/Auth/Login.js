@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { loginFail, loginSuccess } from "../Notifications/Notification";
 import { login, getLoggedInUser } from "../Config/api/User";
 import Themebutton from "../Button/button";
+
 import {
   loggedIn,
   storeToken,
@@ -21,27 +22,21 @@ import {
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState(null);
+  const [errors, setErrors] = useState({isError: true});
   const [loading, setLoading] = useState(false);
 
-  if (errors !== null) {
-    setTimeout(() => {
-      setErrors(null);
-      setLoading(false);
-    }, 5000);
-  }
-
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
     try {
 
-      setErrors(null);
+      e.preventDefault();
 
-      setErrors(() => validInfo({ email, password }, false));
+      const err = validInfo({ email, password }, false);
+      await setErrors(err);
+
       const user = { email, password };
 
-      if (errors !== null && !errors.errorFound) {
+      if (!errors.isError) {
+
         setLoading(true);
 
         let res = await login(user);
@@ -59,21 +54,27 @@ const Login = (props) => {
           props.closeLogin();
           // setError("");
         } else {
-          console.log("login Failed")
+          // console.log("login Failed")
           loginFail();
+          setLoading(false);
           // setError("Invalid Credentials");
         }
 
         setEmail("");
         setPassword("");
-        setErrors(null);
-        setLoading(false);
+        setErrors({isError: false});
       }
+      else{
+				setTimeout(() => {
+					setErrors({ isError: true });
+					setLoading(false);
+				}, 3000);
+      }
+      setLoading(false);
 
     } catch (error) {
-      console.log(error);
+      loginFail();
       setLoading(false);
-      loginFail()
     }
   };
 
@@ -83,7 +84,7 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <div className='login-modal'>
       <Modal
         aria-labelledby="contained-modal-title-vcenter"
         centered

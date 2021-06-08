@@ -66,6 +66,7 @@ const MoreInfo = (props) => {
     setRegisterLoading(true);
 
     if (props.isLoggedIn) {
+      
       // if(details.additionalInfo.required){
       // showPopUp
       // fire modal and recieve the details object

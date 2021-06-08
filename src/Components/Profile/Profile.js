@@ -23,7 +23,7 @@ const MyProf = (props) => {
     const evename = document.getElementById('eveDetailsName');
     console.log(listEves);
     if(listEves.length!=0){
-      evename.textContent==''?   evename.textContent=listEves.textContent : evename.textContent = name;
+      evename.textContent===''?   evename.textContent=listEves.textContent : evename.textContent = name;
     }
   }
 
@@ -50,13 +50,13 @@ const MyProf = (props) => {
         </div>
         <div className="registeredEventsDashboard">
           <h1>SLOT DETAILS</h1>
-          <div className="dashboardTech">
-            <p id="eveDetailsName"></p>
-            <p id="slotTime">Coming Soon!!!</p>
-          </div>
-          <div className="dashboardNonTech">
+          {/* <div className="dashboardTech"> */}
+            <p id="eveDetailsName"/>
+            <p id="slotTime">Coming Soon . . .</p>
+          {/* </div> */}
+          {/* <div className="dashboardNonTech"> */}
 
-          </div>
+          {/* </div> */}
         </div>
       </div>
 

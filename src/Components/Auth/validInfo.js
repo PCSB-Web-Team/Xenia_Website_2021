@@ -2,13 +2,17 @@ export default function validateInfo(values, signup) {
 	if (signup === false) {
 		let errors = { isError: false };
 		if (!values.email) {
+			errors.isError = true;
 			errors.email = 'Email is  required';
 		} else if (!/\S+@\S+\.\S+/.test(values.email)) {
+			errors.isError = true;
 			errors.email = 'Email address is invalid';
 		}
 		if (!values.password) {
+			errors.isError = true;
 			errors.password = 'Password is required';
 		} else if (values.password.length < 8) {
+			errors.isError = true;
 			errors.password = 'Password needs to be 8 characters or more';
 		}
 		return errors;

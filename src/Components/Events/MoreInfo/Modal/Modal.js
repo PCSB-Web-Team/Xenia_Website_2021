@@ -1,4 +1,4 @@
-import { colors } from '@material-ui/core';
+// import { colors } from '@material-ui/core';
 import React from 'react';
 import Modal from 'react-modal';
 import './Modal.css';
@@ -36,25 +36,25 @@ const customStyles = {
     }
 };
 
-const buttonStyle = {
-    color: 'aqua',
-    border: 'none',
-    fontSize: '20px',
-    background: 'black',
-    border: '1px solid aqua',
-    borderRadius: '30px',
-    padding: '10px',
-    paddingBlock: '5px',
-    fontFamily: { Font },
+// const buttonStyle = {
+//     color: 'aqua',
+//     border: 'none',
+//     fontSize: '20px',
+//     background: 'black',
+//     border: '1px solid aqua',
+//     borderRadius: '30px',
+//     padding: '10px',
+//     paddingBlock: '5px',
+//     fontFamily: { Font },
 
-    "&:focus": {
-        outline: 'none',
-    },
+//     "&:focus": {
+//         outline: 'none',
+//     },
 
-    "&:hover": {
-        transform: 'scale(1.1)',
-    },
-}
+//     "&:hover": {
+//         transform: 'scale(1.1)',
+//     },
+// }
 
 const buttonGroup = {
     marginBlock: '20px',
@@ -91,8 +91,8 @@ const RegisterModal = (props) => {
                     {
                         props.load
                             ?
-                            <div class="spinner-border text-info aqua" role="status">
-                                <span class="sr-only">Loading...</span>
+                            <div className="spinner-border text-info aqua" role="status">
+                                <span className="sr-only">Loading...</span>
                             </div>
                             :
                             <>

@@ -106,7 +106,7 @@ const Contact = () => {
 				</div>
 				<div className="socialMedia">
 					<h3>Social Links</h3>
-					<p class="text-light">
+					<p className="text-light">
 						<a
 							href="http://www.instagram.com/csipict"
 							target="_blank"
@@ -124,7 +124,7 @@ const Contact = () => {
 							rel="noreferrer"
 						>
 							<i
-								class="fa fa-facebook-official"
+								className="fa fa-facebook-official"
 								ariaHidden="true"
 							></i>
 						</a>
@@ -133,7 +133,7 @@ const Contact = () => {
 							target="_blank"
 							rel="noreferrer"
 						>
-							<i class="fa fa-linkedin" ariaHidden="true"></i>
+							<i className="fa fa-linkedin" ariaHidden="true"></i>
 						</a>
 					</p>
 				</div>

@@ -66,7 +66,7 @@ const Form = () => {
 								onChange={(e) => setPassword1(e.target.value)}
 							></input>
 							<i
-								class={!view1 ? 'fa fa-eye' : 'fa fa-eye-slash'}
+								className={!view1 ? 'fa fa-eye' : 'fa fa-eye-slash'}
 								onClick={() => setView1(!view1)}
 							></i>
 						</div>
@@ -79,7 +79,7 @@ const Form = () => {
                                 onChange={(e) => setPassword2(e.target.value)}
 							></input>
 							<i
-								class={!view2 ? 'fa fa-eye' : 'fa fa-eye-slash'}
+								className={!view2 ? 'fa fa-eye' : 'fa fa-eye-slash'}
 								onClick={() => setView2(!view2)}
 							></i>
 						</div>
