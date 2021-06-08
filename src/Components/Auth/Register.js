@@ -22,6 +22,9 @@ const Register = (props) => {
   const [errors, setErrors] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // For captcha
+  const [userVerified, setUserVerified] = useState(false);
+
   if (errors !== null) {
     setTimeout(() => {
       setErrors(null);
@@ -31,6 +34,12 @@ const Register = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if(!userVerified) {
+      alert("Please Verify You are Human!")
+      return;
+    }
+
     setErrors(null);
     setErrors(() =>
       validInfo({
@@ -262,15 +271,6 @@ const Register = (props) => {
                   {`* ${errors.college}`}
                 </span>
               ) : null}
-            </div>
-
-
-            <div>
-            <Recaptcha
-              sitekey="xxxxxxxxxxxxxxxxxxxx"
-              render="explicit"
-              onloadCallback={recaptchaLoaded}
-            />
             </div>
 
             {loading ? (
