@@ -106,7 +106,7 @@ const MoreInfo = (props) => {
             className="jumbotron text-center py-2"
             id="main-detail"
           >
-            <img className="logo" src={ReactLogo} alt="logo"></img>
+            <img className="logo" src={details.logo} alt="logo"></img>
 
             <h3 className="name">{details.name}</h3>
             <span className> {details.date.substring(0, 10)} </span>
