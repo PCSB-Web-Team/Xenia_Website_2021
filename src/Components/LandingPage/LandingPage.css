@@ -133,7 +133,7 @@
   width: 150px;
   height: 240px;
 
-  top: 0px;
+  bottom: 100%;
   right: -300px;
 
   z-index: 100;
@@ -141,7 +141,7 @@
   animation-name: shuttle;
   animation-iteration-count: infinite;
   animation-duration: 10s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   animation-delay: 5s;
 }
 
@@ -151,30 +151,31 @@
 
 @keyframes shuttle {
   0% {
-    transform: scale(0.5);
+    transform: scale(0.5) rotateZ(90deg);
     right: -300px;
   }
   25% {
+    bottom: 50%;
     transform: scale(1);
     right: 220px;
   }
   40% {
-    top: 300px;
+    bottom: 50%;
     right: 220px;
     transform: scale(1);
   }
   60% {
-    top: 630px;
+    bottom: 1%;
     right: 220px;
     transform: scale(0.5);
   }
   80% {
-    top: 630px;
+    bottom: 1%;
     right: 220px;
     transform: scale(0.5);
   }
   100% {
-    top: -100px;
+    bottom: 100%;
     right: 220px;
     transform: scale(0);
   }
