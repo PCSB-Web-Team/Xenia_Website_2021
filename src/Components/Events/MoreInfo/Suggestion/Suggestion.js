@@ -17,8 +17,7 @@ const Suggestion = (props) => {
           <div className="card-body" id="1">
             <h3>{props.suggestions[0].name}</h3>
             <div className="suggestion-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              {props.suggestions[0].details}
             </div>
           </div>
         </Link>
@@ -32,8 +31,7 @@ const Suggestion = (props) => {
           <div className="card-body">
             <h3>{props.suggestions[1].name}</h3>
             <div className="suggestion-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              {props.suggestions[1].details}
             </div>
           </div>
         </Link>

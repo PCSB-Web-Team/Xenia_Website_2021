@@ -11,7 +11,7 @@ export default function ImgMediaCard({details , readmore}) {
       <div className="card-body">
         <Slide left><h2 className='eve-card-name'>{details.name}</h2></Slide>
         <Slide right><h1><hr/></h1></Slide>
-        <Fade><p>{details.details} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p></Fade>
+        <Fade><p>{details.details}</p></Fade>
         <span>{details.date}</span>
       </div>
     </div>

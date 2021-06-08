@@ -4,7 +4,6 @@ import Modal from 'react-modal';
 import './Modal.css';
 import Font from '../../../../Assets/Fonts/PTSans-Bold.ttf'
 import ThemeButton from '../../../Button/button';
-import Recaptcha from 'react-recaptcha';
 
 const customStyles = {
 
@@ -16,7 +15,7 @@ const customStyles = {
         bottom: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.8)'
     },
-    
+
     content: {
         top: '50%',
         left: '50%',
@@ -75,10 +74,6 @@ const RegisterModal = (props) => {
         // references are now sync'd and can be accessed.
     }
 
-    const recaptchaLoaded = () => {
-        console.log("recaptch loaded")
-    }
-
     return (
         <div className='register-modal'>
 
@@ -90,12 +85,6 @@ const RegisterModal = (props) => {
             >
 
                 <h2 ref={_subtitle => (subtitle = _subtitle)}>Confirm Registration</h2>
-
-                <Recaptcha
-                    sitekey="xxxxxxxxxxxxxxxxxxxx"
-                    render="explicit"
-                    onloadCallback={recaptchaLoaded}
-                />
 
                 <div className='button-group' style={buttonGroup}>
 

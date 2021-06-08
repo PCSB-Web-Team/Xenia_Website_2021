@@ -35,13 +35,11 @@ const App = (props) => {
       props.loggedIn(res.data.data);
     };
 
-    setTimeout( () => {
-      const PreLoader = document.getElementById('preLoader');
-      PreLoader.style.display = 'none';
-    }, 6000 )
+    setTimeout(() => {
+      const PreLoader = document.getElementById("preLoader");
+      PreLoader.style.display = "none";
+    }, 6000);
     getUserData();
-  
-    
   }, []);
 
   return (
@@ -50,7 +48,6 @@ const App = (props) => {
       <Background />
 
       <Switch>
-
         <Route exact path="/schedule">
           <Schedule />
           <Footer />
