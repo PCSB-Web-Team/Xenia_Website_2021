@@ -15,7 +15,7 @@ const LandingPage = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(false)
+    setInterval( () => setLoading(false), 500 )
   }, [])
 
   const handleMove = (e) => {
