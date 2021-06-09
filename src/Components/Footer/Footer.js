@@ -100,7 +100,7 @@ const Footer = (props) => {
                     onClick={() => {
                       document.documentElement.scrollTop = 0;
                     }}
-                    to="/about-us"
+                    to="/sponsors"
                   >
                     Help
                   </Link>

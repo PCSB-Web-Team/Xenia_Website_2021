@@ -16,6 +16,7 @@ const Events = () => {
 
   useEffect(() => {
     fetchData();
+    console.log('loaded');
   }, []);
 
   const fetchData = async () => {

@@ -175,7 +175,7 @@
 .suggestion .card .img-container {
   background: linear-gradient(rgba(0, 238, 255, 0.377), rgb(0, 0, 0));
   /* height: 50%; */
-  max-height: 200px;
+  height: 200px;
 }
 
 .suggestion .card img {
