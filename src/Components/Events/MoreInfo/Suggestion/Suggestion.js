@@ -7,13 +7,15 @@ import { Link } from 'react-router-dom';
 const Suggestion = (props) => {
   return (
     <Slide right cascade>
-      <div className="suggestion" onClick={ () => document.documentElement.scrollTop = 0 } >
+      <div className="suggestion" onClick={() => document.documentElement.scrollTop = 0} >
         <Link to={`/events/${props.suggestions[0]._id}`} className="card">
-          <img
-            className="card-img-top"
-            src={ReactLogo}
-            alt="Card cap"
-          />
+          <div className='img-container'>
+            <img
+              className="card-img-top"
+              src={props.suggestions[0].logo}
+              alt="Card cap"
+            />
+          </div>
           <div className="card-body" id="1">
             <h3>{props.suggestions[0].name}</h3>
             <div className="suggestion-text">
@@ -27,7 +29,9 @@ const Suggestion = (props) => {
           className="card"
           href="#main-detail"
         >
-          <img className="card-img-top" src={ReactLogo} alt="Card cap" />
+          <div className='img-container'>
+            <img className="card-img-top" src={props.suggestions[1].logo} alt="Card cap" />
+          </div>
           <div className="card-body">
             <h3>{props.suggestions[1].name}</h3>
             <div className="suggestion-text">
