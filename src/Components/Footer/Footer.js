@@ -78,18 +78,7 @@ const Footer = (props) => {
                   className="#ffffff white mt-0 d-inline-block mx-auto"
                   style={{ width: "80px" }}
                 />
-                {props.loggedIn ? (
-                  <div className="nav-content">
-                    <Link
-                      to="/cart"
-                      onClick={() => {
-                        document.documentElement.scrollTop = 0;
-                      }}
-                    >
-                      Cart
-                    </Link>
-                  </div>
-                ) : (
+                {!props.loggedIn && (
                   <div className="nav-content">
                     <Link onClick={props.openLogin}>Log In</Link>
                   </div>
@@ -100,7 +89,7 @@ const Footer = (props) => {
                     onClick={() => {
                       document.documentElement.scrollTop = 0;
                     }}
-                    to="/sponsors"
+                    to="/contact-us"
                   >
                     Help
                   </Link>
