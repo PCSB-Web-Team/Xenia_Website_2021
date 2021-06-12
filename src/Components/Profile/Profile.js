@@ -52,14 +52,14 @@ const MyProf = (props) => {
 
       <div className='row container-fluid col-container'>
         <div className='col-lg-4 col-0 event-type'>
-          <img src={isTechnical ? Tech : NonTech} />
+          <img src={isTechnical ? Tech : NonTech} alt='' />
         </div>
         <div className='col-lg-4 col-12 event-list'> {list.length > 0 ? (
           list
         ) : (
           <h1 className="noRegistered">No Registered Events</h1>
         )} </div>
-        <div className='col-lg-4 col-0 event-logo'> <img src={eveLogo}></img> </div>
+        <div className='col-lg-4 col-0 event-logo'> <img src={eveLogo} alt=''></img> </div>
       </div>
 
 
