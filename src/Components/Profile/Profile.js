@@ -6,10 +6,8 @@ import { connect } from "react-redux";
 import { loggedOut } from "../../Store/Actions";
 import { Link } from "react-router-dom";
 
-import NonTech from '../../Assets/Images/tech2.svg';
-// import Tech from '../../Assets/Images/technical.gif';
-// import Tech from '../../Assets/Images/chip.png';
-import Tech from '../../Assets/Images/tech1.svg';
+import NonTechLogo from '../../Assets/Images/nonTech.svg';
+import TechLogo from '../../Assets/Images/tech.svg';
 
 const MyProf = (props) => {
 
@@ -52,7 +50,7 @@ const MyProf = (props) => {
 
       <div className='row container-fluid col-container'>
         <div className='col-lg-4 col-0 event-type'>
-          <img src={isTechnical ? Tech : NonTech} alt='' />
+          <img src={isTechnical ? TechLogo : NonTechLogo } alt='' />
         </div>
         <div className='col-lg-4 col-12 event-list'> {list.length > 0 ? (
           list
