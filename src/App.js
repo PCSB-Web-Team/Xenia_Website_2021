@@ -68,7 +68,7 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        <Route exact path="/side-events">
+        <Route exact path="/build-up-events">
           <SideEvents />
           <Footer />
         </Route>

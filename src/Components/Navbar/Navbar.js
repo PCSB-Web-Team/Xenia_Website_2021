@@ -58,7 +58,7 @@ const Navbar = (props) => {
               <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } exact to='/'> Home </NavLink></div>
               <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } to='/schedule'> Schedule </NavLink></div>
               <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } to='/events'> Events </NavLink></div>
-              <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } to='/side-events'> Side Events </NavLink></div>
+              <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } to='/build-up-events'> Build Up Events </NavLink></div>
               <div><NavLink className='navItem' activeClassName='active-nav' onClick = { navState ? closeNavBar : null } to='/contact-us'> Contact Us </NavLink></div>
 
               {props.isLoggedIn ? null : <div className='navItem' activeClassName='active-nav' onClick={props.openLogin}> Login </div>}
