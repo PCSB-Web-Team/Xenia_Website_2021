@@ -34,7 +34,13 @@ class Registrations extends Component {
         <header className="page-headers">
           <h1 className="header-name"> SCHEDULE </h1>
         </header>
-
+        
+        <div className="schedule-coming-soon">
+          <div className="coming-soon">
+            Coming Soon...
+          </div>
+        </div>
+        {/* 
         <Box
           className="Registrations"
           alignItems="center"
@@ -45,7 +51,6 @@ class Registrations extends Component {
               <RegOpen />
             </Box>
           </Zoom>
-          {/* <Slide left cascade> */}
           <Grid container spacing={2} lg={6} md={12} sm={12} xs={12}>
             <Grid item xs={12} sm={12} md={4} lg={4} alignItems="center">
               <Zoom duration={500}>
@@ -77,8 +82,7 @@ class Registrations extends Component {
               </Zoom>
             </Grid>
           </Grid>
-          {/* </Slide> */}
-        </Box>
+        </Box> */}
       </>
     );
   }

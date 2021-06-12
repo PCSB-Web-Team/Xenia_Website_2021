@@ -13,9 +13,9 @@ const Sponsors = () => {
         <h1 className="header-name"> SPONSORS </h1>
       </header>
 
-      <header className="page-headers mb-3">
+      {/* <header className="page-headers mb-3">
         <h1 className="coming-soon">Coming Soon . . . </h1>
-      </header>
+      </header> */}
 
       {/* <h1 className="headingmain">Sponsors</h1>
       <div className="mainboxtitle">

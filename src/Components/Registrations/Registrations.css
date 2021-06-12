@@ -379,3 +379,37 @@ Change1 */
     flex-flow: column;
   }
 }
+
+.schedule-coming-soon{
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.schedule-coming-soon .coming-soon{
+  color: rgba(0, 255, 255, 0.8);
+  font-size: 64px;
+
+  animation: coming-soon-pulse 1s infinite ease-in-out;
+  animation-play-state: running;
+  font-family: "SansBold";
+  font-weight: 300;
+  text-align: center;
+  padding: 5px;
+}
+
+@keyframes coming-soon-pulse {
+  0%{
+    opacity: 0.2;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0.2;
+  }
+}

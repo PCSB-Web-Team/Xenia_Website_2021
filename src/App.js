@@ -84,8 +84,8 @@ const App = (props) => {
           )}
         </Route>
 
-        <Route exact path="/sponsors">
-          <Sponsors />
+        <Route exact path="/contact-us">
+          {/* <Sponsors /> */}
           <AboutUs />
           <ContactUs />
           <FAQ />
