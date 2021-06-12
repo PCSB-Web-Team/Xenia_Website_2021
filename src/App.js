@@ -16,6 +16,7 @@ import FAQ from "./Components/Contact/FAQ/FAQ";
 import Background from "./Components/BackGround/Background";
 import ForgotPassword from "./Components/ForgotPassword/forgot";
 import ResetPassword from "./Components/ForgotPassword/reset";
+import Workshops from "./Components/Workshops/Workshops";
 
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -36,7 +37,7 @@ const App = (props) => {
     };
 
     // const PreLoader = document.getElementById("preLoader");
-    // PreLoader.style.display = "none";    
+    // PreLoader.style.display = "none";
 
     setTimeout(() => {
       const PreLoader = document.getElementById("preLoader");
@@ -44,7 +45,6 @@ const App = (props) => {
     }, 6000);
 
     getUserData();
-
   }, []);
 
   return (
@@ -70,6 +70,11 @@ const App = (props) => {
 
         <Route exact path="/build-up-events">
           <SideEvents />
+          <Footer />
+        </Route>
+
+        <Route exact path="/workshops">
+          <Workshops />
           <Footer />
         </Route>
 

@@ -27,7 +27,7 @@ const About = () => {
                 suntsint quis architecto. Nemo impedit commodi fuga natus
                 suntmagnam id quos mollitia.
               </p>
-              <ThemeButtton value="Register" />
+              {/* <ThemeButtton value="Register" /> */}
             </div>
           </Reveal>
         </div>
@@ -60,7 +60,7 @@ const About = () => {
                 sint quis architecto. Nemo impedit commodi fuga natus sunt
                 magnam id quos mollitia.
               </p>
-              <ThemeButtton value="Register" />
+              {/* <ThemeButtton value="Register" /> */}
             </div>
           </Reveal>
         </div>
@@ -93,7 +93,7 @@ const About = () => {
                 sint quis architecto. Nemo impedit commodi fuga natus sunt
                 magnam id quos mollitia.
               </p>
-              <ThemeButtton value="Register" />
+              {/* <ThemeButtton value="Register" /> */}
             </div>
           </Reveal>
         </div>
