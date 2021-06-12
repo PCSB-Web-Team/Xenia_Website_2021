@@ -54,7 +54,7 @@ const Form = () => {
 				) : (
 					<div>
 						<div className="resetPassHead">
-							<img src={astro} />
+							<img src={astro} alt="astro"/>
 							<p>Reset Password</p>
 						</div>
 						<label>New Password</label>

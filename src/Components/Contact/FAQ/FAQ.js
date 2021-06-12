@@ -20,19 +20,14 @@ const FAQ = () => {
     {
       question: "Is the festival going to be conducted in the college?",
       answer:
-        "No, considering the current situation Xenia is going to an online only festival.",
+        "No, considering the current situation Xenia is going to be an online only festival.",
       sr: "2",
     },
     {
-      question: "Do I get a refund once I pay for the event?",
-      answer: "No, we don't have refund facility available.",
-      sr: "3",
-    },
-    {
-      question: "Are the events going to individual participation?",
+      question: "Are the events going to have individual participation?",
       answer:
-        "Not exactly, some events are strictly individual participation while other are a team participation. Confirm the type of participation for the respective events on the website.",
-      sr: "4",
+        "Not exactly, some events are strictly individual participation while others are team participation. Confirm the type of participation for the respective events on the website.",
+      sr: "3",
     },
   ];
 
