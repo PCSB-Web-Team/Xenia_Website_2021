@@ -100,7 +100,7 @@ const Footer = (props) => {
                     onClick={() => {
                       document.documentElement.scrollTop = 0;
                     }}
-                    to="/about-us"
+                    to="/sponsors"
                   >
                     Help
                   </Link>
@@ -124,7 +124,7 @@ const Footer = (props) => {
                 </div>
                 <div className="nav-content">
                   <i className="fa fa-phone mr-2" />
-                  +91 1234567890
+                  +91 9922772959
                 </div>
               </div>
             </div>
