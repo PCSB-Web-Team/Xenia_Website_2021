@@ -381,13 +381,12 @@ Change1 */
 }
 
 .schedule-coming-soon{
-  height: 80vh;
+  height: 60vh;
   width: 100%;
   display: flex;
   flex-flow: row;
   align-items: center;
   justify-content: space-around;
-
 }
 
 .schedule-coming-soon .coming-soon{

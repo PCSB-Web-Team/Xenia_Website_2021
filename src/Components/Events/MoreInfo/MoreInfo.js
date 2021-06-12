@@ -15,7 +15,7 @@ import Themebutton from "../../Button/button";
 
 const MoreInfo = (props) => {
   
-  const [details, setDetails] = useState({ date: "", rules: [] });
+  const [details, setDetails] = useState();
   const [loading, setLoading] = useState(true);
   const [registered, setRegistered] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -27,7 +27,7 @@ const MoreInfo = (props) => {
   const checkRegistered = () => {
     setRegistered(false);
     props.registeredEvents.forEach((eve) => {
-      if (eve._id === id) setRegistered(true);
+      if (eve._id === id) setRegistered( true );
     });
   };
 
@@ -43,7 +43,8 @@ const MoreInfo = (props) => {
       console.log(response.data);
 
       if (response.data.ok) {
-        setDetails(response.data.data);
+        await setDetails(() => response.data.data);
+        console.log(details);
       }
     } catch (error) {
       console.log(error);
