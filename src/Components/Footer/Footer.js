@@ -32,7 +32,7 @@ const Footer = (props) => {
                   style={{ width: "80px" }}
                 />
                 <div className="nav-content">
-                  Exclusive Event, Priceless Memories.
+                  Where Passion Meets Perception
                 </div>
               </div>
               <div className="column2 mx-auto">

@@ -24,13 +24,13 @@ export default function SimpleTabs(props) {
       <div className='mi-details'>
         <Fade>
           <div className={activeDetail === 0 ? activeDet : det}>
-            {props.details.rules.map(rule => <p key={rule}>{rule}</p>)}
+            {props.details.rules.map((rule) => <p>{rule}</p>)}
           </div>
           <div className={activeDetail === 1 ? activeDet : det}>
-            {props.details.prizes.map(prizes => <p key={prizes}>{prizes}</p>)}
+            {props.details.prizes.map(prizes => <p>{prizes}</p>)}
           </div>
           <div className={activeDetail === 2 ? activeDet : det}>
-            {props.details.contacts.map(contact => <p key={contact}>{contact}</p>)}
+            {props.details.contacts.map(contact => <p>{contact}</p>)}
           </div>
         </Fade>
       </div>

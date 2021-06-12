@@ -3,19 +3,19 @@ import "./MoreInfo.css";
 import back2 from "../../../Assets/Images/arrow-left2.png";
 import { connect } from "react-redux";
 import { useParams, Link, useHistory } from "react-router-dom";
-import ReactLogo from "../../../Assets/Images/logo.svg";
+// import ReactLogo from "../../../Assets/Images/logo.svg";
 import DetailsTab from "./DetailTabs/DetailsTabs";
 import Suggestion from "./Suggestion/Suggestion";
 import { openLogin, addToRegistered } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
 import { setRegisteredEvents, getEventDetails } from "../../Config/api/User";
-import { addToCartFail, registrationsClosed } from "../../Notifications/Notification";
+import { addToCartFail, registrationSuccess } from "../../Notifications/Notification";
 import Modal from "./Modal/Modal";
 import Themebutton from "../../Button/button";
 
 const MoreInfo = (props) => {
   
-  const [details, setDetails] = useState({ date: "", rules: [] });
+  const [details, setDetails] = useState();
   const [loading, setLoading] = useState(true);
   const [registered, setRegistered] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -27,7 +27,7 @@ const MoreInfo = (props) => {
   const checkRegistered = () => {
     setRegistered(false);
     props.registeredEvents.forEach((eve) => {
-      if (eve._id === id) setRegistered(true);
+      if (eve._id === id) setRegistered( true );
     });
   };
 
@@ -43,7 +43,8 @@ const MoreInfo = (props) => {
       console.log(response.data);
 
       if (response.data.ok) {
-        setDetails(response.data.data);
+        await setDetails(() => response.data.data);
+        console.log(details);
       }
     } catch (error) {
       console.log(error);
@@ -78,6 +79,7 @@ const MoreInfo = (props) => {
         props.addToRegistered(res.data.data.event);
         // addToCartSuccess();
         setRegistered(true);
+        registrationSuccess();
         setRegisterLoading(false);
         setShowModal(false);
       }
@@ -109,7 +111,7 @@ const MoreInfo = (props) => {
             <img className="logo" src={details.logo} alt="logo"></img>
 
             <h3 className="name">{details.name}</h3>
-            <span className> {details.date.substring(0, 10)} </span>
+            {/* <span className> {details.date.substring(0, 10)} </span> */}
 
             <p className="lead">
               {details.details}

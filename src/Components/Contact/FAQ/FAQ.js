@@ -8,11 +8,11 @@ const FAQ = () => {
     {
       question: "What is Xenia?",
       answer:
-        "Xenia is an annual festival organised by PICT CSI club of College, this multitude of other events.",
+        "Xenia is an annual festival organised by PICT CSI Student Branch",
       sr: "0",
     },
     {
-      question: "Does Xenia has only technical events?",
+      question: "Does Xenia have only technical events?",
       answer:
         "No, Xenia consists of technical as well as non-technical events.",
       sr: "1",
@@ -20,14 +20,14 @@ const FAQ = () => {
     {
       question: "Is the festival going to be conducted in the college?",
       answer:
-        "No, considering the current situation Xenia is going to be an online only festival.",
+        "No, considering the current situation Xenia is going to be an online event.",
       sr: "2",
     },
     {
-      question: "Are the events going to have individual participation?",
+      question: "Are the events only for individual participation?",
       answer:
-        "Not exactly, some events are strictly individual participation while others are team participation. Confirm the type of participation for the respective events on the website.",
-      sr: "3",
+      "Not exactly, some events have strictly individual participation while others have team participation. Kindly confirm the type of participation on the website.",
+      sr: "4",
     },
   ];
 

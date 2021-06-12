@@ -2,7 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
 import Zoom from 'react-reveal/Zoom';
-import eventLogo from '../../../Assets/Images/icon4.png';
+// import eventLogo from '../../../Assets/Images/icon4.png';
 
 export default function ImgMediaCard({details , readmore}) {
   return (

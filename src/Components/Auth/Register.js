@@ -91,7 +91,7 @@ const Register = (props) => {
 	return (
 		<div>
 			<ReCaptcha
-				sitekey="6LdGoAsbAAAAAOcbfOr4ltW1gx9wrT-ebYRtBd-G"
+				sitekey="6LdP8iobAAAAAHHXrhWEJLuoQWruhsQiLq1AywMg"
 				size="invisible"
 				ref={reRef}
 			/>
@@ -103,13 +103,12 @@ const Register = (props) => {
 			>
 				<Modal.Header
 					style={{
-						paddingLeft: '120px',
-						background: '#131313',
+						background: '#000000',
 						color: '#fff',
 					}}
 					closeButton
 				>
-					<Modal.Title>
+					<Modal.Title className="signup-head">
 						<div className="d-flex flex-column text-center">
 							<img
 								alt="sign-up"
@@ -319,14 +318,12 @@ const styles = {
 		height: '90px',
 		width: '90px',
 		marginTop: '-50px',
-		marginLeft: '80px',
 		borderRadius: '30px',
 		borderColor: 'white',
 		borderWidth: '1px',
 	},
 	title_text: {
 		letterSpacing: '5px',
-		marginLeft: '50px',
 		marginTop: '20px',
 	},
 };

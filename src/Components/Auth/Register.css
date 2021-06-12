@@ -16,3 +16,12 @@
     transition: all 0.3s;
     border: 1px solid white;
 }
+
+.signup-head{
+    width: 100%;
+}
+
+.signup-head .text-center{
+    align-items: center;
+    margin-left: 20px;
+}

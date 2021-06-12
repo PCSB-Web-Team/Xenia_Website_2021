@@ -16,3 +16,11 @@
     transition: all 0.3s;
     border: 1px solid white;
 }
+
+.login-head{
+    width: 100%;
+}
+
+.login-head .text-center{
+    align-items: center;
+}

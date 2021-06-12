@@ -98,15 +98,16 @@
 .card-div .card-body {
   background: rgba(0, 0, 0, 0.5);
 
-  transition: ease;
-  animation-name: shade;
   font-size: 18px;
+  transition: ease;
+
+  animation-name: shade;
   animation-duration: 10s;
   animation-iteration-count: infinite;
+  
   transition-delay: -3s;
   
-  min-height: 180px;
-  height: 100%;
+  min-height: 220px;
 }
 
 @keyframes shade {
