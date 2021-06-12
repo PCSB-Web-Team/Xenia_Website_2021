@@ -68,7 +68,7 @@ const buttonGroup = {
 // Modal.setAppElement('#Xenia')
 
 const RegisterModal = (props) => {
-    var subtitle;
+    // var subtitle;
 
     function afterOpenModal() {
         // references are now sync'd and can be accessed.
@@ -84,7 +84,7 @@ const RegisterModal = (props) => {
                 style={customStyles}
             >
 
-                <h2 ref={_subtitle => (subtitle = _subtitle)}>Confirm Registration</h2>
+                <h2 >Confirm Registration</h2>
 
                 <div className='button-group' style={buttonGroup}>
 

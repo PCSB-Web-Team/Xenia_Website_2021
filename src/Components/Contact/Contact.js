@@ -35,7 +35,7 @@ const Contact = () => {
 	return (
 		<div className="contactUs mb-4">
 			<ReCaptcha
-				sitekey="6LdGoAsbAAAAAOcbfOr4ltW1gx9wrT-ebYRtBd-G"
+				sitekey="6LdP8iobAAAAAHHXrhWEJLuoQWruhsQiLq1AywMg"
 				size="invisible"
 				ref={reRef}
 			/>

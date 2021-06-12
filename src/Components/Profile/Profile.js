@@ -21,7 +21,7 @@ const MyProf = (props) => {
   const handleMouse = (name)=>{
     const listEves = document.querySelector('.RegP');
     const evename = document.getElementById('eveDetailsName');
-    if(listEves.length!=0){
+    if(listEves.length!==0){
       evename.textContent===''?   evename.textContent=listEves.textContent : evename.textContent = name;
     }
   }

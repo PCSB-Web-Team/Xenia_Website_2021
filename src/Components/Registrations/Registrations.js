@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./Registrations.css";
-import RegOpen from "./RegOpen/RegOpen";
-import EventCols from "./EventCols/EventCols";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
-import Zoom from "react-reveal/Zoom";
+// import RegOpen from "./RegOpen/RegOpen";
+// import EventCols from "./EventCols/EventCols";
+// import Box from "@material-ui/core/Box";
+// import Grid from "@material-ui/core/Grid";
+// import Zoom from "react-reveal/Zoom";
 
 class Registrations extends Component {
   state = {
@@ -34,12 +34,13 @@ class Registrations extends Component {
         <header className="page-headers">
           <h1 className="header-name"> SCHEDULE </h1>
         </header>
-        
+
         <div className="schedule-coming-soon">
           <div className="coming-soon">
             Coming Soon...
           </div>
         </div>
+        
         {/* 
         <Box
           className="Registrations"

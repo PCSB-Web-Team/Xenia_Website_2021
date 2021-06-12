@@ -69,6 +69,7 @@ const Navbar = (props) => {
                     to="/profile"
                     activeClassName="active-nav"
                     className="navItem"
+                    onClick = { navState ? closeNavBar : null }
                   >
                     Profile
                   </NavLink>

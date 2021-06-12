@@ -1,6 +1,6 @@
 import React from 'react';
 import './Suggestion.css';
-import ReactLogo from '../../../../Assets/Images/logo.svg';
+// import ReactLogo from '../../../../Assets/Images/logo.svg';
 import Slide from 'react-reveal/Slide';
 import { Link } from 'react-router-dom';
 

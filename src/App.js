@@ -8,7 +8,7 @@ import ContactUs from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import Profile from "./Components/Profile/Profile";
 import WebTeam from "./Components/WebTeam/WebTeam";
-import Sponsors from "./Components/Sponsors/Sponsors";
+// import Sponsors from "./Components/Sponsors/Sponsors";
 import { getLoggedInUser } from "./Components/Config/api/User";
 import NotFound from "./Components/404/404";
 import SideEvents from "./Components/SideEvents/SideEvents";

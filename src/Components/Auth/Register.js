@@ -91,7 +91,7 @@ const Register = (props) => {
 	return (
 		<div>
 			<ReCaptcha
-				sitekey="6LdGoAsbAAAAAOcbfOr4ltW1gx9wrT-ebYRtBd-G"
+				sitekey="6LdP8iobAAAAAHHXrhWEJLuoQWruhsQiLq1AywMg"
 				size="invisible"
 				ref={reRef}
 			/>

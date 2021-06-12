@@ -195,11 +195,16 @@
   margin-bottom: 30px;
 }
 
-/* 
+
 .already-registered{
-  color: green;
+
+  user-select: none;
+  font-family: 'SansBold';
+  color: rgb(0, 255, 0);
+  font-weight: 600;
   font-size: 32px;
-} */
+
+}
 
 @media (max-width: 800px) {
   
