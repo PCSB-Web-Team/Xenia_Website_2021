@@ -53,14 +53,14 @@ const Register = (props) => {
         };
         const res = await register(user);
 
-        console.log(res);
+        // console.log(res);
 
         if (res.data.ok) {
           setLoading(false);
           signUpSuccess();
           props.toggleLogin();
         } else {
-          console.log("heelo");
+          // console.log("heelo");
           setLoading(false);
           signUpFail();
         }
@@ -88,11 +88,10 @@ const Register = (props) => {
     }
   };
 
-<<<<<<< HEAD
   return (
     <div>
       <ReCaptcha
-        sitekey="6LdGoAsbAAAAAOcbfOr4ltW1gx9wrT-ebYRtBd-G"
+        sitekey="6LdP8iobAAAAAHHXrhWEJLuoQWruhsQiLq1AywMg"
         size="invisible"
         ref={reRef}
       />
@@ -152,71 +151,6 @@ const Register = (props) => {
                 </span>
               )}
             </div>
-=======
-	return (
-		<div>
-			<ReCaptcha
-				sitekey="6LdP8iobAAAAAHHXrhWEJLuoQWruhsQiLq1AywMg"
-				size="invisible"
-				ref={reRef}
-			/>
-			<Modal
-				aria-labelledby="contained-modal-title-vcenter"
-				centered
-				show={props.popSignUp}
-				onHide={props.closeLogin}
-			>
-				<Modal.Header
-					style={{
-						paddingLeft: '120px',
-						background: '#131313',
-						color: '#fff',
-					}}
-					closeButton
-				>
-					<Modal.Title>
-						<div className="d-flex flex-column text-center">
-							<img
-								alt="sign-up"
-								src={astronaut}
-								className="img-fluid"
-								style={styles.imageStyles}
-							/>{' '}
-							<span
-								style={styles.title_text}
-								className="text-uppercase font-weight-bold"
-							>
-								{' '}
-								Sign Up
-							</span>
-						</div>
-					</Modal.Title>
-				</Modal.Header>
-				<Modal.Body style={{ background: '#131313', color: '#ffff' }}>
-					<form onSubmit={handleSubmit}>
-						<div className="form-group">
-							<div className="input-group">
-								<div className="input-group-prepend">
-									<div className="input-group-text">
-										<i className="fa fa-user"></i>
-									</div>
-								</div>
-								<input
-									className="form-control"
-									name="name"
-									type="text"
-									placeholder="Name"
-									value={name}
-									onChange={(e) => setName(e.target.value)}
-								/>
-							</div>
-							{errors !== null && errors.name !== undefined && (
-								<span className="text-danger pl-5 font-weight-bold">
-									{`* ${errors.name}`}
-								</span>
-							)}
-						</div>
->>>>>>> 22dcb7032d845cd1632b8ec6b37d474cfc57d56b
 
             <div className="form-group">
               <div className="input-group">
