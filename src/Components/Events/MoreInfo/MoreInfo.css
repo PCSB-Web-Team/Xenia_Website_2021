@@ -64,9 +64,9 @@
 
 .more-info .jumbotron .logo {
   animation-name: logoScaling;
-  animation-duration: 1s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
-  transition: ease;
+  transition: ease-in-out;
 }
 
 @keyframes logoScaling {
@@ -195,11 +195,16 @@
   margin-bottom: 30px;
 }
 
-/* 
+
 .already-registered{
-  color: green;
+
+  user-select: none;
+  font-family: 'SansBold';
+  color: rgb(0, 255, 0);
+  font-weight: 600;
   font-size: 32px;
-} */
+
+}
 
 @media (max-width: 800px) {
   

@@ -4,6 +4,11 @@ import Fade from "react-reveal/Fade";
 const About = () => {
   return (
     <div className="section about-us">
+    
+      <header className="page-headers">
+        <h1 className="header-name"> Contact Us </h1>
+      </header>
+
       <div className="row text-center hero">
         <div className="col-lg-12 content1 px-sm-5">
           <Fade bottom duration={1000}>

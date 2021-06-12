@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./Registrations.css";
-import RegOpen from "./RegOpen/RegOpen";
-import EventCols from "./EventCols/EventCols";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
-import Zoom from "react-reveal/Zoom";
+// import RegOpen from "./RegOpen/RegOpen";
+// import EventCols from "./EventCols/EventCols";
+// import Box from "@material-ui/core/Box";
+// import Grid from "@material-ui/core/Grid";
+// import Zoom from "react-reveal/Zoom";
 
 class Registrations extends Component {
   state = {
@@ -35,6 +35,13 @@ class Registrations extends Component {
           <h1 className="header-name"> SCHEDULE </h1>
         </header>
 
+        <div className="schedule-coming-soon">
+          <div className="coming-soon">
+            Coming Soon...
+          </div>
+        </div>
+        
+        {/* 
         <Box
           className="Registrations"
           alignItems="center"
@@ -45,7 +52,6 @@ class Registrations extends Component {
               <RegOpen />
             </Box>
           </Zoom>
-          {/* <Slide left cascade> */}
           <Grid container spacing={2} lg={6} md={12} sm={12} xs={12}>
             <Grid item xs={12} sm={12} md={4} lg={4} alignItems="center">
               <Zoom duration={500}>
@@ -77,8 +83,7 @@ class Registrations extends Component {
               </Zoom>
             </Grid>
           </Grid>
-          {/* </Slide> */}
-        </Box>
+        </Box> */}
       </>
     );
   }
