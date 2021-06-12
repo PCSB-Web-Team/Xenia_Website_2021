@@ -88,6 +88,7 @@ const Register = (props) => {
     }
   };
 
+<<<<<<< HEAD
   return (
     <div>
       <ReCaptcha
@@ -151,6 +152,70 @@ const Register = (props) => {
                 </span>
               )}
             </div>
+=======
+	return (
+		<div>
+			<ReCaptcha
+				sitekey="6LdP8iobAAAAAHHXrhWEJLuoQWruhsQiLq1AywMg"
+				size="invisible"
+				ref={reRef}
+			/>
+			<Modal
+				aria-labelledby="contained-modal-title-vcenter"
+				centered
+				show={props.popSignUp}
+				onHide={props.closeLogin}
+			>
+				<Modal.Header
+					style={{
+						background: '#000000',
+						color: '#fff',
+					}}
+					closeButton
+				>
+					<Modal.Title className="signup-head">
+						<div className="d-flex flex-column text-center">
+							<img
+								alt="sign-up"
+								src={astronaut}
+								className="img-fluid"
+								style={styles.imageStyles}
+							/>{' '}
+							<span
+								style={styles.title_text}
+								className="text-uppercase font-weight-bold"
+							>
+								{' '}
+								Sign Up
+							</span>
+						</div>
+					</Modal.Title>
+				</Modal.Header>
+				<Modal.Body style={{ background: '#131313', color: '#ffff' }}>
+					<form onSubmit={handleSubmit}>
+						<div className="form-group">
+							<div className="input-group">
+								<div className="input-group-prepend">
+									<div className="input-group-text">
+										<i className="fa fa-user"></i>
+									</div>
+								</div>
+								<input
+									className="form-control"
+									name="name"
+									type="text"
+									placeholder="Name"
+									value={name}
+									onChange={(e) => setName(e.target.value)}
+								/>
+							</div>
+							{errors !== null && errors.name !== undefined && (
+								<span className="text-danger pl-5 font-weight-bold">
+									{`* ${errors.name}`}
+								</span>
+							)}
+						</div>
+>>>>>>> 6b745640311c57b024c9c170d7cacdd4425fca4a
 
             <div className="form-group">
               <div className="input-group">
@@ -305,6 +370,7 @@ const Register = (props) => {
   );
 };
 const styles = {
+<<<<<<< HEAD
   imageStyles: {
     padding: "5px",
     height: "90px",
@@ -320,6 +386,21 @@ const styles = {
     marginLeft: "50px",
     marginTop: "20px",
   },
+=======
+	imageStyles: {
+		padding: '5px',
+		height: '90px',
+		width: '90px',
+		marginTop: '-50px',
+		borderRadius: '30px',
+		borderColor: 'white',
+		borderWidth: '1px',
+	},
+	title_text: {
+		letterSpacing: '5px',
+		marginTop: '20px',
+	},
+>>>>>>> 6b745640311c57b024c9c170d7cacdd4425fca4a
 };
 
 const mapSatesToProps = (state) => {

@@ -63,7 +63,7 @@ class Registrations extends Component {
               </Zoom>
             </Grid>
 
-            <Grid item xs={12} sm={12} md={4} lg={4} alignItems="center">
+            <Grid item xs={12} sm={12} md={4} lg={4}>
               <Zoom duration={500}>
                 <EventCols
                   date={this.state.days.day2.date}
@@ -73,7 +73,7 @@ class Registrations extends Component {
               </Zoom>
             </Grid>
 
-            <Grid item xs={12} sm={12} md={4} lg={4} alignItems="center">
+            <Grid item xs={12} sm={12} md={4} lg={4}>
               <Zoom duration={500}>
                 <EventCols
                   date={this.state.days.day3.date}
