@@ -101,7 +101,7 @@ const Contact = () => {
 					</p>
 					<p>
 						<i className="fa fa-envelope"></i>{' '}
-						<span style={{ marginLeft: '5px' }}> pictcsi@gmail.com</span>
+						<span style={{ marginLeft: '5px' }}>support@pictcsi.com</span>
 					</p>
 				</div>
 				<div className="socialMedia">

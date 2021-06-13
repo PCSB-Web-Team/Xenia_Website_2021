@@ -53,7 +53,7 @@ const Footer = (props) => {
                     All Events
                   </Link>
                 </div>
-                <div className="nav-content">
+                {/* <div className="nav-content">
                   <Link
                     onClick={
                       props.loggedIn
@@ -66,7 +66,7 @@ const Footer = (props) => {
                   >
                     Registered Events
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="block2 d-flex mx-auto">
@@ -78,7 +78,7 @@ const Footer = (props) => {
                   className="#ffffff white mt-0 d-inline-block mx-auto"
                   style={{ width: "80px" }}
                 />
-                {props.loggedIn ? (
+                {/* {props.loggedIn ? (
                   <div className="nav-content">
                     <Link
                       to="/cart"
@@ -93,14 +93,14 @@ const Footer = (props) => {
                   <div className="nav-content">
                     <Link onClick={props.openLogin}>Log In</Link>
                   </div>
-                )}
+                )} */}
 
                 <div className="nav-content">
                   <Link
                     onClick={() => {
                       document.documentElement.scrollTop = 0;
                     }}
-                    to="/sponsors"
+                    to="/contact-us"
                   >
                     Help
                   </Link>
@@ -120,7 +120,7 @@ const Footer = (props) => {
                 </div>
                 <div className="nav-content">
                   <i className="fa fa-envelope mr-2" />
-                  pictcsi@gmail.com
+                  support@pictcsi.com
                 </div>
                 <div className="nav-content">
                   <i className="fa fa-phone mr-2" />

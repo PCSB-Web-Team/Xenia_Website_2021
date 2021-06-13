@@ -53,6 +53,20 @@ export const invalidCredentials = () => {
   });
 };
 
+export const failedToLoad = () => {
+  toast.error("Failed to Load", {
+    position: toast.POSITION.TOP_RIGHT,
+    autoClose: 3000,
+  });
+};
+
+export const anErrorOccured = () => {
+  toast.error("Sorry, An Error Occured", {
+    position: toast.POSITION.TOP_RIGHT,
+    autoClose: 3000,
+  });
+};
+
 export const registrationsClosed = () => {
   toast.info("Registrations Closed", {
     position: toast.POSITION.TOP_RIGHT,
