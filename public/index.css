@@ -19,11 +19,10 @@
     z-index: 1000;
 }
 
-.mob-loader{
+.mob-loader {
     display: none;
     height: 100vh;
     width: 100%;
-    display: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -69,6 +68,7 @@
 }
 
 .mob-loader img{
+    display: none;
     width: 120px;
     height: auto;
 
