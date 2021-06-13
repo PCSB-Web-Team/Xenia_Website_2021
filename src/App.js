@@ -78,7 +78,7 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        <Route exact path="/profile">
+        {/* <Route exact path="/profile">
           {props.login ? (
             <div>
               <Profile />
@@ -87,7 +87,7 @@ const App = (props) => {
           ) : (
             <Redirect to="/"></Redirect>
           )}
-        </Route>
+        </Route> */}
 
         <Route exact path="/contact-us">
           {/* <Sponsors /> */}
@@ -102,13 +102,13 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        <Route exact path="/forgot-password">
+        {/* <Route exact path="/forgot-password">
           <ForgotPassword />
         </Route>
 
         <Route exact path="/reset-password/:id/:token">
           <ResetPassword />
-        </Route>
+        </Route> */}
 
         <Route exact path="/">
           <Home />

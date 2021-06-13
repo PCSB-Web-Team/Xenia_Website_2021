@@ -9,10 +9,7 @@ import Suggestion from "./Suggestion/Suggestion";
 import { openLogin, addToRegistered } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
 import { setRegisteredEvents, getEventDetails } from "../../Config/api/User";
-import {
-  addToCartFail,
-  registrationSuccess,
-} from "../../Notifications/Notification";
+import { addToCartFail, registrationFail, registrationSuccess } from "../../Notifications/Notification";
 import Modal from "./Modal/Modal";
 import Themebutton from "../../Button/button";
 
@@ -68,6 +65,8 @@ const MoreInfo = (props) => {
   const handleRegister = async () => {
     setRegisterLoading(true);
 
+    try{
+
     if (props.isLoggedIn) {
       // if(details.additionalInfo.required){
       // showPopUp
@@ -90,6 +89,11 @@ const MoreInfo = (props) => {
     } else {
       addToCartFail();
     }
+  }
+  catch{
+    registrationFail();
+  }
+
   };
 
   return (
