@@ -13,7 +13,7 @@ const Footer = (props) => {
           onClick={() => {
             document.documentElement.scrollTop = 0;
           }}
-          style={{ textDecoration: "none", color: "white", cursor: "pointer" }}
+          style={{ textDecoration: "none", color: "white", cursor: "pointer", userSelect: 'none' }}
         >
           GET BACK TO THE TOP
         </h4>

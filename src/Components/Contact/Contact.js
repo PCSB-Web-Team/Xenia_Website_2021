@@ -88,10 +88,11 @@ const Contact = () => {
 				<h1>Contact info</h1>
 				<div className="address">
 					<h3>Where to find us</h3>
-					<p>Survey no. 27,</p>
+					<p>Survey no. 27, </p>
 					<p>Near Trimurti Chowk,</p>
-					<p>Bharati Vidyapeeth Campus,</p>
-					<p>Dhankawadi,Pune-411043</p>
+					{/* <p>Bharati Vidyapeeth Campus,</p> */}
+					<p>Dhankawadi, </p>
+					<p>Pune-411043</p>
 				</div>
 				<div className="phoneAndMail">
 					<h3>Phone and Mail</h3>

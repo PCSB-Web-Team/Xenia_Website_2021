@@ -7,6 +7,7 @@ import "./Cards/Card.css";
 import "./Events.css";
 import Card from "./Cards/Card";
 import { getAllEvents } from "../Config/api/User";
+import {failedToLoad} from '../Notifications/Notification';
 
 const Events = () => {
   const [eventType, setEventType] = useState("tech");
@@ -32,11 +33,14 @@ const Events = () => {
         setTech(tech);
         setNonTech(nonTech);
       }
+      
+      setLoading(false);
+      
     } catch (err) {
       // console.log(err);
+      failedToLoad();
     }
 
-    setLoading(false);
   };
 
   // const changeEventType = () => {
