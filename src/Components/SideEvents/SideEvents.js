@@ -71,11 +71,7 @@ const About = () => {
                   <img
                     alt="img"
                     src={eve.logo}
-<<<<<<< HEAD
-                    className="img-fluid ml-5"
-=======
                     className="img-fluid"
->>>>>>> origin/amit
                     height="220px"
                     width="220px"
                     style={{
