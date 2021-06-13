@@ -45,7 +45,7 @@ const App = (props) => {
       PreLoader.style.display = "none";
     }, 6000);
 
-    // getUserData();
+    getUserData();
   }, []);
 
   return (
