@@ -115,7 +115,7 @@ const Navbar = (props) => {
                 </NavLink>
               </div>
 
-              {/* {props.isLoggedIn ? null : <div className='navItem' activeClassName='active-nav' onClick={props.openLogin}> Login </div>}
+              {props.isLoggedIn ? null : <div className='navItem' activeClassName='active-nav' onClick={props.openLogin}> Login </div>}
 
               {props.isLoggedIn ? (
                 <div>
@@ -128,7 +128,7 @@ const Navbar = (props) => {
                     Profile
                   </NavLink>
                 </div>
-              ) : null} */}
+              ) : null}
             </div>
 
             <div>

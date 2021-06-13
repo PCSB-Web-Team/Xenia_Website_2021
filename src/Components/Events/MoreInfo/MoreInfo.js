@@ -124,7 +124,7 @@ const MoreInfo = (props) => {
 
             <hr className="my-1" />
 
-            {/* {!registered ? (
+            {!registered ? (
               <div
                 style={{
                   display: "flex",
@@ -139,7 +139,7 @@ const MoreInfo = (props) => {
               </div>
             ) : (
               <span className="already-registered">Registered</span>
-            )} */}
+            )}
 
             <DetailsTab details={details} />
           </div>
