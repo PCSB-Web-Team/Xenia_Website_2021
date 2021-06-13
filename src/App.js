@@ -27,15 +27,15 @@ import "./App.css";
 const App = (props) => {
   useEffect(() => {
     
-    // const getUserData = async () => {
-    //   let userToken = localStorage.getItem("xeniaUserToken");
+    const getUserData = async () => {
+      let userToken = localStorage.getItem("xeniaUserToken");
 
-    //   const res = await getLoggedInUser(userToken);
+      const res = await getLoggedInUser(userToken);
 
-    //   props.storeToken(userToken);
+      props.storeToken(userToken);
 
-    //   props.loggedIn(res.data.data);
-    // };
+      props.loggedIn(res.data.data);
+    };
 
     // const PreLoader = document.getElementById("preLoader");
     // PreLoader.style.display = "none";
