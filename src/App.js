@@ -16,6 +16,7 @@ import FAQ from "./Components/Contact/FAQ/FAQ";
 import Background from "./Components/BackGround/Background";
 import ForgotPassword from "./Components/ForgotPassword/forgot";
 import ResetPassword from "./Components/ForgotPassword/reset";
+import Workshops from "./Components/Workshops/Workshops";
 
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -36,7 +37,7 @@ const App = (props) => {
     };
 
     // const PreLoader = document.getElementById("preLoader");
-    // PreLoader.style.display = "none";    
+    // PreLoader.style.display = "none";
 
     setTimeout(() => {
       const PreLoader = document.getElementById("preLoader");
@@ -44,7 +45,6 @@ const App = (props) => {
     }, 6000);
 
     getUserData();
-
   }, []);
 
   return (
@@ -73,7 +73,12 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        <Route exact path="/profile">
+        <Route exact path="/workshops">
+          <Workshops />
+          <Footer />
+        </Route>
+
+        {/* <Route exact path="/profile">
           {props.login ? (
             <div>
               <Profile />
@@ -82,7 +87,7 @@ const App = (props) => {
           ) : (
             <Redirect to="/"></Redirect>
           )}
-        </Route>
+        </Route> */}
 
         <Route exact path="/contact-us">
           {/* <Sponsors /> */}
@@ -97,13 +102,13 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        <Route exact path="/forgot-password">
+        {/* <Route exact path="/forgot-password">
           <ForgotPassword />
         </Route>
 
         <Route exact path="/reset-password/:id/:token">
           <ResetPassword />
-        </Route>
+        </Route> */}
 
         <Route exact path="/">
           <Home />

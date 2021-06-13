@@ -16,7 +16,6 @@ const Events = () => {
 
   useEffect(() => {
     fetchData();
-    console.log('loaded');
   }, []);
 
   const fetchData = async () => {
@@ -34,7 +33,7 @@ const Events = () => {
         setNonTech(nonTech);
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
 
     setLoading(false);
@@ -47,7 +46,6 @@ const Events = () => {
 
   return (
     <div className="events-dashboard">
-    
       <header className="page-headers">
         <h1 className="header-name"> EVENTS </h1>
       </header>
@@ -82,7 +80,10 @@ const Events = () => {
                 return (
                   <div key={eve._id} className="card-div">
                     {" "}
-                    <Link to={`/events/${eve._id}`} onClick={ () => document.documentElement.scrollTop = 0 }>
+                    <Link
+                      to={`/events/${eve._id}`}
+                      onClick={() => (document.documentElement.scrollTop = 0)}
+                    >
                       <Card details={eve}></Card>
                     </Link>{" "}
                   </div>
@@ -94,7 +95,10 @@ const Events = () => {
                 return (
                   <div key={eve._id} className="card-div">
                     {" "}
-                    <Link to={`/events/${eve._id}`} onClick={ () => document.documentElement.scrollTop = 0 }>
+                    <Link
+                      to={`/events/${eve._id}`}
+                      onClick={() => (document.documentElement.scrollTop = 0)}
+                    >
                       <Card details={eve}></Card>
                     </Link>{" "}
                   </div>

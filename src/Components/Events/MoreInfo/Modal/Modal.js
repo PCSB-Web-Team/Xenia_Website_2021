@@ -33,6 +33,7 @@ const customStyles = {
         flexDirection: 'column',
         alignItems: 'center',
         backdropFilter: 'blur(5px)',
+        maxWidth: '90%',
     }
 };
 
@@ -65,7 +66,7 @@ const buttonGroup = {
 }
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-// Modal.setAppElement('#Xenia')
+Modal.setAppElement("body")
 
 const RegisterModal = (props) => {
     // var subtitle;
@@ -75,7 +76,7 @@ const RegisterModal = (props) => {
     }
 
     return (
-        <div className='register-modal'>
+        <div className='register-modal' id='react-modal'>
 
             <Modal
                 isOpen={props.showModal}

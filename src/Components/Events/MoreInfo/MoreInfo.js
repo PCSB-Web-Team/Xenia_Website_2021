@@ -9,12 +9,11 @@ import Suggestion from "./Suggestion/Suggestion";
 import { openLogin, addToRegistered } from "../../../Store/Actions";
 import Loader from "../../Loader/Loader";
 import { setRegisteredEvents, getEventDetails } from "../../Config/api/User";
-import { addToCartFail, registrationSuccess } from "../../Notifications/Notification";
+import { addToCartFail, registrationFail, registrationSuccess } from "../../Notifications/Notification";
 import Modal from "./Modal/Modal";
 import Themebutton from "../../Button/button";
 
 const MoreInfo = (props) => {
-  
   const [details, setDetails] = useState();
   const [loading, setLoading] = useState(true);
   const [registered, setRegistered] = useState(false);
@@ -27,7 +26,7 @@ const MoreInfo = (props) => {
   const checkRegistered = () => {
     setRegistered(false);
     props.registeredEvents.forEach((eve) => {
-      if (eve._id === id) setRegistered( true );
+      if (eve._id === id) setRegistered(true);
     });
   };
 
@@ -40,14 +39,14 @@ const MoreInfo = (props) => {
     try {
       const response = await getEventDetails(id);
 
-      console.log(response.data);
+      // console.log(response.data);
 
       if (response.data.ok) {
         await setDetails(() => response.data.data);
-        console.log(details);
+        // console.log(details);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       history.push("/events");
     }
 
@@ -66,8 +65,9 @@ const MoreInfo = (props) => {
   const handleRegister = async () => {
     setRegisterLoading(true);
 
+    try{
+
     if (props.isLoggedIn) {
-      
       // if(details.additionalInfo.required){
       // showPopUp
       // fire modal and recieve the details object
@@ -82,14 +82,18 @@ const MoreInfo = (props) => {
         registrationSuccess();
         setRegisterLoading(false);
         setShowModal(false);
-      }
-      else{
+      } else {
         closeModal();
         // registrationsClosed();
       }
     } else {
       addToCartFail();
     }
+  }
+  catch{
+    registrationFail();
+  }
+
   };
 
   return (
@@ -104,22 +108,17 @@ const MoreInfo = (props) => {
             </div>
           </Link>
 
-          <div
-            className="jumbotron text-center py-2"
-            id="main-detail"
-          >
+          <div className="jumbotron text-center py-2" id="main-detail">
             <img className="logo" src={details.logo} alt="logo"></img>
 
             <h3 className="name">{details.name}</h3>
             {/* <span className> {details.date.substring(0, 10)} </span> */}
 
-            <p className="lead">
-              {details.details}
-            </p>
+            <p className="lead">{details.details}</p>
 
             <hr className="my-1" />
 
-            {!registered ? (
+            {/* {!registered ? (
               <div
                 style={{
                   display: "flex",
@@ -133,10 +132,8 @@ const MoreInfo = (props) => {
                 />
               </div>
             ) : (
-              <span className='already-registered'>
-                Registered
-              </span>
-            )}
+              <span className="already-registered">Registered</span>
+            )} */}
 
             <DetailsTab details={details} />
           </div>
