@@ -16,7 +16,6 @@ const Events = () => {
 
   useEffect(() => {
     fetchData();
-    console.log('loaded');
   }, []);
 
   const fetchData = async () => {
@@ -34,7 +33,8 @@ const Events = () => {
         setNonTech(nonTech);
       }
     } catch (err) {
-      console.log(err);
+      
+      // console.log(err);
     }
 
     setLoading(false);
