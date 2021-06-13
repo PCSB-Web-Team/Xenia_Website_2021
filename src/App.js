@@ -26,6 +26,7 @@ import "./App.css";
 
 const App = (props) => {
   useEffect(() => {
+    
     // const getUserData = async () => {
     //   let userToken = localStorage.getItem("xeniaUserToken");
 
