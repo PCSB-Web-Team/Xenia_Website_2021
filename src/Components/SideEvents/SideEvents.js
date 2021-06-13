@@ -72,8 +72,8 @@ const About = () => {
                     alt="img"
                     src={eve.logo}
                     className="img-fluid ml-5"
-                    height="300px"
-                    width="300px"
+                    height="220px"
+                    width="220px"
                     style={{
                       objectFit: "contain",
                       // boxShadow: "2px 2px 30px  #131313",
