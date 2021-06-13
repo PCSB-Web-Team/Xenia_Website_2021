@@ -52,11 +52,11 @@ const About = () => {
         {buildUpEvents.map((eve, i) => {
           return (
 
-            <div className="row mx-sm-auto eventContent py-0" key={i}>
+            <div className="row mx-sm-auto eventContent py-0 d-flex flex-row justify-content-center align-items-center my-5" key={i}>
 
               <div className="col-lg-6">
                 <Reveal effect="fadeInDown" duration={1000}>
-                  <div className="event-info mt-5">
+                  <div className="event-info">
                     <h3 className="font-weight-bold display-5">{eve.name}</h3>
                     <p>
                       {eve.details}
@@ -66,12 +66,16 @@ const About = () => {
                 </Reveal>
               </div>
 
-              <div className="col-lg-6 text-center  d-none d-lg-block">
+              <div className="col-lg-6 text-center  d-lg-block">
                 <Fade up duration={1000}>
                   <img
                     alt="img"
                     src={eve.logo}
+<<<<<<< HEAD
                     className="img-fluid ml-5"
+=======
+                    className="img-fluid"
+>>>>>>> origin/amit
                     height="220px"
                     width="220px"
                     style={{
