@@ -38,7 +38,7 @@ class Registrations extends Component {
         <div className="schedule-container">
           <div className="schedule-left">
             <div className="schedule-left-inner">
-              <h1>EVENT</h1>
+              <h1>XENIA'21</h1>
               <h1>SCHEDULE</h1>
             </div>
           </div>
@@ -61,7 +61,7 @@ class Registrations extends Component {
                     <p>10:00 to 15:00</p>
                 </div>
                 <div className="date-content">
-                    <h2>Technical Workshop1</h2>
+                    <h2>Technical Workshop 1</h2>
                     <p>18:00 to 20:00</p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ class Registrations extends Component {
                     <p>10:00 to 15:00</p>
                 </div>
                 <div className="date-content">
-                    <h2>Technical Workshop2</h2>
+                    <h2>Technical Workshop 2</h2>
                     <p>18:00 to 20:00</p>
                 </div>
                 <div className="date-content">
@@ -89,7 +89,7 @@ class Registrations extends Component {
                     <p>10:00 to 15:00</p>
                 </div>
                 <div className="date-content">
-                    <h2>Technical Workshop3</h2>
+                    <h2>Technical Workshop 3</h2>
                     <p>18:00 to 20:00</p>
                 </div>
                 <div className="date-content">
@@ -107,10 +107,6 @@ class Registrations extends Component {
                 <div className="date-content">
                     <h2>DataCup (Both Rounds)</h2>
                     <p>Full Day</p>
-                </div>
-                <div className="date-content">
-                    <h2>Gift of Gab: Wild Card (A Tale to Tell)</h2>
-                    <p>19:00 to 21:00</p>
                 </div>
               </div>
               <div className="schedule-date">
@@ -135,6 +131,10 @@ class Registrations extends Component {
                 <div className="date-content">
                     <h2>DataCup (Both Rounds)</h2>
                     <p>Full Day</p>
+                </div>
+                <div className="date-content">
+                    <h2>Gift of Gab: Wild Card (A Tale to Tell)</h2>
+                    <p>19:00 to 21:00</p>
                 </div>
               </div>
               <div className="schedule-date">
@@ -193,12 +193,16 @@ class Registrations extends Component {
                     <p>19:00 to 21:00</p>
                 </div>
                 <div className="date-content">
+                    <h2>Ninja Coding (Round 1)</h2>
+                    <p>21:00 to 22:00</p>
+                </div>
+                <div className="date-content">
                     <h2>Xe-Natus (Round 1)</h2>
-                    <p>21:00 to 21:30</p>
+                    <p>21:00 to 22:00</p>
                 </div>
                 <div className="date-content">
                     <h2>Xe-Natus (Round 2)</h2>
-                    <p>22:00 to 22:30</p>
+                    <p>22:30 to 23:00</p>
                 </div>
                 <div className="date-content">
                     <h2>Game Zone</h2>
