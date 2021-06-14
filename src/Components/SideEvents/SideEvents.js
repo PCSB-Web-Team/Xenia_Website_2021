@@ -1,9 +1,9 @@
 // import React, { useEffect } from "react";
 import "./SideEvents.css";
-//import main from "../../Assets/Images/main_bg.jpg";
-import about from "../../Assets/Images/logo.svg";
-import data from "../../Assets/Images/logo.svg";
-import code from "../../Assets/Images/logo.svg";
+// //import main from "../../Assets/Images/main_bg.jpg";
+// import about from "../../Assets/Images/logo.svg";
+// import data from "../../Assets/Images/logo.svg";
+// import code from "../../Assets/Images/logo.svg";
 // import Sponsors from "./Sponsors/Sponsors";
 import Fade from "react-reveal/Fade";
 import Reveal from "react-reveal/Reveal";
@@ -16,7 +16,7 @@ import Modal from './Modal/Modal';
 import { registerBuildUpEvent } from '../Config/api/User';
 import { setRegisteredBuildUpEvents, openLogin } from '../../Store/Actions';
 import { connect } from 'react-redux';
-import { propTypes } from "react-bootstrap/esm/Image";
+// import { propTypes } from "react-bootstrap/esm/Image";
 import MoreInfo from './MoreInfo/Modal';
 import { useHistory } from "react-router-dom";
 

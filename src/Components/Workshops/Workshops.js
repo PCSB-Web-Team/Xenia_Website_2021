@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import "./Workshops.css";
 
-import WorkShop from '../../Assets/Images/Workshops/workshop.jpg';
-import PlaceMent from '../../Assets/Images/Workshops/placement.jpg';
-import Company from '../../Assets/Images/Workshops/company.jpg';
-import { Link } from 'react-router-dom';
+// import WorkShop from '../../Assets/Images/Workshops/workshop.jpg';
+// import PlaceMent from '../../Assets/Images/Workshops/placement1.jpg';
+// import Company from '../../Assets/Images/Workshops/company.jpg';
+// import { Link } from 'react-router-dom';
 
 const Workshops = (props) => {
   return (
@@ -24,8 +24,8 @@ const Workshops = (props) => {
         <div className="coming-soon">Schedule Coming Soon...</div>
       </div>
 
-{/* 
-      <div className='container-fluid text-center'>
+
+      {/* <div className='container-fluid text-center'>
 
         <Link to='/sessions/info'>
           <div className='session-card'>

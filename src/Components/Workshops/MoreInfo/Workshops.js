@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import "./Workshops.css";
 import Details from "./DetailsTab";
 const Workshops = (props) => {
@@ -32,6 +32,7 @@ const Workshops = (props) => {
                 <img
                   src={`https://source.unsplash.com/user/erondu/1600x900`}
                   className="company_image"
+                  alt=''
                 />
               </div>
               <p className="lead text-light my-3 font-weight-bold text-center">
