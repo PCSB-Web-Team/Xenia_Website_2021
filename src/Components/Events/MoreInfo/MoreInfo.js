@@ -120,7 +120,7 @@ const MoreInfo = (props) => {
             <img className="logo" src={details.logo} alt="logo"></img>
 
             <h3 className="name">{details.name}</h3>
-            {/* <span className> {details.date.substring(0, 10)} </span> */}
+            <span className> {details.date.substring(0, 10)} </span>
 
             <p className="lead">{details.details}</p>
 

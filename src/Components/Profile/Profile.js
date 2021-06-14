@@ -11,17 +11,6 @@ import TechLogo from '../../Assets/Images/tech.svg';
 
 const MyProf = (props) => {
 
-  // const showDetails = useCallback((e) => {
-  //   const cont = document.querySelector(".registeredEventInfo");
-
-  //   cont.innerHTML = `<div class="slotDetails">
-  //               <h1 class="registeredEventInfoName">${e.target.textContent}</h1>
-  //               <div class="slotAndType">
-  //                   <h1 class="slotAndTypeItem">Slot Details </h1><h1 class="slotAndTypeItem">Event Type</h1>
-  //               </div>
-  //           </div>`;
-  // }, []);
-
   const [isTechnical, setIsTechnical] = useState(true);
   const [eveLogo, setEveLogo] = useState('');
 
@@ -48,21 +37,26 @@ const MyProf = (props) => {
     <div className="ProfCard">
       <header className='page-headers'><h1 className='header-name'> {props.userName} </h1></header>
 
-      <div className='row container-fluid col-container'>
-        <div className='col-lg-4 col-0 event-type'>
-          <div className='row'>
-            <div className='col-lg-12 title'> {isTechnical ? "Technical Event" : "Non Technical Event"} </div>
-            <img className='col-lg-12 logo' src={isTechnical ? TechLogo : NonTechLogo} alt='' />
-          </div>
-        </div>
-        <div className='col-lg-4 col-12 event-list'> {list.length > 0 ? (
-          list
-        ) : (
+      {
+        list.length === 0
+          ?
           <h1 className="noRegistered">No Registered Events</h1>
-        )} </div>
-        <div className='col-lg-4 col-0 event-logo'> <img src={eveLogo} alt=''></img> </div>
-      </div>
-
+          :
+          <div className='row container-fluid col-container'>
+            <div className='col-lg-4 col-0 event-type'>
+              <div className='row'>
+                {/* <div className='col-lg-12 title'> {isTechnical ? "Technical Event" : "Non Technical Event"} </div> */}
+                <img className='col-lg-12 logo' src={isTechnical ? TechLogo : NonTechLogo} alt='' />
+              </div>
+            </div>
+            <div className='col-lg-4 col-12 event-list'> {list.length > 0 ? (
+              list
+            ) : (
+              <h1 className="noRegistered">No Registered Events</h1>
+            )} </div>
+            <div className='col-lg-4 col-0 event-logo'> <img src={eveLogo} alt=''></img> </div>
+          </div>
+      }
 
       {/* <div className="registeredEventsContainer">
         <div className="registeredEvents">
