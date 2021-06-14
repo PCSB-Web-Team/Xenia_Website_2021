@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import NonTech from "../../Assets/Images/tech2.svg";
 // import Tech from '../../Assets/Images/technical.gif';
 // import Tech from '../../Assets/Images/chip.png';
-// import Tech from '../../Assets/Images/tech1.svg';
+import Tech from "../../Assets/Images/tech1.svg";
 
 const MyProf = (props) => {
   // const showDetails = useCallback((e) => {

@@ -1,18 +1,42 @@
-.signupButtonNew{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+.signupButtonNew {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
-.signupButtonNew .mainButton .btn{
-    color: white;
+.signupButtonNew .mainButton .btn {
+  color: white;
 }
 
-.signupButtonNew .mainButton .btn:hover{
-    color: white;
+.signupButtonNew .mainButton .btn:hover {
+  color: white;
 }
 
 .signupButtonNew .mainButton .btn-six::after {
-    transition: all 0.3s;
-    border: 1px solid white;
+  transition: all 0.3s;
+  border: 1px solid white;
+}
+
+img .imageStyles {
+  padding: "5px";
+  height: "90px";
+  width: "90px";
+  margin-top: "-50px";
+  margin-right: "80px";
+  border-radius: "30px";
+  border-color: "white";
+  border-width: "1px";
+}
+
+@media only screen and (max-width: 450px) {
+  img .imageStyles {
+    padding: "5px";
+    height: "90px";
+    width: "90px";
+    margin-top: "100px" !important;
+    margin-right: "80px";
+    border-radius: "30px";
+    border-color: "white";
+    border-width: "1px";
+  }
 }

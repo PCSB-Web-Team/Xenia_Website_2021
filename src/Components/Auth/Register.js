@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "./Register.css";
+// import "./Register.css";
 import { Modal } from "react-bootstrap";
 import validInfo from "./validInfo";
 // import axios from "axios";
@@ -111,19 +111,8 @@ const Register = (props) => {
         >
           <Modal.Title>
             <div className="d-flex flex-column text-center">
-              <img
-                alt="sign-up"
-                src={astronaut}
-                className="img-fluid"
-                style={styles.imageStyles}
-              />{" "}
-              <span
-                style={styles.title_text}
-                className="text-uppercase font-weight-bold"
-              >
-                {" "}
-                Sign Up
-              </span>
+              <img alt="sign-up" src={astronaut} />{" "}
+              <span className="text-uppercase font-weight-bold "> Sign Up</span>
             </div>
           </Modal.Title>
         </Modal.Header>
@@ -304,23 +293,23 @@ const Register = (props) => {
     </div>
   );
 };
-const styles = {
-  imageStyles: {
-    padding: "5px",
-    height: "90px",
-    width: "90px",
-    marginTop: "-50px",
-    marginLeft: "80px",
-    borderRadius: "30px",
-    borderColor: "white",
-    borderWidth: "1px",
-  },
-  title_text: {
-    letterSpacing: "5px",
-    marginLeft: "50px",
-    marginTop: "20px",
-  },
-};
+// const styles = {
+//   imageStyles: {
+//     padding: "5px",
+//     height: "90px",
+//     width: "90px",
+//     marginTop: "-50px",
+//     marginLeft: "80px",
+//     borderRadius: "30px",
+//     borderColor: "white",
+//     borderWidth: "1px",
+//   },
+//   title_text: {
+//     letterSpacing: "5px",
+//     marginLeft: "50px",
+//     marginTop: "20px",
+//   },
+// };
 
 const mapSatesToProps = (state) => {
   return {
