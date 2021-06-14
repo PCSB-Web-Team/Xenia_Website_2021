@@ -7,6 +7,7 @@ import Amit from "../../Assets/Images/WebTeam/amit.jpg";
 import Atharva from "../../Assets/Images/WebTeam/atharva.jpeg";
 import Siddhesh from "../../Assets/Images/WebTeam/siddhesh.jpg";
 import Pranil from "../../Assets/Images/WebTeam/pranil.jpeg";
+import Kshitij from '../../Assets/Images/WebTeam/kshitij.jpg';
 
 let teamDetails = [
   {
@@ -40,6 +41,11 @@ let prernaSthhall = [
     name: "Pranil Bhosale",
     linkedIn: "https://www.linkedin.com/in/pranil-bhosale",
     pic: Pranil,
+  },
+  {
+    name: "Kshitij Deshpande",
+    linkedIn: "https://www.linkedin.com/in/kshitij-deshpande/",
+    pic: Kshitij,
   },
 ];
 
