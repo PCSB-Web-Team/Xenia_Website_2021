@@ -97,10 +97,10 @@ const Navbar = (props) => {
                   className="navItem"
                   activeClassName="active-nav"
                   onClick={navState ? closeNavBar : null}
-                  to="/sessions"
+                  to="/industry-talks"
                 >
                   {" "}
-                  Sessions{" "}
+                  Industry Talks{" "}
                 </NavLink>
               </div>
               <div>
