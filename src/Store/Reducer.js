@@ -6,7 +6,7 @@ const reducer = (state = defaultState, action) => {
 		case actions.LOGGEDIN:
 			return {
 				...state,
-                login : true,
+				login: true,
 				userData: action.payload,
 			};
 
@@ -20,11 +20,14 @@ const reducer = (state = defaultState, action) => {
 			return {
 				...state,
 				token: '',
-				userData: { cart: [] },
+				userData: {
+					registeredBuildUpEvents: [],
+					registeredEvents: []
+				},
 				login: false,
 			};
 
-		case actions.OPENLOGIN: 
+		case actions.OPENLOGIN:
 			return {
 				...state,
 				openLogin: true
@@ -44,7 +47,7 @@ const reducer = (state = defaultState, action) => {
 			}
 
 		case actions.CLOSELOGIN:
-			return{
+			return {
 				...state,
 				openLogin: false,
 				openSignUp: false,
