@@ -109,7 +109,11 @@
   overflow-y: auto;
 }
 
-.col-container img{
+.event-type .title{
+  text-align: center;
+}
+
+.col-container .logo{
   width: 80%;
   height: auto;
 }

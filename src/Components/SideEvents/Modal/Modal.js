@@ -2,8 +2,8 @@
 import React from 'react';
 import Modal from 'react-modal';
 import './Modal.css';
-import Font from '../../../../Assets/Fonts/PTSans-Bold.ttf'
-import ThemeButton from '../../../Button/button';
+import Font from '../../../Assets/Fonts/PTSans-Bold.ttf'
+import ThemeButton from '../../Button/button';
 
 const customStyles = {
 

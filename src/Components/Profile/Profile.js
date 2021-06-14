@@ -50,7 +50,10 @@ const MyProf = (props) => {
 
       <div className='row container-fluid col-container'>
         <div className='col-lg-4 col-0 event-type'>
-          <img src={isTechnical ? TechLogo : NonTechLogo } alt='' />
+          <div className='row'>
+            {/* <h2 className='col-lg-12 title'> {isTechnical ? "Technical Event" : "Non Technical Event"} </h2> */}
+            <img className='col-lg-12 logo' src={isTechnical ? TechLogo : NonTechLogo} alt='' />
+          </div>
         </div>
         <div className='col-lg-4 col-12 event-list'> {list.length > 0 ? (
           list

@@ -25,10 +25,11 @@ const MoreInfo = (props) => {
 
   const checkRegistered = () => {
 
-    if(!props.registeredEvents){
+    if(!props.registeredEvents) {
       history.push('/events');
       return;
     }
+
     setRegistered(false);
     props.registeredEvents.forEach((eve) => {
       if (eve._id === id) setRegistered(true);

@@ -39,6 +39,16 @@ export const setRegisteredEvents = (data, token) => {
   );
 };
 
+export const registerBuildUpEvent = (data, token) => {
+  return axiosInstance.post(
+    `/user/register-build-up-event`,
+    { eventId: data },
+    {
+      headers: { Authorization: token },
+    }
+  );
+};
+
 export const getAllEvents = () => {
   return axiosInstance.get("/events");
 };

@@ -7,21 +7,37 @@ import code from "../../Assets/Images/logo.svg";
 // import Sponsors from "./Sponsors/Sponsors";
 import Fade from "react-reveal/Fade";
 import Reveal from "react-reveal/Reveal";
-// import ThemeButtton from "../Button/button";
+import ThemeButtton from "../Button/button";
 import { getBuildUpEvents } from '../Config/api/User';
 import { useState, useEffect } from "react";
 import Loader from '../Loader/Loader';
-import { failedToLoad } from "../Notifications/Notification";
+import { failedToLoad, registrationFail, registrationSuccess } from "../Notifications/Notification";
+import Modal from './Modal/Modal';
+import { registerBuildUpEvent } from '../Config/api/User';
+import { setRegisteredBuildUpEvents } from '../../Store/Actions';
+import { connect } from 'react-redux';
+import { propTypes } from "react-bootstrap/esm/Image";
 
-
-const About = () => {
+const SideEvents = (props) => {
 
   const [buildUpEvents, setBuildUpEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+
+  // const [registered, setRegistered] = useState([false, false, false])
 
   useEffect(() => {
     fetchData();
   }, [])
+
+  const checkRegistered = (id) => {
+
+      props.registeredBuildUpEvents.forEach( eve => {if( eve._id === id ){
+        return true;
+      }})
+
+      return false;
+  }
 
   const fetchData = async () => {
     try {
@@ -34,10 +50,33 @@ const About = () => {
       else {
         console.log('Failed To load');
       }
+
     }
     catch (error) {
       failedToLoad();
+    }  
+  }
+
+  const handleRegister = async (id) => {
+    try {
+      const res = await registerBuildUpEvent( id , props.token );
+
+      if(res.deta.ok){
+        props.setRegisterBuildUpEvent(res.data.data)
+        registrationSuccess();
+        console.log(res.data);
+      }
+      else{
+        registrationFail();
+      }
     }
+    catch (error) {
+      console.log(error)
+    }
+  }
+
+  const closeModal = () => {
+    setShowModal(false);
   }
 
   return (
@@ -61,7 +100,7 @@ const About = () => {
                     <p>
                       {eve.details}
                     </p>
-                    {/* <ThemeButtton value="Register" /> */}
+                    { false ? <div> Registered </div> : <ThemeButtton onClick={() => setShowModal(true)} value="Register" />}
                   </div>
                 </Reveal>
               </div>
@@ -82,10 +121,15 @@ const About = () => {
                   />
                 </Fade>
               </div>
+
+              <Modal closeModal={closeModal} showModal={showModal} handleRegister={ () => {handleRegister(eve._id); console.log("Hello")}}/>
+
             </div>
 
           )
         })}
+
+
         {/* 
       <div className="row mx-auto eventContent py-0">
         <div className="col-lg-6 order-2">
@@ -156,4 +200,17 @@ const About = () => {
   );
 };
 
-export default About;
+const mapStatesToProps = state => {
+  return {
+  registeredBuildUpEvents: state.registeredBuildUpEvents,
+  token: state.token
+}
+}
+
+const mapActionsToProps = dispatch => {
+  return {
+    setRegisterBuildUpEvent: event => dispatch(setRegisteredBuildUpEvents( event ))
+  }
+}
+
+export default connect( mapStatesToProps, mapActionsToProps )( SideEvents );
