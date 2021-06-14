@@ -8,7 +8,7 @@
   src: url(../../Assets/Fonts/PTSans-Bold.ttf);
 }
 
-.Registrations {
+/* .Registrations {
   display: flex;
   flex-flow: row;
   background: none;
@@ -72,7 +72,7 @@ Box {
 /* 
 Change1 */
 
-@keyframes move {
+/* @keyframes move {
   100% {
     transform: translate3d(0, 0, 1px) rotate(360deg);
   }
@@ -410,5 +410,127 @@ Change1 */
   }
   100%{
     opacity: 0.2;
+  }
+} */
+ 
+
+/* New style */
+
+.schedule-container{
+  height: 100vh;
+  display: flex;
+}
+
+.schedule-left{
+  display: flex;
+  padding-bottom: 11rem;
+  width: 30%;
+}
+
+.schedule-left-inner{
+  margin-left: 50%;
+  display: flex;
+}
+
+.schedule-container .schedule-left h1{
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+  font-size: 90px;
+  font-family: 'SansBold';
+  color: #00b4d8;
+  line-height: 1;
+  margin: 0;
+}
+
+.schedule-right{
+  display: flex;
+  flex-flow: column;
+  width: 60%;
+  height: 100%;
+}
+
+.main-schedule{
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+
+.schedule-right h1:first-child{
+  color: #00b4d8;
+  font-family: 'SansBold';
+  font-size: 64px;
+}
+
+
+.date-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.schedule-container hr{
+  background: #00b4d8;
+}
+
+.date-content h2{
+  color: white;
+  font-family: 'Barlow';
+  font-size: 32px;
+  font-weight: 450;
+  max-width: 70%;
+}
+
+.date-content p{
+  color: white;
+  font-family: 'Barlow';
+  font-size: 25px;
+  max-width: 30%;
+  text-align: right;
+}
+.schedule-date{
+  margin-bottom: 20px;
+}
+
+.schedule-date h1{
+  font-size: 50px !important;
+}
+
+.main-schedule::-webkit-scrollbar {
+  width: 5px;
+}
+
+.main-schedule::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.main-schedule::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 247, 255, 0.418);
+}
+
+
+@media (max-width:1000px){
+  .schedule-left{
+    display: none;
+  }
+  .schedule-right{
+    width: 100%;
+    padding: 0 10px 0 20px;
+  }
+  .date-content h2{
+    max-width: 65%;
+    font-size: 20px;
+  }
+  .date-content p{
+    font-size: 18px;
+    max-width: 30%;
+    text-align: right;
+  }
+}
+
+@media (min-width:1001px) and (max-width:1210px)  {
+  .schedule-container .schedule-left h1{
+    font-size: 60px;
   }
 }
