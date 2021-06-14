@@ -1,10 +1,9 @@
-import { colors } from '@material-ui/core';
+// import { colors } from '@material-ui/core';
 import React from 'react';
 import Modal from 'react-modal';
 import './Modal.css';
 import Font from '../../../../Assets/Fonts/PTSans-Bold.ttf'
 import ThemeButton from '../../../Button/button';
-import Recaptcha from 'react-recaptcha';
 
 const customStyles = {
 
@@ -16,6 +15,7 @@ const customStyles = {
         bottom: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.8)'
     },
+
     content: {
         top: '50%',
         left: '50%',
@@ -33,28 +33,28 @@ const customStyles = {
         flexDirection: 'column',
         alignItems: 'center',
         backdropFilter: 'blur(5px)',
+        maxWidth: '90%',
     }
 };
 
-const buttonStyle = {
-    color: 'aqua',
-    border: 'none',
-    fontSize: '20px',
-    background: 'black',
-    border: '1px solid aqua',
-    borderRadius: '30px',
-    padding: '10px',
-    paddingBlock: '5px',
-    fontFamily: { Font },
-
-    "&:focus": {
-        outline: 'none',
-    },
-
-    "&:hover": {
-        transform: 'scale(1.1)',
-    },
+const titleStyle = {
+    marginBottom: '10px',
 }
+
+const inputStyle = {
+    display: 'inline-block',
+    background: 'black',
+    color: 'white',
+    outline: 'none',
+    border: 'none',
+    borderBottom: '1px solid aqua',
+    width: "90%",
+    height: '40px',
+    borderRadius: '20px',
+    paddingInline: '10px',
+    marginBlock: '4px',
+}
+
 
 const buttonGroup = {
     marginBlock: '20px',
@@ -64,22 +64,39 @@ const buttonGroup = {
     justifyContent: 'space-evenly',
 }
 
+// const buttonStyle = {
+//     color: 'aqua',
+//     border: 'none',
+//     fontSize: '20px',
+//     background: 'black',
+//     border: '1px solid aqua',
+//     borderRadius: '30px',
+//     padding: '10px',
+//     paddingBlock: '5px',
+//     fontFamily: { Font },
+
+//     "&:focus": {
+//         outline: 'none',
+//     },
+
+//     "&:hover": {
+//         transform: 'scale(1.1)',
+//     },
+// }
+
+
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-// Modal.setAppElement('#Xenia')
+Modal.setAppElement("body")
 
 const RegisterModal = (props) => {
-    var subtitle;
+    // var subtitle;
 
     function afterOpenModal() {
         // references are now sync'd and can be accessed.
     }
 
-    const recaptchaLoaded = () => {
-        console.log("recaptch loaded")
-    }
-
     return (
-        <div className='register-modal'>
+        <div className='register-modal' id='react-modal'>
 
             <Modal
                 isOpen={props.showModal}
@@ -88,21 +105,23 @@ const RegisterModal = (props) => {
                 style={customStyles}
             >
 
-                <h2 ref={_subtitle => (subtitle = _subtitle)}>Confirm Registration</h2>
+                <h2 style={titleStyle} > Confirm Registration </h2>
 
-                <Recaptcha
-                    sitekey="xxxxxxxxxxxxxxxxxxxx"
-                    render="explicit"
-                    onloadCallback={recaptchaLoaded}
-                />
+{/* 
+                <input placeholder='Participant 1' style={inputStyle} type='text'></input>
+                <input placeholder='Participant 2' style={inputStyle} type='text'></input>
+                <input placeholder='Participant 3' style={inputStyle} type='text'></input>
+                <input placeholder='Participant 4' style={inputStyle} type='text'></input>
+                <input placeholder='Participant 5' style={inputStyle} type='text'></input> 
+*/}
 
                 <div className='button-group' style={buttonGroup}>
 
                     {
                         props.load
                             ?
-                            <div class="spinner-border text-info aqua" role="status">
-                                <span class="sr-only">Loading...</span>
+                            <div className="spinner-border text-info aqua" role="status">
+                                <span className="sr-only">Loading...</span>
                             </div>
                             :
                             <>

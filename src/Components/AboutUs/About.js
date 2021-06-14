@@ -4,6 +4,11 @@ import Fade from "react-reveal/Fade";
 const About = () => {
   return (
     <div className="section about-us">
+
+      <header className="page-headers">
+        <h1 className="header-name"> Contact Us </h1>
+      </header>
+
       <div className="row text-center hero">
         <div className="col-lg-12 content1 px-sm-5">
           <Fade bottom duration={1000}>
@@ -13,7 +18,7 @@ const About = () => {
           </Fade>
           <Fade duration={1000} bottom>
             <p style={{ textAlign: "left", color: "#ffff" }}>
-              Xenia is the annual technical festival organised by the PICT CSI
+              {/* Xenia is the annual technical festival organised by the PICT CSI
               Student Branch. This is a technical event with the view to find
               out the best of each and everyone and grow their skills. Xenia not
               only aims to develop the coding skills but also develop your
@@ -28,7 +33,19 @@ const About = () => {
               the students to think beyond their regular academics and find out
               their best . The pneuma of learning new things has inspired the
               PICT CSI Branch to present Xenia in order to nurture and cultivate
-              the talent.
+              the talent. */}
+              XENIA is an Annual Technical Fiesta
+              organized by PICT CSI Student Branch,
+              formerly known as Enthusia. It is a three
+              day technical fest where bright minds all
+              around participate to compete amongst
+              themselves. The organizing team in XENIA
+              consistently strives in exploring various
+              technologies and brings you the most
+              innovative events. XENIA emphasizes on
+              the technical events while also bringing you
+              the opportunity of participating in various
+              ingenious non-technical events.
             </p>
           </Fade>
         </div>

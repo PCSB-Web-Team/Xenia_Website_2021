@@ -1,0 +1,153 @@
+.workshops-coming-soon {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.workshops-coming-soon .workshops-date {
+  color: white;
+  font-size: 60px;
+  font-family: "SansBold";
+  font-weight: 250;
+  text-align: center;
+  padding: 5px;
+}
+
+.workshops-coming-soon .coming-soon {
+  color: rgba(0, 255, 255, 0.8);
+  font-size: 50px;
+
+  animation: coming-soon-pulse 1s infinite ease-in-out;
+  animation-play-state: running;
+  font-family: "SansBold";
+  font-weight: 250;
+  text-align: center;
+  padding: 5px;
+}
+
+@keyframes coming-soon-pulse {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 800px) {
+  .workshops-coming-soon .coming-soon {
+    font-size: 40px;
+  }
+  .workshops-coming-soon .workshops-date {
+    font-size: 50px;
+  }
+}
+
+
+.sessions {
+  background-color: rgba(0, 0, 0, 0.3);
+  min-height: 80vh;
+}
+
+.sessions .container {
+  padding-block: 20px;
+}
+
+.sessions .session-card {
+
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+  color: white;
+  height: 600px;
+  width: 20%;
+
+  min-width: 300px;
+
+  animation: appear-animation 500ms 1;
+  transition: ease-in-out;
+
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+@keyframes appear-animation{
+  from{
+    transform: scale(0);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.session-card img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  transition: 1s ease-out;
+  /* filter: grayscale(50%); */
+}
+
+.session-card:hover img {
+  transform: scale(1.2);
+}
+
+.session-card .overlay {
+
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+
+  top: 0px;
+  left: 0px;
+
+  background: linear-gradient( rgba(0, 0, 0, 0.2) 70%, black);
+
+  transition: ease-out 1s;
+}
+
+.session-card:hover .overlay {
+  backdrop-filter: blur(2px);
+  background: linear-gradient( rgba(0, 0, 0, 0.2), black);
+}
+
+.session-card .title {
+  position: absolute;
+  z-index: 5;
+
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  bottom: 40px;
+  left: 0px;
+  
+  font-family: 'SansBold';
+  font-size: 32px;
+
+  transition: ease-out 500ms;
+}
+
+.session-card:hover .title {
+
+  font-size: 40px;
+  height: 100%;
+
+  bottom: 0px;
+
+}

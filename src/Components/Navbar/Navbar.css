@@ -18,7 +18,7 @@
 
 header .navItem {
   font-family: SansRegular;
-  min-width: 135px;
+  min-width: 150px;
   padding-block: 2px;
   text-transform: uppercase;
   cursor: pointer;
@@ -101,6 +101,8 @@ header .navBar {
   font-size: 32px;
   width: 350px;
   margin-block: 5px;
+  
+  max-width: 80%;
 }
 
 .nav-close {
@@ -146,13 +148,16 @@ header .navBar {
   transform: scale(1.3);
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
+
   .navbar-toggler {
     display: none;
   }
+
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
+  
   .navBar .list {
     display: none;
   }
@@ -161,4 +166,5 @@ header .navBar {
     margin-top: 10px;
     font-size: 60px;
   }
+
 }

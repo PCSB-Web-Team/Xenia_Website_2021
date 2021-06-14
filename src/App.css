@@ -13,6 +13,7 @@
   height: 100%;
 
   background: none;
+  user-select: none;
 }
 
 .home {
@@ -43,11 +44,14 @@
 .page-headers .header-name {
   color: rgba(255, 255, 255, 0.8);
   font-size: 64px;
+  text-transform: uppercase;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .page-headers .header-name {
     font-size: 40px;
   }
+  .grecaptcha-badge {
+    display: none !important;
+  }
 }
-

@@ -39,8 +39,22 @@ export const setRegisteredEvents = (data, token) => {
   );
 };
 
+export const registerBuildUpEvent = (data, token) => {
+  return axiosInstance.post(
+    `/user/register-build-up-event`,
+    { eventId: data },
+    {
+      headers: { Authorization: token },
+    }
+  );
+};
+
 export const getAllEvents = () => {
   return axiosInstance.get("/events");
+};
+
+export const getBuildUpEvents = () => {
+  return axiosInstance.get("/build-up-events");
 };
 
 export const getEventDetails = (id) => {
@@ -50,3 +64,11 @@ export const getEventDetails = (id) => {
 export const contactus = (data) => {
   return axiosInstance.post("/contact-us", data);
 };
+
+export const forgotPassword = (data) => {
+  return axiosInstance.post("/user/forgot-password", data);
+};
+
+export const resetPassword = (id, token, data) => {
+  return axiosInstance.post(`/user/reset-password/${id}/${token}`, data);
+}

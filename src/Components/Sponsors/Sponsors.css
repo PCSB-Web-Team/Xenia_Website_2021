@@ -11,6 +11,21 @@
 
 .coming-soon{
   color: rgba(0, 255, 255, 0.8);
+
+  animation: coming-soon-pulse 1s infinite ease-in-out;
+  animation-play-state: running;
+}
+
+@keyframes coming-soon-pulse {
+  0%{
+    opacity: 0.2;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0.2;
+  }
 }
 
 .headingmain {

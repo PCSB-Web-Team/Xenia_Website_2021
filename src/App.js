@@ -8,7 +8,7 @@ import ContactUs from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import Profile from "./Components/Profile/Profile";
 import WebTeam from "./Components/WebTeam/WebTeam";
-import Sponsors from "./Components/Sponsors/Sponsors";
+// import Sponsors from "./Components/Sponsors/Sponsors";
 import { getLoggedInUser } from "./Components/Config/api/User";
 import NotFound from "./Components/404/404";
 import SideEvents from "./Components/SideEvents/SideEvents";
@@ -16,6 +16,8 @@ import FAQ from "./Components/Contact/FAQ/FAQ";
 import Background from "./Components/BackGround/Background";
 import ForgotPassword from "./Components/ForgotPassword/forgot";
 import ResetPassword from "./Components/ForgotPassword/reset";
+import Sessions from "./Components/Workshops/Workshops";
+import SessionInfo from './Components/Workshops/MoreInfo/Workshops';
 
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -25,6 +27,7 @@ import "./App.css";
 
 const App = (props) => {
   useEffect(() => {
+    
     const getUserData = async () => {
       let userToken = localStorage.getItem("xeniaUserToken");
 
@@ -35,13 +38,15 @@ const App = (props) => {
       props.loggedIn(res.data.data);
     };
 
-    setTimeout( () => {
-      const PreLoader = document.getElementById('preLoader');
-      PreLoader.style.display = 'none';
-    }, 6000 )
+    // const PreLoader = document.getElementById("preLoader");
+    // PreLoader.style.display = "none";
+
+    setTimeout(() => {
+      const PreLoader = document.getElementById("preLoader");
+      PreLoader.style.display = "none";
+    }, 6000);
+
     getUserData();
-  
-    
   }, []);
 
   return (
@@ -66,8 +71,18 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        <Route exact path="/side-events">
+        <Route exact path="/build-up-events">
           <SideEvents />
+          <Footer />
+        </Route>
+
+        <Route exact path="/sessions">
+          <Sessions />
+          <Footer />
+        </Route>
+
+        <Route exact path="/sessions/info">
+          <SessionInfo />
           <Footer />
         </Route>
 
@@ -82,8 +97,8 @@ const App = (props) => {
           )}
         </Route>
 
-        <Route exact path="/sponsors">
-          <Sponsors />
+        <Route exact path="/contact-us">
+          {/* <Sponsors /> */}
           <AboutUs />
           <ContactUs />
           <FAQ />
@@ -99,7 +114,7 @@ const App = (props) => {
           <ForgotPassword />
         </Route>
 
-        <Route exact path="/reset-password">
+        <Route exact path="/reset-password/:id/:token">
           <ResetPassword />
         </Route>
 

@@ -13,7 +13,12 @@ const Footer = (props) => {
           onClick={() => {
             document.documentElement.scrollTop = 0;
           }}
-          style={{ textDecoration: "none", color: "white", cursor: "pointer" }}
+          style={{
+            textDecoration: "none",
+            color: "white",
+            cursor: "pointer",
+            userSelect: "none",
+          }}
         >
           GET BACK TO THE TOP
         </h4>
@@ -32,8 +37,7 @@ const Footer = (props) => {
                   style={{ width: "80px" }}
                 />
                 <div className="nav-content">
-                  About our Xenia event. Lorem ipsum dolor sit amet, consectetur
-                  adipisicing elit.
+                  Where Passion Meets Perception
                 </div>
               </div>
               <div className="column2 mx-auto">
@@ -79,18 +83,8 @@ const Footer = (props) => {
                   className="#ffffff white mt-0 d-inline-block mx-auto"
                   style={{ width: "80px" }}
                 />
-                {props.loggedIn ? (
-                  <div className="nav-content">
-                    <Link
-                      to="/cart"
-                      onClick={() => {
-                        document.documentElement.scrollTop = 0;
-                      }}
-                    >
-                      Cart
-                    </Link>
-                  </div>
-                ) : (
+
+                {!props.loggedIn && (
                   <div className="nav-content">
                     <Link onClick={props.openLogin}>Log In</Link>
                   </div>
@@ -101,7 +95,7 @@ const Footer = (props) => {
                     onClick={() => {
                       document.documentElement.scrollTop = 0;
                     }}
-                    to="/about-us"
+                    to="/contact-us"
                   >
                     Help
                   </Link>
@@ -121,11 +115,11 @@ const Footer = (props) => {
                 </div>
                 <div className="nav-content">
                   <i className="fa fa-envelope mr-2" />
-                  pictcsi@gmail.com
+                  support@pictcsi.com
                 </div>
                 <div className="nav-content">
                   <i className="fa fa-phone mr-2" />
-                  +91 1234567890
+                  +91 9922772959
                 </div>
               </div>
             </div>

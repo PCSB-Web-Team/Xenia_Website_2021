@@ -107,7 +107,7 @@
 }
 
 .forgot-password .button-group{
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .button-group a .mainButton{
@@ -120,6 +120,10 @@
 
 .button-group .mainButton{
   width: 50%;
+}
+
+.forgot-password .button-group .mainButton{
+  min-width: 180px;
 }
 
 .button-group .mainButton .btn-six::after {

@@ -7,7 +7,6 @@ import Amit from "../../Assets/Images/WebTeam/amit.jpg";
 import Atharva from "../../Assets/Images/WebTeam/atharva.jpeg";
 import Siddhesh from "../../Assets/Images/WebTeam/siddhesh.jpg";
 import Pranil from "../../Assets/Images/WebTeam/pranil.jpeg";
-import Sourav from "../../Assets/Images/WebTeam/sourav.jpg";
 
 let teamDetails = [
   {
@@ -63,7 +62,7 @@ const webTeam = (props) => {
   return (
     <div className="webTeam" id="webTeam">
       <header className="page-headers">
-        <h1 className="header-name"> WEB-TEAM </h1>
+        <h1 className="header-name">PCSB WEB TEAM</h1>
       </header>
       {team}
       <br/>

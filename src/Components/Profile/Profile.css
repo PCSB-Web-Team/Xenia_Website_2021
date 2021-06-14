@@ -49,6 +49,10 @@
 }
 
 .noRegistered{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60vh;
   color: white;
   font-size: 4em;
   font-weight: 450;
@@ -65,21 +69,87 @@
   transition: 0.1s ease-in;
   cursor: pointer;
   margin: 5px 0;
+  text-align: center;
 }
 
 .RegP {
   font-size: 3em;
   color: white;
   font-weight: 300;
+
+  line-height: 60px;
+
+  text-decoration: underline;
+
+  text-decoration-color: #46bcde;
 }
 
 .Regdiv:hover {
-  transform: translateX(5%);
+  transform: translateY(5%);
 }
 
 .RegP:hover {
   color: #46bcde;
 }
+
+.col-container{
+  min-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .col-container .event-type img{
+    display: none;
+  }
+.event-type .title{
+  display: none;
+}
+
+  .col-container .event-logo img{
+    display: none;
+  }
+}
+
+.col-container .event-list{
+  height: 500px;
+  overflow-y: auto;
+}
+
+.event-type .title{
+  font-size: 32px;
+  color: aliceblue;
+  text-align: center;
+}
+
+.col-container .logo{
+  width: 80%;
+  height: 500px;
+}
+
+.col-container .event-type{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.col-container .event-type .logo{
+  width: 80%;
+}
+
+.col-container .event-logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.col-container .event-logo img{
+  width: 80%;
+}
+
 
 .slotAndType {
   display: flex;
@@ -100,8 +170,6 @@
     font-weight: 400;
   }
 }
-
-
 
 .ProfCard .btn {
   background: crimson;
@@ -125,10 +193,22 @@
   padding: 20px;
 }
 
+.registeredEventsDashboard img{
+  width: 70%;
+  height: auto;
+}
+
 .registeredEventsDashboard p{
   font-size: 2.3rem;
   color : #46bcde;
   font-weight: 350;
+}
+
+#slotTime{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 32px;
+
+  animation: coming-soon-pulse;
 }
 
 .registeredEventsDashboard h1{
@@ -149,9 +229,10 @@
 }
 
 
+
 @media (max-width: 750px) {
   .RegP {
-    font-size: 1.5em;
+    font-size: 2.3em;
     font-weight: 400;
   }
   .registeredEventInfoName {

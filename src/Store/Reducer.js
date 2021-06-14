@@ -65,6 +65,15 @@ const reducer = (state = defaultState, action) => {
 				},
 			};
 
+		case actions.SETREGISTEREDBUILDUPEVENTS:
+			return {
+				...state,
+				userData: {
+					...state.userData,
+					registeredBuildUpEvents: [...state.userData.registeredBuildUpEvents, action.payload]
+				}
+			}
+
 		case actions.PAYMENTDETAILS:
 			return {
 				...state,

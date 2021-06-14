@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import sendEmail from "./sendEmail";
-import './Login.css';
+import "./Login.css";
 // import axios from "axios";
 import validInfo from "./validInfo";
 import { Modal } from "react-bootstrap";
@@ -9,7 +9,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { loginFail, loginSuccess } from "../Notifications/Notification";
 import { login, getLoggedInUser } from "../Config/api/User";
-import Themebutton from '../Button/button';
+import Themebutton from "../Button/button";
+
 import {
   loggedIn,
   storeToken,
@@ -21,49 +22,60 @@ import {
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState(null);
-
-  if (errors !== null) {
-    setTimeout(() => setErrors(null), 5000);
-  }
+  const [errors, setErrors] = useState({isError: true});
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrors(validInfo({ email, password }, false));
-    const user = { email, password };
+    try {
 
-    if (errors === null) {
-      let res = await login(user);
+      e.preventDefault();
 
-      if (res.data.ok === true) {
-        const token = res.data.data.token;
-        res = await getLoggedInUser(token);
+      const err = validInfo({ email, password }, false);
+      await setErrors(err);
 
-        localStorage.setItem("xeniaUserToken", token);
+      const user = { email, password };
 
-        props.loggedIn(res.data.data);
-        props.storeToken(token);
+      if (!errors.isError) {
 
-        loginSuccess();
-        props.closeLogin();
-        // setError("");
-      } else {
-        loginFail();
-        // setError("Invalid Credentials");
+        setLoading(true);
+
+        let res = await login(user);
+
+        if (res.data.ok === true) {
+          const token = res.data.data.token;
+          res = await getLoggedInUser(token);
+
+          localStorage.setItem("xeniaUserToken", token);
+
+          props.loggedIn(res.data.data);
+          props.storeToken(token);
+
+          loginSuccess();
+          props.closeLogin();
+          // setError("");
+        } else {
+          // console.log("login Failed")
+          loginFail();
+          setLoading(false);
+          // setError("Invalid Credentials");
+        }
+
+        setEmail("");
+        setPassword("");
+        setErrors({isError: false});
       }
+      else{
+				setTimeout(() => {
+					setErrors({ isError: true });
+					setLoading(false);
+				}, 3000);
+      }
+      setLoading(false);
 
-      setEmail("");
-      setPassword("");
-      setErrors(null);
+    } catch (error) {
+      loginFail();
+      setLoading(false);
     }
-  };
-
-  const handleHide = () => {
-    // if (error === "Invalid Credentials") {
-    //   return props.closeLogin();
-    // } else {
-    //   return null;
-    // }
   };
 
   const forgotPassword = () => {
@@ -72,7 +84,7 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <div className='login-modal'>
       <Modal
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -87,7 +99,7 @@ const Login = (props) => {
           }}
           closeButton
         >
-          <Modal.Title>
+          <Modal.Title className="login-head">
             <div className="d-flex flex-column text-center">
               <img
                 alt="welcome-back"
@@ -155,34 +167,48 @@ const Login = (props) => {
                 </span>
               )}
             </div>
-            <div className="loginButtonNew">
-              <Themebutton
-                onClick={handleSubmit}
-                value='Login'
-              />
-            </div>
-            <div className="text-center my-2">
-              Don't have an account ?{" "}
-              <span
-                style={{ fontWeight: "bold", color: "blue", cursor: "pointer" }}
-                onClick={props.toggleLogin}
-              >
-                Sign Up
-              </span>
-            </div>
-            <div className="text-center">
-              <Link to="/forgot-password">
-                <span
-                  style={{
-                    fontWeight: "bold",
-                    color: "blue",
-                    cursor: "pointer",
-                  }}
-                  onClick={forgotPassword}
-                >
-                  Forgot Password
-                </span>
-              </Link>
+
+            <div className="login-button-group">
+              {loading ? (
+                <div className="loginButtonNew my-5">
+                  <div className="spinner-border text-info aqua" role="status">
+                    <span className="sr-only">Loading...</span>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="loginButtonNew">
+                    <Themebutton onClick={handleSubmit} value="Login" />
+                  </div>
+                  <div className="text-center my-2">
+                    Don't have an account ?{" "}
+                    <span
+                      style={{
+                        fontWeight: "bold",
+                        color: "blue",
+                        cursor: "pointer",
+                      }}
+                      onClick={props.toggleLogin}
+                    >
+                      Sign Up
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <Link to="/forgot-password">
+                      <span
+                        style={{
+                          fontWeight: "bold",
+                          color: "blue",
+                          cursor: "pointer",
+                        }}
+                        onClick={forgotPassword}
+                      >
+                        Forgot Password
+                      </span>
+                    </Link>
+                  </div>
+                </>
+              )}
             </div>
           </form>
         </Modal.Body>
@@ -197,14 +223,12 @@ const styles = {
     height: "90px",
     width: "90px",
     marginTop: "-50px",
-    marginLeft: "150px",
     borderRadius: "30px",
     borderColor: "white",
     borderWidth: "1px",
   },
   title_text: {
     letterSpacing: "5px",
-    marginLeft: "60px",
     marginTop: "20px",
   },
 };

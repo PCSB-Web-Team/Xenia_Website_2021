@@ -1,6 +1,10 @@
 @font-face {
   font-family: "SansBold";
-  src: url('../../Assets/Fonts/PTSans-Bold.ttf');
+  src: url("../../Assets/Fonts/PTSans-Bold.ttf");
+}
+@font-face {
+  font-family: "Planets";
+  src: url("../../Assets/Fonts/Planetnsv2.ttf");
 }
 
 .landing-page {
@@ -75,15 +79,22 @@
 }
 
 .logo-container img {
-  margin-top: 220px;
+  margin-top: 145px;
 }
 
 .logo-div .event-date {
-  font-family: "SansBold";
-  color: rgb(183, 0, 255);
-  font-weight: 600;
-  font-size: 38px;
+  font-family: "Planets";
+  color: rgb(255, 109, 211);
+  font-weight: 350;
+  font-size: 21px;
   margin-bottom: 80px;
+}
+
+.logo-div .event-tag {
+  font-family: "Planets";
+  color: rgb(194, 0, 253);
+  font-weight: 100;
+  font-size: 30px;
 }
 
 /* Landing Page Mountains */
@@ -99,17 +110,16 @@
   left: -30px;
 
   z-index: 98;
-
 }
 
-.mountain img{
+.mountain img {
   height: 100%;
   width: 100%;
   min-width: 1500px;
 }
 
 /* Moon */
-.moon-container{
+.moon-container {
   position: absolute;
   width: 350px;
   height: 250px;
@@ -117,7 +127,7 @@
 }
 
 /* Stars */
-.landing-page-stars{
+.landing-page-stars {
   position: absolute;
   width: 100%;
   top: 0px;
@@ -129,11 +139,11 @@
 /* Shuttle */
 .shuttle {
   position: absolute;
-  
+
   width: 150px;
   height: 240px;
 
-  top: 0px;
+  bottom: 100%;
   right: -300px;
 
   z-index: 100;
@@ -141,60 +151,65 @@
   animation-name: shuttle;
   animation-iteration-count: infinite;
   animation-duration: 10s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   animation-delay: 5s;
 }
 
-.shuttle img{
+.shuttle img {
   width: 100%;
 }
 
 @keyframes shuttle {
   0% {
-    transform: scale(0.5);
+    transform: scale(0.5) rotateZ(90deg);
     right: -300px;
   }
   25% {
+    bottom: 50%;
     transform: scale(1);
     right: 220px;
   }
   40% {
-    top: 300px;
+    bottom: 50%;
     right: 220px;
     transform: scale(1);
   }
   60% {
-    top: 630px;
+    bottom: 1%;
     right: 220px;
     transform: scale(0.5);
   }
   80% {
-    top: 630px;
+    bottom: 1%;
     right: 220px;
     transform: scale(0.5);
   }
   100% {
-    top: -100px;
+    bottom: 100%;
     right: 220px;
     transform: scale(0);
   }
 }
 
 @media (max-width: 880px) {
-  .mountain{
+  .mountain {
     width: 1500px;
     left: -200px;
     bottom: -120px;
   }
+  .logo-container img {
+    margin-top: 218px;
+  }
+  .logo-div .event-tag {
+    font-size: 20px;
+  }
+  .logo-div .event-date {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 650px) {
-
-  .logo-div img{
+  .logo-div img {
     max-width: 90%;
-  }
-
-  .logo-div .event-date{
-    font-size: 25px;
   }
 }

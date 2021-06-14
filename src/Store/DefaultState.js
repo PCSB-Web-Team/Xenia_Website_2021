@@ -5,6 +5,7 @@ let default_state = {
     token: '',
     eventData: [],
     userData: {
+        registeredBuildUpEvents: [],
         registeredEvents: []
     },
     paymentDetails: []

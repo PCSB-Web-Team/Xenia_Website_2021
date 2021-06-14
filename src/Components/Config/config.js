@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://xenia-backend.herokuapp.com/api",
+  baseURL: "https://api.pcsbxenia.com/api",
 });
 
 export default axiosInstance;

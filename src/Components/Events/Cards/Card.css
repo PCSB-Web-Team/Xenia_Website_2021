@@ -14,6 +14,7 @@
 }
 
 .card-div {
+  vertical-align: top;
   user-select: none;
   min-width: 250px;
   width: 22%;
@@ -38,6 +39,7 @@
   box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25),
     0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
   transition: all ease 200ms;
+  height: 100%;
 }
 
 .event-card:hover {
@@ -70,6 +72,13 @@
   font-size: 0.6em;
 }
 
+.card-div .card-body p {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+
+  font-size: 18px;
+}
+
 @media (max-width: 600px) {
   .card-div {
     min-width: 200px;
@@ -88,12 +97,16 @@
 .card-div .card-body {
   background: rgba(0, 0, 0, 0.5);
 
-  transition: ease;
-  animation-name: shade;
   font-size: 18px;
+  transition: ease;
+
+  animation-name: shade;
   animation-duration: 10s;
   animation-iteration-count: infinite;
+  
   transition-delay: -3s;
+  
+  min-height: 250px;
 }
 
 @keyframes shade {
@@ -116,7 +129,7 @@
 .event-card:hover .card-body {
   color: black;
   transition: ease 500ms;
-  background: #00b4d8;
+  background: rgba(0, 255, 255, 0.5);
 }
 
 @media (max-width: 450px) {
