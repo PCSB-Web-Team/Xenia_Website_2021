@@ -13,7 +13,8 @@ const customStyles = {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.8)'
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        overflow: 'auto',
     },
 
     content: {
@@ -21,7 +22,6 @@ const customStyles = {
         left: '50%',
         right: 'auto',
         bottom: 'auto',
-        overflow: 'hidden',
         marginRight: '-50%',
         fontFamily: { Font },
         transform: 'translate(-50%, -50%)',
@@ -34,34 +34,44 @@ const customStyles = {
         alignItems: 'center',
         backdropFilter: 'blur(5px)',
         maxWidth: '90%',
+        maxHeight: '80vh',
     }
 };
 
 const titleStyle = {
-    marginBottom: '10px',
+    width: '100%',
+    textAlign: 'left',
+    marginTop: '10px',
+    fontWeight: '600'
 }
 
+const infoStyle = {
+    width: '100%',
+    textAlign: 'left',
+    color: 'white',
+    fontWeight: '400',
+    borderTop: '1px solid aqua',
+    paddingTop: '5px',
+}
 
-// const buttonStyle = {
-//     color: 'aqua',
-//     border: 'none',
-//     fontSize: '20px',
-//     background: 'black',
-//     border: '1px solid aqua',
-//     borderRadius: '30px',
-//     padding: '10px',
-//     paddingBlock: '5px',
-//     fontFamily: { Font },
+const buttonStyle = {
+    color: 'aqua',
+    border: 'none',
+    fontSize: '20px',
+    background: 'black',
+    border: '1px solid aqua',
+    borderRadius: '30px',
+    padding: '10px',
+    paddingBlock: '5px',
+    fontFamily: { Font },
+    outline: "none",
+    minWidth: "150px",
+    transition: 'ease 1s',
 
-//     "&:focus": {
-//         outline: 'none',
-//     },
-
-//     "&:hover": {
-//         transform: 'scale(1.1)',
-//     },
-// }
-
+    "&:hover": {
+        transform: 'scale(1.1)',
+    },
+}
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("body")
@@ -106,30 +116,30 @@ const RegisterModal = (props) => {
                         ?
                         <>
                             <h2 style={titleStyle}> Rules </h2>
-                            <div> {props.info.rules.map(eve => <p> {eve} </p>)} </div>
+                            <div style={infoStyle}> {props.info.rules.map(eve => <p> {eve} </p>)} </div>
                         </>
                         :
                         null
                 }
 
                 <h2 style={titleStyle}> Prizes </h2>
-                <div> {props.info.prizes} </div>
+                <div style={infoStyle}> {props.info.prizes} </div>
 
-                <h2> Benefits </h2>
-                <div> {props.info.benefits} </div>
+                <h2 style={titleStyle}> Benefits </h2>
+                <div style={infoStyle}> {props.info.benefits} </div>
 
                 {
                     props.info.contact
                     ?
                     <>
-                    <h2> Contact </h2>
-                    <div> {props.info.contact.map(contact => <p> {contact} </p>)} </div>
+                    <h2 style={titleStyle}> Contact </h2>
+                    <div style={infoStyle}> {props.info.contact.map(contact => <p> {contact} </p>)} </div>
                     </>
                     :
                     null
                 }
-                
-                <button onClick={props.closeInfo}>Close</button>
+
+                <button style={buttonStyle} onClick={props.closeInfo}>Close</button>
 
             </Modal>
 

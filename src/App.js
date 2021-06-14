@@ -16,7 +16,7 @@ import FAQ from "./Components/Contact/FAQ/FAQ";
 import Background from "./Components/BackGround/Background";
 import ForgotPassword from "./Components/ForgotPassword/forgot";
 import ResetPassword from "./Components/ForgotPassword/reset";
-import Workshops from "./Components/Workshops/Workshops";
+import Sessions from "./Components/Workshops/Workshops";
 
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -75,8 +75,8 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        <Route exact path="/workshops">
-          <Workshops />
+        <Route exact path="/sessions">
+          <Sessions />
           <Footer />
         </Route>
 

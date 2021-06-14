@@ -39,6 +39,7 @@
     cursor: pointer;
     font-size: 20px;
     transition: ease 500ms;
+    margin-bottom: 10px;
   }
 
   .build-up-moreinfo:hover{

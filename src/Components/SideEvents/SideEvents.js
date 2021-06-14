@@ -139,8 +139,8 @@ const SideEvents = (props) => {
                       {eve.details}
                     </p>
 
-                    { checkRegistered(eve._id) ? <div className='build-up-registered'> Registered </div> : <ThemeButtton onClick={ props.login ? () => {setSelectedId(eve._id); setShowModal(true)} : props.openLogin } value="Register" />}
                     <div className='build-up-moreinfo' onClick={() => showMoreInfo(eve)} > MoreInfo {'>>>'} </div>
+                    { checkRegistered(eve._id) ? <div className='build-up-registered'> Registered </div> : <ThemeButtton onClick={ props.login ? () => {setSelectedId(eve._id); setShowModal(true)} : props.openLogin } value="Register" />}
                   
                   </div>
                 </Reveal>
