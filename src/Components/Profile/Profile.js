@@ -45,7 +45,7 @@ const MyProf = (props) => {
           <div className='row container-fluid col-container'>
             <div className='col-lg-4 col-0 event-type'>
               <div className='row'>
-                {/* <div className='col-lg-12 title'> {isTechnical ? "Technical Event" : "Non Technical Event"} </div> */}
+                <div className='col-lg-12 title'> {isTechnical ? "Technical Event" : "Non Technical Event"} </div>
                 <img className='col-lg-12 logo' src={isTechnical ? TechLogo : NonTechLogo} alt='' />
               </div>
             </div>
