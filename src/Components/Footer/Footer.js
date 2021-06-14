@@ -13,7 +13,7 @@ const Footer = (props) => {
           onClick={() => {
             document.documentElement.scrollTop = 0;
           }}
-          style={{ textDecoration: "none", color: "white", cursor: "pointer" }}
+          style={{ textDecoration: "none", color: "white", cursor: "pointer", userSelect: 'none' }}
         >
           GET BACK TO THE TOP
         </h4>
@@ -53,7 +53,7 @@ const Footer = (props) => {
                     All Events
                   </Link>
                 </div>
-                {/* <div className="nav-content">
+                <div className="nav-content">
                   <Link
                     onClick={
                       props.loggedIn
@@ -66,7 +66,7 @@ const Footer = (props) => {
                   >
                     Registered Events
                   </Link>
-                </div> */}
+                </div>
               </div>
             </div>
             <div className="block2 d-flex mx-auto">
@@ -78,22 +78,11 @@ const Footer = (props) => {
                   className="#ffffff white mt-0 d-inline-block mx-auto"
                   style={{ width: "80px" }}
                 />
-                {/* {props.loggedIn ? (
-                  <div className="nav-content">
-                    <Link
-                      to="/cart"
-                      onClick={() => {
-                        document.documentElement.scrollTop = 0;
-                      }}
-                    >
-                      Cart
-                    </Link>
-                  </div>
-                ) : (
-                  <div className="nav-content">
+
+                { !props.loggedIn && <div className="nav-content">
                     <Link onClick={props.openLogin}>Log In</Link>
                   </div>
-                )} */}
+                }
 
                 <div className="nav-content">
                   <Link

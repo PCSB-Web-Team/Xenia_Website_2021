@@ -24,10 +24,16 @@ const MoreInfo = (props) => {
   let history = useHistory();
 
   const checkRegistered = () => {
+
+    if(!props.registeredEvents){
+      history.push('/events');
+      return;
+    }
     setRegistered(false);
     props.registeredEvents.forEach((eve) => {
       if (eve._id === id) setRegistered(true);
     });
+    
   };
 
   useEffect(() => {
@@ -118,7 +124,7 @@ const MoreInfo = (props) => {
 
             <hr className="my-1" />
 
-            {/* {!registered ? (
+            {!registered ? (
               <div
                 style={{
                   display: "flex",
@@ -133,7 +139,7 @@ const MoreInfo = (props) => {
               </div>
             ) : (
               <span className="already-registered">Registered</span>
-            )} */}
+            )}
 
             <DetailsTab details={details} />
           </div>

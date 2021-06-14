@@ -26,15 +26,16 @@ import "./App.css";
 
 const App = (props) => {
   useEffect(() => {
-    // const getUserData = async () => {
-    //   let userToken = localStorage.getItem("xeniaUserToken");
+    
+    const getUserData = async () => {
+      let userToken = localStorage.getItem("xeniaUserToken");
 
-    //   const res = await getLoggedInUser(userToken);
+      const res = await getLoggedInUser(userToken);
 
-    //   props.storeToken(userToken);
+      props.storeToken(userToken);
 
-    //   props.loggedIn(res.data.data);
-    // };
+      props.loggedIn(res.data.data);
+    };
 
     // const PreLoader = document.getElementById("preLoader");
     // PreLoader.style.display = "none";
@@ -44,7 +45,7 @@ const App = (props) => {
       PreLoader.style.display = "none";
     }, 6000);
 
-    // getUserData();
+    getUserData();
   }, []);
 
   return (
@@ -79,7 +80,7 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        {/* <Route exact path="/profile">
+        <Route exact path="/profile">
           {props.login ? (
             <div>
               <Profile />
@@ -88,7 +89,7 @@ const App = (props) => {
           ) : (
             <Redirect to="/"></Redirect>
           )}
-        </Route> */}
+        </Route>
 
         <Route exact path="/contact-us">
           {/* <Sponsors /> */}
@@ -103,13 +104,13 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        {/* <Route exact path="/forgot-password">
+        <Route exact path="/forgot-password">
           <ForgotPassword />
         </Route>
 
         <Route exact path="/reset-password/:id/:token">
           <ResetPassword />
-        </Route> */}
+        </Route>
 
         <Route exact path="/">
           <Home />

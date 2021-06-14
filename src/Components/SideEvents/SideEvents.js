@@ -7,7 +7,7 @@ import code from "../../Assets/Images/logo.svg";
 // import Sponsors from "./Sponsors/Sponsors";
 import Fade from "react-reveal/Fade";
 import Reveal from "react-reveal/Reveal";
-// import ThemeButtton from "../Button/button";
+import ThemeButtton from "../Button/button";
 import { getBuildUpEvents } from '../Config/api/User';
 import { useState, useEffect } from "react";
 import Loader from '../Loader/Loader';
@@ -61,7 +61,7 @@ const About = () => {
                     <p>
                       {eve.details}
                     </p>
-                    {/* <ThemeButtton value="Register" /> */}
+                    <ThemeButtton value="Register" />
                   </div>
                 </Reveal>
               </div>
