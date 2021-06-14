@@ -31,6 +31,7 @@ const MoreInfo = (props) => {
     }
 
     setRegistered(false);
+    
     props.registeredEvents.forEach((eve) => {
       if (eve._id === id) setRegistered(true);
     });

@@ -13,7 +13,12 @@ const Footer = (props) => {
           onClick={() => {
             document.documentElement.scrollTop = 0;
           }}
-          style={{ textDecoration: "none", color: "white", cursor: "pointer", userSelect: 'none' }}
+          style={{
+            textDecoration: "none",
+            color: "white",
+            cursor: "pointer",
+            userSelect: "none",
+          }}
         >
           GET BACK TO THE TOP
         </h4>
@@ -79,10 +84,11 @@ const Footer = (props) => {
                   style={{ width: "80px" }}
                 />
 
-                { !props.loggedIn && <div className="nav-content">
+                {!props.loggedIn && (
+                  <div className="nav-content">
                     <Link onClick={props.openLogin}>Log In</Link>
                   </div>
-                }
+                )}
 
                 <div className="nav-content">
                   <Link

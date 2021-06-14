@@ -28,6 +28,23 @@
     color: #ffffff;
   }
 
+  .build-up-registered{
+    font-family: 'SansBold';
+    color: rgb(0, 255, 0);
+    font-size: 32px;
+  }
+
+  .build-up-moreinfo{
+    color: lightseagreen;
+    cursor: pointer;
+    font-size: 20px;
+    transition: ease 500ms;
+  }
+
+  .build-up-moreinfo:hover{
+    opacity: 0.5;
+  }
+
   @media (max-width: 676px) {
     .eventContent {
       padding: 5px !important;

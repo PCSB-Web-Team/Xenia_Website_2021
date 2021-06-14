@@ -11,18 +11,27 @@ import ThemeButtton from "../Button/button";
 import { getBuildUpEvents } from '../Config/api/User';
 import { useState, useEffect } from "react";
 import Loader from '../Loader/Loader';
-import { failedToLoad, registrationFail, registrationSuccess } from "../Notifications/Notification";
+import { failedToLoad, registrationFail, registrationSuccess, anErrorOccured } from "../Notifications/Notification";
 import Modal from './Modal/Modal';
 import { registerBuildUpEvent } from '../Config/api/User';
-import { setRegisteredBuildUpEvents } from '../../Store/Actions';
+import { setRegisteredBuildUpEvents, openLogin } from '../../Store/Actions';
 import { connect } from 'react-redux';
 import { propTypes } from "react-bootstrap/esm/Image";
+import MoreInfo from './MoreInfo/Modal';
+import { useHistory } from "react-router-dom";
 
 const SideEvents = (props) => {
 
   const [buildUpEvents, setBuildUpEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [selectedId, setSelectedId] = useState('');
+  const [registerLoading, setRegisterLoading] = useState(false)
+  
+  const [showInfo, setShowInfo] = useState(false);
+  const [info, setInfo] = useState('');
+
+  let history = useHistory();
 
   // const [registered, setRegistered] = useState([false, false, false])
 
@@ -32,11 +41,23 @@ const SideEvents = (props) => {
 
   const checkRegistered = (id) => {
 
-      props.registeredBuildUpEvents.forEach( eve => {if( eve._id === id ){
-        return true;
-      }})
+    let found = false;
+    const list = props.registeredBuildUpEvents;
 
-      return false;
+    if(!list) {
+      history.push('/');
+      return;
+    }
+
+    list.forEach(eve => {
+      if (eve._id == id){
+        found = true;
+        return;
+      }
+    }
+    )
+
+    return found;
   }
 
   const fetchData = async () => {
@@ -54,29 +75,43 @@ const SideEvents = (props) => {
     }
     catch (error) {
       failedToLoad();
-    }  
+    }
   }
 
   const handleRegister = async (id) => {
-    try {
-      const res = await registerBuildUpEvent( id , props.token );
+    
+    setRegisterLoading(true);
 
-      if(res.deta.ok){
-        props.setRegisterBuildUpEvent(res.data.data)
+    try {
+
+      const res = await registerBuildUpEvent(id, props.token);
+
+      if (res.data.ok) {
+        props.setRegisterBuildUpEvent(res.data.data.event)
         registrationSuccess();
-        console.log(res.data);
+        setRegisterLoading(false);
       }
-      else{
+
+      else {
         registrationFail();
       }
     }
+
     catch (error) {
+      anErrorOccured();
       console.log(error)
     }
+    setRegisterLoading(false);
+    closeModal();
   }
 
   const closeModal = () => {
     setShowModal(false);
+  }
+
+  const showMoreInfo = (info) => {
+    setInfo(info);
+    setShowInfo(true);
   }
 
   return (
@@ -84,23 +119,29 @@ const SideEvents = (props) => {
       ?
       <Loader />
       : <div className="section side-events">
+        
         <header className="page-headers">
           <h1 className="header-name"> Build Up Events </h1>
         </header>
 
-        {buildUpEvents.map((eve, i) => {
+        {buildUpEvents.map( (eve) => {
+
           return (
 
-            <div className="row mx-sm-auto eventContent py-0 d-flex flex-row justify-content-center align-items-center my-5" key={i}>
+            <div className="row mx-sm-auto eventContent py-0 d-flex flex-row justify-content-center align-items-center my-5" key={eve._id}>
 
               <div className="col-lg-6">
                 <Reveal effect="fadeInDown" duration={1000}>
                   <div className="event-info">
+                    
                     <h3 className="font-weight-bold display-5">{eve.name}</h3>
                     <p>
                       {eve.details}
                     </p>
-                    { false ? <div> Registered </div> : <ThemeButtton onClick={() => setShowModal(true)} value="Register" />}
+
+                    { checkRegistered(eve._id) ? <div className='build-up-registered'> Registered </div> : <ThemeButtton onClick={ props.login ? () => {setSelectedId(eve._id); setShowModal(true)} : props.openLogin } value="Register" />}
+                    <div className='build-up-moreinfo' onClick={() => showMoreInfo(eve)} > MoreInfo {'>>>'} </div>
+                  
                   </div>
                 </Reveal>
               </div>
@@ -122,13 +163,13 @@ const SideEvents = (props) => {
                 </Fade>
               </div>
 
-              <Modal closeModal={closeModal} showModal={showModal} handleRegister={ () => {handleRegister(eve._id); console.log("Hello")}}/>
-
             </div>
 
           )
         })}
 
+        <Modal load={registerLoading} closeModal={closeModal} showModal={ showModal } handleRegister={ () => handleRegister(selectedId) } />
+        <MoreInfo info={info} showInfo={showInfo} closeInfo={() => setShowInfo(false)} />
 
         {/* 
       <div className="row mx-auto eventContent py-0">
@@ -202,15 +243,17 @@ const SideEvents = (props) => {
 
 const mapStatesToProps = state => {
   return {
-  registeredBuildUpEvents: state.registeredBuildUpEvents,
-  token: state.token
-}
+    registeredBuildUpEvents: state.userData.registeredBuildUpEvents,
+    token: state.token,
+    login: state.login,
+  }
 }
 
 const mapActionsToProps = dispatch => {
   return {
-    setRegisterBuildUpEvent: event => dispatch(setRegisteredBuildUpEvents( event ))
+    setRegisterBuildUpEvent: event => dispatch(setRegisteredBuildUpEvents(event)),
+    openLogin: () => dispatch(openLogin()),
   }
 }
 
-export default connect( mapStatesToProps, mapActionsToProps )( SideEvents );
+export default connect(mapStatesToProps, mapActionsToProps)(SideEvents);

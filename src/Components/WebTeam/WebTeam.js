@@ -62,7 +62,7 @@ const webTeam = (props) => {
   return (
     <div className="webTeam" id="webTeam">
       <header className="page-headers">
-        <h1 className="header-name"> WEB TEAM </h1>
+        <h1 className="header-name">PCSB WEB TEAM</h1>
       </header>
       {team}
       <br/>

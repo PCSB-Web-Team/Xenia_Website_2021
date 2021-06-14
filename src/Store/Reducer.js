@@ -70,7 +70,7 @@ const reducer = (state = defaultState, action) => {
 				...state,
 				userData: {
 					...state.userData,
-					registeredBuildUpEvents: [...state.registeredBuildUpEvents, action.payload]
+					registeredBuildUpEvents: [...state.userData.registeredBuildUpEvents, action.payload]
 				}
 			}
 
