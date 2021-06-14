@@ -35,11 +35,285 @@ class Registrations extends Component {
           <h1 className="header-name"> SCHEDULE </h1>
         </header>
 
-        <div className="schedule-coming-soon">
+        <div className="schedule-container">
+          <div className="schedule-left">
+            <div className="schedule-left-inner">
+              <h1>EVENT</h1>
+              <h1>SCHEDULE</h1>
+            </div>
+          </div>
+          <div className="schedule-right">
+            <h1>2021 June</h1>
+            <div className="main-schedule">
+              <div className="schedule-date">
+                <h1>17 Thu</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>You're Hired! Ultimate Guide to Placements</h2>
+                    <p>18:00 to 20:00</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>18 Fri</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>Dream Team</h2>
+                    <p>10:00 to 15:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Technical Workshop1</h2>
+                    <p>18:00 to 20:00</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>19 Sat</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>Dream Team</h2>
+                    <p>10:00 to 15:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Technical Workshop2</h2>
+                    <p>18:00 to 20:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Shutter Speed - Day 1</h2>
+                    <p>Full Day</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>20 Sun</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>Dream Team</h2>
+                    <p>10:00 to 15:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Technical Workshop3</h2>
+                    <p>18:00 to 20:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Shutter Speed - Day 2</h2>
+                    <p>Full Day</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>21 Mon</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>Dream Team</h2>
+                    <p>10:00 to 15:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>DataCup (Both Rounds)</h2>
+                    <p>Full Day</p>
+                </div>
+                <div className="date-content">
+                    <h2>Gift of Gab: Wild Card (A Tale to Tell)</h2>
+                    <p>19:00 to 21:00</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>22 Tue</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>Dream Team</h2>
+                    <p>10:00 to 15:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>DataCup (Both Rounds)</h2>
+                    <p>Full Day</p>
+                </div>
+                <div className="date-content">
+                    <h2>Ninja Coding: Wild Card (Exclusively for FEs)</h2>
+                    <p>19:00 to 21:00</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>23 Wed</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>DataCup (Both Rounds)</h2>
+                    <p>Full Day</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>24 Thu</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>DataCup (Both Rounds)</h2>
+                    <p>Full Day</p>
+                </div>
+                <div className="date-content">
+                    <h2>Game Zone</h2>
+                    <p>18:00 onwards</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>25 Fri</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>DataCup (Both Rounds)</h2>
+                    <p>Full Day</p>
+                </div>
+                <div className="date-content">
+                    <h2>Design Maestro (Round 1)</h2>
+                    <p>8:00 to 12:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Design Maestro (Round 2)</h2>
+                    <p>25th 16:00 to 26th 19:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Shark Tank (Registration Closed)</h2>
+                    <p>12:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Couch Potato (Round 1)</h2>
+                    <p>12:15 to 13:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Circuitron (SE + TE/BE) - (Round 1)</h2>
+                    <p>13:15 to 14:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Inauguration Ceremony</h2>
+                    <p>16:00 to 17:30</p>
+                </div>
+                <div className="date-content">
+                    <h2>Gift of Gab (Round 1)</h2>
+                    <p>17:30 to 18:30</p>
+                </div>
+                <div className="date-content">
+                    <h2>Campus to Corporate (Round 1)</h2>
+                    <p>18:30 to 19:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Minecraft (Round 1)</h2>
+                    <p>19:00 to 21:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Xe-Natus (Round 1)</h2>
+                    <p>21:00 to 21:30</p>
+                </div>
+                <div className="date-content">
+                    <h2>Xe-Natus (Round 2)</h2>
+                    <p>22:00 to 22:30</p>
+                </div>
+                <div className="date-content">
+                    <h2>Game Zone</h2>
+                    <p>18:00 onwards</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>26 Sat</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>DataCup (Both Rounds)</h2>
+                    <p>Full Day</p>
+                </div>
+                <div className="date-content">
+                    <h2>Xenathon (15 hours Mini-Hackathon)</h2>
+                    <p>9:00 to 23:59</p>
+                </div>
+                <div className="date-content">
+                    <h2>Gift of Gab (Round 2)</h2>
+                    <p>9:00 to 10:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Shark Tank (Round 1 Results)</h2>
+                    <p>10:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Snaphunt</h2>
+                    <p>10:00 to 13:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Shark Tank (Round 2)</h2>
+                    <p>12:00 to 13:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Codestrike</h2>
+                    <p>13:00 to 15:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Circuitron (SE + TE/BE) (Round 2)</h2>
+                    <p>15:00 to 17:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Dream Team (Round 2)</h2>
+                    <p>16:00 to 17:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Ninja Coding (Round 2)</h2>
+                    <p>17:00 to 18:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Campus to Corporate (Round 2)</h2>
+                    <p>18:00 to 19:30</p>
+                </div>
+                <div className="date-content">
+                    <h2>Minecraft - (Round 2 and Round 3)</h2>
+                    <p>19:30 to 22:30</p>
+                </div>
+                <div className="date-content">
+                    <h2>Game Zone</h2>
+                    <p>18:00 onwards</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>27 Sun</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>DataCup (Both Rounds)</h2>
+                    <p>Full Day</p>
+                </div>
+                <div className="date-content">
+                    <h2>Gift of Gab (Round 3)</h2>
+                    <p>9:00 to 10:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Dream Team (Round 3)</h2>
+                    <p>10:00 to 14:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Campus to Corporate (Round 3)</h2>
+                    <p>14:00 to 16:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Innoveiren (Project Presentation)</h2>
+                    <p>16:00 to 18:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Xenathon (Automation Bots) (Round 2)</h2>
+                    <p>18:00 to 20:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Couch Potato (Round 2)</h2>
+                    <p>21:00 to 22:00</p>
+                </div>
+                <div className="date-content">
+                    <h2>Game Zone</h2>
+                    <p>18:00 onwards</p>
+                </div>
+              </div>
+              <div className="schedule-date">
+                <h1>28 Mon</h1>
+                <hr></hr>
+                <div className="date-content">
+                    <h2>Prize Distribution Ceremony (Valedictory)</h2>
+                    <p>19:00 to 21:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="schedule-coming-soon">
           <div className="coming-soon">
             Coming Soon...
           </div>
-        </div>
+        </div> */}
         
         {/* 
         <Box
