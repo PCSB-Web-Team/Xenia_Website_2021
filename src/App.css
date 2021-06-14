@@ -13,6 +13,7 @@
   height: 100%;
 
   background: none;
+  user-select: none;
 }
 
 .home {
@@ -46,7 +47,7 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .page-headers .header-name {
     font-size: 40px;
   }

@@ -99,7 +99,7 @@ const Login = (props) => {
           }}
           closeButton
         >
-          <Modal.Title>
+          <Modal.Title className="login-head">
             <div className="d-flex flex-column text-center">
               <img
                 alt="welcome-back"
@@ -223,14 +223,12 @@ const styles = {
     height: "90px",
     width: "90px",
     marginTop: "-50px",
-    marginLeft: "150px",
     borderRadius: "30px",
     borderColor: "white",
     borderWidth: "1px",
   },
   title_text: {
     letterSpacing: "5px",
-    marginLeft: "60px",
     marginTop: "20px",
   },
 };

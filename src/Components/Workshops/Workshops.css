@@ -1,0 +1,50 @@
+.workshops-coming-soon {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.workshops-coming-soon .workshops-date {
+  color: white;
+  font-size: 60px;
+  font-family: "SansBold";
+  font-weight: 250;
+  text-align: center;
+  padding: 5px;
+}
+
+.workshops-coming-soon .coming-soon {
+  color: rgba(0, 255, 255, 0.8);
+  font-size: 50px;
+
+  animation: coming-soon-pulse 1s infinite ease-in-out;
+  animation-play-state: running;
+  font-family: "SansBold";
+  font-weight: 250;
+  text-align: center;
+  padding: 5px;
+}
+
+@keyframes coming-soon-pulse {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 800px) {
+  .workshops-coming-soon .coming-soon {
+    font-size: 40px;
+  }
+  .workshops-coming-soon .workshops-date {
+    font-size: 50px;
+  }
+}
