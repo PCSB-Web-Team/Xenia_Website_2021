@@ -25,11 +25,13 @@ const MoreInfo = (props) => {
 
   const checkRegistered = () => {
 
-    if(!props.registeredEvents){
+    if(!props.registeredEvents) {
       history.push('/events');
       return;
     }
+
     setRegistered(false);
+    
     props.registeredEvents.forEach((eve) => {
       if (eve._id === id) setRegistered(true);
     });
@@ -118,7 +120,7 @@ const MoreInfo = (props) => {
             <img className="logo" src={details.logo} alt="logo"></img>
 
             <h3 className="name">{details.name}</h3>
-            {/* <span className> {details.date.substring(0, 10)} </span> */}
+            <span className> {details.date.substring(0, 10)} </span>
 
             <p className="lead">{details.details}</p>
 

@@ -20,6 +20,9 @@ const Register = (props) => {
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState({ isError: true });
   const [loading, setLoading] = useState(false);
+  const [branch, setBranch] = useState("");
+  const [year, setYear] = useState("");
+  const [campusAmbassader, setCampusAmbassader] = useState("");
 
   const reRef = useRef();
 
@@ -34,6 +37,8 @@ const Register = (props) => {
         password2,
         phone,
         college,
+        year,
+        branch,
       });
       await setErrors(err);
 
@@ -49,8 +54,12 @@ const Register = (props) => {
           college,
           email,
           phone,
+          branch,
+          year,
+          CA: campusAmbassader,
           captchaToken,
         };
+        console.log(user);
         const res = await register(user);
 
         // console.log(res);
@@ -139,7 +148,7 @@ const Register = (props) => {
                   className="form-control"
                   name="name"
                   type="text"
-                  placeholder="Name"
+                  placeholder="*Full Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -162,7 +171,7 @@ const Register = (props) => {
                   className="form-control"
                   name="Email"
                   type="text"
-                  placeholder="Email"
+                  placeholder="*Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -184,7 +193,7 @@ const Register = (props) => {
                   className="form-control"
                   name="password"
                   type="password"
-                  placeholder="Password"
+                  placeholder="*Password"
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
@@ -209,7 +218,7 @@ const Register = (props) => {
                   className="form-control"
                   name="password2"
                   type="password"
-                  placeholder="Confirm Password"
+                  placeholder="*Confirm Password"
                   value={password2}
                   onChange={(e) => {
                     setPassword2(e.target.value);
@@ -227,7 +236,10 @@ const Register = (props) => {
               <div className="input-group">
                 <div className="input-group-prepend">
                   <div className="input-group-text">
-                    <i className="fa fa-phone text-primary"></i>
+                    <i
+                      className="fa fa-whatsapp text-success"
+                      aria-hidden="true"
+                    ></i>
                   </div>
                 </div>
                 <input
@@ -236,7 +248,7 @@ const Register = (props) => {
                   type="number"
                   min="7000000000"
                   max="9999999999"
-                  placeholder="Mobile (Without Country Code)"
+                  placeholder="*WhatsApp Number (Without Country Code)"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
@@ -259,7 +271,7 @@ const Register = (props) => {
                   className="form-control"
                   name="college"
                   type="text"
-                  placeholder="College"
+                  placeholder="*College"
                   value={college}
                   onChange={(e) => setCollege(e.target.value)}
                 />
@@ -270,6 +282,89 @@ const Register = (props) => {
                 </span>
               )}
             </div>
+
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-graduation-cap"></i>
+                  </div>
+                </div>
+                <select
+                  className="form-control"
+                  value={branch}
+                  onChange={(e) => setBranch(e.target.value)}
+                >
+                  <option value="">*Select your branch</option>
+                  <option value="CSE">CSE</option>
+                  <option value="IT">IT</option>
+                  <option value="E&TC">E&TC</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              {errors !== null && errors.branch !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.branch}`}
+                </span>
+              )}
+            </div>
+
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-calendar"></i>
+                  </div>
+                </div>
+                <select
+                  className="form-control"
+                  value={year}
+                  onChange={(e) => setYear(e.target.value)}
+                >
+                  <option value="">*Year</option>
+                  <option value="FE">FE</option>
+                  <option value="SE">SE</option>
+                  <option value="TE">TE</option>
+                  <option value="BE">BE</option>
+                </select>
+              </div>
+              {errors !== null && errors.year !== undefined && (
+                <span className="text-danger pl-5 font-weight-bold">
+                  {`* ${errors.year}`}
+                </span>
+              )}
+            </div>
+
+            <div className="form-group">
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <div className="input-group-text">
+                    <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <input
+                  className="form-control"
+                  name="campusAmbassader"
+                  type="text"
+                  placeholder=" Campus Ambassador/Reference Club Name"
+                  value={campusAmbassader}
+                  onChange={(e) => setCampusAmbassader(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {/* <div className="form-group form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                defaultChecked={campusAmbassader}
+                value={campusAmbassader}
+                onChange={() => setCampusAmbassader(!campusAmbassader)}
+              />
+              <label className="form-check-label">
+                Campus Ambassader (Optional)
+              </label>
+            </div> */}
 
             {loading ? (
               <div className="loginButtonNew my-5">
@@ -318,6 +413,23 @@ const styles = {
     marginTop: "20px",
   },
 };
+// const styles = {
+//   imageStyles: {
+//     padding: "5px",
+//     height: "90px",
+//     width: "90px",
+//     marginTop: "-50px",
+//     marginLeft: "80px",
+//     borderRadius: "30px",
+//     borderColor: "white",
+//     borderWidth: "1px",
+//   },
+//   title_text: {
+//     letterSpacing: "5px",
+//     marginLeft: "50px",
+//     marginTop: "20px",
+//   },
+// };
 
 const mapSatesToProps = (state) => {
   return {

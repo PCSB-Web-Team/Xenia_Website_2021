@@ -3,6 +3,7 @@ export const LOGGEDOUT = "LOGGEDOUT";
 export const ADDTOREGISTERED = 'ADDTOCART';
 export const GETEVENTDATA = 'GETEVENTDATA';
 export const STORETOKEN  =  'STORETOKEN';
+export const SETREGISTEREDBUILDUPEVENTS = 'SETREGISTEREDBUILDUPEVENTS';
 
 export const OPENLOGIN = 'OPENLOGIN';
 export const OPENSIGNUP = 'OPENSIGNUP';
@@ -44,6 +45,13 @@ export const addToRegistered = (eveData) => {
     return {
         type: ADDTOREGISTERED,
         payload: eveData
+    }
+}
+
+export const setRegisteredBuildUpEvents = (events) => {
+    return{
+        type: SETREGISTEREDBUILDUPEVENTS,
+        payload: events
     }
 }
 

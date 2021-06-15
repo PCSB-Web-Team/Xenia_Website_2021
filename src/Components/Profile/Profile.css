@@ -49,6 +49,10 @@
 }
 
 .noRegistered{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60vh;
   color: white;
   font-size: 4em;
   font-weight: 450;
@@ -99,6 +103,10 @@
   .col-container .event-type img{
     display: none;
   }
+.event-type .title{
+  display: none;
+}
+
   .col-container .event-logo img{
     display: none;
   }
@@ -109,9 +117,15 @@
   overflow-y: auto;
 }
 
-.col-container img{
+.event-type .title{
+  font-size: 32px;
+  color: aliceblue;
+  text-align: center;
+}
+
+.col-container .logo{
   width: 80%;
-  height: auto;
+  height: 500px;
 }
 
 .col-container .event-type{
@@ -121,11 +135,19 @@
   justify-content: space-around;
 }
 
+.col-container .event-type .logo{
+  width: 80%;
+}
+
 .col-container .event-logo{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+
+.col-container .event-logo img{
+  width: 80%;
 }
 
 
