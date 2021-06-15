@@ -10,9 +10,11 @@
 
   user-select: none;
 
-  margin-block: 10px;
+  padding-block: 10px;
   margin-bottom: 20px;
   padding-inline: 20px;
+
+  background: linear-gradient(black, rgba(0,0,0,0));
 }
 
 
