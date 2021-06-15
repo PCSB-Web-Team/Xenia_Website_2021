@@ -17,7 +17,7 @@ export default function SimpleTabs(props) {
       <div className='mi-head'>
         <Zoom cascade>
           <div className={activeDetail === 0 ? activeTab : tab} onClick={() => { setactiveDetail(0) }}>Rules</div>
-          <div className={activeDetail === 1 ? activeTab : tab} onClick={() => { setactiveDetail(1) }}>Date</div>
+          <div className={activeDetail === 1 ? activeTab : tab} onClick={() => { setactiveDetail(1) }}>Schedule</div>
           <div className={activeDetail === 2 ? activeTab : tab} onClick={() => { setactiveDetail(2) }}>Prizes</div>
         </Zoom>
       </div>

@@ -419,6 +419,8 @@ Change1 */
 .schedule-container{
   height: 100vh;
   display: flex;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .schedule-left{
@@ -527,6 +529,13 @@ Change1 */
     max-width: 30%;
     text-align: right;
   }
+}
+
+.schedule-main-container{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
 }
 
 @media (min-width:1001px) and (max-width:1210px)  {
