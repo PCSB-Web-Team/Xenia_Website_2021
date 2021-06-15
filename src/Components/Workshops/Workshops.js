@@ -12,7 +12,7 @@ const Workshops = (props) => {
       
       <div>
         <header className="page-headers">
-          <h1 className="header-name"> WORKSHOPS </h1>
+          <h1 className="header-name"> Industry Talks </h1>
         </header>
       </div>
 

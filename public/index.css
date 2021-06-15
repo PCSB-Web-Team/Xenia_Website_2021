@@ -39,7 +39,6 @@
 
     border: 2px solid white;
     border-radius: 100%;
-
 }
 
 .mob-loader .inner-radius{
@@ -92,11 +91,15 @@
 }
 
 @media (max-width: 450px){
-    .mob-loader{
+    .mob-loader {
         display: flex;
     }
 
-    .pre-loader{
+    .mob-loader img {
+        display: block;
+    }
+
+    .pre-loader {
         display: none;
     }
 }

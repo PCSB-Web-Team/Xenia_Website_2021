@@ -27,7 +27,7 @@ const SideEvents = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedId, setSelectedId] = useState('');
   const [registerLoading, setRegisterLoading] = useState(false)
-  
+
   const [showInfo, setShowInfo] = useState(false);
   const [info, setInfo] = useState('');
 
@@ -44,13 +44,13 @@ const SideEvents = (props) => {
     let found = false;
     const list = props.registeredBuildUpEvents;
 
-    if(!list) {
+    if (!list) {
       history.push('/');
       return;
     }
 
     list.forEach(eve => {
-      if (eve._id == id){
+      if (eve._id == id) {
         found = true;
         return;
       }
@@ -79,7 +79,7 @@ const SideEvents = (props) => {
   }
 
   const handleRegister = async (id) => {
-    
+
     setRegisterLoading(true);
 
     try {
@@ -119,34 +119,18 @@ const SideEvents = (props) => {
       ?
       <Loader />
       : <div className="section side-events">
-        
+
         <header className="page-headers">
           <h1 className="header-name"> Build Up Events </h1>
         </header>
 
-        {buildUpEvents.map( (eve) => {
+        {buildUpEvents.map((eve) => {
 
           return (
 
             <div className="row mx-sm-auto eventContent py-0 d-flex flex-row justify-content-center align-items-center my-5" key={eve._id}>
 
-              <div className="col-lg-6">
-                <Reveal effect="fadeInDown" duration={1000}>
-                  <div className="event-info">
-                    
-                    <h3 className="font-weight-bold display-5">{eve.name}</h3>
-                    <p>
-                      {eve.details}
-                    </p>
-
-                    <div className='build-up-moreinfo' onClick={() => showMoreInfo(eve)} > MoreInfo {'>>>'} </div>
-                    { checkRegistered(eve._id) ? <div className='build-up-registered'> Registered </div> : <ThemeButtton onClick={ props.login ? () => {setSelectedId(eve._id); setShowModal(true)} : props.openLogin } value="Register" />}
-                  
-                  </div>
-                </Reveal>
-              </div>
-
-              <div className="col-lg-6 text-center  d-lg-block">
+              <div className="col-lg-6 order-lg-12 text-center  d-lg-block">
                 <Fade up duration={1000}>
                   <img
                     alt="img"
@@ -163,12 +147,29 @@ const SideEvents = (props) => {
                 </Fade>
               </div>
 
+              <div className="col-lg-6 order-lg-1">
+                <Reveal effect="fadeInDown" duration={1000}>
+
+                  <div className="event-info">
+                    <h3 className="font-weight-bold display-5">{eve.name}</h3>
+                    <p>
+                      {eve.details}
+                    </p>
+                    <div className='build-up-moreinfo' onClick={() => showMoreInfo(eve)} > MoreInfo {'>>>'} </div>
+                    {checkRegistered(eve._id) ? <div className='build-up-registered'> Registered </div> : <ThemeButtton onClick={props.login ? () => { setSelectedId(eve._id); setShowModal(true) } : props.openLogin} value="Register" />}
+                  </div>
+                
+                </Reveal>
+              </div>
+
+
+
             </div>
 
           )
         })}
 
-        <Modal load={registerLoading} closeModal={closeModal} showModal={ showModal } handleRegister={ () => handleRegister(selectedId) } />
+        <Modal load={registerLoading} closeModal={closeModal} showModal={showModal} handleRegister={() => handleRegister(selectedId)} />
         <MoreInfo info={info} showInfo={showInfo} closeInfo={() => setShowInfo(false)} />
 
         {/* 

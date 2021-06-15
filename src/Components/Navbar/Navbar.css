@@ -23,13 +23,15 @@ header .navItem {
   text-transform: uppercase;
   cursor: pointer;
   display: inline-block;
-  border: 3px solid rgba(0, 0, 0, 0);
+  /* border: 3px solid rgba(0, 238, 255, 0.5); */
+  border: 3px solid rgba(0, 238, 255, 0);
   border-radius: 50px;
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
   color: #00b4d8;
   margin-inline: 20px;
   font-weight: 600;
+  /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 header .navItem:hover {

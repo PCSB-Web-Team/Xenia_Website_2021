@@ -120,7 +120,13 @@ const MoreInfo = (props) => {
             <img className="logo" src={details.logo} alt="logo"></img>
 
             <h3 className="name">{details.name}</h3>
-            <span className> {details.date.substring(0, 10)} </span>
+
+            {/* <h5 className='date'> {details.date.substring(0, 10)} </h5> */}
+            {/* <div className='date'> {details.dateDescription} </div> */}
+            
+            {/* { details.dateDescription.split('&').map( (line,i) => <div className='date'> Round {' ', i+1} - {line} </div>) }          */}
+            
+            <h5 className='platform'> Platform: {details.platform} </h5>
 
             <p className="lead">{details.details}</p>
 

@@ -317,7 +317,7 @@ class Registrations extends Component {
 
         <div className='row text-center mt-5'>
           <div className='col-12'>
-            <div className='btn btn-success download-schedule'><a className='text-dark' href={SchedulePDF} download> Download Schedule </a></div>
+            <div className='btn btn-success download-schedule'><a className='text-dark' href={SchedulePDF} download> Download Rulebook </a></div>
           </div>
         </div>
 

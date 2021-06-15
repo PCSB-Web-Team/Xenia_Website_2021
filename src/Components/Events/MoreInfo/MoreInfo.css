@@ -102,6 +102,18 @@
   background: rgba(0, 0, 0, 0.2);
 }
 
+.more-info .platform {
+  font-family: 'SansBold';
+  color: rgba(0, 255, 255, 0.4);
+}
+
+.more-info .date{
+  font-family: 'SansBold';
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .back-container {
   overflow: hidden;
   height: 30px;

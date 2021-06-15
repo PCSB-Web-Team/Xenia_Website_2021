@@ -17,8 +17,8 @@ export default function SimpleTabs(props) {
       <div className='mi-head'>
         <Zoom cascade>
           <div className={activeDetail === 0 ? activeTab : tab} onClick={() => { setactiveDetail(0) }}>Rules</div>
-          <div className={activeDetail === 1 ? activeTab : tab} onClick={() => { setactiveDetail(1) }}>Prizes</div>
-          <div className={activeDetail === 2 ? activeTab : tab} onClick={() => { setactiveDetail(2) }}>Contact</div>
+          <div className={activeDetail === 1 ? activeTab : tab} onClick={() => { setactiveDetail(1) }}>Date</div>
+          <div className={activeDetail === 2 ? activeTab : tab} onClick={() => { setactiveDetail(2) }}>Prizes</div>
         </Zoom>
       </div>
       <div className='mi-details'>
@@ -27,10 +27,13 @@ export default function SimpleTabs(props) {
             {props.details.rules.map((rule) => <p>{rule}</p>)}
           </div>
           <div className={activeDetail === 1 ? activeDet : det}>
-            {props.details.prizes.map(prizes => <p>{prizes}</p>)}
+            {props.details.dateDescription.split('&').map(date => <p>{date}</p>)}
+            <hr/>
+            <div className='details-tag'> Contact </div>
+            {props.details.contacts.map(contact => <p>{contact}</p>)}
           </div>
           <div className={activeDetail === 2 ? activeDet : det}>
-            {props.details.contacts.map(contact => <p>{contact}</p>)}
+            {props.details.prizes.map(prizes => <p>{prizes}</p>)}
           </div>
         </Fade>
       </div>

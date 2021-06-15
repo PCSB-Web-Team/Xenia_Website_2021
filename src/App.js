@@ -36,6 +36,7 @@ const App = (props) => {
       props.storeToken(userToken);
 
       props.loggedIn(res.data.data);
+      
     };
 
     // const PreLoader = document.getElementById("preLoader");
