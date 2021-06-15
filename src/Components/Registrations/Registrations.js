@@ -56,27 +56,19 @@ class Registrations extends Component {
                 </div>
               </div> */}
               <div className="schedule-date">
-                <h1>18 Fri</h1>
+                <h1>18th Fri</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>Dream Team</h2>
                   <p>10:00 to 15:00</p>
-                </div>
-                <div className="date-content">
-                  <h2>Technical Workshop 1</h2>
-                  <p>18:00 to 20:00</p>
                 </div>
               </div>
               <div className="schedule-date">
-                <h1>19 Sat</h1>
+                <h1>19th Sat</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>Dream Team</h2>
                   <p>10:00 to 15:00</p>
-                </div>
-                <div className="date-content">
-                  <h2>Technical Workshop 2</h2>
-                  <p>18:00 to 20:00</p>
                 </div>
                 <div className="date-content">
                   <h2>Shutter Speed - Day 1</h2>
@@ -84,15 +76,11 @@ class Registrations extends Component {
                 </div>
               </div>
               <div className="schedule-date">
-                <h1>20 Sun</h1>
+                <h1>20th Sun</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>Dream Team</h2>
                   <p>10:00 to 15:00</p>
-                </div>
-                <div className="date-content">
-                  <h2>Technical Workshop 3</h2>
-                  <p>18:00 to 20:00</p>
                 </div>
                 <div className="date-content">
                   <h2>Shutter Speed - Day 2</h2>
@@ -100,7 +88,7 @@ class Registrations extends Component {
                 </div>
               </div>
               <div className="schedule-date">
-                <h1>21 Mon</h1>
+                <h1>21st Mon</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>Dream Team</h2>
@@ -112,7 +100,7 @@ class Registrations extends Component {
                 </div>
               </div>
               <div className="schedule-date">
-                <h1>22 Tue</h1>
+                <h1>22nd Tue</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>Dream Team</h2>
@@ -128,7 +116,7 @@ class Registrations extends Component {
                 </div>
               </div>
               <div className="schedule-date">
-                <h1>23 Wed</h1>
+                <h1>23rd Wed</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>DataCup (Both Rounds)</h2>
@@ -140,7 +128,7 @@ class Registrations extends Component {
                 </div>
               </div>
               <div className="schedule-date">
-                <h1>24 Thu</h1>
+                <h1>24th Thu</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>DataCup (Both Rounds)</h2>
@@ -152,7 +140,7 @@ class Registrations extends Component {
                 </div>
               </div>
               <div className="schedule-date">
-                <h1>25 Fri</h1>
+                <h1>25th Fri</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>DataCup (Both Rounds)</h2>
@@ -200,11 +188,7 @@ class Registrations extends Component {
                 </div>
                 <div className="date-content">
                   <h2>Xe-Natus (Round 1)</h2>
-                  <p>21:00 to 22:00</p>
-                </div>
-                <div className="date-content">
-                  <h2>Xe-Natus (Round 2)</h2>
-                  <p>22:30 to 23:00</p>
+                  <p>22:00 to 22:30</p>
                 </div>
                 <div className="date-content">
                   <h2>Game Zone</h2>
@@ -212,7 +196,7 @@ class Registrations extends Component {
                 </div>
               </div>
               <div className="schedule-date">
-                <h1>26 Sat</h1>
+                <h1>26th Sat</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>DataCup (Both Rounds)</h2>
@@ -263,12 +247,16 @@ class Registrations extends Component {
                   <p>19:30 to 22:30</p>
                 </div>
                 <div className="date-content">
+                  <h2>Xe-Natus (Round 2)</h2>
+                  <p>22:30 to 23:00</p>
+                </div>
+                <div className="date-content">
                   <h2>Game Zone</h2>
                   <p>18:00 onwards</p>
                 </div>
               </div>
               <div className="schedule-date">
-                <h1>27 Sun</h1>
+                <h1>27th Sun</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>DataCup (Both Rounds)</h2>
@@ -304,7 +292,7 @@ class Registrations extends Component {
                 </div>
               </div>
               <div className="schedule-date">
-                <h1>28 Mon</h1>
+                <h1>28th Mon</h1>
                 <hr></hr>
                 <div className="date-content">
                   <h2>Prize Distribution Ceremony (Valedictory)</h2>
