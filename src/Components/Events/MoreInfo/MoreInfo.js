@@ -127,7 +127,7 @@ const MoreInfo = (props) => {
             {/* { details.dateDescription.split('&').map( (line,i) => <div className='date'> Round {' ', i+1} - {line} </div>) }          */}
             
             <h5 className='platform'> Platform </h5>
-            <div className='platform-details'> {details.platform.split('&').map( eve => <div> {eve} </div> )} </div>
+            <div className='platform-details'> {details.platform.split('&').map( (eve, i) => <div key={i}> {eve} </div> )} </div>
 
             <p className="lead">{details.details}</p>
 

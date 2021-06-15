@@ -24,16 +24,16 @@ export default function SimpleTabs(props) {
       <div className='mi-details'>
         <Fade>
           <div className={activeDetail === 0 ? activeDet : det}>
-            {props.details.rules.map((rule) => <p>{rule}</p>)}
+            {props.details.rules.map((rule, i) => <p key={i}>{rule}</p>)}
           </div>
           <div className={activeDetail === 1 ? activeDet : det}>
-            {props.details.dateDescription.split('&').map(date => <p>{date}</p>)}
+            {props.details.dateDescription.split('&').map((date,i) => <p key={i}>{date}</p>)}
             <hr/>
             <div className='details-tag'> Contact </div>
-            {props.details.contacts.map(contact => <p>{contact}</p>)}
+            {props.details.contacts.map((contact,i) => <p key={i}>{contact}</p>)}
           </div>
           <div className={activeDetail === 2 ? activeDet : det}>
-            {props.details.prizes.map(prizes => <p>{prizes}</p>)}
+            {props.details.prizes.map((prizes,i) => <p key={i}>{prizes}</p>)}
           </div>
         </Fade>
       </div>
