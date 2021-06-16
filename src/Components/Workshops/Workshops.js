@@ -3,7 +3,7 @@ import "./Workshops.css";
 
 // import WorkShop from '../../Assets/Images/Workshops/workshop.jpg';
 import Airvana from '../../Assets/Images/Workshops/airavana-logo.svg';
-import Blockchain from '../../Assets/Images/Workshops/blockchain.jpg';
+// import Blockchain from '../../Assets/Images/Workshops/blockchain.jpg';
 // import PlaceMent from '../../Assets/Images/Workshops/placement1.jpg';
 import Company from '../../Assets/Images/Workshops/company.jpg';
 // import Future from '../../Assets/Images/Workshops/future.jpg';
@@ -11,8 +11,6 @@ import Main from '../../Assets/Images/Workshops/main.png';
 import Evolve from '../../Assets/Images/Workshops/evole-logo.png';
 import IDBI from '../../Assets/Images/Workshops/idbi.png';
 import Etherium from '../../Assets/Images/Workshops/etherium.jpg';
-
-
 
 import { getWorkshopDetails, getWorkshopMoreInfo } from '../Config/api/User';
 import { anErrorOccured } from '../Notifications/Notification';
