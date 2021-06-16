@@ -163,7 +163,7 @@ const Workshops = (props) => {
               <div className='platform col-12'> Platform: {details.workshopDetails.platform} </div>
 
               <h3 className='col-12 agenda-head'> Agenda </h3>
-              <div className='col-12 agenda-content'> {details.workshopDetails.agenda.map( eve => <p>{eve}</p> )} </div>
+              <div className='col-12 agenda-content'> <ul> {details.workshopDetails.agenda.map( eve => <li> {eve}</li> )} </ul> </div>
 
             </div>
           </div> : null}

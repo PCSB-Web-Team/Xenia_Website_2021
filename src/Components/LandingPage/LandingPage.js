@@ -8,7 +8,6 @@ import Mountain from "../../Assets/Images/LandingPage/mid.png";
 import Moon from "./Moon/Moon";
 import Shuttle from "../../Assets/Images/LandingPage/shuttle.png";
 import Loader from "../Loader/Loader";
-import { Fade } from "react-bootstrap";
 
 const LandingPage = () => {
   const [loading, setLoading] = useState(true);

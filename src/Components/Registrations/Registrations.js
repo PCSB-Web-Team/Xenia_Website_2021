@@ -86,7 +86,7 @@ class Registrations extends Component {
                 </div>
                 <div className="date-content">
                   <h2>Industry Talks: Introduction to Blockchain Technology</h2>
-                  <p>17:30 to 19:00</p>
+                  <p>17:30 to 18:30</p>
                 </div>
                 <div className="date-content">
                   <h2>Dream Team</h2>

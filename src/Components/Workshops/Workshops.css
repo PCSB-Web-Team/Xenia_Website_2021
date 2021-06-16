@@ -49,6 +49,8 @@
   }
 }
 
+
+/* 
 .sessions {
   background-color: rgba(0, 0, 0, 0.3);
   min-height: 80vh;
@@ -95,7 +97,6 @@
   left: 0px;
   width: 100%;
   transition: 1s ease-out;
-  /* filter: grayscale(50%); */
 }
 
 .session-card .image .image-inner {
@@ -165,30 +166,71 @@
   height: 100%;
 
   bottom: 0px;
-}
+} 
+*/
 
-@media (max-width: 450px) {
-
-  .session-card {
-    width: 80%;
-    min-width: unset;
-    margin: 0px;
-    overflow: hidden;
-  }
-  
-}
-/* 
-#work2{
-  background: url('../../Assets/Images/Workshops/evole-logo.png');
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-} */
-
-.workshops-tag{
+.workshops-tag {
   width: 100%;
   font-family: 'SansBold';
   text-align: center;
   color: aqua;
   margin-bottom: 20px;
+}
+
+.workshop-card {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to right, black 50%, rgba(0, 255, 255, 0.2));
+  margin-block: 30px;
+}
+
+.session-logos {
+  height: 300px;
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.session-logos img {
+  width: 300px;
+}
+
+.session-contents .title{
+  color: rgba(0, 255, 255, 0.8);
+  width: 100%;
+  font-family: 'SansBold';
+  font-size: 32px;
+}
+
+.session-contents .date{
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'SansBold';
+  font-size: 25px;
+  width: 100%;
+}
+
+.session-contents .more-info{
+  background: none;
+  font-size: 20px;
+  font-family: 'SansBold';
+  color: rgba(0, 143, 143, 0.8);
+}
+
+@media (max-width: 450px) {
+  .workshop-card{
+    text-align: center;
+    background: linear-gradient( black 50%, rgba(0, 255, 255, 0.2));
+  }
+  .session-contents .title{
+    margin-top: 10px;
+    font-size: 25px;
+  }
+  .session-contents .title{
+    font-size: 20px;
+  }
+.session-contents .more-info{
+    font-size: 18px;  
+}
 }
