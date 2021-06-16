@@ -90,7 +90,7 @@ const Workshops = (props) => {
 
                   <div className='overlay'></div>
                   <div className='title'> {eve.workshopDetails.name} </div>
-                  <div className='workshop-agenda'> { eve.workshopDetails.agenda } </div>
+                  {/* <div className='workshop-agenda'> { eve.workshopDetails.agenda } </div> */}
                
                 </div>
               

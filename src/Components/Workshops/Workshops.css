@@ -107,7 +107,6 @@
 .session-card .image-inner img{
   transition: 1s ease-out;
   height: 100%;
-  width: 100%;
 }
 
 .session-card:hover img {
