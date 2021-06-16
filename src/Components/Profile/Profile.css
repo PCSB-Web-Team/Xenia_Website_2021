@@ -13,7 +13,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  height: 100vh;
+  height: fit-content;
   margin: 20px;
   margin-top: 0px;
 }
@@ -74,15 +74,17 @@
 
 .RegP {
   font-size: 2.5em;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
 
   line-height: 60px;
-
+/* 
   text-decoration: underline;
 
-  text-decoration-color: #46bcde;
+  text-decoration-color: #46bcde; */
+  
   font-family: 'Barlow';
+  text-align: left;
 }
 
 .Regdiv:hover {
@@ -283,12 +285,14 @@
   flex-flow: column;
   justify-content: space-between;
   width: 70%;
-  height: 60vh;
+  height: fit-content;
 }
 
 .profile-left,.profile-right{
   height: 400px;
   display: flex;
+  margin-bottom: 20px;
+  width: 100%;
   flex-flow: column;
   align-items: center;
   text-align: center;
@@ -303,12 +307,14 @@
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
+  width: 100%;
 }
 
 .registered-workshops-list{
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
+  width: 100%;
 }
 
 .no-registered{
@@ -328,6 +334,12 @@
   .profile-left>h1,.profile-right>h1{
     font-size: 2em;
   }
+  .profile-right{
+    padding: 0;
+  }
+  .profile-left{
+    height: 300px;
+  }
 }
 
 @media (min-width:701px) and (max-width:950px){
@@ -337,4 +349,32 @@
   .RegP{
     font-size: 1.5em;
   }
+}
+
+.registered-events-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.registered-events-list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.registered-events-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 247, 255, 0.418);
+}
+
+.registered-workshops-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.registered-workshops-list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.registered-workshops-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 247, 255, 0.418);
 }

@@ -57,7 +57,7 @@ const LandingPage = () => {
           <div className="logo-container">
             <Zoom bottom>
               <img src={XeniaLogo} alt="" />
-              <div className="event-tag">Where Passion Meets Perception</div>
+              <div className="event-tag">Where Passion Meets Perfection</div>
               <div className="event-date">
                 25<sup>th</sup> - 27<sup>th</sup> June
               </div>
