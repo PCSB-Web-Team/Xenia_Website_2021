@@ -213,3 +213,40 @@
     max-width: 90%;
   }
 }
+
+
+.landing-page-message{
+  position: absolute;
+  text-align: left;
+  z-index: 100;
+  width: 100%;
+  bottom: 40px;
+  left: 40px;
+}
+
+.landing-page-message .message1{
+  font-family: 'SansBold';
+  font-size: 32px;
+  color: rgba(0, 255, 255, 0.8);
+}
+
+.landing-page-message .message2{
+  font-family: 'SansBold';
+  font-size: 32px;
+  color: rgba(0, 255, 255, 0.8);
+}
+
+@media (max-width: 450px) {
+
+.landing-page-message{
+  bottom: 20px;
+  left: 20px;
+}
+
+.landing-page-message .message1{
+  font-size: 20px;
+}
+.landing-page-message .message2{
+  font-size: 20px;
+}
+}

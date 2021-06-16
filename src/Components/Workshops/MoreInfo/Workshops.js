@@ -134,7 +134,7 @@ const Workshops = (props) => {
               <RegisterButton value="Register" onClick={props.logedIn ? openModal : props.openLogin} />}
           <h5>
             All attendees will be provided with an Industry Verified LinkedIn
-            Sharable E-Certificates
+            Sharable E-Certificate
           </h5>
         </div>
 

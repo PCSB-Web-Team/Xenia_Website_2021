@@ -73,3 +73,12 @@
     margin-bottom: 10px;
   }
 }
+
+.date-header-events{
+  font-family: 'SansBold';
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 25px;
+  margin-bottom: 10px;
+}

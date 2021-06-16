@@ -54,6 +54,8 @@ const Events = () => {
         <h1 className="header-name"> EVENTS </h1>
       </header>
 
+      <div className='date-header-events'>25<sup>th</sup> to 27<sup>th</sup> June 2021</div>
+
       {loading ? (
         <Loader />
       ) : (

@@ -33,9 +33,9 @@ class Registrations extends Component {
   render() {
     return (
       <>
-        <header className="page-headers">
+        {/* <header className="page-headers">
           <h1 className="header-name"> SCHEDULE </h1>
-        </header>
+        </header> */}
 
         <div className="schedule-container">
           <div className="schedule-left">
@@ -55,9 +55,22 @@ class Registrations extends Component {
                     <p>18:00 to 20:00</p>
                 </div>
               </div> */}
+              
+              <div className="schedule-date">
+                <h1>17th Thu</h1>
+                <hr></hr>
+                <div className="date-content">
+                  <h2>Industry Talks: You're Hired, An Unltimate Guide to Placements  </h2>
+                  <p>18:00 to 20:00</p>
+                </div>
+              </div>
               <div className="schedule-date">
                 <h1>18th Fri</h1>
                 <hr></hr>
+                <div className="date-content">
+                  <h2>Industry Talks: New Age Digital Banking Technology and Rapid Development</h2>
+                  <p>18:00 to 19:30</p>
+                </div>
                 <div className="date-content">
                   <h2>Dream Team</h2>
                   <p>10:00 to 15:00</p>
@@ -66,6 +79,15 @@ class Registrations extends Component {
               <div className="schedule-date">
                 <h1>19th Sat</h1>
                 <hr></hr>
+                
+                <div className="date-content">
+                  <h2>Industry Talks: Learn Everything about Building Minimum Viable Product</h2>
+                  <p>14:00 to 17:00</p>
+                </div>
+                <div className="date-content">
+                  <h2>Industry Talks: Introduction to Blockchain Technology</h2>
+                  <p>17:30 to 19:00</p>
+                </div>
                 <div className="date-content">
                   <h2>Dream Team</h2>
                   <p>10:00 to 15:00</p>
@@ -78,6 +100,14 @@ class Registrations extends Component {
               <div className="schedule-date">
                 <h1>20th Sun</h1>
                 <hr></hr>
+                <div className="date-content">
+                  <h2>Industry Talks: Self Awareness Through Emotional Intelligence Assessments</h2>
+                  <p>10:00 to 12:00</p>
+                </div>
+                <div className="date-content">
+                  <h2>Industry Talks: Future of IT Industry</h2>
+                  <p>17:30 to 19:00</p>
+                </div>
                 <div className="date-content">
                   <h2>Dream Team</h2>
                   <p>10:00 to 15:00</p>
@@ -93,6 +123,10 @@ class Registrations extends Component {
                 <div className="date-content">
                   <h2>Dream Team</h2>
                   <p>10:00 to 15:00</p>
+                </div>
+                <div className="date-content">
+                  <h2>Industry Talks: SWE Session</h2>
+                  <p>18:00 to 19:00</p>
                 </div>
                 <div className="date-content">
                   <h2>DataCup (Both Rounds)</h2>

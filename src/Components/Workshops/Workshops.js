@@ -22,11 +22,11 @@ const Workshops = (props) => {
 
   let imagesArray = [ 
     {src: Main},
-    {src: Etherium}, 
-    {src: Evolve}, 
-    {src: Airvana}, 
-    {src: Company},
     {src: IDBI},
+    {src: Company},
+    {src: Etherium},
+    {src: Evolve},  
+    {src: Airvana}, 
   ]
 
   const [details, setDetails] = useState({ workshopDetails: {}, })
@@ -67,13 +67,15 @@ const Workshops = (props) => {
       <div>
         <header className="page-headers">
           <h1 className="header-name"> Industry Talks </h1>
-          
         </header>
       </div>
 
+      <div className='date-header-events'>17<sup>th</sup> to 21<sup>th</sup> June 2021</div>
+
+
       <h5 className='workshops-tag'>
           All attendees will be provided with an Industry Verified LinkedIn
-          Sharable E-Certificates
+          Sharable E-Certificate
       </h5>
 
       {/*       

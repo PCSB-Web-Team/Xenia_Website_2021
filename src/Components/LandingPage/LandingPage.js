@@ -8,6 +8,7 @@ import Mountain from "../../Assets/Images/LandingPage/mid.png";
 import Moon from "./Moon/Moon";
 import Shuttle from "../../Assets/Images/LandingPage/shuttle.png";
 import Loader from "../Loader/Loader";
+import { Fade } from "react-bootstrap";
 
 const LandingPage = () => {
   const [loading, setLoading] = useState(true);
@@ -63,6 +64,15 @@ const LandingPage = () => {
               </div>
             </Zoom>
           </div>
+        </div>
+
+        <div className='landing-page-message'>
+            <div className='message1'>
+              Free Registrations
+            </div>
+            <div className='message2'>
+              Open for all Colleges
+            </div>
         </div>
       </div>
     </div>

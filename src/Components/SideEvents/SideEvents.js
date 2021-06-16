@@ -124,6 +124,8 @@ const SideEvents = (props) => {
           <h1 className="header-name"> Build Up Events </h1>
         </header>
 
+        <div className='date-header-events'>19<sup>th</sup> to 23<sup>th</sup> June 2021</div>
+
         {buildUpEvents.map((eve) => {
 
           return (
