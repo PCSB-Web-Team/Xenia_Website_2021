@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./Workshops.css";
 
 import WorkShop from '../../Assets/Images/Workshops/workshop.jpg';
+import Blockchain from '../../Assets/Images/Workshops/blockchain.jpg';
 import PlaceMent from '../../Assets/Images/Workshops/placement1.jpg';
 import Company from '../../Assets/Images/Workshops/company.jpg';
+import Future from '../../Assets/Images/Workshops/future.jpg';
 
 import { getWorkshopDetails, getWorkshopMoreInfo } from '../Config/api/User';
 import { anErrorOccured } from '../Notifications/Notification';
@@ -13,9 +15,16 @@ import { Link, useParams } from 'react-router-dom';
 
 const Workshops = (props) => {
 
+  let imagesArray = [ 
+    {src: WorkShop},
+    {src: Blockchain}, 
+    {src: PlaceMent}, 
+    {src: Future}, 
+    {src: Company}
+  ]
+
   const [details, setDetails] = useState({ workshopDetails: {}, })
   const [loading, setLoading] = useState(true)
-
 
   useEffect(() => {
     fetchData();
@@ -68,11 +77,15 @@ const Workshops = (props) => {
       <div className='container-fluid text-center'>
 
         {
-          details.map(eve => {
+          details.map( (eve,i) => {
             return (
               <Link to={`/industry-talks/${eve._id}`}>
                 <div className='session-card'>
-                  <img src={WorkShop}></img>
+                  <div className='image'>
+                    <div className='image-inner'>
+                      <img src={imagesArray[i].src}/>
+                    </div>
+                  </div>
                   <div className='overlay'></div>
                   <div className='title'> {eve.workshopDetails.name} </div>
                   <div className='workshop-agenda'> { eve.workshopDetails.agenda } </div>
