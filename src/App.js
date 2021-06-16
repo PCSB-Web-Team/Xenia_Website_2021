@@ -82,10 +82,10 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        {/* <Route exact path="/industry-talks/info">
+        <Route exact path="/industry-talks/info">
           <SessionInfo />
           <Footer />
-        </Route> */}
+        </Route>
 
         <Route exact path="/profile">
           {props.login ? (

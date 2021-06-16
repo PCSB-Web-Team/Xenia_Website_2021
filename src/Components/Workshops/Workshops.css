@@ -49,7 +49,6 @@
   }
 }
 
-
 .sessions {
   background-color: rgba(0, 0, 0, 0.3);
   min-height: 80vh;
@@ -66,7 +65,8 @@
   display: inline-block;
   color: white;
   height: 600px;
-  width: 20%;
+  width: 30%;
+  margin: 10px;
 
   min-width: 300px;
 
@@ -134,7 +134,7 @@
   align-items: center;
   justify-content: space-around;
 
-  bottom: 40px;
+  bottom: 60px;
   left: 0px;
   
   font-family: 'SansBold';

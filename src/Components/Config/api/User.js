@@ -61,6 +61,10 @@ export const getEventDetails = (id) => {
   return axiosInstance.get(`/events/${id}`);
 };
 
+export const getWorkshopDetails = () => {
+  return axiosInstance.get(`/workshops`);
+};
+
 export const contactus = (data) => {
   return axiosInstance.post("/contact-us", data);
 };
