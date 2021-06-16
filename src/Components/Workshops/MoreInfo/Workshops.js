@@ -181,14 +181,13 @@ const Workshops = (props) => {
                     <a href={speaker.linkedin} target='_blanck'>LinkedIn</a>
                   </div>
 
-                  <div className='col-12 achievements text-center'>
+                  <div className='col-12 achievements text-center mt-3'>
                     <h5 className='speaker-key'> Achievements </h5>
-                    <div className='speaker-value'> {speaker.achievements} </div>
+                    <div className='speaker-value'> { speaker.achievements.map( eve => <div>{eve}</div> ) } </div>
                   </div>
-
-                  <div className='col-12 experience text-center'>
+                  <div className='col-12 experience text-center mt-3'>
                     <h5 className='speaker-key'>Experience </h5>
-                    <div className='speaker-value'> {speaker.experience} </div>
+                    <div className='speaker-value'> {speaker.experience.map( eve => <div> {eve} </div> ) } </div>
                   </div>
 
                 </div>

@@ -73,23 +73,27 @@ const Workshops = (props) => {
       </div> 
       */}
 
-
       <div className='container-fluid text-center'>
 
         {
           details.map( (eve,i) => {
             return (
               <Link to={`/industry-talks/${eve._id}`}>
+
                 <div className='session-card'>
+                  
                   <div className='image'>
-                    <div className='image-inner'>
+                    <div className='image-inner' id={`work${i}`}>
                       <img src={imagesArray[i].src}/>
                     </div>
                   </div>
+
                   <div className='overlay'></div>
                   <div className='title'> {eve.workshopDetails.name} </div>
                   <div className='workshop-agenda'> { eve.workshopDetails.agenda } </div>
+               
                 </div>
+              
               </Link>
             )
           })

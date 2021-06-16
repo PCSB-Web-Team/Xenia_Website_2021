@@ -107,6 +107,7 @@
 .session-card .image-inner img{
   transition: 1s ease-out;
   height: 100%;
+  width: 100%;
 }
 
 .session-card:hover img {
@@ -152,6 +153,7 @@
   font-size: 32px;
 
   transition: ease-out 500ms;
+
 }
 
 .session-card:hover .title {
@@ -171,4 +173,8 @@
     overflow: hidden;
   }
   
+}
+
+#work2{
+  background: url('../../Assets/Images/Workshops/workshop.jpg');
 }
