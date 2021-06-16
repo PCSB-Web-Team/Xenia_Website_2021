@@ -5,16 +5,17 @@ import WorkShop from '../../Assets/Images/Workshops/workshop.jpg';
 import PlaceMent from '../../Assets/Images/Workshops/placement1.jpg';
 import Company from '../../Assets/Images/Workshops/company.jpg';
 
-import { getWorkshopDetails } from '../Config/api/User';
+import { getWorkshopDetails, getWorkshopMoreInfo } from '../Config/api/User';
 import { anErrorOccured } from '../Notifications/Notification';
 import Loader from '../Loader/Loader';
 
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Workshops = (props) => {
 
-  const [details, setDetails] = useState([])
+  const [details, setDetails] = useState({ workshopDetails: {}, })
   const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
     fetchData();
@@ -24,7 +25,6 @@ const Workshops = (props) => {
 
     try {
       const res = await getWorkshopDetails();
-      console.log(res);
 
       if (res.data.ok) {
         setDetails(res.data.data);
@@ -70,12 +70,12 @@ const Workshops = (props) => {
         {
           details.map(eve => {
             return (
-              <Link to='/industry-talks/info'>
+              <Link to={`/industry-talks/${eve._id}`}>
                 <div className='session-card'>
                   <img src={WorkShop}></img>
                   <div className='overlay'></div>
-                  <div className='title'> {eve.name} </div>
-                  <div className='workshop-agenda'> { eve.agenda } </div>
+                  <div className='title'> {eve.workshopDetails.name} </div>
+                  <div className='workshop-agenda'> { eve.workshopDetails.agenda } </div>
                 </div>
               </Link>
             )

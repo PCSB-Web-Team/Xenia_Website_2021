@@ -82,7 +82,7 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        <Route exact path="/industry-talks/info">
+        <Route exact path="/industry-talks/:id">
           <SessionInfo />
           <Footer />
         </Route>

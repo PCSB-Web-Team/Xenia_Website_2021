@@ -32,12 +32,37 @@ const MyProf = (props) => {
     );
   });
 
+  let workshopList = props.registeredWorkshops.map((eve, i) => {
+    return (
+      <div className="Regdiv row" key={eve._id}>
+        <h3 className="RegP col-12" onMouseEnter={() => handleMouse(eve.logo, eve.isTechnical)}>
+          {eve.workshopDetails.name}
+        </h3>
+      </div>
+    );
+  });
+
   return (
 
     <div className="ProfCard">
       <header className='page-headers'><h1 className='header-name'> {props.userName} </h1></header>
 
-      {
+      <div className="profile-inner">
+        <div className="profile-left">
+          <h1>Registered Events</h1>
+          <div className="registered-events-list">
+            {list.length===0 ?   <p className="no-registered">No Registered Events</p> : list}
+          </div>
+        </div>
+        <div className="profile-right">
+          <h1>Registered Workshops</h1>
+          <div className="registered-workshops-list">
+          {workshopList.length===0 ?   <p className="no-registered">No Registered Events</p> : workshopList}
+          </div>
+        </div>
+      </div>
+
+      {/* {
         list.length === 0
           ?
           <h1 className="noRegistered">No Registered Events</h1>
@@ -56,7 +81,7 @@ const MyProf = (props) => {
             )} </div>
             <div className='col-lg-4 col-0 event-logo'> <img src={eveLogo} alt=''></img> </div>
           </div>
-      }
+      } */}
 
       {/* <div className="registeredEventsContainer">
         <div className="registeredEvents">
@@ -103,6 +128,7 @@ const MyProf = (props) => {
 const mapStatesToProps = (state) => {
   return {
     registeredEvents: state.userData.registeredEvents,
+    registeredWorkshops: state.userData.registeredWorkshops,
     userName: state.userData.name
   };
 };

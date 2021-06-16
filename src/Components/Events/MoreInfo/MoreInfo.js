@@ -142,7 +142,7 @@ const MoreInfo = (props) => {
                 }}
               >
                 <Themebutton
-                  onClick={props.isLoggedIn ? openModal : props.openLogin}
+                  onClick={props.isLoggedIn ? openModal : props.openLogin }
                   value="Register Now"
                 />
               </div>

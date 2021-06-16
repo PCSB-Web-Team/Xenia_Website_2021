@@ -73,7 +73,7 @@
 }
 
 .RegP {
-  font-size: 3em;
+  font-size: 2.5em;
   color: white;
   font-weight: 300;
 
@@ -82,6 +82,7 @@
   text-decoration: underline;
 
   text-decoration-color: #46bcde;
+  font-family: 'Barlow';
 }
 
 .Regdiv:hover {
@@ -274,5 +275,66 @@
 
   .usernameHeading h1{
     font-size: 2.5rem;
+  }
+}
+
+.profile-inner{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 70%;
+  height: 60vh;
+}
+
+.profile-left,.profile-right{
+  height: 400px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-left>h1,.profile-right>h1{
+  color: white;
+  font-size: 2.8em;
+}
+
+.registered-events-list{
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.registered-workshops-list{
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.no-registered{
+  color: white;
+  font-size: 2rem;
+}
+
+@media(max-width:700px){
+  .profile-inner{
+    flex-flow: column;
+    width: 90%;
+  }
+  .RegP{
+    font-size: 1.5em;
+    line-height: 1;
+  }
+  .profile-left>h1,.profile-right>h1{
+    font-size: 2em;
+  }
+}
+
+@media (min-width:701px) and (max-width:950px){
+  .profile-inner{
+    width: 80%;
+  }
+  .RegP{
+    font-size: 1.5em;
   }
 }

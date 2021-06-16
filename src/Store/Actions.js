@@ -4,6 +4,7 @@ export const ADDTOREGISTERED = 'ADDTOCART';
 export const GETEVENTDATA = 'GETEVENTDATA';
 export const STORETOKEN  =  'STORETOKEN';
 export const SETREGISTEREDBUILDUPEVENTS = 'SETREGISTEREDBUILDUPEVENTS';
+export const REGISTERWORKSHOP = "REGISTERWORKSHOP";
 
 export const OPENLOGIN = 'OPENLOGIN';
 export const OPENSIGNUP = 'OPENSIGNUP';
@@ -38,6 +39,13 @@ export const getEventData = (eveData) => {
     return {
         type: GETEVENTDATA,
         payload: eveData
+    }
+}
+
+export const registerWorkshop = (eve) => {
+    return{
+        type: REGISTERWORKSHOP,
+        payload: eve
     }
 }
 

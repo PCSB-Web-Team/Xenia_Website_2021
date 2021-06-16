@@ -22,7 +22,8 @@ const reducer = (state = defaultState, action) => {
 				token: '',
 				userData: {
 					registeredBuildUpEvents: [],
-					registeredEvents: []
+					registeredEvents: [],
+					registeredWorkshops: [],
 				},
 				login: false,
 			};
@@ -68,6 +69,15 @@ const reducer = (state = defaultState, action) => {
 				},
 			};
 
+		case actions.REGISTERWORKSHOP:
+			return{
+				...state,
+				userData: {
+					...state.userData,
+					registeredWorkshops: [ ...state.userData.registeredWorkshops, action.payload],
+				},
+			}
+		
 		case actions.SETREGISTEREDBUILDUPEVENTS:
 			return {
 				...state,

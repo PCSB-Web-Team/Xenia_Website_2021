@@ -1,30 +1,133 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import './Workshops.css';
-
 import RegisterButton from '../../Button/button';
+import { useParams, useHistory } from 'react-router-dom';
+import { getWorkshopMoreInfo } from '../../Config/api/User';
+import { anErrorOccured, registrationFail, registrationSuccess } from '../../Notifications/Notification';
+import { connect } from 'react-redux';
+
+import Modal from './Modal/Modal';
+
+import { registerWorkshop, openLogin } from '../../../Store/Actions';
+import { registerWorkshopRequest } from "../../Config/api/User";
 
 const Workshops = (props) => {
 
   const [currentInfo, setCurrentInfo] = useState('Details')
+  const [details, setDetails] = useState({ workshopDetails: {}, companyDetails: {}, speakersDetails: {} })
+  const [registered, setRegistered] = useState(false);
+
+  const [showModal, setShowModal] = useState(false);
+  const [registerLoading, setRegisterLoading] = useState(false);
+
+  let { id } = useParams();
+  let history = useHistory();
+
+  const checkRegistered = () => {
+
+    if (!props.registeredEvents) {
+      history.push('/industry-talks');
+      return;
+    }
+
+    setRegistered(false);
+
+    props.registeredEvents.forEach((eve) => {
+      if (eve._id === id) {
+        setRegistered(true);
+        console.log(eve._id, id);
+      }
+    });
+
+  };
+
+  useEffect(() => {
+    fetchData();
+    checkRegistered();
+  }, [id])
+
+  const fetchData = async () => {
+
+    try {
+
+      const res = await getWorkshopMoreInfo(id);
+
+      if (res.data.ok) {
+        // const data = res.data.data.filter(eve => eve._id === id)
+        // console.log(res.data.data, "MoreInfo")
+        setDetails(res.data.data);
+      }
+      else {
+        anErrorOccured();
+      }
+
+    }
+    catch (error) {
+      history.push("/industry-talks");
+    }
+  }
+
+  const registerNow = async () => {
+
+    setRegisterLoading(true);
+
+    try {
+
+      const res = await registerWorkshopRequest(details, props.token);
+
+      console.log(res);
+
+      if (res.data.ok) {
+        setRegistered(() => true);
+        props.register(details);
+        setRegisterLoading(false);
+        registrationSuccess();
+        history.push(`/industry-talks/${id}`);
+      }
+      else {
+        anErrorOccured();
+      }
+
+    }
+    catch (error) {
+      registrationFail();
+    }
+
+    closeModal();
+  }
+
+  const openModal = () => {
+    setShowModal(true);
+    setRegisterLoading(false);
+  }
+
+  const closeModal = () => {
+    setShowModal(false);
+  }
 
   return (
     <>
 
       <div>
         <header className="page-headers">
-          <h1 className="header-name"> WORKSHOPS Info </h1>
+          <div className="header-workshop"> {details.workshopDetails.name} </div>
         </header>
       </div>
 
-      <div className='row text-center text-light'>
-        <div className='col-12'>
-          <RegisterButton value='Register'/>
-        </div>
-        <h5 className='col-12'>
-          All attendees will be provided with a Industry Verified LinkedIn Sharable E-Certificates
+      <div className="workshop-register-cont">
+        {
+          registered
+            ?
+            <div className='already-registered'>Registered</div>
+            :
+            <RegisterButton value="Register" onClick={ props.logedIn ? openModal : props.openLogin } />}
+        <h5>
+          All attendees will be provided with an Industry Verified LinkedIn
+          Sharable E-Certificates
         </h5>
       </div>
+
+      <Modal showModal={showModal} closeModal={closeModal} load={registerLoading} handleRegister={registerNow} />
 
       {/* <div className="workshops-coming-soon">
         <div className="workshops-date">
@@ -36,171 +139,122 @@ const Workshops = (props) => {
       <div className='container workshop-info'>
 
         <div className='row tab-row'>
-          <h3 className={currentInfo === 'Details' ? 'col-4 tab active-tab' : 'col-4 tab'} onClick={() => setCurrentInfo('Details')}> Workshop Details </h3>
-          <h3 className={currentInfo === 'Company' ? 'col-4 tab active-tab' : 'col-4 tab'} onClick={() => setCurrentInfo('Company')}> Company Details </h3>
-          <h3 className={currentInfo === 'Speaker' ? 'col-4 tab active-tab' : 'col-4 tab'} onClick={() => setCurrentInfo('Speaker')}> Speaker's Info </h3>
+          <div className={currentInfo === 'Details' ? 'col-4 tab active-tab' : 'col-4 tab'} onClick={() => setCurrentInfo('Details')}> Workshop Details </div>
+          <div className={currentInfo === 'Company' ? 'col-4 tab active-tab' : 'col-4 tab'} onClick={() => setCurrentInfo('Company')}> Company Details </div>
+          <div className={currentInfo === 'Speaker' ? 'col-4 tab active-tab' : 'col-4 tab'} onClick={() => setCurrentInfo('Speaker')}> Speaker's Info </div>
         </div>
 
         {currentInfo === 'Details' ? <div>
+          <div className='row workshop-details'>
 
-          <div className='info row'>
+            <div className='date col-12'> Date: {details.workshopDetails.date} </div>
+            <div className='time col-12'> Time: {details.workshopDetails.time} </div>
+            <div className='platform col-12'> Platform: {details.workshopDetails.platform} </div>
 
-            <div className='date col-12'> Date: 17th June 2021 </div>
-            <div className='time col-12 '> Time: 6:00 pm to 8:00 pm </div>
-            <div className='platform col-12'> Platform: Ms Teams </div>
-            
-            <h3 className='col-12 mt-3 text-left'> Agenda </h3>
-            <div className='col-12 text-left'> -> To completely guide the attendees about internships, study pattern, placement, job opportunities and to answer all your questions by exemplary seniors of PICT </div>
-            <div className='col-12 text-left'> -> To completely guide the attendees about internships, study pattern, placement, job opportunities and to answer all your questions by exemplary seniors of PICT </div>
-            <div className='col-12 text-left'> -> To completely guide the attendees about internships, study pattern, placement, job opportunities and to answer all your questions by exemplary seniors of PICT </div>
+            <h3 className='col-12 agenda-head'> Agenda </h3>
+            <div className='col-12 agenda-content'> {details.workshopDetails.agenda} </div>
 
           </div>
-
         </div> : null}
 
-        {currentInfo === 'Speaker' ? <div>
+        {currentInfo === 'Speaker' ?
 
-          <div className='row my-3'>
-            <div className='col-4'>
-              <div className='row'>
-                Photo
-              </div>
-              <div className='row'>
-                Name:
-              </div>
-            </div>
-            <div className='col-8'>
-              <div className='row'>
-                Designation:
-              </div>
-              <div className='row'>
-                Linked In :
-              </div>
-              <div className='row'>
-                Achievements :
-              </div>
-              <div className='row'>
-                Experience :
-              </div>
-            </div>
-          </div>
-          <div className='row my-3'>
-            <div className='col-4'>
-              <div className='row'>
-                Photo
-              </div>
-              <div className='row'>
-                Name:
-              </div>
-            </div>
-            <div className='col-8'>
-              <div className='row'>
-                Designation:
-              </div>
-              <div className='row'>
-                Linked In :
-              </div>
-              <div className='row'>
-                Achievements :
-              </div>
-              <div className='row'>
-                Experience :
-              </div>
-            </div>
-          </div>
-          <div className='row my-3'>
-            <div className='col-4'>
-              <div className='row'>
-                Photo
-              </div>
-              <div className='row'>
-                Name:
-              </div>
-            </div>
-            <div className='col-8'>
-              <div className='row'>
-                Designation:
-              </div>
-              <div className='row'>
-                Linked In :
-              </div>
-              <div className='row'>
-                Achievements :
-              </div>
-              <div className='row'>
-                Experience :
-              </div>
-            </div>
-          </div>
+          details.speakersDetails.map(speaker => {
+            return (
 
-        </div> : null}
+              <div className='speaker-container'>
+                <div className='row my-3 speaker'>
 
-        {currentInfo === 'Company' ? <div>
+                  <div className='col-12 photo text-center'>
+                    <img src={speaker.img} alt=''></img>
+                  </div>
 
-          <div className='row my-3'>
-            <h1 className='col-12'> Company Logo</h1>
-          </div>
+                  <h3 className='col-12 speaker text-center'>
+                    {speaker.name}
+                  </h3>
 
-          <div className='row my-3'>
-            <div className='col-12'> Evolvwise Technologies Pvt. Ltd. </div>
-          </div>
+                  <div className='col-12 designation text-center'>
+                    <div className='speaker-key'>Designation - </div> <div className='speaker-value'>{speaker.designation}</div>
+                  </div>
 
-          <div className='row my-3'>
-            <div className='col-12'> <a href='www.google.com' target='_blank'> www.google.com </a> </div>
-          </div>
+                  <div className='col-12 linkedin text-center'>
+                    <a href={speaker.linkedin} target='_blanck'>LinkedIn</a>
+                  </div>
 
-          <div className='row my-3'>
-            <div className='col-12'> Brand Name: Evolve Life Coaching App </div>
-          </div>
+                  <div className='col-12 achievements text-center'>
+                    <h5 className='speaker-key'> Achievements </h5>
+                    <div className='speaker-value'> {speaker.achievements} </div>
+                  </div>
 
-          <div className='row my-3'>
-            <div className='col-12'>
-              <p>Evolve is a platform which helps people find clarity and evoke solutions from within. </p>
-              <p>In India, when people need help or clarity in professional or personal life they look towards therapy or counselling, when instead coaching would be more effective. Evolve aims to find the right coach for such people while allowing them to maintain their anonymity. </p>
-              <p>In India, when people need help or clarity in professional or personal life they look towards therapy or counselling, when instead coaching would be more effective. Evolve aims to find the right coach for such people while allowing them to maintain their anonymity. </p>
-            </div>
-          </div>
+                  <div className='col-12 experience text-center'>
+                    <h5 className='speaker-key'>Experience </h5>
+                    <div className='speaker-value'> {speaker.experience} </div>
+                  </div>
 
-          <div className='row my-3'>
-            <div className='col-12'> Social Media Links </div>
-            <div className='col-12'>
-              <a href='www.google.com' target='_blank'> Facebook </a>|
-              <a href='www.google.com' target='_blank'> Instagram </a>|
-              <a href='www.google.com' target='_blank'> LinkedIn </a>
-            </div>
-          </div>
+                </div>
+              </div>
+            )
+          })
 
-        </div>
           : null}
 
-        {/* 
-        <div className='info'>
-          <h3> To completely guide the attendees about internships, study pattern, placement, job opportunities and to answer all your questions by exemplary seniors of PICT </h3>
-          <div className='date'> 17th June 2021 </div>
-          <div className='time'> 6:00 pm to 8:00 pm </div>
-          <div className='platform'> Platform: Ms Teams </div>
-        </div>
+        {currentInfo === "Company" ?
+          <div className="company-details">
+            {details.companyDetails.map(company => {
+              return (
+                (
+                  <div className="company">
 
-        <div className='persons'>
-          <div className='row'>
-            <div className='col-4 image'>Image</div>
-            <div className='col-8 details'>Details and Position</div>
-          </div>
-        </div>
-          <div className='row'>
-            <div className='col-4 image'>Image</div>
-            <div className='col-8 details'>Details and Position</div>
-          </div>
-          <div className='row'>
-            <div className='col-4 image'>Image</div>
-            <div className='col-8 details'>Details and Position</div>
-          </div>
-          <div className='row'>
-            <div className='col-4 image'>Image</div>
-            <div className='col-8 details'>Details and Position</div>
-          </div>
+                    <img src={company.companyLogo} alt="company logo" />
+                    <h3 className="company-name"> {company.companyName} </h3>
 
-        <div className='contact'> Satyajit : +91 70289 29568 </div> */}
+                    <a href={company.companyWebsite} target="_blank">
+                      {" "}
+                      Website{""}
+                    </a>
+                    {/* 
+                  <h4 className="company-brand">
+                    Brand Name
+                  </h4>
+                  <p className="company-brand-name">{company.brandName}</p> */}
+                    {/* 
+                  <div className="company-tasks">
+                    {
+                      company.description.map(desc => {
+                        return (
+                          <p>
+                            ● {desc}
+                          </p>
+                        )
+                      })
+                    }
+                  </div> */}
+
+                    <div className="company-links">
+                      <h4> Social Media Links </h4>
+                      <div className="company-links-inner text-center">
+                        {/*                       
+                      <a href="www.google.com" target="_blank">
+                        <i className="fa fa-facebook-official" ariaHidden="true"></i>
+                      </a>
+
+                      <a href="www.google.com" target="_blank">
+                        <i className="fa fa-instagram" ariaHidden="true"></i>
+                      </a> */}
+
+                        <a href={company.linkedin} target="_blank">
+                          <i className="fa fa-linkedin" ariaHidden="true"></i>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+
+                )
+              )
+            }
+            )}</div>
+          : null}
 
       </div>
 
@@ -208,4 +262,22 @@ const Workshops = (props) => {
   );
 };
 
-export default Workshops;
+
+
+const mapStateToProps = state => {
+  return {
+    registeredEvents: state.userData.registeredWorkshops,
+    logedIn: state.login,
+    token: state.token
+  }
+}
+
+const mapActionToProps = dispatch => {
+  return {
+    register: (eve) => { dispatch(registerWorkshop(eve)) },
+    openLogin: () => { dispatch(openLogin()) }
+  }
+}
+
+
+export default connect(mapStateToProps, mapActionToProps)(Workshops);

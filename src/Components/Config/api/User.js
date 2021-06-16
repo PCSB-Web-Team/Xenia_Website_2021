@@ -49,6 +49,16 @@ export const registerBuildUpEvent = (data, token) => {
   );
 };
 
+export const registerWorkshopRequest = (data, token) => {
+  return axiosInstance.post(
+    `/user/register-workshop`,
+    { eventId: data },
+    {
+      headers: { Authorization: token },
+    }
+  );
+};
+
 export const getAllEvents = () => {
   return axiosInstance.get("/events");
 };
@@ -63,6 +73,10 @@ export const getEventDetails = (id) => {
 
 export const getWorkshopDetails = () => {
   return axiosInstance.get(`/workshops`);
+};
+
+export const getWorkshopMoreInfo = (id) => {
+  return axiosInstance.get(`/workshops/${id}`);
 };
 
 export const contactus = (data) => {

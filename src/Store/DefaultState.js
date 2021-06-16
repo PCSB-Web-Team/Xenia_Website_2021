@@ -6,7 +6,8 @@ let default_state = {
     eventData: [],
     userData: {
         registeredBuildUpEvents: [],
-        registeredEvents: []
+        registeredEvents: [],
+        registeredWorkshops: [],
     },
     paymentDetails: []
 }

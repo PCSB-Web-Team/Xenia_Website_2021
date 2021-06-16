@@ -1,46 +1,208 @@
 .workshop-info{
-  text-align: center;
   padding-top: 15px;
   color: white;
 }
 
-.workshop-info .info{
-  width: 100%;
+.header-workshop{
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.workshop-info .tab-row{
   text-align: center;
 }
 
-.workshop-info h3{
-  color: white;
-  font-family: 'Barlow';
+.workshop-info .tab-row{
+  padding-block: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-block: 1px solid rgba(0, 255, 255, 0.5);
+}
+
+.workshop-info .tab{
+  color: grey;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'SansBold';
+}
+.workshop-info .active-tab{
+  height: 100%;
+  color: aquamarine;
+}
+
+/* WorkShop Head */
+
+.workshop-head .already-registered{
+  font-family: 'SansBold';
+  color: rgb(0, 255, 0);
+}
+
+.workshop-head .register-button{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+/* Workshop Details */
+
+.workshop-info .workshop-details{
+  width: 100%;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.workshop-info .workshop-details .date{
+  font-size: 28px;
+  color: rgba(0, 255, 255, 0.8);
+  font-family: 'SansBold';
   margin-bottom: 10px;
 }
 
-.workshop-info .info .date{
-  font-size: 32px;
-  color: rgba(0, 255, 255, 0.8);
-  font-family: 'SansBold';
-}
-
-.workshop-info .info .time{
+.workshop-info .workshop-details .time{
   color: aqua;
   font-size: 25px;
   margin-bottom: 10px;
 }
 
-.workshop-info .info .platform{
-  color: aliceblue;
+.workshop-info .workshop-details .platform{
+  margin-bottom: 10px;
+
+  font-size: 25px;
+  font-family: 'SansBold';
+  color: rgba(255, 255, 255, 0.9);
+
+}
+
+.workshop-info .agenda-head{
+  border-block: 1px solid rgb(6, 75, 75);
+  padding-block: 5px;
+
+  margin-bottom: 20px;
+
+  color: rgba(255, 255, 255, 0.7);
   font-size: 30px;
   font-family: 'SansBold';
 }
 
-.workshop-info .persons row{
-  min-height: 300px;
+.workshop-info .agenda-content{
+  text-align: center;
 }
 
-.workshop-info .tab-row{
-  padding-block: 10px;
+
+/* Speaker Info */
+
+.speaker-container{
+  border-bottom: 1px solid aqua;
+}
+
+.workshop-info .speaker{
+  font-family: 'SansBold';
+}
+
+.workshop-info .speaker .photo{
+  height: 150px;
+  width: 150px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.workshop-info .speaker .photo img{
+  height: 100%;
+  width: auto;
+}
+
+.workshop-info .speaker .designation .speaker-key{
+  display: inline-block;
+}
+.workshop-info .speaker .designation .speaker-value{
+  display: inline-block;
+}
+
+.workshop-info .speaker .speaker-key{
+  color: rgba(255, 255, 255, 0.6)
+}
+
+.workshop-info .speaker .speaker-value{
+  color: rgba(255, 255, 255, 0.9)
+}
+
+
+/* Company Details */
+.company-details{
+  text-align: center;
+  min-height: 500px;
+}
+
+.company-details .company{
+  margin: 10px;
+  display: inline-block;
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+}
+
+.company-details img{
+  background: none;
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.company-tasks p{
+  text-align: center;
+}
+.company-details .company-name{
+  font-family: 'SansBold';
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.company-details i{
+  margin: 0;
+  padding: 0 5px;
+}
+
+.company-details a{
+  color: #00b4d8;
+  font-size: 1.5rem;
+}
+
+.company-details .company-links h4{
+  font-family: 'SansBold';
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.company-details .company-brand{
+  font-family: 'SansBold';
+  margin: 15px 0 0 0;
+}
+
+.company-details .company-brand-name{
+  font-size: 1.5rem;
+}
+
+.workshop-register-cont{
   display: flex;
-  flex-direction: row;
+  flex-flow: column;
   align-items: center;
-  border-block: 1px solid aqua;
+}
+
+.workshop-register-cont h5{
+  color: white;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media(max-width:500px){
+  .company-details .company-name{
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+
+  
 }
