@@ -299,7 +299,7 @@
 }
 
 .profile-left>h1,.profile-right>h1{
-  color: white;
+  color: rgba(0, 255, 255, 0.8);
   font-size: 2.8em;
 }
 
