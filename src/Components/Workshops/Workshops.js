@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./Workshops.css";
 
-import WorkShop from '../../Assets/Images/Workshops/workshop.jpg';
+// import WorkShop from '../../Assets/Images/Workshops/workshop.jpg';
+import Airvana from '../../Assets/Images/Workshops/airavana-logo.svg';
 import Blockchain from '../../Assets/Images/Workshops/blockchain.jpg';
-import PlaceMent from '../../Assets/Images/Workshops/placement1.jpg';
+// import PlaceMent from '../../Assets/Images/Workshops/placement1.jpg';
 import Company from '../../Assets/Images/Workshops/company.jpg';
-import Future from '../../Assets/Images/Workshops/future.jpg';
+// import Future from '../../Assets/Images/Workshops/future.jpg';
+import Main from '../../Assets/Images/Workshops/main.png';
+import Evolve from '../../Assets/Images/Workshops/evole-logo.png';
+import IDBI from '../../Assets/Images/Workshops/idbi.png';
+import Etherium from '../../Assets/Images/Workshops/etherium.jpg';
+
+
 
 import { getWorkshopDetails, getWorkshopMoreInfo } from '../Config/api/User';
 import { anErrorOccured } from '../Notifications/Notification';
@@ -16,11 +23,12 @@ import { Link, useParams } from 'react-router-dom';
 const Workshops = (props) => {
 
   let imagesArray = [ 
-    {src: WorkShop},
-    {src: Blockchain}, 
-    {src: PlaceMent}, 
-    {src: Future}, 
-    {src: Company}
+    {src: Main},
+    {src: Etherium}, 
+    {src: Evolve}, 
+    {src: Airvana}, 
+    {src: Company},
+    {src: IDBI},
   ]
 
   const [details, setDetails] = useState({ workshopDetails: {}, })
@@ -61,8 +69,14 @@ const Workshops = (props) => {
       <div>
         <header className="page-headers">
           <h1 className="header-name"> Industry Talks </h1>
+          
         </header>
       </div>
+
+      <h5 className='workshops-tag'>
+          All attendees will be provided with an Industry Verified LinkedIn
+          Sharable E-Certificates
+      </h5>
 
       {/*       
       <div className="workshops-coming-soon">
@@ -83,8 +97,8 @@ const Workshops = (props) => {
                 <div className='session-card'>
                   
                   <div className='image'>
-                    <div className='image-inner' id={`work${i}`}>
-                      <img src={imagesArray[i].src}/>
+                    <div className='image-inner'>
+                      <img src={imagesArray[i].src} />
                     </div>
                   </div>
 

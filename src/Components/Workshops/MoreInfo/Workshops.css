@@ -48,7 +48,10 @@
 .workshop-info .workshop-details{
   width: 100%;
   padding-top: 10px;
+  padding-inline: 5px;
   text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  /* background: radial-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); */
 }
 
 .workshop-info .workshop-details .date{
@@ -81,7 +84,6 @@
 
   color: rgba(255, 255, 255, 0.7);
   font-size: 30px;
-  
   font-family: 'SansBold';
 }
 
@@ -145,7 +147,6 @@
 .company-details img{
   background: none;
   height: 200px;
-  width: 200px;
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 15px;
