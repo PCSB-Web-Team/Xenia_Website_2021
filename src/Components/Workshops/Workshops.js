@@ -122,6 +122,7 @@ const Workshops = (props) => {
           {
             details.map((eve, i) => {
               return (
+
                 <Fade>
                   <div className='workshop-card'>
                     <div className='row'>
@@ -148,6 +149,7 @@ const Workshops = (props) => {
                     </div>
                   </div>
                 </Fade>
+                
               )
             })
           }
