@@ -138,7 +138,10 @@ const Workshops = (props) => {
                           <br></br>
                           <h5 className='date'>{eve.workshopDetails.date}</h5>
                           <br></br>
-                          <Link to={`/industry-talks/${eve._id}`}> <div className='more-info'> MoreInfo > > > </div> </Link>
+                          <Link to={`/industry-talks/${eve._id}`}> <div className='more-info'
+                            onClick={() => {
+                              document.documentElement.scrollTop = 0;
+                            }} > MoreInfo {'> > >'} </div> </Link>
                         </Zoom>
                       </div>
 
