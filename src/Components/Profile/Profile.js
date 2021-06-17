@@ -25,9 +25,10 @@ const MyProf = (props) => {
   let list = props.registeredEvents.map((eve, i) => {
     return (
       <div className="Regdiv row" key={eve._id}>
-        <h3 className="RegP col-12" onMouseEnter={() => handleMouse(eve.logo, eve.isTechnical)}>
+        <h3 className="RegP col-md-6 col-12" onMouseEnter={() => handleMouse(eve.logo, eve.isTechnical)}>
           {eve.name}
         </h3>
+        <div className='col-md-6 col-12'> {eve.platformLink ? <a className='platform-link' href={eve.platformLink} target='_blanck'> Platform Link </a> : null} </div>
       </div>
     );
   });
@@ -35,9 +36,21 @@ const MyProf = (props) => {
   let workshopList = props.registeredWorkshops.map((eve, i) => {
     return (
       <div className="Regdiv row" key={eve._id}>
-        <h3 className="RegP col-12" onMouseEnter={() => handleMouse(eve.logo, eve.isTechnical)}>
+        <h3 className="RegP col-md-6 col-12">
           {eve.workshopDetails.name}
         </h3>
+        <div className='col-md-6 col-12'> {eve.workshopDetails.platformLink ? <a className='platform-link' href={eve.workshopDetails.platformLink} target='_blanck'> Platform Link </a> : null} </div>
+      </div>
+    );
+  });
+
+  let buildUpList = props.registeredBuildUpEvents.map((eve, i) => {
+    return (
+      <div className="Regdiv row" key={eve._id}>
+        <h3 className="RegP col-md-6 col-12">
+          {eve.name}
+        </h3>
+        <div className='col-md-6 col-12'> {eve.platformLink ? <a className='platform-link' href={eve.platformLink} target='_blanck'> Platform Link </a> : null} </div>
       </div>
     );
   });
@@ -49,15 +62,21 @@ const MyProf = (props) => {
 
       <div className="profile-inner">
         <div className="profile-left">
-          <h1>Registered Events</h1>
+          <h1>Events</h1>
           <div className="registered-events-list">
             {list.length===0 ?   <p className="no-registered">No Registered Events</p> : list}
           </div>
         </div>
-        <div className="profile-right">
-          <h1>Registered Workshops</h1>
+        <div className="profile-left">
+          <h1>Industry Talks</h1>
           <div className="registered-workshops-list">
-          {workshopList.length===0 ?   <p className="no-registered">No Registered Events</p> : workshopList}
+          {workshopList.length===0 ?   <p className="no-registered">No Registered Industry Talks</p> : workshopList}
+          </div>
+        </div>
+        <div className="profile-left">
+          <h1>Build Up Events</h1>
+          <div className="registered-workshops-list">
+          {buildUpList.length===0 ?   <p className="no-registered">No Registered Build Up Events</p> : buildUpList}
           </div>
         </div>
       </div>
@@ -129,6 +148,7 @@ const mapStatesToProps = (state) => {
   return {
     registeredEvents: state.userData.registeredEvents,
     registeredWorkshops: state.userData.registeredWorkshops,
+    registeredBuildUpEvents: state.userData.registeredBuildUpEvents,
     userName: state.userData.name
   };
 };
