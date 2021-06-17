@@ -34,6 +34,12 @@
     font-size: 32px;
   }
 
+  .build-up-registrations-closed{
+    font-family: 'SansBold';
+    color: rgb(255, 0, 0);
+    font-size: 32px;
+  }
+
   .build-up-moreinfo{
     color: lightseagreen;
     cursor: pointer;

@@ -226,6 +226,14 @@
 
 }
 
+.registrations-closed{
+  user-select: none;
+  font-family: 'SansBold';
+  color: rgb(255, 0, 0);
+  font-weight: 600;
+  font-size: 32px;
+}
+
 @media (max-width: 800px) {
   
   .MoreInfo .more-info {

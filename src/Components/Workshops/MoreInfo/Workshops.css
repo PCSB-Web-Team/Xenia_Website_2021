@@ -36,6 +36,12 @@
   color: rgb(0, 255, 0);
 }
 
+.workshop-registrations-closed{
+  font-size: 32px;
+  font-family: 'SansBold';
+  color: rgb(255, 0, 0);
+}
+
 .workshop-head .register-button{
   width: 100%;
   display: flex;

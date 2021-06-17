@@ -131,8 +131,13 @@ const Workshops = (props) => {
               ?
               <div className='already-registered'>Registered</div>
               :
-              <RegisterButton value="Register" onClick={props.logedIn ? openModal : props.openLogin} />}
-          <h5>
+              !details.workshopDetails.isRegistrationClosed
+              ?
+              <RegisterButton value="Register" onClick={props.logedIn ? openModal : props.openLogin} />
+              :
+              <div className='workshop-registrations-closed'>Registrations Closed</div>
+              }
+            <h5>
             All attendees will be provided with an Industry Verified LinkedIn
             Sharable E-Certificate
           </h5>

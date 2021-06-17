@@ -215,10 +215,16 @@
   background: none;
   font-size: 20px;
   font-family: 'SansBold';
-  color: rgba(0, 143, 143, 0.8);
+  color: rgba(0, 255, 157, 0.8);
 }
 
 @media (max-width: 450px) {
+  
+  .session-logos{
+    width: 100%;
+    text-align: center;
+  }
+
   .workshop-card{
     text-align: center;
     background: linear-gradient( black 50%, rgba(0, 255, 255, 0.2));
@@ -231,6 +237,7 @@
     font-size: 20px;
   }
 .session-contents .more-info{
-    font-size: 18px;  
+    font-size: 22px;  
 }
+
 }

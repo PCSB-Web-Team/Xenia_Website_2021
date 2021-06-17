@@ -25,17 +25,17 @@ const MoreInfo = (props) => {
 
   const checkRegistered = () => {
 
-    if(!props.registeredEvents) {
+    if (!props.registeredEvents) {
       history.push('/events');
       return;
     }
 
     setRegistered(false);
-    
+
     props.registeredEvents.forEach((eve) => {
       if (eve._id === id) setRegistered(true);
     });
-    
+
   };
 
   useEffect(() => {
@@ -73,34 +73,34 @@ const MoreInfo = (props) => {
   const handleRegister = async () => {
     setRegisterLoading(true);
 
-    try{
+    try {
 
-    if (props.isLoggedIn) {
-      // if(details.additionalInfo.required){
-      // showPopUp
-      // fire modal and recieve the details object
-      // }
+      if (props.isLoggedIn) {
+        // if(details.additionalInfo.required){
+        // showPopUp
+        // fire modal and recieve the details object
+        // }
 
-      const res = await setRegisteredEvents(id, props.token);
+        const res = await setRegisteredEvents(id, props.token);
 
-      if (res.data.ok) {
-        props.addToRegistered(res.data.data.event);
-        // addToCartSuccess();
-        setRegistered(true);
-        registrationSuccess();
-        setRegisterLoading(false);
-        setShowModal(false);
+        if (res.data.ok) {
+          props.addToRegistered(res.data.data.event);
+          // addToCartSuccess();
+          setRegistered(true);
+          registrationSuccess();
+          setRegisterLoading(false);
+          setShowModal(false);
+        } else {
+          closeModal();
+          // registrationsClosed();
+        }
       } else {
-        closeModal();
-        // registrationsClosed();
+        addToCartFail();
       }
-    } else {
-      addToCartFail();
     }
-  }
-  catch{
-    registrationFail();
-  }
+    catch {
+      registrationFail();
+    }
 
   };
 
@@ -123,32 +123,45 @@ const MoreInfo = (props) => {
 
             {/* <h5 className='date'> {details.date.substring(0, 10)} </h5> */}
             {/* <div className='date'> {details.dateDescription} </div> */}
-            
+
             {/* { details.dateDescription.split('&').map( (line,i) => <div className='date'> Round {' ', i+1} - {line} </div>) }          */}
-            
+
             <h5 className='platform'> Platform </h5>
-            <div className='platform-details'> {details.platform.split('&').map( (eve, i) => <div key={i}> {eve} </div> )} </div>
+            <div className='platform-details'> {details.platform.split('&').map((eve, i) => <div key={i}> {eve} </div>)} </div>
 
             <p className="lead">{details.details}</p>
 
             <hr className="my-1" />
 
-            {!registered ? (
-              <div
-                style={{
-                  display: "flex",
-                  flexFlow: "column",
-                  alignItems: "center",
-                }}
-              >
-                <Themebutton
-                  onClick={props.isLoggedIn ? openModal : props.openLogin }
-                  value="Register Now"
-                />
-              </div>
-            ) : (
-              <span className="already-registered">Registered</span>
-            )}
+            {
+                !registered 
+                ?
+                !details.isRegistrationClosed
+                ?              
+                (
+                  <div
+                    style={{
+                      display: "flex",
+                      flexFlow: "column",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Themebutton
+                      onClick={props.isLoggedIn ? openModal : props.openLogin}
+                      value="Register Now"
+                    />
+                  </div>
+                )
+                :
+                <span className="registrations-closed">Registrations Closed</span>
+                : 
+                (
+                  <span className="already-registered">Registered</span>
+                )
+            }
+
+
+
 
             <DetailsTab details={details} />
           </div>
