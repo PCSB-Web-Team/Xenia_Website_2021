@@ -5,7 +5,7 @@
 
 .Header {
   position: relative;
-  z-index: +1;
+  z-index: +2;
   text-align: center;
 
   user-select: none;
@@ -101,6 +101,10 @@ header .navBar {
   background: rgba(0, 0, 0, 0.8);
 }
 
+.contact-us-navbar{
+  display: none;
+}
+
 .mob-nav .navItem {
   font-size: 32px;
   width: 350px;
@@ -169,6 +173,10 @@ header .navBar {
   .navBar .fa-shopping-cart {
     margin-top: 10px;
     font-size: 60px;
+  }
+
+  .contact-us-navbar{
+    display: unset;
   }
 
 }

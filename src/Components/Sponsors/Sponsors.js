@@ -4,78 +4,128 @@ import "./Sponsors.css";
 // import Sponsor from "../../Assets/Images/main_bg.jpg";
 // import Tata from "../../Assets/Images/SponsorImages/Tata.jpg";
 // import Vodafone from "../../Assets/Images/SponsorImages/Vodafone.jpg";
+import sponsor from "../../Assets/Images/logo.svg";
+import LG from "../../Assets/Images/SponsorImages/Lg.jpg";
+import Microsoft from "../../Assets/Images/SponsorImages/Microsoft.jpg";
+import VanillaTilt from "vanilla-tilt";
+import { useRef, useEffect } from "react";
 
 const Sponsors = () => {
+  function Tilt(props) {
+    const { options, ...rest } = props;
+    const tilt = useRef(null);
+
+    useEffect(() => {
+      VanillaTilt.init(tilt.current, options);
+    }, [options]);
+
+    return <div ref={tilt} {...rest} />;
+  }
+
+  const options = {
+    scale: 1.2,
+    speed: 200,
+    max: 25,
+    reverse: true,
+  };
+
+  let sponsors = [
+    {
+      name: "Vedant",
+      logo: sponsor,
+    },
+    {
+      name: "Pranil",
+      logo: LG,
+    },
+    {
+      name: "Gaurav",
+      logo: Microsoft,
+    },
+    {
+      name: "Atharva",
+      logo: LG,
+    },
+    {
+      name: "Siddhesh",
+      logo: sponsor,
+    },
+  ];
+
+  let list = sponsors.map((sponsor) => {
+    return (
+      <Tilt
+        className="tilt"
+        options={options}
+        style={{ backgroundImage: `url(${sponsor.logo})` }}
+      >
+        <p>{sponsor.name}</p>
+      </Tilt>
+    );
+  });
+
   return (
     <div className="maincontainer">
+      <div className="sponsors">
+        
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Title Sponsors </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
 
-      <header className="page-headers">
-        <h1 className="header-name"> SPONSORS </h1>
-      </header>
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Co-Sponsors </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
 
-      {/* <header className="page-headers mb-3">
-        <h1 className="coming-soon">Coming Soon . . . </h1>
-      </header> */}
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Associate Sponsors </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
+        
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Event Sponsors </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
 
-      {/* <h1 className="headingmain">Sponsors</h1>
-      <div className="mainboxtitle">
-        <div className="mainboxItemtitle">
-          <img
-            className="mainboxImagetitle"
-            src={Sponsor}
-            alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer"
-          ></img>
-        </div>
+        
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Knowledge Partners </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
+
+        
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Eco System Partner </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
+        
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Digital Marketing Partner </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
+        
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Media Partner </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
+        
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Goodies Partner </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
+        
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Certification & Awards Partner </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
+
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Community Partners </h1>
+        </header>
+        <div className="sponsors-list">{list}</div>
+
       </div>
-      <div className="mainbox">
-        <div className="mainboxItem">
-          <img
-            className="mainboxImage1"
-            src={Sponsor}
-            alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer"
-          ></img>
-        </div>
-
-        <div className="mainboxItem">
-          <img
-            className="mainboxImage2"
-            src={Sponsor}
-            alt="sunset behind San Francisco city skyline"
-          ></img>
-        </div>
-
-        <div className="mainboxItem">
-          <img
-            className="mainboxImage3"
-            src={Sponsor}
-            alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan"
-          ></img>
-        </div>
-
-        <div className="mainboxItem">
-          <img
-            className="mainboxImage4"
-            src={Sponsor}
-            alt="car interior from central back seat position showing driver and blurred view through windscreen of a busy road at night"
-          ></img>
-        </div>
-
-        <div className="mainboxItem">
-          <img
-            className="mainboxImage5"
-            src={Sponsor}
-            alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA"
-          ></img>
-        </div>
-
-        <div className="mainboxItem">
-          <img
-            className="mainboxImage6"
-            src={Sponsor}
-            alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp"
-          ></img>
-        </div>
-      </div> */}
     </div>
   );
 };

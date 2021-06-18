@@ -8,7 +8,7 @@ import ContactUs from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import Profile from "./Components/Profile/Profile";
 import WebTeam from "./Components/WebTeam/WebTeam";
-// import Sponsors from "./Components/Sponsors/Sponsors";
+import Sponsors from "./Components/Sponsors/Sponsors";
 import { getLoggedInUser } from "./Components/Config/api/User";
 import NotFound from "./Components/404/404";
 import SideEvents from "./Components/SideEvents/SideEvents";
@@ -18,11 +18,13 @@ import ForgotPassword from "./Components/ForgotPassword/forgot";
 import ResetPassword from "./Components/ForgotPassword/reset";
 import Sessions from "./Components/Workshops/Workshops";
 import SessionInfo from './Components/Workshops/MoreInfo/Workshops';
+import ContactPanel from './Components/ContactPanel/ContactPanel';
 
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { getEventData, loggedIn, storeToken } from "./Store/Actions";
 import { connect } from "react-redux";
+import SocliaMediaPanel from './Components/SocialMediaLinks/Links';
 import "./App.css";
 
 const App = (props) => {
@@ -54,6 +56,8 @@ const App = (props) => {
     <div className="Xenia" id="Xenia">
       <Navbar />
       <Background />
+      <SocliaMediaPanel />
+      <ContactPanel />
 
       <Switch>
 
@@ -85,6 +89,10 @@ const App = (props) => {
         <Route exact path="/industry-talks/:id">
           <SessionInfo />
           <Footer />
+        </Route>
+
+        <Route exact path="/sponsors">
+          <Sponsors/>
         </Route>
 
         <Route exact path="/profile">

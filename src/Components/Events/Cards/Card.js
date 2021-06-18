@@ -3,8 +3,21 @@ import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 import Zoom from "react-reveal/Zoom";
 // import eventLogo from '../../../Assets/Images/icon4.png';
+import { connect } from 'react-redux';
 
-export default function ImgMediaCard({ details, readmore }) {
+const ImgMediaCard = ({ details, readmore, isLogedin, eveList }) => {
+
+  let found = false;
+
+  const checkRegistered = (id) => {
+    eveList.forEach(eve => {
+      if (eve._id === id)
+        found = true;
+      return
+    })
+    return found;
+  }
+
   return (
     <div className="event-card" onClick={readmore}>
       <Zoom>
@@ -23,7 +36,17 @@ export default function ImgMediaCard({ details, readmore }) {
           <p>{details.details}</p>
         </Fade>
         <span>{details.date}</span>
+        {isLogedin ? (checkRegistered(details._id) ? <div className='card-already-registered'> Registered </div> : null) : null}
       </div>
     </div>
   );
 }
+
+const mapStatesToProps = state => {
+  return {
+    isLogedin: state.login,
+    eveList: state.userData.registeredEvents,
+  }
+}
+
+export default connect(mapStatesToProps)(ImgMediaCard);

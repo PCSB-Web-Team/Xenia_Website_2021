@@ -19,7 +19,7 @@ const Workshops = (props) => {
   const [details, setDetails] = useState({ workshopDetails: {}, companyDetails: {}, speakersDetails: {} })
   const [registered, setRegistered] = useState(false);
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   const [showModal, setShowModal] = useState(false);
   const [registerLoading, setRegisterLoading] = useState(false);
@@ -193,7 +193,7 @@ const Workshops = (props) => {
                     </div>
 
                     <div className='col-12 linkedin text-center'>
-                      <a href={speaker.linkedin} target='_blanck'>LinkedIn</a>
+                      <a href={speaker.linkedin} target='_blanck' rel='noreferrer'>LinkedIn</a>
                     </div>
 
                     <div className='col-12 achievements text-center mt-3'>
@@ -222,7 +222,7 @@ const Workshops = (props) => {
                       <img src={company.companyLogo} alt="company logo" />
                       <h3 className="company-name"> {company.companyName} </h3>
 
-                      <a href={company.companyWebsite} target="_blank">
+                      <a href={company.companyWebsite} target="_blank" rel='noreferrer'>
                         {" "}
                         Website{""}
                       </a>
@@ -256,7 +256,7 @@ const Workshops = (props) => {
                         <i className="fa fa-instagram" ariaHidden="true"></i>
                       </a> */}
 
-                          <a href={company.linkedin} target="_blank">
+                          <a href={company.linkedin} target="_blank" rel='noreferrer'>
                             <i className="fa fa-linkedin" ariaHidden="true"></i>
                           </a>
 

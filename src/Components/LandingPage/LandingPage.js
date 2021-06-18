@@ -55,7 +55,9 @@ const LandingPage = () => {
 
         <div className="logo-div">
           <div className="logo-container">
-            <Zoom bottom>
+            <Zoom bottom>          
+              <div className="event-organizer">PICT CSI Student Branch</div>
+              <div className='organizer-presents'>Presents</div>
               <img src={XeniaLogo} alt="" />
               <div className="event-tag">Where Passion Meets Perfection</div>
               <div className="event-date">
@@ -66,7 +68,7 @@ const LandingPage = () => {
         </div>
 
         <div className='landing-page-message'>
-            <div className='message1'>
+            <div className='message1 '>
               Free Registrations
             </div>
             <div className='message2'>

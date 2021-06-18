@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Profile.css";
 import { loggedOut as notifyLoggedOut } from '../Notifications/Notification';
 
@@ -6,26 +6,23 @@ import { connect } from "react-redux";
 import { loggedOut } from "../../Store/Actions";
 import { Link } from "react-router-dom";
 
-import NonTechLogo from '../../Assets/Images/nonTech.svg';
-import TechLogo from '../../Assets/Images/tech.svg';
-
 const MyProf = (props) => {
 
-  const [isTechnical, setIsTechnical] = useState(true);
-  const [eveLogo, setEveLogo] = useState('');
+  // const [isTechnical, setIsTechnical] = useState(true);
+  // const [eveLogo, setEveLogo] = useState('');
 
-  const handleMouse = (logo, isTechnical) => {
+  // const handleMouse = (logo, isTechnical) => {
 
-    setIsTechnical(isTechnical);
-    setEveLogo(logo);
+  //   setIsTechnical(isTechnical);
+  //   setEveLogo(logo);
 
-  }
+  // }
 
 
   let list = props.registeredEvents.map((eve, i) => {
     return (
       <div className="Regdiv row" key={eve._id}>
-        <h3 className="RegP col-md-6 col-12" onMouseEnter={() => handleMouse(eve.logo, eve.isTechnical)}>
+        <h3 className="RegP col-md-6 col-12">
           {eve.name}
         </h3>
         <div className='col-md-6 col-12'> {eve.platformLink ? <a className='platform-link' href={eve.platformLink} target='_blanck'> Platform Link </a> : null} </div>
@@ -39,7 +36,8 @@ const MyProf = (props) => {
         <h3 className="RegP col-md-6 col-12">
           {eve.workshopDetails.name}
         </h3>
-        <div className='col-md-6 col-12'> {eve.workshopDetails.platformLink ? <a className='platform-link' href={eve.workshopDetails.platformLink} target='_blanck'> Platform Link </a> : null} </div>
+         {eve.workshopDetails.attendanceLink ? <div className='col-md-3 col-12'> <a className='platform-link' href={eve.workshopDetails.attendanceLink} target='_blanck'> Attendance Link </a> </div> : null}
+         {eve.workshopDetails.platformLink ? <div className='col-md-3 col-12'> <a className='platform-link' href={eve.workshopDetails.platformLink} target='_blanck'> Platform Link </a>  </div> : null}
       </div>
     );
   });

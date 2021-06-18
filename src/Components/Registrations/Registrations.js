@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Registrations.css";
-import Themebutton from '../Button/button';
+// import Themebutton from '../Button/button';
 // import RegOpen from "./RegOpen/RegOpen";
 // import EventCols from "./EventCols/EventCols";
 // import Box from "@material-ui/core/Box";
@@ -60,7 +60,7 @@ class Registrations extends Component {
                 <h1>17th Thu</h1>
                 <hr></hr>
                 <div className="date-content">
-                  <h2>Industry Talks: You're Hired, An Unltimate Guide to Placements  </h2>
+                  <h2>Industry Talks: You're Hired, An Ultimate Guide to Placements  </h2>
                   <p>18:00 to 20:00</p>
                 </div>
               </div>

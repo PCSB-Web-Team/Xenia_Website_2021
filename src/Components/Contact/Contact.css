@@ -95,20 +95,20 @@ textarea.contactFill {
   margin-top: 1.6rem;
 }
 
-.fa-instagram {
+.socialMedia .fa-instagram {
   color: white;
   font-size: xx-large !important;
   transition: 100ms ease;
 }
 
-.fa-facebook-official {
+.socialMedia .fa-facebook-official {
   color: white;
   font-size: xx-large !important;
   transition: 100ms ease;
   margin-left: 20px;
 }
 
-.fa-linkedin {
+.socialMedia .fa-linkedin {
   color: white;
   font-size: xx-large !important;
   transition: 100ms ease;
@@ -125,7 +125,7 @@ textarea.contactFill:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.fa-facebook-official:hover,
+.contactUsForm .fa-facebook-official:hover,
 .fa-instagram:hover,
 .fa-linkedin:hover {
   transform: scale(1.1);

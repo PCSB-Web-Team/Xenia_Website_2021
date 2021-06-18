@@ -41,20 +41,19 @@ const titleStyle = {
     marginBottom: '10px',
 }
 
-const inputStyle = {
-    display: 'inline-block',
-    background: 'black',
-    color: 'white',
-    outline: 'none',
-    border: 'none',
-    borderBottom: '1px solid aqua',
-    width: "90%",
-    height: '40px',
-    borderRadius: '20px',
-    paddingInline: '10px',
-    marginBlock: '4px',
-}
-
+// const inputStyle = {
+//     display: 'inline-block',
+//     background: 'black',
+//     color: 'white',
+//     outline: 'none',
+//     border: 'none',
+//     borderBottom: '1px solid aqua',
+//     width: "90%",
+//     height: '40px',
+//     borderRadius: '20px',
+//     paddingInline: '10px',
+//     marginBlock: '4px',
+// }
 
 const buttonGroup = {
     marginBlock: '20px',

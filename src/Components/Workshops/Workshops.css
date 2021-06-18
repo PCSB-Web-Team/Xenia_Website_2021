@@ -171,16 +171,16 @@
 
 .workshops-tag {
   width: 100%;
-  font-family: 'SansBold';
+  font-family: 'Barlow';
   text-align: center;
-  color: rgb(0, 161, 27);
+  color: rgb(172, 172, 172);
   margin-bottom: 20px;
 }
 
 .workshop-card {
   padding: 15px;
   background: rgba(0, 0, 0, 0.4);
-  background: linear-gradient(to right, black 50%, rgba(0, 255, 255, 0.2));
+    background: linear-gradient(to right, black 50%, #00b4d82a);
   margin-block: 30px;
 }
 
@@ -198,10 +198,10 @@
 }
 
 .session-contents .title{
-  color: rgba(0, 255, 255, 0.8);
+  color:  #00b4d8;
   width: 100%;
   font-family: 'SansBold';
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .session-contents .date{
@@ -211,11 +211,18 @@
   width: 100%;
 }
 
+.session-contents .time{
+  color: #00b4d8d2;
+  font-family: 'SansBold';
+  font-size: 22px;
+  width: 100%;
+}
+
 .session-contents .more-info{
   background: none;
   font-size: 20px;
   font-family: 'SansBold';
-  color: rgba(0, 255, 157, 0.8);
+  color: rgba(0, 255, 85, 0.8);
 }
 
 @media (max-width: 450px) {
@@ -227,7 +234,7 @@
 
   .workshop-card{
     text-align: center;
-    background: linear-gradient( black 50%, rgba(0, 255, 255, 0.2));
+    background: linear-gradient( black 50%,  #00b4d82a );
   }
   .session-contents .title{
     margin-top: 10px;

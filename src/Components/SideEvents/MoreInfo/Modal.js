@@ -1,9 +1,9 @@
 // import { colors } from '@material-ui/core';
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from 'react-modal';
 import './Modal.css';
 import Font from '../../../Assets/Fonts/PTSans-Bold.ttf'
-import ThemeButton from '../../Button/button';
+// import ThemeButton from '../../Button/button';
 
 const customStyles = {
 
@@ -56,7 +56,6 @@ const infoStyle = {
 
 const buttonStyle = {
     color: 'aqua',
-    border: 'none',
     fontSize: '20px',
     background: 'black',
     border: '1px solid aqua',
@@ -79,15 +78,15 @@ Modal.setAppElement("body")
 const RegisterModal = (props) => {
     // var subtitle;
 
-    const [currentInfo, setCurrentInfo] = useState('rules');
+    // const [currentInfo, setCurrentInfo] = useState('rules');
 
     function afterOpenModal() {
         // references are now sync'd and can be accessed.
     }
 
-    const toggleInfo = (e) => {
-        setCurrentInfo(e.target.id)
-    }
+    // const toggleInfo = (e) => {
+    //     setCurrentInfo(e.target.id)
+    // }
 
     return (
         <div className='register-modal' id='react-modal'>

@@ -66,6 +66,22 @@
   align-items: center;
 }
 
+.logo-div .event-organizer{
+  margin-top: 120px;
+  color: rgb(0, 255, 255);
+  text-shadow: 2px 2px rgb(0, 81, 255);
+  font-weight: 100;
+  font-family: 'SansBold';
+  font-size: 40px;
+} 
+
+.logo-div .organizer-presents{
+  font-family: "Planets";
+  color: rgb(0, 131, 253);
+  font-weight: 100;
+  font-size: 22px;
+}
+
 .logo-div .logo-container {
   height: 100vh;
   text-align: center;
@@ -76,10 +92,6 @@
   height: 100%;
   position: relative;
   text-align: center;
-}
-
-.logo-container img {
-  margin-top: 145px;
 }
 
 .logo-div .event-date {
@@ -94,7 +106,7 @@
   font-family: "Planets";
   color: rgb(194, 0, 253);
   font-weight: 100;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 /* Landing Page Mountains */
@@ -197,14 +209,22 @@
     left: -200px;
     bottom: -120px;
   }
-  .logo-container img {
-    margin-top: 218px;
+  .logo-container .event-organizer {
+    margin-top: 180px;
+    font-size: 25px;
+  }
+  .logo-container .organizer-presents {
+    font-size: 20px;
   }
   .logo-div .event-tag {
     font-size: 20px;
   }
   .logo-div .event-date {
     font-size: 16px;
+  } 
+  .moon-container{
+    top: -50px;
+    left: -100px;
   }
 }
 
@@ -225,14 +245,14 @@
 }
 
 .landing-page-message .message1{
-  font-family: 'SansBold';
-  font-size: 32px;
+  font-family: 'Barlow';
+  font-size: 28px;
   color: rgba(0, 255, 255, 0.8);
 }
 
 .landing-page-message .message2{
-  font-family: 'SansBold';
-  font-size: 32px;
+  font-family: 'Barlow';
+  font-size: 28px;
   color: rgba(0, 255, 255, 0.8);
 }
 
@@ -250,3 +270,4 @@
   font-size: 20px;
 }
 }
+

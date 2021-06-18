@@ -50,7 +50,7 @@ const SideEvents = (props) => {
     }
 
     list.forEach(eve => {
-      if (eve._id == id) {
+      if (eve._id === id) {
         found = true;
         return;
       }

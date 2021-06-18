@@ -108,6 +108,17 @@ const Navbar = (props) => {
                   className="navItem"
                   activeClassName="active-nav"
                   onClick={navState ? closeNavBar : null}
+                  to="/sponsors"
+                >
+                  {" "}
+                  Sponsors{" "}
+                </NavLink>
+              </div>
+              <div className='contact-us-navbar'>
+                <NavLink
+                  className="navItem"
+                  activeClassName="active-nav"
+                  onClick={navState ? closeNavBar : null}
                   to="/contact-us"
                 >
                   {" "}
@@ -123,7 +134,7 @@ const Navbar = (props) => {
                     to="/profile"
                     activeClassName="active-nav"
                     className="navItem"
-                    onClick = { navState ? closeNavBar : null }
+                    onClick={navState ? closeNavBar : null}
                   >
                     Profile
                   </NavLink>
