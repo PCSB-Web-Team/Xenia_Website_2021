@@ -61,80 +61,89 @@ const Sponsors = () => {
   let list = sponsors.map((sponsor) => {
     return (
       <a href={sponsor.url} target='_blanck'>
-      <Tilt
-        className="tilt"
-        options={options}
-        style={{ backgroundImage: `url(${sponsor.logo})` }}
-      >
-        <p>{sponsor.name}</p>
-      </Tilt>
+        <Tilt
+          className="tilt"
+          options={options}
+          style={{ backgroundImage: `url(${sponsor.logo})` }}
+        >
+          <p>{sponsor.name}</p>
+        </Tilt>
       </a>
     );
   });
 
   return (
-    <div className="maincontainer">
-      <div className="sponsors">
-        
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Title Sponsors </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
 
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Co-Sponsors </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
-
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Associate Sponsors </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
-        
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Event Sponsors </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
-
-        
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Knowledge Partners </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
-
-        
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Eco System Partner </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
-        
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Digital Marketing Partner </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
-        
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Media Partner </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
-        
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Goodies Partner </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
-        
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Certification & Awards Partner </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
-
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Community Partners </h1>
-        </header>
-        <div className="sponsors-list">{list}</div>
-
-      </div>
+    <>
+    <header className="page-headers">
+      <h1 className="header-name">Sponsors</h1>    
+    </header>
+    <div className='sponsors-coming-soon-container'>
+      <div className='coming-soon'> Coming Soon . . . </div>
     </div>
+    </>
+    // <div className="maincontainer">
+    //   <div className="sponsors">
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Title Sponsors </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Co-Sponsors </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Associate Sponsors </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Event Sponsors </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Knowledge Partners </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Eco System Partner </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Digital Marketing Partner </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Media Partner </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Goodies Partner </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Certification & Awards Partner </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+    //     <header className="sponsors-headers">
+    //       <h1 className="sponsors-head"> Community Partners </h1>
+    //     </header>
+    //     <div className="sponsors-list">{list}</div>
+
+    //   </div>
+    // </div>
   );
 };
 

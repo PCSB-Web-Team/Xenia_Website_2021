@@ -9,8 +9,17 @@
   /* padding: 0 2rem 2rem; */
 }
 
+.sponsors-coming-soon-container{
+  height: 50vh;
+  display: flex;
+  font-family: 'SansBold';
+  width: 100%;
+  justify-content: center;
+}
+
 .coming-soon{
   color: rgba(0, 255, 255, 0.8);
+  font-size: 42px;
 
   animation: coming-soon-pulse 1s infinite ease-in-out;
   animation-play-state: running;

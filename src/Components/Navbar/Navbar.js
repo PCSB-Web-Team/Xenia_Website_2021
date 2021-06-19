@@ -103,7 +103,7 @@ const Navbar = (props) => {
                   Industry Talks{" "}
                 </NavLink>
               </div>
-              {/* <div>
+              <div>
                 <NavLink
                   className="navItem"
                   activeClassName="active-nav"
@@ -113,7 +113,7 @@ const Navbar = (props) => {
                   {" "}
                   Sponsors{" "}
                 </NavLink>
-              </div> */}
+              </div>
               <div className='contact-us-navbar'>
                 <NavLink
                   className="navItem"

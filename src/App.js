@@ -91,9 +91,10 @@ const App = (props) => {
           <Footer />
         </Route>
 
-        {/* <Route exact path="/sponsors">
+        <Route exact path="/sponsors">
           <Sponsors/>
-        </Route> */}
+          <Footer/>
+        </Route>
 
         <Route exact path="/profile">
           {props.login ? (
