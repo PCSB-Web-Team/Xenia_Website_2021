@@ -1,7 +1,7 @@
 .social-links-panel{
     position: fixed;
     top: 0px;
-    left: 0px;
+    left: 5px;
     width: 50px;
     height: 100vh;
     display: flex;
@@ -36,6 +36,16 @@
 
 .yt-logo{
     color: red;
+}
+
+.csi-logo-social img{
+    width: 100%;
+    height: auto;
+    transition: ease-out 200ms;
+}
+
+.csi-logo-social img:hover{
+    transform: scale(1.1);
 }
 
 .panel-container .fa{
