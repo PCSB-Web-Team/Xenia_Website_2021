@@ -9,6 +9,7 @@ import LG from "../../Assets/Images/SponsorImages/Lg.jpg";
 import Microsoft from "../../Assets/Images/SponsorImages/Microsoft.jpg";
 import VanillaTilt from "vanilla-tilt";
 import { useRef, useEffect } from "react";
+// import {Link} from 'react-router-dom'
 
 const Sponsors = () => {
   function Tilt(props) {
@@ -33,27 +34,33 @@ const Sponsors = () => {
     {
       name: "Vedant",
       logo: sponsor,
+      url: 'https://www.pictcsi.com/'
     },
     {
       name: "Pranil",
       logo: LG,
+      url: 'https://www.pictcsi.com/'
     },
     {
       name: "Gaurav",
       logo: Microsoft,
+      url: 'https://www.pictcsi.com/'
     },
     {
       name: "Atharva",
       logo: LG,
+      url: 'https://www.pictcsi.com/'
     },
     {
       name: "Siddhesh",
       logo: sponsor,
+      url: 'https://www.pictcsi.com/'
     },
   ];
 
   let list = sponsors.map((sponsor) => {
     return (
+      <a href={sponsor.url} target='_blanck'>
       <Tilt
         className="tilt"
         options={options}
@@ -61,6 +68,7 @@ const Sponsors = () => {
       >
         <p>{sponsor.name}</p>
       </Tilt>
+      </a>
     );
   });
 

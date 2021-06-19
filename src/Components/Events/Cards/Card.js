@@ -36,7 +36,7 @@ const ImgMediaCard = ({ details, readmore, isLogedin, eveList }) => {
           <p>{details.details}</p>
         </Fade>
         <span>{details.date}</span>
-        {isLogedin ? (checkRegistered(details._id) ? <div className='card-already-registered'> Registered </div> : null) : null}
+        {isLogedin ? (checkRegistered(details._id) ? <div className='card-already-registered'> Registered <i className='fa fa-check'></i> </div> : null) : null}
       </div>
     </div>
   );

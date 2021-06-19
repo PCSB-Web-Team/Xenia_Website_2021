@@ -278,12 +278,15 @@
   transform: translateZ(20px);
   color: #ffffff;
   position: absolute;
+  font-family: 'SansBold';
+  font-size: 20px;
   bottom: -10px;
   width: 100%;
   text-align: center;
 }
 
 .sponsors-list{
+  background: rgba(0, 0, 0, 0.3);
   width: 100%;
   display: flex;
   align-items: center;

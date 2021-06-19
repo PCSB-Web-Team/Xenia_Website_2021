@@ -92,12 +92,12 @@ const Workshops = (props) => {
                     <div className='row'>
 
                       <Zoom>
-                        <div className='col-xs-12 col-md-4 session-logos'>
+                        <div className='col-12 col-md-4 session-logos'>
                           <img src={imagesArray[i].src} alt='' />
                         </div>
                       </Zoom>
 
-                      <div className='col-xs-12 col-md-8 session-contents'>
+                      <div className='col-12 col-md-8 session-contents'>
                         <Zoom right>
                           <h3 className='title'>{eve.workshopDetails.name}</h3>
                           <br></br>

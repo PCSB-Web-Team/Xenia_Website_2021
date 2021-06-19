@@ -190,7 +190,7 @@
   width: fit-content;
   flex-direction: row;
   align-items: center;
-  text-align: center;
+  align-content: center;
 }
 
 .session-logos img {
@@ -222,14 +222,18 @@
   background: none;
   font-size: 20px;
   font-family: 'SansBold';
-  color: rgba(0, 255, 85, 0.8);
+  color: rgba(138, 138, 138, 0.8);
 }
 
 @media (max-width: 450px) {
-  
+
   .session-logos{
-    width: 100%;
+    display: block;
     text-align: center;
+  }
+  
+  .session-logos img{
+    height: 100%;
   }
 
   .workshop-card{
