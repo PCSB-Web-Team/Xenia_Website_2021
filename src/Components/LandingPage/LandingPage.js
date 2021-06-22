@@ -8,25 +8,21 @@ import Mountain from "../../Assets/Images/LandingPage/mid.png";
 import Moon from "./Moon/Moon";
 import Shuttle from "../../Assets/Images/LandingPage/shuttle.png";
 import Loader from "../Loader/Loader";
+// import CSILogo from '../../Assets/Images/csi.png';
 
 const LandingPage = () => {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     setInterval(() => setLoading(false), 500);
   }, []);
 
   const handleMove = (e) => {
     // const box = document.querySelector(".astranout");
-
     let x = e.pageX;
     let y = e.pageY;
-
     const background = document.querySelector(".mountain");
-
     let transXBG = e.target.offsetWidth * 0.005 - x * 0.05;
     let transYBG = e.target.offsetHeight * 0.005 - y * 0.05;
-
     background.style.transform = `translateX(${transXBG}px) translateY(${transYBG}px)`;
   };
 
@@ -38,25 +34,21 @@ const LandingPage = () => {
         <div className="bg">
           <img src={bg} alt=""></img>
         </div>
-
         <div className="mountain">
           <img src={Mountain} alt=""></img>
         </div>
-
         <div className="shuttle">
           <img src={Shuttle} alt="" />
         </div>
-
         <Moon />
-
         <div className="landing-page-stars">
           <Stars />
         </div>
-
         <div className="logo-div">
           <div className="logo-container">
-            <Zoom bottom>          
+            <Zoom bottom>
               <div className="event-organizer">PICT CSI Student Branch</div>
+              {/* <div className="event-organizer-logo"><img src={CSILogo}></img></div> */}
               <div className='organizer-presents'>Presents</div>
               <img src={XeniaLogo} alt="" />
               <div className="event-tag">Where Passion Meets Perfection</div>
@@ -66,14 +58,13 @@ const LandingPage = () => {
             </Zoom>
           </div>
         </div>
-
         <div className='landing-page-message'>
-            <div className='message1 '>
-              Free Registrations
-            </div>
-            <div className='message2'>
-              Open for all Colleges
-            </div>
+          <div className='message1 '>
+            Free Registrations
+          </div>
+          <div className='message2'>
+            Open for all Colleges
+          </div>
         </div>
       </div>
     </div>

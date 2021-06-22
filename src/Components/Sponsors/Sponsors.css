@@ -225,7 +225,7 @@
   position: absolute;
   font-family: 'SansBold';
   font-size: 20px;
-  bottom: -10px;
+  top: 200px;
   width: 100%;
   text-align: center;
 }
@@ -256,4 +256,34 @@
 .sponsors div[class*='sponsor']{
   text-align: center;
   display: inline-block;
+  margin: 10px;
+}
+
+/* Simple Card */
+.sponsor-card{
+  background: black;
+  padding: 10px;
+  display: inline-block;
+}
+
+.sponsor-card .logo-container{
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.sponsor-card .logo-container img{
+  height: 100%;
+}
+
+.sponsor-card .sponsor-name{
+  color: white;
+  font-size: 50px;
+  font-family: 'SansBold';
+  margin-bottom: 20px;
+  transition: ease-in-out 200ms;
+}
+
+.sponsor-card .sponsor-name:hover{
+  color: rgb(128, 255, 128);
+  transform: scale(1.2);
 }
