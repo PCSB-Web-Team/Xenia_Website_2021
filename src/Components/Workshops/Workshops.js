@@ -65,6 +65,11 @@ const Workshops = () => {
           All attendees will be provided with an Industry Verified LinkedIn
           Sharable E-Certificate
         </h5>
+          <div className='row'>
+            <div className='col-12 text-center'>
+              <div className='btn btn-success btn-large'><a className='text-dark' href={Brochure} download>Download Brochure</a></div>
+            </div>
+          </div>
         <div className='container'>
           {
             details.map((eve, i) => {
@@ -103,11 +108,6 @@ const Workshops = () => {
               )
             })
           }
-          <div className='row'>
-            <div className='col-12 text-center'>
-              <div className='btn btn-success btn-large'><a className='text-dark' href={Brochure} download>Download Brochure</a></div>
-            </div>
-          </div>
         </div>
       </div>
   );

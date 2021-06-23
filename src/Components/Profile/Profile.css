@@ -398,3 +398,7 @@
   font-size: 1.3em;
   border-bottom: 1px solid #46bcde;
 }
+
+.discord-msg{
+  color: rgb(39, 39, 248);
+}

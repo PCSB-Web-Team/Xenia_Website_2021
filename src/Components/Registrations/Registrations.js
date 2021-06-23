@@ -37,6 +37,13 @@ class Registrations extends Component {
           <h1 className="header-name"> SCHEDULE </h1>
         </header> */}
 
+
+        <div className='row text-center my-3'>
+          <div className='col-12'>
+            <div className='btn btn-success download-schedule'><a className='text-dark' href={SchedulePDF} download> Download Rulebook </a></div>
+          </div>
+        </div>
+
         <div className="schedule-container">
           <div className="schedule-left">
             <div className="schedule-left-inner">
@@ -338,11 +345,6 @@ class Registrations extends Component {
 
         </div>
 
-        <div className='row text-center mt-5'>
-          <div className='col-12'>
-            <div className='btn btn-success download-schedule'><a className='text-dark' href={SchedulePDF} download> Download Rulebook </a></div>
-          </div>
-        </div>
 
         {/* <div className="schedule-coming-soon">
           <div className="coming-soon">
