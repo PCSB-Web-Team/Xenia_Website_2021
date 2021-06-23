@@ -7,6 +7,7 @@
   max-width: 100rem;
   background: rgba(0, 0, 0, 0.6);
   margin: auto;
+  padding-block: 20px;
   /* padding: 0 2rem 2rem; */
 }
 
@@ -252,6 +253,7 @@
   display: block;
   font-size: 40px;
   margin-top: 10px;
+  padding-top: 10px;
 }
 
 .sponsors div[class*='sponsor']{
@@ -303,4 +305,13 @@
 .sponsor-card .sponsor-name:hover{
   color: rgb(128, 255, 128);
   transform: scale(1.2);
+}
+
+.title-sponsors .sponsor-card{
+  width: 400px;
+  max-width: 90%;
+}
+
+.title-sponsors .logo-container{
+  height: 250px;
 }

@@ -43,6 +43,18 @@ import IIC from '../../Assets/Images/SponsorImages/iic.png';
 import Infidya from '../../Assets/Images/SponsorImages/infidya.jpeg';
 import TKIET from '../../Assets/Images/SponsorImages/tkiet.jpg';
 import GECBH from '../../Assets/Images/SponsorImages/GECBH.png';
+import Sertifier from '../../Assets/Images/SponsorImages/sertifier.svg';
+import DYPIEMR from '../../Assets/Images/SponsorImages/DYPIEMR.jpg';
+import TIME from '../../Assets/Images/SponsorImages/time.png';
+import Edwise from '../../Assets/Images/SponsorImages/edwise.png';
+import PICT from '../../Assets/Images/SponsorImages/pict.jpeg';
+import ShunyaOs from '../../Assets/Images/SponsorImages/shunyaos.png';
+import Swaropa from '../../Assets/Images/SponsorImages/swaropa.png';
+import Rajmudra from '../../Assets/Images/SponsorImages/rajmudra.jpeg';
+import Awards from '../../Assets/Images/SponsorImages/award.jpeg';
+import Sarthi from '../../Assets/Images/SponsorImages/sarthi.jpg';
+import GateAcademy from '../../Assets/Images/SponsorImages/gateacademy.webp';
+import Idhant from '../../Assets/Images/SponsorImages/idhant.png';
 
 const Sponsors = () => {
   function Tilt(props) {
@@ -65,7 +77,7 @@ const Sponsors = () => {
 
   const titleSponsors = [
     {
-      name: "IDBI Intech",
+      name: "IDBI Intech Ltd.",
       logo: IDBI,
       url: 'https://www.idbiintech.com/',
     }
@@ -81,7 +93,18 @@ const Sponsors = () => {
       name: "The Hobby Tribe",
       logo: HobbyTribe,
       url: 'https://www.thehobbytribe.com/',
-    }
+    },,
+    {
+      name: "Rajmudra Group of Industries",
+      logo: Rajmudra,
+      url: '',
+    },
+// 
+    // {
+    //   name: "Edwise",
+    //   logo: Edwise,
+    //   url: 'https://www.edwiseinternational.com/',
+    // },
   ]
 
   const associateSponsors = [
@@ -95,11 +118,17 @@ const Sponsors = () => {
       logo: Replit,
       url: 'https://replit.com/',
     },
-    {
-      name: "SAPS Products",
-      logo: SAPS,
-      url: 'https://www.sapsproducts.com/',
-    }
+// 
+    // {
+    //   name: "ShunyaOs",
+    //   logo: ShunyaOs,
+    //   url: 'https://demo.shunyaos.org/',
+    // },
+    // {
+    //   name: "Gate Academy",
+    //   logo: GateAcademy,
+    //   url: 'https://thegateacademy.com/gate-coaching/classes-for-gate-exam-psu-jobs-in-pune',
+    // }
   ]
 
   const eventSponsors = [
@@ -128,15 +157,20 @@ const Sponsors = () => {
       logo: Evolwise,
       url: 'https://www.linkedin.com/in/aditi-khatau-04954315/'
     },
+    // {
+    //   name: "Geeks for Geeks",
+    //   logo: GFG,
+    //   url: 'https://www.geeksforgeeks.org/',
+    // },
+    // {
+    //   name: 'Hackerrank',
+    //   logo: Hackerrank,
+    //   url: 'https://www.hackerrank.com/'
+    // },
     {
       name: 'AVRN Labs',
       logo: Avrn,
       url: 'https://avrn.in/home'
-    },
-    {
-      name: 'Leap Scale',
-      logo: Leapscale,
-      url: 'https://www.leapscale.com/'
     },
     {
       name: 'Invenzee Technologies',
@@ -147,6 +181,11 @@ const Sponsors = () => {
       name: 'ToastMasters, Pune West',
       logo: ToastMasters,
       url: 'https://www.punewest.toastmastersclubs.org/'
+    },
+    {
+      name: 'Institution\'s Innovation Council',
+      logo: IIC,
+      url: 'https://edcpict.github.io/EDC_Website/iic.html'
     },
     {
       name: 'DAIL-Discoveries and Inventions Laboratory',
@@ -189,11 +228,6 @@ const Sponsors = () => {
       url: 'https://www.vibrancyy.com/'
     },
     {
-      name: 'Institution\'s Innovation Council',
-      logo: IIC,
-      url: 'https://edcpict.github.io/EDC_Website/iic.html'
-    },
-    {
       name: "Swasthya",
       logo: Swasthya,
       url: ''
@@ -202,10 +236,30 @@ const Sponsors = () => {
 
   let knowledgePartners = [
     {
-      name: '',
-      logo: "",
-      url: ''
-    }
+      name: 'Airavana',
+      logo: Airavana,
+      url: 'https://www.linkedin.com/company/airavana/'
+    },
+    {
+      name: 'Institution\'s Innovation Council',
+      logo: IIC,
+      url: 'https://edcpict.github.io/EDC_Website/iic.html'
+    },
+    {
+      name: "IDBI Intech",
+      logo: IDBI,
+      url: 'https://www.idbiintech.com/',
+    },
+    {
+      name: 'Evolwise',
+      logo: Evolwise,
+      url: 'https://www.linkedin.com/in/aditi-khatau-04954315/'
+    },
+    {
+      name: "Society of Women Engineers",
+      logo: SWE,
+      url: 'https://swe.org/',
+    },
   ]
 
   let ecosystemPartners = [
@@ -284,14 +338,24 @@ const Sponsors = () => {
       name: 'Te Chaska',
       logo: TeChaska,
       url: 'https://techaska.com/'
+    },
+    {
+      name: 'The Soap Republic',
+      logo: TheSoapRepublic,
+      url: 'https://www.instagram.com/the.soap.republic/'
     }
   ]
 
   let certificationPartners = [
     {
       name: 'Sertifier',
-      logo: "",
+      logo: Sertifier,
       url: 'https://sertifier.com/'
+    },
+    {
+      name: 'Mahalaxmi Plastic',
+      logo: Awards,
+      url: '',
     }
   ]
 
@@ -315,6 +379,11 @@ const Sponsors = () => {
       name: 'Government Engineering College Barton Hill',
       logo: GECBH,
       url: 'http://www.gecbh.ac.in/',
+    },
+    {
+      name: 'DR. D.Y.Patil Institute of Engineering, Management & Research, Akurdi',
+      logo: DYPIEMR,
+      url: 'https://www.dypiemr.ac.in/',
     }
   ]
 
@@ -323,6 +392,29 @@ const Sponsors = () => {
       name: 'Computer Society of India',
       logo: CSI,
       url: 'http://csi-india.org.in/'
+    },
+    {
+      name: 'Pune Institute of Computer Technology, Pune',
+      logo: PICT,
+      url: 'https://pict.edu/#'
+    }
+  ]
+
+  let socialWorksPartners = [
+    {
+      name: "Swarupa Yatra",
+      logo: Swaropa,
+      url: 'https://swarupayatra.com/',
+    },
+    {
+      name: 'Saarthi Foundation',
+      logo: Sarthi,
+      url: 'https://www.instagram.com/saarthi.foundation/?hl=en',
+    },
+    {
+      name: 'Idhant',
+      logo: Idhant,
+      url: 'https://www.idhant.org/',
     }
   ]
 
@@ -357,7 +449,7 @@ const Sponsors = () => {
   const getList = ( sponsorsArray ) => {
     const list = sponsorsArray.map((sponsor) => {
       return (
-        <a href={sponsor.url} target="_blanck">
+        <a href={sponsor.url} target="_blanck" rel='noreferrer'>
           <Tilt
             className="tilt"
             options={options}
@@ -378,7 +470,7 @@ const Sponsors = () => {
           <div className='logo-container' style={{ backgroundImage: `url(${sponsor.logo})` }}>
             {/* <img src={sponsor.logo}/> */}
           </div>
-          <a href={sponsor.url} className='sponsor-name'>
+          <a href={sponsor.url} className='sponsor-name' target="_blanck" rel='noreferrer'>
             {sponsor.name}
           </a>
         </div>
@@ -398,6 +490,8 @@ const Sponsors = () => {
   const goodiesPartnersList = getList1(goodiesPartners);
   const certificationPartnersList = getList1(certificationPartners);
   const visionaryPartnersList = getList1(visionaryPartners);
+  const socialWorksPartnersList = getList1(socialWorksPartners);
+
 
   let list = sponsors.map((sponsor) => {
     return (
@@ -428,9 +522,14 @@ const Sponsors = () => {
       <div className="sponsors">
 
         <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Title Sponsors </h1>
+          <h1 className="sponsors-head"> Title Sponsor </h1>
         </header>
-        <div className="sponsors-list">{titleSponsorsList}</div>
+        <div className="sponsors-list title-sponsors">{titleSponsorsList}</div>
+
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Visionary Partners </h1>
+        </header>
+        <div className="sponsors-list">{visionaryPartnersList}</div>
 
         <header className="sponsors-headers">
           <h1 className="sponsors-head"> Co-Sponsors </h1>
@@ -453,14 +552,19 @@ const Sponsors = () => {
         <div className="sponsors-list">{knowledgePartnersList}</div>
 
         <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Eco System Partner </h1>
-        </header>
-        <div className="sponsors-list">{ecosystemPartnersList}</div>
-
-        <header className="sponsors-headers">
           <h1 className="sponsors-head"> Digital Marketing Partner </h1>
         </header>
         <div className="sponsors-list">{digitalMarketingList}</div>
+
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Social Works Partners </h1>
+        </header>
+        <div className="sponsors-list">{socialWorksPartnersList}</div>
+
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Eco System Partner </h1>
+        </header>
+        <div className="sponsors-list">{ecosystemPartnersList}</div>
 
         {/* <header className="sponsors-headers">
           <h1 className="sponsors-head"> Media Partner </h1>
@@ -481,12 +585,6 @@ const Sponsors = () => {
           <h1 className="sponsors-head"> Community Partners </h1>
         </header>
         <div className="sponsors-list">{communitySponsorsList}</div>
-
-
-        <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Visionary Partners </h1>
-        </header>
-        <div className="sponsors-list">{visionaryPartnersList}</div>
 
       </div>
     </div>

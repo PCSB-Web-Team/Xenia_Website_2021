@@ -389,3 +389,12 @@
   color: green;
   font-size: 20px;
 }
+
+.discord-link{
+  color: #46bcde;
+  text-decoration: none;
+  font-family: 'Barlow';
+  margin-bottom: 30px;
+  font-size: 1.3em;
+  border-bottom: 1px solid #46bcde;
+}
