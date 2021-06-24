@@ -376,7 +376,7 @@ const Sponsors = () => {
       url: 'http://www.tkietwarana.ac.in/',
     },
     {
-      name: 'Government Engineering College Barton Hill',
+      name: 'CSI SB Government Engineering College Barton Hill',
       logo: GECBH,
       url: 'http://www.gecbh.ac.in/',
     },
