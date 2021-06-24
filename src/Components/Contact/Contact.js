@@ -98,7 +98,7 @@ const Contact = () => {
 					<h3>Phone and Mail</h3>
 					<p>
 						<i className="fa fa-phone"></i>{' '}
-						<span style={{ marginLeft: '5px' }}>+91 9922772959 </span>
+						<span style={{ marginLeft: '5px' }}>+91 7028929568 </span>
 					</p>
 					<p>
 						<i className="fa fa-envelope"></i>{' '}

@@ -7,7 +7,7 @@ import "./Cards/Card.css";
 import "./Events.css";
 import Card from "./Cards/Card";
 import { getAllEvents } from "../Config/api/User";
-import {failedToLoad} from '../Notifications/Notification';
+import { failedToLoad } from "../Notifications/Notification";
 
 const Events = () => {
   const [eventType, setEventType] = useState("tech");
@@ -33,14 +33,12 @@ const Events = () => {
         setTech(tech);
         setNonTech(nonTech);
       }
-      
+
       setLoading(false);
-      
     } catch (err) {
       // console.log(err);
       failedToLoad();
     }
-
   };
 
   // const changeEventType = () => {
@@ -53,9 +51,16 @@ const Events = () => {
       <header className="page-headers">
         <h1 className="header-name"> EVENTS </h1>
       </header>
-
-      <div className='date-header-events'>25<sup>th</sup> to 27<sup>th</sup> June 2021</div>
-
+      <div className="date-header-events">
+        25<sup>th</sup> to 27<sup>th</sup> June 2021
+      </div>
+      <div className="events-reg-closed text-danger">
+        All Events Registrations are closed.
+      </div>
+      <div className="innoveiren-open">
+        Innoveiren Registrations are Open till 25 June 11:59 PM -{" "}
+        <Link to="/events/6049061af857153edbb383f3">Register Now</Link>
+      </div>
       {loading ? (
         <Loader />
       ) : (

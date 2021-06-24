@@ -119,7 +119,7 @@ const Footer = (props) => {
                 </div>
                 <div className="nav-content">
                   <i className="fa fa-phone mr-2" />
-                  +91 9922772959
+                  +91 7028929568
                 </div>
               </div>
             </div>

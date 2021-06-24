@@ -57,7 +57,7 @@ const MyProf = (props) => {
 
     <div className="ProfCard">
       <header className='page-headers'><h1 className='header-name'> {props.userName} </h1></header>
-      <div className='discord-msg'> It is compulsary for all the participants to join the discord server: </div>
+      <div className='discord-msg'> It is compulsory for all the participants to join the discord server: </div>
       <a href="https://discord.gg/YsgAW8Pu" target="_blank" className="discord-link">PCSB Xenia 2021 Discord Server</a>
 
       <div className="profile-inner">

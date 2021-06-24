@@ -160,12 +160,12 @@ const SideEvents = (props) => {
                     <div className='build-up-moreinfo' onClick={() => showMoreInfo(eve)} > MoreInfo {'>>>'} </div>
                     { checkRegistered(eve._id) 
                     ? <div className='build-up-registered'> Registered </div> 
-                    : 
+                    :
                     !eve.isRegistrationClosed 
-                    ? 
+                    ?
                     (<ThemeButtton onClick={props.login ? () => { setSelectedId(eve._id); setShowModal(true) } : props.openLogin} value="Register" />)
                     :
-                    <div className='build-up-registrations-closed'> Registration Closed </div>
+                    <div className='build-up-registrations-closed'> Registrations Closed </div>
                     }
 
                   </div>
