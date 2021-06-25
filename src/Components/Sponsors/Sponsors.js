@@ -115,11 +115,6 @@ const Sponsors = () => {
       url: "https://replit.com/",
     },
     {
-      name: "Edwise",
-      logo: Edwise,
-      url: "https://www.edwiseinternational.com/",
-    },
-    {
       name: "Platform 9",
       logo: Platform9,
       url: "https://platform9.com/",
@@ -136,6 +131,14 @@ const Sponsors = () => {
     //   url: 'https://thegateacademy.com/gate-coaching/classes-for-gate-exam-psu-jobs-in-pune',
     // }
   ];
+
+  // const knowledgePartners=[
+  //   {
+  //     name: "Edwise",
+  //     logo: Edwise,
+  //     url: "https://www.edwiseinternational.com/",
+  //   }
+  // ]
 
   const eventSponsors = [
     {
@@ -266,6 +269,11 @@ const Sponsors = () => {
       logo: SWE,
       url: "https://swe.org/",
     },
+    {
+      name: "Edwise",
+      logo: Edwise,
+      url: "https://www.edwiseinternational.com/",
+    }
   ];
 
   let ecosystemPartners = [
@@ -553,14 +561,14 @@ const Sponsors = () => {
         <div className="sponsors-list">{associateSponsorsList}</div>
 
         <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Event Sponsors </h1>
-        </header>
-        <div className="sponsors-list">{eventSponsorsList}</div>
-
-        <header className="sponsors-headers">
           <h1 className="sponsors-head"> Knowledge Partners </h1>
         </header>
         <div className="sponsors-list">{knowledgePartnersList}</div>
+
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Event Sponsors </h1>
+        </header>
+        <div className="sponsors-list">{eventSponsorsList}</div>
 
         <header className="sponsors-headers">
           <h1 className="sponsors-head"> Digital Marketing Partners </h1>
