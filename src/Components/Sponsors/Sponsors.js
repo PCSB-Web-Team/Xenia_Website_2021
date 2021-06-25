@@ -132,13 +132,13 @@ const Sponsors = () => {
     // }
   ];
 
-  // const knowledgePartners=[
-  //   {
-  //     name: "Edwise",
-  //     logo: Edwise,
-  //     url: "https://www.edwiseinternational.com/",
-  //   }
-  // ]
+  const educationPartners=[
+    {
+      name: "Edwise",
+      logo: Edwise,
+      url: "https://www.edwiseinternational.com/",
+    }
+  ]
 
   const eventSponsors = [
     {
@@ -269,11 +269,6 @@ const Sponsors = () => {
       logo: SWE,
       url: "https://swe.org/",
     },
-    {
-      name: "Edwise",
-      logo: Edwise,
-      url: "https://www.edwiseinternational.com/",
-    }
   ];
 
   let ecosystemPartners = [
@@ -513,6 +508,7 @@ const Sponsors = () => {
   const certificationPartnersList = getList1(certificationPartners);
   const visionaryPartnersList = getList1(visionaryPartners);
   const socialWorksPartnersList = getList1(socialWorksPartners);
+  const educationPartnersList = getList1(educationPartners);
 
   let list = sponsors.map((sponsor) => {
     return (
@@ -554,21 +550,26 @@ const Sponsors = () => {
           <h1 className="sponsors-head"> Co-Sponsors </h1>
         </header>
         <div className="sponsors-list">{coSponsorsList}</div>
-
+        
         <header className="sponsors-headers">
           <h1 className="sponsors-head"> Associate Sponsors </h1>
         </header>
         <div className="sponsors-list">{associateSponsorsList}</div>
 
         <header className="sponsors-headers">
-          <h1 className="sponsors-head"> Knowledge Partners </h1>
+          <h1 className="sponsors-head"> Education Partner </h1>
         </header>
-        <div className="sponsors-list">{knowledgePartnersList}</div>
+        <div className="sponsors-list">{educationPartnersList}</div>
 
         <header className="sponsors-headers">
           <h1 className="sponsors-head"> Event Sponsors </h1>
         </header>
         <div className="sponsors-list">{eventSponsorsList}</div>
+
+        <header className="sponsors-headers">
+          <h1 className="sponsors-head"> Knowledge Partners </h1>
+        </header>
+        <div className="sponsors-list">{knowledgePartnersList}</div>
 
         <header className="sponsors-headers">
           <h1 className="sponsors-head"> Digital Marketing Partners </h1>
