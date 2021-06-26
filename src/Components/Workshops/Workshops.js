@@ -7,6 +7,7 @@ import IDBI from '../../Assets/Images/Workshops/idbi.jpg';
 import Etherium from '../../Assets/Images/Workshops/etherium.jpg';
 import SWE from '../../Assets/Images/Workshops/swe.png';
 import Viable from '../../Assets/Images/Workshops/viable.jpg';
+import Platform9 from '../../Assets/Images/SponsorImages/platform9.jpg'
 import { getWorkshopDetails } from '../Config/api/User';
 import { anErrorOccured } from '../Notifications/Notification';
 import Loader from '../Loader/Loader';
@@ -17,13 +18,14 @@ import Brochure from '../../Assets/PCSB Xenia Industry Talks Brochure.pdf';
 const Workshops = () => {
 
   let imagesArray = [
-    { src: Main },
-    { src: IDBI },
-    { src: Viable },
-    { src: Etherium },
-    { src: Evolve },
-    { src: Airvana },
+    { src: Platform9},
     { src: SWE },
+    { src: Airvana },
+    { src: Evolve },
+    { src: Etherium },
+    { src: Viable },
+    { src: IDBI },
+    { src: Main },
   ]
 
   const [details, setDetails] = useState({ workshopDetails: {}, })
