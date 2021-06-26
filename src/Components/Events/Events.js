@@ -57,10 +57,10 @@ const Events = () => {
       <div className="events-reg-closed text-danger">
         All Events Registrations are closed.
       </div>
-      <div className="innoveiren-open">
+      {/* <div className="innoveiren-open">
         Innoveiren Registrations are Open till 25 June 11:59 PM -{" "}
         <Link to="/events/6049061af857153edbb383f3">Register Now</Link>
-      </div>
+      </div> */}
       {loading ? (
         <Loader />
       ) : (
