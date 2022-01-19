@@ -1,4 +1,5 @@
 import axiosInstance from "../config";
+
 export const register = (data) => {
   return axiosInstance.post("/user/register", data);
 };
