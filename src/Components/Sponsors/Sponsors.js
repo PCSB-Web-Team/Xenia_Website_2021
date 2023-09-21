@@ -1,7 +1,5 @@
 import React from "react";
 import "./Sponsors.css";
-import VanillaTilt from "vanilla-tilt";
-import { useRef, useEffect } from "react";
 import IDBI from "../../Assets/Images/SponsorImages/idbi_intech.jpg";
 import SWE from "../../Assets/Images/SponsorImages/swe.png";
 import HobbyTribe from "../../Assets/Images/SponsorImages/hobby tribe.jpg";
@@ -16,7 +14,6 @@ import Digitterain from "../../Assets/Images/SponsorImages/digitterain.jpg";
 import Airavana from "../../Assets/Images/SponsorImages/airavana-logo.svg";
 import Evolwise from "../../Assets/Images/SponsorImages/evolve.png";
 import Avrn from "../../Assets/Images/SponsorImages/AVRN.png";
-import Leapscale from "../../Assets/Images/SponsorImages/leapscale.png";
 import Invenzee from "../../Assets/Images/SponsorImages/invenzee.png";
 import ToastMasters from "../../Assets/Images/SponsorImages/toastmasters.jpg";
 import SkillCoup from "../../Assets/Images/SponsorImages/skillcoup.jpg";
@@ -45,37 +42,16 @@ import TKIET from "../../Assets/Images/SponsorImages/tkiet.jpg";
 import GECBH from "../../Assets/Images/SponsorImages/GECBH.png";
 import Sertifier from "../../Assets/Images/SponsorImages/sertifier.svg";
 import DYPIEMR from "../../Assets/Images/SponsorImages/DYPIEMR.jpg";
-import TIME from "../../Assets/Images/SponsorImages/time.png";
 import Edwise from "../../Assets/Images/SponsorImages/edwise.png";
 import PICT from "../../Assets/Images/SponsorImages/pict.jpeg";
-import ShunyaOs from "../../Assets/Images/SponsorImages/shunyaos.png";
 import Swaropa from "../../Assets/Images/SponsorImages/swaropa.png";
 import Rajmudra from "../../Assets/Images/SponsorImages/rajmudra.jpeg";
 import Awards from "../../Assets/Images/SponsorImages/award.jpeg";
 import Sarthi from "../../Assets/Images/SponsorImages/sarthi.jpg";
-import GateAcademy from "../../Assets/Images/SponsorImages/gateacademy.webp";
 import Idhant from "../../Assets/Images/SponsorImages/idhant.png";
 import Platform9 from "../../Assets/Images/SponsorImages/platform9.jpg";
 
 const Sponsors = () => {
-  function Tilt(props) {
-    const { options, ...rest } = props;
-    const tilt = useRef(null);
-
-    useEffect(() => {
-      VanillaTilt.init(tilt.current, options);
-    }, [options]);
-
-    return <div ref={tilt} {...rest} />;
-  }
-
-  const options = {
-    scale: 1.2,
-    speed: 200,
-    max: 25,
-    reverse: true,
-  };
-
   const titleSponsors = [
     {
       name: "IDBI Intech Ltd.",
@@ -95,7 +71,6 @@ const Sponsors = () => {
       logo: HobbyTribe,
       url: "https://www.thehobbytribe.com/",
     },
-    ,
     {
       name: "Rajmudra Group of Industries",
       logo: Rajmudra,
@@ -132,13 +107,13 @@ const Sponsors = () => {
     // }
   ];
 
-  const educationPartners=[
+  const educationPartners = [
     {
       name: "Edwise",
       logo: Edwise,
       url: "https://www.edwiseinternational.com/",
-    }
-  ]
+    },
+  ];
 
   const eventSponsors = [
     {
@@ -427,51 +402,6 @@ const Sponsors = () => {
     },
   ];
 
-  let sponsors = [
-    {
-      name: "Vedant",
-      logo: IDBI,
-      url: "https://www.pictcsi.com/",
-    },
-    {
-      name: "Pranil",
-      logo: IDBI,
-      url: "https://www.pictcsi.com/",
-    },
-    {
-      name: "Gaurav",
-      logo: IDBI,
-      url: "https://www.pictcsi.com/",
-    },
-    {
-      name: "Atharva",
-      logo: IDBI,
-      url: "https://www.pictcsi.com/",
-    },
-    {
-      name: "Siddhesh",
-      logo: IDBI,
-      url: "https://www.pictcsi.com/",
-    },
-  ];
-
-  const getList = (sponsorsArray) => {
-    const list = sponsorsArray.map((sponsor) => {
-      return (
-        <a href={sponsor.url} target="_blanck" rel="noreferrer">
-          <Tilt
-            className="tilt"
-            options={options}
-            style={{ backgroundImage: `url(${sponsor.logo})` }}
-          >
-            <p>{sponsor.name}</p>
-          </Tilt>
-        </a>
-      );
-    });
-    return list;
-  };
-
   const getList1 = (sponsorsArray) => {
     const list = sponsorsArray.map((sponsor) => {
       return (
@@ -510,30 +440,7 @@ const Sponsors = () => {
   const socialWorksPartnersList = getList1(socialWorksPartners);
   const educationPartnersList = getList1(educationPartners);
 
-  let list = sponsors.map((sponsor) => {
-    return (
-      <a href={sponsor.url} target="_blanck">
-        <Tilt
-          className="tilt"
-          options={options}
-          style={{ backgroundImage: `url(${sponsor.logo})` }}
-        >
-          <p>{sponsor.name}</p>
-        </Tilt>
-      </a>
-    );
-  });
-
   return (
-    // <>
-    //   <header className="page-headers">
-    //     <h1 className="header-name">Sponsors</h1>
-    //   </header>
-    //   <div className="sponsors-coming-soon-container">
-    //     <div className="coming-soon"> Coming Soon . . . </div>
-    //   </div>
-    // </>
-
     <div className="maincontainer">
       <div className="sponsors">
         <header className="sponsors-headers">
@@ -550,7 +457,7 @@ const Sponsors = () => {
           <h1 className="sponsors-head"> Co-Sponsors </h1>
         </header>
         <div className="sponsors-list">{coSponsorsList}</div>
-        
+
         <header className="sponsors-headers">
           <h1 className="sponsors-head"> Associate Sponsors </h1>
         </header>

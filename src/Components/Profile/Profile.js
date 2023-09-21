@@ -1,13 +1,12 @@
 import React from "react";
 import "./Profile.css";
-import { loggedOut as notifyLoggedOut } from '../Notifications/Notification';
+import { loggedOut as notifyLoggedOut } from "../Notifications/Notification";
 
 import { connect } from "react-redux";
 import { loggedOut } from "../../Store/Actions";
 import { Link } from "react-router-dom";
 
 const MyProf = (props) => {
-
   // const [isTechnical, setIsTechnical] = useState(true);
   // const [eveLogo, setEveLogo] = useState('');
 
@@ -18,14 +17,23 @@ const MyProf = (props) => {
 
   // }
 
-
   let list = props.registeredEvents.map((eve, i) => {
     return (
       <div className="Regdiv row" key={eve._id}>
-        <h3 className="RegP col-md-6 col-12">
-          {eve.name}
-        </h3>
-        <div className='col-md-6 col-12'> {eve.platformLink ? <a className='platform-link' href={eve.platformLink} target='_blanck'> Platform Link </a> : null} </div>
+        <h3 className="RegP col-md-6 col-12">{eve.name}</h3>
+        <div className="col-md-6 col-12">
+          {" "}
+          {eve.platformLink ? (
+            <a
+              className="platform-link"
+              href={eve.platformLink}
+              target="_blanck"
+            >
+              {" "}
+              Platform Link{" "}
+            </a>
+          ) : null}{" "}
+        </div>
       </div>
     );
   });
@@ -33,11 +41,33 @@ const MyProf = (props) => {
   let workshopList = props.registeredWorkshops.map((eve, i) => {
     return (
       <div className="Regdiv row" key={eve._id}>
-        <h3 className="RegP col-md-6 col-12">
-          {eve.workshopDetails.name}
-        </h3>
-         {eve.workshopDetails.attendanceLink ? <div className='col-md-3 col-12'> <a className='platform-link' href={eve.workshopDetails.attendanceLink} target='_blanck'> Attendance Link </a> </div> : null}
-         {eve.workshopDetails.platformLink ? <div className='col-md-3 col-12'> <a className='platform-link' href={eve.workshopDetails.platformLink} target='_blanck'> Platform Link </a>  </div> : null}
+        <h3 className="RegP col-md-6 col-12">{eve.workshopDetails.name}</h3>
+        {eve.workshopDetails.attendanceLink ? (
+          <div className="col-md-3 col-12">
+            {" "}
+            <a
+              className="platform-link"
+              href={eve.workshopDetails.attendanceLink}
+              target="_blanck"
+            >
+              {" "}
+              Attendance Link{" "}
+            </a>{" "}
+          </div>
+        ) : null}
+        {eve.workshopDetails.platformLink ? (
+          <div className="col-md-3 col-12">
+            {" "}
+            <a
+              className="platform-link"
+              href={eve.workshopDetails.platformLink}
+              target="_blanck"
+            >
+              {" "}
+              Platform Link{" "}
+            </a>{" "}
+          </div>
+        ) : null}
       </div>
     );
   });
@@ -45,38 +75,71 @@ const MyProf = (props) => {
   let buildUpList = props.registeredBuildUpEvents.map((eve, i) => {
     return (
       <div className="Regdiv row" key={eve._id}>
-        <h3 className="RegP col-md-6 col-12">
-          {eve.name}
-        </h3>
-        <div className='col-md-6 col-12'> {eve.platformLink ? <a className='platform-link' href={eve.platformLink} target='_blanck'> Platform Link </a> : null} </div>
+        <h3 className="RegP col-md-6 col-12">{eve.name}</h3>
+        <div className="col-md-6 col-12">
+          {" "}
+          {eve.platformLink ? (
+            <a
+              className="platform-link"
+              href={eve.platformLink}
+              target="_blanck"
+            >
+              {" "}
+              Platform Link{" "}
+            </a>
+          ) : null}{" "}
+        </div>
       </div>
     );
   });
 
   return (
-
     <div className="ProfCard">
-      <header className='page-headers'><h1 className='header-name'> {props.userName} </h1></header>
-      <div className='discord-msg'> It is compulsory for all the participants to join the discord server: </div>
-      <a href="https://discord.gg/YsgAW8Pu" target="_blank" className="discord-link">PCSB Xenia 2021 Discord Server</a>
+      <header className="page-headers">
+        <h1 className="header-name"> {props.userName} </h1>
+      </header>
+      <div className="discord-msg">
+        {" "}
+        It is compulsory for all the participants to join the discord server:{" "}
+      </div>
+      <a
+        href="https://discord.gg/YsgAW8Pu"
+        target="_blank"
+        rel="noreferrer"
+        className="discord-link"
+      >
+        PCSB Xenia 2021 Discord Server
+      </a>
 
       <div className="profile-inner">
         <div className="profile-left">
           <h1>Events</h1>
           <div className="registered-events-list">
-            {list.length===0 ?   <p className="no-registered">No Registered Events</p> : list}
+            {list.length === 0 ? (
+              <p className="no-registered">No Registered Events</p>
+            ) : (
+              list
+            )}
           </div>
         </div>
         <div className="profile-left">
           <h1>Industry Talks</h1>
           <div className="registered-workshops-list">
-          {workshopList.length===0 ?   <p className="no-registered">No Registered Industry Talks</p> : workshopList}
+            {workshopList.length === 0 ? (
+              <p className="no-registered">No Registered Industry Talks</p>
+            ) : (
+              workshopList
+            )}
           </div>
         </div>
         <div className="profile-left">
           <h1>Build Up Events</h1>
           <div className="registered-workshops-list">
-          {buildUpList.length===0 ?   <p className="no-registered">No Registered Build Up Events</p> : buildUpList}
+            {buildUpList.length === 0 ? (
+              <p className="no-registered">No Registered Build Up Events</p>
+            ) : (
+              buildUpList
+            )}
           </div>
         </div>
       </div>
@@ -135,11 +198,13 @@ const MyProf = (props) => {
         to="/"
         exact
         className="btn btn-lg lgout"
-        onClick={() => { notifyLoggedOut(); props.logout() }}
+        onClick={() => {
+          notifyLoggedOut();
+          props.logout();
+        }}
       >
         Logout
       </Link>
-
     </div>
   );
 };
@@ -149,7 +214,7 @@ const mapStatesToProps = (state) => {
     registeredEvents: state.userData.registeredEvents,
     registeredWorkshops: state.userData.registeredWorkshops,
     registeredBuildUpEvents: state.userData.registeredBuildUpEvents,
-    userName: state.userData.name
+    userName: state.userData.name,
   };
 };
 

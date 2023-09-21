@@ -17,19 +17,18 @@ import Background from "./Components/BackGround/Background";
 import ForgotPassword from "./Components/ForgotPassword/forgot";
 import ResetPassword from "./Components/ForgotPassword/reset";
 import Sessions from "./Components/Workshops/Workshops";
-import SessionInfo from './Components/Workshops/MoreInfo/Workshops';
-import ContactPanel from './Components/ContactPanel/ContactPanel';
+import SessionInfo from "./Components/Workshops/MoreInfo/Workshops";
+import ContactPanel from "./Components/ContactPanel/ContactPanel";
 
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { getEventData, loggedIn, storeToken } from "./Store/Actions";
 import { connect } from "react-redux";
-import SocliaMediaPanel from './Components/SocialMediaLinks/Links';
+import SocliaMediaPanel from "./Components/SocialMediaLinks/Links";
 import "./App.css";
 
 const App = (props) => {
   useEffect(() => {
-    
     const getUserData = async () => {
       let userToken = localStorage.getItem("xeniaUserToken");
 
@@ -38,11 +37,7 @@ const App = (props) => {
       props.storeToken(userToken);
 
       props.loggedIn(res.data.data);
-      
     };
-
-    // const PreLoader = document.getElementById("preLoader");
-    // PreLoader.style.display = "none";
 
     setTimeout(() => {
       const PreLoader = document.getElementById("preLoader");
@@ -60,7 +55,6 @@ const App = (props) => {
       <ContactPanel />
 
       <Switch>
-
         <Route exact path="/schedule">
           <Schedule />
           <Footer />
@@ -92,8 +86,8 @@ const App = (props) => {
         </Route>
 
         <Route exact path="/sponsors">
-          <Sponsors/>
-          <Footer/>
+          <Sponsors />
+          <Footer />
         </Route>
 
         <Route exact path="/profile">
